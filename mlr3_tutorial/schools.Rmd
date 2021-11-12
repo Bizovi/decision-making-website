@@ -1,0 +1,82 @@
+---
+title: "Schools and Sample Sizes"
+output: html_document
+---
+
+Scoli din US, N. 
+Fiecare scoala are un numar de studenti ($x_i$). Mari si mici (n(mari), n(mici))
+n_studenti(mari), n_studenti(mici)
+Scoruri SAT (distributie aleasa) - top K% cele mai performante scoli sunt mici??
+BREAK UP BIG SCHOOLS? Is it good idea?
+
+- Corelatie != Causalitatee
+- Max != Average
+- Tendinta naturala, Concentrare? -> e.g. lot olimpic: *Ipoteza!*
+- Sampling bias?
+- Specializari? (N/A - vorbim despre liceeni)
+- Varianta!! Top dar si la coada
+
+```{r}
+library(tidyverse)
+```
+
+
+$$
+\frac{\sigma}{\sqrt{n}}
+$$
+
+```{r}
+# ((n_scoli / 2), n_stud_mici) => medie la nivel de scoala
+# ((n_scoli / 2), n_stud_mari) => medie la nivel de scoala
+# dimensiune | perf_medie
+simulare_scoruri_scoli <- function(n_scoli = 3000, n_stud_mici = 50, n_stud_mari = 1000) {
+  scoli_mici <- matrix(
+    rnorm(n_scoli/2 * n_stud_mici, mean=500, sd=25),
+    ncol = n_stud_mici,
+    nrow = n_scoli/2
+  )
+  
+  scoli_mari <- matrix(
+    rnorm(n_scoli/2 * n_stud_mari, mean=500, sd=25),
+    ncol = n_stud_mari,
+    nrow = n_scoli/2
+  )
+  
+  c(dim(scoli_mici), dim(scoli_mari))
+  df_mici <- data.frame(
+    dimensiune = "mici", 
+    performanta = rowMeans(scoli_mici)
+  )
+  
+  df_mari <- data.frame(
+    dimensiune = "mari",
+    performanta = rowMeans(scoli_mari)
+  )
+  
+  df <- rbind(df_mari, df_mici)
+  p <- df %>% dplyr::arrange(dplyr::desc(performanta)) %>% 
+    mutate(idx = row_number()) %>% 
+    mutate(perf_norm = (performanta - mean(performanta)) / sd(performanta)) %>% 
+    ggplot(aes(x = idx, y = perf_norm, fill = dimensiune)) + 
+    geom_col() + 
+    theme_minimal()
+  list(df, p)
+}
+
+results <- simulare_scoruri_scoli()
+```
+
+```{r}
+# Distributie a scorurilor in cadrul unei scoli 
+# Simulare
+# Grafic
+results[[1]] %>%
+  dplyr::arrange(dplyr::desc(performanta)) %>% 
+  filter(performanta >= 400 & performanta < 500) %>% 
+  group_by(dimensiune) %>% 
+  summarise(n = n())
+
+results[[2]]
+```
+
+

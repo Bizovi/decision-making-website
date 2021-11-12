@@ -1,0 +1,41 @@
+---
+title: "Analiza Corespondentelor"
+output: html_document
+---
+
+```{r import-libraries}
+library(tidyverse)
+library(FactoMineR)
+library(factoextra)
+```
+```{r}
+df_nobel <- read.csv(
+  "data/data_CA_NobelPrize_withMaths.csv", 
+  sep=";", dec = ".", header=TRUE, check.names = FALSE, row.names = 1)
+df_nobel
+
+# colnames(df_nobel) <- c("Country", colnames(df_nobel)[2:ncol(df_nobel)])
+# if you want to keep it in a column
+```
+```{r}
+df_nobel %>% colMeans()
+```
+
+
+```{r}
+results_ca <- FactoMineR::CA(df_nobel)
+```
+```{r}
+summary(results_ca)
+```
+
+
+```{r}
+fviz_ca_biplot(results_ca, col.row="contrib", repel = TRUE) +
+       theme_minimal()
+```
+
+
+
+
+
