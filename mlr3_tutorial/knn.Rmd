@@ -162,8 +162,8 @@ bmr = benchmark(grid)
 ```
 
 ```{r}
-performances <- bmr$aggregate(measures)
-performances
+# performances <- bmr$aggregate(measures)
+# performances
 ```
 
 ```{r}
@@ -176,12 +176,12 @@ pred_multi <- trained_multinomial$predict_newdata(df_test_norm)
 pred_multi$confusion
 ```
 ```{r}
-pred_multi$score(measures)
+# pred_multi$score(measures)
 ```
 
 ```{r}
 test_pred <- trained_kknn$predict_newdata(df_test_norm)
-test_pred$score(measures)
+# test_pred$score(measures)
 ```
 
 ### Investigating the final model(s), on test data
@@ -260,7 +260,7 @@ tuner_instance <- TuningInstanceSingleCrit$new(
   terminator   = terminate_condition,
 )
 tuner <- tnr("grid_search")
-tuner$optimize(tuner_instance)
+tuner$optimize(tuner_instance)e
 ```
 
 ```{r}

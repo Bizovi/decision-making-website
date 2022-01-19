@@ -8,6 +8,7 @@ library(tidyverse)
 library(FactoMineR)
 library(factoextra)
 ```
+
 ```{r}
 df_nobel <- read.csv(
   "data/data_CA_NobelPrize_withMaths.csv", 
@@ -19,6 +20,7 @@ df_nobel
 ```
 ```{r}
 df_nobel %>% colMeans()
+df_nobel %>% rowMeans()
 ```
 
 

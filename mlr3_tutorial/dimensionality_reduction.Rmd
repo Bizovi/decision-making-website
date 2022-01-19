@@ -24,9 +24,6 @@ pca_results <- FactoMineR::PCA(
 )
 ```
 
-```{r}
-```
-
 
 ```{r}
 # factoextra::fviz_pca_ind(pca_results)
@@ -36,6 +33,26 @@ factoextra::fviz_pca_var(
   gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
   col.var = "contrib",
   alpha.var = "cos2",
+  geom.var = c("arrow", "text"),
+  labelsize = 4,
+  select.var = list(cos2 = 0.4), # name =NULL, , contrib = NULL
+)
+```
+```{r}
+pca_results$ind$contrib
+```
+
+```{r}
+# factoextra::fviz_pca_ind(pca_results)
+factoextra::fviz_pca_var(
+  pca_results, 
+  repel = TRUE, 
+  gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
+  col.var = "contrib",
+  alpha.var = "cos2",
+  geom.var = c("arrow", "text"),
+  labelsize = 4,
+  select.var = list(contrib = 4), # name =NULL, , contrib = NULL
 )
 ```
 
@@ -44,7 +61,8 @@ factoextra::fviz_pca_var(
 factoextra::fviz_pca_ind(
   pca_results, col.ind = df_wine$Label, 
   palette = c("#00AFBB", "#E7B800", "#FC4E07"),
-  addEllipses = FALSE
+  addEllipses = FALSE,
+  geom.ind = c("point", "text")
 )
 ```
 ```{r}
