@@ -1,8 +1,4 @@
-# Background
-
-```{r}
-mtcars |> head(10)
-```
+# Data Science in Business Context
 
 You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
 

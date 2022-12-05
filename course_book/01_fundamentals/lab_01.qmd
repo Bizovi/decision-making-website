@@ -23,3 +23,23 @@ mtcars2$am <- factor(
 #   geom_point() +  geom_smooth(formula = y ~ x, method = "loess") +
 #   theme(legend.position = 'bottom')
 ```
+
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 6
+%%| fig-cap: |
+%%|   How Quarto orchestrates rendering of documents: start with 
+%%|   a qmd file, use the Knitr or Jupyter engine to perform the 
+%%|   computations and convert it to an md file, then use Pandoc 
+%%|   to convert to various file formats including HTML, PDF, 
+%%|   and Word.
+flowchart LR
+  A[qmd] --> B(Knitr)
+  A[qmd] --> C(Jupyter)
+  B(Knitr) --> D[md]
+  C(Jupyter) --> D[md]
+  D[md] --> E(pandoc)
+  E(pandoc) --> F(HTML)
+  E(pandoc) --> G(PDF)
+```

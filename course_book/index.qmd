@@ -1,28 +1,173 @@
-# Preface {.unnumbered}
+## Welcome to the course! {.unnumbered}
+
+
+This is an introductory, big picture graduate course which bridges the gap between theory and practice, **cultivating the skills and understanding** necessary to bring value to organisations by **improving decision-making**. It is an attempt to find a golden mean of both worlds: 
+
+- Illuminating theoretical ideas (contemplating in the library)
+- Practicing battle-tested technologies (engineering in the trenches).
+
+
+::: {.callout-tip}
+## Who should read this book? 
+
+> Anyone lost, confused, stuck or overwhelmed by Data Science and Machine Learning complexities, who wants to see the big picture and the possibilities
+
+If you stumbled upon this e-book, you're probably a student in **Business Analytics** at Bucharest' Academy of Economic Sciences -- well, because I shamelessly promoted it. 
+
+Maybe, you're an **engineer** getting curious about ML or an **analyst** with a knack for the business, looking to improve your workflow and expand the quantitative toolbox. Maybe you're a **product manager** or an **entrepreneur** who wants to infuse AI into your startup.
+:::
+
+
+This is the **course I wish I had** when starting my journey in data science, which would prepare me for the realities of the industry, often very different from the academic world. At the same time, this is NOT a bootcamp: it is not enough by itself to land you a job, which requires lots of practice and extra study. 
+
+To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Think of it as a skeleton, a **conceptual frame**[^meta-course] which ties together everything you have learned so far and can be built upon as you progress in your carreer and studies.
+
+[^meta-course]: This course stands on the "shoulders of giants", and I can only aspire to get to the level of clarity and rigor provided by Hastie/Tibshirani or Andrew Ng. However, there is too much content out there, and the roadmap provided here should help you navigate it and find the shortest path towards better decisions in your firm.
+
+
+## Why should you care?
+
+You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
+
+Over the past 3 years, you've probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on. 
+
+::: {.callout-tip}
+## Why study all of this?
+ We live in a volatile, uncertain, complex and ambiguous world,[^vuca] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions.
+
+ I want you to take away ONE thing, that is AI and Data Science in Businesses boils down to: 
+**Decision-Making under Uncertainty at Scale**
+:::
+
+[^vuca]: [VUCA: a mental model to better understand the world](https://www.vuca-world.org/where-does-the-term-vuca-come-from/)
+
+
+It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. Even if you are not a data scientist, you will work with them in one form or another *(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)*. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.
+
+> When somebody asks you what have you learned in this book and course, I suggest two metaphors:[^metaphor] one of simplification and another of seeing relations
+
+::: {layout="[29, -10, 40]"}
+![We see Pollock's **messy reality**, which is the data and observations. We want to get to Picasso's bare bones **essence**, for better and clearer decision-making](01_fundamentals/logo.jpeg "Reality"){width="40%"}
+
+![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful](01_fundamentals/elephant-blind.jpeg){width="40%"}
+:::
+
+[^metaphor]: Due to my recent philosophical readings, some of the language here has a very specific meaning, which is totally outside the scope. For the curious, I will write a few blog posts outlining some philosophical arguments which struck a chord in me and which I found tremenously useful in day-to-day life.  
+
+
+## Cybernetics Done Right
+
+::: {.callout-warning}
+The idea behind **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems, that is what we know today as **weak/specialised AI**[^dsc]. 
+
+Unfortunately, the execution is extremely difficult to pull off without a consistent vision, expertise and an account of recent developments. It is even more difficult to put those 80's models in practice, especially in a data-driven age.
+:::
+
+[^dsc]: Or data science, if you wish -- at the intersection of computer science, domain expertise (economics), statistics and mathematics. We will dive in more detail and nuance in our first lectures.
+
+Let's go back to the burning question: what I wish I had in a course? It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied. 
+
+After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
+
+- Provide motivation for **why** something is important (a field, theory, model, method, technology)
+- Discuss **practical applications** and challenges the firms face, from an insider's perspective: 
+    - Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
+    - Coding up the solutions and software implementations, with the real-world challenges of deploying models and improving decision making
+- Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it:
+    - Present the tool theoretically rigorous and sound, but **only where it matters** 
+    - Leverage previous mathematical, statistical, and domain knowledge
+    - For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
+- Use **simulations** as a safe playground [^playground] that we control, to get a feel for the behavior of models and algorithms.
+    - Implement those in code using best practices, as an engineering exercise
+    - With lots of visualization, especially interactive ones
+
+[^playground]: I often find myself truly understanding something, only after I code it up and understand the "mechanics" (of a model) well, then try to think of how I would apply it in practice, in different contexts. This hints to the idea that we need some complementary background and tools, some of them right from the beginning of higher education.
+
+## Your Unorthodox Guide
+
+Think of me as an industry expert,[^bizovi-img] not an academic pushing you to do homework. Think of the course as a summer school or workshop, rather than required credits and another exam to pass. Here are a few relevant facts about me:
+
+[^bizovi-img]: ![See one of my conference talks at BigDataWeek, intended for a mixed tech/business audience: [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)](01_fundamentals/me.jpeg "Reality"){width="90%"}
+
+
+- Graduate of Cybernetics (2017) and Quantitative Economics (2019)
+    - Did some research in Complex Systems, Agent-Based Modeling, Systems' Dynamics, and Heterodox Economics, which was lots of fun
+    - My serious work was at the intersection of Bayesian Statistics and Machine Learning (thesis, dissertation)
+- Head of Data Science [^linkedin] at AdoreMe Tech, with the firm since 2016
+    - Lingerie e-commerce in the U.S., with a PAYG, subscription and try-at-home business models
+    - $250m revenue in 2022, acquired by Victoria's Secret
+    - 70 tech people in Bucharest, over 300 employees
+    - My work involves AI Strategy, Product Management, ML Systems Design
+- Some typical applications of AI in an e-commerce I contributed to:
+    - Demand Planning and Inventory Optimization systems to prevent lost sales and excess inventory
+    - Recommender Systems to help users find relevant, personalized items and bundles
+    - Marketing optimizations in Acquisition/Advertisement, Engagement, CRM, Merchandising, Pricing and Promotion
+- Hobbies:
+    - Reading about "Philosophy as a Way of Life" & Cognitive Science
+    - Painting, Hiking, Jazz/Classical/Metal
+    - Played chess professionally, but that much stress isn't worth it
+
+
+[^linkedin]: You can reach to me on Linkedin [here](https://www.linkedin.com/in/bizovi-mihai-56982abb/), although the state of the platform drifted a long time ago from the professionals' network to business influencers' and vendors' social media 
+
+## Course Roadmap
+
+We start the course with a first lecture, in which we explore the context of data science in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering the hell we needed those in the first place. 
+
+Next, we move on to A/B testing and towards a mindset of causal inference. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+
+Did you get comfortable with ML? Good, because it's time to acknowledge the limitations and get more powerful tools from causal inference, when A/B tests and randomised experiments are unfeasible or unethical, but we can leverage naturally-occuring experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.
+
+The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 6
+%%| fig-cap: |
+%%|   Don't let the sheer diversity and breadth of topics intimidate you, 
+%%|   as we'll go step by step through each aspect, explaining the why and how.
+%%|   In one way or another, there is little you haven't seen here, however the way
+%%|   we tie it all together IS challenging.
+
+flowchart TD
+  DSc(Decision-Making Under Uncertainty at Scale) -- understanding  --> Stat(Stat Fundamentals) 
+  DSc -- business context  --> VUCA[V.U.C.A.] --> App(Applications) --> R[Role in firms] --> PML(ML Process) --> PS(Stat process)
+  Stat --> Prob(Probability) --> Es(Estimators) --> Boot(Bootstrap) --> AB(A/B Testing) -- optional --> ExpD[/Causality/]
+
+  DSc -- skills/labs  --> Eng(Engineering) --> Data(Data Wrangling) --> Repr[Reproducibility] --> Pipe(Pipelines) -- advanced --> FS[/Full Stack Apps/]
+  ML --> Class(Bayes Classifiers) --> GLM(GLMs) --> T(Tree-based Ensembles) -- advanced --> Caus(Hierarchical Models) --> Misc[/Time Series and Misc/]
+
+  DSc -- workhorse models  --> ML(Statistical Learning) --> Unsup(Dimensionality Reduction) --> Clust(Clustering) -- optional --> RS[/RecSys/] --> Text[/NLP Embeddings/]
+```
+
+If you ask what is that engineering branch, you're totally right! During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem. 
+
+That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us, step-by-step. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.
+
+## Schedule and Admin
+
+The final grade shouldn't be a reason why you're in this course, but if you need more structure, here's the evaluation criteria below. Attendence is not mandatory, but highly beneficial for the professional development.
+
+- Lab 50%: for the full stack data app
+    - Risky/interesting/creative projects will be rewarded
+    - Focus on quality over quantity, one thing done well rather than trying to apply half of the models discussed in the course.
+    - Pitch of at most 1 (one) page: what it does and why did you build it
+- Final Exam 50%: Focused on conceptual understanding. 
+    - There will be no problems to solve by hand.
+    - Try to be succint and clear
+    - Think for yourself, zero-tolerance policy for cheating
 
 
 
-You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
+|  Course/Lab  | Title                   | Keywords            | Comments |
+|--------------|-------------------------|---------------------|-------|
+| C1 (09 Dec) | Data Science in Context | AI, ML, Uncertainty, The Process | discussion, use-cases |
+| C2 (09 Dec) | Fundamentals of Statistics | Probability triples, Properties of Estimators    | logistics, admin |
+| S1 (10 Dec) | Set Up the Environment   | Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio | a good setup is a prerequisite for painless labs |
+| S2 (10 Dec) | Tidyverse, warm-up      | ggplot2, quarto, arrow, duckdb | practice and learn some new packages |
 
-How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist's life look like?
 
-> First and foremost, AI is about **Decision-Making, at Scale, under Uncertainty** [^cassie-ai-def]. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tell the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
 
-We have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. Despite that, we can clearly define **what** it does (see above), and **how** (depending on the perspective taken). For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:
-
-* Analytics and Data Mining - with the main goal of formulating better research questions (i.e. **inspiration**), find interesting and relevant stuff in massive datasets
-* Machine Learning - learning from data, finding invariants/patterns, which generalize beyond the sample and training data, i.e. going from experience to expertise in an automated way
-* Statistics, and especially causal inference - for making decisions with high stakes, and having greater confidence, rigor in the inferences and conclusions drawn
-
-One has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation [^cassie-mfml] by Cassie Kozyrkov, so that you get a good idea of how "AI" fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium [^cassie-ref].
-
-Pay close attention to the process of developing data-driven products [^cassie-steps] and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint [^pair] for thinking about how to define and plan an AI project is given by Google's PAIR (People and AI research group).
-
-Make no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can't do -- the power, but also the limitations:
-- Just take a look at how many "AI" tools have been built to catch covid, and none helped [^mit-ai-covid]
-- One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in "The profession of solving the wrong problem"[^war-wrong-problem] and "How to constrain artificial stupidity" [^war-stupidity].
-
-As a last, shameless plug, I'll reference you to my conference talk [^pragmatic-ai-gcp], which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of "Full Stack Data Apps", which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).
 
 <!-- Data Science Context, in Business, Interdisciplinarity --->
 [^pragmatic-ai-gcp]: M. Bizovi - [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)

@@ -3,7 +3,7 @@ project:
 
 book:
   title: "Pragmatic Data Science"
-  author: "Mihai Bizovi"
+  author: "Mihai Bizovi | Head of Data Science (AdoreMe)"
   date: "12/5/2022"
 
   search: true
@@ -11,13 +11,15 @@ book:
   repo-actions: [edit]
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
+  favicon: 01_fundamentals/logo.jpeg
 
   sidebar:
     style: docked
     background: light
 
   chapters:
-    - index.qmd
+    - href: index.qmd
+      text: "Course Home"
     - part: "Part I: The fundamenals"
       chapters:
         - href: 01_fundamentals/background.qmd
@@ -57,6 +59,11 @@ highlight-style: pygments
 format:
   html:
     theme: simplex # cosmo
+    # max-width: 1600px
+    # margin-left: 30px
+    page-layout: full
+    css: styles.css
+    toc-location: right
   pdf:
     documentclass: scrreprt
 
