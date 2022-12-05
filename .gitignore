@@ -325,3 +325,6 @@ engines.build/
 .python-version
 
 **/.DS_Store
+
+**/*.html
+**/*.pdf
