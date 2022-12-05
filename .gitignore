@@ -274,3 +274,54 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+
+# exclude files and configs
+**/*.csv
+**/*.json
+**/*.pkl
+**/*.png
+**/*.whl
+
+dist/
+
+# keep preferences mapping file
+!src/engines/configs/*
+
+# secrets
+**/*.env_variables.yaml
+**/*.httr-oauth
+
+# python junk, test logs and virtual environments
+**/*.ipynb_checkpoints
+**/*venv/
+**/venv/
+**/py-env/
+**/.DS_Store
+**/__pycache__/
+**/*.pyc
+**/*.cpython*
+**/.mypy_cache/
+**/.pytest_cache/
+**/*.coverage
+**/*.egg-info/
+.python-version
+
+# editor junk
+/.idea/
+**/.vscode/
+
+**/.pyre/
+**/.pytype/
+
+# documentation build
+**/docs_build/
+**/.hypothesis/
+**/**.code-workspace
+
+# nuitka stuff
+engines.build/
+**/**.pyi
+.python-version
+
+**/.DS_Store
