@@ -1,0 +1,32 @@
+# Statistical Foundations
+
+In order to be a successful Data Scientist, one has to "speak the language" of probability and statistics; it is the basis on which we can build towards more **realistic and avanced models**, with the purpose of improving **decision-making under uncertainty**. This foundation is a prerequisite for all 3 perspectives: analytics/mining, machine learning and causal inference.
+
+> A word of encouragement is that this doesn't have to be boring! We can put "the classics" in context of modern statistics, big data challenges, and use simulation instead of heavy mathematics and proof-based approaches.  
+
+Therefore, here's a guide on how to refresh the statistical knowledge, in such a way, that statistics becomes fascinating, not boring and frustrating.
+
+- Realize that lots of common statistical tests are particular versions of linear models [^11]. It takes a few hours to go through the theory and the code in the referenced book.
+- Understand the following concepts:
+	- Random Experiments, Contructing the probability triple, Random variables and CDFs
+	- Collectivity, Statistical Population, Samples and Sampling (as a process)
+	- Parameter, Estimator, Estimation: properties of estimators (i.e. what does a statistician want)
+	- Here's the approach taken by [^24], which integrates data analysis and simulation in learning of statistics.
+- Upgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is [^12], which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.
+- Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is [^45], which is a course in collaboration with the RStudio team.
+
+There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:
+- [^25] Cetinkaya-Runde goes through all the fundamentals in a clear, concrete, extensive way, with code!
+- [^34] has an interesting approach, focused on the challenges of Psychology
+- [^36] goes through the whole process, with R, with additional topics, normally not present in a statistics course 
+- [^39] is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data
+
+<!-- Statistical Foundations: Reference, Revies --->
+[^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
+[^12]: Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) has two companion books, one with R and another in Python
+[^24]: Speegle, Clair - [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html)
+[^25]: Cetinkaya-Runde, Hardin - [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html)
+[^45]: Bryan - [STAT 545](https://stat545.com/) It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.
+[^34]: Crump - [Answering questions with data](https://www.crumplab.com/statistics/) -- introductory statistics for Psychology Students
+[^36]: Thulin - [Modern Statistics with R](http://www.modernstatisticswithr.com/)
+[^39]: Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html)

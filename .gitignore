@@ -328,3 +328,4 @@ engines.build/
 
 **/*.html
 **/*.pdf
+.Rproj.user
