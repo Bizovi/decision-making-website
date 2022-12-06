@@ -64,9 +64,7 @@ format:
     page-layout: full
     css: styles.css
     toc-location: right
-  pdf:
-    documentclass: scrreprt
-
+    
 editor: visual
 
 reference-location: margin
