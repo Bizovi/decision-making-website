@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mihai Bizovi | Head of Data Science (AdoreMe)">
+<meta name="dcterms.date" content="2022-12-05">
+
+<title>Pragmatic Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01_fundamentals/background.html" rel="next">
+<link href="./01_fundamentals/logo.jpeg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Pragmatic Data Science</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Pragmatic Data Science</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bizovi/data-mining-ase" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Pragmatic-Data-Science.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Pragmatic-Data-Science.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">Course Home</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Part I: The fundamenals</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab1: Recap of tidyverse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Part II: Experiment Design</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A/B testing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#welcome-to-the-course" id="toc-welcome-to-the-course" class="nav-link active" data-scroll-target="#welcome-to-the-course">Welcome to the course!</a></li>
+  <li><a href="#why-should-you-care" id="toc-why-should-you-care" class="nav-link" data-scroll-target="#why-should-you-care">Why should you care?</a></li>
+  <li><a href="#cybernetics-done-right" id="toc-cybernetics-done-right" class="nav-link" data-scroll-target="#cybernetics-done-right">Cybernetics Done Right</a></li>
+  <li><a href="#your-unorthodox-guide" id="toc-your-unorthodox-guide" class="nav-link" data-scroll-target="#your-unorthodox-guide">Your Unorthodox Guide</a></li>
+  <li><a href="#course-roadmap" id="toc-course-roadmap" class="nav-link" data-scroll-target="#course-roadmap">Course Roadmap</a></li>
+  <li><a href="#schedule-and-admin" id="toc-schedule-and-admin" class="nav-link" data-scroll-target="#schedule-and-admin">Schedule and Admin</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Pragmatic Data Science</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mihai Bizovi | Head of Data Science (AdoreMe) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 5, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="welcome-to-the-course" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="welcome-to-the-course">Welcome to the course!</h2>
+<p>This is an introductory, big picture graduate course which bridges the gap between theory and practice, <strong>cultivating the skills and understanding</strong> necessary to bring value to organisations by <strong>improving decision-making</strong>. It is an attempt to find a golden mean of both worlds:</p>
+<ul>
+<li>Illuminating theoretical ideas (contemplating in the library)</li>
+<li>Practicing battle-tested technologies (engineering in the trenches).</li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Who should read this book?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>Anyone lost, confused, stuck or overwhelmed by Data Science and Machine Learning complexities, who wants to see the big picture and the possibilities</p>
+</blockquote>
+<p>If you stumbled upon this e-book, you’re probably a student in <strong>Business Analytics</strong> at Bucharest’ Academy of Economic Sciences – well, because I shamelessly promoted it.</p>
+<p>Maybe, you’re an <strong>engineer</strong> getting curious about ML or an <strong>analyst</strong> with a knack for the business, looking to improve your workflow and expand the quantitative toolbox. Maybe you’re a <strong>product manager</strong> or an <strong>entrepreneur</strong> who wants to infuse AI into your startup.</p>
+</div>
+</div>
+<p>This is the <strong>course I wish I had</strong> when starting my journey in data science, which would prepare me for the realities of the industry, often very different from the academic world. At the same time, this is NOT a bootcamp: it is not enough by itself to land you a job, which requires lots of practice and extra study.</p>
+<div class="page-columns page-full"><p>To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Think of it as a skeleton, a <strong>conceptual frame</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> which ties together everything you have learned so far and can be built upon as you progress in your carreer and studies.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This course stands on the “shoulders of giants”, and I can only aspire to get to the level of clarity and rigor provided by Hastie/Tibshirani or Andrew Ng. However, there is too much content out there, and the roadmap provided here should help you navigate it and find the shortest path towards better decisions in your firm.</p></li></div></div>
+</section>
+<section id="why-should-you-care" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="why-should-you-care">Why should you care?</h2>
+<p>You might’ve heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?</p>
+<p>Over the past 3 years, you’ve probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on.</p>
+<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Why study all of this?
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<div class="page-columns page-full"><p>We live in a volatile, uncertain, complex and ambiguous world,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;<a href="https://www.vuca-world.org/where-does-the-term-vuca-come-from/">VUCA: a mental model to better understand the world</a></p></li></div></div>
+<p>I want you to take away ONE thing, that is AI and Data Science in Businesses boils down to: <strong>Decision-Making under Uncertainty at Scale</strong></p>
+</div>
+</div>
+<p>It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. Even if you are not a data scientist, you will work with them in one form or another <em>(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)</em>. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.</p>
+<blockquote class="blockquote page-columns page-full">
+<div class="page-columns page-full"><p>When somebody asks you what have you learned in this book and course, I suggest two metaphors:<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> one of simplification and another of seeing relations</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Due to my recent philosophical readings, some of the language here has a very specific meaning, which is totally outside the scope. For the curious, I will write a few blog posts outlining some philosophical arguments which struck a chord in me and which I found tremenously useful in day-to-day life.</p></li></div></div>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 36.7%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="01_fundamentals/logo.jpeg" title="Reality" class="img-fluid figure-img">
+</figure>
+<p></p><figcaption class="figure-caption">We see Pollock’s <strong>messy reality</strong>, which is the data and observations. We want to get to Picasso’s bare bones <strong>essence</strong>, for better and clearer decision-making</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 12.7%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.6%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01_fundamentals/elephant-blind.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">This is a <strong>big picture</strong> course, which re-contextualizes everything you have learned before, but didn’t see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cybernetics-done-right" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="cybernetics-done-right">Cybernetics Done Right</h2>
+<div class="callout-warning callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<div class="page-columns page-full"><p>The idea behind <strong>Cybernetics</strong> curriculum is great: an <strong>interdisciplinary</strong> approach to solving complex economic problems, that is what we know today as <strong>weak/specialised AI</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Or data science, if you wish – at the intersection of computer science, domain expertise (economics), statistics and mathematics. We will dive in more detail and nuance in our first lectures.</p></li></div></div>
+<p>Unfortunately, the execution is extremely difficult to pull off without a consistent vision, expertise and an account of recent developments. It is even more difficult to put those 80’s models in practice, especially in a data-driven age.</p>
+</div>
+</div>
+<p>Let’s go back to the burning question: what I wish I had in a course? It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied.</p>
+<p>After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.</p>
+<ul>
+<li>Provide motivation for <strong>why</strong> something is important (a field, theory, model, method, technology)</li>
+<li>Discuss <strong>practical applications</strong> and challenges the firms face, from an insider’s perspective:
+<ul>
+<li>Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete</li>
+<li>Coding up the solutions and software implementations, with the real-world challenges of deploying models and improving decision making</li>
+</ul></li>
+<li>Develop a <strong>conceptual undestanding</strong>, an intuition about the problem and the “tool” we think is appropriate in tackling it:
+<ul>
+<li>Present the tool theoretically rigorous and sound, but <strong>only where it matters</strong></li>
+<li>Leverage previous mathematical, statistical, and domain knowledge</li>
+<li>For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models</li>
+</ul></li>
+<li>Use <strong>simulations</strong> as a safe playground <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> that we control, to get a feel for the behavior of models and algorithms.
+<ul>
+<li>Implement those in code using best practices, as an engineering exercise</li>
+<li>With lots of visualization, especially interactive ones</li>
+</ul></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;I often find myself truly understanding something, only after I code it up and understand the “mechanics” (of a model) well, then try to think of how I would apply it in practice, in different contexts. This hints to the idea that we need some complementary background and tools, some of them right from the beginning of higher education.</p></li></div></section>
+<section id="your-unorthodox-guide" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="your-unorthodox-guide">Your Unorthodox Guide</h2>
+<div class="page-columns page-full"><p>Think of me as an industry expert,<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> not an academic pushing you to do homework. Think of the course as a summer school or workshop, rather than required credits and another exam to pass. Here are a few relevant facts about me:</p><div class="no-row-height column-margin column-container"><li id="fn6"><div class="quarto-figure quarto-figure-center"><sup>6</sup>&nbsp;
+<figure class="figure">
+<figure class="figure">
+<img src="01_fundamentals/me.jpeg" title="Reality" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption">See one of my conference talks at BigDataWeek, intended for a mixed tech/business audience: <a href="https://www.youtube.com/watch?v=02NPR_nDaxQ">Pragmatic AI in Google Cloud Platform</a></figcaption><p></p>
+</figure>
+</div>
+</li></div></div>
+<ul>
+<li>Graduate of Cybernetics (2017) and Quantitative Economics (2019)
+<ul>
+<li>Did some research in Complex Systems, Agent-Based Modeling, Systems’ Dynamics, and Heterodox Economics, which was lots of fun</li>
+<li>My serious work was at the intersection of Bayesian Statistics and Machine Learning (thesis, dissertation)</li>
+</ul></li>
+<li>Head of Data Science <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> at AdoreMe Tech, with the firm since 2016
+<ul>
+<li>Lingerie e-commerce in the U.S., with a PAYG, subscription and try-at-home business models</li>
+<li>$250m revenue in 2022, acquired by Victoria’s Secret</li>
+<li>70 tech people in Bucharest, over 300 employees</li>
+<li>My work involves AI Strategy, Product Management, ML Systems Design</li>
+</ul></li>
+<li>Some typical applications of AI in an e-commerce I contributed to:
+<ul>
+<li>Demand Planning and Inventory Optimization systems to prevent lost sales and excess inventory</li>
+<li>Recommender Systems to help users find relevant, personalized items and bundles</li>
+<li>Marketing optimizations in Acquisition/Advertisement, Engagement, CRM, Merchandising, Pricing and Promotion</li>
+</ul></li>
+<li>Hobbies:
+<ul>
+<li>Reading about “Philosophy as a Way of Life” &amp; Cognitive Science</li>
+<li>Painting, Hiking, Jazz/Classical/Metal</li>
+<li>Played chess professionally, but that much stress isn’t worth it</li>
+</ul></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;You can reach to me on Linkedin <a href="https://www.linkedin.com/in/bizovi-mihai-56982abb/">here</a>, although the state of the platform drifted a long time ago from the professionals’ network to business influencers’ and vendors’ social media</p></li></div></section>
+<section id="course-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="course-roadmap">Course Roadmap</h2>
+<p>We start the course with a first lecture, in which we explore the context of data science in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering the hell we needed those in the first place.</p>
+<p>Next, we move on to A/B testing and towards a mindset of causal inference. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.</p>
+<p>Did you get comfortable with ML? Good, because it’s time to acknowledge the limitations and get more powerful tools from causal inference, when A/B tests and randomised experiments are unfeasible or unethical, but we can leverage naturally-occuring experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.</p>
+<p>The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
+<div class="cell" data-fig-width="6">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
+  DSc(Decision-Making Under Uncertainty at Scale) -- understanding  --&gt; Stat(Stat Fundamentals) 
+  DSc -- business context  --&gt; VUCA[V.U.C.A.] --&gt; App(Applications) --&gt; R[Role in firms] --&gt; PML(ML Process) --&gt; PS(Stat process)
+  Stat --&gt; Prob(Probability) --&gt; Es(Estimators) --&gt; Boot(Bootstrap) --&gt; AB(A/B Testing) -- optional --&gt; ExpD[/Causality/]
+
+  DSc -- skills/labs  --&gt; Eng(Engineering) --&gt; Data(Data Wrangling) --&gt; Repr[Reproducibility] --&gt; Pipe(Pipelines) -- advanced --&gt; FS[/Full Stack Apps/]
+  ML --&gt; Class(Bayes Classifiers) --&gt; GLM(GLMs) --&gt; T(Tree-based Ensembles) -- advanced --&gt; Caus(Hierarchical Models) --&gt; Misc[/Time Series and Misc/]
+
+  DSc -- workhorse models  --&gt; ML(Statistical Learning) --&gt; Unsup(Dimensionality Reduction) --&gt; Clust(Clustering) -- optional --&gt; RS[/RecSys/] --&gt; Text[/NLP Embeddings/]
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Don’t let the sheer diversity and breadth of topics intimidate you, as we’ll go step by step through each aspect, explaining the why and how. In one way or another, there is little you haven’t seen here, however the way we tie it all together IS challenging.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If you ask what is that engineering branch, you’re totally right! During the labs we’ll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.</p>
+<p>That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us, step-by-step. Don’t worry about getting everything right, but focus on a problem and single area from the course you’re passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.</p>
+</section>
+<section id="schedule-and-admin" class="level2">
+<h2 class="anchored" data-anchor-id="schedule-and-admin">Schedule and Admin</h2>
+<p>The final grade shouldn’t be a reason why you’re in this course, but if you need more structure, here’s the evaluation criteria below. Attendence is not mandatory, but highly beneficial for the professional development.</p>
+<ul>
+<li>Lab 50%: for the full stack data app
+<ul>
+<li>Risky/interesting/creative projects will be rewarded</li>
+<li>Focus on quality over quantity, one thing done well rather than trying to apply half of the models discussed in the course.</li>
+<li>Pitch of at most 1 (one) page: what it does and why did you build it</li>
+</ul></li>
+<li>Final Exam 50%: Focused on conceptual understanding:
+<ul>
+<li>There will be no problems to solve by hand.</li>
+<li>Try to be succint and clear</li>
+<li>Think for yourself, zero-tolerance policy for cheating</li>
+</ul></li>
+</ul>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 37%">
+<col style="width: 31%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Course/Lab</th>
+<th>Title</th>
+<th>Keywords</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C1 (09 Dec)</td>
+<td>Data Science in Context</td>
+<td>AI, ML, Uncertainty, The Process</td>
+<td>discussion, use-cases</td>
+</tr>
+<tr class="even">
+<td>C2 (09 Dec)</td>
+<td>Fundamentals of Statistics</td>
+<td>Probability triples, Properties of Estimators</td>
+<td>logistics, admin</td>
+</tr>
+<tr class="odd">
+<td>S1 (10 Dec)</td>
+<td>Set Up the Environment</td>
+<td>Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio</td>
+<td>a good setup is a prerequisite for painless labs</td>
+</tr>
+<tr class="even">
+<td>S2 (10 Dec)</td>
+<td>Tidyverse, warm-up</td>
+<td>ggplot2, quarto, arrow, duckdb</td>
+<td>practice and learn some new packages</td>
+</tr>
+</tbody>
+</table>
+<!-- Data Science Context, in Business, Interdisciplinarity --->
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01_fundamentals/background.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
