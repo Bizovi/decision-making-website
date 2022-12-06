@@ -35,7 +35,7 @@ book:
         - href: 02_causality/background.qmd
           text: "Experiment Design and A/B Testing"
         - href: 02_causality/power.qmd
-          text: "Power Calculations and Hypothesis testing"
+          text: "Advanced Topics in Experiment Design"
         - href: 02_causality/lab.qmd
           text: "Lab: Deep Dive into Hypothesis testing"
 
