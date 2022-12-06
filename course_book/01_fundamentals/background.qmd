@@ -2,9 +2,30 @@
 
 You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
 
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   In the next lecture we will get an insider's perspective of how it works
+%%|   We'll also introduce a few new concepts, like full stack data apps, 
+%%|   But now, we focus on trying to solve the right problem
+
+flowchart TD
+  DM[Decision-Making] --> Domains[Domains] --> U[Uber / Rides] --> Ecom[E-Commerce]
+  DM --> AI[What is AI?] --> Choice[Stats/ML/Analytics]
+  Choice --> Cy[Cybernetics Detour] --> F[Why did you study those?]
+  DM --> BS[on Bullshit] --> Fool[Foolishness] --> Caus[Causal vs Correlational] --> BD[Big Data?]
+
+  Ecom --> BYOP[Bring your own problem]
+  F --> BYOP
+  BD --> BYOP
+```
+
+
+## We live in a VUCA environment
+
 
 ## Data Science in the Wild: applications
-
 
 
 
@@ -29,6 +50,18 @@ Make no mistake, the data science field is fascinating and the applications exci
 - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in "The profession of solving the wrong problem"[^war-wrong-problem] and "How to constrain artificial stupidity" [^war-stupidity].
 
 As a last, shameless plug, I'll reference you to my conference talk [^pragmatic-ai-gcp], which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of "Full Stack Data Apps", which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).
+
+
+For all pragmatic intents and purposes, especially in business, it's about decision-making under uncertainty at scale. The important thing here is DECISIONS, there is no point in building AI and solutions based on complex models if we don't have uncertainty. We have to be able to change our minds in the face of evidence, under uncertainty, by leveraging big amounts of data. (ref: Cassie)
+
+On the other hand - Scale: the reason ML is so powerful, it's because you can take lots of small decisions in an automated way, with a little curation from humans.
+
+What else goes into AI? Of course, it depends on the domain: AI in e-commerce, like Adore Me, where we sell lingerie, will be very different from the problems we try to solve in medicine, social sphere and govt, and of course it has to be data-driven.
+
+So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we're in business.  (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it's not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.
+
+So, this xkcd cartoon explains it very well: the first question is - are you making decisions? If no and are just curious, then we have lots of methods for data exploration and we look into analytics (inspiration!!). (ref: Cassie) If we do have to make decisions, and not many, and they are strategic and important, that means we need some rigorous statistics: if we do it at scale, e.g. us doing demand planning and inventory optimization for thousand and thousands of products, hundred of k of sizes - you cannot do it manually. On the other hand, it is not one or another, not a debate between ML 
+and stats, you need both: recognize when is the appropriate time to use one or another -- so, choose your own adventure.
 
 ## Why did you study all of that?
 
@@ -92,17 +125,6 @@ flowchart TD
 ## Causal vs Correlational Patterns
 
 :::
-
-
-## Case Study: AI at AdoreMe
-
-### Organizational design
-- people and teams
-
-### Product Management
-
-
-### Full-stack Data Apps
 
 
 ## BYOP: Bring your own problem

@@ -85,7 +85,9 @@ After recognizing that there is no silver bullet, my conclusion is that followin
 
 ## Your Unorthodox Guide
 
-Think of me as an industry expert,[^bizovi-img] not an academic pushing you to do homework. Think of the course as a summer school or workshop, rather than required credits and another exam to pass. Here are a few relevant facts about me:
+Think of me as an industry expert,[^bizovi-img] not an academic pushing you to do homework. Think of the course as a summer school or workshop, rather than required credits and another exam to pass. 
+
+I’m a generalist – navigating uncertainty and complexity to improve decision-making at scale with data and domain-driven software. Here are a few relevant facts about me:
 
 [^bizovi-img]: ![See one of my conference talks at BigDataWeek, intended for a mixed tech/business audience: [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)](01_fundamentals/me.jpeg "Reality"){width="90%"}
 
@@ -165,21 +167,3 @@ The final grade shouldn't be a reason why you're in this course, but if you need
 | C2 (09 Dec) | Fundamentals of Statistics | Probability triples, Properties of Estimators    | logistics, admin |
 | S1 (10 Dec) | Set Up the Environment   | Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio | a good setup is a prerequisite for painless labs |
 | S2 (10 Dec) | Tidyverse, warm-up      | ggplot2, quarto, arrow, duckdb | practice and learn some new packages |
-
-
-
-
-<!-- Data Science Context, in Business, Interdisciplinarity --->
-[^pragmatic-ai-gcp]: M. Bizovi - [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)
-[^jordan-ai]: K. Pretz - [Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says 
-[^jordan-revolution]:  M. Jordan - [Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9): The Revolution Hasn’t Happened Yet
-[^cassie-mfml]: C.Kozyrkov - [Making Friends with Machine Learning](https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG)
-[^cassie-ref]: C. Kozyrkov (Chief Decision Scientist @Google) - https://kozyrkov.medium.com/ 
-[^cassie-ai-def]: C. Kozyrkov - [AI is decision-making at scale](https://www.youtube.com/watch?v=bCjMhZZYlP4)
-[^cassie-steps]: C.Kozyrkov - [12 Steps to Applied AI](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3)
-[^pair]: People and AI Research @Google - [Guidebook](https://pair.withgoogle.com/guidebook/)
-[^mit-ai-covid]: W.Heaven - [Hundreds of AI tools have been built to catch covid. None of them helped.](https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/)
-[^war-wrong-problem]:  V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo)
-[^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)
-
-[^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html)

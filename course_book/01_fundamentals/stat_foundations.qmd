@@ -4,6 +4,29 @@ In order to be a successful Data Scientist, one has to "speak the language" of p
 
 > A word of encouragement is that this doesn't have to be boring! We can put "the classics" in context of modern statistics, big data challenges, and use simulation instead of heavy mathematics and proof-based approaches.  
 
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   In the next lecture we will dive into A/B testing and causality,
+%%|   bootstrap, nonparametrics
+
+flowchart TD
+	Motiv[Why again?] --> ProbT[Probability Triple] --> SI[Uncertainty]
+	SI --> MS[Mathematical Statistics] --> GP[Prague Golemn]
+
+	Motiv --> Estim[Estimators] --> Prop[Desired Properties] --> US[Example: US Schools] --> Cond[Conditioning] --> Marg[Marginalisation] --> Ex[Exchangeability]
+
+	Motiv --> DM[Data Mining Process] --> G[Prediction & Geocentrism] --> Sci[Scientific Process]
+
+	Ex --> Dead[Dead Salmon]
+	GP --> Dead
+	Sci --> Dead
+
+	Dead --> Mod[Modern Stats]
+```
+
+
 Therefore, here's a guide on how to refresh the statistical knowledge, in such a way, that statistics becomes fascinating, not boring and frustrating.
 
 - Realize that lots of common statistical tests are particular versions of linear models [^11]. It takes a few hours to go through the theory and the code in the referenced book.
@@ -26,7 +49,7 @@ There are a gazillion books, courses on statistics, which basically do/teach the
 
 The curious case of compositional data analysis
 
-## Statistical Mathematics in a nutshell
+## Mathematical Statistics in a nutshell
 
 
 ## Sources of Uncertainty
@@ -34,6 +57,7 @@ The curious case of compositional data analysis
 
 ## Models are Golemns of Prague
 
+Data + Domain Assumptions + Statistical Assumptions
 
 ## What does a statistician want?
 From their estimators
