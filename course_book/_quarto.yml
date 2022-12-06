@@ -29,7 +29,7 @@ book:
         - href: 01_fundamentals/adoreme.qmd
           text: "Case Study: AI at AdoreMe (e-commerce)" 
         - href: 01_fundamentals/lab_01.qmd
-          text: "Lab: Recap of tidyverse"
+          text: "Lab: Recap of tidyverse and stats"
     - part: "Part II: Elements of Causal Inference"
       chapters:
         - href: 02_causality/background.qmd

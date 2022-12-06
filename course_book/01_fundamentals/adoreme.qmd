@@ -56,6 +56,24 @@ The same idea is in the creative networkers (not information workers) -- it's no
 
 ![Teams at adore me](teams_dsc.png "Teams"){width="90%"}
 
+What kind of roles are out there and what do they do? Why are the generalists valuable?
+- Decision Maker
+- Analyst
+- Domain Expert
+- Stakeholder and Client
+- Statistician (Dsc and other generalists)
+- ML Engineer
+- Data Engineer
+- BI Engineer
+- ML Researcher
+- Decision Scientist
+- Product Manager
+- UX Designer
+- BE/FE Engineer
+- Software/Cloud Architect
+- DevOps
+- Project/Program Manager: execution!
+- C-Level people: strategy!
 
 
 ## Product Management

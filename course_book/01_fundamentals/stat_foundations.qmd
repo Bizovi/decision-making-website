@@ -47,9 +47,47 @@ There are a gazillion books, courses on statistics, which basically do/teach the
 
 ## The probability triple
 
-The curious case of compositional data analysis
+Why? Language of uncertainty! Applications everywhere, the only way we can reason logically under uncertainty (fuzzy logic is out of favor, better study bayes).
+
+Often, probability and math stats are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Prob theory is concerned with the construction of the probability triple (O, F, P), which can get very rigorous and complicated, with measure theory. We define the probability measure, and it matters a lot in which space are we (R^n, simplex, f(R^n) and gauss processes, SP stochastic processes for time series analysis) -- the curious case of compositional data analysis, in which the classical methods have to be tweaked in order to make sense. Explain how we define P on a simple later -- but the main point to remember, that we construct it here. 
+
+Random Variable!
+
+Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those). 
+
+- Random experiment: 
+	- possible outcomes are known apriori and exhaustibly, e.g. coin toss, sales (Continuous)
+	- we don't know which of those will manifest
+	- there is a perceptible regularity, which can be eventually measured and quantified
+	- conditions of the experiment are repeatable (bayes perspective - not necessary)
+- Elementary events {w1, w2}
+- Selection space: complementarity of elementary events
+- Random Events as union of elementary events, but can't do it in any way I want. 
+- Event space: A and its complement(A) has to have a certain consistency, not always possible to have all possible combinations of elementary events -- technical restrictions for continuous R. Why measure theory as a solid foundation, but irrelevant here.
+- Probability measure: assigning a number to an event, between 0, 1; that is, it should represent that perceptible regularity, in frequentist terms - long-run frequency of occurences. n(A) / n -> prob; it also has to respect a minimal set of conditions.
+- (O, F, P) triple
+- Random variable, most interesting ideas: not random, neither a variable, it's a function X(w) -> R, such that it perserves the informational structure of F., i.e. X^-1(r) in F or <= r in R (not any definition of X is valid, can't be arbitrary -- we can come up with a counterexampe -- basically inversable, can recover the right elementary events). It's a quantification: of Events into numbers, essential for all the following machinery of statistics, ML and so on. It is basically the thing which enables us to define the statistical population (some relevant aspect of it to us)! 
+
 
 ## Mathematical Statistics in a nutshell
+
+importance of the data generating process, see what Ernesto said, then the causal process -- all is parameters, known or unknown 
+
+Uses everything probability has to give, but is concerned with inference, estimation, hypothesis testing, prove theorems and probabilistic properties of estimators.
+
+- Collectivity (can be anything, trees in central park, pixels, people, etc, etc) -- i.e stuff in the real world
+- Statistical Population (binding contract)
+- Sample (a data collection process is involved here)
+- Parameter (average tree height, some aspect or characteristic of interest, unknown number/constant (bayes, a distribution), which is at population level) -- of the DGP, to be estimated from our sample.
+- Estimator: t_theta(X) -> theta
+	- Confidence intervals: depend on the distribution of the estimator, since X is rv, t(X) is a random variable too -- and it is the job of statisticians to tell us what is that P(t(X)) and their properties: if biased, consistent, efficient
+- Estimation/a Statistic: theta_hat (a way to summarise and synthetise data)
+
+Draw a diagram between sample and population. 
+
+The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.
+
+One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method.
 
 
 ## Sources of Uncertainty
@@ -64,6 +102,70 @@ From their estimators
 
 ## Case Study: De Moivre on US Schooling
 
+Let's remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()). 
+
+They decided to split up big schools into smaller ones. Can you say if it was a good, bad idea and why did they think that?
+
+Students hypothesis:
+- more attention to students in smaller classrooms
+- private schools, where families are more wealthy
+- geographical location, i.e. small towns and villages
+- motivation of the underdog, from small towns
+- friendships, community and peer competition (easier in smaller schools)
+- self-selection: what kind of students go into small schools -- we assume average IQ is the same, including the distribution. Assume random allocation. 
+- Skewed (even if not, longer tails): meaning, asymmetric distributions. 
+- Finally: variance and standard deviation
+
+About the decision sanity: reality vs data. The conservative decision is to do nothing, as restructuring costs a lot, in money and social changes & consequences, it is risky -- that is, the default action, without seeing any data or evidence, we would do nothing. 
+
+S: A good remark about having a diversity, specializations (professional schools) -- can't have a one-size-fits-it-all policy. But we ignore it, oversimplifying the problem.
+
+All of that is true, but just for 10 minutes, we introduce a (false) dichotomy between small and large schools. The alternative is to split big school -- remember, that outside this box, or bad framing of the problem, there are many many potential interventions (professor education, smaller classrooms, fairer allocation of students, raising up the disadvantaged hood schools). 
+
+The punchline: we have all these factors potentially contributing to the performance. Because of DeMoivre and LLN (mean/sqrt(sd)) -- in a simulation, we notice the following thing: (insert graphs).
+
+> Small schools will dominate both the top and bottom, due to larger variance. This is what it means. 
+
+So, we go back to this idea that statistical models, are golemns, they do exactly what they are told to, and this is dangerous. We have to understand deeply in what contexts and in which ways these little robots fail and give absurd and invalid results without us knowing.
+
+We will go into more detail next week in A/B testing and hypothesis testing, but here we go: once we have the default action and the alternative action, the null hypothesis is (sidenote, we don't care about rote calculation -- R packages does it for us, but we care about experiment design and decisions, try to figure out the causal influences):  in which worlds will I take the default actions (worlds, meaning the values of the unknown parameter of interest, describing the behavior of the populations -- in this case quantifying the impact of school size on SAT scores). The alternative hypothesis, is exactly the opposite, all the other worlds (parameter values) when I will take the alternative action.
+
+So, in this case we will collect data, used to estimate the parameter and its confidence intervels (inference, with the idea of generalizing from the sample to the population). Now, given those confidence intervals, we ask how surprising it is to see the data/estimation, if the null hypothesis was true.
+
+Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components -- as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges. 
+
+## Case Study: Chess example
+I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?
+
+> Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data). 
+
+Causes?
+- Bias: inferring natural ability -- nonsense from IQ research
+- Misoginism
+- Education and lack of encouragement
+- Lack of opportunities, community, support
+- Historical trajectory -- lack of competition
+
+A lot is explained by how many boys and girls start from a given cohort/age. Similar problem, but slightly different -- for any problem of rank top(n).
+
+We will discuss next time a whole range of other pitfalls, including spurious correlation (nicolas cage and drowning), common cause (babies and storks), ommited variables, mediation, selection bias, reverse causality, even including predictors which shouldn't be there. We need a statistical reasoning for all of these potential pitfalls. 
+
+> explore python cli app + scraping + arrow + duckdb, see the trajectories of players and so on (chess.com vs fide). For the trajectories, mention the idea of longitudinal data, survival models, growth models, mixed models -- because of the particularities of DGP and causal process 
+
+> see the difference between ELO vs xbox true skill, how fast it converges to the true ability -- that is a model we can investigate. 
+
+## Case Study: Amazon reviews and ratings
+How do you choose 4.7 (300) vs 4.5 (2000) -- according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?
+
+- we can guide ourselfs with the quality and relevance of reviews
+- is it representative? (also, outside the box)
+- text summary
+
+Q: What is the variance and distribution, it depends, also on our risk appetites (w.r.t.) volume or if is one time (e.g. buy shoes vs coffee shops -- repeated interactions).
+
+Introduce the confusion matrix, which will be discussed at length in ML and hypothesis testing (types of error) -- the point is that sometimes the payoff for correct decison or a mistake is asymmetric. And that matters (fraud vs reco quality) -- so, that is context-dependent. 
+
+> good applications for text mining, statistical tests
 
 ## Data Mining and CRISP-DM variants
 
