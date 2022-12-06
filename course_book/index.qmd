@@ -152,7 +152,7 @@ The final grade shouldn't be a reason why you're in this course, but if you need
     - Risky/interesting/creative projects will be rewarded
     - Focus on quality over quantity, one thing done well rather than trying to apply half of the models discussed in the course.
     - Pitch of at most 1 (one) page: what it does and why did you build it
-- Final Exam 50%: Focused on conceptual understanding. 
+- Final Exam 50%: Focused on conceptual understanding: 
     - There will be no problems to solve by hand.
     - Try to be succint and clear
     - Think for yourself, zero-tolerance policy for cheating
