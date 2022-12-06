@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science - 3&nbsp; Lab: tidyverse and ecosystem of packages</title>
+<title>Pragmatic Data Science - 6&nbsp; Deep Dive into Hypothesis Testing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../02_causality/background.html" rel="next">
-<link href="../01_fundamentals/stat_foundations.html" rel="prev">
+<link href="../references.html" rel="next">
+<link href="../02_causality/power.html" rel="prev">
 <link href="../01_fundamentals/logo.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -62,9 +62,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -76,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: tidyverse and ecosystem of packages</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Deep Dive into Hypothesis Testing</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -157,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse</span></a>
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse</span></a>
   </div>
 </li>
       </ul>
@@ -182,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
+  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
   </div>
 </li>
       </ul>
@@ -196,25 +193,15 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </nav>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#reproducibility-crisis" id="toc-reproducibility-crisis" class="nav-link active" data-scroll-target="#reproducibility-crisis"><span class="toc-section-number">3.1</span>  Reproducibility crisis</a></li>
-  <li><a href="#setup-and-a-discussion-of-the-tech" id="toc-setup-and-a-discussion-of-the-tech" class="nav-link" data-scroll-target="#setup-and-a-discussion-of-the-tech"><span class="toc-section-number">3.2</span>  Setup and a discussion of the tech</a></li>
-  <li><a href="#pipelines-dags-everywhere" id="toc-pipelines-dags-everywhere" class="nav-link" data-scroll-target="#pipelines-dags-everywhere"><span class="toc-section-number">3.3</span>  Pipelines: DAGs everywhere</a></li>
-  <li><a href="#practice-a-reproducible-analysis" id="toc-practice-a-reproducible-analysis" class="nav-link" data-scroll-target="#practice-a-reproducible-analysis"><span class="toc-section-number">3.4</span>  Practice: A reproducible analysis</a></li>
-  <li><a href="#practice-our-first-data-apps" id="toc-practice-our-first-data-apps" class="nav-link" data-scroll-target="#practice-our-first-data-apps"><span class="toc-section-number">3.5</span>  Practice: Our first data apps</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/01_fundamentals/lab_01.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: tidyverse and ecosystem of packages</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Deep Dive into Hypothesis Testing</span></h1>
 </div>
 
 
@@ -229,53 +216,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="reproducibility-crisis" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="reproducibility-crisis"><span class="header-section-number">3.1</span> Reproducibility crisis</h2>
-<p>Insert excel meme</p>
-</section>
-<section id="setup-and-a-discussion-of-the-tech" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="setup-and-a-discussion-of-the-tech"><span class="header-section-number">3.2</span> Setup and a discussion of the tech</h2>
-<ul>
-<li>RMarkdown and Quarto</li>
-<li>tidyverse and ggplot</li>
-<li>arrow, duckdb and organizing the files</li>
-<li>renv and reproducibility</li>
-</ul>
-<div class="cell" data-fig-width="6">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  A[qmd] --&gt; B(Knitr)
-  A[qmd] --&gt; C(Jupyter)
-  B(Knitr) --&gt; D[md]
-  C(Jupyter) --&gt; D[md]
-  D[md] --&gt; E(pandoc)
-  E(pandoc) --&gt; F(HTML)
-  E(pandoc) --&gt; G(PDF)
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: How Quarto orchestrates rendering of documents: start with a qmd file, use the Knitr or Jupyter engine to perform the computations and convert it to an md file, then use Pandoc to convert to various file formats including HTML, PDF, and Word.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="pipelines-dags-everywhere" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="pipelines-dags-everywhere"><span class="header-section-number">3.3</span> Pipelines: DAGs everywhere</h2>
-</section>
-<section id="practice-a-reproducible-analysis" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="practice-a-reproducible-analysis"><span class="header-section-number">3.4</span> Practice: A reproducible analysis</h2>
-</section>
-<section id="practice-our-first-data-apps" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="practice-our-first-data-apps"><span class="header-section-number">3.5</span> Practice: Our first data apps</h2>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -411,15 +353,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/stat_foundations.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></span>
+      <a href="../02_causality/power.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Power Calculations and Hypothesis testing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../02_causality/background.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

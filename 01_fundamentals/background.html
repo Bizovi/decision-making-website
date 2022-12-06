@@ -62,6 +62,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -144,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -154,14 +157,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab1: Recap of tidyverse</span></a>
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Part II: Experiment Design</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Part II: Elements of Causal Inference</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -169,12 +172,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab_02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A/B testing</span></a>
+  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Power Calculations and Hypothesis testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
   </div>
 </li>
       </ul>
@@ -189,7 +197,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-science-in-the-wild-applications" id="toc-data-science-in-the-wild-applications" class="nav-link active" data-scroll-target="#data-science-in-the-wild-applications"><span class="toc-section-number">1.1</span>  Data Science in the Wild: applications</a></li>
+  <li><a href="#what-is-ai" id="toc-what-is-ai" class="nav-link" data-scroll-target="#what-is-ai"><span class="toc-section-number">1.2</span>  What is AI?</a></li>
+  <li><a href="#why-did-you-study-all-of-that" id="toc-why-did-you-study-all-of-that" class="nav-link" data-scroll-target="#why-did-you-study-all-of-that"><span class="toc-section-number">1.3</span>  Why did you study all of that?</a></li>
+  <li><a href="#analytics-ml-or-statistics" id="toc-analytics-ml-or-statistics" class="nav-link" data-scroll-target="#analytics-ml-or-statistics"><span class="toc-section-number">1.4</span>  Analytics, ML or Statistics?</a></li>
+  <li><a href="#cybernetics-is-what-we-call-ai" id="toc-cybernetics-is-what-we-call-ai" class="nav-link" data-scroll-target="#cybernetics-is-what-we-call-ai"><span class="toc-section-number">1.5</span>  Cybernetics is what we call AI</a></li>
+  <li><a href="#bullshit-in-the-age-of-big-data" id="toc-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#bullshit-in-the-age-of-big-data"><span class="toc-section-number">1.6</span>  Bullshit in the age of Big Data</a></li>
+  <li><a href="#case-study-ai-at-adoreme" id="toc-case-study-ai-at-adoreme" class="nav-link" data-scroll-target="#case-study-ai-at-adoreme"><span class="toc-section-number">1.7</span>  Case Study: AI at AdoreMe</a>
+  <ul class="collapse">
+  <li><a href="#organizational-design" id="toc-organizational-design" class="nav-link" data-scroll-target="#organizational-design"><span class="toc-section-number">1.7.1</span>  Organizational design</a></li>
+  <li><a href="#product-management" id="toc-product-management" class="nav-link" data-scroll-target="#product-management"><span class="toc-section-number">1.7.2</span>  Product Management</a></li>
+  <li><a href="#full-stack-data-apps" id="toc-full-stack-data-apps" class="nav-link" data-scroll-target="#full-stack-data-apps"><span class="toc-section-number">1.7.3</span>  Full-stack Data Apps</a></li>
+  </ul></li>
+  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem" class="nav-link" data-scroll-target="#byop-bring-your-own-problem"><span class="toc-section-number">1.8</span>  BYOP: Bring your own problem</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/01_fundamentals/background.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
@@ -212,6 +238,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>You might’ve heard that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?</p>
+<section id="data-science-in-the-wild-applications" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="data-science-in-the-wild-applications"><span class="header-section-number">1.1</span> Data Science in the Wild: applications</h2>
+</section>
+<section id="what-is-ai" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="what-is-ai"><span class="header-section-number">1.2</span> What is AI?</h2>
 <p>How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?</p>
 <blockquote class="blockquote page-columns page-full">
 <div class="page-columns page-full"><p>First and foremost, AI is about <strong>Decision-Making, at Scale, under Uncertainty</strong> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan’s brilliant article <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which tell the history of “AI” and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e.&nbsp;the revolution hasn’t happened yet) <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;C. Kozyrkov - <a href="https://www.youtube.com/watch?v=bCjMhZZYlP4">AI is decision-making at scale</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;K. Pretz - <a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says</p></li><li id="fn3"><p><sup>3</sup>&nbsp;M. Jordan - <a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a>: The Revolution Hasn’t Happened Yet</p></li></div></div>
@@ -226,9 +257,103 @@ ul.task-list li input[type="checkbox"] {
 <div class="page-columns page-full"><p>Pay close attention to the process of developing data-driven products <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI research group).</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;C.Kozyrkov - <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps to Applied AI</a></p></li><li id="fn7"><p><sup>7</sup>&nbsp;People and AI Research <span class="citation" data-cites="Google">(<a href="../references.html#ref-Google" role="doc-biblioref"><strong>Google?</strong></a>)</span> - <a href="https://pair.withgoogle.com/guidebook/">Guidebook</a></p></li></div></div>
 <div class="page-columns page-full"><p>Make no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can’t do – the power, but also the limitations: - Just take a look at how many “AI” tools have been built to catch covid, and none helped <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and “How to constrain artificial stupidity” <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;W.Heaven - <a href="https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/">Hundreds of AI tools have been built to catch covid. None of them helped.</a></p></li><li id="fn9"><p><sup>9</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=kYMfE9u-lMo">The profession of solving the wrong problem</a></p></li><li id="fn10"><p><sup>10</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">How to Constrain Artificial Stupidity</a></p></li></div></div>
 <div class="page-columns page-full"><p>As a last, shameless plug, I’ll reference you to my conference talk <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of “Full Stack Data Apps”, which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).</p><div class="no-row-height column-margin column-container"><li id="fn11"><p><sup>11</sup>&nbsp;M. Bizovi - <a href="https://www.youtube.com/watch?v=02NPR_nDaxQ">Pragmatic AI in Google Cloud Platform</a></p></li></div></div>
+</section>
+<section id="why-did-you-study-all-of-that" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="why-did-you-study-all-of-that"><span class="header-section-number">1.3</span> Why did you study all of that?</h2>
+<div class="cell" data-fig-width="9">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
+  LA[Linear Algebra] --&gt; OR[Operations Research]
+  MA[Mathematical Analysis] --&gt; OR
+  MA --&gt; SD[Systems Dynamics]
+  %% CS[CS Algorithms] --&gt; OR
+  
+  PT[Probability] --&gt; MS[Statistics] --&gt; EC[Econometrics]
+  EC --&gt; Caus[/Causal Inference\]
+  EC --&gt; TS[Time Series]
+
+ %% subgraph 1
+  Caus --- DM[/Data Mining\] --- ML[/Machine Learning\] 
+  ML --- Caus
+ %% end
+
+  OR --&gt; ML
+  MS --&gt; ML
+  MA --&gt; PT
+  SD --&gt; Caus
+
+  Caus --- Econ[[Economics]]  
+  Econ --- GT[Game Theory]
+  Econ --- DT[Decision Theory]
+
+  style Caus fill:#f7f5bc
+  style ML fill:#f7f5bc
+  style DM fill:#f7f5bc
+
+  DM --- FSDA[/Full-Stack Apps\]
+  FSDA --- DB[Databases/SQL]
+  FSDA --- OOP[OOP]
+  Econ --- TS
+
+  style FSDA fill:#f7f5bc
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: Don’t let the sheer diversity and breadth of topics intimidate you, as we’ll go step by step through each aspect, explaining the why and how. In one way or another, there is little you haven’t seen here, however the way we tie it all together IS challenging.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="analytics-ml-or-statistics" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="analytics-ml-or-statistics"><span class="header-section-number">1.4</span> Analytics, ML or Statistics?</h2>
+</section>
+<section id="cybernetics-is-what-we-call-ai" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="cybernetics-is-what-we-call-ai"><span class="header-section-number">1.5</span> Cybernetics is what we call AI</h2>
+</section>
+<section id="bullshit-in-the-age-of-big-data" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="bullshit-in-the-age-of-big-data"><span class="header-section-number">1.6</span> Bullshit in the age of Big Data</h2>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Causal vs Correlational Patterns
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="case-study-ai-at-adoreme" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="case-study-ai-at-adoreme"><span class="header-section-number">1.7</span> Case Study: AI at AdoreMe</h2>
+<section id="organizational-design" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="organizational-design"><span class="header-section-number">1.7.1</span> Organizational design</h3>
+<ul>
+<li>people and teams</li>
+</ul>
+</section>
+<section id="product-management" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="product-management"><span class="header-section-number">1.7.2</span> Product Management</h3>
+</section>
+<section id="full-stack-data-apps" class="level3" data-number="1.7.3">
+<h3 data-number="1.7.3" class="anchored" data-anchor-id="full-stack-data-apps"><span class="header-section-number">1.7.3</span> Full-stack Data Apps</h3>
+</section>
+</section>
+<section id="byop-bring-your-own-problem" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">1.8</span> BYOP: Bring your own problem</h2>
+<p>Discussion formulation</p>
 <!-- Data Science Context, in Business, Interdisciplinarity --->
 
 
+</section>
 
 
 </main> <!-- /main -->

@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -154,14 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab1: Recap of tidyverse</span></a>
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Part II: Experiment Design</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Part II: Elements of Causal Inference</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -169,12 +169,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background</span></a>
+  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab_02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A/B testing</span></a>
+  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Power Calculations and Hypothesis testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
   </div>
 </li>
       </ul>
@@ -189,7 +194,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link active" data-scroll-target="#the-probability-triple"><span class="toc-section-number">2.1</span>  The probability triple</a></li>
+  <li><a href="#statistical-mathematics-in-a-nutshell" id="toc-statistical-mathematics-in-a-nutshell" class="nav-link" data-scroll-target="#statistical-mathematics-in-a-nutshell"><span class="toc-section-number">2.2</span>  Statistical Mathematics in a nutshell</a></li>
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty"><span class="toc-section-number">2.3</span>  Sources of Uncertainty</a></li>
+  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague" class="nav-link" data-scroll-target="#models-are-golemns-of-prague"><span class="toc-section-number">2.4</span>  Models are Golemns of Prague</a></li>
+  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want" class="nav-link" data-scroll-target="#what-does-a-statistician-want"><span class="toc-section-number">2.5</span>  What does a statistician want?</a></li>
+  <li><a href="#case-study-de-moivre-on-us-schooling" id="toc-case-study-de-moivre-on-us-schooling" class="nav-link" data-scroll-target="#case-study-de-moivre-on-us-schooling"><span class="toc-section-number">2.6</span>  Case Study: De Moivre on US Schooling</a></li>
+  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants" class="nav-link" data-scroll-target="#data-mining-and-crisp-dm-variants"><span class="toc-section-number">2.7</span>  Data Mining and CRISP-DM variants</a></li>
+  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science" class="nav-link" data-scroll-target="#statistical-process-and-science"><span class="toc-section-number">2.8</span>  Statistical Process and Science</a></li>
+  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem" class="nav-link" data-scroll-target="#byop-bring-your-own-problem"><span class="toc-section-number">2.9</span>  BYOP: Bring your own problem</a></li>
+  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe" class="nav-link" data-scroll-target="#ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">2.10</span>  ML is a geocentric model of the universe</a></li>
+  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale" class="nav-link" data-scroll-target="#dead-salmon-a-warning-tale"><span class="toc-section-number">2.11</span>  Dead salmon: a warning tale</a></li>
+  <li><a href="#conditioning-marginalisation-and-exchangeability" id="toc-conditioning-marginalisation-and-exchangeability" class="nav-link" data-scroll-target="#conditioning-marginalisation-and-exchangeability"><span class="toc-section-number">2.12</span>  Conditioning, marginalisation and Exchangeability</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/01_fundamentals/stat_foundations.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
@@ -229,9 +251,49 @@ ul.task-list li input[type="checkbox"] {
 <li>Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which is a course in collaboration with the RStudio team.</li>
 </ul>
 <div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Doogue - <a href="https://steverxd.github.io/Stat_tests/">Common statistical tests are linear models</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Speegle, Clair - <a href="https://mathstat.slu.edu/~speegle/_book/preface.html">Probability, Statistics, and Data: A fresh approach using R</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Poldrack - <a href="https://statsthinking21.github.io/statsthinking21-core-site/">Statistical Thinking for the 21st Century</a> has two companion books, one with R and another in Python</p></li><li id="fn4"><p><sup>4</sup>&nbsp;Bryan - <a href="https://stat545.com/">STAT 545</a> It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.</p></li></div><div class="page-columns page-full"><p>There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications: - <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Cetinkaya-Runde goes through all the fundamentals in a clear, concrete, extensive way, with code! - <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> has an interesting approach, focused on the challenges of Psychology - <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> goes through the whole process, with R, with additional topics, normally not present in a statistics course - <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Cetinkaya-Runde, Hardin - <a href="https://openintro-ims.netlify.app/index.html">Introduction to Modern Statistics</a></p></li><li id="fn6"><p><sup>6</sup>&nbsp;Crump - <a href="https://www.crumplab.com/statistics/">Answering questions with data</a> – introductory statistics for Psychology Students</p></li><li id="fn7"><p><sup>7</sup>&nbsp;Thulin - <a href="http://www.modernstatisticswithr.com/">Modern Statistics with R</a></p></li><li id="fn8"><p><sup>8</sup>&nbsp;Holmes, Huber - <a href="https://www.huber.embl.de/msmb/index.html">Modern Statistics for Modern Biology</a></p></li></div></div>
+<section id="the-probability-triple" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-probability-triple"><span class="header-section-number">2.1</span> The probability triple</h2>
+<p>The curious case of compositional data analysis</p>
+</section>
+<section id="statistical-mathematics-in-a-nutshell" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="statistical-mathematics-in-a-nutshell"><span class="header-section-number">2.2</span> Statistical Mathematics in a nutshell</h2>
+</section>
+<section id="sources-of-uncertainty" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">2.3</span> Sources of Uncertainty</h2>
+</section>
+<section id="models-are-golemns-of-prague" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">2.4</span> Models are Golemns of Prague</h2>
+</section>
+<section id="what-does-a-statistician-want" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">2.5</span> What does a statistician want?</h2>
+<p>From their estimators</p>
+</section>
+<section id="case-study-de-moivre-on-us-schooling" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="case-study-de-moivre-on-us-schooling"><span class="header-section-number">2.6</span> Case Study: De Moivre on US Schooling</h2>
+</section>
+<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">2.7</span> Data Mining and CRISP-DM variants</h2>
+</section>
+<section id="statistical-process-and-science" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">2.8</span> Statistical Process and Science</h2>
+</section>
+<section id="byop-bring-your-own-problem" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">2.9</span> BYOP: Bring your own problem</h2>
+<p>Discussion over the how/process</p>
+</section>
+<section id="ml-is-a-geocentric-model-of-the-universe" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">2.10</span> ML is a geocentric model of the universe</h2>
+</section>
+<section id="dead-salmon-a-warning-tale" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">2.11</span> Dead salmon: a warning tale</h2>
+<p>Forward reference to power and multiple testing</p>
+</section>
+<section id="conditioning-marginalisation-and-exchangeability" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="conditioning-marginalisation-and-exchangeability"><span class="header-section-number">2.12</span> Conditioning, marginalisation and Exchangeability</h2>
 <!-- Statistical Foundations: Reference, Revies --->
 
 
+</section>
 
 
 </main> <!-- /main -->
@@ -371,12 +433,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../01_fundamentals/background.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../01_fundamentals/lab_01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab1: Recap of tidyverse</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

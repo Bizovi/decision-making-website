@@ -42,38 +42,283 @@
     "text": "Schedule and Admin\nThe final grade shouldn’t be a reason why you’re in this course, but if you need more structure, here’s the evaluation criteria below. Attendence is not mandatory, but highly beneficial for the professional development.\n\nLab 50%: for the full stack data app\n\nRisky/interesting/creative projects will be rewarded\nFocus on quality over quantity, one thing done well rather than trying to apply half of the models discussed in the course.\nPitch of at most 1 (one) page: what it does and why did you build it\n\nFinal Exam 50%: Focused on conceptual understanding:\n\nThere will be no problems to solve by hand.\nTry to be succint and clear\nThink for yourself, zero-tolerance policy for cheating\n\n\n\n\n\n\n\n\n\n\n\nCourse/Lab\nTitle\nKeywords\nComments\n\n\n\n\nC1 (09 Dec)\nData Science in Context\nAI, ML, Uncertainty, The Process\ndiscussion, use-cases\n\n\nC2 (09 Dec)\nFundamentals of Statistics\nProbability triples, Properties of Estimators\nlogistics, admin\n\n\nS1 (10 Dec)\nSet Up the Environment\nCommand Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio\na good setup is a prerequisite for painless labs\n\n\nS2 (10 Dec)\nTidyverse, warm-up\nggplot2, quarto, arrow, duckdb\npractice and learn some new packages"
   },
   {
-    "objectID": "01_fundamentals/background.html",
-    "href": "01_fundamentals/background.html",
+    "objectID": "01_fundamentals/background.html#data-science-in-the-wild-applications",
+    "href": "01_fundamentals/background.html#data-science-in-the-wild-applications",
     "title": "1  Data Science in Business Context",
-    "section": "",
-    "text": "You might’ve heard that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?\nHow does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?\n\nFirst and foremost, AI is about Decision-Making, at Scale, under Uncertainty 1. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan’s brilliant article 2, which tell the history of “AI” and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn’t happened yet) 3.1 C. Kozyrkov - AI is decision-making at scale2 K. Pretz - Stop Calling Everything AI, Machine-Learning Pioneer Says3 M. Jordan - Artificial Intelligence: The Revolution Hasn’t Happened Yet\n\nWe have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. Despite that, we can clearly define what it does (see above), and how (depending on the perspective taken). For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:\n\nAnalytics and Data Mining - with the main goal of formulating better research questions (i.e. inspiration), find interesting and relevant stuff in massive datasets\nMachine Learning - learning from data, finding invariants/patterns, which generalize beyond the sample and training data, i.e. going from experience to expertise in an automated way\nStatistics, and especially causal inference - for making decisions with high stakes, and having greater confidence, rigor in the inferences and conclusions drawn\n\nOne has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation 4 by Cassie Kozyrkov, so that you get a good idea of how “AI” fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium 5.4 C.Kozyrkov - Making Friends with Machine Learning5 C. Kozyrkov (Chief Decision Scientist (Google?)) - https://kozyrkov.medium.com/\nPay close attention to the process of developing data-driven products 6 and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint 7 for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI research group).6 C.Kozyrkov - 12 Steps to Applied AI7 People and AI Research (Google?) - Guidebook\nMake no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can’t do – the power, but also the limitations: - Just take a look at how many “AI” tools have been built to catch covid, and none helped 8 - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”9 and “How to constrain artificial stupidity” 10.8 W.Heaven - Hundreds of AI tools have been built to catch covid. None of them helped.9 V. Warmerdam - The profession of solving the wrong problem10 V. Warmerdam - How to Constrain Artificial Stupidity\nAs a last, shameless plug, I’ll reference you to my conference talk 11, which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of “Full Stack Data Apps”, which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).11 M. Bizovi - Pragmatic AI in Google Cloud Platform"
+    "section": "1.1 Data Science in the Wild: applications",
+    "text": "1.1 Data Science in the Wild: applications"
   },
   {
-    "objectID": "01_fundamentals/stat_foundations.html",
-    "href": "01_fundamentals/stat_foundations.html",
+    "objectID": "01_fundamentals/background.html#what-is-ai",
+    "href": "01_fundamentals/background.html#what-is-ai",
+    "title": "1  Data Science in Business Context",
+    "section": "1.2 What is AI?",
+    "text": "1.2 What is AI?\nHow does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?\n\nFirst and foremost, AI is about Decision-Making, at Scale, under Uncertainty 1. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan’s brilliant article 2, which tell the history of “AI” and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn’t happened yet) 3.1 C. Kozyrkov - AI is decision-making at scale2 K. Pretz - Stop Calling Everything AI, Machine-Learning Pioneer Says3 M. Jordan - Artificial Intelligence: The Revolution Hasn’t Happened Yet\n\nWe have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. Despite that, we can clearly define what it does (see above), and how (depending on the perspective taken). For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:\n\nAnalytics and Data Mining - with the main goal of formulating better research questions (i.e. inspiration), find interesting and relevant stuff in massive datasets\nMachine Learning - learning from data, finding invariants/patterns, which generalize beyond the sample and training data, i.e. going from experience to expertise in an automated way\nStatistics, and especially causal inference - for making decisions with high stakes, and having greater confidence, rigor in the inferences and conclusions drawn\n\nOne has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation 4 by Cassie Kozyrkov, so that you get a good idea of how “AI” fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium 5.4 C.Kozyrkov - Making Friends with Machine Learning5 C. Kozyrkov (Chief Decision Scientist (Google?)) - https://kozyrkov.medium.com/\nPay close attention to the process of developing data-driven products 6 and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint 7 for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI research group).6 C.Kozyrkov - 12 Steps to Applied AI7 People and AI Research (Google?) - Guidebook\nMake no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can’t do – the power, but also the limitations: - Just take a look at how many “AI” tools have been built to catch covid, and none helped 8 - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”9 and “How to constrain artificial stupidity” 10.8 W.Heaven - Hundreds of AI tools have been built to catch covid. None of them helped.9 V. Warmerdam - The profession of solving the wrong problem10 V. Warmerdam - How to Constrain Artificial Stupidity\nAs a last, shameless plug, I’ll reference you to my conference talk 11, which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of “Full Stack Data Apps”, which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).11 M. Bizovi - Pragmatic AI in Google Cloud Platform"
+  },
+  {
+    "objectID": "01_fundamentals/background.html#why-did-you-study-all-of-that",
+    "href": "01_fundamentals/background.html#why-did-you-study-all-of-that",
+    "title": "1  Data Science in Business Context",
+    "section": "1.3 Why did you study all of that?",
+    "text": "1.3 Why did you study all of that?\n\n\n\n\n\nflowchart TD\n  LA[Linear Algebra] --> OR[Operations Research]\n  MA[Mathematical Analysis] --> OR\n  MA --> SD[Systems Dynamics]\n  %% CS[CS Algorithms] --> OR\n  \n  PT[Probability] --> MS[Statistics] --> EC[Econometrics]\n  EC --> Caus[/Causal Inference\\]\n  EC --> TS[Time Series]\n\n %% subgraph 1\n  Caus --- DM[/Data Mining\\] --- ML[/Machine Learning\\] \n  ML --- Caus\n %% end\n\n  OR --> ML\n  MS --> ML\n  MA --> PT\n  SD --> Caus\n\n  Caus --- Econ[[Economics]]  \n  Econ --- GT[Game Theory]\n  Econ --- DT[Decision Theory]\n\n  style Caus fill:#f7f5bc\n  style ML fill:#f7f5bc\n  style DM fill:#f7f5bc\n\n  DM --- FSDA[/Full-Stack Apps\\]\n  FSDA --- DB[Databases/SQL]\n  FSDA --- OOP[OOP]\n  Econ --- TS\n\n  style FSDA fill:#f7f5bc\n\n\n\n\n\nFigure 1.1: Don’t let the sheer diversity and breadth of topics intimidate you, as we’ll go step by step through each aspect, explaining the why and how. In one way or another, there is little you haven’t seen here, however the way we tie it all together IS challenging."
+  },
+  {
+    "objectID": "01_fundamentals/background.html#analytics-ml-or-statistics",
+    "href": "01_fundamentals/background.html#analytics-ml-or-statistics",
+    "title": "1  Data Science in Business Context",
+    "section": "1.4 Analytics, ML or Statistics?",
+    "text": "1.4 Analytics, ML or Statistics?"
+  },
+  {
+    "objectID": "01_fundamentals/background.html#cybernetics-is-what-we-call-ai",
+    "href": "01_fundamentals/background.html#cybernetics-is-what-we-call-ai",
+    "title": "1  Data Science in Business Context",
+    "section": "1.5 Cybernetics is what we call AI",
+    "text": "1.5 Cybernetics is what we call AI"
+  },
+  {
+    "objectID": "01_fundamentals/background.html#bullshit-in-the-age-of-big-data",
+    "href": "01_fundamentals/background.html#bullshit-in-the-age-of-big-data",
+    "title": "1  Data Science in Business Context",
+    "section": "1.6 Bullshit in the age of Big Data",
+    "text": "1.6 Bullshit in the age of Big Data\n\n\n\n\n\n\nCausal vs Correlational Patterns"
+  },
+  {
+    "objectID": "01_fundamentals/background.html#case-study-ai-at-adoreme",
+    "href": "01_fundamentals/background.html#case-study-ai-at-adoreme",
+    "title": "1  Data Science in Business Context",
+    "section": "1.7 Case Study: AI at AdoreMe",
+    "text": "1.7 Case Study: AI at AdoreMe\n\n1.7.1 Organizational design\n\npeople and teams\n\n\n\n1.7.2 Product Management\n\n\n1.7.3 Full-stack Data Apps"
+  },
+  {
+    "objectID": "01_fundamentals/background.html#byop-bring-your-own-problem",
+    "href": "01_fundamentals/background.html#byop-bring-your-own-problem",
+    "title": "1  Data Science in Business Context",
+    "section": "1.8 BYOP: Bring your own problem",
+    "text": "1.8 BYOP: Bring your own problem\nDiscussion formulation"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#the-probability-triple",
+    "href": "01_fundamentals/stat_foundations.html#the-probability-triple",
     "title": "2  Statistical Foundations",
-    "section": "",
-    "text": "In order to be a successful Data Scientist, one has to “speak the language” of probability and statistics; it is the basis on which we can build towards more realistic and avanced models, with the purpose of improving decision-making under uncertainty. This foundation is a prerequisite for all 3 perspectives: analytics/mining, machine learning and causal inference.\n\nA word of encouragement is that this doesn’t have to be boring! We can put “the classics” in context of modern statistics, big data challenges, and use simulation instead of heavy mathematics and proof-based approaches.\n\nTherefore, here’s a guide on how to refresh the statistical knowledge, in such a way, that statistics becomes fascinating, not boring and frustrating.\n\nRealize that lots of common statistical tests are particular versions of linear models 1. It takes a few hours to go through the theory and the code in the referenced book.\nUnderstand the following concepts:\n\nRandom Experiments, Contructing the probability triple, Random variables and CDFs\nCollectivity, Statistical Population, Samples and Sampling (as a process)\nParameter, Estimator, Estimation: properties of estimators (i.e. what does a statistician want)\nHere’s the approach taken by 2, which integrates data analysis and simulation in learning of statistics.\n\nUpgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is 3, which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.\nBe comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is 4, which is a course in collaboration with the RStudio team.\n\n1 Doogue - Common statistical tests are linear models2 Speegle, Clair - Probability, Statistics, and Data: A fresh approach using R3 Poldrack - Statistical Thinking for the 21st Century has two companion books, one with R and another in Python4 Bryan - STAT 545 It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications: - 5 Cetinkaya-Runde goes through all the fundamentals in a clear, concrete, extensive way, with code! - 6 has an interesting approach, focused on the challenges of Psychology - 7 goes through the whole process, with R, with additional topics, normally not present in a statistics course - 8 is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data5 Cetinkaya-Runde, Hardin - Introduction to Modern Statistics6 Crump - Answering questions with data – introductory statistics for Psychology Students7 Thulin - Modern Statistics with R8 Holmes, Huber - Modern Statistics for Modern Biology"
+    "section": "2.1 The probability triple",
+    "text": "2.1 The probability triple\nThe curious case of compositional data analysis"
   },
   {
-    "objectID": "01_fundamentals/lab_01.html",
-    "href": "01_fundamentals/lab_01.html",
+    "objectID": "01_fundamentals/stat_foundations.html#statistical-mathematics-in-a-nutshell",
+    "href": "01_fundamentals/stat_foundations.html#statistical-mathematics-in-a-nutshell",
+    "title": "2  Statistical Foundations",
+    "section": "2.2 Statistical Mathematics in a nutshell",
+    "text": "2.2 Statistical Mathematics in a nutshell"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#sources-of-uncertainty",
+    "href": "01_fundamentals/stat_foundations.html#sources-of-uncertainty",
+    "title": "2  Statistical Foundations",
+    "section": "2.3 Sources of Uncertainty",
+    "text": "2.3 Sources of Uncertainty"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#models-are-golemns-of-prague",
+    "href": "01_fundamentals/stat_foundations.html#models-are-golemns-of-prague",
+    "title": "2  Statistical Foundations",
+    "section": "2.4 Models are Golemns of Prague",
+    "text": "2.4 Models are Golemns of Prague"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#what-does-a-statistician-want",
+    "href": "01_fundamentals/stat_foundations.html#what-does-a-statistician-want",
+    "title": "2  Statistical Foundations",
+    "section": "2.5 What does a statistician want?",
+    "text": "2.5 What does a statistician want?\nFrom their estimators"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#case-study-de-moivre-on-us-schooling",
+    "href": "01_fundamentals/stat_foundations.html#case-study-de-moivre-on-us-schooling",
+    "title": "2  Statistical Foundations",
+    "section": "2.6 Case Study: De Moivre on US Schooling",
+    "text": "2.6 Case Study: De Moivre on US Schooling"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#data-mining-and-crisp-dm-variants",
+    "href": "01_fundamentals/stat_foundations.html#data-mining-and-crisp-dm-variants",
+    "title": "2  Statistical Foundations",
+    "section": "2.7 Data Mining and CRISP-DM variants",
+    "text": "2.7 Data Mining and CRISP-DM variants"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#statistical-process-and-science",
+    "href": "01_fundamentals/stat_foundations.html#statistical-process-and-science",
+    "title": "2  Statistical Foundations",
+    "section": "2.8 Statistical Process and Science",
+    "text": "2.8 Statistical Process and Science"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#byop-bring-your-own-problem",
+    "href": "01_fundamentals/stat_foundations.html#byop-bring-your-own-problem",
+    "title": "2  Statistical Foundations",
+    "section": "2.9 BYOP: Bring your own problem",
+    "text": "2.9 BYOP: Bring your own problem\nDiscussion over the how/process"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#ml-is-a-geocentric-model-of-the-universe",
+    "href": "01_fundamentals/stat_foundations.html#ml-is-a-geocentric-model-of-the-universe",
+    "title": "2  Statistical Foundations",
+    "section": "2.10 ML is a geocentric model of the universe",
+    "text": "2.10 ML is a geocentric model of the universe"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#dead-salmon-a-warning-tale",
+    "href": "01_fundamentals/stat_foundations.html#dead-salmon-a-warning-tale",
+    "title": "2  Statistical Foundations",
+    "section": "2.11 Dead salmon: a warning tale",
+    "text": "2.11 Dead salmon: a warning tale\nForward reference to power and multiple testing"
+  },
+  {
+    "objectID": "01_fundamentals/stat_foundations.html#conditioning-marginalisation-and-exchangeability",
+    "href": "01_fundamentals/stat_foundations.html#conditioning-marginalisation-and-exchangeability",
+    "title": "2  Statistical Foundations",
+    "section": "2.12 Conditioning, marginalisation and Exchangeability",
+    "text": "2.12 Conditioning, marginalisation and Exchangeability"
+  },
+  {
+    "objectID": "01_fundamentals/lab_01.html#reproducibility-crisis",
+    "href": "01_fundamentals/lab_01.html#reproducibility-crisis",
     "title": "3  Lab: tidyverse and ecosystem of packages",
-    "section": "",
-    "text": "RMarkdown and Quarto\ntidyverse and ggplot\narrow, duckdb and organizing the files\nrenv and reproducibility\n\n\n\n\n\n\nflowchart LR\n  A[qmd] --> B(Knitr)\n  A[qmd] --> C(Jupyter)\n  B(Knitr) --> D[md]\n  C(Jupyter) --> D[md]\n  D[md] --> E(pandoc)\n  E(pandoc) --> F(HTML)\n  E(pandoc) --> G(PDF)\n\n\n\n\n\nFigure 3.1: How Quarto orchestrates rendering of documents: start with a qmd file, use the Knitr or Jupyter engine to perform the computations and convert it to an md file, then use Pandoc to convert to various file formats including HTML, PDF, and Word."
+    "section": "3.1 Reproducibility crisis",
+    "text": "3.1 Reproducibility crisis\nInsert excel meme"
   },
   {
-    "objectID": "background.html",
-    "href": "background.html",
+    "objectID": "01_fundamentals/lab_01.html#setup-and-a-discussion-of-the-tech",
+    "href": "01_fundamentals/lab_01.html#setup-and-a-discussion-of-the-tech",
+    "title": "3  Lab: tidyverse and ecosystem of packages",
+    "section": "3.2 Setup and a discussion of the tech",
+    "text": "3.2 Setup and a discussion of the tech\n\nRMarkdown and Quarto\ntidyverse and ggplot\narrow, duckdb and organizing the files\nrenv and reproducibility\n\n\n\n\n\n\nflowchart LR\n  A[qmd] --> B(Knitr)\n  A[qmd] --> C(Jupyter)\n  B(Knitr) --> D[md]\n  C(Jupyter) --> D[md]\n  D[md] --> E(pandoc)\n  E(pandoc) --> F(HTML)\n  E(pandoc) --> G(PDF)\n\n\n\n\n\nFigure 3.1: How Quarto orchestrates rendering of documents: start with a qmd file, use the Knitr or Jupyter engine to perform the computations and convert it to an md file, then use Pandoc to convert to various file formats including HTML, PDF, and Word."
+  },
+  {
+    "objectID": "01_fundamentals/lab_01.html#pipelines-dags-everywhere",
+    "href": "01_fundamentals/lab_01.html#pipelines-dags-everywhere",
+    "title": "3  Lab: tidyverse and ecosystem of packages",
+    "section": "3.3 Pipelines: DAGs everywhere",
+    "text": "3.3 Pipelines: DAGs everywhere"
+  },
+  {
+    "objectID": "01_fundamentals/lab_01.html#practice-a-reproducible-analysis",
+    "href": "01_fundamentals/lab_01.html#practice-a-reproducible-analysis",
+    "title": "3  Lab: tidyverse and ecosystem of packages",
+    "section": "3.4 Practice: A reproducible analysis",
+    "text": "3.4 Practice: A reproducible analysis"
+  },
+  {
+    "objectID": "01_fundamentals/lab_01.html#practice-our-first-data-apps",
+    "href": "01_fundamentals/lab_01.html#practice-our-first-data-apps",
+    "title": "3  Lab: tidyverse and ecosystem of packages",
+    "section": "3.5 Practice: Our first data apps",
+    "text": "3.5 Practice: Our first data apps"
+  },
+  {
+    "objectID": "02_causality/background.html#ab-testing-scheme",
+    "href": "02_causality/background.html#ab-testing-scheme",
     "title": "4  Background",
-    "section": "",
-    "text": "You might’ve heard that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?\nHow does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?\n\nFirst and foremost, AI is about Decision-Making, at Scale, under Uncertainty 1. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan’s brilliant article 2, which tell the history of “AI” and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn’t happened yet) 3.1 C. Kozyrkov - AI is decision-making at scale2 K. Pretz - Stop Calling Everything AI, Machine-Learning Pioneer Says3 M. Jordan - Artificial Intelligence: The Revolution Hasn’t Happened Yet\n\nWe have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. Despite that, we can clearly define what it does (see above), and how (depending on the perspective taken). For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:\n\nAnalytics and Data Mining - with the main goal of formulating better research questions (i.e. inspiration), find interesting and relevant stuff in massive datasets\nMachine Learning - learning from data, finding invariants/patterns, which generalize beyond the sample and training data, i.e. going from experience to expertise in an automated way\nStatistics, and especially causal inference - for making decisions with high stakes, and having greater confidence, rigor in the inferences and conclusions drawn\n\nOne has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation 4 by Cassie Kozyrkov, so that you get a good idea of how “AI” fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium 5.4 C.Kozyrkov - Making Friends with Machine Learning5 C. Kozyrkov (Chief Decision Scientist (Google?)) - https://kozyrkov.medium.com/\nPay close attention to the process of developing data-driven products 6 and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint 7 for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI research group).6 C.Kozyrkov - 12 Steps to Applied AI7 People and AI Research (Google?) - Guidebook\nMake no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can’t do – the power, but also the limitations: - Just take a look at how many “AI” tools have been built to catch covid, and none helped 8 - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”9 and “How to constrain artificial stupidity” 10.8 W.Heaven - Hundreds of AI tools have been built to catch covid. None of them helped.9 V. Warmerdam - The profession of solving the wrong problem10 V. Warmerdam - How to Constrain Artificial Stupidity\nAs a last, shameless plug, I’ll reference you to my conference talk 11, which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of “Full Stack Data Apps”, which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).11 M. Bizovi - Pragmatic AI in Google Cloud Platform"
+    "section": "4.1 A/B Testing Scheme",
+    "text": "4.1 A/B Testing Scheme"
   },
   {
-    "objectID": "lab_02.html",
-    "href": "lab_02.html",
-    "title": "5  Lab: tidyverse and ecosystem of packages",
-    "section": "",
-    "text": "RMarkdown and Quarto\ntidyverse and ggplot\narrow, duckdb and organizing the files\nrenv and reproducibility"
+    "objectID": "02_causality/background.html#error-types",
+    "href": "02_causality/background.html#error-types",
+    "title": "4  Background",
+    "section": "4.2 Error types",
+    "text": "4.2 Error types"
+  },
+  {
+    "objectID": "02_causality/background.html#metrics",
+    "href": "02_causality/background.html#metrics",
+    "title": "4  Background",
+    "section": "4.3 Metrics",
+    "text": "4.3 Metrics"
+  },
+  {
+    "objectID": "02_causality/background.html#pitfalls",
+    "href": "02_causality/background.html#pitfalls",
+    "title": "4  Background",
+    "section": "4.4 Pitfalls",
+    "text": "4.4 Pitfalls"
+  },
+  {
+    "objectID": "02_causality/background.html#most-tests-are-linear-models",
+    "href": "02_causality/background.html#most-tests-are-linear-models",
+    "title": "4  Background",
+    "section": "4.5 Most tests are linear models",
+    "text": "4.5 Most tests are linear models"
+  },
+  {
+    "objectID": "02_causality/background.html#dead-salmon",
+    "href": "02_causality/background.html#dead-salmon",
+    "title": "4  Background",
+    "section": "4.6 Dead Salmon",
+    "text": "4.6 Dead Salmon"
+  },
+  {
+    "objectID": "02_causality/background.html#bootstrap",
+    "href": "02_causality/background.html#bootstrap",
+    "title": "4  Background",
+    "section": "4.7 Bootstrap",
+    "text": "4.7 Bootstrap"
+  },
+  {
+    "objectID": "02_causality/background.html#ecdf-not-your-grandmas-histogram",
+    "href": "02_causality/background.html#ecdf-not-your-grandmas-histogram",
+    "title": "4  Background",
+    "section": "4.8 ECDF: Not your grandma’s histogram",
+    "text": "4.8 ECDF: Not your grandma’s histogram"
+  },
+  {
+    "objectID": "02_causality/background.html#using-graphs-to-reason-about-this-mess",
+    "href": "02_causality/background.html#using-graphs-to-reason-about-this-mess",
+    "title": "4  Background",
+    "section": "4.9 Using graphs to reason about this mess",
+    "text": "4.9 Using graphs to reason about this mess"
+  },
+  {
+    "objectID": "02_causality/power.html#nonparametrics",
+    "href": "02_causality/power.html#nonparametrics",
+    "title": "5  Advanced topics in Hypothesis Testing",
+    "section": "5.1 Nonparametrics",
+    "text": "5.1 Nonparametrics"
+  },
+  {
+    "objectID": "02_causality/power.html#bayesian-ab-testing",
+    "href": "02_causality/power.html#bayesian-ab-testing",
+    "title": "5  Advanced topics in Hypothesis Testing",
+    "section": "5.2 Bayesian A/B testing",
+    "text": "5.2 Bayesian A/B testing"
+  },
+  {
+    "objectID": "02_causality/power.html#power-calculations",
+    "href": "02_causality/power.html#power-calculations",
+    "title": "5  Advanced topics in Hypothesis Testing",
+    "section": "5.3 Power Calculations",
+    "text": "5.3 Power Calculations"
+  },
+  {
+    "objectID": "02_causality/power.html#multiple-testing-adjustments",
+    "href": "02_causality/power.html#multiple-testing-adjustments",
+    "title": "5  Advanced topics in Hypothesis Testing",
+    "section": "5.4 Multiple testing adjustments",
+    "text": "5.4 Multiple testing adjustments"
+  },
+  {
+    "objectID": "02_causality/power.html#multi-armed-bandits-detour",
+    "href": "02_causality/power.html#multi-armed-bandits-detour",
+    "title": "5  Advanced topics in Hypothesis Testing",
+    "section": "5.5 Multi-armed bandits detour",
+    "text": "5.5 Multi-armed bandits detour"
+  },
+  {
+    "objectID": "02_causality/power.html#case-study-bayesian-covid-testing",
+    "href": "02_causality/power.html#case-study-bayesian-covid-testing",
+    "title": "5  Advanced topics in Hypothesis Testing",
+    "section": "5.6 Case Study: Bayesian Covid testing",
+    "text": "5.6 Case Study: Bayesian Covid testing"
   }
 ]
