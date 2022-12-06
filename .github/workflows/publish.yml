@@ -26,8 +26,7 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-          working-directory: course_book
-
+          
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
