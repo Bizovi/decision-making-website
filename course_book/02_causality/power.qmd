@@ -1,0 +1,20 @@
+# Advanced topics in Hypothesis Testing
+
+
+
+## Nonparametrics
+
+
+## Bayesian A/B testing
+
+
+## Power Calculations
+
+
+## Multiple testing adjustments
+
+
+## Multi-armed bandits detour
+
+
+## Case Study: Bayesian Covid testing

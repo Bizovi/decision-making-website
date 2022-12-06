@@ -23,16 +23,20 @@ book:
     - part: "Part I: The fundamenals"
       chapters:
         - href: 01_fundamentals/background.qmd
-          text: "Background"
+          text: "Data Science in Business Context"
         - href: 01_fundamentals/stat_foundations.qmd
           text: "Statistical foundations"
         - href: 01_fundamentals/lab_01.qmd
-          text: "Lab1: Recap of tidyverse"
-    - part: "Part II: Experiment Design"
+          text: "Lab: Recap of tidyverse"
+    - part: "Part II: Elements of Causal Inference"
       chapters:
-        - background.qmd
-        - href: lab_02.qmd
-          text: A/B testing
+        - href: 02_causality/background.qmd
+          text: "Experiment Design and A/B Testing"
+        - href: 02_causality/power.qmd
+          text: "Power Calculations and Hypothesis testing"
+        - href: 02_causality/lab.qmd
+          text: "Lab: Deep Dive into Hypothesis testing"
+
     # - part: "Part III: Statistical Learning"
     #   chapters:
     #     - background.qmd

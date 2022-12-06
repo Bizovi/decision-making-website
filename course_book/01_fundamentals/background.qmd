@@ -2,6 +2,14 @@
 
 You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
 
+
+## Data Science in the Wild: applications
+
+
+
+
+## What is AI?
+
 How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist's life look like?
 
 > First and foremost, AI is about **Decision-Making, at Scale, under Uncertainty** [^cassie-ai-def]. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tell the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
@@ -21,6 +29,86 @@ Make no mistake, the data science field is fascinating and the applications exci
 - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in "The profession of solving the wrong problem"[^war-wrong-problem] and "How to constrain artificial stupidity" [^war-stupidity].
 
 As a last, shameless plug, I'll reference you to my conference talk [^pragmatic-ai-gcp], which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of "Full Stack Data Apps", which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).
+
+## Why did you study all of that?
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   Don't let the sheer diversity and breadth of topics intimidate you, 
+%%|   as we'll go step by step through each aspect, explaining the why and how.
+%%|   In one way or another, there is little you haven't seen here, however the way
+%%|   we tie it all together IS challenging.
+
+flowchart TD
+  LA[Linear Algebra] --> OR[Operations Research]
+  MA[Mathematical Analysis] --> OR
+  MA --> SD[Systems Dynamics]
+  %% CS[CS Algorithms] --> OR
+  
+  PT[Probability] --> MS[Statistics] --> EC[Econometrics]
+  EC --> Caus[/Causal Inference\]
+  EC --> TS[Time Series]
+
+ %% subgraph 1
+  Caus --- DM[/Data Mining\] --- ML[/Machine Learning\] 
+  ML --- Caus
+ %% end
+
+  OR --> ML
+  MS --> ML
+  MA --> PT
+  SD --> Caus
+
+  Caus --- Econ[[Economics]]  
+  Econ --- GT[Game Theory]
+  Econ --- DT[Decision Theory]
+
+  style Caus fill:#f7f5bc
+  style ML fill:#f7f5bc
+  style DM fill:#f7f5bc
+
+  DM --- FSDA[/Full-Stack Apps\]
+  FSDA --- DB[Databases/SQL]
+  FSDA --- OOP[OOP]
+  Econ --- TS
+
+  style FSDA fill:#f7f5bc
+```
+
+
+## Analytics, ML or Statistics?
+
+
+
+
+## Cybernetics is what we call AI
+
+
+## Bullshit in the age of Big Data
+
+::: {.callout-tip}
+## Causal vs Correlational Patterns
+
+:::
+
+
+## Case Study: AI at AdoreMe
+
+### Organizational design
+- people and teams
+
+### Product Management
+
+
+### Full-stack Data Apps
+
+
+## BYOP: Bring your own problem
+Discussion formulation
+
+
 
 <!-- Data Science Context, in Business, Interdisciplinarity --->
 [^pragmatic-ai-gcp]: M. Bizovi - [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)

@@ -1,6 +1,0 @@
-# Lab: tidyverse and ecosystem of packages
-
-- RMarkdown and Quarto
-- tidyverse and ggplot
-- arrow, duckdb and organizing the files
-- renv and reproducibility

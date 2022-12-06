@@ -122,7 +122,7 @@ The icing on the cake is miscellaneous topics dear to me and usually not covered
 
 ```{mermaid}
 %%| label: fig-mermaid
-%%| fig-width: 6
+%%| fig-width: 9
 %%| fig-cap: |
 %%|   Don't let the sheer diversity and breadth of topics intimidate you, 
 %%|   as we'll go step by step through each aspect, explaining the why and how.

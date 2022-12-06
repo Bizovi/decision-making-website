@@ -1,5 +1,11 @@
 # Lab: tidyverse and ecosystem of packages
 
+## Reproducibility crisis
+Insert excel meme
+
+
+## Setup and a discussion of the tech
+
 - RMarkdown and Quarto
 - tidyverse and ggplot
 - arrow, duckdb and organizing the files
@@ -23,3 +29,11 @@ flowchart LR
   E(pandoc) --> F(HTML)
   E(pandoc) --> G(PDF)
 ```
+
+
+## Pipelines: DAGs everywhere
+
+## Practice: A reproducible analysis
+
+
+## Practice: Our first data apps

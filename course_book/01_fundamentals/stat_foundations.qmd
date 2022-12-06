@@ -21,6 +21,47 @@ There are a gazillion books, courses on statistics, which basically do/teach the
 - [^36] goes through the whole process, with R, with additional topics, normally not present in a statistics course 
 - [^39] is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data
 
+
+## The probability triple
+
+The curious case of compositional data analysis
+
+## Statistical Mathematics in a nutshell
+
+
+## Sources of Uncertainty
+
+
+## Models are Golemns of Prague
+
+
+## What does a statistician want?
+From their estimators
+
+## Case Study: De Moivre on US Schooling
+
+
+## Data Mining and CRISP-DM variants
+
+
+## Statistical Process and Science
+
+
+## BYOP: Bring your own problem
+Discussion over the how/process
+
+## ML is a geocentric model of the universe
+
+
+## Dead salmon: a warning tale
+Forward reference to power and multiple testing
+
+
+## Conditioning, marginalisation and Exchangeability
+
+
+
+
 <!-- Statistical Foundations: Reference, Revies --->
 [^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
 [^12]: Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) has two companion books, one with R and another in Python
