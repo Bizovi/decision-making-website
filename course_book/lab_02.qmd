@@ -1,9 +1,5 @@
 # Lab: tidyverse and ecosystem of packages
 
-```{r}
-mtcars |> head(10)
-```
-
 - RMarkdown and Quarto
 - tidyverse and ggplot
 - arrow, duckdb and organizing the files
