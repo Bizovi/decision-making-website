@@ -33,7 +33,7 @@ Over the past 3 years, you've probably been tortured by (or enjoyed) linear alge
 
 ::: {.callout-tip}
 ## Why study all of this?
- We live in a volatile, uncertain, complex and ambiguous world,[^vuca] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions.
+ We live in a volatile, uncertain, complex and ambiguous world,[^vuca] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more complete explanation, read [here](01_fundamentals/background.qmd#why-did-you-study-all-of-that).
 
  I want you to take away ONE thing, that is AI and Data Science in Businesses boils down to: 
 **Decision-Making under Uncertainty at Scale**

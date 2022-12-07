@@ -69,6 +69,10 @@ Three additional critical concepts are: joint probability, which is basically th
 - Random variable, most interesting ideas: not random, neither a variable, it's a function X(w) -> R, such that it perserves the informational structure of F., i.e. X^-1(r) in F or <= r in R (not any definition of X is valid, can't be arbitrary -- we can come up with a counterexampe -- basically inversable, can recover the right elementary events). It's a quantification: of Events into numbers, essential for all the following machinery of statistics, ML and so on. It is basically the thing which enables us to define the statistical population (some relevant aspect of it to us)! 
 
 
+![Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable](img/random_variable.png "Random Variable"){width="90%"}
+
+
+
 ## Mathematical Statistics in a nutshell
 
 importance of the data generating process, see what Ernesto said, then the causal process -- all is parameters, known or unknown 

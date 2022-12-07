@@ -48,7 +48,7 @@ You might've noticed that every lecture starts with a brief motivation, and then
 %%|   but I will try to do my best to communicate that spirit in written form
 
 flowchart TD
-  DM[Decision-Making] --> Domains[Domains] --> U[Uber / Rides] --> Ecom[E-Commerce]
+  DM[Decision-Making] --> Domains[Domains] -- case studies --> U[Uber / Rides] --> Ecom[E-Commerce]
   DM --> AI[What is AI?] --> Choice[Stats/ML/Analytics]
   Choice --> Cy[Cybernetics Detour] --> F[Why did you study those?]
   DM --> BS[on Bullshit] --> Fool[Foolishness] --> Caus[Causal vs Correlational] --> BD[Big Data?]
@@ -56,6 +56,9 @@ flowchart TD
   Ecom --> BYOP[Bring your own problem]
   F --> BYOP
   BD --> BYOP
+
+  style U fill:#f7f5bc
+  style Ecom fill:#f7f5bc
 ```
 
 We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor's degree. Next, we discuss what can go wrong while drawing conclusions from data -- culminating in a discussion of a problem of choice you're passionate about.
@@ -100,37 +103,60 @@ I would like to add a few more examples, from an insider and practitioner's pers
 - **Recommender systems** for music, videos, books, products, news in social media, services, platforms, and e-commerces like facebook, instagram, tiktok, youtube, spotify, amazon, emag. You can find recommendations in surprising places, like google maps.
 - **Programmatic Advertisement**: finding best placement for ads on various platforms, right now dominated by meta and google
 
+:::{.callout-tip}
+## Check out the Case Studies for a Deeper Understanding
+
+We will explore some challenges and applications from this list in a series of case studies and labs. The idea is to improve our ability to identify opportunities and formulate problems from the point of view of an organisation, such that we can match those with the methods, models and algorithms discussed in the course. 
+
+I'll have to introduce a lot of new concepts when the language we developed so far will turn out to be insufficient to talk about and understand what's happening inside these firms. Thus, each case study is an opportunity to play around with a novel idea. [^skip-to-cases]
+
+- [In the first deep-dive](bolt.qmd), we will look at Uber and Bolt, with publicly available information, trying to figure out what do their data scientists do. 
+- Then, we will look at the [lingerie e-commerce](adoreme.qmd) where I work at, AdoreMe and a different set of problems we're facing.
+:::
+
+[^skip-to-cases]: If you have a pretty good idea about what is AI, Analytics, ML, Deep Learning, Big Data, Causal Inference and when to use one approach or another, feel free to skip the history and terminology and go straight to the case studies.
 
 
-## What is AI? WIP
 
 
-What do all of this have in common? People have to make good decisions for UX and business outcomes.
-
-This is an interdisciplinary field, at the intersection of mathematics and statistics, computer science and software engineering, and domain knowledge.
-This course is specifically about products/problems in businesses, especially in tech.
-
-What does this buzzword of data science mean?
+## What is AI, Data Science, and ML? 
 
 
-Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). We already gave two examples -- one in e-commerce, and second as pandemic-response. We have to keep in mind that what we do is very domain-dependent/specific (we call it domain-driven).
-
+It's undeniable that there is a lot of excitement when it comes to AI, ML, and data science -- to the point of calling it the sexiest job of 21st century. These are fascinating, interdisciplinary fields that help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry. 
 
 People talk a lot about Big Data, the social impact of algorithms on various platforms, e.g. yt, fb, social media; and there is lots of confusion what does it exactly does (ML, AI, DSc, DL) -- so we will define all those terms
+
+
+How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist's life look like?
+
+> First and foremost, AI is about **Decision-Making under Uncertainty at Scale** [^cassie-ai-def]. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tell the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
+
+For all pragmatic intents and purposes, especially in business, it's about decision-making under uncertainty at scale. The important thing here is DECISIONS, there is no point in building AI and solutions based on complex models if we don't have uncertainty. We have to be able to change our minds in the face of evidence, under uncertainty, by leveraging big amounts of data. (ref: Cassie)
+
+We have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. You will often see a Venn diagram where data science sits at the intersection of mathematics,statistics, computer science, software engineering, and domain knowledge. Despite that, we can clearly define **what** it does (see above), and **how** (depending on the perspective taken). 
 
 In my opinion, all of this has one thing in common: decision-making unde uncertainty at scale. But you will find different definitions on the web. It's important to mention everything you have studied before, goes into this umbrella term (by itself it doesn't mean much), a set of tools, practices, techniques for better decision-making. at scale, it means that there are lots of decisions, and it isn't humanly possible to do it manully -- there is a need for automation and digitalisation, and this is a direction in which man
 y industries go, even if traditionally they have been paper/manual, including accounting, legal. 
 
 
-Q: did you have time series, data analysis, econometrics, statistics. Yes, all of them 
-Somehow, when I graduated, I got the idea that it's about data analysis, to find something interesting in data, to make a good prediction. Here I will try you to un-teach you that, mentioning that it is just the first step in this kind of problems (the exploratory, detective work, the pattern mining).
+Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). We already gave two examples -- one in e-commerce, and second as pandemic-response. We have to keep in mind that what we do is very domain-dependent/specific (we call it domain-driven).
+
+What else goes into AI? Of course, it depends on the domain: AI in e-commerce, like Adore Me, where we sell lingerie, will be very different from the problems we try to solve in medicine, social sphere and govt, and of course it has to be data-driven.
+
 
 Ultimately, why would I build a system which predicts demand for products in a d2c ecommerce, like emag, amazon? 
 Why would I try to find out the factors which contribute to a successful advertisement (efficient). 
 A (Student): to allocate resources to the stuff which generates profit and not spread around and get nothing in the end, only costs over the target, efficiency
 A (Stud): information as a competitive advantage, anticipating/predicting so that we can plan and prepare.
 
+
+
 When we talk about the uncertainty, it's important to recognize its sources: one coming from the fact of incomplete information, that we always work with samples in one way or another (e.g. even if at a certain point in time, we might have real-time data, as everything evolves in time). We want to say something intelligent about the population. Also, there is ambiguity, as objectives are not always mathematically clear. Everything is in flux and change, especially when talking about the future, making a good prediction is one of the most difficult things (ref: seeing clearly and scout mindset).
+
+
+On the other hand - Scale: the reason ML is so powerful, it's because you can take lots of small decisions in an automated way, with a little curation from humans.
+
+
 
 E.g. who would predict the pandemic and all its implications on the supply chain. There is just an irreducible, fundamental uncertainty (difference between noise/fluctuation and black swan events). But there are others, which we can quantify and reduce it by conditioning on data and our hypothesis and model of the world, by stat inferences, at least we can try to quantify how uncertain are we. Even the current state, we don't know for sure where we stand. So, we still have to make decisions, and those have to have a level of **robustness** / resilience to shocks, in the face of uncertainty (even antifragility, but that is so hard), 
 
@@ -140,18 +166,43 @@ However, when we talk about human behavior, we should resist the temptation and 
 
 This means, that by using data, we build models and algorithms, domain knowledge, which try to simplify the complex reality, to capture various aspects which are essential and interesting for us. e.g. pandemics -- decisions at the level of country - state - country - town: what is a good one? For that, I have to set objectives. Even right now, what is the real situation? We need to make an inference, a guess. It goes witout saying about the scale of it -- it's global, if we take into account people's mobility and movement!
 
-So, we can collect data, train models, apply algorithms in order to make inferences about some relevant and interesting quantities, such that we can make an evidence-based, efficient decision which gets us closer to our objective. 
+So, we can collect data, train models, apply algorithms in order to make inferences about some relevant and interesting quantities, such that we can make an evidence-based, efficient decision which gets us closer to our objective.  
+
+So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we're in business.  (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it's not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.
 
 
-How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist's life look like?
 
-> First and foremost, AI is about **Decision-Making, at Scale, under Uncertainty** [^cassie-ai-def]. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tell the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
+### Cybernetics is what we call AI
 
-We have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. Despite that, we can clearly define **what** it does (see above), and **how** (depending on the perspective taken). For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:
+What's going on here? What we call now AI (weak AI), is an evolution of cybernetics and pattern recognition. There are two schools of thought: 
+
+- immitative intelligence: try to do same things as humans, GAI research, at the intersection of cognitive science - it is fascinating, also needs philosophy, fascinating
+- symbolic: that which died in 60s in the first AI winter
+- weak AI: decision-making, at scale, more specialized.  Think in systems, feedback loops -- take a real phenomena and formalize, simplify it to emphasize essential aspects of that phenomena 
+
+> The science of general regularities of information processing and control in animal, machine and human (socitey)
+
+General regularities, meaning true across fields (econ, soc, physics, bio, chem). Control -- basically to reach the objectives, take an action which stirs the systems on a desired trajectory, and info processing is pattern recoginition, how can you model it, infer, integrate data and say something interesting about that phenomena. We're more on a society side, as we talk about human behavior, less about engineering, medicine, biology, ecology and climate science.
+
+Again, it is a conglomeration of fields which went a bit out of fashion and favor: Game theory, Decision theory, general systems' theory, agent-based modeling, systems' dynamics, complexity and chaos, evolutionary algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practive -- so we kind of settled on a more general tool, like a hammer, which is pattern recognition (ml, dl, causality, optimization). 
+
+So, if you want to be a data analyst, business analyst, ml engineer, data scientist, data engineer, statistician, product manager in tech, somehow, the cybernetics is a way of thinking (in systems), but we mostly use the tools outlined before. Also, no one can know it all well: so one of the objective of the course, is that you're passionate about ANY of this stuff or Not, to understand what those people do -- it is harder and harder which don't heavily leverage data for decision-making
+
+
+## Analytics, ML or Statistics?
+
+For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:
 
 * Analytics and Data Mining - with the main goal of formulating better research questions (i.e. **inspiration**), find interesting and relevant stuff in massive datasets
 * Machine Learning - learning from data, finding invariants/patterns, which generalize beyond the sample and training data, i.e. going from experience to expertise in an automated way
 * Statistics, and especially causal inference - for making decisions with high stakes, and having greater confidence, rigor in the inferences and conclusions drawn
+
+
+![Choose your own adventure](img/ds-adventure.png "Analysis"){width="90%"}
+
+So,  xkcd cartoon explains it very well: the first question is - are you making decisionsthis? If no and are just curious, then we have lots of methods for data exploration and we look into analytics (inspiration!!). (ref: Cassie) If we do have to make decisions, and not many, and they are strategic and important, that means we need some rigorous statistics: if we do it at scale, e.g. us doing demand planning and inventory optimization for thousand and thousands of products, hundred of k of sizes - you cannot do it manually. On the other hand, it is not one or another, not a debate between ML 
+and stats, you need both: recognize when is the appropriate time to use one or another -- so, choose your own adventure.
+
 
 One has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation [^cassie-mfml] by Cassie Kozyrkov, so that you get a good idea of how "AI" fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium [^cassie-ref].
 
@@ -161,47 +212,53 @@ Make no mistake, the data science field is fascinating and the applications exci
 - Just take a look at how many "AI" tools have been built to catch covid, and none helped [^mit-ai-covid]
 - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in "The profession of solving the wrong problem"[^war-wrong-problem] and "How to constrain artificial stupidity" [^war-stupidity].
 
-As a last, shameless plug, I'll reference you to my conference talk [^pragmatic-ai-gcp], which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of "Full Stack Data Apps", which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).
+![Analyst's workflow](img/analyst-workflow.png "Analysis"){width="90%"}
 
+![ML workflow](img/ml-workflow.png "Analysis"){width="90%"}
 
-For all pragmatic intents and purposes, especially in business, it's about decision-making under uncertainty at scale. The important thing here is DECISIONS, there is no point in building AI and solutions based on complex models if we don't have uncertainty. We have to be able to change our minds in the face of evidence, under uncertainty, by leveraging big amounts of data. (ref: Cassie)
+The idea is to get an intuition when it is a good idea to use statistics, when a more powerful tool like ML is needed (but which is more dangerous in overfitting / backfiring) and what does Analytics means (you will or did have some subjects like BI, Data Analytics). What does analytics mean?
 
-On the other hand - Scale: the reason ML is so powerful, it's because you can take lots of small decisions in an automated way, with a little curation from humans.
+The point is to find inspiration and formulate hypotheses, find something interesting and eventually useful. So, you use data, to formulate hypothesis and ask better questions. Then in the decision-making processs, these can be communicated to statisticians and decision-makers, so that they have a clearer directions and promising candidates. This inspiration can be anything from exploratory data analysis, visualization, even to unsupervised ML methods, like dim red, clustering, etc, that is, data mining, a way to automate analytics, such that it finds patterns not readily visible from simple explorations and correlations. 
 
-What else goes into AI? Of course, it depends on the domain: AI in e-commerce, like Adore Me, where we sell lingerie, will be very different from the problems we try to solve in medicine, social sphere and govt, and of course it has to be data-driven.
+This doesn't mean that what we found (a difference between 2 groups of clients.). It doesn't mean we found the causal process which makes some clients more profitable than others. 
 
-So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we're in business.  (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it's not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.
+The same machinery which makes us intelligent and flexible, makes us prone to bullshit and self-deception, self-destructive behavior. Same with overfitting and drawing wrong inferences. We can't say anything yet about causality, but it is a tremendously important role, so there will be always a place for a good analyst in a firm. 
 
-So, this xkcd cartoon explains it very well: the first question is - are you making decisions? If no and are just curious, then we have lots of methods for data exploration and we look into analytics (inspiration!!). (ref: Cassie) If we do have to make decisions, and not many, and they are strategic and important, that means we need some rigorous statistics: if we do it at scale, e.g. us doing demand planning and inventory optimization for thousand and thousands of products, hundred of k of sizes - you cannot do it manually. On the other hand, it is not one or another, not a debate between ML 
-and stats, you need both: recognize when is the appropriate time to use one or another -- so, choose your own adventure.
+In statistics, first and foremost, we care to take decisions in a safer way, with more confidence (in a very specific sense, that the relationship, the found process is causal, i.e. is true outside or sample, that is, it generalizes) and less self deception, those are important, high-stake decisions. 
+This is why we cannot do the mining and statistics on the same set of data. We will get next to the idea of splitting your damn data, such taht they are not contaminated by all the mining. This is why we have a process for experiment design and validating models, interpreting the parameters. If that stat model passes a rigorous critique, it has greater chance of finding a real/causal pattern. 
+
+At the firm level, the kind of decisions that are high-stakes, are strategic, e.g. pricing policies, entering markets, etc. Those are not low-level decisions, distribution channels mix, advertisement allocation spend, whether to deploy a new recommender system.
+
+In contrast, in ML we have lower-cost of mistake decisions, and there are a lot of tiny decisions. Of course, we need lots of data and a clear objective to optimize for. 
+
+I consider it a success if at the end of the course, when you get the problem, you can juggle between these 3 perspectives (stat, ml, analytics) and can figure out in each phase of the project, where do you stand, in what bucket. ML and Data Mining is powerful, but not appropriate everywhere, so, you have to know when not to use it, or when you don't need the stats and just playing around. 
+
+Q: did you have time series, data analysis, econometrics, statistics. Yes, all of them 
+Somehow, when I graduated, I got the idea that it's about data analysis, to find something interesting in data, to make a good prediction. Here I will try you to un-teach you that, mentioning that it is just the first step in this kind of problems (the exploratory, detective work, the pattern mining).
+
+Why ML, since we put so much accent onto scientific rigor and trying to infer the causal processes? Sometimes -- you don't have a theory, e.g. in recommender systems, just too complicated. Then ML is a way to go from experience (data) to expertise (program/recipe) in an automated way, eg. which makes predictions: how do you do that, with an algorithm and certain model classes (e.g. trees, regressions).
 
 ## Why did you study all of that?
 
-Why did we study matan, linear algebra, probability and statistics, econometrics, OR, lots of economics. It was very frustrating for me, because it wasn't clear how they fit together, what is the common thread, and more importantly, what part of the theory and particular concepts would be helpful in solving this kind of problems we discussed, and which one are more of general culture/understanding. What works well in practice and what not so. Which of prerequisites do you need and why. Let's draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI/DSc and ML. We mentioned form the very beginning that it is an interdisciplinary field. Without a particular order, we have:
+Why did we have to go through all those excruciating months doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics? 
 
-- linear algebra: is a language of data, vast majority of algo can be reduced to operations on matrices, it is not a coincidence that is almost the only thing we have to take these models and implement them in code, on a computer (computational perspective). Ultimately, no matter of data type: image, video, text, voice, structured, panel -- all can be represented as multidimensional arrays or tensors if you wish
-- mathematical analysis: is about change 
-- probability and statistics: language of uncertainty, the only instrument we can say something intelligent about how confident are we
-- econometrics: try to separate the signal for the noise, to make inferences about the causal processes in economic decisions and phenomena -- conclusions and decisions.   
-- time series analysis
-- operations research: it's about optimization with constraints, the problem is that often, we start from a IP/QP problem -- that is easy, but it's hard to reduce a messy real world problem at a large scale to it, esp. with uncertainty 
-- economics: optimization with constraints, we care more about the business economics, it's very different from theoretical ideas in macroeconomic stats or ISLM/ utility. Marketing, management, decision-science. A remark about marketing (skeptical before, but it's very mathy and rigorous, look at any journal, in terms of econometrics, ml models in there,), combined with behavioral economics, psychology, it's truly impressive. I.e. right now it's a modern and quantitative field. Very similar story for management. So, if you hold the opinion that MK/MMT is a fluff field, you can bs your way through it, in this context of tech firms, it's very automated, intelligent and data-driven. Moreover, think about behavioral economics: thinking fast and slow -- when we make decisions, we like to think of ourselfs as objective, but we have lots of biases, blind spots which prevent us to see the reality clearly. We often find patterns and regularities which are just noise, they're not causal patterns. So, this kind of domain knowledge from economics, esp. in managerial/business/behavioral, about human behavior. 
+It was very frustrating for me, because it wasn't clear how they fit together, what is the common thread, and more importantly, what part of the theory and particular concepts would be helpful in solving the kind of problems we discussed, and which ones are designed to enhance our academic understanding.
 
-And data science is an umbrella, borrowing from them all.
-Why ML, since we put so much accent onto scientific rigor and trying to infer the causal processes? Sometimes -- you don't have a theory, e.g. in recommender systems, just too complicated. Then ML is a way to go from experience (data) to expertise (program/recipe) in an automated way, eg. which makes predictions: how do you do that, with an algorithm and certain model classes (e.g. trees, regressions). 
+::: {.callout-tip}
+## Sounds good -- doesn't work?
 
-A word of encouragement: none of those courses were useless. How can we take parts from each of those which are relevant in ML/DSc, so that we have more tools to solve problems of the complexity we encounter.
+An important question is what works well in practice and why. On the other hand, what is intellectually fascinating, but not at all straightforward to apply. What is a minimal or most powerful set of the prerequisites that you need? 
 
-
+Let's draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned form the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects -- the inspirations and tools are quite carefully picked. 
+:::
 
 ```{mermaid}
 %%| label: fig-mermaid
 %%| fig-width: 9
 %%| fig-cap: |
-%%|   Don't let the sheer diversity and breadth of topics intimidate you, 
-%%|   as we'll go step by step through each aspect, explaining the why and how.
-%%|   In one way or another, there is little you haven't seen here, however the way
-%%|   we tie it all together IS challenging.
+%%|   Think of this as a stuctural organization of the fields and courses
+%%|   you studied before. Some are more useful in analytics, some in ML
+%%|   and some in making causal inferences, that is, based on data + theory.
 
 flowchart TD
   LA[Linear Algebra] --> OR[Operations Research]
@@ -240,30 +297,38 @@ flowchart TD
 ```
 
 
-## Analytics, ML or Statistics?
+- **Linear Algebra** is a language of `data`. The vast majority of models and training algorithms can be reduced to operations on matrices. Therefore, it is not a coincidence that is almost the only tool we have, in order to take these models and implement them in code, on a computer. 
+  - My perspective over linear algebra is ultimately **computational** and **geometric**, in the sense of the "space" the data points live in and the transformations of that space. 
+  - Ultimately, no matter the data type: image, video, text, voice, structured, panel -- all can be represented as **multidimensional arrays** (or tensors, if you wish).
+- **Mathematical Analysis** is all about `change`, formalizing how a function behaves with respect to its arguments and parameters. It is an essential building block in **optimization** and deep learning (automated differentiation).
+  - I would argue that in order to understand any complex system, be it a firm, an economy, the climate or environnment, we have to model how it **evolves in time**.
+  - This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be impossible to reason about without the mathematical analysis.
+- **Probability** and **Statistics** is the language of `uncertainty`, the only instrument we have, that allows us to say something intelligent about how confident are we.
+  - We will explore the role of statistics at lenght, but as a quote, think of it as a tool which enables us to **change our mind** and decisions in the face of evidence.
+- **Econometrics**, in my personal opinion, tries to separate the signal for the noise and make inferences about the **causal processes** in economic decisions and phenomena. It specializes statistics in the domain of economics, by infusing economic theory -- because you can't derive a scientific theory from data alone.   
+- **Time Series Analysis**, senso largo, bridges the gap between Systems Dynamics (which takes a more theoretical perspective) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolves in time, that are dynamic in their nature.
+  - I like the metaphor of **Data Assimilation**, which is actually an entire field trying to introduce the empirical dimension to differential equations.
+- **Operations Research** is about **optimization** with constraints and **efficiency**. However, the problem is that often, we start from an Integer/Linear Programming problem formulation, and that is easy part -- to apply an existing algorithm. The hard part is to reduce a messy real world problem at a large scale to that formulation, especially under uncertainty and nonlinearity. 
+- **Economics** touches upon a wide range of aspects of our society and human behavior. In mathematically-oriented courses, you can think of it as **optimization with constraints**, the constraints being given by our positive or normative theory of economic **decision-making**.
+  - In this course and in practice, we care more about **business economics**. It's a very different beast from theoretical ideas in macroeconomics (ISLM, DSGE type of models) or microeconomic utilitarianism. 
+  - By business economics, we mean marketing, management, corporate finance, decision theory, supply chain, and logistics. 
+  - What you have to know about marketing, especially if you are skeptical like me, is that it became innovative, mathematical, rigorous and data-driven. Look at any marketing journal: how much econometrics and ML models are in there.
+  - So, if you hold the opinion that marketing and management are fields full of fluff -- I advise you to rethink your positions. In the context of tech firms, you can't bullshit your way through it.
+  - Moreover, when you combine marketing with **behavioral economics** and psychology, it introduces another layer of nuance and understanding over our decision-making.
+  - When we make decisions, we like to think of ourselfs as objective, but we have lots of **biases** and blind spots which prevent us to see the reality clearly. We often find patterns and regularities which are just noise, not causal. So, the usefulness of this kind of domain knowledge from economics about human behavior helps us to be wiser, that is, to prevent self-deception and self-sabotage towards achieving the goals and objectives. 
 
-![Analyst's workflow](img/analyst-workflow.png "Analysis"){width="90%"}
+::: {.callout-tip}
+## A word of encouragement
 
-![ML workflow](img/ml-workflow.png "Analysis"){width="90%"}
+None of those courses were useless. Think of how can we take parts from each of those prerequisites, which are relevant in ML/DSc, so that we have more tools to solve problems of the complexity we encounter. To reiterate, data science is an umbrella term, borrowing from them all.
+:::
 
-The idea is to get an intuition when it is a good idea to use statistics, when a more powerful tool like ML is needed (but which is more dangerous in overfitting / backfiring) and what does Analytics means (you will or did have some subjects like BI, Data Analytics). What does analytics mean?
+ 
 
-The point is to find inspiration and formulate hypotheses, find something interesting and eventually useful. So, you use data, to formulate hypothesis and ask better questions. Then in the decision-making processs, these can be communicated to statisticians and decision-makers, so that they have a clearer directions and promising candidates. This inspiration can be anything from exploratory data analysis, visualization, even to unsupervised ML methods, like dim red, clustering, etc, that is, data mining, a way to automate analytics, such that it finds patterns not readily visible from simple explorations and correlations. 
 
-This doesn't mean that what we found (a difference between 2 groups of clients.). It doesn't mean we found the causal process which makes some clients more profitable than others. 
 
-The same machinery which makes us intelligent and flexible, makes us prone to bullshit and self-deception, self-destructive behavior. Same with overfitting and drawing wrong inferences. We can't say anything yet about causality, but it is a tremendously important role, so there will be always a place for a good analyst in a firm. 
+## Implicit Learning, Intuition and Bias
 
-In statistics, first and foremost, we care to take decisions in a safer way, with more confidence (in a very specific sense, that the relationship, the found process is causal, i.e. is true outside or sample, that is, it generalizes) and less self deception, those are important, high-stake decisions. 
-This is why we cannot do the mining and statistics on the same set of data. We will get next to the idea of splitting your damn data, such taht they are not contaminated by all the mining. This is why we have a process for experiment design and validating models, interpreting the parameters. If that stat model passes a rigorous critique, it has greater chance of finding a real/causal pattern. 
-
-At the firm level, the kind of decisions that are high-stakes, are strategic, e.g. pricing policies, entering markets, etc. Those are not low-level decisions, distribution channels mix, advertisement allocation spend, whether to deploy a new recommender system.
-
-In contrast, in ML we have lower-cost of mistake decisions, and there are a lot of tiny decisions. Of course, we need lots of data and a clear objective to optimize for. 
-
-I consider it a success if at the end of the course, when you get the problem, you can juggle between these 3 perspectives (stat, ml, analytics) and can figure out in each phase of the project, where do you stand, in what bucket. ML and Data Mining is powerful, but not appropriate everywhere, so, you have to know when not to use it, or when you don't need the stats and just playing around. 
-
-**Implicit learning**
 I would like to give a parallel here, of how people learn. We have a powerful capacity for implicit learning, meaning we can't articulate or explain how we did it, like riding a bike, learning to read and write. There is a famous experiment: Researchers invented words from two languages, with 2 rules, between 3-8 characters, appropriate vowels and so on and they generated 2 sets of words. 
 
 Participants saw the list and they had to say where do they come from (matching) -- it's a good example of experiment design coming from cogsci research. They found that subjects differentiated them much better than chance. During the interviews, when asked to explain how they did it, it was either idk, or giving some rules, when implemented in a software, were indistinguishable from chance (i.e. those rules were NOT exactly how they were thinking), meaning they couldn't really articulate what they did there.
@@ -283,24 +348,6 @@ We're not here in a behavioral economic class, but we will try to cultivate the 
 The good news is that sometimes, you just need a reliable prediction, as you're not intervening in the system causing a certain phenomena -- and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn't figure out a scientific explanation of the causal process, e.g. for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making. 
 
 Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid -- if you go outside that range, can easily get absurd predictions -- this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation. 
-
-
-
-## Cybernetics is what we call AI
-
-What's going on here? What we call now AI (weak AI), is an evolution of cybernetics and pattern recognition. There are two schools of thought: 
-
-- immitative intelligence: try to do same things as humans, GAI research, at the intersection of cognitive science - it is fascinating, also needs philosophy, fascinating
-- symbolic: that which died in 60s in the first AI winter
-- weak AI: decision-making, at scale, more specialized.  Think in systems, feedback loops -- take a real phenomena and formalize, simplify it to emphasize essential aspects of that phenomena 
-
-> The science of general regularities of information processing and control in animal, machine and human (socitey)
-
-General regularities, meaning true across fields (econ, soc, physics, bio, chem). Control -- basically to reach the objectives, take an action which stirs the systems on a desired trajectory, and info processing is pattern recoginition, how can you model it, infer, integrate data and say something interesting about that phenomena. We're more on a society side, as we talk about human behavior, less about engineering, medicine, biology, ecology and climate science.
-
-Again, it is a conglomeration of fields which went a bit out of fashion and favor: Game theory, Decision theory, general systems' theory, agent-based modeling, systems' dynamics, complexity and chaos, evolutionary algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practive -- so we kind of settled on a more general tool, like a hammer, which is pattern recognition (ml, dl, causality, optimization). 
-
-So, if you want to be a data analyst, business analyst, ml engineer, data scientist, data engineer, statistician, product manager in tech, somehow, the cybernetics is a way of thinking (in systems), but we mostly use the tools outlined before. Also, no one can know it all well: so one of the objective of the course, is that you're passionate about ANY of this stuff or Not, to understand what those people do -- it is harder and harder which don't heavily leverage data for decision-making
 
 
 ## Bullshit in the age of Big Data
@@ -325,10 +372,6 @@ The way we care about immediate things, which are supersalient  -- when it goes 
 ## Causal vs Correlational Patterns
 
 :::
-
-
-## BYOP: Bring your own problem
-Discussion formulation
 
 
 
