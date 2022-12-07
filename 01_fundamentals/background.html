@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01_fundamentals/stat_foundations.html" rel="next">
+<link href="../01_fundamentals/bolt.html" rel="next">
 <link href="../index.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -152,17 +152,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
+  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
+  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
   </div>
 </li>
       </ul>
@@ -177,17 +182,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
+  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
+  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
+  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
   </div>
 </li>
       </ul>
@@ -207,13 +212,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#data-science-in-the-wild" id="toc-data-science-in-the-wild" class="nav-link active" data-scroll-target="#data-science-in-the-wild"><span class="toc-section-number">1.1</span>  Data Science in the Wild</a></li>
-  <li><a href="#case-study-decisions-at-bolt" id="toc-case-study-decisions-at-bolt" class="nav-link" data-scroll-target="#case-study-decisions-at-bolt"><span class="toc-section-number">1.2</span>  Case Study: Decisions at Bolt</a></li>
-  <li><a href="#what-is-ai-wip" id="toc-what-is-ai-wip" class="nav-link" data-scroll-target="#what-is-ai-wip"><span class="toc-section-number">1.3</span>  What is AI? WIP</a></li>
+  <li><a href="#what-is-ai-data-science-and-ml" id="toc-what-is-ai-data-science-and-ml" class="nav-link" data-scroll-target="#what-is-ai-data-science-and-ml"><span class="toc-section-number">1.2</span>  What is AI, Data Science, and ML?</a>
+  <ul class="collapse">
+  <li><a href="#cybernetics-is-what-we-call-ai" id="toc-cybernetics-is-what-we-call-ai" class="nav-link" data-scroll-target="#cybernetics-is-what-we-call-ai"><span class="toc-section-number">1.2.1</span>  Cybernetics is what we call AI</a></li>
+  </ul></li>
+  <li><a href="#analytics-ml-or-statistics" id="toc-analytics-ml-or-statistics" class="nav-link" data-scroll-target="#analytics-ml-or-statistics"><span class="toc-section-number">1.3</span>  Analytics, ML or Statistics?</a></li>
   <li><a href="#why-did-you-study-all-of-that" id="toc-why-did-you-study-all-of-that" class="nav-link" data-scroll-target="#why-did-you-study-all-of-that"><span class="toc-section-number">1.4</span>  Why did you study all of that?</a></li>
-  <li><a href="#analytics-ml-or-statistics" id="toc-analytics-ml-or-statistics" class="nav-link" data-scroll-target="#analytics-ml-or-statistics"><span class="toc-section-number">1.5</span>  Analytics, ML or Statistics?</a></li>
-  <li><a href="#cybernetics-is-what-we-call-ai" id="toc-cybernetics-is-what-we-call-ai" class="nav-link" data-scroll-target="#cybernetics-is-what-we-call-ai"><span class="toc-section-number">1.6</span>  Cybernetics is what we call AI</a></li>
-  <li><a href="#bullshit-in-the-age-of-big-data" id="toc-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#bullshit-in-the-age-of-big-data"><span class="toc-section-number">1.7</span>  Bullshit in the age of Big Data</a></li>
-  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem" class="nav-link" data-scroll-target="#byop-bring-your-own-problem"><span class="toc-section-number">1.8</span>  BYOP: Bring your own problem</a></li>
+  <li><a href="#implicit-learning-intuition-and-bias" id="toc-implicit-learning-intuition-and-bias" class="nav-link" data-scroll-target="#implicit-learning-intuition-and-bias"><span class="toc-section-number">1.5</span>  Implicit Learning, Intuition and Bias</a></li>
+  <li><a href="#bullshit-in-the-age-of-big-data" id="toc-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#bullshit-in-the-age-of-big-data"><span class="toc-section-number">1.6</span>  Bullshit in the age of Big Data</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/01_fundamentals/background.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -272,7 +278,7 @@ Decision Science: (not only) truth and action
 <figure class="figure">
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
-  DM[Decision-Making] --&gt; Domains[Domains] --&gt; U[Uber / Rides] --&gt; Ecom[E-Commerce]
+  DM[Decision-Making] --&gt; Domains[Domains] -- case studies --&gt; U[Uber / Rides] --&gt; Ecom[E-Commerce]
   DM --&gt; AI[What is AI?] --&gt; Choice[Stats/ML/Analytics]
   Choice --&gt; Cy[Cybernetics Detour] --&gt; F[Why did you study those?]
   DM --&gt; BS[on Bullshit] --&gt; Fool[Foolishness] --&gt; Caus[Causal vs Correlational] --&gt; BD[Big Data?]
@@ -280,6 +286,9 @@ Decision Science: (not only) truth and action
   Ecom --&gt; BYOP[Bring your own problem]
   F --&gt; BYOP
   BD --&gt; BYOP
+
+  style U fill:#f7f5bc
+  style Ecom fill:#f7f5bc
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -327,73 +336,128 @@ During a lecture, I usually ask students
 <li><strong>Recommender systems</strong> for music, videos, books, products, news in social media, services, platforms, and e-commerces like facebook, instagram, tiktok, youtube, spotify, amazon, emag. You can find recommendations in surprising places, like google maps.</li>
 <li><strong>Programmatic Advertisement</strong>: finding best placement for ads on various platforms, right now dominated by meta and google</li>
 </ul>
-</section>
-<section id="case-study-decisions-at-bolt" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="case-study-decisions-at-bolt"><span class="header-section-number">1.2</span> Case Study: Decisions at Bolt</h2>
+<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Check out the Case Studies for a Deeper Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<p>We will explore some challenges and applications from this list in a series of case studies and labs. The idea is to improve our ability to identify opportunities and formulate problems from the point of view of an organisation, such that we can match those with the methods, models and algorithms discussed in the course.</p>
+<div class="page-columns page-full"><p>I’ll have to introduce a lot of new concepts when the language we developed so far will turn out to be insufficient to talk about and understand what’s happening inside these firms. Thus, each case study is an opportunity to play around with a novel idea. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;If you have a pretty good idea about what is AI, Analytics, ML, Deep Learning, Big Data, Causal Inference and when to use one approach or another, feel free to skip the history and terminology and go straight to the case studies.</p></li></div></div>
 <ul>
-<li>pricing decisions: what factors influence it</li>
-<li>matching passengers and their routes/trips to cars</li>
-<li>balancing the demand and supply</li>
-<li>reputation systems: ratings, canceling rides</li>
-<li>advertisement and acquisition</li>
-<li>engagement and CRM: churn, inactivity</li>
-<li>finance, fraud prevention, charging systems</li>
-<li>entering a new market</li>
-<li>a/b testing app features</li>
-<li>ethical considerations</li>
+<li><a href="../01_fundamentals/bolt.html">In the first deep-dive</a>, we will look at Uber and Bolt, with publicly available information, trying to figure out what do their data scientists do.</li>
+<li>Then, we will look at the <a href="../01_fundamentals/adoreme.html">lingerie e-commerce</a> where I work at, AdoreMe and a different set of problems we’re facing.</li>
 </ul>
+</div>
+</div>
 </section>
-<section id="what-is-ai-wip" class="level2 page-columns page-full" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="what-is-ai-wip"><span class="header-section-number">1.3</span> What is AI? WIP</h2>
-<p>What do all of this have in common? People have to make good decisions for UX and business outcomes.</p>
-<p>This is an interdisciplinary field, at the intersection of mathematics and statistics, computer science and software engineering, and domain knowledge. This course is specifically about products/problems in businesses, especially in tech.</p>
-<p>What does this buzzword of data science mean?</p>
-<p>Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). We already gave two examples – one in e-commerce, and second as pandemic-response. We have to keep in mind that what we do is very domain-dependent/specific (we call it domain-driven).</p>
+<section id="what-is-ai-data-science-and-ml" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="what-is-ai-data-science-and-ml"><span class="header-section-number">1.2</span> What is AI, Data Science, and ML?</h2>
+<p>It’s undeniable that there is a lot of excitement when it comes to AI, ML, and data science – to the point of calling it the sexiest job of 21st century. These are fascinating, interdisciplinary fields that help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry.</p>
 <p>People talk a lot about Big Data, the social impact of algorithms on various platforms, e.g.&nbsp;yt, fb, social media; and there is lots of confusion what does it exactly does (ML, AI, DSc, DL) – so we will define all those terms</p>
+<p>How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?</p>
+<blockquote class="blockquote page-columns page-full">
+<div class="page-columns page-full"><p>First and foremost, AI is about <strong>Decision-Making under Uncertainty at Scale</strong> <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan’s brilliant article <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, which tell the history of “AI” and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e.&nbsp;the revolution hasn’t happened yet) <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;C. Kozyrkov - <a href="https://www.youtube.com/watch?v=bCjMhZZYlP4">AI is decision-making at scale</a></p></li><li id="fn11"><p><sup>11</sup>&nbsp;K. Pretz - <a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says</p></li><li id="fn12"><p><sup>12</sup>&nbsp;M. Jordan - <a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a>: The Revolution Hasn’t Happened Yet</p></li></div></div>
+</blockquote>
+<p>For all pragmatic intents and purposes, especially in business, it’s about decision-making under uncertainty at scale. The important thing here is DECISIONS, there is no point in building AI and solutions based on complex models if we don’t have uncertainty. We have to be able to change our minds in the face of evidence, under uncertainty, by leveraging big amounts of data. (ref: Cassie)</p>
+<p>We have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. You will often see a Venn diagram where data science sits at the intersection of mathematics,statistics, computer science, software engineering, and domain knowledge. Despite that, we can clearly define <strong>what</strong> it does (see above), and <strong>how</strong> (depending on the perspective taken).</p>
 <p>In my opinion, all of this has one thing in common: decision-making unde uncertainty at scale. But you will find different definitions on the web. It’s important to mention everything you have studied before, goes into this umbrella term (by itself it doesn’t mean much), a set of tools, practices, techniques for better decision-making. at scale, it means that there are lots of decisions, and it isn’t humanly possible to do it manully – there is a need for automation and digitalisation, and this is a direction in which man y industries go, even if traditionally they have been paper/manual, including accounting, legal.</p>
-<p>Q: did you have time series, data analysis, econometrics, statistics. Yes, all of them Somehow, when I graduated, I got the idea that it’s about data analysis, to find something interesting in data, to make a good prediction. Here I will try you to un-teach you that, mentioning that it is just the first step in this kind of problems (the exploratory, detective work, the pattern mining).</p>
+<p>Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). We already gave two examples – one in e-commerce, and second as pandemic-response. We have to keep in mind that what we do is very domain-dependent/specific (we call it domain-driven).</p>
+<p>What else goes into AI? Of course, it depends on the domain: AI in e-commerce, like Adore Me, where we sell lingerie, will be very different from the problems we try to solve in medicine, social sphere and govt, and of course it has to be data-driven.</p>
 <p>Ultimately, why would I build a system which predicts demand for products in a d2c ecommerce, like emag, amazon? Why would I try to find out the factors which contribute to a successful advertisement (efficient). A (Student): to allocate resources to the stuff which generates profit and not spread around and get nothing in the end, only costs over the target, efficiency A (Stud): information as a competitive advantage, anticipating/predicting so that we can plan and prepare.</p>
 <p>When we talk about the uncertainty, it’s important to recognize its sources: one coming from the fact of incomplete information, that we always work with samples in one way or another (e.g.&nbsp;even if at a certain point in time, we might have real-time data, as everything evolves in time). We want to say something intelligent about the population. Also, there is ambiguity, as objectives are not always mathematically clear. Everything is in flux and change, especially when talking about the future, making a good prediction is one of the most difficult things (ref: seeing clearly and scout mindset).</p>
+<p>On the other hand - Scale: the reason ML is so powerful, it’s because you can take lots of small decisions in an automated way, with a little curation from humans.</p>
 <p>E.g. who would predict the pandemic and all its implications on the supply chain. There is just an irreducible, fundamental uncertainty (difference between noise/fluctuation and black swan events). But there are others, which we can quantify and reduce it by conditioning on data and our hypothesis and model of the world, by stat inferences, at least we can try to quantify how uncertain are we. Even the current state, we don’t know for sure where we stand. So, we still have to make decisions, and those have to have a level of <strong>robustness</strong> / resilience to shocks, in the face of uncertainty (even antifragility, but that is so hard),</p>
 <p>Imagine we have an equation/program, with well-defined, true rules, which predicts the price on capital markets, or perfectly predict how many items will a client buy. Then we don’t need this field. So, when we have a well-tested theory (newtonian physics) – you don’t need machine learning and data mining there.</p>
 <p>However, when we talk about human behavior, we should resist the temptation and arrogance to say that we have a well-defined theory (be it normative or positive). Our preference changes, and we can “decide” in which direction they change, if they persist or organically develop. Then, we need other kind of tools, and human behavior, regardless if I’m a data scientist at Uber/Bolt/Glovo, everywhere people are involved (customers, ) – we’re at cybernetics, talking about economics, it’s less like chemical engineering, robotics or computer vision in a facotry. We almost always have to deal with human behavior.</p>
 <p>This means, that by using data, we build models and algorithms, domain knowledge, which try to simplify the complex reality, to capture various aspects which are essential and interesting for us. e.g.&nbsp;pandemics – decisions at the level of country - state - country - town: what is a good one? For that, I have to set objectives. Even right now, what is the real situation? We need to make an inference, a guess. It goes witout saying about the scale of it – it’s global, if we take into account people’s mobility and movement!</p>
 <p>So, we can collect data, train models, apply algorithms in order to make inferences about some relevant and interesting quantities, such that we can make an evidence-based, efficient decision which gets us closer to our objective.</p>
-<p>How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?</p>
-<blockquote class="blockquote page-columns page-full">
-<div class="page-columns page-full"><p>First and foremost, AI is about <strong>Decision-Making, at Scale, under Uncertainty</strong> <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan’s brilliant article <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, which tell the history of “AI” and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e.&nbsp;the revolution hasn’t happened yet) <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;C. Kozyrkov - <a href="https://www.youtube.com/watch?v=bCjMhZZYlP4">AI is decision-making at scale</a></p></li><li id="fn10"><p><sup>10</sup>&nbsp;K. Pretz - <a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says</p></li><li id="fn11"><p><sup>11</sup>&nbsp;M. Jordan - <a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a>: The Revolution Hasn’t Happened Yet</p></li></div></div>
+<p>So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we’re in business. (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it’s not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.</p>
+<section id="cybernetics-is-what-we-call-ai" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="cybernetics-is-what-we-call-ai"><span class="header-section-number">1.2.1</span> Cybernetics is what we call AI</h3>
+<p>What’s going on here? What we call now AI (weak AI), is an evolution of cybernetics and pattern recognition. There are two schools of thought:</p>
+<ul>
+<li>immitative intelligence: try to do same things as humans, GAI research, at the intersection of cognitive science - it is fascinating, also needs philosophy, fascinating</li>
+<li>symbolic: that which died in 60s in the first AI winter</li>
+<li>weak AI: decision-making, at scale, more specialized. Think in systems, feedback loops – take a real phenomena and formalize, simplify it to emphasize essential aspects of that phenomena</li>
+</ul>
+<blockquote class="blockquote">
+<p>The science of general regularities of information processing and control in animal, machine and human (socitey)</p>
 </blockquote>
-<p>We have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. Despite that, we can clearly define <strong>what</strong> it does (see above), and <strong>how</strong> (depending on the perspective taken). For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:</p>
+<p>General regularities, meaning true across fields (econ, soc, physics, bio, chem). Control – basically to reach the objectives, take an action which stirs the systems on a desired trajectory, and info processing is pattern recoginition, how can you model it, infer, integrate data and say something interesting about that phenomena. We’re more on a society side, as we talk about human behavior, less about engineering, medicine, biology, ecology and climate science.</p>
+<p>Again, it is a conglomeration of fields which went a bit out of fashion and favor: Game theory, Decision theory, general systems’ theory, agent-based modeling, systems’ dynamics, complexity and chaos, evolutionary algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practive – so we kind of settled on a more general tool, like a hammer, which is pattern recognition (ml, dl, causality, optimization).</p>
+<p>So, if you want to be a data analyst, business analyst, ml engineer, data scientist, data engineer, statistician, product manager in tech, somehow, the cybernetics is a way of thinking (in systems), but we mostly use the tools outlined before. Also, no one can know it all well: so one of the objective of the course, is that you’re passionate about ANY of this stuff or Not, to understand what those people do – it is harder and harder which don’t heavily leverage data for decision-making</p>
+</section>
+</section>
+<section id="analytics-ml-or-statistics" class="level2 page-columns page-full" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="analytics-ml-or-statistics"><span class="header-section-number">1.3</span> Analytics, ML or Statistics?</h2>
+<p>For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:</p>
 <ul>
 <li>Analytics and Data Mining - with the main goal of formulating better research questions (i.e.&nbsp;<strong>inspiration</strong>), find interesting and relevant stuff in massive datasets</li>
 <li>Machine Learning - learning from data, finding invariants/patterns, which generalize beyond the sample and training data, i.e.&nbsp;going from experience to expertise in an automated way</li>
 <li>Statistics, and especially causal inference - for making decisions with high stakes, and having greater confidence, rigor in the inferences and conclusions drawn</li>
 </ul>
-<div class="page-columns page-full"><p>One has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> by Cassie Kozyrkov, so that you get a good idea of how “AI” fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;C.Kozyrkov - <a href="https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG">Making Friends with Machine Learning</a></p></li><li id="fn13"><p><sup>13</sup>&nbsp;C. Kozyrkov (Chief Decision Scientist <span class="citation" data-cites="Google">(<a href="../references.html#ref-Google" role="doc-biblioref"><strong>Google?</strong></a>)</span>) - https://kozyrkov.medium.com/</p></li></div></div>
-<div class="page-columns page-full"><p>Pay close attention to the process of developing data-driven products <a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint <a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI research group).</p><div class="no-row-height column-margin column-container"><li id="fn14"><p><sup>14</sup>&nbsp;C.Kozyrkov - <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps to Applied AI</a></p></li><li id="fn15"><p><sup>15</sup>&nbsp;People and AI Research <span class="citation" data-cites="Google">(<a href="../references.html#ref-Google" role="doc-biblioref"><strong>Google?</strong></a>)</span> - <a href="https://pair.withgoogle.com/guidebook/">Guidebook</a></p></li></div></div>
-<div class="page-columns page-full"><p>Make no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can’t do – the power, but also the limitations: - Just take a look at how many “AI” tools have been built to catch covid, and none helped <a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> and “How to constrain artificial stupidity” <a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn16"><p><sup>16</sup>&nbsp;W.Heaven - <a href="https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/">Hundreds of AI tools have been built to catch covid. None of them helped.</a></p></li><li id="fn17"><p><sup>17</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=kYMfE9u-lMo">The profession of solving the wrong problem</a></p></li><li id="fn18"><p><sup>18</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">How to Constrain Artificial Stupidity</a></p></li></div></div>
-<div class="page-columns page-full"><p>As a last, shameless plug, I’ll reference you to my conference talk <a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>, which shows how can AI add value to organizations, by taking a pragmatic approach to it. I introduce the idea of “Full Stack Data Apps”, which is critical in making the vision of decision-making under uncertainty at scale, a reality, or at least, give it a greater probability of succeeding (the definition of success being that it is used and useful).</p><div class="no-row-height column-margin column-container"><li id="fn19"><p><sup>19</sup>&nbsp;M. Bizovi - <a href="https://www.youtube.com/watch?v=02NPR_nDaxQ">Pragmatic AI in Google Cloud Platform</a></p></li></div></div>
-<p>For all pragmatic intents and purposes, especially in business, it’s about decision-making under uncertainty at scale. The important thing here is DECISIONS, there is no point in building AI and solutions based on complex models if we don’t have uncertainty. We have to be able to change our minds in the face of evidence, under uncertainty, by leveraging big amounts of data. (ref: Cassie)</p>
-<p>On the other hand - Scale: the reason ML is so powerful, it’s because you can take lots of small decisions in an automated way, with a little curation from humans.</p>
-<p>What else goes into AI? Of course, it depends on the domain: AI in e-commerce, like Adore Me, where we sell lingerie, will be very different from the problems we try to solve in medicine, social sphere and govt, and of course it has to be data-driven.</p>
-<p>So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we’re in business. (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it’s not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.</p>
-<p>So, this xkcd cartoon explains it very well: the first question is - are you making decisions? If no and are just curious, then we have lots of methods for data exploration and we look into analytics (inspiration!!). (ref: Cassie) If we do have to make decisions, and not many, and they are strategic and important, that means we need some rigorous statistics: if we do it at scale, e.g.&nbsp;us doing demand planning and inventory optimization for thousand and thousands of products, hundred of k of sizes - you cannot do it manually. On the other hand, it is not one or another, not a debate between ML and stats, you need both: recognize when is the appropriate time to use one or another – so, choose your own adventure.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="img/ds-adventure.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption">Choose your own adventure</figcaption><p></p>
+</figure>
+</div>
+<p>So, xkcd cartoon explains it very well: the first question is - are you making decisionsthis? If no and are just curious, then we have lots of methods for data exploration and we look into analytics (inspiration!!). (ref: Cassie) If we do have to make decisions, and not many, and they are strategic and important, that means we need some rigorous statistics: if we do it at scale, e.g.&nbsp;us doing demand planning and inventory optimization for thousand and thousands of products, hundred of k of sizes - you cannot do it manually. On the other hand, it is not one or another, not a debate between ML and stats, you need both: recognize when is the appropriate time to use one or another – so, choose your own adventure.</p>
+<div class="page-columns page-full"><p>One has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> by Cassie Kozyrkov, so that you get a good idea of how “AI” fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium <a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;C.Kozyrkov - <a href="https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG">Making Friends with Machine Learning</a></p></li><li id="fn14"><p><sup>14</sup>&nbsp;C. Kozyrkov (Chief Decision Scientist <span class="citation" data-cites="Google">(<a href="../references.html#ref-Google" role="doc-biblioref"><strong>Google?</strong></a>)</span>) - https://kozyrkov.medium.com/</p></li></div></div>
+<div class="page-columns page-full"><p>Pay close attention to the process of developing data-driven products <a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint <a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI research group).</p><div class="no-row-height column-margin column-container"><li id="fn15"><p><sup>15</sup>&nbsp;C.Kozyrkov - <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps to Applied AI</a></p></li><li id="fn16"><p><sup>16</sup>&nbsp;People and AI Research <span class="citation" data-cites="Google">(<a href="../references.html#ref-Google" role="doc-biblioref"><strong>Google?</strong></a>)</span> - <a href="https://pair.withgoogle.com/guidebook/">Guidebook</a></p></li></div></div>
+<div class="page-columns page-full"><p>Make no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can’t do – the power, but also the limitations: - Just take a look at how many “AI” tools have been built to catch covid, and none helped <a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> and “How to constrain artificial stupidity” <a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn17"><p><sup>17</sup>&nbsp;W.Heaven - <a href="https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/">Hundreds of AI tools have been built to catch covid. None of them helped.</a></p></li><li id="fn18"><p><sup>18</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=kYMfE9u-lMo">The profession of solving the wrong problem</a></p></li><li id="fn19"><p><sup>19</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">How to Constrain Artificial Stupidity</a></p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="img/analyst-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption">Analyst’s workflow</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="img/ml-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption">ML workflow</figcaption><p></p>
+</figure>
+</div>
+<p>The idea is to get an intuition when it is a good idea to use statistics, when a more powerful tool like ML is needed (but which is more dangerous in overfitting / backfiring) and what does Analytics means (you will or did have some subjects like BI, Data Analytics). What does analytics mean?</p>
+<p>The point is to find inspiration and formulate hypotheses, find something interesting and eventually useful. So, you use data, to formulate hypothesis and ask better questions. Then in the decision-making processs, these can be communicated to statisticians and decision-makers, so that they have a clearer directions and promising candidates. This inspiration can be anything from exploratory data analysis, visualization, even to unsupervised ML methods, like dim red, clustering, etc, that is, data mining, a way to automate analytics, such that it finds patterns not readily visible from simple explorations and correlations.</p>
+<p>This doesn’t mean that what we found (a difference between 2 groups of clients.). It doesn’t mean we found the causal process which makes some clients more profitable than others.</p>
+<p>The same machinery which makes us intelligent and flexible, makes us prone to bullshit and self-deception, self-destructive behavior. Same with overfitting and drawing wrong inferences. We can’t say anything yet about causality, but it is a tremendously important role, so there will be always a place for a good analyst in a firm.</p>
+<p>In statistics, first and foremost, we care to take decisions in a safer way, with more confidence (in a very specific sense, that the relationship, the found process is causal, i.e.&nbsp;is true outside or sample, that is, it generalizes) and less self deception, those are important, high-stake decisions. This is why we cannot do the mining and statistics on the same set of data. We will get next to the idea of splitting your damn data, such taht they are not contaminated by all the mining. This is why we have a process for experiment design and validating models, interpreting the parameters. If that stat model passes a rigorous critique, it has greater chance of finding a real/causal pattern.</p>
+<p>At the firm level, the kind of decisions that are high-stakes, are strategic, e.g.&nbsp;pricing policies, entering markets, etc. Those are not low-level decisions, distribution channels mix, advertisement allocation spend, whether to deploy a new recommender system.</p>
+<p>In contrast, in ML we have lower-cost of mistake decisions, and there are a lot of tiny decisions. Of course, we need lots of data and a clear objective to optimize for.</p>
+<p>I consider it a success if at the end of the course, when you get the problem, you can juggle between these 3 perspectives (stat, ml, analytics) and can figure out in each phase of the project, where do you stand, in what bucket. ML and Data Mining is powerful, but not appropriate everywhere, so, you have to know when not to use it, or when you don’t need the stats and just playing around.</p>
+<p>Q: did you have time series, data analysis, econometrics, statistics. Yes, all of them Somehow, when I graduated, I got the idea that it’s about data analysis, to find something interesting in data, to make a good prediction. Here I will try you to un-teach you that, mentioning that it is just the first step in this kind of problems (the exploratory, detective work, the pattern mining).</p>
+<p>Why ML, since we put so much accent onto scientific rigor and trying to infer the causal processes? Sometimes – you don’t have a theory, e.g.&nbsp;in recommender systems, just too complicated. Then ML is a way to go from experience (data) to expertise (program/recipe) in an automated way, eg. which makes predictions: how do you do that, with an algorithm and certain model classes (e.g.&nbsp;trees, regressions).</p>
 </section>
 <section id="why-did-you-study-all-of-that" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="why-did-you-study-all-of-that"><span class="header-section-number">1.4</span> Why did you study all of that?</h2>
-<p>Why did we study matan, linear algebra, probability and statistics, econometrics, OR, lots of economics. It was very frustrating for me, because it wasn’t clear how they fit together, what is the common thread, and more importantly, what part of the theory and particular concepts would be helpful in solving this kind of problems we discussed, and which one are more of general culture/understanding. What works well in practice and what not so. Which of prerequisites do you need and why. Let’s draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI/DSc and ML. We mentioned form the very beginning that it is an interdisciplinary field. Without a particular order, we have:</p>
-<ul>
-<li>linear algebra: is a language of data, vast majority of algo can be reduced to operations on matrices, it is not a coincidence that is almost the only thing we have to take these models and implement them in code, on a computer (computational perspective). Ultimately, no matter of data type: image, video, text, voice, structured, panel – all can be represented as multidimensional arrays or tensors if you wish</li>
-<li>mathematical analysis: is about change</li>
-<li>probability and statistics: language of uncertainty, the only instrument we can say something intelligent about how confident are we</li>
-<li>econometrics: try to separate the signal for the noise, to make inferences about the causal processes in economic decisions and phenomena – conclusions and decisions.<br>
-</li>
-<li>time series analysis</li>
-<li>operations research: it’s about optimization with constraints, the problem is that often, we start from a IP/QP problem – that is easy, but it’s hard to reduce a messy real world problem at a large scale to it, esp.&nbsp;with uncertainty</li>
-<li>economics: optimization with constraints, we care more about the business economics, it’s very different from theoretical ideas in macroeconomic stats or ISLM/ utility. Marketing, management, decision-science. A remark about marketing (skeptical before, but it’s very mathy and rigorous, look at any journal, in terms of econometrics, ml models in there,), combined with behavioral economics, psychology, it’s truly impressive. I.e. right now it’s a modern and quantitative field. Very similar story for management. So, if you hold the opinion that MK/MMT is a fluff field, you can bs your way through it, in this context of tech firms, it’s very automated, intelligent and data-driven. Moreover, think about behavioral economics: thinking fast and slow – when we make decisions, we like to think of ourselfs as objective, but we have lots of biases, blind spots which prevent us to see the reality clearly. We often find patterns and regularities which are just noise, they’re not causal patterns. So, this kind of domain knowledge from economics, esp.&nbsp;in managerial/business/behavioral, about human behavior.</li>
-</ul>
-<p>And data science is an umbrella, borrowing from them all. Why ML, since we put so much accent onto scientific rigor and trying to infer the causal processes? Sometimes – you don’t have a theory, e.g.&nbsp;in recommender systems, just too complicated. Then ML is a way to go from experience (data) to expertise (program/recipe) in an automated way, eg. which makes predictions: how do you do that, with an algorithm and certain model classes (e.g.&nbsp;trees, regressions).</p>
-<p>A word of encouragement: none of those courses were useless. How can we take parts from each of those which are relevant in ML/DSc, so that we have more tools to solve problems of the complexity we encounter.</p>
+<p>Why did we have to go through all those excruciating months doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics?</p>
+<p>It was very frustrating for me, because it wasn’t clear how they fit together, what is the common thread, and more importantly, what part of the theory and particular concepts would be helpful in solving the kind of problems we discussed, and which ones are designed to enhance our academic understanding.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Sounds good – doesn’t work?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An important question is what works well in practice and why. On the other hand, what is intellectually fascinating, but not at all straightforward to apply. What is a minimal or most powerful set of the prerequisites that you need?</p>
+<p>Let’s draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned form the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects – the inspirations and tools are quite carefully picked.</p>
+</div>
+</div>
 <div class="cell" data-fig-width="9">
 <div class="cell-output-display">
 <div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
@@ -438,39 +502,60 @@ During a lecture, I usually ask students
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: Don’t let the sheer diversity and breadth of topics intimidate you, as we’ll go step by step through each aspect, explaining the why and how. In one way or another, there is little you haven’t seen here, however the way we tie it all together IS challenging.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: Think of this as a stuctural organization of the fields and courses you studied before. Some are more useful in analytics, some in ML and some in making causal inferences, that is, based on data + theory.</figcaption><p></p>
 </figure>
 </div>
+</div>
+</div>
+<ul>
+<li><strong>Linear Algebra</strong> is a language of <code>data</code>. The vast majority of models and training algorithms can be reduced to operations on matrices. Therefore, it is not a coincidence that is almost the only tool we have, in order to take these models and implement them in code, on a computer.
+<ul>
+<li>My perspective over linear algebra is ultimately <strong>computational</strong> and <strong>geometric</strong>, in the sense of the “space” the data points live in and the transformations of that space.</li>
+<li>Ultimately, no matter the data type: image, video, text, voice, structured, panel – all can be represented as <strong>multidimensional arrays</strong> (or tensors, if you wish).</li>
+</ul></li>
+<li><strong>Mathematical Analysis</strong> is all about <code>change</code>, formalizing how a function behaves with respect to its arguments and parameters. It is an essential building block in <strong>optimization</strong> and deep learning (automated differentiation).
+<ul>
+<li>I would argue that in order to understand any complex system, be it a firm, an economy, the climate or environnment, we have to model how it <strong>evolves in time</strong>.</li>
+<li>This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be impossible to reason about without the mathematical analysis.</li>
+</ul></li>
+<li><strong>Probability</strong> and <strong>Statistics</strong> is the language of <code>uncertainty</code>, the only instrument we have, that allows us to say something intelligent about how confident are we.
+<ul>
+<li>We will explore the role of statistics at lenght, but as a quote, think of it as a tool which enables us to <strong>change our mind</strong> and decisions in the face of evidence.</li>
+</ul></li>
+<li><strong>Econometrics</strong>, in my personal opinion, tries to separate the signal for the noise and make inferences about the <strong>causal processes</strong> in economic decisions and phenomena. It specializes statistics in the domain of economics, by infusing economic theory – because you can’t derive a scientific theory from data alone.<br>
+</li>
+<li><strong>Time Series Analysis</strong>, senso largo, bridges the gap between Systems Dynamics (which takes a more theoretical perspective) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolves in time, that are dynamic in their nature.
+<ul>
+<li>I like the metaphor of <strong>Data Assimilation</strong>, which is actually an entire field trying to introduce the empirical dimension to differential equations.</li>
+</ul></li>
+<li><strong>Operations Research</strong> is about <strong>optimization</strong> with constraints and <strong>efficiency</strong>. However, the problem is that often, we start from an Integer/Linear Programming problem formulation, and that is easy part – to apply an existing algorithm. The hard part is to reduce a messy real world problem at a large scale to that formulation, especially under uncertainty and nonlinearity.</li>
+<li><strong>Economics</strong> touches upon a wide range of aspects of our society and human behavior. In mathematically-oriented courses, you can think of it as <strong>optimization with constraints</strong>, the constraints being given by our positive or normative theory of economic <strong>decision-making</strong>.
+<ul>
+<li>In this course and in practice, we care more about <strong>business economics</strong>. It’s a very different beast from theoretical ideas in macroeconomics (ISLM, DSGE type of models) or microeconomic utilitarianism.</li>
+<li>By business economics, we mean marketing, management, corporate finance, decision theory, supply chain, and logistics.</li>
+<li>What you have to know about marketing, especially if you are skeptical like me, is that it became innovative, mathematical, rigorous and data-driven. Look at any marketing journal: how much econometrics and ML models are in there.</li>
+<li>So, if you hold the opinion that marketing and management are fields full of fluff – I advise you to rethink your positions. In the context of tech firms, you can’t bullshit your way through it.</li>
+<li>Moreover, when you combine marketing with <strong>behavioral economics</strong> and psychology, it introduces another layer of nuance and understanding over our decision-making.</li>
+<li>When we make decisions, we like to think of ourselfs as objective, but we have lots of <strong>biases</strong> and blind spots which prevent us to see the reality clearly. We often find patterns and regularities which are just noise, not causal. So, the usefulness of this kind of domain knowledge from economics about human behavior helps us to be wiser, that is, to prevent self-deception and self-sabotage towards achieving the goals and objectives.</li>
+</ul></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+A word of encouragement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>None of those courses were useless. Think of how can we take parts from each of those prerequisites, which are relevant in ML/DSc, so that we have more tools to solve problems of the complexity we encounter. To reiterate, data science is an umbrella term, borrowing from them all.</p>
 </div>
 </div>
 </section>
-<section id="analytics-ml-or-statistics" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="analytics-ml-or-statistics"><span class="header-section-number">1.5</span> Analytics, ML or Statistics?</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<figure class="figure">
-<img src="img/analyst-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
-</figure>
-<p></p><figcaption class="figure-caption">Analyst’s workflow</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<figure class="figure">
-<img src="img/ml-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
-</figure>
-<p></p><figcaption class="figure-caption">ML workflow</figcaption><p></p>
-</figure>
-</div>
-<p>The idea is to get an intuition when it is a good idea to use statistics, when a more powerful tool like ML is needed (but which is more dangerous in overfitting / backfiring) and what does Analytics means (you will or did have some subjects like BI, Data Analytics). What does analytics mean?</p>
-<p>The point is to find inspiration and formulate hypotheses, find something interesting and eventually useful. So, you use data, to formulate hypothesis and ask better questions. Then in the decision-making processs, these can be communicated to statisticians and decision-makers, so that they have a clearer directions and promising candidates. This inspiration can be anything from exploratory data analysis, visualization, even to unsupervised ML methods, like dim red, clustering, etc, that is, data mining, a way to automate analytics, such that it finds patterns not readily visible from simple explorations and correlations.</p>
-<p>This doesn’t mean that what we found (a difference between 2 groups of clients.). It doesn’t mean we found the causal process which makes some clients more profitable than others.</p>
-<p>The same machinery which makes us intelligent and flexible, makes us prone to bullshit and self-deception, self-destructive behavior. Same with overfitting and drawing wrong inferences. We can’t say anything yet about causality, but it is a tremendously important role, so there will be always a place for a good analyst in a firm.</p>
-<p>In statistics, first and foremost, we care to take decisions in a safer way, with more confidence (in a very specific sense, that the relationship, the found process is causal, i.e.&nbsp;is true outside or sample, that is, it generalizes) and less self deception, those are important, high-stake decisions. This is why we cannot do the mining and statistics on the same set of data. We will get next to the idea of splitting your damn data, such taht they are not contaminated by all the mining. This is why we have a process for experiment design and validating models, interpreting the parameters. If that stat model passes a rigorous critique, it has greater chance of finding a real/causal pattern.</p>
-<p>At the firm level, the kind of decisions that are high-stakes, are strategic, e.g.&nbsp;pricing policies, entering markets, etc. Those are not low-level decisions, distribution channels mix, advertisement allocation spend, whether to deploy a new recommender system.</p>
-<p>In contrast, in ML we have lower-cost of mistake decisions, and there are a lot of tiny decisions. Of course, we need lots of data and a clear objective to optimize for.</p>
-<p>I consider it a success if at the end of the course, when you get the problem, you can juggle between these 3 perspectives (stat, ml, analytics) and can figure out in each phase of the project, where do you stand, in what bucket. ML and Data Mining is powerful, but not appropriate everywhere, so, you have to know when not to use it, or when you don’t need the stats and just playing around.</p>
-<p><strong>Implicit learning</strong> I would like to give a parallel here, of how people learn. We have a powerful capacity for implicit learning, meaning we can’t articulate or explain how we did it, like riding a bike, learning to read and write. There is a famous experiment: Researchers invented words from two languages, with 2 rules, between 3-8 characters, appropriate vowels and so on and they generated 2 sets of words.</p>
+<section id="implicit-learning-intuition-and-bias" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="implicit-learning-intuition-and-bias"><span class="header-section-number">1.5</span> Implicit Learning, Intuition and Bias</h2>
+<p>I would like to give a parallel here, of how people learn. We have a powerful capacity for implicit learning, meaning we can’t articulate or explain how we did it, like riding a bike, learning to read and write. There is a famous experiment: Researchers invented words from two languages, with 2 rules, between 3-8 characters, appropriate vowels and so on and they generated 2 sets of words.</p>
 <p>Participants saw the list and they had to say where do they come from (matching) – it’s a good example of experiment design coming from cogsci research. They found that subjects differentiated them much better than chance. During the interviews, when asked to explain how they did it, it was either idk, or giving some rules, when implemented in a software, were indistinguishable from chance (i.e.&nbsp;those rules were NOT exactly how they were thinking), meaning they couldn’t really articulate what they did there.</p>
 <p>This means that we have a capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning.</p>
 <p>Another example: Bait Shyness (ref: Ben-David), to the idea of priors being necessary for learning, when work well Pigeon Superstition - when doesn’t go well, picks up on noise, resulting in superstitios behavior. (insert images)</p>
@@ -480,23 +565,8 @@ During a lecture, I usually ask students
 <p>The good news is that sometimes, you just need a reliable prediction, as you’re not intervening in the system causing a certain phenomena – and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn’t figure out a scientific explanation of the causal process, e.g.&nbsp;for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making.</p>
 <p>Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid – if you go outside that range, can easily get absurd predictions – this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation.</p>
 </section>
-<section id="cybernetics-is-what-we-call-ai" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="cybernetics-is-what-we-call-ai"><span class="header-section-number">1.6</span> Cybernetics is what we call AI</h2>
-<p>What’s going on here? What we call now AI (weak AI), is an evolution of cybernetics and pattern recognition. There are two schools of thought:</p>
-<ul>
-<li>immitative intelligence: try to do same things as humans, GAI research, at the intersection of cognitive science - it is fascinating, also needs philosophy, fascinating</li>
-<li>symbolic: that which died in 60s in the first AI winter</li>
-<li>weak AI: decision-making, at scale, more specialized. Think in systems, feedback loops – take a real phenomena and formalize, simplify it to emphasize essential aspects of that phenomena</li>
-</ul>
-<blockquote class="blockquote">
-<p>The science of general regularities of information processing and control in animal, machine and human (socitey)</p>
-</blockquote>
-<p>General regularities, meaning true across fields (econ, soc, physics, bio, chem). Control – basically to reach the objectives, take an action which stirs the systems on a desired trajectory, and info processing is pattern recoginition, how can you model it, infer, integrate data and say something interesting about that phenomena. We’re more on a society side, as we talk about human behavior, less about engineering, medicine, biology, ecology and climate science.</p>
-<p>Again, it is a conglomeration of fields which went a bit out of fashion and favor: Game theory, Decision theory, general systems’ theory, agent-based modeling, systems’ dynamics, complexity and chaos, evolutionary algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practive – so we kind of settled on a more general tool, like a hammer, which is pattern recognition (ml, dl, causality, optimization).</p>
-<p>So, if you want to be a data analyst, business analyst, ml engineer, data scientist, data engineer, statistician, product manager in tech, somehow, the cybernetics is a way of thinking (in systems), but we mostly use the tools outlined before. Also, no one can know it all well: so one of the objective of the course, is that you’re passionate about ANY of this stuff or Not, to understand what those people do – it is harder and harder which don’t heavily leverage data for decision-making</p>
-</section>
-<section id="bullshit-in-the-age-of-big-data" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="bullshit-in-the-age-of-big-data"><span class="header-section-number">1.7</span> Bullshit in the age of Big Data</h2>
+<section id="bullshit-in-the-age-of-big-data" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="bullshit-in-the-age-of-big-data"><span class="header-section-number">1.6</span> Bullshit in the age of Big Data</h2>
 <p>Small data problems in big data – this is not the end of theory of stats. We have lots of entities with sparse information for each ones – all about aggregation level, 100m clients, but new ones, without much information or not so many purchases. At a certain level of granularity, the data becomes, discrete, noisy, heteroskedastic.</p>
 <p>Even in ML, e.g.&nbsp;in demand forecasting, we can’t fully escape the teory (which is our understanding of the world) – we need to provide it relevant data, factors which are related, possibly influencing that demand, like weather, holidays, road blockings, factors for demand and supply. We can’t just pour all this data into ML and expect the best: garbage in garbage out, it isn’t clear that feeding irrelevant data doesn’t break our model, st. it picks up on noise and <strong>spurious correlation</strong>, esp.&nbsp;in very powerful DL models – doesn’t help with better decisions.</p>
 <p>Bullshit in the formal sense, introduced by Harry Frankfurt in his essay on Bullshit. A liar respects the truth, in BS you try to convince someone of something regardless of the truth, you distract their attention, providing relevance without truth.</p>
@@ -517,10 +587,6 @@ Causal vs Correlational Patterns
 
 </div>
 </div>
-</section>
-<section id="byop-bring-your-own-problem" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">1.8</span> BYOP: Bring your own problem</h2>
-<p>Discussion formulation</p>
 <!-- Data Science Context, in Business, Interdisciplinarity --->
 
 
@@ -668,8 +734,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../01_fundamentals/stat_foundations.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../01_fundamentals/bolt.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

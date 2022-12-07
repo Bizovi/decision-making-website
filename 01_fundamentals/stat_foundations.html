@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science - 2&nbsp; Statistical Foundations: WIP</title>
+<title>Pragmatic Data Science - 3&nbsp; Statistical Foundations: WIP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../01_fundamentals/adoreme.html" rel="next">
-<link href="../01_fundamentals/background.html" rel="prev">
+<link href="../01_fundamentals/bolt.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -152,17 +152,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
+  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
+  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
   </div>
 </li>
       </ul>
@@ -177,17 +182,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
+  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
+  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
+  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
   </div>
 </li>
       </ul>
@@ -206,20 +211,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link active" data-scroll-target="#the-probability-triple"><span class="toc-section-number">2.1</span>  The probability triple</a></li>
-  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell" class="nav-link" data-scroll-target="#mathematical-statistics-in-a-nutshell"><span class="toc-section-number">2.2</span>  Mathematical Statistics in a nutshell</a></li>
-  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty"><span class="toc-section-number">2.3</span>  Sources of Uncertainty</a></li>
-  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague" class="nav-link" data-scroll-target="#models-are-golemns-of-prague"><span class="toc-section-number">2.4</span>  Models are Golemns of Prague</a></li>
-  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want" class="nav-link" data-scroll-target="#what-does-a-statistician-want"><span class="toc-section-number">2.5</span>  What does a statistician want?</a></li>
-  <li><a href="#case-study-de-moivre-on-us-schooling" id="toc-case-study-de-moivre-on-us-schooling" class="nav-link" data-scroll-target="#case-study-de-moivre-on-us-schooling"><span class="toc-section-number">2.6</span>  Case Study: De Moivre on US Schooling</a></li>
-  <li><a href="#case-study-chess-example" id="toc-case-study-chess-example" class="nav-link" data-scroll-target="#case-study-chess-example"><span class="toc-section-number">2.7</span>  Case Study: Chess example</a></li>
-  <li><a href="#case-study-amazon-reviews-and-ratings" id="toc-case-study-amazon-reviews-and-ratings" class="nav-link" data-scroll-target="#case-study-amazon-reviews-and-ratings"><span class="toc-section-number">2.8</span>  Case Study: Amazon reviews and ratings</a></li>
-  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants" class="nav-link" data-scroll-target="#data-mining-and-crisp-dm-variants"><span class="toc-section-number">2.9</span>  Data Mining and CRISP-DM variants</a></li>
-  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science" class="nav-link" data-scroll-target="#statistical-process-and-science"><span class="toc-section-number">2.10</span>  Statistical Process and Science</a></li>
-  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem" class="nav-link" data-scroll-target="#byop-bring-your-own-problem"><span class="toc-section-number">2.11</span>  BYOP: Bring your own problem</a></li>
-  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe" class="nav-link" data-scroll-target="#ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">2.12</span>  ML is a geocentric model of the universe</a></li>
-  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale" class="nav-link" data-scroll-target="#dead-salmon-a-warning-tale"><span class="toc-section-number">2.13</span>  Dead salmon: a warning tale</a></li>
-  <li><a href="#conditioning-marginalisation-and-exchangeability" id="toc-conditioning-marginalisation-and-exchangeability" class="nav-link" data-scroll-target="#conditioning-marginalisation-and-exchangeability"><span class="toc-section-number">2.14</span>  Conditioning, marginalisation and Exchangeability</a></li>
+  <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link active" data-scroll-target="#the-probability-triple"><span class="toc-section-number">3.1</span>  The probability triple</a></li>
+  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell" class="nav-link" data-scroll-target="#mathematical-statistics-in-a-nutshell"><span class="toc-section-number">3.2</span>  Mathematical Statistics in a nutshell</a></li>
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty"><span class="toc-section-number">3.3</span>  Sources of Uncertainty</a></li>
+  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague" class="nav-link" data-scroll-target="#models-are-golemns-of-prague"><span class="toc-section-number">3.4</span>  Models are Golemns of Prague</a></li>
+  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want" class="nav-link" data-scroll-target="#what-does-a-statistician-want"><span class="toc-section-number">3.5</span>  What does a statistician want?</a></li>
+  <li><a href="#case-study-de-moivre-on-us-schooling" id="toc-case-study-de-moivre-on-us-schooling" class="nav-link" data-scroll-target="#case-study-de-moivre-on-us-schooling"><span class="toc-section-number">3.6</span>  Case Study: De Moivre on US Schooling</a></li>
+  <li><a href="#case-study-chess-example" id="toc-case-study-chess-example" class="nav-link" data-scroll-target="#case-study-chess-example"><span class="toc-section-number">3.7</span>  Case Study: Chess example</a></li>
+  <li><a href="#case-study-amazon-reviews-and-ratings" id="toc-case-study-amazon-reviews-and-ratings" class="nav-link" data-scroll-target="#case-study-amazon-reviews-and-ratings"><span class="toc-section-number">3.8</span>  Case Study: Amazon reviews and ratings</a></li>
+  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants" class="nav-link" data-scroll-target="#data-mining-and-crisp-dm-variants"><span class="toc-section-number">3.9</span>  Data Mining and CRISP-DM variants</a></li>
+  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science" class="nav-link" data-scroll-target="#statistical-process-and-science"><span class="toc-section-number">3.10</span>  Statistical Process and Science</a></li>
+  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem" class="nav-link" data-scroll-target="#byop-bring-your-own-problem"><span class="toc-section-number">3.11</span>  BYOP: Bring your own problem</a></li>
+  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe" class="nav-link" data-scroll-target="#ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">3.12</span>  ML is a geocentric model of the universe</a></li>
+  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale" class="nav-link" data-scroll-target="#dead-salmon-a-warning-tale"><span class="toc-section-number">3.13</span>  Dead salmon: a warning tale</a></li>
+  <li><a href="#conditioning-marginalisation-and-exchangeability" id="toc-conditioning-marginalisation-and-exchangeability" class="nav-link" data-scroll-target="#conditioning-marginalisation-and-exchangeability"><span class="toc-section-number">3.14</span>  Conditioning, marginalisation and Exchangeability</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/01_fundamentals/stat_foundations.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -228,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
 </div>
 
 
@@ -270,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: In the next lecture we will dive into A/B testing and causality, bootstrap, nonparametrics</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: In the next lecture we will dive into A/B testing and causality, bootstrap, nonparametrics</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -289,8 +294,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which is a course in collaboration with the RStudio team.</li>
 </ul>
 <div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Doogue - <a href="https://steverxd.github.io/Stat_tests/">Common statistical tests are linear models</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Speegle, Clair - <a href="https://mathstat.slu.edu/~speegle/_book/preface.html">Probability, Statistics, and Data: A fresh approach using R</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Poldrack - <a href="https://statsthinking21.github.io/statsthinking21-core-site/">Statistical Thinking for the 21st Century</a> has two companion books, one with R and another in Python</p></li><li id="fn4"><p><sup>4</sup>&nbsp;Bryan - <a href="https://stat545.com/">STAT 545</a> It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.</p></li></div><div class="page-columns page-full"><p>There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications: - <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Cetinkaya-Runde goes through all the fundamentals in a clear, concrete, extensive way, with code! - <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> has an interesting approach, focused on the challenges of Psychology - <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> goes through the whole process, with R, with additional topics, normally not present in a statistics course - <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Cetinkaya-Runde, Hardin - <a href="https://openintro-ims.netlify.app/index.html">Introduction to Modern Statistics</a></p></li><li id="fn6"><p><sup>6</sup>&nbsp;Crump - <a href="https://www.crumplab.com/statistics/">Answering questions with data</a> – introductory statistics for Psychology Students</p></li><li id="fn7"><p><sup>7</sup>&nbsp;Thulin - <a href="http://www.modernstatisticswithr.com/">Modern Statistics with R</a></p></li><li id="fn8"><p><sup>8</sup>&nbsp;Holmes, Huber - <a href="https://www.huber.embl.de/msmb/index.html">Modern Statistics for Modern Biology</a></p></li></div></div>
-<section id="the-probability-triple" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="the-probability-triple"><span class="header-section-number">2.1</span> The probability triple</h2>
+<section id="the-probability-triple" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="the-probability-triple"><span class="header-section-number">3.1</span> The probability triple</h2>
 <p>Why? Language of uncertainty! Applications everywhere, the only way we can reason logically under uncertainty (fuzzy logic is out of favor, better study bayes).</p>
 <p>Often, probability and math stats are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Prob theory is concerned with the construction of the probability triple (O, F, P), which can get very rigorous and complicated, with measure theory. We define the probability measure, and it matters a lot in which space are we (R^n, simplex, f(R^n) and gauss processes, SP stochastic processes for time series analysis) – the curious case of compositional data analysis, in which the classical methods have to be tweaked in order to make sense. Explain how we define P on a simple later – but the main point to remember, that we construct it here.</p>
 <p>Random Variable!</p>
@@ -311,9 +316,17 @@ ul.task-list li input[type="checkbox"] {
 <li>(O, F, P) triple</li>
 <li>Random variable, most interesting ideas: not random, neither a variable, it’s a function X(w) -&gt; R, such that it perserves the informational structure of F., i.e.&nbsp;X^-1(r) in F or &lt;= r in R (not any definition of X is valid, can’t be arbitrary – we can come up with a counterexampe – basically inversable, can recover the right elementary events). It’s a quantification: of Events into numbers, essential for all the following machinery of statistics, ML and so on. It is basically the thing which enables us to define the statistical population (some relevant aspect of it to us)!</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="img/random_variable.png" title="Random Variable" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption">Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="mathematical-statistics-in-a-nutshell" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell"><span class="header-section-number">2.2</span> Mathematical Statistics in a nutshell</h2>
+<section id="mathematical-statistics-in-a-nutshell" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell"><span class="header-section-number">3.2</span> Mathematical Statistics in a nutshell</h2>
 <p>importance of the data generating process, see what Ernesto said, then the causal process – all is parameters, known or unknown</p>
 <p>Uses everything probability has to give, but is concerned with inference, estimation, hypothesis testing, prove theorems and probabilistic properties of estimators.</p>
 <ul>
@@ -331,19 +344,19 @@ ul.task-list li input[type="checkbox"] {
 <p>The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.</p>
 <p>One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method.</p>
 </section>
-<section id="sources-of-uncertainty" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">2.3</span> Sources of Uncertainty</h2>
+<section id="sources-of-uncertainty" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">3.3</span> Sources of Uncertainty</h2>
 </section>
-<section id="models-are-golemns-of-prague" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">2.4</span> Models are Golemns of Prague</h2>
+<section id="models-are-golemns-of-prague" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">3.4</span> Models are Golemns of Prague</h2>
 <p>Data + Domain Assumptions + Statistical Assumptions</p>
 </section>
-<section id="what-does-a-statistician-want" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">2.5</span> What does a statistician want?</h2>
+<section id="what-does-a-statistician-want" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">3.5</span> What does a statistician want?</h2>
 <p>From their estimators</p>
 </section>
-<section id="case-study-de-moivre-on-us-schooling" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="case-study-de-moivre-on-us-schooling"><span class="header-section-number">2.6</span> Case Study: De Moivre on US Schooling</h2>
+<section id="case-study-de-moivre-on-us-schooling" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="case-study-de-moivre-on-us-schooling"><span class="header-section-number">3.6</span> Case Study: De Moivre on US Schooling</h2>
 <p>Let’s remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()).</p>
 <p>They decided to split up big schools into smaller ones. Can you say if it was a good, bad idea and why did they think that?</p>
 <p>Students hypothesis: - more attention to students in smaller classrooms - private schools, where families are more wealthy - geographical location, i.e.&nbsp;small towns and villages - motivation of the underdog, from small towns - friendships, community and peer competition (easier in smaller schools) - self-selection: what kind of students go into small schools – we assume average IQ is the same, including the distribution. Assume random allocation. - Skewed (even if not, longer tails): meaning, asymmetric distributions. - Finally: variance and standard deviation</p>
@@ -359,8 +372,8 @@ ul.task-list li input[type="checkbox"] {
 <p>So, in this case we will collect data, used to estimate the parameter and its confidence intervels (inference, with the idea of generalizing from the sample to the population). Now, given those confidence intervals, we ask how surprising it is to see the data/estimation, if the null hypothesis was true.</p>
 <p>Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components – as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges.</p>
 </section>
-<section id="case-study-chess-example" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="case-study-chess-example"><span class="header-section-number">2.7</span> Case Study: Chess example</h2>
+<section id="case-study-chess-example" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="case-study-chess-example"><span class="header-section-number">3.7</span> Case Study: Chess example</h2>
 <p>I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?</p>
 <blockquote class="blockquote">
 <p>Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data).</p>
@@ -375,8 +388,8 @@ ul.task-list li input[type="checkbox"] {
 <p>see the difference between ELO vs xbox true skill, how fast it converges to the true ability – that is a model we can investigate.</p>
 </blockquote>
 </section>
-<section id="case-study-amazon-reviews-and-ratings" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="case-study-amazon-reviews-and-ratings"><span class="header-section-number">2.8</span> Case Study: Amazon reviews and ratings</h2>
+<section id="case-study-amazon-reviews-and-ratings" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="case-study-amazon-reviews-and-ratings"><span class="header-section-number">3.8</span> Case Study: Amazon reviews and ratings</h2>
 <p>How do you choose 4.7 (300) vs 4.5 (2000) – according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?</p>
 <ul>
 <li>we can guide ourselfs with the quality and relevance of reviews</li>
@@ -389,25 +402,25 @@ ul.task-list li input[type="checkbox"] {
 <p>good applications for text mining, statistical tests</p>
 </blockquote>
 </section>
-<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">2.9</span> Data Mining and CRISP-DM variants</h2>
+<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">3.9</span> Data Mining and CRISP-DM variants</h2>
 </section>
-<section id="statistical-process-and-science" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">2.10</span> Statistical Process and Science</h2>
+<section id="statistical-process-and-science" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">3.10</span> Statistical Process and Science</h2>
 </section>
-<section id="byop-bring-your-own-problem" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">2.11</span> BYOP: Bring your own problem</h2>
+<section id="byop-bring-your-own-problem" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">3.11</span> BYOP: Bring your own problem</h2>
 <p>Discussion over the how/process</p>
 </section>
-<section id="ml-is-a-geocentric-model-of-the-universe" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">2.12</span> ML is a geocentric model of the universe</h2>
+<section id="ml-is-a-geocentric-model-of-the-universe" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">3.12</span> ML is a geocentric model of the universe</h2>
 </section>
-<section id="dead-salmon-a-warning-tale" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">2.13</span> Dead salmon: a warning tale</h2>
+<section id="dead-salmon-a-warning-tale" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">3.13</span> Dead salmon: a warning tale</h2>
 <p>Forward reference to power and multiple testing</p>
 </section>
-<section id="conditioning-marginalisation-and-exchangeability" class="level2" data-number="2.14">
-<h2 data-number="2.14" class="anchored" data-anchor-id="conditioning-marginalisation-and-exchangeability"><span class="header-section-number">2.14</span> Conditioning, marginalisation and Exchangeability</h2>
+<section id="conditioning-marginalisation-and-exchangeability" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="conditioning-marginalisation-and-exchangeability"><span class="header-section-number">3.14</span> Conditioning, marginalisation and Exchangeability</h2>
 <!-- Statistical Foundations: Reference, Revies --->
 
 
@@ -550,13 +563,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/background.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></span>
+      <a href="../01_fundamentals/bolt.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../01_fundamentals/adoreme.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science - 6&nbsp; Advanced topics in Hypothesis Testing: WIP</title>
+<title>Pragmatic Data Science - 7&nbsp; Advanced topics in Hypothesis Testing: WIP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced topics in Hypothesis Testing: WIP</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Advanced topics in Hypothesis Testing: WIP</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -152,17 +152,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
+  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
+  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
   </div>
 </li>
       </ul>
@@ -177,17 +182,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
+  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
+  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
+  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
   </div>
 </li>
       </ul>
@@ -206,11 +211,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#nonparametrics" id="toc-nonparametrics" class="nav-link active" data-scroll-target="#nonparametrics"><span class="toc-section-number">6.1</span>  Nonparametrics</a></li>
-  <li><a href="#bayesian-ab-testing" id="toc-bayesian-ab-testing" class="nav-link" data-scroll-target="#bayesian-ab-testing"><span class="toc-section-number">6.2</span>  Bayesian A/B testing</a></li>
-  <li><a href="#power-calculations" id="toc-power-calculations" class="nav-link" data-scroll-target="#power-calculations"><span class="toc-section-number">6.3</span>  Power Calculations</a></li>
-  <li><a href="#multiple-testing-adjustments" id="toc-multiple-testing-adjustments" class="nav-link" data-scroll-target="#multiple-testing-adjustments"><span class="toc-section-number">6.4</span>  Multiple testing adjustments</a></li>
-  <li><a href="#case-study-bayesian-covid-testing" id="toc-case-study-bayesian-covid-testing" class="nav-link" data-scroll-target="#case-study-bayesian-covid-testing"><span class="toc-section-number">6.5</span>  Case Study: Bayesian Covid testing</a></li>
+  <li><a href="#nonparametrics" id="toc-nonparametrics" class="nav-link active" data-scroll-target="#nonparametrics"><span class="toc-section-number">7.1</span>  Nonparametrics</a></li>
+  <li><a href="#bayesian-ab-testing" id="toc-bayesian-ab-testing" class="nav-link" data-scroll-target="#bayesian-ab-testing"><span class="toc-section-number">7.2</span>  Bayesian A/B testing</a></li>
+  <li><a href="#power-calculations" id="toc-power-calculations" class="nav-link" data-scroll-target="#power-calculations"><span class="toc-section-number">7.3</span>  Power Calculations</a></li>
+  <li><a href="#multiple-testing-adjustments" id="toc-multiple-testing-adjustments" class="nav-link" data-scroll-target="#multiple-testing-adjustments"><span class="toc-section-number">7.4</span>  Multiple testing adjustments</a></li>
+  <li><a href="#case-study-bayesian-covid-testing" id="toc-case-study-bayesian-covid-testing" class="nav-link" data-scroll-target="#case-study-bayesian-covid-testing"><span class="toc-section-number">7.5</span>  Case Study: Bayesian Covid testing</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/02_causality/power.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -219,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced topics in Hypothesis Testing: WIP</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Advanced topics in Hypothesis Testing: WIP</span></h1>
 </div>
 
 
@@ -261,25 +266,25 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: In the next lecture we will dive into A/B testing and causality, bootstrap, nonparametrics</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7.1: In the next lecture we will dive into A/B testing and causality, bootstrap, nonparametrics</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="nonparametrics" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="nonparametrics"><span class="header-section-number">6.1</span> Nonparametrics</h2>
+<section id="nonparametrics" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="nonparametrics"><span class="header-section-number">7.1</span> Nonparametrics</h2>
 </section>
-<section id="bayesian-ab-testing" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="bayesian-ab-testing"><span class="header-section-number">6.2</span> Bayesian A/B testing</h2>
+<section id="bayesian-ab-testing" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="bayesian-ab-testing"><span class="header-section-number">7.2</span> Bayesian A/B testing</h2>
 </section>
-<section id="power-calculations" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="power-calculations"><span class="header-section-number">6.3</span> Power Calculations</h2>
+<section id="power-calculations" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="power-calculations"><span class="header-section-number">7.3</span> Power Calculations</h2>
 </section>
-<section id="multiple-testing-adjustments" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="multiple-testing-adjustments"><span class="header-section-number">6.4</span> Multiple testing adjustments</h2>
+<section id="multiple-testing-adjustments" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="multiple-testing-adjustments"><span class="header-section-number">7.4</span> Multiple testing adjustments</h2>
 </section>
-<section id="case-study-bayesian-covid-testing" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="case-study-bayesian-covid-testing"><span class="header-section-number">6.5</span> Case Study: Bayesian Covid testing</h2>
+<section id="case-study-bayesian-covid-testing" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="case-study-bayesian-covid-testing"><span class="header-section-number">7.5</span> Case Study: Bayesian Covid testing</h2>
 <p>Multi-armed bandits remark</p>
 
 
@@ -422,12 +427,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../02_causality/background.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../02_causality/lab.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
