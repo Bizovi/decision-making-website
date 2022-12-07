@@ -102,6 +102,17 @@ I would like to add a few more examples, from an insider and practitioner's pers
 
 ## Case Study: Decisions at Bolt
 
+- pricing decisions: what factors influence it
+- matching passengers and their routes/trips to cars
+- balancing the demand and supply
+- reputation systems: ratings, canceling rides
+- advertisement and acquisition
+- engagement and CRM: churn, inactivity
+- finance, fraud prevention, charging systems
+- entering a new market
+- a/b testing app features
+- ethical considerations
+
 
 ## What is AI? WIP
 
