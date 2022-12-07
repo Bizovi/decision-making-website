@@ -1,7 +1,7 @@
 # Case Study: AI at Adore Me
 
 
-
+## WIP
 
 As i said before, e-commerce and we're pretty tech-savy: have microservices everywhere and live in google-cloud; the second important component is the people: we're small, self-organized teams and we communicate, collaborate a lot -- in every problem we try to have a cross-functional teams. 
 Our clients are not only internal decision-making and colleagues, but also the customers. On the other hand, we want to give as much power as possible to the developers.

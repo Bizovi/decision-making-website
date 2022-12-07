@@ -62,13 +62,47 @@ We start with real-world applications of data science, define what AI, Cyberneti
 
 
 
-## Data Science in the Wild: applications
+## Data Science in the Wild
 
-Where do you find it all in the wild and practice?
-Logistics and supply chain: how much inventory should I order from manufacturing, to satisfy the demand (that last item on the shelf) and to avoid excess inventory.
+At this point, you might get tired of me emphasizing the decision-making aspect of data science as the main point of why it is important. It's time we move from the general and abstact towards particular examples and applications in various industries. This will lead us to acknowledge how **prevalent** is AI (that we haven't fully defined yet) in firms, services and technologies we use every day. [^reverse]
 
-Recommender systems
-Marketing models
+[^reverse]: When reading this section, I want to get you into a mindset of the reverse engineer: step back and think deeply about products and services you use every day, put yourself in the shoes of the business making those decisions and building those systems. What were they thinking about? What challenges were they facing that were an appropriate use-case for ML, Statistics, and AI?
+
+
+::: {.callout-important}
+## During a lecture, I usually ask students
+Can you give some examples of businesses, sevices, technologies, problems, and domains which you suspect do have AI/ML algorithms and models behind the scenes?
+
+See below some very good answers and argumentations provided by the students last year, then we'll examine in more details one of them. Of course, there is always that one person, very passionate about sports or blockchain.
+:::
+
+
+- **Dynamic pricing** in Bolt and Uber, which takes into account the weather, especially if it rains, peak hours: balancing demand and supply. It is at the intersection of ML and economic theory, as they are a platform or marketplace. Prices also change with respect to competitors, so we see aspects of an oligopoly behavior. [^uber_jack]  
+- **Stock markets** and trading bots: at the intersection of economics, finance and AI. I would add the "good old" and boring portfolio management and venture capital enterprises.
+- **Management consulting**: what market to enter, whether and how to build a new product (product development). Lots of use-cases in marketing and market research firms.
+- **Medicine Applications**: developing new vaccines and drugs, aided by AI and designing clinical trials for novel treatments.
+- **Banks and insurance**: risk management, predicting credit defaults on mortgages and business loans. Chatbots for customer support, for most frequent and simple questions.
+- **Automotive**: routine tasks like automated parking, the race towards self-driving, autonomous or semi-autonomous cars, safety warnings. Predictive maintainance is tackling a problem where they leverage predictions to replace risky parts before they go out of function.
+- Liverpool F.C. won a title, and a key part of their success was leveraging AI and ML to discover new tactis on the field with the highest payoffs. [^liverpool]
+- **NBA** teams invested a lot in the data infrastructure and decision-making capabilities: LA Lakers found the best player at the moment for a particular position they were lacking and would play well along with the team. Rockets won the regular championship divison by going all in on the 3-point shot. Golden State Warriors simply revolutionised basketball with data, before everyone else was doing it -- giving them a competitive edge. [^nba]
+
+[^uber_jack]: When it doesn't work out -- I'm pretty upset at their data scientists and domain experts. Here is where ethical issues creep up: jacking up prices, monopolies, drivers struggling to make a living wage.
+
+[^liverpool]: TODO: Reference article and maybe dataset for more details
+[^nba]: TODO: Reference to thinking basketball and other sports' science resources
+
+In all of the examples above, those businesses and systems do have to make decisions, under uncertainty from multiple sources, trying to solve complex problems at a large scale, which would be impossible to do manually even with an army of employees. 
+
+I would like to add a few more examples, from an insider and practitioner's perspective, which might not be as impressive and a bit routine, but no less important. Keep in mind, that if at a closer look, the service seems to do something relatively intelligent very fast, specialized AI might be involved behind the scenes.
+
+- **Demand Planning**: How many SKUs (items) should I order for manufacturing, to satisfy the demand (that last item on the shelf, minimizing lost sales) and to minimize excess inventory.
+- **Logistics** and **Supply Chain**: routing, distribution center operations and automations for order fulfillment, return management
+- **Recommender systems** for music, videos, books, products, news in social media, services, platforms, and e-commerces like facebook, instagram, tiktok, youtube, spotify, amazon, emag. You can find recommendations in surprising places, like google maps.
+- **Programmatic Advertisement**: finding best placement for ads on various platforms, right now dominated by meta and google
+
+
+## What is AI? WIP
+
 
 What do all of this have in common? People have to make good decisions for UX and business outcomes.
 
@@ -76,6 +110,9 @@ This is an interdisciplinary field, at the intersection of mathematics and stati
 This course is specifically about products/problems in businesses, especially in tech.
 
 What does this buzzword of data science mean?
+
+
+Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). We already gave two examples -- one in e-commerce, and second as pandemic-response. We have to keep in mind that what we do is very domain-dependent/specific (we call it domain-driven).
 
 
 People talk a lot about Big Data, the social impact of algorithms on various platforms, e.g. yt, fb, social media; and there is lots of confusion what does it exactly does (ML, AI, DSc, DL) -- so we will define all those terms
@@ -104,34 +141,6 @@ This means, that by using data, we build models and algorithms, domain knowledge
 
 So, we can collect data, train models, apply algorithms in order to make inferences about some relevant and interesting quantities, such that we can make an evidence-based, efficient decision which gets us closer to our objective. 
 
-
-Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). We already gave two examples -- one in e-commerce, and second as pandemic-response. We have to keep in mind that what we do is very domain-dependent/specific (we call it domain-driven). Can you give some examples of businesses, problems, sevices which you suspect do have algorithms/models of AI/Ml behind the scenes:
-
-A: 
-- liverpool AI/ML won title strategy and tactics discovery on the field -- sports' science. NBA (invested a lot in data infrastructure, ML, e.g. lakers/rockets/golden state), baseball. Lakers -- what is the best player for that position? (Thinking basketball). Look, again, they had to make a decision!
-- dynamic pricing in bolt/uber, which takes into account rain/weather, peak hours: balancing demand and supply. It is at the intersection of ML/Econ theory, as they are a marketplace. Also, when it doesn't work out -- I want to insult their data scientists. Here is where ethical issues creep up (jacking up prices, monopolies, drivers making a living wage). Prices also change with respect to competitors, e.g. in oligopoly
-- Stock markets and trading (bots), competition, supply/demand, etc
-- Management consulting: e.g. if they want to enter a new market, build a new product, is also related to marketing and market research (liana, you gov), product deveylopment and many many use-cases which can be solved by such a consulting firm
-- Medicine: new vaccine, treatment, drug development
-- Banks and insurers: risk management, credit default (mortgage, etc). Chatbots and customer-support, for most frequent and simple questions.
-- Automotive: e.g. automated parking, self-driving, safety warnings. Predictive maintainance is also a problem, replace risky pieces.
-- The message is: at a closer look, if the service seems to do something relatively intelligent (e.g. reddit, netflix, amazon) -- content curation, recommendation, ranking, merchandising. the whole field of recommender systems
-
-Again, everywhere, we do have to take decisions, we have uncertainty from multiple sources, complicated problems at a large scale (impossible to do manually without an army of employees).
-
-
-
-
-- uber, bolt
-- fb, ig, tiktok
-- google search, maps, youtube
-- spotify
-- amazon, emag as platforms
-- dtc e-commerce
-- manufacturing
-- supply chain
-
-## What is AI?
 
 How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist's life look like?
 

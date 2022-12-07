@@ -1,4 +1,4 @@
-# Statistical Foundations
+# Statistical Foundations: WIP
 
 In order to be a successful Data Scientist, one has to "speak the language" of probability and statistics; it is the basis on which we can build towards more **realistic and avanced models**, with the purpose of improving **decision-making under uncertainty**. This foundation is a prerequisite for all 3 perspectives: analytics/mining, machine learning and causal inference.
 

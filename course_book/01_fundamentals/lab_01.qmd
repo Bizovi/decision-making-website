@@ -1,4 +1,4 @@
-# Lab: tidyverse and ecosystem of packages
+# Lab: tidyverse and ecosystem of packages: WIP
 
 philosophy: not just load data, visualize and run models -- you did that plenty before. move to the idea of full stack data apps and problem framing and formulation through case studies.
 
