@@ -119,7 +119,7 @@ I'll have to introduce a lot of new concepts when the language we developed so f
 
 
 
-## What is AI, Data Science, and ML? 
+## What is AI, Data Science, Cybernetics? 
 
 
 It's undeniable that there is a lot of excitement when it comes to AI, ML, and data science -- to the point of calling it the sexiest job of 21st century. Data science is an umbrella term, with interdisciplinary at its core, drawing inspiration from multiple fields, sets of tools, practices, methods and it continuously evolves. [^questions]  It is designed to help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry.
@@ -198,29 +198,48 @@ The good news is that when these transdisciplinary groups of people work togethe
 
 ### Cybernetics is what we call AI
 
+At this point we have a working definition of Weak AI. At a first glance it might be hard to see what does it have in common with Cybernetics and its study of Complex Adaptive Systems.
+
+I'm not trying to equivocate those two, but argue that weak AI is how Cybernetics evolved and is mostly used in practice now. I will give a definition from P. Novikov, which I found tremendously useful, then explain it. Can you spot the parallels of "decision-making under uncertainty at scale" in this definition? 
+
+::: {.callout-important}
+## A better definition of Cybernetics
+The science of **general regularities** of **control** and **information processing** in animal, machine and human (socitey)
+:::
+
+
+::: {.callout-tip}
+## Unpacking this dense/abstract definition
+
+- **Control** means **goal-directedness**, the ability to reach the goals and objectives by taking action and stirring the system towards a trajectory. The objective can also be perserving the structural-functional organization of the system itself, an **autopoesis**.
+- **Information Processing** could be pattern recoginition, perception, how you understand and model the world, what inferences do you draw, what "data inputs" are used
+- **General regularities** means what is true and plausible of control and information processing across fields and a variety of complex systems, not only in particular cases.
+- Animal refers to applications in biology, machine -- in engineering, and human -- in our society and behavior.
+
+In economic cybernetics, we're concerned with economics, society and human behavior, rather than engineering, biology, or natural science applications.
+:::
+
+To explain how Cybernetics evolved into Weak AI, there is a conglomeration of fields which went a bit out of fashion and favor: Game Theory, General Systems' Theory, Agent-Based Modeling, Systems' Dynamics, Complexity and Chaos, Evolutionary Algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practice.
+
+So, we kind of settled on a more pragmatic set of tools, which is dominated pattern recognition and optimisation, in one form or another trying to learn from data (ML, DL, Causality) and act optimally (Dynamic Programming, Reinforcement Learning). .
+
+Wait. What's going on here? Am I saying that we did a bachelor's degree in AI under the term of Economic Cybernetics? For me, personally, after having this epiphany -- everything I studied makes so much more sense in retrospective.
 
 ::: {.callout-tip}
 ## The meaning of AI changed in the meanwhile
 
-You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tell the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
+You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tells the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
 
-Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). 
+I highly encourage you to read the articles by M. Jordan, but until then, here are a few ways people understand AI:
+
+- Cybernetics and **Weak AI**, which we discussed before
+- **General AI** is a titanic project. It interweaves with Philosophy, Cognitive Science, in order to understand what makes us intelligent and conscious. On the other hand, trying to build general-purpose problem solving machines.
+- Symbolic AI, is still relevant in a few niches, especially in automated proofs and logical reasoning.
+- Augmentative AI, like VR, augmenting human capabilities, human-machine interactions
 :::
 
+In practice, if you're a data/business analyst, ML/data engineer, data scientist, statistician, product manager -- Cybernetics is a way of thinking in systems and formulate problems well. When it comes to implementation, we mostly use data and the tools, models, methods discussed in this course.
 
-What's going on here? What we call now AI (weak AI), is an evolution of cybernetics and pattern recognition. There are two schools of thought: 
-
-- immitative intelligence: try to do same things as humans, GAI research, at the intersection of cognitive science - it is fascinating, also needs philosophy, fascinating
-- symbolic: that which died in 60s in the first AI winter
-- weak AI: decision-making, at scale, more specialized.  Think in systems, feedback loops -- take a real phenomena and formalize, simplify it to emphasize essential aspects of that phenomena 
-
-> The science of general regularities of information processing and control in animal, machine and human (socitey)
-
-General regularities, meaning true across fields (econ, soc, physics, bio, chem). Control -- basically to reach the objectives, take an action which stirs the systems on a desired trajectory, and info processing is pattern recoginition, how can you model it, infer, integrate data and say something interesting about that phenomena. We're more on a society side, as we talk about human behavior, less about engineering, medicine, biology, ecology and climate science.
-
-Again, it is a conglomeration of fields which went a bit out of fashion and favor: Game theory, Decision theory, general systems' theory, agent-based modeling, systems' dynamics, complexity and chaos, evolutionary algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practive -- so we kind of settled on a more general tool, like a hammer, which is pattern recognition (ml, dl, causality, optimization). 
-
-So, if you want to be a data analyst, business analyst, ml engineer, data scientist, data engineer, statistician, product manager in tech, somehow, the cybernetics is a way of thinking (in systems), but we mostly use the tools outlined before. Also, no one can know it all well: so one of the objective of the course, is that you're passionate about ANY of this stuff or Not, to understand what those people do -- it is harder and harder which don't heavily leverage data for decision-making
 
 
 ## Analytics, ML or Statistics?
