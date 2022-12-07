@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science - 4&nbsp; Background</title>
+<title>Pragmatic Data Science - 5&nbsp; Background: WIP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,6 +62,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -73,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Background: WIP</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -154,7 +157,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse</span></a>
+  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
   </div>
 </li>
       </ul>
@@ -169,17 +177,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
+  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Power Calculations and Hypothesis testing</span></a>
+  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
+  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
   </div>
 </li>
       </ul>
@@ -198,15 +206,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ab-testing-scheme" id="toc-ab-testing-scheme" class="nav-link active" data-scroll-target="#ab-testing-scheme"><span class="toc-section-number">4.1</span>  A/B Testing Scheme</a></li>
-  <li><a href="#error-types" id="toc-error-types" class="nav-link" data-scroll-target="#error-types"><span class="toc-section-number">4.2</span>  Error types</a></li>
-  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics"><span class="toc-section-number">4.3</span>  Metrics</a></li>
-  <li><a href="#pitfalls" id="toc-pitfalls" class="nav-link" data-scroll-target="#pitfalls"><span class="toc-section-number">4.4</span>  Pitfalls</a></li>
-  <li><a href="#most-tests-are-linear-models" id="toc-most-tests-are-linear-models" class="nav-link" data-scroll-target="#most-tests-are-linear-models"><span class="toc-section-number">4.5</span>  Most tests are linear models</a></li>
-  <li><a href="#dead-salmon" id="toc-dead-salmon" class="nav-link" data-scroll-target="#dead-salmon"><span class="toc-section-number">4.6</span>  Dead Salmon</a></li>
-  <li><a href="#bootstrap" id="toc-bootstrap" class="nav-link" data-scroll-target="#bootstrap"><span class="toc-section-number">4.7</span>  Bootstrap</a></li>
-  <li><a href="#ecdf-not-your-grandmas-histogram" id="toc-ecdf-not-your-grandmas-histogram" class="nav-link" data-scroll-target="#ecdf-not-your-grandmas-histogram"><span class="toc-section-number">4.8</span>  ECDF: Not your grandma’s histogram</a></li>
-  <li><a href="#using-graphs-to-reason-about-this-mess" id="toc-using-graphs-to-reason-about-this-mess" class="nav-link" data-scroll-target="#using-graphs-to-reason-about-this-mess"><span class="toc-section-number">4.9</span>  Using graphs to reason about this mess</a></li>
+  <li><a href="#ab-testing-scheme" id="toc-ab-testing-scheme" class="nav-link active" data-scroll-target="#ab-testing-scheme"><span class="toc-section-number">5.1</span>  A/B Testing Scheme</a></li>
+  <li><a href="#error-types" id="toc-error-types" class="nav-link" data-scroll-target="#error-types"><span class="toc-section-number">5.2</span>  Error types</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics"><span class="toc-section-number">5.3</span>  Metrics</a></li>
+  <li><a href="#pitfalls" id="toc-pitfalls" class="nav-link" data-scroll-target="#pitfalls"><span class="toc-section-number">5.4</span>  Pitfalls</a></li>
+  <li><a href="#most-tests-are-linear-models" id="toc-most-tests-are-linear-models" class="nav-link" data-scroll-target="#most-tests-are-linear-models"><span class="toc-section-number">5.5</span>  Most tests are linear models</a></li>
+  <li><a href="#dead-salmon" id="toc-dead-salmon" class="nav-link" data-scroll-target="#dead-salmon"><span class="toc-section-number">5.6</span>  Dead Salmon</a></li>
+  <li><a href="#bootstrap" id="toc-bootstrap" class="nav-link" data-scroll-target="#bootstrap"><span class="toc-section-number">5.7</span>  Bootstrap</a></li>
+  <li><a href="#ecdf-not-your-grandmas-histogram" id="toc-ecdf-not-your-grandmas-histogram" class="nav-link" data-scroll-target="#ecdf-not-your-grandmas-histogram"><span class="toc-section-number">5.8</span>  ECDF: Not your grandma’s histogram</a></li>
+  <li><a href="#using-graphs-to-reason-about-this-mess" id="toc-using-graphs-to-reason-about-this-mess" class="nav-link" data-scroll-target="#using-graphs-to-reason-about-this-mess"><span class="toc-section-number">5.9</span>  Using graphs to reason about this mess</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/02_causality/background.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -215,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Background: WIP</span></h1>
 </div>
 
 
@@ -231,32 +239,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Experiment Design and A/B Testing</p>
-<section id="ab-testing-scheme" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="ab-testing-scheme"><span class="header-section-number">4.1</span> A/B Testing Scheme</h2>
+<div class="cell" data-fig-width="7">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
+    Motiv[Why experiments?] --&gt; S[The Scheme] --&gt; DA[Default Action]
+    DA --&gt; Err[Error Types] --&gt; M[Metrics &amp; Pitfalls] --&gt; E[Effect Size]
+
+    Motiv --&gt; H[Hypothesis Testing] --&gt; L[Linear Models]
+    Motiv --&gt; NP[Nonparametrics] --&gt; ECDF[ECDF] --&gt; BSt[Bootstrap] --&gt; Bayes[Bayesian]
+
+    L --&gt; G[Graphs: DAGs] --&gt; Iden[Identifiability] --&gt; Rel[Relevance]
+
+    Rel --&gt; Pow[Sample Size &amp; Power]
+    Bayes --&gt; Pow
+    E --&gt; Pow
+
+    Pow --&gt; Ex[Case Study]
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5.1: In the next lecture we will dive into A/B testing and causality, bootstrap, nonparametrics</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="ab-testing-scheme" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="ab-testing-scheme"><span class="header-section-number">5.1</span> A/B Testing Scheme</h2>
 </section>
-<section id="error-types" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="error-types"><span class="header-section-number">4.2</span> Error types</h2>
+<section id="error-types" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="error-types"><span class="header-section-number">5.2</span> Error types</h2>
 </section>
-<section id="metrics" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="metrics"><span class="header-section-number">4.3</span> Metrics</h2>
+<section id="metrics" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="metrics"><span class="header-section-number">5.3</span> Metrics</h2>
 </section>
-<section id="pitfalls" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="pitfalls"><span class="header-section-number">4.4</span> Pitfalls</h2>
+<section id="pitfalls" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="pitfalls"><span class="header-section-number">5.4</span> Pitfalls</h2>
 </section>
-<section id="most-tests-are-linear-models" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="most-tests-are-linear-models"><span class="header-section-number">4.5</span> Most tests are linear models</h2>
+<section id="most-tests-are-linear-models" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="most-tests-are-linear-models"><span class="header-section-number">5.5</span> Most tests are linear models</h2>
 </section>
-<section id="dead-salmon" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="dead-salmon"><span class="header-section-number">4.6</span> Dead Salmon</h2>
+<section id="dead-salmon" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="dead-salmon"><span class="header-section-number">5.6</span> Dead Salmon</h2>
 </section>
-<section id="bootstrap" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="bootstrap"><span class="header-section-number">4.7</span> Bootstrap</h2>
+<section id="bootstrap" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="bootstrap"><span class="header-section-number">5.7</span> Bootstrap</h2>
 </section>
-<section id="ecdf-not-your-grandmas-histogram" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="ecdf-not-your-grandmas-histogram"><span class="header-section-number">4.8</span> ECDF: Not your grandma’s histogram</h2>
+<section id="ecdf-not-your-grandmas-histogram" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="ecdf-not-your-grandmas-histogram"><span class="header-section-number">5.8</span> ECDF: Not your grandma’s histogram</h2>
 </section>
-<section id="using-graphs-to-reason-about-this-mess" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="using-graphs-to-reason-about-this-mess"><span class="header-section-number">4.9</span> Using graphs to reason about this mess</h2>
+<section id="using-graphs-to-reason-about-this-mess" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="using-graphs-to-reason-about-this-mess"><span class="header-section-number">5.9</span> Using graphs to reason about this mess</h2>
 
 
 </section>
@@ -398,12 +435,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../01_fundamentals/lab_01.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../02_causality/power.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Power Calculations and Hypothesis testing</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
