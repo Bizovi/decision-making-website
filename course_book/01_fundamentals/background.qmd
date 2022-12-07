@@ -122,57 +122,91 @@ I'll have to introduce a lot of new concepts when the language we developed so f
 ## What is AI, Data Science, and ML? 
 
 
-It's undeniable that there is a lot of excitement when it comes to AI, ML, and data science -- to the point of calling it the sexiest job of 21st century. These are fascinating, interdisciplinary fields that help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry. 
+It's undeniable that there is a lot of excitement when it comes to AI, ML, and data science -- to the point of calling it the sexiest job of 21st century. Data science is an umbrella term, with interdisciplinary at its core, drawing inspiration from multiple fields, sets of tools, practices, methods and it continuously evolves. [^questions]  It is designed to help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry.
 
-People talk a lot about Big Data, the social impact of algorithms on various platforms, e.g. yt, fb, social media; and there is lots of confusion what does it exactly does (ML, AI, DSc, DL) -- so we will define all those terms
+You will often see a Venn diagram where data science sits at the intersection of mathematics -- statistics, computer science -- software engineering, and domain knowledge. I think this is not sufficient to characterise data science, therefore, will try to elaborate **what** it does, and **how** (which is as important). 
 
-
-How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist's life look like?
-
-> First and foremost, AI is about **Decision-Making under Uncertainty at Scale** [^cassie-ai-def]. You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tell the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
-
-For all pragmatic intents and purposes, especially in business, it's about decision-making under uncertainty at scale. The important thing here is DECISIONS, there is no point in building AI and solutions based on complex models if we don't have uncertainty. We have to be able to change our minds in the face of evidence, under uncertainty, by leveraging big amounts of data. (ref: Cassie)
-
-We have to recognize that data science is an umbrella term, with interdisciplinarity at its core. It draws inspiration, puts together multiple fields and continuously evolves. You will often see a Venn diagram where data science sits at the intersection of mathematics,statistics, computer science, software engineering, and domain knowledge. Despite that, we can clearly define **what** it does (see above), and **how** (depending on the perspective taken). 
-
-In my opinion, all of this has one thing in common: decision-making unde uncertainty at scale. But you will find different definitions on the web. It's important to mention everything you have studied before, goes into this umbrella term (by itself it doesn't mean much), a set of tools, practices, techniques for better decision-making. at scale, it means that there are lots of decisions, and it isn't humanly possible to do it manully -- there is a need for automation and digitalisation, and this is a direction in which man
-y industries go, even if traditionally they have been paper/manual, including accounting, legal. 
+[^questions]: There are many questions still unanswered: How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist's life look like?
 
 
-Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). We already gave two examples -- one in e-commerce, and second as pandemic-response. We have to keep in mind that what we do is very domain-dependent/specific (we call it domain-driven).
+::: {.callout-important}
+## AI in a Nutshell
+For all pragmatic intents and purposes, especially in businesses, AI is about **Decision-Making under Uncertainty at Scale** [^cassie-ai-def]. 
 
-What else goes into AI? Of course, it depends on the domain: AI in e-commerce, like Adore Me, where we sell lingerie, will be very different from the problems we try to solve in medicine, social sphere and govt, and of course it has to be data-driven.
+One important keyword here is `uncertainty`, as there is no point in building AI solutions based on complex models if we don't have uncertainty. We have to be able to change our mind and actions in the face of evidence.
 
+On the other hand, `scale` is the reason ML and Deep Learning is so powerful, because you can take lots of small decisions in an automated way, with little curation or guidance from humans. This is why many traditionally "paperwork" industried like legal and accounting embrace digitalisation and automation now. 
+:::
 
-Ultimately, why would I build a system which predicts demand for products in a d2c ecommerce, like emag, amazon? 
-Why would I try to find out the factors which contribute to a successful advertisement (efficient). 
-A (Student): to allocate resources to the stuff which generates profit and not spread around and get nothing in the end, only costs over the target, efficiency
-A (Stud): information as a competitive advantage, anticipating/predicting so that we can plan and prepare.
-
-
-
-When we talk about the uncertainty, it's important to recognize its sources: one coming from the fact of incomplete information, that we always work with samples in one way or another (e.g. even if at a certain point in time, we might have real-time data, as everything evolves in time). We want to say something intelligent about the population. Also, there is ambiguity, as objectives are not always mathematically clear. Everything is in flux and change, especially when talking about the future, making a good prediction is one of the most difficult things (ref: seeing clearly and scout mindset).
+Ultimately, why would I build a system which predicts demand for products in a direct-to-consumer ecommerce like Allbirds, Macy's, or AdoreMe? Either in a marketplace like Emag or Amazon? Why would I try to find out the factors which contribute to a successful advertisement?
 
 
-On the other hand - Scale: the reason ML is so powerful, it's because you can take lots of small decisions in an automated way, with a little curation from humans.
+::: {.callout-tip}
+## Here are some answers from students
+
+- In order to **allocate resources** to the stuff which generates growth and profit. Avoid being scattered around (which I would call bad strategy), resulting in costs over targets and inefficiency.
+- In short, we attempt to allocate resources and efforts **efficiently**.
+- We can view **information as a competitive advantage**, anticipating and predicting so that we can plan and prepare, outperform competitors.
+:::
+
+When we talk about uncertainty, it's important to recognize its sources: [^uncertainty-sources] one coming from incomplete information, that we always work with samples in one way or another. For example, even if at a certain point in time we might have real-time data, everything evolves and quickly becomes outdated. Everything is in a state of flux and change. Even in the current state, we don't know for sure where we stand -- sometimes, in economics, this problem is called `nowcasting`. When talking about the future, making a good prediction is one of the most difficult things. 
+
+For example, who would've predicted the pandemic and all its implications on the supply chain and society? It's important to note the difference between this kind of **black swan events** and the irreducible, fundamental uncertainty, which can't be captured by any explanatory factors.
+
+In a happy case, we can quantify and reduce it by conditioning the model, that is, joint distribution of random variables with a given structure, on data. That would result in inferences and evidence with respect to our hypothesis and model of the world.[^generalization] At the very least we can try to quantify how uncertain are we. 
+
+So, we still have to make decisions. Those have to have a level of **robustness** and resilience to shocks, in the face of uncertainty. I would go even further, to suggest that we should **aim for antifragility**, meaning, the system improves after a shock or negative event, but that is very hard to implement and operationalize, therefore, it falls outside the scope of this course -- to the realm of systems' design. 
 
 
+[^uncertainty-sources]: We will talk more formally about sources of uncertainty in the next lecture, while reviewing the [fundamentals of statistics](stat_foundations.qmd#sources-of-uncertainty).
 
-E.g. who would predict the pandemic and all its implications on the supply chain. There is just an irreducible, fundamental uncertainty (difference between noise/fluctuation and black swan events). But there are others, which we can quantify and reduce it by conditioning on data and our hypothesis and model of the world, by stat inferences, at least we can try to quantify how uncertain are we. Even the current state, we don't know for sure where we stand. So, we still have to make decisions, and those have to have a level of **robustness** / resilience to shocks, in the face of uncertainty (even antifragility, but that is so hard), 
+[^generalization]: We want to say something intelligent about the population, technically, to generalize. However, there is ambiguity, as objectives and the meaning/semantics of data fields are not always mathematically clear or without conflict. 
 
-Imagine we have an equation/program, with well-defined, true rules, which predicts the price on capital markets, or perfectly predict how many items will a client buy. Then we don't need this field. So, when we have a well-tested theory (newtonian physics) -- you don't need machine learning and data mining there. 
+::: {.callout-warning}
+## When you don't need AI and Statistics
 
-However, when we talk about human behavior, we should resist the temptation and arrogance to say that we have a well-defined theory (be it normative or positive). Our preference changes, and we can "decide" in which direction they change, if they persist or organically develop. Then, we need other kind of tools, and human behavior, regardless if I'm a data scientist at Uber/Bolt/Glovo, everywhere people are involved (customers, ) -- we're at cybernetics, talking about economics, it's less like chemical engineering, robotics or computer vision in a facotry.  We almost always have to deal with human behavior.
+As a though experiment, itmagine we have an equation or program, with well-defined rules, which perfectly predicts the price on stock markets, or perfectly predicts how many items will a client buy and how she will respond if we change the price (an intervention). We won't need machine learning, causal inference, or AI there.
 
-This means, that by using data, we build models and algorithms, domain knowledge, which try to simplify the complex reality, to capture various aspects which are essential and interesting for us. e.g. pandemics -- decisions at the level of country - state - country - town: what is a good one? For that, I have to set objectives. Even right now, what is the real situation? We need to make an inference, a guess. It goes witout saying about the scale of it -- it's global, if we take into account people's mobility and movement!
+Of course, we don't have that kind of program. It's only somewhat true in cases when we have a well-tested theory, which stood the test of time and went through the scientific process to become the best theory with respect to all others. For example newtonian physics, relativity, quantum mechanics, evolution. 
+:::
 
-So, we can collect data, train models, apply algorithms in order to make inferences about some relevant and interesting quantities, such that we can make an evidence-based, efficient decision which gets us closer to our objective.  
+However, when we talk about human behavior, we should resist the temptation and arrogance to say that we have a well-defined theory, be it normative or positive. Our preferences change, and we can "decide" in which direction they change or persist. 
 
-So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we're in business.  (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it's not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.
+Regardless of the business we work at or own, the place in the value chain, we'll have to deal with human behavior: customers, employees, decision-makers, engineers. We need other kind of tools to infer perceptible regularities and patterns in their behavior. We will be forced in one way or another to learn from data and observation.
 
+::: {.callout-tip}
+
+## A model is a simplified representation of reality
+
+We need models to make sense of the world around us, because it is so complex and uncomprehensible if we are to represent it faithfully in a simulation. Therefore, we focus on relevant, interestig, essential aspects to us, we simplify by baking in domain knowledge, assumptions, and data into the models and algorithms. 
+
+So, we can collect data, apply algorithms to train models, in order to make inferences about some relevant quantities. That will help us in making evidence-based decisions which gets us closer to our objective in an efficient way.  
+::: 
+
+::: {.callout-important}
+## Weak AI is Domain-Specific 
+
+By now, you probably figured out that we're not talking about General AI, trying to surpass human intelligence in general reasoning and problem-solving. Thus, we're talking about weak or specialized AI, which depends very much on the domain.
+
+AI in an a fashion e-commerce, like AdoreMe, where we sell lingerie, will have a very different flavor from the tools and methods used in genomics, medicine, social science or psychology. 
+
+Despite the fact that there are a lot of shared fundamentals, when it comes to the principles of building models, it is not straightforward to take something which works in one domain and apply it in another. Significant tweaks and adaptations are needed, which are dependent on the specificities of that domain.  
+
+The good news is that when these transdisciplinary groups of people work together and successfully adapt a method, it is often a breakthrough in the field borrowing the theory and technology.
+:::
 
 
 ### Cybernetics is what we call AI
+
+
+::: {.callout-tip}
+## The meaning of AI changed in the meanwhile
+
+You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan's brilliant article [^jordan-ai], which tell the history of "AI" and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e. the revolution hasn't happened yet) [^jordan-revolution].
+
+Now, if we talk about AI (what we understand by it changed historically), to the definition, we would add the autonomy (weak ai), not self-awareness (general AI). 
+:::
+
 
 What's going on here? What we call now AI (weak AI), is an evolution of cybernetics and pattern recognition. There are two schools of thought: 
 
@@ -212,9 +246,18 @@ Make no mistake, the data science field is fascinating and the applications exci
 - Just take a look at how many "AI" tools have been built to catch covid, and none helped [^mit-ai-covid]
 - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in "The profession of solving the wrong problem"[^war-wrong-problem] and "How to constrain artificial stupidity" [^war-stupidity].
 
+
+
 ![Analyst's workflow](img/analyst-workflow.png "Analysis"){width="90%"}
 
 ![ML workflow](img/ml-workflow.png "Analysis"){width="90%"}
+
+
+e.g. pandemics -- decisions at the level of country - state - country - town: what is a good one? For that, I have to set objectives. Even right now, what is the real situation? We need to make an inference, a guess. It goes witout saying about the scale of it -- it's global, if we take into account people's mobility and movement!
+
+
+So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we're in business.  (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it's not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.
+
 
 The idea is to get an intuition when it is a good idea to use statistics, when a more powerful tool like ML is needed (but which is more dangerous in overfitting / backfiring) and what does Analytics means (you will or did have some subjects like BI, Data Analytics). What does analytics mean?
 
@@ -350,7 +393,7 @@ The good news is that sometimes, you just need a reliable prediction, as you're 
 Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid -- if you go outside that range, can easily get absurd predictions -- this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation. 
 
 
-## Bullshit in the age of Big Data
+## Calling Bullshit in the age of Big Data
 Small data problems in big data -- this is not the end of theory of stats. We have lots of entities with sparse information for each ones -- all about aggregation level, 100m clients, but new ones, without much information or not so many purchases. At a certain level of granularity, the data becomes, discrete, noisy, heteroskedastic. 
 
 Even in ML, e.g. in demand forecasting, we can't fully escape the teory (which is our understanding of the world) -- we need to provide it relevant data, factors which are related, possibly influencing that demand, like weather, holidays, road blockings, factors for demand and supply. We can't just pour all this data into ML and expect the best: garbage in garbage out, it isn't clear that feeding irrelevant data doesn't break our model, st. it picks up on noise and **spurious correlation**, esp. in very powerful DL models -- doesn't help with better decisions.
