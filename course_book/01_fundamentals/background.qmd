@@ -100,18 +100,6 @@ I would like to add a few more examples, from an insider and practitioner's pers
 - **Recommender systems** for music, videos, books, products, news in social media, services, platforms, and e-commerces like facebook, instagram, tiktok, youtube, spotify, amazon, emag. You can find recommendations in surprising places, like google maps.
 - **Programmatic Advertisement**: finding best placement for ads on various platforms, right now dominated by meta and google
 
-## Case Study: Decisions at Bolt
-
-- pricing decisions: what factors influence it
-- matching passengers and their routes/trips to cars
-- balancing the demand and supply
-- reputation systems: ratings, canceling rides
-- advertisement and acquisition
-- engagement and CRM: churn, inactivity
-- finance, fraud prevention, charging systems
-- entering a new market
-- a/b testing app features
-- ethical considerations
 
 
 ## What is AI? WIP

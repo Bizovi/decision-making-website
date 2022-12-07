@@ -280,7 +280,6 @@ TSWLatexianTemp*
 **/*.csv
 **/*.json
 **/*.pkl
-**/*.png
 **/*.whl
 
 dist/
