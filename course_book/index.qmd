@@ -47,9 +47,9 @@ It can be a function of decision-making support or the system/product itself, li
 > When somebody asks you what have you learned in this book and course, I suggest two metaphors:[^metaphor] one of simplification and another of seeing relations
 
 ::: {layout="[29, -10, 40]"}
-![We see Pollock's **messy reality**, which is the data and observations. We want to get to Picasso's bare bones **essence**, for better and clearer decision-making](01_fundamentals/logo.jpeg "Reality"){width="40%"}
+![We see Pollock's **messy reality**, which is the data and observations. We want to get to Picasso's bare bones **essence**, for better and clearer decision-making](01_fundamentals/img/logo.jpeg "Reality"){width="40%"}
 
-![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful](01_fundamentals/elephant-blind.jpeg){width="40%"}
+![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful](01_fundamentals/img/elephant-blind.jpeg){width="40%"}
 :::
 
 [^metaphor]: Due to my recent philosophical readings, some of the language here has a very specific meaning, which is totally outside the scope. For the curious, I will write a few blog posts outlining some philosophical arguments which struck a chord in me and which I found tremenously useful in day-to-day life.  
@@ -89,7 +89,7 @@ Think of me as an industry expert,[^bizovi-img] not an academic pushing you to d
 
 I’m a generalist – navigating uncertainty and complexity to improve decision-making at scale with data and domain-driven software. Here are a few relevant facts about me:
 
-[^bizovi-img]: ![See one of my conference talks at BigDataWeek, intended for a mixed tech/business audience: [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)](01_fundamentals/me.jpeg "Reality"){width="90%"}
+[^bizovi-img]: ![See one of my conference talks at BigDataWeek, intended for a mixed tech/business audience: [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)](01_fundamentals/img/me.jpeg "Reality"){width="90%"}
 
 
 - Graduate of Cybernetics (2017) and Quantitative Economics (2019)

@@ -54,7 +54,7 @@ flowchart TD
 The same idea is in the creative networkers (not information workers) -- it's not an algorithm which is the key, but a collaboration of developers, data engineers, with data science and decision-makers, domain experts (since we talked about how important is it to change your mind when the evidence told you so). All these people have to be strategically aligned, so one piece of wisdom I want to show next is how software systems, models help you in this alignment. (ref: DSc Safari)
 
 
-![Teams at adore me](teams_dsc.png "Teams"){width="90%"}
+![Teams at adore me](img/teams_dsc.png "Teams"){width="90%"}
 
 What kind of roles are out there and what do they do? Why are the generalists valuable?
 - Decision Maker

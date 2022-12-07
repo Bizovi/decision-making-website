@@ -11,7 +11,7 @@ book:
   repo-actions: [edit]
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
-  favicon: 01_fundamentals/logo.jpeg
+  favicon: img/favicon.jpeg
 
   sidebar:
     style: docked
