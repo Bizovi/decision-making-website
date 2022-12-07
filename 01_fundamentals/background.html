@@ -279,8 +279,8 @@ Decision Science: (not only) truth and action
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
   DM[Decision-Making] --&gt; Domains[Domains] -- case studies --&gt; U[Uber / Rides] --&gt; Ecom[E-Commerce]
-  DM --&gt; AI[What is AI?] --&gt; Choice[Stats/ML/Analytics]
-  Choice --&gt; Cy[Cybernetics Detour] --&gt; F[Why did you study those?]
+  DM --&gt; AI[What is AI?] --&gt; Cy[Cybernetics Detour] --&gt; Choice[Stats/ML/Analytics]
+  Choice  --&gt; F[Why did you study those?]
   DM --&gt; BS[on Bullshit] --&gt; Fool[Foolishness] --&gt; Caus[Causal vs Correlational] --&gt; BD[Big Data?]
 
   Ecom --&gt; BYOP[Bring your own problem]
@@ -506,52 +506,129 @@ The meaning of AI changed in the meanwhile
 </section>
 <section id="analytics-ml-or-statistics" class="level2 page-columns page-full" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="analytics-ml-or-statistics"><span class="header-section-number">1.3</span> Analytics, ML or Statistics?</h2>
-<p>For practical, pragmatic intents and purposes, we can distinguish 3 ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:</p>
+<p>At this point, you should have a pretty good idea why data science is important, what are some possible applications and domains, what does it do and concerned about. It is the motivation, real-world use-cases, and conceptual understanding that I promised at the beginning of the course.</p>
+<p>Disentangling the ambiguity around AI was one of the most difficult aspects of the course to articulate. Now, it’s time to transition to a lower level of analysis (inside data science, not outside it), break down the landscape into manageable chunks and develop our toolbox, in which we learn how to formulate problems well and match them with existing models, methods, and technologies.</p>
+<p>One of the first tools I want to introduce, is distinguishing three ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:</p>
 <ul>
-<li>Analytics and Data Mining - with the main goal of formulating better research questions (i.e.&nbsp;<strong>inspiration</strong>), find interesting and relevant stuff in massive datasets</li>
-<li>Machine Learning - learning from data, finding invariants/patterns, which generalize beyond the sample and training data, i.e.&nbsp;going from experience to expertise in an automated way</li>
-<li>Statistics, and especially causal inference - for making decisions with high stakes, and having greater confidence, rigor in the inferences and conclusions drawn</li>
+<li><strong>Analytics and Data Mining</strong>, where the main goal is formulating better research questions and hypotheses, that is, get <strong>inspiration</strong>, find interesting and relevant patterns and relationships in massive datasets</li>
+<li><strong>Machine Learning</strong>, as a way to use training algorithms to go automatically from experience (data) to expertise (a program or recipe for prediction). Put in other words, learning from data, finding invariants, patterns which generalize beyond our sample and training data.</li>
+<li><strong>Causal Inference</strong> <a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> for making decisions with high stakes, where we have to understand the causal processes of the system in order to intervene optimally. It enables greater transparency, reliability, and rigor in the inferences and conclusions drawn.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
+<div class="no-row-height column-margin column-container"><li id="fn16"><p><sup>16</sup>&nbsp;I find that statistics is not the right term here, as it is too broad, especially recently when the lines between ML and Stats are getting more blurry, as one adopts methods from other.</p></li></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
 <img src="img/ds-adventure.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
 </figure>
-<p></p><figcaption class="figure-caption">Choose your own adventure</figcaption><p></p>
+<p></p><figcaption class="figure-caption"><em>Source: xkcd;</em> Which one to choose and when? We will have some unlearning to do here, as much of the previous courses were in one way or another focused on analytics. Even in statistics or econometrics, there is little from the field of causality, which is necessary to apply it to real-world challenges. On the other hand, you applied ML methods, but in my opinion, without understanding what ML is, without a rigorous process which would ensure we don’t overfit or snoop the data, without a clear plan of how to deploy it to production and make decisions based on those predictions.</figcaption><p></p>
 </figure>
 </div>
-<p>So, xkcd cartoon explains it very well: the first question is - are you making decisionsthis? If no and are just curious, then we have lots of methods for data exploration and we look into analytics (inspiration!!). (ref: Cassie) If we do have to make decisions, and not many, and they are strategic and important, that means we need some rigorous statistics: if we do it at scale, e.g.&nbsp;us doing demand planning and inventory optimization for thousand and thousands of products, hundred of k of sizes - you cannot do it manually. On the other hand, it is not one or another, not a debate between ML and stats, you need both: recognize when is the appropriate time to use one or another – so, choose your own adventure.</p>
-<div class="page-columns page-full"><p>One has to cycle through these approaches, gain greater understanding, experience and skill in them, in order to use the appropriate tools in the right context. I recommend the following 4-part presentation <a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> by Cassie Kozyrkov, so that you get a good idea of how “AI” fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium <a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn16"><p><sup>16</sup>&nbsp;C.Kozyrkov - <a href="https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG">Making Friends with Machine Learning</a></p></li><li id="fn17"><p><sup>17</sup>&nbsp;C. Kozyrkov (Chief Decision Scientist <span class="citation" data-cites="Google">(<a href="../references.html#ref-Google" role="doc-biblioref"><strong>Google?</strong></a>)</span>) - https://kozyrkov.medium.com/</p></li></div></div>
-<div class="page-columns page-full"><p>Pay close attention to the process of developing data-driven products <a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians and data engineers. A good blueprint <a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI research group).</p><div class="no-row-height column-margin column-container"><li id="fn18"><p><sup>18</sup>&nbsp;C.Kozyrkov - <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps to Applied AI</a></p></li><li id="fn19"><p><sup>19</sup>&nbsp;People and AI Research <span class="citation" data-cites="Google">(<a href="../references.html#ref-Google" role="doc-biblioref"><strong>Google?</strong></a>)</span> - <a href="https://pair.withgoogle.com/guidebook/">Guidebook</a></p></li></div></div>
-<div class="page-columns page-full"><p>Make no mistake, the data science field is fascinating and the applications exciting, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI, data science, and get humble, down to earth about what it can and can’t do – the power, but also the limitations: - Just take a look at how many “AI” tools have been built to catch covid, and none helped <a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a> - One part of the problem is the mismatch between the real/business problem and objectives, and what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> and “How to constrain artificial stupidity” <a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn20"><p><sup>20</sup>&nbsp;W.Heaven - <a href="https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/">Hundreds of AI tools have been built to catch covid. None of them helped.</a></p></li><li id="fn21"><p><sup>21</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=kYMfE9u-lMo">The profession of solving the wrong problem</a></p></li><li id="fn22"><p><sup>22</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">How to Constrain Artificial Stupidity</a></p></li></div></div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The art of formulating a hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In many intro to statistics or science courses, we take for granted the hypothesis, it is often our starting point. How does one come up with a business or scientific hypothesis with makes sense, is reasonable, plausible, deserves serious consideration? Since there are an infinity of possible ones, how do we pick the most relevant?</p>
+<p>I argue, it is an art which requires a kind of <strong>intuition</strong>, <strong>sensibility</strong>, and <strong>attunement</strong> to the problem. In my opinion, it is the most underrated aspect of scientific enquiry and process: a good problem formulation often gets us halfway towards a solution.</p>
+<p>In this course we focus on data mining an analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of the behavior, coupled with a deep understanding of the field, existing theories and their shortcomings and inconsistencies. Often, these hypotheses follow as a consequence from the theory itself.</p>
+</div>
+</div>
+<p>If we don’t have to make decisions and want to find interesting patterns in data, to inform our future questions, we have lots of methods for exploratory data analysis – from visualization (manual) to clustering (automated) and model-driven exploration. Sometimes, we just want to monitor and display the facts and current state of a business on a dashboard – this is why your previous class was on BI (Business Intelligence).</p>
+<p>Then, in the decision-making processs, these questions and hypotheses can be communicated to statisticians and decision-makers, so that they have a clearer direction and more promising candidates to experiment with. This doesn’t mean that what we found the causal process which makes some clients more profitable than others, when we notice a difference between groups or clusters of clients.</p>
+<p>If we do have to make a few, high-stakes, strategic decisions of major importance to business outcomes and user experience, that means we need some rigorous statistics. For example, how to price the products, whether to enter a new market, what products to develop, how to allocate advertisement spending across different platforms, whether to deploy a new recommender system. We will discuss at length what can go wrong in drawing conclusions from data alone (with analytics or ML), and how that can backfire spectacularly.</p>
+<p>If we have to make lots of decisions at scale and high frequency, for example – doing demand forecasting and inventory optimization for 100k product SKUs, it cannot be done manually or with carefully designed experiments. In this case, an appropriate choice would be to learn from data and get predictions as reliable as possible. Keep in mind, that we will have to be very careful when defining what the model is optimizing for – it has to be aligned with business objectives.</p>
+<p>Why ML, since we put so much emphasis onto scientific rigor and trying to infer the causal processes? Sometimes – you don’t have a theory. For example, in recommender systems it’s just too complicated, with so many heterogenous users and items, each with their specific preferences and idiosyncracies.</p>
+<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Why not use all at various stages of a project?
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<p>It is not a debate of which one is better: ML vs Stats vs Analytics. One has to cycle through these approaches, gain greater understanding, experience, and skill in order to use the appropriate tools in the right context.</p>
+<div class="page-columns page-full"><p>I recommend the following 4-part presentation <a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> by Cassie Kozyrkov, so that you get a good idea of how AI fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium.</p><div class="no-row-height column-margin column-container"><li id="fn17"><p><sup>17</sup>&nbsp;C.Kozyrkov - <a href="https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG">Making Friends with Machine Learning</a></p></li></div></div>
+</div>
+</div>
+<div class="page-columns page-full"><p>Pay close attention to the process of developing data-driven products <a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians, and data engineers. A good blueprint <a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI Research group). We will discuss all of this in detail during our next lectures and case studies.</p><div class="no-row-height column-margin column-container"><li id="fn18"><p><sup>18</sup>&nbsp;C.Kozyrkov - <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps to Applied AI</a></p></li><li id="fn19"><p><sup>19</sup>&nbsp;People and AI Research | Google - <a href="https://pair.withgoogle.com/guidebook/">Guidebook</a></p></li></div></div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Are we in the business of ML?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The next two questions are tremendously important and will prevent you from embarking on an AI project which is doomed from the start:</p>
+<ul>
+<li>Is there a value proposition for AI? In other words, is there an underlying pattern to be discuvered?</li>
+<li>Do I have the (necessary and relevant) data?</li>
+</ul>
+<p>If yes and yes, we MIGHT be in business! But we shall not forget about the pragmatic aspects: is it feasible to be done with a small team, without a huge investment? What is the simplest way we can solve it? Are we solving the right problem? Are we making the job of people in the firm easier and more efficient?</p>
+</div>
+</div>
+<p>Make no mistake, the data science field is fascinating and full of exciting applications, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI and get humble, down to earth about what it can and can’t do – its power, but also the limitations:</p>
+<ul>
+<li>Just take a look at how many AI tools have been built to catch covid, and none helped <a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></li>
+<li>One part of the problem is the mismatch between the real/business problem and objectives, versus what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> and “How to constrain artificial stupidity” <a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn20"><p><sup>20</sup>&nbsp;W.Heaven - <a href="https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/">Hundreds of AI tools have been built to catch covid. None of them helped.</a></p></li><li id="fn21"><p><sup>21</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=kYMfE9u-lMo">The profession of solving the wrong problem</a></p></li><li id="fn22"><p><sup>22</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">How to Constrain Artificial Stupidity</a></p></li></div><div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Split your damn data! (on data snooping)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since we’re engaging in the business of data mining and analytics at one point or another of the project, we have to be extra careful. Intuitively, you understand that discovering hypotheses and testing them on the same set of data is a bad idea, because we’ll get an overly confident estimation of how good it is.</p>
+<p>However, sometimes, we don’t shy away from doing an exploratory data analysis, finding relevant and predictive features for our target variable by trying out a few models. Next day, we forget about this, having the conclusions crystalized in our mind, and apply a new, final model … on the same data. Often we get away with this, but it is as bad, meaning equivalent to the first case – we contaminated the data with our mining.</p>
+<p>So, before we get into the nuances of model validation, selection, and experiment design, get into the habit of always splitting your data. Give that test dataset to a friend, locked under a key and don’t let her give you that data, until you have your final model to be deployed and used for decisions.</p>
+</div>
+</div>
+<p>Why go through all of that pain to critique our own model with such a vigor? The answer is simple – if it passes this rigorous critique, it has greater chance of finding a real/causal pattern and generalize to examples outside our sample.</p>
+<div class="page-columns page-full"><p>This is a lot to take in! But there is one more thing to explore – there is one course by Dr.&nbsp;Adam Fleischhacker <a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>, which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:</p><div class="no-row-height column-margin column-container"><li id="fn23"><p><sup>23</sup>&nbsp;Adam Fleischhacker - <a href="https://www.causact.com/">Introduction to Business Analytics</a>: Intro to Bayesian Business Analytics in the R Eco-System</p></li></div></div>
+<blockquote class="blockquote">
+<p>“You will translate real-world scenarios into both mathematical and computational representations that yield actionable insight. You will then take that insight back to the real-world to persuade stakeholders to alter and improve their real-world decisions.”</p>
+</blockquote>
+<p>Dr.&nbsp;Fleischhacker makes an illuminating distinction between the <strong>business analyst’s workflow</strong> and a machine learning workflow, and sets up the normative criteria which make it successful. In our course, his workflow falls under the discussions related to <strong>causal inference</strong>. One interesting thing to note, is the convergence in the approach of an extremely diverse set of people: Cassie Kozyrkov, Vincent Warmerdam, Adam Fleischhacker, Richard McElreath, Andrew Ng – all coming from different backgrounds and activating in different environments and domains.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
 <img src="img/analyst-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
 </figure>
-<p></p><figcaption class="figure-caption">Analyst’s workflow</figcaption><p></p>
+<p></p><figcaption class="figure-caption"><em>Source: causact.com</em>; “(The workflow) starts with strategy, expertise, and data as inputs and results in the business analyst leading their firms to act on value-adding insights”</figcaption><p></p>
 </figure>
 </div>
+<p>Let’s briefly review those normative criteria of this workflow. It might be a confirmation bias on my part, but the fact that these are present in the current course in one way or another, means I stumbled upon them by trial-and-error and painful mistakes:</p>
+<ul>
+<li><strong>Outcome-focused</strong>: What is the point of fancy models, if we don’t achieve good or desired outcomes? If I was implying it so far, for the rest of the course we’ll ask this explicitly every time we tackle a business problem.</li>
+<li><strong>Strategically-aligned</strong>: <em>“Not all outcomes are created equal. Companies seeking to capture market share might increase expenses to aid market capture. Companies seeking to be cost leaders might leave some customers unsatisifed to keep expenses low. So a one-size-fits-all approach to defining good outcomes is ill-advised.”</em></li>
+<li><strong>Action-oriented</strong>: We insisted so much on insights influencing, driving actions and decisions that there is little to add here. The remaining question is how can we communicate and articulate it well to convince decision-makers and stakeholders.</li>
+<li><strong>Computationally Rigorous</strong>: Refers to the know-how, the engineering in the trenches. Even though we’ll spend most of the time in the frequentist land – I think the future is at the intersection of Causality and Bayesian Inference.
+<ul>
+<li>Taking it one step further, this kind of workflow should be reproducible and (mostly) automated. This is why we’ll explore an ecosystem of software engineering tools and practices in the labs.</li>
+<li>Ideally, given in the hands of our clients/users in form of a full stack data app. This is where we take off our consulting hat and start building software products.</li>
+</ul></li>
+</ul>
+<p>This is in contrast with a predictive, machine learning workflow, which we called before “workhorse models”, a “hammer” for which everything is a nail. We got a taste of its power and limitations, and tried to articulate which are appropriate applications for ML. This course gives equal attention to ML and Causality, due to the prevalence of use-cases from which we can learn from data to make tons of decisions at scale and high frequency.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
 <img src="img/ml-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%">
 </figure>
-<p></p><figcaption class="figure-caption">ML workflow</figcaption><p></p>
+<p></p><figcaption class="figure-caption"><em>Source: causact.com</em>; “The machine learning analyst transforms historical data with known outcomes into future outcome predictions.”</figcaption><p></p>
 </figure>
 </div>
-<p>e.g.&nbsp;pandemics – decisions at the level of country - state - country - town: what is a good one? For that, I have to set objectives. Even right now, what is the real situation? We need to make an inference, a guess. It goes witout saying about the scale of it – it’s global, if we take into account people’s mobility and movement!</p>
-<p>So the first, question is: is there some kind of value proposition for AI and do you have data? If yes and yes, we’re in business. (ref: Yaser) The important thing is to clarify what do I mean by Pragmatic: something which can be done by a small team, without huge investment in resources, maybe it’s not cutting edge, maybe not beat benchmarks and be gen-purpose, but it will make the life of the organization and the people working in it much better, and of course, driving outcomes/results.</p>
-<p>The idea is to get an intuition when it is a good idea to use statistics, when a more powerful tool like ML is needed (but which is more dangerous in overfitting / backfiring) and what does Analytics means (you will or did have some subjects like BI, Data Analytics). What does analytics mean?</p>
-<p>The point is to find inspiration and formulate hypotheses, find something interesting and eventually useful. So, you use data, to formulate hypothesis and ask better questions. Then in the decision-making processs, these can be communicated to statisticians and decision-makers, so that they have a clearer directions and promising candidates. This inspiration can be anything from exploratory data analysis, visualization, even to unsupervised ML methods, like dim red, clustering, etc, that is, data mining, a way to automate analytics, such that it finds patterns not readily visible from simple explorations and correlations.</p>
-<p>This doesn’t mean that what we found (a difference between 2 groups of clients.). It doesn’t mean we found the causal process which makes some clients more profitable than others.</p>
-<p>The same machinery which makes us intelligent and flexible, makes us prone to bullshit and self-deception, self-destructive behavior. Same with overfitting and drawing wrong inferences. We can’t say anything yet about causality, but it is a tremendously important role, so there will be always a place for a good analyst in a firm.</p>
-<p>In statistics, first and foremost, we care to take decisions in a safer way, with more confidence (in a very specific sense, that the relationship, the found process is causal, i.e.&nbsp;is true outside or sample, that is, it generalizes) and less self deception, those are important, high-stake decisions. This is why we cannot do the mining and statistics on the same set of data. We will get next to the idea of splitting your damn data, such taht they are not contaminated by all the mining. This is why we have a process for experiment design and validating models, interpreting the parameters. If that stat model passes a rigorous critique, it has greater chance of finding a real/causal pattern.</p>
-<p>At the firm level, the kind of decisions that are high-stakes, are strategic, e.g.&nbsp;pricing policies, entering markets, etc. Those are not low-level decisions, distribution channels mix, advertisement allocation spend, whether to deploy a new recommender system.</p>
-<p>In contrast, in ML we have lower-cost of mistake decisions, and there are a lot of tiny decisions. Of course, we need lots of data and a clear objective to optimize for.</p>
-<p>I consider it a success if at the end of the course, when you get the problem, you can juggle between these 3 perspectives (stat, ml, analytics) and can figure out in each phase of the project, where do you stand, in what bucket. ML and Data Mining is powerful, but not appropriate everywhere, so, you have to know when not to use it, or when you don’t need the stats and just playing around.</p>
-<p>Q: did you have time series, data analysis, econometrics, statistics. Yes, all of them Somehow, when I graduated, I got the idea that it’s about data analysis, to find something interesting in data, to make a good prediction. Here I will try you to un-teach you that, mentioning that it is just the first step in this kind of problems (the exploratory, detective work, the pattern mining).</p>
-<p>Why ML, since we put so much accent onto scientific rigor and trying to infer the causal processes? Sometimes – you don’t have a theory, e.g.&nbsp;in recommender systems, just too complicated. Then ML is a way to go from experience (data) to expertise (program/recipe) in an automated way, eg. which makes predictions: how do you do that, with an algorithm and certain model classes (e.g.&nbsp;trees, regressions).</p>
 </section>
 <section id="why-did-you-study-all-of-that" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="why-did-you-study-all-of-that"><span class="header-section-number">1.4</span> Why did you study all of that?</h2>
@@ -668,6 +745,7 @@ A word of encouragement
 </section>
 <section id="implicit-learning-intuition-and-bias" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="implicit-learning-intuition-and-bias"><span class="header-section-number">1.5</span> Implicit Learning, Intuition and Bias</h2>
+<p>The same machinery which makes us intelligent and flexible, makes us prone to bullshit and self-deception, self-destructive behavior. Same with overfitting and drawing wrong inferences. We can’t say anything yet about causality, but it is a tremendously important role, so there will be always a place for a good analyst in a firm.</p>
 <p>I would like to give a parallel here, of how people learn. We have a powerful capacity for implicit learning, meaning we can’t articulate or explain how we did it, like riding a bike, learning to read and write. There is a famous experiment: Researchers invented words from two languages, with 2 rules, between 3-8 characters, appropriate vowels and so on and they generated 2 sets of words.</p>
 <p>Participants saw the list and they had to say where do they come from (matching) – it’s a good example of experiment design coming from cogsci research. They found that subjects differentiated them much better than chance. During the interviews, when asked to explain how they did it, it was either idk, or giving some rules, when implemented in a software, were indistinguishable from chance (i.e.&nbsp;those rules were NOT exactly how they were thinking), meaning they couldn’t really articulate what they did there.</p>
 <p>This means that we have a capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning.</p>
