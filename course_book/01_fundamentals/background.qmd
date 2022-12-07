@@ -1,5 +1,69 @@
 # Data Science in Business Context
 
+Arguably, we live in a *volatile, uncertain, complex, and ambiguous* world that we have to understand in order to navigate it well. By "world", I mean the economy, society, environment, or any other complex system -- especially when human behavior is involved. It is reasonable to ask: wasn't it always the case, depending on how we define the terms, level of analysis, and point of view? 
+
+I think it's a matter of scale and magnitude in VUCA dimensions, where an accelerating rate of change poses a great challenge to our capacity to adapt. Instead of an evolutionary or philosophical comment on why we need this field of data/decision science, I have two questions on my mind when it comes to living well or improving business outcomes: **what is true** and **how should I act**? [^general]
+
+[^general]: This implies that we already framed the problem and figured out what we want to achieve, and that indeed we chose the right goals and objectives. Moreover, the questions of epistemiology and ethics are a never ending topic for discussion and enquiry.
+
+::: {.callout-tip}
+## Decision Science: (not only) truth and action
+
+Let's start from a business setting of an e-commerce, where we want to increase sales, customer satisfaction, and reduce costs. Imagine three scenarios, which neatly fall into the SWOT framework:
+
+- We keep the status quo, doing everyting as before. What is the most likely trajectory of profits? Can we come up with an educated guess? If the trajectory looks good, that is our **strenghts** and compentencies contributing to it, if not, our **weakness**.
+- A feared trajectory, that is, if our business is hit by a shock in supply chain, inflation, by competition or customer demand. It's the **threats**.
+- A desired or aspirational trajectory. Is it reasonable and realistically achievable? If yes, what strategy and tactics should we implement, how sould we act? This is our **opportunity**.
+
+After this exercise, we defined more precisely where we stand, that is, quantify the current state of the firm. We framed the problem in terms of most relevant outcomes and we're in the process of figuring out what is the optimal goals to aim for. Obviously, we need a mechanism, measurements to know that we're on track and to recognize when to get there. Now, let's go back to our two questions and unpack them:
+
+- **What is true?** In the most general sense, we're not asking for a mathematical and logical truth, but if it's plausible, probable, deserves serious consideration, is backed by evidence. I also mean that we understand the underlying causal mechanisms. Not least, an assessment of the current situation. The metaphor which I suggest for this is "seeing clearly", through the fog, illusions, and biases. [^scout]
+- **How should I act?** What is plausible doesn't entirely answer this question, we can't derive an ought from is. In business settings, I would think about action in terms of strategic alignment and optimisation.
+
+The only missing pieces from this mental model that I argue for is tremendously important: **iteration** and **feedback**. [^cybe] Due to VUCA, we can't be sure our actions are optimal, or even that we're solving the right problem, therefore fast iteration and feedback ensures we're not taking too much risk, that we find out early about problems in our thinking and action, that we can change course to steer the ship back on track.
+
+:::
+
+
+[^scout]: Recommended reading: Scout Mindset by Julia Galef
+[^cybe]: Sounds an awflul lot like Cybernetics, doesn't it? Especially if we have the idea of a firm as a complex adaptive system as a pressuposition for this discussion.
+
+
+<!-- You might've heard in the news that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses? -->
+
+Now that it's more clear what I meant in the course introduction by improving business outcomes and bringing value to organizations, I didn't yet explain what does analytics, data science, machine learning, and AI do or are, and how to they fit in the picture we painted so far.
+
+You might've noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don't get lost in various detours taken and keep the big picture in mind. My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. [^thread]
+
+[^thread]: This is a course in which we look at the widest possible range of methods and models, without going into depth, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job when you encounter it and learn the details later, how to actually do it. We dive into more detail when presenting "workhorse-models", proven by practice to apply well in a large variety of use-cases. 
+
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   A mind map and roadmap of the ideas and topics in this lecture. 
+%%|   It is designed to give you a wide context in which AI is used and misused.
+%%|   The classroom version is designed to be participatory and conversational, 
+%%|   but I will try to do my best to communicate that spirit in written form
+
+flowchart TD
+  DM[Decision-Making] --> Domains[Domains] --> U[Uber / Rides] --> Ecom[E-Commerce]
+  DM --> AI[What is AI?] --> Choice[Stats/ML/Analytics]
+  Choice --> Cy[Cybernetics Detour] --> F[Why did you study those?]
+  DM --> BS[on Bullshit] --> Fool[Foolishness] --> Caus[Causal vs Correlational] --> BD[Big Data?]
+
+  Ecom --> BYOP[Bring your own problem]
+  F --> BYOP
+  BD --> BYOP
+```
+
+We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor's degree. Next, we discuss what can go wrong while drawing conclusions from data -- culminating in a discussion of a problem of choice you're passionate about.
+
+
+
+## Data Science in the Wild: applications
+
 Where do you find it all in the wild and practice?
 Logistics and supply chain: how much inventory should I order from manufacturing, to satisfy the demand (that last item on the shelf) and to avoid excess inventory.
 
@@ -13,9 +77,6 @@ This course is specifically about products/problems in businesses, especially in
 
 What does this buzzword of data science mean?
 
-
-
-You might've heard in the news that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
 
 People talk a lot about Big Data, the social impact of algorithms on various platforms, e.g. yt, fb, social media; and there is lots of confusion what does it exactly does (ML, AI, DSc, DL) -- so we will define all those terms
 
@@ -69,35 +130,6 @@ Again, everywhere, we do have to take decisions, we have uncertainty from multip
 - dtc e-commerce
 - manufacturing
 - supply chain
-
-
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|   In the next lecture we will get an insider's perspective of how it works
-%%|   We'll also introduce a few new concepts, like full stack data apps, 
-%%|   But now, we focus on trying to solve the right problem
-
-flowchart TD
-  DM[Decision-Making] --> Domains[Domains] --> U[Uber / Rides] --> Ecom[E-Commerce]
-  DM --> AI[What is AI?] --> Choice[Stats/ML/Analytics]
-  Choice --> Cy[Cybernetics Detour] --> F[Why did you study those?]
-  DM --> BS[on Bullshit] --> Fool[Foolishness] --> Caus[Causal vs Correlational] --> BD[Big Data?]
-
-  Ecom --> BYOP[Bring your own problem]
-  F --> BYOP
-  BD --> BYOP
-```
-
-
-## We live in a VUCA environment
-
-philosophy: This is a course in which we look at the widest range possible of tools and models, wnithout going into depth, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the right/optimal tool for the job when you encounter it, and then learn its details and how to actually do it. We go into more detail into workhorse-models, proven by practice to apply well in a large variety of cases. 
-
-## Data Science in the Wild: applications
-Focus on ride sharing
-
 
 ## What is AI?
 
