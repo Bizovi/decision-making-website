@@ -100,6 +100,8 @@ I would like to add a few more examples, from an insider and practitioner's pers
 - **Recommender systems** for music, videos, books, products, news in social media, services, platforms, and e-commerces like facebook, instagram, tiktok, youtube, spotify, amazon, emag. You can find recommendations in surprising places, like google maps.
 - **Programmatic Advertisement**: finding best placement for ads on various platforms, right now dominated by meta and google
 
+## Case Study: Decisions at Bolt
+
 
 ## What is AI? WIP
 
@@ -241,9 +243,9 @@ flowchart TD
 
 ## Analytics, ML or Statistics?
 
-![Analyst's workflow](analyst-workflow.png "Analysis"){width="90%"}
+![Analyst's workflow](img/analyst-workflow.png "Analysis"){width="90%"}
 
-![ML workflow](ml-workflow.png "Analysis"){width="90%"}
+![ML workflow](img/ml-workflow.png "Analysis"){width="90%"}
 
 The idea is to get an intuition when it is a good idea to use statistics, when a more powerful tool like ML is needed (but which is more dangerous in overfitting / backfiring) and what does Analytics means (you will or did have some subjects like BI, Data Analytics). What does analytics mean?
 
