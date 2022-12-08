@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -207,24 +207,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#ab-testing-scheme" id="toc-ab-testing-scheme" class="nav-link active" data-scroll-target="#ab-testing-scheme"><span class="toc-section-number">6.1</span>  A/B Testing Scheme</a></li>
-  <li><a href="#error-types" id="toc-error-types" class="nav-link" data-scroll-target="#error-types"><span class="toc-section-number">6.2</span>  Error types</a></li>
-  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics"><span class="toc-section-number">6.3</span>  Metrics</a></li>
-  <li><a href="#pitfalls" id="toc-pitfalls" class="nav-link" data-scroll-target="#pitfalls"><span class="toc-section-number">6.4</span>  Pitfalls</a></li>
-  <li><a href="#most-tests-are-linear-models" id="toc-most-tests-are-linear-models" class="nav-link" data-scroll-target="#most-tests-are-linear-models"><span class="toc-section-number">6.5</span>  Most tests are linear models</a></li>
-  <li><a href="#dead-salmon" id="toc-dead-salmon" class="nav-link" data-scroll-target="#dead-salmon"><span class="toc-section-number">6.6</span>  Dead Salmon</a></li>
-  <li><a href="#bootstrap" id="toc-bootstrap" class="nav-link" data-scroll-target="#bootstrap"><span class="toc-section-number">6.7</span>  Bootstrap</a></li>
-  <li><a href="#ecdf-not-your-grandmas-histogram" id="toc-ecdf-not-your-grandmas-histogram" class="nav-link" data-scroll-target="#ecdf-not-your-grandmas-histogram"><span class="toc-section-number">6.8</span>  ECDF: Not your grandma’s histogram</a></li>
-  <li><a href="#using-graphs-to-reason-about-this-mess" id="toc-using-graphs-to-reason-about-this-mess" class="nav-link" data-scroll-target="#using-graphs-to-reason-about-this-mess"><span class="toc-section-number">6.9</span>  Using graphs to reason about this mess</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/02_causality/background.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -242,7 +227,21 @@ ul.task-list li input[type="checkbox"] {
   
 
 </header>
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#ab-testing-scheme" id="toc-ab-testing-scheme"><span class="toc-section-number">6.1</span>  A/B Testing Scheme</a></li>
+  <li><a href="#error-types" id="toc-error-types"><span class="toc-section-number">6.2</span>  Error types</a></li>
+  <li><a href="#metrics" id="toc-metrics"><span class="toc-section-number">6.3</span>  Metrics</a></li>
+  <li><a href="#pitfalls" id="toc-pitfalls"><span class="toc-section-number">6.4</span>  Pitfalls</a></li>
+  <li><a href="#most-tests-are-linear-models" id="toc-most-tests-are-linear-models"><span class="toc-section-number">6.5</span>  Most tests are linear models</a></li>
+  <li><a href="#dead-salmon" id="toc-dead-salmon"><span class="toc-section-number">6.6</span>  Dead Salmon</a></li>
+  <li><a href="#bootstrap" id="toc-bootstrap"><span class="toc-section-number">6.7</span>  Bootstrap</a></li>
+  <li><a href="#ecdf-not-your-grandmas-histogram" id="toc-ecdf-not-your-grandmas-histogram"><span class="toc-section-number">6.8</span>  ECDF: Not your grandma’s histogram</a></li>
+  <li><a href="#using-graphs-to-reason-about-this-mess" id="toc-using-graphs-to-reason-about-this-mess"><span class="toc-section-number">6.9</span>  Using graphs to reason about this mess</a></li>
+  </ul>
+</nav>
 <p>Experiment Design and A/B Testing</p>
 <div class="cell" data-fig-width="7">
 <div class="cell-output-display">
@@ -437,7 +436,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../01_fundamentals/lab_01.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></span>

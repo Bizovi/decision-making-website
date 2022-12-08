@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -207,28 +207,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#wip" id="toc-wip" class="nav-link active" data-scroll-target="#wip"><span class="toc-section-number">4.1</span>  WIP</a></li>
-  <li><a href="#organizational-design" id="toc-organizational-design" class="nav-link" data-scroll-target="#organizational-design"><span class="toc-section-number">4.2</span>  Organizational design</a></li>
-  <li><a href="#product-management" id="toc-product-management" class="nav-link" data-scroll-target="#product-management"><span class="toc-section-number">4.3</span>  Product Management</a></li>
-  <li><a href="#tech-ecosystem" id="toc-tech-ecosystem" class="nav-link" data-scroll-target="#tech-ecosystem"><span class="toc-section-number">4.4</span>  Tech ecosystem</a></li>
-  <li><a href="#full-stack-data-apps" id="toc-full-stack-data-apps" class="nav-link" data-scroll-target="#full-stack-data-apps"><span class="toc-section-number">4.5</span>  Full-stack Data Apps</a></li>
-  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases"><span class="toc-section-number">4.6</span>  Use-cases</a>
-  <ul class="collapse">
-  <li><a href="#clustering-customer-feedback" id="toc-clustering-customer-feedback" class="nav-link" data-scroll-target="#clustering-customer-feedback"><span class="toc-section-number">4.6.1</span>  Clustering Customer Feedback</a></li>
-  <li><a href="#launch-sales-curation-demand-planning" id="toc-launch-sales-curation-demand-planning" class="nav-link" data-scroll-target="#launch-sales-curation-demand-planning"><span class="toc-section-number">4.6.2</span>  Launch Sales Curation (Demand Planning)</a></li>
-  <li><a href="#online-model-serving" id="toc-online-model-serving" class="nav-link" data-scroll-target="#online-model-serving"><span class="toc-section-number">4.6.3</span>  Online model serving</a></li>
-  <li><a href="#demand-planning-and-vertical-slices" id="toc-demand-planning-and-vertical-slices" class="nav-link" data-scroll-target="#demand-planning-and-vertical-slices"><span class="toc-section-number">4.6.4</span>  Demand Planning and Vertical Slices</a></li>
-  </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="toc-section-number">4.7</span>  Conclusions</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/01_fundamentals/adoreme.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -246,7 +227,25 @@ ul.task-list li input[type="checkbox"] {
   
 
 </header>
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#wip" id="toc-wip"><span class="toc-section-number">4.1</span>  WIP</a></li>
+  <li><a href="#organizational-design" id="toc-organizational-design"><span class="toc-section-number">4.2</span>  Organizational design</a></li>
+  <li><a href="#product-management" id="toc-product-management"><span class="toc-section-number">4.3</span>  Product Management</a></li>
+  <li><a href="#tech-ecosystem" id="toc-tech-ecosystem"><span class="toc-section-number">4.4</span>  Tech ecosystem</a></li>
+  <li><a href="#full-stack-data-apps" id="toc-full-stack-data-apps"><span class="toc-section-number">4.5</span>  Full-stack Data Apps</a></li>
+  <li><a href="#use-cases" id="toc-use-cases"><span class="toc-section-number">4.6</span>  Use-cases</a>
+  <ul>
+  <li><a href="#clustering-customer-feedback" id="toc-clustering-customer-feedback"><span class="toc-section-number">4.6.1</span>  Clustering Customer Feedback</a></li>
+  <li><a href="#launch-sales-curation-demand-planning" id="toc-launch-sales-curation-demand-planning"><span class="toc-section-number">4.6.2</span>  Launch Sales Curation (Demand Planning)</a></li>
+  <li><a href="#online-model-serving" id="toc-online-model-serving"><span class="toc-section-number">4.6.3</span>  Online model serving</a></li>
+  <li><a href="#demand-planning-and-vertical-slices" id="toc-demand-planning-and-vertical-slices"><span class="toc-section-number">4.6.4</span>  Demand Planning and Vertical Slices</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions"><span class="toc-section-number">4.7</span>  Conclusions</a></li>
+  </ul>
+</nav>
 <section id="wip" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="wip"><span class="header-section-number">4.1</span> WIP</h2>
 <p>As i said before, e-commerce and we’re pretty tech-savy: have microservices everywhere and live in google-cloud; the second important component is the people: we’re small, self-organized teams and we communicate, collaborate a lot – in every problem we try to have a cross-functional teams. Our clients are not only internal decision-making and colleagues, but also the customers. On the other hand, we want to give as much power as possible to the developers. In this case, I will talk about the 5 people in the data science team. So, a small team, serving important internal clients and millions of customers.</p>
@@ -529,7 +528,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../01_fundamentals/stat_foundations.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical foundations</span></span>

@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -207,20 +207,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#nonparametrics" id="toc-nonparametrics" class="nav-link active" data-scroll-target="#nonparametrics"><span class="toc-section-number">7.1</span>  Nonparametrics</a></li>
-  <li><a href="#bayesian-ab-testing" id="toc-bayesian-ab-testing" class="nav-link" data-scroll-target="#bayesian-ab-testing"><span class="toc-section-number">7.2</span>  Bayesian A/B testing</a></li>
-  <li><a href="#power-calculations" id="toc-power-calculations" class="nav-link" data-scroll-target="#power-calculations"><span class="toc-section-number">7.3</span>  Power Calculations</a></li>
-  <li><a href="#multiple-testing-adjustments" id="toc-multiple-testing-adjustments" class="nav-link" data-scroll-target="#multiple-testing-adjustments"><span class="toc-section-number">7.4</span>  Multiple testing adjustments</a></li>
-  <li><a href="#case-study-bayesian-covid-testing" id="toc-case-study-bayesian-covid-testing" class="nav-link" data-scroll-target="#case-study-bayesian-covid-testing"><span class="toc-section-number">7.5</span>  Case Study: Bayesian Covid testing</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bizovi/data-mining-ase/edit/main/02_causality/power.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -238,7 +227,17 @@ ul.task-list li input[type="checkbox"] {
   
 
 </header>
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#nonparametrics" id="toc-nonparametrics"><span class="toc-section-number">7.1</span>  Nonparametrics</a></li>
+  <li><a href="#bayesian-ab-testing" id="toc-bayesian-ab-testing"><span class="toc-section-number">7.2</span>  Bayesian A/B testing</a></li>
+  <li><a href="#power-calculations" id="toc-power-calculations"><span class="toc-section-number">7.3</span>  Power Calculations</a></li>
+  <li><a href="#multiple-testing-adjustments" id="toc-multiple-testing-adjustments"><span class="toc-section-number">7.4</span>  Multiple testing adjustments</a></li>
+  <li><a href="#case-study-bayesian-covid-testing" id="toc-case-study-bayesian-covid-testing"><span class="toc-section-number">7.5</span>  Case Study: Bayesian Covid testing</a></li>
+  </ul>
+</nav>
 <div class="cell" data-fig-width="7">
 <div class="cell-output-display">
 <div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
@@ -424,7 +423,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../02_causality/background.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></span>
