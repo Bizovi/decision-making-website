@@ -8,7 +8,7 @@ book:
 
   search: true
   repo-url: https://github.com/bizovi/data-mining-ase
-  repo-actions: [edit]
+  # repo-actions: []
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
   favicon: img/favicon.jpeg
@@ -69,9 +69,9 @@ format:
     theme: simplex # cosmo
     # max-width: 1600px
     # margin-left: 30px
-    page-layout: full
+    page-layout: article # full
     css: styles.css
-    toc-location: right
+    toc-location: body
     
 editor: visual
 

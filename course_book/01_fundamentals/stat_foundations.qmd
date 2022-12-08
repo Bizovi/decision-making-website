@@ -1,15 +1,29 @@
 # Statistical Foundations: WIP
 
-In order to be a successful Data Scientist, one has to "speak the language" of probability and statistics; it is the basis on which we can build towards more **realistic and avanced models**, with the purpose of improving **decision-making under uncertainty**. This foundation is a prerequisite for all 3 perspectives: analytics/mining, machine learning and causal inference.
+In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving **decision-making under uncertainty**. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.
 
-> A word of encouragement is that this doesn't have to be boring! We can put "the classics" in context of modern statistics, big data challenges, and use simulation instead of heavy mathematics and proof-based approaches.  
+> In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent *stochastic nature*. 
+
+Data is just the appearance, an external manifestation of some `latent processes` (seen as random mechanisms). Even though we won't know the exact outcome for sure, we can model general regularities and relationships as a result of the large scale of phenomena. 
+
+
+::: {.callout-tip}
+## A word of encouragement
+
+Reviewing the fundamentals of statistics doesn't have to be boring! We can put "the classics" in context of modern statistics, big data challenges, and use simulation instead of heavy mathematics and proof-based approaches.
+
+Moreover, theoretical ideas underlying statistical practice, which we often take for granted, deserve an explicit articulation. This will improve our awareness, understanding, and grasp of the field -- such that we can become more effective practitioners.
+:::
 
 ```{mermaid}
 %%| label: fig-mermaid
 %%| fig-width: 9
 %%| fig-cap: |
-%%|   In the next lecture we will dive into A/B testing and causality,
-%%|   bootstrap, nonparametrics
+%%|   In this chapter and set of lectures, I attempt to reformulate fundamental
+%%|   statistical ideas, concepts, and tools, in order to show their relevance in 
+%%|   the day-to-day practice and decision-making. A secondary objective is to 
+%%|   fill in the conceptual gaps left by the fact that it's hard to make sense 
+%%|   of it all the first time we're encountering it in the classroom.
 
 flowchart TD
 	Motiv[Why again?] --> ProbT[Probability Triple] --> SI[Uncertainty]
@@ -25,6 +39,11 @@ flowchart TD
 
 	Dead --> Mod[Modern Stats]
 ```
+
+The plan for this lecture is the following: we start by constructing the probability triple, formalize sources of uncertainty, and investigate the building blocks of a statistical model. I then highlight in a few case-studies what can go wrong in the process of statistical inference and how difficult it is to choose the right model. The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessigle and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing -- which will be our gateway into truly modern statistics.
+
+
+
 
 
 Therefore, here's a guide on how to refresh the statistical knowledge, in such a way, that statistics becomes fascinating, not boring and frustrating.
@@ -49,6 +68,8 @@ There are a gazillion books, courses on statistics, which basically do/teach the
 
 Why? Language of uncertainty! Applications everywhere, the only way we can reason logically under uncertainty (fuzzy logic is out of favor, better study bayes).
 
+The reason we need probability theory is that it's a formal language of uncertainty. Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its **measure-theoretic** foundations could open up a whole new world to the researcher. It's easy to take the results from statistics and probability for granted, but it's useful to be aware what hides beneath the surface. 
+
 Often, probability and math stats are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Prob theory is concerned with the construction of the probability triple (O, F, P), which can get very rigorous and complicated, with measure theory. We define the probability measure, and it matters a lot in which space are we (R^n, simplex, f(R^n) and gauss processes, SP stochastic processes for time series analysis) -- the curious case of compositional data analysis, in which the classical methods have to be tweaked in order to make sense. Explain how we define P on a simple later -- but the main point to remember, that we construct it here. 
 
 Random Variable!
@@ -71,6 +92,67 @@ Three additional critical concepts are: joint probability, which is basically th
 
 ![Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable](img/random_variable.png "Random Variable"){width="90%"}
 
+1. A **random experiment** ($\mathscr{E}$) is a set of *conditions which are favorable for an event* in a given form with the following properties:
+    + Possible results are known apriori
+    + It's never known which of the results of $\mathscr{E}$ will exactly appear
+    + Despite (b), **there is a perceptible regularity**, (encoding the idea of a probabilistic "law") in the results. Also, it could be as a result of the large scale of the phenomena.
+    + Repeatability of the conditions, i.e. the comparability and perservation of context are key.
+2. **Elementary event** as an auxiliaty construction: one of the possible results of $\mathscr{E}$, $\omega_i \in \Omega$
+3. **Universal set**  $\Omega = \{ \omega_1, \omega_2, \dots \}$  Also called (Outcome/ State/ Selection space), it suggests the idea of complementarity and stochasticity: we don't know which $\omega_i$, is a key object for a further formalization of probability measures. 
+4. We care not only about **an event** $A = \bigcup\limits_{i = 1}^n \omega_i$ and its realization, but also about other events in the Universal Set, because they might add information about the probability of occurring of our event of interest
+5. The **event space** $\mathcal{F}$ should be defined on sets of subsets of $\Omega$ and this is where measure theory shines. We'll discuss later in extensive detail the following conditions on the way to defining sigma-algebras. As can be seen later, we usually can't define a probability measure on all sets of subsets.
+6. **Probability as an extension of the measure**: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability to elementary events: $\mathbb{P}(\omega_i)$. This is where additivity properties are key. A long discussion on Frequentist vs Bayesian interpretation of it can follow from here.
+7. A **probability triple** $(\Omega, \mathcal{F}, \mathbb{P})$
+8. The idea of **Random Variable**
+
+
+
+
+Before moving on to probability measures, it's useful to think about what a random variable really is and does, because formally, it's neither a variable, nor random. That should be another motivation for speaking the language of measure theory.
+
+
+The idea of the random variable as being a quantificator of elementary events (function defined on the outcome space which maps the elementary events to the real line in 1d) that perserves the informational structure of the sample space is very powerful, is formally defined and related to the idea of **measurability**. 
+
+
+> Start from some phenomena of interest and a random experiment. The random variable is a necessary abstraction in order to mathematically define quantificable characteristics of the objects.
+
+\begin{align}
+X(\omega):\Omega \rightarrow \mathbb{R} \\
+s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in \mathcal{F}
+\end{align}
+
+The idea of conservation of the informational structure is actually equivalent to the one of measurablility. If this property doesn't hold, it's not possible to explicitly and uniquely refer to the sets (events) of interest. The idea is that the preimage defined above $X^{-1}((-\infty,r]) = E \in \mathcal{F}$ on the following interval corresponds to an event E which should be in the event space $\mathcal{F}$. Because the only thing that varies is the limit of the interval r, the randomness comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is $F_X(X \le r)$.
+
+
+
+## Sources of Uncertainty
+
+Our focus is on agents that interact intelligently to achieve their objectives over
+time. Given the past sequence of observations o1, . . . , ot and knowledge about the
+environment, the agent must choose an action at that best achieves its objectives
+in the presence of various sources of uncertainty,1
+including: 1 We focus on discrete time problems. Continuous time problems
+are studied in the field of control theory. D. E. Kirk, Optimal Control Theory: An Introduction. Prentice-Hall,
+1970.
+
+Our focus is on agents that interact intelligently to achieve their objectives over
+time. Given the past sequence of observations o1, . . . , ot and knowledge about the
+environment, the agent must choose an action at that best achieves its objectives
+in the presence of various sources of uncertainty,1
+including: 
+
+
+1. outcome uncertainty, where the effects of our actions are uncertain,
+2. model uncertainty, where our model of the problem is uncertain,
+3. state uncertainty, where the true state of the environment is uncertain, and
+4. interaction uncertainty, where the behavior of the other agents interacting in the
+environment is uncertain.
+
+```{mermaid}
+flowchart LR
+	Env(Environment) -- observation --> A(Agent)
+	A -- action --> Env
+```
 
 
 ## Mathematical Statistics in a nutshell
@@ -94,12 +176,12 @@ The point of statistics: change our opinion about the action we have (or phenome
 One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method.
 
 
-## Sources of Uncertainty
-
-
 ## Models are Golemns of Prague
 
 Data + Domain Assumptions + Statistical Assumptions
+
+## Model Specification: Fisher vs Bayes
+
 
 ## What does a statistician want?
 From their estimators
