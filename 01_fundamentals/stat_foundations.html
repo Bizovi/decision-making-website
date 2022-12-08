@@ -232,21 +232,37 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-probability-triple" id="toc-the-probability-triple"><span class="toc-section-number">2.1</span>  The probability triple</a></li>
-  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty"><span class="toc-section-number">2.2</span>  Sources of Uncertainty</a></li>
-  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell"><span class="toc-section-number">2.3</span>  Mathematical Statistics in a nutshell</a></li>
-  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague"><span class="toc-section-number">2.4</span>  Models are Golemns of Prague</a></li>
-  <li><a href="#model-specification-fisher-vs-bayes" id="toc-model-specification-fisher-vs-bayes"><span class="toc-section-number">2.5</span>  Model Specification: Fisher vs Bayes</a></li>
-  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want"><span class="toc-section-number">2.6</span>  What does a statistician want?</a></li>
-  <li><a href="#case-study-de-moivre-on-us-schooling" id="toc-case-study-de-moivre-on-us-schooling"><span class="toc-section-number">2.7</span>  Case Study: De Moivre on US Schooling</a></li>
-  <li><a href="#case-study-chess-example" id="toc-case-study-chess-example"><span class="toc-section-number">2.8</span>  Case Study: Chess example</a></li>
-  <li><a href="#case-study-amazon-reviews-and-ratings" id="toc-case-study-amazon-reviews-and-ratings"><span class="toc-section-number">2.9</span>  Case Study: Amazon reviews and ratings</a></li>
-  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants"><span class="toc-section-number">2.10</span>  Data Mining and CRISP-DM variants</a></li>
-  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science"><span class="toc-section-number">2.11</span>  Statistical Process and Science</a></li>
-  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem"><span class="toc-section-number">2.12</span>  BYOP: Bring your own problem</a></li>
-  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">2.13</span>  ML is a geocentric model of the universe</a></li>
-  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale"><span class="toc-section-number">2.14</span>  Dead salmon: a warning tale</a></li>
-  <li><a href="#conditioning-marginalisation-and-exchangeability" id="toc-conditioning-marginalisation-and-exchangeability"><span class="toc-section-number">2.15</span>  Conditioning, marginalisation and Exchangeability</a></li>
+  <li><a href="#the-probability-triple" id="toc-the-probability-triple"><span class="toc-section-number">2.1</span>  The probability triple</a>
+  <ul>
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty"><span class="toc-section-number">2.1.1</span>  Sources of Uncertainty</a></li>
+  <li><a href="#conditioning-and-marginalisation" id="toc-conditioning-and-marginalisation"><span class="toc-section-number">2.1.2</span>  Conditioning and Marginalisation</a></li>
+  </ul></li>
+  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell"><span class="toc-section-number">2.2</span>  Mathematical Statistics in a nutshell</a>
+  <ul>
+  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague"><span class="toc-section-number">2.2.1</span>  Models are Golemns of Prague</a></li>
+  <li><a href="#model-specification-fisher-vs-bayes" id="toc-model-specification-fisher-vs-bayes"><span class="toc-section-number">2.2.2</span>  Model Specification: Fisher vs Bayes</a></li>
+  <li><a href="#independence-and-exchangeability" id="toc-independence-and-exchangeability"><span class="toc-section-number">2.2.3</span>  Independence and Exchangeability</a></li>
+  </ul></li>
+  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want"><span class="toc-section-number">2.3</span>  What does a statistician want?</a>
+  <ul>
+  <li><a href="#estimator-properties" id="toc-estimator-properties"><span class="toc-section-number">2.3.1</span>  Estimator Properties</a></li>
+  <li><a href="#bias-variance-decomposition" id="toc-bias-variance-decomposition"><span class="toc-section-number">2.3.2</span>  Bias-Variance Decomposition</a></li>
+  <li><a href="#rao-cramer-inequality" id="toc-rao-cramer-inequality"><span class="toc-section-number">2.3.3</span>  Rao-Cramer Inequality</a></li>
+  </ul></li>
+  <li><a href="#case-studies" id="toc-case-studies"><span class="toc-section-number">2.4</span>  Case Studies</a>
+  <ul>
+  <li><a href="#de-moivre-on-us-schooling" id="toc-de-moivre-on-us-schooling"><span class="toc-section-number">2.4.1</span>  De Moivre on US Schooling</a></li>
+  <li><a href="#chess-example" id="toc-chess-example"><span class="toc-section-number">2.4.2</span>  Chess example</a></li>
+  <li><a href="#amazon-reviews-and-ratings" id="toc-amazon-reviews-and-ratings"><span class="toc-section-number">2.4.3</span>  Amazon reviews and ratings</a></li>
+  </ul></li>
+  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants"><span class="toc-section-number">2.5</span>  Data Mining and CRISP-DM variants</a>
+  <ul>
+  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">2.5.1</span>  ML is a geocentric model of the universe</a></li>
+  </ul></li>
+  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science"><span class="toc-section-number">2.6</span>  Statistical Process and Science</a>
+  <ul>
+  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale"><span class="toc-section-number">2.6.1</span>  Dead salmon: a warning tale</a></li>
+  </ul></li>
   </ul>
 </nav>
 <p>In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving <strong>decision-making under uncertainty</strong>. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.</p>
@@ -336,12 +352,59 @@ Complementary resources if you feel like starting over
 </ul></li>
 <li><strong>Elementary event</strong> as an auxiliaty construction: one of the possible results of <span class="math inline">\(\mathscr{E}\)</span>, usually conventionally denoted by <span class="math inline">\(\omega_i \in \Omega\)</span></li>
 <li><strong>Universal set</strong> <span class="math inline">\(\Omega = \{ \omega_1, \omega_2, \dots \}\)</span> is also called (Outcome/ State/ Selection space). It suggests the idea of complementarity and stochasticity: we don’t know which <span class="math inline">\(\omega_i\)</span> will manifest, thus is a key object for a further formalization of probability measures.</li>
-<li>We care not only about <strong>an event</strong> <span class="math inline">\(A = \bigcup\limits_{i = 1}^n \omega_i\)</span> and its realization, but also about other events in the Universal Set, because they might add information about the probability of occurring of our event of interest.</li>
-<li>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> should be defined on sets of subsets of <span class="math inline">\(\Omega\)</span> and this is where measure theory shines. For technical reasons, we usually can’t define a probability measure on all sets of subsets. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></li>
+<li>We care not only about <strong>an event</strong> <span class="math inline">\(A = \bigcup\limits_{i = 1}^n \omega_i\)</span> and its realization, but also about other events in the Universal Set, because they might contribute with additional information (about the probability) of our event of interest. This means that we we’re interested in “all” other events.</li>
+<li>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> is a sigma-algebra, should be defined on sets of subsets of <span class="math inline">\(\Omega\)</span> and this is where measure theory shines. For technical reasons, we usually can’t define a probability measure on all sets of subsets. On an intuitive note, we define the probability measure on sigma-algebras because if certain conditions did not hold, the measure wouldn’t make sense.</li>
 <li><strong>Probability as an extension of the measure</strong>: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability (number between 0 and 1) to elementary events: <span class="math inline">\(\mathbb{P}(\omega_i)\)</span>. This is why additivity properties are key, as we care about random events, not only elementary events. This is where the debate between frequentists and Bayesians kicks in.</li>
 <li>A <strong>probability triple</strong> <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> is the fundamental object the whole probability theory is constructed upon. We have to thank Kolmogorov for taking the informal, gambling-type probability and putting it onto solid, axiomatic foundations – that is, making it open to mathematical enquiry.</li>
 </ol>
-<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you’re interested in these technical details, you can check out my relatively accessible introudction to <a href="https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/">measure theory and the Caratheodori extension theorem</a>. Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its <strong>measure-theoretic</strong> foundations could open up a whole new world to the researcher. It’s easy to take the results from statistics and probability for granted, but it’s useful to be aware what hides beneath the surface.</p></li></div><p>Thank you for bearing with me through the theory you have probably seen before, but we’re not done. We’re still in the land of set theory, and it is very hard to operate that way in practice – so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>Def: Algebra and Sigma-Algebra</strong></p>
+<p>A set of subsets <span class="math inline">\(\mathcal{A} \subset 2^\Omega\)</span> is an algebra (field) if the following holds:</p>
+<ol type="1">
+<li><span class="math inline">\(\Omega \in \mathcal{A}\)</span> and <span class="math inline">\(\varnothing \in \mathcal{A}\)</span></li>
+<li>If <span class="math inline">\(A \in \mathcal{A}\)</span> then <span class="math inline">\(A^C \in \mathcal{A}\)</span> (closed under complements)</li>
+<li>If <span class="math inline">\(A, B \in \mathcal{A}\)</span> then <span class="math inline">\(A \cup B \in \mathcal{A}\)</span> (closed under union). Note that 2 and 3 imply that it’s closed under countable intersection</li>
+<li>The additional condition for sigma-algebra: <strong>sigma</strong> refers to countability. If <span class="math inline">\(\{ A_i \}_{i \ge 1} \in \mathcal{A}\)</span> then <span class="math inline">\(\bigcup\limits_{i \ge 1} A_i \in \mathcal{A}\)</span> (closed under <strong>countable union</strong>)</li>
+</ol>
+</div><div class="">
+<p><strong>Def: Probability Measure</strong></p>
+<p>Suppose we have defined a <strong>measurable space</strong> <span class="math inline">\((\Omega, \mathcal{A})\)</span>, where <span class="math inline">\(\mathcal{A}\)</span> is a sigma-algebra. A <strong>probability measure</strong> is the function <span class="math inline">\(\mathbb{P}:\mathcal{A} \rightarrow [0, 1]\)</span> such that:</p>
+<ol type="1">
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span> </li>
+<li>For countable sequences of mutually disjoint effects, i.e.&nbsp;<span class="math inline">\(\forall \{ A_i \}_{i \ge 1}\)</span> where <span class="math inline">\(A_i \bigcap\limits_{i \ne j} A_j = \varnothing\)</span>, the following holds <span class="math inline">\(\mathbb{P}(\bigcup\limits_{i \ge 1} A_i) = \sum\limits_{i \ge 1} \mathbb{P}(A_i)\)</span></li>
+</ol>
+</div></div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Measure theory rabbit hole: Why not all subsets?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you’re interested in these technical details, you can check out my relatively accessible introudction to <a href="https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/">measure theory and the Caratheodori extension theorem</a>.</p>
+
+<p>Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its <strong>measure-theoretic</strong> foundations could open up a whole new world to the researcher. It’s easy to take the results from statistics and probability for granted, but it’s useful to be aware what hides beneath the surface.</p>
+<p>Evans Lawrence gives the following example of a function which is neither discrete nor continuous, for which you flip a coin and if it comes heads, draw from an uniform distribution and in case of tails a unit mass at one. If <span class="math inline">\(\chi_{[0,1]}(x) = (e^{ix} - 1)/ix\)</span> is the characteristic function of the interval from zero to one, in a way you can formulate its density, but usually it’s not the case, nor is it very helpful to think about it in such terms.</p>
+<p><span class="math display">\[\begin{equation}
+    p(x) = w_1 \chi_{[0,1]}(x) +  w_2\delta_1(x)
+\end{equation}\]</span></p>
+<p>Even though you can visualize this in two dimensions as the uniform and a spike, or as a CDF with a discontinuity, this approach just breaks down in higher dimensions or more complicated combinations of functions.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div class="callout-margin-content">
+<p>Jeffrey Rosenthal begins his book by a similar motivation, constructing the following random variable as a coin toss between a discrete <span class="math inline">\(X \sim Pois(\lambda)\)</span> and continuous <span class="math inline">\(Y \sim \mathcal{N}(0,1)\)</span> r.v.</p>
+<p><span class="math display">\[\begin{equation}
+    Z = \begin{cases}
+    X, p = 0.5 \\
+    Y, p = 0.5
+    \end{cases}
+\end{equation}\]</span></p>
+<p>He then challenges the readers to come up with the expected value <span class="math inline">\(\mathbb{E}[Z^2]\)</span> and asks on what is it defined? It is indeed a hard question.</p>
+</div></div><p>Thank you for bearing with me through the theory you have probably seen before, but we’re not done. We’re still in the land of set theory, and it is very hard to operate that way in practice – so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -374,7 +437,17 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 </div>
 <p>Let’s figure out what the hell do we mean by that fine print condition, using the diagram below. The idea of conservation of the informational structure is actually equivalent to the one of measurablility. If this property doesn’t hold, it’s not possible to explicitly and uniquely refer to the sets (events) of interest.</p>
 <p>The idea is that the preimage defined above <span class="math inline">\(X^{-1}((-\infty,r]) = E \in \mathcal{F}\)</span> on the following interval corresponds to an event E which should be in the event space <span class="math inline">\(\mathcal{F}\)</span>. Because the only thing that varies is the limit of the interval r, the randomness comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is <span class="math inline">\(F_X(X \le r)\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>CDF, one of the most important constructs in probability is a direct consequence of the definition of the random variable:</p>
+<p><span class="math display">\[
+P(A ≤ r) = F_X(X ≤ r)
+\]</span></p>
+<p>In the practice of modeling, we often work with probability density functions, because it is more convenient in many cases. Then, in order to translate to probabilities, we would think in terms of areas under that curve. For sure, you remember the following duality between CFD and PDF:</p>
+<p><span class="math display">\[
+F'(x) = p(x)
+\]</span></p>
+</div></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
 <img src="img/random_variable.png" title="Random Variable" class="img-fluid figure-img" style="width:90.0%">
@@ -382,7 +455,7 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 <p></p><figcaption class="figure-caption">Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some relevant aspect of it to us)!</figcaption><p></p>
 </figure>
 </div>
-<div class="page-columns page-full"><p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of componsitional data analysis<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p><div class="no-row-height column-margin column-container"><li id="fn7"><div class="quarto-figure quarto-figure-center"><sup>7</sup>&nbsp;
+<div class="page-columns page-full"><p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of componsitional data analysis<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p><div class="no-row-height column-margin column-container"><li id="fn6"><div class="quarto-figure quarto-figure-center"><sup>6</sup>&nbsp;
 <figure class="figure">
 <figure class="figure">
 <img src="img/composition.png" title="Simplex" class="img-fluid figure-img" style="width:90.0%">
@@ -406,8 +479,7 @@ The curious case of Compositional Data Analysis
 <p>Compositional data analysis solves those issues by defining a probability triple over the simplex (instead of <span class="math inline">\(\mathbb{R}^n\)</span>): <span class="math inline">\((\mathcal{S}^n, \mathcal{F}, \mathbb{P})\)</span>. This leads to a different definition of the event space <span class="math inline">\(\mathcal{F}\)</span>, which is also a sigma-algebra and a different definition of the probability measure <span class="math inline">\(\mathbb{P}\)</span>.</p>
 </div>
 </div>
-<!-- Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those).  -->
-<div class="page-columns page-full"><p>Remember our exaple of <a href="../01_fundamentals/background.html#implicit-learning-intuition-and-bias">pigeon superstition</a> in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory, which is exatly those carefully formulated principles that will prevent our automated learners to become supersitious. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Even though most courses from which I studied don’t mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio’s Brown <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> it’s essential in the idea of <strong>uniform convergence</strong> and its bounds, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>.</p></li></div></div>
+<div class="page-columns page-full"><p>Remember our exaple of <a href="../01_fundamentals/background.html#implicit-learning-intuition-and-bias">pigeon superstition</a> in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> which is exatly those carefully formulated principles that will prevent our automated learners to become supersitious.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;Even though most courses from which I studied don’t mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio’s Brown <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> it’s essential in the idea of <strong>uniform convergence</strong> and its bounds, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>.</p></li></div></div>
 <p>For the next example, you don’t have to understand what Gaussian Processes are or are used for. However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results, in contrast with choosing a wrong model or distribution.</p>
 <p>It’s not that these methods don’t have parameters, but the parametrization varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don’t know what is a reasonable distribution or parametric functional form for the relationship that we model.</p>
 <div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
@@ -416,11 +488,12 @@ The curious case of Compositional Data Analysis
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Stochastic Processes, Graphs and Trees
+Nonparametrics and Gaussian Processes
 </div>
 </div>
 <div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: <span class="math inline">\(f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}\)</span>, <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like.</p><div class="no-row-height column-margin column-container"><li id="fn9"><div class="quarto-figure quarto-figure-center"><sup>9</sup>&nbsp;
+<!-- Stochastic Processes, Graphs and Trees -->
+<div class="page-columns page-full"><p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: <span class="math inline">\(f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}\)</span>, <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like.</p><div class="no-row-height column-margin column-container"><li id="fn8"><div class="quarto-figure quarto-figure-center"><sup>8</sup>&nbsp;
 <figure class="figure">
 <figure class="figure">
 <img src="img/gp-conditioned.png" title="GP Posterior" class="img-fluid figure-img" style="width:90.0%">
@@ -438,20 +511,24 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 \]</span></p>
 </div>
 </div>
-</section>
-<section id="sources-of-uncertainty" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">2.2</span> Sources of Uncertainty</h2>
-<p>Our focus is on agents that interact intelligently to achieve their objectives over time. Given the past sequence of observations o1, . . . , ot and knowledge about the environment, the agent must choose an action at that best achieves its objectives in the presence of various sources of uncertainty,1 including: 1 We focus on discrete time problems. Continuous time problems are studied in the field of control theory. D. E. Kirk, Optimal Control Theory: An Introduction. Prentice-Hall, 1970.</p>
-<p>Our focus is on agents that interact intelligently to achieve their objectives over time. Given the past sequence of observations o1, . . . , ot and knowledge about the environment, the agent must choose an action at that best achieves its objectives in the presence of various sources of uncertainty,1 including:</p>
-<ol type="1">
-<li>outcome uncertainty, where the effects of our actions are uncertain,</li>
-<li>model uncertainty, where our model of the problem is uncertain,</li>
-<li>state uncertainty, where the true state of the environment is uncertain, and</li>
-<li>interaction uncertainty, where the behavior of the other agents interacting in the environment is uncertain.</li>
-</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>In the case of stochastic processes, we work with a sequence of random variables <span class="math inline">\(\{X_t, t \in T \}\)</span> and start asking questions:</p>
+<ul>
+<li>What kind of time dependency is there? (autocorrelation)</li>
+<li>What is the long-run behavior?</li>
+<li>Can we say something about extreme events?</li>
+</ul>
+</div></div><p>A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically – which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.</p>
+<p>Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.</p>
+<section id="sources-of-uncertainty" class="level3 page-columns page-full" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">2.1.1</span> Sources of Uncertainty</h3>
+<p>In the last chapter, we raised the issue of <a href="../01_fundamentals/background.html#what-is-ai-data-science-cybernetics-">where does uncertainty come from</a>, mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one.</p>
+<div class="page-columns page-full"><p>Think of <strong>agents</strong> who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations <span class="math inline">\((x_1, x_2, ..., x_t)\)</span> and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;This paragraph is taken from the brilliant, open book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a> by M. Kochenderfer, T. Wheeler, and K. Wray</p></li></div></div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
     Env(Environment) -- observation --&gt; A(Agent)
@@ -461,12 +538,112 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 
 </div>
 <p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.2: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
+<ul>
+<li><strong>Outcome uncertainty</strong>, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can’t take everything into account when making a decision – it becomes combinatorialy explosive.</li>
+<li><strong>Model uncertainty</strong>, that is we can’t be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.</li>
+<li><strong>State uncertainty</strong> was discussed at length before, where the true state of the environment is uncertain and moreover, everything changes and is in flux.</li>
+<li><strong>Interaction uncertainty</strong>, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.</li>
+</ul>
+<p>We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
 </section>
-<section id="mathematical-statistics-in-a-nutshell" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell"><span class="header-section-number">2.3</span> Mathematical Statistics in a nutshell</h2>
+<section id="conditioning-and-marginalisation" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="conditioning-and-marginalisation"><span class="header-section-number">2.1.2</span> Conditioning and Marginalisation</h3>
+<!-- Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those).  -->
+<!-- Condit, ionarea ne aduce informat¸ie ˆın plus (scade incertitudinea asupra variabilei
+aleatoare de interes), ¸si dup˘a cum afirm˘a J.Blitzstein, este esent,a statisticii. Pe de
+alt˘a parte, condit¸ionarea ne permite s˘a factoriz˘am distribut¸ii multidimensionale,
+dup˘a logica influent¸elor. Utilizarea acestei tehnici este central˘a ˆın econometrie
+¸si analiz˘a bayesian˘a.
+Condit, ionare P(x, y) = P(x)P(y|x)
+P(y|x) = P(x, y)
+P(x)
+(2.3)
+Marginalizarea, ˆın cazul discret prin ˆınsumare, ˆın cel continuu prin integrare,
+ne permite s˘a separ˘am o distribut¸ie a unei submult¸imii de variabile aleatoare
+dintr-o distribut¸ie comun˘a.
+P(x) = X
+y
+P(x, y) -->
+</section>
+</section>
+<section id="mathematical-statistics-in-a-nutshell" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell"><span class="header-section-number">2.2</span> Mathematical Statistics in a nutshell</h2>
+<!-- 
+Colectivitatea reprezint˘a o mult, ime de entit˘at, i, obiecte sau forme reale, care au
+anumite caracteristici de interes corelate. Aceste caracteristici variaz˘a ˆıntre indivizi,
+obiecte, ˆın timp s, i spat, iu. De¸si acest fapt motiveaz˘a o abordare multidimensional˘a,
+apar problemele dimensionalit˘at¸ii ¸si redundant¸ei. De asemenea, modelele construite
+trebuie s˘a respecte principiul parsimonit˘at¸ii, deseori numit briciul lui Occam.
+Pentru ca modelarea s˘a fie posibil˘a, avem nevoie de o abstractizare a valorilor
+pe care le ia o caracteristic˘a la nivelul colectivit˘at, ii. ˆIn acest context este relevant
+conceptul de variabil˘a aleatoare, care aduce o caracteristic˘a ˆın domeniul cantitativ s, i
+generalizeaz˘a valorile ce pot fi luate de colectivitate. Aceast˘a mult¸ime a observat¸iilor
+¸si este populat¸ia statistic˘a, care va fi suportul pentru distribut, ia de probabilitate.
+Informat, ia pe care o avem niciodat˘a nu va fi complet˘a, din cauza zgomotului,
+naturii stochastice a fenomenelor sau a disponibilit˘at¸ii datelor ˆın timp ¸si la nivelele
+de granularitate necesare. Acest fapt ˆınseamn˘a c˘a trebuie estimate cantit˘at, ile
+relevante s, i testarea semnificat, iei rezultatelor este extrem de important˘a. Validarea
+modelelor ¸si testarea, dup˘a cum vom vedea, poate lua forme diferite ˆın dependent¸˘a
+de tipul model˘arii. -->
+<!-- 
+Exist˘a trei moduri principale de a privi es,antionul, ˆıns˘a pentru modelare, cea
+mai important˘a interpretare este a es,antionului ca model de select, ie: o list˘a a
+vectorilor variabilelor aleatoare pentru fiecare obiect din es,antion {X1, X2, ..., XT }.
+Acest mecanism teoretic generalizeaz˘a observat, iile posibile din es,antion. Xi
+sunt replici identice dup˘a definit, ie (vin din aceias, i distribut, ie), iar dac˘a sunt
+s, i independente observat, iile, metodele de estimare ca Verosimilitatea Maxim˘a
+pot fi folosite. -->
+<!-- 
+Un parametru ˆın abordarea frecventist˘a e o constant˘a important˘a pentru cunoas,tere,
+dar care niciodat˘a nu e cunoscut˘a cu exacitate. Abordarea bayesian˘a consider˘a
+parametrii ca dristribut, ii de probabilitate, ceea ce duce la un alt tip de inferent¸˘a.
+Estimatorul tT (X1, X2, ..., XT ) ≈ ˆθ este funct, ie pe modelul de select, ie {X1, X2, ..., XT },
+care are ca scop aproximarea parametrului. Ace¸sti estimatori, motora¸se de estimare,
+sunt selectat¸i dup˘a propriet˘at¸ile sale de nedeplasare ¸si eficient¸˘a. Deoarece este o
+funct¸ie pe modelul de select¸ie, t este o variabil˘a aleatoare, iar dac˘a ¸stim care este
+distribut¸ia ei, se pot crea teste de semnificat¸ie statistic˘a.
+O remarc˘a important˘a este c˘a valorile estimate deseori corespund cu valoarea
+maxim˘a posterioar˘a (MAP) ˆın analiza bayesian˘a, iar odat˘a ce oper˘am cu distribut, ia
+posterioar˘a, putem extrage mult mai mult˘a informat, ie decˆat o estimat, ie punctual˘a s, i
+intervalele de ˆıncredere, ci ˆınsus, i probabilitatea de a se afla ˆıntr-un anumit interval.
+Estimat, ia const˘a ˆın evaluarea estimatorului cu o manifestare a modelului de
+select, ie (datelor disponibile), obt¸inˆand valoarea empiric˘a a parametrului. ˆθ =
+tT (·)|x1,...,xT -->
+<!-- Modelarea unui fenomen cu ajutorul datelor multidimensionale, care au o distribut¸ie
+comun˘a p(Y, X) ¸si g˘asirea distribut¸iei de probabilitate este dificil˘a f˘ar˘a condit¸ionare.
+ˆIn contrast, condit¸ionarea pe variabilele independente ne aduce informat¸ii ˆın plus -->
+<!-- 
+despre variabila dependent˘a p(Y |X = x). ˆIn acest mod, ˆın econometrie se deriveaz˘a
+estimatorul, ¸si legea de probabilitate urmat˘a.
+Exemplificˆand pe un caz bidimensional, dac˘a X ia valori discrete, p(Y |X =
+x1), ..., p(Y |X = xk) vor fi distribut¸ii unidimensionale. Aceast˘a interpretare este
+important˘a, deoarece ne sugereaz˘a descompunerea efectelor ˆıntre factorii nesemnificativi ¸si cei semnificativi, funct¸iile de regresie ¸si skedastice. Acelea¸si concepte vor fi
+reg˘asite sub o alt˘a form˘a ˆın cadrul ˆınv˘at¸˘arii statistice. Media condit¸ionat¸˘a E[Y |xi
+]
+ˆın cadrul fiec˘arei instant¸e a variabilei aleatoare X = xi va fi o constant˘a, nivelul
+mediu Y cˆand X ia anumite valori. Media condit¸ionat˘a pe X E[Y |X] = f(x) este
+numit˘a regresie ¸si variant¸a condit¸ionat˘a V ar(Y |X) = g(x) - funct¸ia skedastic˘a.
+Rat¸ionamentul de mai sus, ˆımpreun˘a cu cele dou˘a teoreme introduse mai jos,
+permit completarea cadrului teoretic pentru a ˆınt¸elege mai bine argumentele despre
+signal ¸si zgomot ˆın ˆınv˘at¸area automat˘a. Teorema iterativit˘at¸ii mediilor ne spune
+c˘a a¸steptarea mediilor condit¸ionate este ˆıns˘a¸si a¸steptarea necondit¸ionat¸˘a.
+E[E[Y |X]] = EY (2.5)
+O teorem˘a ¸si mai important˘a, cea a descompunerii variant¸ei are o interpretare
+intuitiv˘a: variant¸a poate fi descompus˘a ˆın m˘asura factorilor semnificativi, adic˘a
+signal, care ne arat˘a cum variaz˘a a¸steptarea de la xi
+la xj ¸si zgomot sau factori
+nesemnificativi, adic˘a media variat¸iilor condit¸ionate.
+V ar(Y ) = V ar(E[Y |X]) + E[V ar(Y |X)] (2.6)
+Desigur, acest caz particular poate fi generalizat la dimensiuni multiple, dar ¸si
+exemplul simplu are o narativ˘a ce face evidente conceptele de R2
+teoretic, funct¸ie
+de regresie, verosimilitate ¸si ne permite o interpretare din punctul de vedere a
+teoriei informat¸iei. -->
 <p>importance of the data generating process, see what Ernesto said, then the causal process – all is parameters, known or unknown</p>
 <p>Uses everything probability has to give, but is concerned with inference, estimation, hypothesis testing, prove theorems and probabilistic properties of estimators.</p>
 <ul>
@@ -481,22 +658,82 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 <li>Estimation/a Statistic: theta_hat (a way to summarise and synthetise data)</li>
 </ul>
 <p>Draw a diagram between sample and population.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="img/population_vs_sample.png" title="Population vs Sample" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption"><em>Source: <a href="https://datasciencebook.ca/">Data Science, A first Introduction</a></em> Population vs Sample</figcaption><p></p>
+</figure>
+</div>
 <p>The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.</p>
 <p>One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method.</p>
-</section>
-<section id="models-are-golemns-of-prague" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">2.4</span> Models are Golemns of Prague</h2>
+<section id="models-are-golemns-of-prague" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">2.2.1</span> Models are Golemns of Prague</h3>
 <p>Data + Domain Assumptions + Statistical Assumptions</p>
 </section>
-<section id="model-specification-fisher-vs-bayes" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="model-specification-fisher-vs-bayes"><span class="header-section-number">2.5</span> Model Specification: Fisher vs Bayes</h2>
+<section id="model-specification-fisher-vs-bayes" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="model-specification-fisher-vs-bayes"><span class="header-section-number">2.2.2</span> Model Specification: Fisher vs Bayes</h3>
 </section>
-<section id="what-does-a-statistician-want" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">2.6</span> What does a statistician want?</h2>
+<section id="independence-and-exchangeability" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="independence-and-exchangeability"><span class="header-section-number">2.2.3</span> Independence and Exchangeability</h3>
+<p>I find it useful to review <strong>exchangeability</strong> and De Finetti’s theorem, before presenting the components of a Bayesian model, as it gives a sense of what is the underlying assumption of Hierarchical Models.</p>
+<p>A sequence of random variables is infinitely exchangeable if the joint probability for every set of <span class="math inline">\(n\)</span> variables is invariant under permutation of indices. De Finetti’s theorem, states that a sequence of random variables <span class="math inline">\((y_1, y_2, ...)\)</span>, with <span class="math inline">\(P(d\theta)\)</span> – a measure, is exchangeable if and only if:</p>
+<p><span class="math display">\[\begin{equation}
+    p(y_1, ..., y_n) = \int \prod_{i=1}^{n} p(y_i | \theta) P(d\theta)
+\end{equation}\]</span></p>
+<p>It follows that there exists a parameter <span class="math inline">\(\theta\)</span>, a distribution on <span class="math inline">\(\theta\)</span> and a likelihood <span class="math inline">\(p(y_i | \theta)\)</span> such that the random variable sequence is independent. Covariates can be incorporated into the formulation and theorem applied again for a vector of parameters <span class="math inline">\(\theta\)</span>, which resembles the hierarchical formulation introduced in section 3. Thus, there exists a:</p>
+<ul>
+<li>hyperparameter <span class="math inline">\(\phi\)</span></li>
+<li>a distribution over the hyperparameter <span class="math inline">\(p(\phi | \mathbf{x})\)</span></li>
+<li>likelihood <span class="math inline">\(p(\theta | \phi, \mathbf{x})\)</span> such that <span class="math inline">\(\theta_i\)</span> are independent when drawn from this distribution</li>
+</ul>
+<p>These facts highlight the elegance of the hierarchical models, where hyperprior distribution is learned from data and can be marginalized in the case it’s a nuisance parameter for a particular analysis. However, de Finetti’s theorem doesn’t give any prescription on how these priors should be chosen, only that they exist, so best practices in literature should be consulted and appropriateness given the problem at hand assessed.</p>
+<p><span class="math display">\[\begin{equation}
+    p(\theta | y) \propto \int d\phi ~ p(y | \theta) p(\theta | \phi) p(\phi)
+\end{equation}\]</span></p>
+<p>Bayesian models are usually built and formulated in a modular way, which forces the modeler to make stochastic and structural assumptions explicit. Because of the fact that formulation captures conditional independencies, it is interesting to view the model as a graph, where nodes are random variables, observed quantities and (directed) edges influences and information flows. The process of Bayesian Inference satisfies at once a few requirements: the ability to update prior beliefs once new data is available, combining different sources of information, modeling the data generating process and quantifying uncertainty in estimates. Let <span class="math inline">\(D = \{ (x_i, y_i) \}_{i=1}^n\)</span> be the data, then the iterative model update works according to the Bayes Rule:</p>
+<p><span class="math display">\[\begin{equation}
+\overbrace{p(\theta | X, y)}^\text{posterior} = \frac{\overbrace{p(\theta | X)}^\text{prior} \cdot \overbrace{p(y | \theta, X)}^\text{likelihood} }{ p(y | X) }
+\end{equation}\]</span></p>
+<p>The posterior can be used as a prior when new data is available and iteratively updating it. This consistency is useful when constructing priors using literature, previous experiments, <code>online</code> learning and doing meta-analyses. In a business setting, it is an important property in order to capture changes in the phenomena modeled, but avoiding the (possible) instability related to re-training complex machine learning models.</p>
+<p><span class="math display">\[\begin{equation}
+p(\theta' | X', y') = \frac{p(\theta | X, y) \cdot p(y' | \theta')}{p(y'|\theta, X')}
+\end{equation}\]</span></p>
+<p>Since the model is generative, i.e.&nbsp;after building a full probabilistic model of the data, parameters and latent variables, it is useful not only to infer and summarize parameter distributions, but to generate data as a tool for checking assumptions made. In this regard, prior and posterior predictive distributions are most often used in literature. Sampling using the marginal distribution of the observed value, before fitting any data, gives a sense on what kind of patterns, in which range, with what spread can the priors and likelihood specify.</p>
+<p><span class="math display">\[\begin{equation}
+    p(y) = \int d\theta ~ p(\theta) p(y | \theta)
+\end{equation}\]</span></p>
+<p>To make a prediction/inference regarding an unobserved or new value <span class="math inline">\(\tilde{y}\)</span> given the posterior distribution of parameters <span class="math inline">\(p(\theta | y)\)</span>, they are marginalized. I will extensively use this technique throughout the next chapters and summarize this distributions with <code>credible intervals</code>.</p>
+<p><span class="math display">\[\begin{equation}
+    p(\tilde{y} | y) = \int d\theta ~ \underbrace{p(\tilde{y} | \theta, y)}_\text{likelihood} \cdot  \underbrace{p(\theta | y)}_\text{posterior}
+\end{equation}\]</span></p>
+<p>Latent variables and parameters are treated the same in Bayesian Modeling and dealing with missing data is more natural than in Statistical Learning, because it is viewed as an unobserved value and will have a posterior predictive distribution, as a part of the sampling process. Moreover, if the data is Missing Not at Random, this mechanism can be modeled explicity, but needs more informative priors about the nature of missingness. has an excellent overview of approaches regarding missing targets or covariates and summarize it with the following graphical models, where <span class="math inline">\(m_i\)</span> is an indicator variable in the case <span class="math inline">\(y_i\)</span> is missing.</p>
+<p>The representation in figure above is a Probabilistic Graphical Model, which is a directed acyclic graph, where nodes are observed, unobserved variables and parameter, edges are logical or stochastic dependencies. An important way of thinking about causality was pioneered by Judea Pearl, which concerns itself with inference of the graph from data and factorization of joint distribution. Two ideas are relevant for this dissertation: Reichenbach’s common cause principle, and the idea of counterfactual formalized by Rubin.</p>
+<ul>
+<li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are statistically dependent, there exists <span class="math inline">\(Z\)</span> causally influencing both.</li>
+<li>Given a <code>chain</code> <span class="math inline">\(X \rightarrow Z \rightarrow Y\)</span>, X and Y are conditionally independent on Z: <span class="math inline">\((X \perp Y) ~|~ Z\)</span></li>
+</ul>
+<p>In Bayesian statistics conventional definitions of identifiability do not apply, so I’m more concerned with <code>information contents</code> given a model and particular dataset. If a posterior distribution of some parameter is flat over a large range, it is an indication that little was learned from data relative to prior information. Viewing indentifiability as the posterior being proper is not very useful in practice, as there isn’t a need to even define a finite variance or mean. Model critique, improvement and visualization play a key role in the Bayesian workflow, since a large amount of time is spent summarizing models and finding appropriate prior and structural specifications. As A. Gelman mentioned, <code>Bayes doesn't give up</code>, when conventional methods would refuse to estimate the parameters, which implies it is the modeler’s responsibility to challenge the model and check assumptions, find ways of better parametrization. In the last decades, the focus has shifted from the mathematical analysis to computational methods as Hamiltonian Monte Carlo, INLA, Variational Inference, which enable a great deal of experimentation with model specifications. Next chapters follow this spirit, favoring intuition and understanding over analytical tractability and focus on mathematical aspects which are really important for building models with <code>nice</code> properties.</p>
+</section>
+</section>
+<section id="what-does-a-statistician-want" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">2.3</span> What does a statistician want?</h2>
 <p>From their estimators</p>
+<section id="estimator-properties" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="estimator-properties"><span class="header-section-number">2.3.1</span> Estimator Properties</h3>
 </section>
-<section id="case-study-de-moivre-on-us-schooling" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="case-study-de-moivre-on-us-schooling"><span class="header-section-number">2.7</span> Case Study: De Moivre on US Schooling</h2>
+<section id="bias-variance-decomposition" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="bias-variance-decomposition"><span class="header-section-number">2.3.2</span> Bias-Variance Decomposition</h3>
+</section>
+<section id="rao-cramer-inequality" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="rao-cramer-inequality"><span class="header-section-number">2.3.3</span> Rao-Cramer Inequality</h3>
+</section>
+</section>
+<section id="case-studies" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="case-studies"><span class="header-section-number">2.4</span> Case Studies</h2>
+<section id="de-moivre-on-us-schooling" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="de-moivre-on-us-schooling"><span class="header-section-number">2.4.1</span> De Moivre on US Schooling</h3>
 <p>Let’s remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()).</p>
 <p>They decided to split up big schools into smaller ones. Can you say if it was a good, bad idea and why did they think that?</p>
 <p>Students hypothesis: - more attention to students in smaller classrooms - private schools, where families are more wealthy - geographical location, i.e.&nbsp;small towns and villages - motivation of the underdog, from small towns - friendships, community and peer competition (easier in smaller schools) - self-selection: what kind of students go into small schools – we assume average IQ is the same, including the distribution. Assume random allocation. - Skewed (even if not, longer tails): meaning, asymmetric distributions. - Finally: variance and standard deviation</p>
@@ -512,8 +749,8 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 <p>So, in this case we will collect data, used to estimate the parameter and its confidence intervels (inference, with the idea of generalizing from the sample to the population). Now, given those confidence intervals, we ask how surprising it is to see the data/estimation, if the null hypothesis was true.</p>
 <p>Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components – as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges.</p>
 </section>
-<section id="case-study-chess-example" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="case-study-chess-example"><span class="header-section-number">2.8</span> Case Study: Chess example</h2>
+<section id="chess-example" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="chess-example"><span class="header-section-number">2.4.2</span> Chess example</h3>
 <p>I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?</p>
 <blockquote class="blockquote">
 <p>Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data).</p>
@@ -528,8 +765,8 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 <p>see the difference between ELO vs xbox true skill, how fast it converges to the true ability – that is a model we can investigate.</p>
 </blockquote>
 </section>
-<section id="case-study-amazon-reviews-and-ratings" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="case-study-amazon-reviews-and-ratings"><span class="header-section-number">2.9</span> Case Study: Amazon reviews and ratings</h2>
+<section id="amazon-reviews-and-ratings" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="amazon-reviews-and-ratings"><span class="header-section-number">2.4.3</span> Amazon reviews and ratings</h3>
 <p>How do you choose 4.7 (300) vs 4.5 (2000) – according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?</p>
 <ul>
 <li>we can guide ourselfs with the quality and relevance of reviews</li>
@@ -542,30 +779,24 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 <p>good applications for text mining, statistical tests</p>
 </blockquote>
 </section>
-<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">2.10</span> Data Mining and CRISP-DM variants</h2>
 </section>
-<section id="statistical-process-and-science" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">2.11</span> Statistical Process and Science</h2>
-</section>
-<section id="byop-bring-your-own-problem" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">2.12</span> BYOP: Bring your own problem</h2>
-<p>Discussion over the how/process</p>
-</section>
-<section id="ml-is-a-geocentric-model-of-the-universe" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">2.13</span> ML is a geocentric model of the universe</h2>
+<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">2.5</span> Data Mining and CRISP-DM variants</h2>
+<section id="ml-is-a-geocentric-model-of-the-universe" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">2.5.1</span> ML is a geocentric model of the universe</h3>
 <p>The good news is that sometimes, you just need a reliable prediction, as you’re not intervening in the system causing a certain phenomena – and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn’t figure out a scientific explanation of the causal process, e.g.&nbsp;for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making.</p>
 <p>Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid – if you go outside that range, can easily get absurd predictions – this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation.</p>
 </section>
-<section id="dead-salmon-a-warning-tale" class="level2" data-number="2.14">
-<h2 data-number="2.14" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">2.14</span> Dead salmon: a warning tale</h2>
-<p>Forward reference to power and multiple testing</p>
 </section>
-<section id="conditioning-marginalisation-and-exchangeability" class="level2" data-number="2.15">
-<h2 data-number="2.15" class="anchored" data-anchor-id="conditioning-marginalisation-and-exchangeability"><span class="header-section-number">2.15</span> Conditioning, marginalisation and Exchangeability</h2>
+<section id="statistical-process-and-science" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">2.6</span> Statistical Process and Science</h2>
+<section id="dead-salmon-a-warning-tale" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">2.6.1</span> Dead salmon: a warning tale</h3>
+<p>Forward reference to power and multiple testing</p>
 <!-- Statistical Foundations: Reference, Revies --->
 
 
+</section>
 </section>
 
 
