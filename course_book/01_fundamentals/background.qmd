@@ -18,12 +18,13 @@ Let's start from a business setting of an e-commerce, where we want to increase 
 After this exercise, we defined more precisely where we stand, that is, quantify the current state of the firm. We framed the problem in terms of most relevant outcomes and we're in the process of figuring out what is the optimal goals to aim for. Obviously, we need a mechanism, measurements to know that we're on track and to recognize when to get there. Now, let's go back to our two questions and unpack them:
 
 - **What is true?** In the most general sense, we're not asking for a mathematical and logical truth, but if it's plausible, probable, deserves serious consideration, is backed by evidence. I also mean that we understand the underlying causal mechanisms. Not least, an assessment of the current situation. The metaphor which I suggest for this is "seeing clearly", through the fog, illusions, and biases. [^scout]
-- **How should I act?** What is plausible doesn't entirely answer this question, we can't derive an ought from is. In business settings, I would think about action in terms of strategic alignment and optimisation.
+- **How should I act?** What is plausible doesn't entirely answer this question, we can't derive an ought from is.[^hume] In business settings, I would think about action in terms of strategic alignment and optimisation.
 
 The only missing pieces from this mental model that I argue for is tremendously important: **iteration** and **feedback**. [^cybe] Due to VUCA, we can't be sure our actions are optimal, or even that we're solving the right problem, therefore fast iteration and feedback ensures we're not taking too much risk, that we find out early about problems in our thinking and action, that we can change course to steer the ship back on track.
 
 :::
 
+[^hume]: This is one of the most important and applicable philosophical ideas, introduced by David Hume: when one makes claims about what ought to be that are based solely on statements about what is.
 
 [^scout]: Recommended reading: Scout Mindset by Julia Galef
 [^cybe]: Sounds an awflul lot like Cybernetics, doesn't it? Especially if we have the idea of a firm as a complex adaptive system as a pressuposition for this discussion.
@@ -87,12 +88,13 @@ See below some very good answers and argumentations provided by the students las
 - **Banks and insurance**: risk management, predicting credit defaults on mortgages and business loans. Chatbots for customer support, for most frequent and simple questions.
 - **Automotive**: routine tasks like automated parking, the race towards self-driving, autonomous or semi-autonomous cars, safety warnings. Predictive maintainance is tackling a problem where they leverage predictions to replace risky parts before they go out of function.
 - Liverpool F.C. won a title, and a key part of their success was leveraging AI and ML to discover new tactis on the field with the highest payoffs. [^liverpool]
-- **NBA** teams invested a lot in the data infrastructure and decision-making capabilities: LA Lakers found the best player at the moment for a particular position they were lacking and would play well along with the team. Rockets won the regular championship divison by going all in on the 3-point shot. Golden State Warriors simply revolutionised basketball with data, before everyone else was doing it -- giving them a competitive edge. [^nba]
+- **NBA** teams invested a lot in the data infrastructure and decision-making capabilities: LA Lakers found the best player at the moment for a particular position they were lacking and would play well along with the team. Rockets won the regular championship divison by going all in on the 3-point shot.[^rockets] Golden State Warriors simply revolutionised basketball with data, before everyone else was doing it -- giving them a competitive edge. [^nba]
 
 [^uber_jack]: When it doesn't work out -- I'm pretty upset at their data scientists and domain experts. Here is where ethical issues creep up: jacking up prices, monopolies, drivers struggling to make a living wage.
 
 [^liverpool]: TODO: Reference article and maybe dataset for more details
-[^nba]: TODO: Reference to thinking basketball and other sports' science resources
+[^nba]: Check out the following [video by The Economist](https://youtu.be/oUvvfHkXyOA) on how data transformed the NBA. For more details on the statistical methodology, I enjoyed an youtube channel called Thinking Basketball and their [playlist](https://www.youtube.com/watch?v=pznoCFs7XZg&list=PLtzZl14BrKjTJZdubjNEY5jU0fGOiy51x) about the statistical methodology.
+[^rockets]: [Moreyball: The Houston Rockets and Analytics](https://d3.harvard.edu/platform-digit/submission/moreyball-the-houston-rockets-and-analytics/) -- an article in Harvard's MBA Digital Innovation
 
 In all of the examples above, those businesses and systems do have to make decisions, under uncertainty from multiple sources, trying to solve complex problems at a large scale, which would be impossible to do manually even with an army of employees. 
 
