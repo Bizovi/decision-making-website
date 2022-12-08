@@ -83,15 +83,76 @@ Often, probability and mathematical statistics are bundled together, as they mak
     - Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we're not thinking in long-run frequency terms. 
 2. **Elementary event** as an auxiliaty construction: one of the possible results of $\mathscr{E}$, usually conventionally denoted by $\omega_i \in \Omega$
 3. **Universal set**  $\Omega = \{ \omega_1, \omega_2, \dots \}$  is also called (Outcome/ State/ Selection space). It suggests the idea of complementarity and stochasticity: we don't know which $\omega_i$ will manifest, thus is a key object for a further formalization of probability measures. 
-4. We care not only about **an event** $A = \bigcup\limits_{i = 1}^n \omega_i$ and its realization, but also about other events in the Universal Set, because they might add information about the probability of occurring of our event of interest.
-5. The **event space** $\mathcal{F}$ should be defined on sets of subsets of $\Omega$ and this is where measure theory shines. For technical reasons, we usually can't define a probability measure on all sets of subsets. [^sigma-algebra]
+4. We care not only about **an event** $A = \bigcup\limits_{i = 1}^n \omega_i$ and its realization, but also about other events in the Universal Set, because they might contribute with additional information (about the probability) of our event of interest. This means that we we're interested in "all" other events.
+5. The **event space** $\mathcal{F}$ is a sigma-algebra, should be defined on sets of subsets of $\Omega$ and this is where measure theory shines. For technical reasons, we usually can't define a probability measure on all sets of subsets. On an intuitive note, we define the probability measure on sigma-algebras because if certain conditions did not hold, the measure wouldn't make sense.
 6. **Probability as an extension of the measure**: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability (number between 0 and 1) to elementary events: $\mathbb{P}(\omega_i)$. This is why additivity properties are key, as we care about random events, not only elementary events. This is where the debate between frequentists and Bayesians kicks in.
 7. A **probability triple** $(\Omega, \mathcal{F}, \mathbb{P})$ is the fundamental object the whole probability theory is constructed upon. We have to thank Kolmogorov for taking the informal, gambling-type probability and putting it onto solid, axiomatic foundations -- that is, making it open to mathematical enquiry.
 
 
-[^sigma-algebra]: The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you're interested in these technical details, you can check out my relatively accessible introudction to [measure theory and the Caratheodori extension theorem](https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/).  Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its **measure-theoretic** foundations could open up a whole new world to the researcher. It's easy to take the results from statistics and probability for granted, but it's useful to be aware what hides beneath the surface.
+::: {.column-margin}
+**Def: Algebra and Sigma-Algebra**
+
+ A set of subsets $\mathcal{A} \subset 2^\Omega$ is an algebra (field) if the following holds:
+
+1. $\Omega \in \mathcal{A}$ and $\varnothing \in \mathcal{A}$
+2. If $A \in \mathcal{A}$ then $A^C \in \mathcal{A}$ (closed under complements)
+3. If $A, B \in \mathcal{A}$ then $A \cup B \in \mathcal{A}$ (closed under union). Note that 2 and 3 imply that it's closed under countable intersection
+4. The additional condition for sigma-algebra: **sigma** refers to countability. If $\{  A_i \}_{i \ge 1} \in \mathcal{A}$ then $\bigcup\limits_{i \ge 1} A_i \in \mathcal{A}$ (closed under **countable union**)
+:::
+
+::: {.column-margin}
+
+**Def: Probability Measure**	
+
+Suppose we have defined a **measurable space** $(\Omega, \mathcal{A})$, where $\mathcal{A}$ is a sigma-algebra. A **probability measure** is the function $\mathbb{P}:\mathcal{A} \rightarrow [0, 1]$ such that:
+
+1. $\mathbb{P}(\Omega) = 1$ 	\footnote{From 1 and 2 it can be derived that $\mathbb{P}(\varnothing) = 0$ and $\mathbb{P}(A^C) = 1 - \mathbb{P}(A)$}
+2. For countable sequences of mutually disjoint effects, i.e. $\forall \{ A_i \}_{i \ge 1}$ where $A_i \bigcap\limits_{i \ne j} A_j = \varnothing$, the following holds $\mathbb{P}(\bigcup\limits_{i \ge 1} A_i) = \sum\limits_{i \ge 1} \mathbb{P}(A_i)$
+
+:::
+
+:::: {.callout-note}
+## Measure theory rabbit hole: Why not all subsets?
+The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you're interested in these technical details, you can check out my relatively accessible introudction to [measure theory and the Caratheodori extension theorem](https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/).  
+
+::: {.column-margin}
+Jeffrey Rosenthal begins his book by a similar motivation, constructing the following random variable as a coin toss between a discrete $X \sim Pois(\lambda)$ and continuous $Y \sim \mathcal{N}(0,1)$ r.v.
+
+\marginnote{
+	\begin{equation*}
+	\mathbb{P}(X = k) = \frac{e^{-\lambda} \lambda^k}{k!} 
+	\end{equation*}
+	
+	\begin{equation*}
+	\mathbb{P}(a \le Y \le b) = \int_{a}^{b} dy \frac{1}{\sqrt{2\pi}} exp(-\frac{y^2}{2})
+	\end{equation*}
+}
+
+\begin{equation}
+	Z = \begin{cases}
+	X, p = 0.5 \\
+	Y, p = 0.5
+	\end{cases}
+\end{equation}
+
+He then challenges the readers to come up with the expected value $\mathbb{E}[Z^2]$ and asks on what is it defined? It is indeed a hard question.
+:::
+
+Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its **measure-theoretic** foundations could open up a whole new world to the researcher. It's easy to take the results from statistics and probability for granted, but it's useful to be aware what hides beneath the surface.
+
+Evans Lawrence gives the following example of a function which is neither discrete nor continuous, for which you flip a coin and if it comes heads, draw from an uniform distribution and in case of tails a unit mass at one. If $\chi_{[0,1]}(x) = (e^{ix} - 1)/ix$ is the characteristic function of the interval from zero to one, in a way you can formulate its density, but usually it's not the case, nor is it very helpful to think about it in such terms.
+
+\begin{equation}
+	p(x) = w_1 \chi_{[0,1]}(x) +  w_2\delta_1(x)
+\end{equation}
+
+Even though you can visualize this in two dimensions as the uniform and a spike, or as a CDF with a discontinuity, this approach just breaks down in higher dimensions or more complicated combinations of functions.
+::::
 
 Thank you for bearing with me through the theory you have probably seen before, but we're not done. We're still in the land of set theory, and it is very hard to operate that way in practice -- so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.
+
+
+
 
 ::: {.callout-important}
 ## The breakthrough idea of a Random Variable
@@ -116,12 +177,26 @@ Let's figure out what the hell do we mean by that fine print condition, using th
 
 The idea is that the preimage defined above $X^{-1}((-\infty,r]) = E \in \mathcal{F}$ on the following interval corresponds to an event E which should be in the event space $\mathcal{F}$. Because the only thing that varies is the limit of the interval r, the randomness comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is $F_X(X \le r)$.
 
+::: {.column-margin}
+CDF, one of the most important constructs in probability is a direct consequence of the definition of the random variable:
+
+$$
+P(A ≤ r) = F_X(X ≤ r)
+$$
+
+In the practice of modeling, we often work with probability density functions, because it is more convenient in many cases. Then, in order to translate to probabilities, we would think in terms of areas under that curve. For sure, you remember the following duality between CFD and PDF:
+
+$$
+F'(x) = p(x)
+$$
+:::
 
 
 ![Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some relevant aspect of it to us)! ](img/random_variable.png "Random Variable"){width="90%"}
 
 
 As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of componsitional data analysis[^cda] and time series analysis. What I want to say, is that for more "exotic" applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.
+
 
 ::: {.callout-tip}
 ## The curious case of Compositional Data Analysis
@@ -136,9 +211,8 @@ Compositional data analysis solves those issues by defining a probability triple
 
 [^cda]:  ![*Source: [Dumuid](https://www.mdpi.com/1660-4601/17/7/2220)*: Data in a Simplex, which is later translated to $R^n$ by a carefully constructed basis expansion](img/composition.png "Simplex"){width="90%"}
 
-<!-- Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those).  -->
 
-Remember our exaple of [pigeon superstition](background.qmd#implicit-learning-intuition-and-bias) in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory, which is exatly those carefully formulated principles that will prevent our automated learners to become supersitious. [^ml-measure]
+Remember our exaple of [pigeon superstition](background.qmd#implicit-learning-intuition-and-bias) in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,[^ml-measure] which is exatly those carefully formulated principles that will prevent our automated learners to become supersitious. 
 
 [^ml-measure]: Even though most courses from which I studied don't mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio's Brown [answer](https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR) it's essential in the idea of **uniform convergence** and its bounds, where *"you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets"*. 
 
@@ -147,8 +221,8 @@ For the next example, you don't have to understand what Gaussian Processes are o
 It's not that these methods don't have parameters, but the parametrization varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don't know what is a reasonable distribution or parametric functional form for the relationship that we model.
 
 ::: {.callout-tip}
-## Stochastic Processes, Graphs and Trees
-
+## Nonparametrics and Gaussian Processes
+<!-- Stochastic Processes, Graphs and Trees -->
 If we're thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: $f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}$, [^gp] we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like. 
 
 $$
@@ -161,44 +235,149 @@ $$
 p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(f)}}{p(\left \{ x\right \})}
 $$
 
- 
 :::
 
 [^gp]: ![*Source: [Bizovi](https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/)*: A posterior distribution of the Gaussian Processes, when conditioned on data](img/gp-conditioned.png "GP Posterior"){width="90%"}
 
+::: {.column-margin}
+In the case of stochastic processes, we work with a sequence of random variables $\{X_t, t \in T \}$ and start asking questions:
+
+- What kind of time dependency is there? (autocorrelation)
+- What is the long-run behavior?
+- Can we say something about extreme events?
+:::
+
+A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically -- which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.
+
+Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.
 
 
-## Sources of Uncertainty
 
-Our focus is on agents that interact intelligently to achieve their objectives over
-time. Given the past sequence of observations o1, . . . , ot and knowledge about the
-environment, the agent must choose an action at that best achieves its objectives
-in the presence of various sources of uncertainty,1
-including: 1 We focus on discrete time problems. Continuous time problems
-are studied in the field of control theory. D. E. Kirk, Optimal Control Theory: An Introduction. Prentice-Hall,
-1970.
+### Sources of Uncertainty
 
-Our focus is on agents that interact intelligently to achieve their objectives over
-time. Given the past sequence of observations o1, . . . , ot and knowledge about the
-environment, the agent must choose an action at that best achieves its objectives
-in the presence of various sources of uncertainty,1
-including: 
+In the last chapter, we raised the issue of [where does uncertainty come from](background.qmd#what-is-ai-data-science-cybernetics-), mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one.
 
+Think of **agents** who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations $(x_1, x_2, ..., x_t)$ and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. [^dm]
 
-1. outcome uncertainty, where the effects of our actions are uncertain,
-2. model uncertainty, where our model of the problem is uncertain,
-3. state uncertainty, where the true state of the environment is uncertain, and
-4. interaction uncertainty, where the behavior of the other agents interacting in the
-environment is uncertain.
+[^dm]: This paragraph is taken from the brilliant, open book [Algorithms for Decision Making, MIT Press - 2022](https://algorithmsbook.com/) by M. Kochenderfer, T. Wheeler, and K. Wray
 
 ```{mermaid}
+%%| label: fig-mermaid
+%%| fig-cap: |
+%%|   This diagram captures the story from the previous chapter in a way
+%%|   which allows itself to a more formal treatment, 
+%%|   a kind of joint learning, representation, and dynamic optimization.
+
 flowchart LR
 	Env(Environment) -- observation --> A(Agent)
 	A -- action --> Env
 ```
 
+- **Outcome uncertainty**, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can't take everything into account when making a decision -- it becomes combinatorialy explosive.
+- **Model uncertainty**, that is we can't be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.
+- **State uncertainty** was discussed at length before, where the true state of the environment is uncertain and moreover, everything changes and is in flux.
+- **Interaction uncertainty**, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.
+
+We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.
+
+
+### Conditioning and Marginalisation 
+
+<!-- Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those).  -->
+
+<!-- Condit, ionarea ne aduce informat¸ie ˆın plus (scade incertitudinea asupra variabilei
+aleatoare de interes), ¸si dup˘a cum afirm˘a J.Blitzstein, este esent,a statisticii. Pe de
+alt˘a parte, condit¸ionarea ne permite s˘a factoriz˘am distribut¸ii multidimensionale,
+dup˘a logica influent¸elor. Utilizarea acestei tehnici este central˘a ˆın econometrie
+¸si analiz˘a bayesian˘a.
+Condit, ionare P(x, y) = P(x)P(y|x)
+P(y|x) = P(x, y)
+P(x)
+(2.3)
+Marginalizarea, ˆın cazul discret prin ˆınsumare, ˆın cel continuu prin integrare,
+ne permite s˘a separ˘am o distribut¸ie a unei submult¸imii de variabile aleatoare
+dintr-o distribut¸ie comun˘a.
+P(x) = X
+y
+P(x, y) -->
 
 ## Mathematical Statistics in a nutshell
+
+<!-- 
+Colectivitatea reprezint˘a o mult, ime de entit˘at, i, obiecte sau forme reale, care au
+anumite caracteristici de interes corelate. Aceste caracteristici variaz˘a ˆıntre indivizi,
+obiecte, ˆın timp s, i spat, iu. De¸si acest fapt motiveaz˘a o abordare multidimensional˘a,
+apar problemele dimensionalit˘at¸ii ¸si redundant¸ei. De asemenea, modelele construite
+trebuie s˘a respecte principiul parsimonit˘at¸ii, deseori numit briciul lui Occam.
+Pentru ca modelarea s˘a fie posibil˘a, avem nevoie de o abstractizare a valorilor
+pe care le ia o caracteristic˘a la nivelul colectivit˘at, ii. ˆIn acest context este relevant
+conceptul de variabil˘a aleatoare, care aduce o caracteristic˘a ˆın domeniul cantitativ s, i
+generalizeaz˘a valorile ce pot fi luate de colectivitate. Aceast˘a mult¸ime a observat¸iilor
+¸si este populat¸ia statistic˘a, care va fi suportul pentru distribut, ia de probabilitate.
+Informat, ia pe care o avem niciodat˘a nu va fi complet˘a, din cauza zgomotului,
+naturii stochastice a fenomenelor sau a disponibilit˘at¸ii datelor ˆın timp ¸si la nivelele
+de granularitate necesare. Acest fapt ˆınseamn˘a c˘a trebuie estimate cantit˘at, ile
+relevante s, i testarea semnificat, iei rezultatelor este extrem de important˘a. Validarea
+modelelor ¸si testarea, dup˘a cum vom vedea, poate lua forme diferite ˆın dependent¸˘a
+de tipul model˘arii. -->
+
+<!-- 
+Exist˘a trei moduri principale de a privi es,antionul, ˆıns˘a pentru modelare, cea
+mai important˘a interpretare este a es,antionului ca model de select, ie: o list˘a a
+vectorilor variabilelor aleatoare pentru fiecare obiect din es,antion {X1, X2, ..., XT }.
+Acest mecanism teoretic generalizeaz˘a observat, iile posibile din es,antion. Xi
+sunt replici identice dup˘a definit, ie (vin din aceias, i distribut, ie), iar dac˘a sunt
+s, i independente observat, iile, metodele de estimare ca Verosimilitatea Maxim˘a
+pot fi folosite. -->
+
+<!-- 
+Un parametru ˆın abordarea frecventist˘a e o constant˘a important˘a pentru cunoas,tere,
+dar care niciodat˘a nu e cunoscut˘a cu exacitate. Abordarea bayesian˘a consider˘a
+parametrii ca dristribut, ii de probabilitate, ceea ce duce la un alt tip de inferent¸˘a.
+Estimatorul tT (X1, X2, ..., XT ) ≈ ˆθ este funct, ie pe modelul de select, ie {X1, X2, ..., XT },
+care are ca scop aproximarea parametrului. Ace¸sti estimatori, motora¸se de estimare,
+sunt selectat¸i dup˘a propriet˘at¸ile sale de nedeplasare ¸si eficient¸˘a. Deoarece este o
+funct¸ie pe modelul de select¸ie, t este o variabil˘a aleatoare, iar dac˘a ¸stim care este
+distribut¸ia ei, se pot crea teste de semnificat¸ie statistic˘a.
+O remarc˘a important˘a este c˘a valorile estimate deseori corespund cu valoarea
+maxim˘a posterioar˘a (MAP) ˆın analiza bayesian˘a, iar odat˘a ce oper˘am cu distribut, ia
+posterioar˘a, putem extrage mult mai mult˘a informat, ie decˆat o estimat, ie punctual˘a s, i
+intervalele de ˆıncredere, ci ˆınsus, i probabilitatea de a se afla ˆıntr-un anumit interval.
+Estimat, ia const˘a ˆın evaluarea estimatorului cu o manifestare a modelului de
+select, ie (datelor disponibile), obt¸inˆand valoarea empiric˘a a parametrului. ˆθ =
+tT (·)|x1,...,xT -->
+
+<!-- Modelarea unui fenomen cu ajutorul datelor multidimensionale, care au o distribut¸ie
+comun˘a p(Y, X) ¸si g˘asirea distribut¸iei de probabilitate este dificil˘a f˘ar˘a condit¸ionare.
+ˆIn contrast, condit¸ionarea pe variabilele independente ne aduce informat¸ii ˆın plus -->
+<!-- 
+despre variabila dependent˘a p(Y |X = x). ˆIn acest mod, ˆın econometrie se deriveaz˘a
+estimatorul, ¸si legea de probabilitate urmat˘a.
+Exemplificˆand pe un caz bidimensional, dac˘a X ia valori discrete, p(Y |X =
+x1), ..., p(Y |X = xk) vor fi distribut¸ii unidimensionale. Aceast˘a interpretare este
+important˘a, deoarece ne sugereaz˘a descompunerea efectelor ˆıntre factorii nesemnificativi ¸si cei semnificativi, funct¸iile de regresie ¸si skedastice. Acelea¸si concepte vor fi
+reg˘asite sub o alt˘a form˘a ˆın cadrul ˆınv˘at¸˘arii statistice. Media condit¸ionat¸˘a E[Y |xi
+]
+ˆın cadrul fiec˘arei instant¸e a variabilei aleatoare X = xi va fi o constant˘a, nivelul
+mediu Y cˆand X ia anumite valori. Media condit¸ionat˘a pe X E[Y |X] = f(x) este
+numit˘a regresie ¸si variant¸a condit¸ionat˘a V ar(Y |X) = g(x) - funct¸ia skedastic˘a.
+Rat¸ionamentul de mai sus, ˆımpreun˘a cu cele dou˘a teoreme introduse mai jos,
+permit completarea cadrului teoretic pentru a ˆınt¸elege mai bine argumentele despre
+signal ¸si zgomot ˆın ˆınv˘at¸area automat˘a. Teorema iterativit˘at¸ii mediilor ne spune
+c˘a a¸steptarea mediilor condit¸ionate este ˆıns˘a¸si a¸steptarea necondit¸ionat¸˘a.
+E[E[Y |X]] = EY (2.5)
+O teorem˘a ¸si mai important˘a, cea a descompunerii variant¸ei are o interpretare
+intuitiv˘a: variant¸a poate fi descompus˘a ˆın m˘asura factorilor semnificativi, adic˘a
+signal, care ne arat˘a cum variaz˘a a¸steptarea de la xi
+la xj ¸si zgomot sau factori
+nesemnificativi, adic˘a media variat¸iilor condit¸ionate.
+V ar(Y ) = V ar(E[Y |X]) + E[V ar(Y |X)] (2.6)
+Desigur, acest caz particular poate fi generalizat la dimensiuni multiple, dar ¸si
+exemplul simplu are o narativ˘a ce face evidente conceptele de R2
+teoretic, funct¸ie
+de regresie, verosimilitate ¸si ne permite o interpretare din punctul de vedere a
+teoriei informat¸iei. -->
+
 
 importance of the data generating process, see what Ernesto said, then the causal process -- all is parameters, known or unknown 
 
@@ -214,22 +393,100 @@ Uses everything probability has to give, but is concerned with inference, estima
 
 Draw a diagram between sample and population. 
 
+
+![*Source: [Data Science, A first Introduction](https://datasciencebook.ca/)* Population vs Sample](img/population_vs_sample.png "Population vs Sample"){width="90%"}
+
+
 The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.
 
 One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method.
 
 
-## Models are Golemns of Prague
+### Models are Golemns of Prague
 
 Data + Domain Assumptions + Statistical Assumptions
 
-## Model Specification: Fisher vs Bayes
+### Model Specification: Fisher vs Bayes
+
+
+### Independence and Exchangeability
+
+I find it useful to review **exchangeability** and De Finetti's theorem, before presenting the components of a Bayesian model, as it gives a sense of what is the underlying assumption of Hierarchical Models. 
+
+A sequence of random variables is infinitely exchangeable if the joint probability for every set of $n$ variables is invariant under permutation of indices. De Finetti's theorem, states that a sequence of random variables $(y_1, y_2, ...)$, with $P(d\theta)$ -- a measure, is exchangeable if and only if:
+
+\begin{equation}
+	p(y_1, ..., y_n) = \int \prod_{i=1}^{n} p(y_i | \theta) P(d\theta)
+\end{equation}
+
+
+It follows that there exists a parameter $\theta$, a distribution on $\theta$ and a likelihood $p(y_i | \theta)$ such that the random variable sequence is independent. Covariates can be incorporated into the formulation and theorem applied again for a vector of parameters $\theta$, which resembles the hierarchical formulation introduced in section 3. Thus, there exists a:
+
+- hyperparameter $\phi$
+- a distribution over the hyperparameter $p(\phi | \mathbf{x})$
+- likelihood $p(\theta | \phi, \mathbf{x})$ such that $\theta_i$ are independent when drawn from this distribution
+
+
+These facts highlight the elegance of the hierarchical models, where hyperprior distribution is learned from data and can be marginalized in the case it's a nuisance parameter for a particular analysis. However, de Finetti's theorem doesn't give any prescription on how these priors should be chosen, only that they exist, so best practices in literature should be consulted and appropriateness given the problem at hand assessed.
+
+
+
+\begin{equation}
+	p(\theta | y) \propto \int d\phi ~ p(y | \theta) p(\theta | \phi) p(\phi) 
+\end{equation}
+
+
+Bayesian models are usually built and formulated in a modular way, which forces the modeler to make stochastic and structural assumptions explicit. Because of the fact that formulation captures conditional independencies, it is interesting to view the model as a graph, where nodes are random variables, observed quantities and (directed) edges influences and information flows. The process of Bayesian Inference satisfies at once a few requirements: the ability to update prior beliefs once new data is available, combining different sources of information, modeling the data generating process and quantifying uncertainty in estimates. Let $D = \{ (x_i, y_i) \}_{i=1}^n$ be the data, then the iterative model update works according to the Bayes Rule:
+
+\begin{equation}
+ \overbrace{p(\theta | X, y)}^\text{posterior} = \frac{\overbrace{p(\theta | X)}^\text{prior} \cdot \overbrace{p(y | \theta, X)}^\text{likelihood} }{ p(y | X) }
+\end{equation}
+
+
+The posterior can be used as a prior when new data is available and iteratively updating it. This consistency is useful when constructing priors using literature, previous experiments, ``online`` learning and doing meta-analyses. In a business setting, it is an important property in order to capture changes in the phenomena modeled, but avoiding the (possible) instability related to re-training complex machine learning models.
+
+\begin{equation}
+ p(\theta' | X', y') = \frac{p(\theta | X, y) \cdot p(y' | \theta')}{p(y'|\theta, X')}
+\end{equation}
+
+Since the model is generative, i.e. after building a full probabilistic model of the data, parameters and latent variables, it is useful not only to infer and summarize parameter distributions, but to generate data as a tool for checking assumptions made. In this regard, prior and posterior predictive distributions are most often used in literature. Sampling using the marginal distribution of the observed value, before fitting any data, gives a sense on what kind of patterns, in which range, with what spread can the priors and likelihood specify.
+
+\begin{equation}
+	p(y) = \int d\theta ~ p(\theta) p(y | \theta) 
+\end{equation}
+
+
+To make a prediction/inference regarding an unobserved or new value $\tilde{y}$ given the posterior distribution of parameters $p(\theta | y)$, they are marginalized. I will extensively use this technique throughout the next chapters and summarize this distributions with ``credible intervals``.
+
+\begin{equation}
+	p(\tilde{y} | y) = \int d\theta ~ \underbrace{p(\tilde{y} | \theta, y)}_\text{likelihood} \cdot  \underbrace{p(\theta | y)}_\text{posterior}
+\end{equation}
+
+
+Latent variables and parameters are treated the same in Bayesian Modeling and dealing with missing data is more natural than in Statistical Learning, because it is viewed as an unobserved value and will have a posterior predictive distribution, as a part of the sampling process. Moreover, if the data is Missing Not at Random, this mechanism can be modeled explicity, but needs more informative priors about the nature of missingness. \cite{best12} has an excellent overview of approaches regarding missing targets or covariates and summarize it with the following graphical models, where $m_i$ is an indicator variable in the case $y_i$ is missing.
+
+
+The representation in figure above is a Probabilistic Graphical Model, which is a directed acyclic graph, where nodes are observed, unobserved variables and parameter, edges are logical or stochastic dependencies. An important way of thinking about causality was pioneered by Judea Pearl, which concerns itself with inference of the graph from data and factorization of joint distribution. Two ideas are relevant for this dissertation: Reichenbach's common cause principle, \cite{reichen62} and the idea of counterfactual formalized by Rubin.
+
+- If $X$ and $Y$ are statistically dependent, there exists $Z$ causally influencing both.
+- Given a ``chain`` $X \rightarrow Z \rightarrow Y$, X and Y are conditionally independent on Z: $(X \perp Y) ~|~ Z$
+
+In Bayesian statistics conventional definitions of identifiability do not apply, so I'm more concerned with ``information contents`` given a model and particular dataset. If a posterior distribution of some parameter is flat over a large range, it is an indication that little was learned from data relative to prior information. Viewing indentifiability as the posterior being proper is not very useful in practice, as there isn't a need to even define a finite variance or mean.
+Model critique, improvement and visualization \cite{gabry19} play a key role in the Bayesian workflow, since a large amount of time is spent summarizing models and finding appropriate prior and structural specifications. As A. Gelman mentioned, ``Bayes doesn't give up``, when conventional methods would refuse to estimate the parameters, which implies it is the modeler's responsibility to challenge the model and check assumptions, find ways of better parametrization. In the last decades, the focus has shifted from the mathematical analysis to computational methods as Hamiltonian Monte Carlo, INLA, Variational Inference, which enable a great deal of experimentation with model specifications. Next chapters follow this spirit, favoring intuition and understanding over analytical tractability and focus on mathematical aspects which are really important for building models with ``nice`` properties.
 
 
 ## What does a statistician want?
 From their estimators
 
-## Case Study: De Moivre on US Schooling
+### Estimator Properties
+
+### Bias-Variance Decomposition
+
+### Rao-Cramer Inequality
+
+## Case Studies
+
+### De Moivre on US Schooling
 
 Let's remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()). 
 
@@ -263,7 +520,7 @@ So, in this case we will collect data, used to estimate the parameter and its co
 
 Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components -- as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges. 
 
-## Case Study: Chess example
+### Chess example
 I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?
 
 > Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data). 
@@ -283,7 +540,7 @@ We will discuss next time a whole range of other pitfalls, including spurious co
 
 > see the difference between ELO vs xbox true skill, how fast it converges to the true ability -- that is a model we can investigate. 
 
-## Case Study: Amazon reviews and ratings
+### Amazon reviews and ratings
 How do you choose 4.7 (300) vs 4.5 (2000) -- according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?
 
 - we can guide ourselfs with the quality and relevance of reviews
@@ -299,23 +556,18 @@ Introduce the confusion matrix, which will be discussed at length in ML and hypo
 ## Data Mining and CRISP-DM variants
 
 
-## Statistical Process and Science
-
-
-## BYOP: Bring your own problem
-Discussion over the how/process
-
-## ML is a geocentric model of the universe
+### ML is a geocentric model of the universe
 
 The good news is that sometimes, you just need a reliable prediction, as you're not intervening in the system causing a certain phenomena -- and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn't figure out a scientific explanation of the causal process, e.g. for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making. 
 
 Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid -- if you go outside that range, can easily get absurd predictions -- this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation. 
 
-## Dead salmon: a warning tale
+## Statistical Process and Science
+
+### Dead salmon: a warning tale
 Forward reference to power and multiple testing
 
 
-## Conditioning, marginalisation and Exchangeability
 
 
 
