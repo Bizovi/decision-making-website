@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science - 3&nbsp; Statistical Foundations: WIP</title>
+<title>Pragmatic Data Science - 2&nbsp; Statistical Foundations: WIP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01_fundamentals/adoreme.html" rel="next">
-<link href="../01_fundamentals/bolt.html" rel="prev">
+<link href="../01_fundamentals/bolt.html" rel="next">
+<link href="../01_fundamentals/background.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -153,12 +153,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
+  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Foundations: WIP</span></h1>
 </div>
 
 
@@ -232,21 +232,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-probability-triple" id="toc-the-probability-triple"><span class="toc-section-number">3.1</span>  The probability triple</a></li>
-  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty"><span class="toc-section-number">3.2</span>  Sources of Uncertainty</a></li>
-  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell"><span class="toc-section-number">3.3</span>  Mathematical Statistics in a nutshell</a></li>
-  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague"><span class="toc-section-number">3.4</span>  Models are Golemns of Prague</a></li>
-  <li><a href="#model-specification-fisher-vs-bayes" id="toc-model-specification-fisher-vs-bayes"><span class="toc-section-number">3.5</span>  Model Specification: Fisher vs Bayes</a></li>
-  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want"><span class="toc-section-number">3.6</span>  What does a statistician want?</a></li>
-  <li><a href="#case-study-de-moivre-on-us-schooling" id="toc-case-study-de-moivre-on-us-schooling"><span class="toc-section-number">3.7</span>  Case Study: De Moivre on US Schooling</a></li>
-  <li><a href="#case-study-chess-example" id="toc-case-study-chess-example"><span class="toc-section-number">3.8</span>  Case Study: Chess example</a></li>
-  <li><a href="#case-study-amazon-reviews-and-ratings" id="toc-case-study-amazon-reviews-and-ratings"><span class="toc-section-number">3.9</span>  Case Study: Amazon reviews and ratings</a></li>
-  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants"><span class="toc-section-number">3.10</span>  Data Mining and CRISP-DM variants</a></li>
-  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science"><span class="toc-section-number">3.11</span>  Statistical Process and Science</a></li>
-  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem"><span class="toc-section-number">3.12</span>  BYOP: Bring your own problem</a></li>
-  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">3.13</span>  ML is a geocentric model of the universe</a></li>
-  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale"><span class="toc-section-number">3.14</span>  Dead salmon: a warning tale</a></li>
-  <li><a href="#conditioning-marginalisation-and-exchangeability" id="toc-conditioning-marginalisation-and-exchangeability"><span class="toc-section-number">3.15</span>  Conditioning, marginalisation and Exchangeability</a></li>
+  <li><a href="#the-probability-triple" id="toc-the-probability-triple"><span class="toc-section-number">2.1</span>  The probability triple</a></li>
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty"><span class="toc-section-number">2.2</span>  Sources of Uncertainty</a></li>
+  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell"><span class="toc-section-number">2.3</span>  Mathematical Statistics in a nutshell</a></li>
+  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague"><span class="toc-section-number">2.4</span>  Models are Golemns of Prague</a></li>
+  <li><a href="#model-specification-fisher-vs-bayes" id="toc-model-specification-fisher-vs-bayes"><span class="toc-section-number">2.5</span>  Model Specification: Fisher vs Bayes</a></li>
+  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want"><span class="toc-section-number">2.6</span>  What does a statistician want?</a></li>
+  <li><a href="#case-study-de-moivre-on-us-schooling" id="toc-case-study-de-moivre-on-us-schooling"><span class="toc-section-number">2.7</span>  Case Study: De Moivre on US Schooling</a></li>
+  <li><a href="#case-study-chess-example" id="toc-case-study-chess-example"><span class="toc-section-number">2.8</span>  Case Study: Chess example</a></li>
+  <li><a href="#case-study-amazon-reviews-and-ratings" id="toc-case-study-amazon-reviews-and-ratings"><span class="toc-section-number">2.9</span>  Case Study: Amazon reviews and ratings</a></li>
+  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants"><span class="toc-section-number">2.10</span>  Data Mining and CRISP-DM variants</a></li>
+  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science"><span class="toc-section-number">2.11</span>  Statistical Process and Science</a></li>
+  <li><a href="#byop-bring-your-own-problem" id="toc-byop-bring-your-own-problem"><span class="toc-section-number">2.12</span>  BYOP: Bring your own problem</a></li>
+  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">2.13</span>  ML is a geocentric model of the universe</a></li>
+  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale"><span class="toc-section-number">2.14</span>  Dead salmon: a warning tale</a></li>
+  <li><a href="#conditioning-marginalisation-and-exchangeability" id="toc-conditioning-marginalisation-and-exchangeability"><span class="toc-section-number">2.15</span>  Conditioning, marginalisation and Exchangeability</a></li>
   </ul>
 </nav>
 <p>In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving <strong>decision-making under uncertainty</strong>. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.</p>
@@ -291,86 +291,156 @@ A word of encouragement
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: In this chapter and set of lectures, I attempt to reformulate fundamental statistical ideas, concepts, and tools, in order to show their relevance in the day-to-day practice and decision-making. A secondary objective is to fill in the conceptual gaps left by the fact that it’s hard to make sense of it all the first time we’re encountering it in the classroom.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: In this chapter and set of lectures, I attempt to reformulate fundamental statistical ideas, concepts, and tools, in order to show their relevance in the day-to-day practice and decision-making. A secondary objective is to fill in the conceptual gaps left by the fact that it’s hard to make sense of it all the first time we’re encountering it in the classroom.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The plan for this lecture is the following: we start by constructing the probability triple, formalize sources of uncertainty, and investigate the building blocks of a statistical model. I then highlight in a few case-studies what can go wrong in the process of statistical inference and how difficult it is to choose the right model. The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessigle and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing – which will be our gateway into truly modern statistics.</p>
-<p>Therefore, here’s a guide on how to refresh the statistical knowledge, in such a way, that statistics becomes fascinating, not boring and frustrating.</p>
+<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Complementary resources if you feel like starting over
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
 <ul>
 <li>Realize that lots of common statistical tests are particular versions of linear models <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It takes a few hours to go through the theory and the code in the referenced book.</li>
-<li>Understand the following concepts:
-<ul>
-<li>Random Experiments, Contructing the probability triple, Random variables and CDFs</li>
-<li>Collectivity, Statistical Population, Samples and Sampling (as a process)</li>
-<li>Parameter, Estimator, Estimation: properties of estimators (i.e.&nbsp;what does a statistician want)</li>
 <li>Here’s the approach taken by <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which integrates data analysis and simulation in learning of statistics.</li>
-</ul></li>
 <li>Upgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.</li>
 <li>Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which is a course in collaboration with the RStudio team.</li>
 </ul>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Doogue - <a href="https://steverxd.github.io/Stat_tests/">Common statistical tests are linear models</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Speegle, Clair - <a href="https://mathstat.slu.edu/~speegle/_book/preface.html">Probability, Statistics, and Data: A fresh approach using R</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Poldrack - <a href="https://statsthinking21.github.io/statsthinking21-core-site/">Statistical Thinking for the 21st Century</a> has two companion books, one with R and another in Python</p></li><li id="fn4"><p><sup>4</sup>&nbsp;Bryan - <a href="https://stat545.com/">STAT 545</a> It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.</p></li></div><div class="page-columns page-full"><p>There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications: - <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Cetinkaya-Runde goes through all the fundamentals in a clear, concrete, extensive way, with code! - <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> has an interesting approach, focused on the challenges of Psychology - <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> goes through the whole process, with R, with additional topics, normally not present in a statistics course - <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Cetinkaya-Runde, Hardin - <a href="https://openintro-ims.netlify.app/index.html">Introduction to Modern Statistics</a></p></li><li id="fn6"><p><sup>6</sup>&nbsp;Crump - <a href="https://www.crumplab.com/statistics/">Answering questions with data</a> – introductory statistics for Psychology Students</p></li><li id="fn7"><p><sup>7</sup>&nbsp;Thulin - <a href="http://www.modernstatisticswithr.com/">Modern Statistics with R</a></p></li><li id="fn8"><p><sup>8</sup>&nbsp;Holmes, Huber - <a href="https://www.huber.embl.de/msmb/index.html">Modern Statistics for Modern Biology</a></p></li></div></div>
-<section id="the-probability-triple" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="the-probability-triple"><span class="header-section-number">3.1</span> The probability triple</h2>
-<p>Why? Language of uncertainty! Applications everywhere, the only way we can reason logically under uncertainty (fuzzy logic is out of favor, better study bayes).</p>
-<p>The reason we need probability theory is that it’s a formal language of uncertainty. Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its <strong>measure-theoretic</strong> foundations could open up a whole new world to the researcher. It’s easy to take the results from statistics and probability for granted, but it’s useful to be aware what hides beneath the surface.</p>
-<p>Often, probability and math stats are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Prob theory is concerned with the construction of the probability triple (O, F, P), which can get very rigorous and complicated, with measure theory. We define the probability measure, and it matters a lot in which space are we (R^n, simplex, f(R^n) and gauss processes, SP stochastic processes for time series analysis) – the curious case of compositional data analysis, in which the classical methods have to be tweaked in order to make sense. Explain how we define P on a simple later – but the main point to remember, that we construct it here.</p>
-<p>Random Variable!</p>
-<p>Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process, conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters – explain what are those).</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Doogue - <a href="https://steverxd.github.io/Stat_tests/">Common statistical tests are linear models</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Speegle, Clair - <a href="https://mathstat.slu.edu/~speegle/_book/preface.html">Probability, Statistics, and Data: A fresh approach using R</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Poldrack - <a href="https://statsthinking21.github.io/statsthinking21-core-site/">Statistical Thinking for the 21st Century</a> has two companion books, one with R and another in Python</p></li><li id="fn4"><p><sup>4</sup>&nbsp;Bryan - <a href="https://stat545.com/">STAT 545</a> It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.</p></li></div><p>There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:</p>
 <ul>
-<li>Random experiment:
-<ul>
-<li>possible outcomes are known apriori and exhaustibly, e.g.&nbsp;coin toss, sales (Continuous)</li>
-<li>we don’t know which of those will manifest</li>
-<li>there is a perceptible regularity, which can be eventually measured and quantified</li>
-<li>conditions of the experiment are repeatable (bayes perspective - not necessary)</li>
-</ul></li>
-<li>Elementary events {w1, w2}</li>
-<li>Selection space: complementarity of elementary events</li>
-<li>Random Events as union of elementary events, but can’t do it in any way I want.</li>
-<li>Event space: A and its complement(A) has to have a certain consistency, not always possible to have all possible combinations of elementary events – technical restrictions for continuous R. Why measure theory as a solid foundation, but irrelevant here.</li>
-<li>Probability measure: assigning a number to an event, between 0, 1; that is, it should represent that perceptible regularity, in frequentist terms - long-run frequency of occurences. n(A) / n -&gt; prob; it also has to respect a minimal set of conditions.</li>
-<li>(O, F, P) triple</li>
-<li>Random variable, most interesting ideas: not random, neither a variable, it’s a function X(w) -&gt; R, such that it perserves the informational structure of F., i.e.&nbsp;X^-1(r) in F or &lt;= r in R (not any definition of X is valid, can’t be arbitrary – we can come up with a counterexampe – basically inversable, can recover the right elementary events). It’s a quantification: of Events into numbers, essential for all the following machinery of statistics, ML and so on. It is basically the thing which enables us to define the statistical population (some relevant aspect of it to us)!</li>
+<li>Cetinkaya-Runde, Hardin - <a href="https://openintro-ims.netlify.app/index.html">Introduction to Modern Statistics</a> goes through all the fundamentals in a clear, concrete, extensive way, with code!</li>
+<li>Crump - <a href="https://www.crumplab.com/statistics/">Answering questions with data</a> – introductory statistics for Psychology Students has an interesting approach, focused on the challenges of Psychology</li>
+<li>Thulin - <a href="http://www.modernstatisticswithr.com/">Modern Statistics with R</a> goes through the whole process, with R, with additional topics, normally not present in a statistics course</li>
+<li>Holmes, Huber - <a href="https://www.huber.embl.de/msmb/index.html">Modern Statistics for Modern Biology</a> is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data</li>
 </ul>
+</div>
+</div>
+<section id="the-probability-triple" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-probability-triple"><span class="header-section-number">2.1</span> The probability triple</h2>
+<div class="page-columns page-full"><p>In the <a href="../01_fundamentals/background.html#why-did-you-study-all-of-that">previous lecture</a>, I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it’s one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the <strong>logic of uncertainty</strong>, a formal language. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;If you studied fuzzy set theory, you might have a case for it being the candidate, however, it fell out of favor in practice – so I would suggest to focus on probability and Bayesian reasoning.</p></li></div></div>
+<p>Often, probability and mathematical statistics are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Probability theory is concerned with the construction of the probability triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>, defining useful tools like random variables and probability/cumulative density functions, extending those to joint, conditional probabilities. Then, introducing the machinery to operate all of that, like expectation, variance, moment-generating functions – in order to reason about distributional properties.</p>
+<ol type="1">
+<li>A <strong>random experiment</strong> (<span class="math inline">\(\mathscr{E}\)</span>) is a set of <em>conditions which are favorable for an event</em> in a given form with the following properties:
+<ul>
+<li>Possible results and outcomes are known apriori and exhaustably, for example a coin/die toss, quantity sold</li>
+<li>It’s never known which of the results of <span class="math inline">\(\mathscr{E}\)</span> will manifest or appear once we run the experiment</li>
+<li>Despite that, <strong>there is a perceptible regularity</strong>, which can be eventually measured and quantified, that is, encoding the idea of a probabilistic “law” in the results. That regularity could be a result of the large scale of the phenomena.</li>
+<li>Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we’re not thinking in long-run frequency terms.</li>
+</ul></li>
+<li><strong>Elementary event</strong> as an auxiliaty construction: one of the possible results of <span class="math inline">\(\mathscr{E}\)</span>, usually conventionally denoted by <span class="math inline">\(\omega_i \in \Omega\)</span></li>
+<li><strong>Universal set</strong> <span class="math inline">\(\Omega = \{ \omega_1, \omega_2, \dots \}\)</span> is also called (Outcome/ State/ Selection space). It suggests the idea of complementarity and stochasticity: we don’t know which <span class="math inline">\(\omega_i\)</span> will manifest, thus is a key object for a further formalization of probability measures.</li>
+<li>We care not only about <strong>an event</strong> <span class="math inline">\(A = \bigcup\limits_{i = 1}^n \omega_i\)</span> and its realization, but also about other events in the Universal Set, because they might add information about the probability of occurring of our event of interest.</li>
+<li>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> should be defined on sets of subsets of <span class="math inline">\(\Omega\)</span> and this is where measure theory shines. For technical reasons, we usually can’t define a probability measure on all sets of subsets. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></li>
+<li><strong>Probability as an extension of the measure</strong>: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability (number between 0 and 1) to elementary events: <span class="math inline">\(\mathbb{P}(\omega_i)\)</span>. This is why additivity properties are key, as we care about random events, not only elementary events. This is where the debate between frequentists and Bayesians kicks in.</li>
+<li>A <strong>probability triple</strong> <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> is the fundamental object the whole probability theory is constructed upon. We have to thank Kolmogorov for taking the informal, gambling-type probability and putting it onto solid, axiomatic foundations – that is, making it open to mathematical enquiry.</li>
+</ol>
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you’re interested in these technical details, you can check out my relatively accessible introudction to <a href="https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/">measure theory and the Caratheodori extension theorem</a>. Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its <strong>measure-theoretic</strong> foundations could open up a whole new world to the researcher. It’s easy to take the results from statistics and probability for granted, but it’s useful to be aware what hides beneath the surface.</p></li></div><p>Thank you for bearing with me through the theory you have probably seen before, but we’re not done. We’re still in the land of set theory, and it is very hard to operate that way in practice – so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The breakthrough idea of a Random Variable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We started from some phenomena of interest and a random experiment. The random variable is a necessary abstraction in order to mathematically define quantifiable characteristics of the objects. Meaning, we start working with numbers instead of some qualitative properties. Now, we’re in business!</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Random Variable is not a variable, nor random
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A random variable is quantificator of elementary events, a function defined on the outcome space which maps the elementary events to the real number line. That mapping can’t be done in any way we wish, it has to perserve the informational structure of the sample space. That is one of the technical reasons for sigma-algebras we mentioned before and is related to the idea of <strong>measurability</strong>.</p>
+<p><span class="math display">\[\begin{align}
+X(\omega):\Omega \rightarrow \mathbb{R} \\
+s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in \mathcal{F}
+\end{align}\]</span></p>
+</div>
+</div>
+<p>Let’s figure out what the hell do we mean by that fine print condition, using the diagram below. The idea of conservation of the informational structure is actually equivalent to the one of measurablility. If this property doesn’t hold, it’s not possible to explicitly and uniquely refer to the sets (events) of interest.</p>
+<p>The idea is that the preimage defined above <span class="math inline">\(X^{-1}((-\infty,r]) = E \in \mathcal{F}\)</span> on the following interval corresponds to an event E which should be in the event space <span class="math inline">\(\mathcal{F}\)</span>. Because the only thing that varies is the limit of the interval r, the randomness comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is <span class="math inline">\(F_X(X \le r)\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
 <img src="img/random_variable.png" title="Random Variable" class="img-fluid figure-img" style="width:90.0%">
 </figure>
-<p></p><figcaption class="figure-caption">Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some relevant aspect of it to us)!</figcaption><p></p>
 </figure>
 </div>
-<ol type="1">
-<li>A <strong>random experiment</strong> (<span class="math inline">\(\mathscr{E}\)</span>) is a set of <em>conditions which are favorable for an event</em> in a given form with the following properties:
-<ul>
-<li>Possible results are known apriori</li>
-<li>It’s never known which of the results of <span class="math inline">\(\mathscr{E}\)</span> will exactly appear</li>
-<li>Despite (b), <strong>there is a perceptible regularity</strong>, (encoding the idea of a probabilistic “law”) in the results. Also, it could be as a result of the large scale of the phenomena.</li>
-<li>Repeatability of the conditions, i.e.&nbsp;the comparability and perservation of context are key.</li>
-</ul></li>
-<li><strong>Elementary event</strong> as an auxiliaty construction: one of the possible results of <span class="math inline">\(\mathscr{E}\)</span>, <span class="math inline">\(\omega_i \in \Omega\)</span></li>
-<li><strong>Universal set</strong> <span class="math inline">\(\Omega = \{ \omega_1, \omega_2, \dots \}\)</span> Also called (Outcome/ State/ Selection space), it suggests the idea of complementarity and stochasticity: we don’t know which <span class="math inline">\(\omega_i\)</span>, is a key object for a further formalization of probability measures.</li>
-<li>We care not only about <strong>an event</strong> <span class="math inline">\(A = \bigcup\limits_{i = 1}^n \omega_i\)</span> and its realization, but also about other events in the Universal Set, because they might add information about the probability of occurring of our event of interest</li>
-<li>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> should be defined on sets of subsets of <span class="math inline">\(\Omega\)</span> and this is where measure theory shines. We’ll discuss later in extensive detail the following conditions on the way to defining sigma-algebras. As can be seen later, we usually can’t define a probability measure on all sets of subsets.</li>
-<li><strong>Probability as an extension of the measure</strong>: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability to elementary events: <span class="math inline">\(\mathbb{P}(\omega_i)\)</span>. This is where additivity properties are key. A long discussion on Frequentist vs Bayesian interpretation of it can follow from here.</li>
-<li>A <strong>probability triple</strong> <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span></li>
-<li>The idea of <strong>Random Variable</strong></li>
-</ol>
-<p>Before moving on to probability measures, it’s useful to think about what a random variable really is and does, because formally, it’s neither a variable, nor random. That should be another motivation for speaking the language of measure theory.</p>
-<p>The idea of the random variable as being a quantificator of elementary events (function defined on the outcome space which maps the elementary events to the real line in 1d) that perserves the informational structure of the sample space is very powerful, is formally defined and related to the idea of <strong>measurability</strong>.</p>
-<blockquote class="blockquote">
-<p>Start from some phenomena of interest and a random experiment. The random variable is a necessary abstraction in order to mathematically define quantificable characteristics of the objects.</p>
-</blockquote>
-<p><span class="math display">\[\begin{align}
-X(\omega):\Omega \rightarrow \mathbb{R} \\
-s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in \mathcal{F}
-\end{align}\]</span></p>
-<p>The idea of conservation of the informational structure is actually equivalent to the one of measurablility. If this property doesn’t hold, it’s not possible to explicitly and uniquely refer to the sets (events) of interest. The idea is that the preimage defined above <span class="math inline">\(X^{-1}((-\infty,r]) = E \in \mathcal{F}\)</span> on the following interval corresponds to an event E which should be in the event space <span class="math inline">\(\mathcal{F}\)</span>. Because the only thing that varies is the limit of the interval r, the randomness comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is <span class="math inline">\(F_X(X \le r)\)</span>.</p>
+<div class="page-columns page-full"><p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of componsitional data analysis<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p><div class="no-row-height column-margin column-container"><li id="fn7"><div class="quarto-figure quarto-figure-center"><sup>7</sup>&nbsp;
+<figure class="figure">
+<figure class="figure">
+<img src="img/composition.png" title="Simplex" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption"><em>Source: <a href="https://www.mdpi.com/1660-4601/17/7/2220">Dumuid</a></em>: Data in a Simplex, which is later translated to <span class="math inline">\(R^n\)</span> by a carefully constructed basis expansion</figcaption><p></p>
+</figure>
+</div>
+</li></div></div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The curious case of Compositional Data Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sometimes, the data doesn’t “live” in our normal, intuitive, euclidian space <span class="math inline">\(\mathbb{R}^n\)</span>. There are cases when the object of our analysis are proportions or compositions: think of what a material is made of, the proportion of the demand for different sizes of a shoe or garment.</p>
+<p>We don’t necessarily care about their absolute value, but about their relative proportion. If we blindly apply traditional methods, or even statistical summaries, we will quickly hit weird results and paradoxes. So, we have to tweak existing methods we have make sense for compositions.</p>
+<p>Compositional data analysis solves those issues by defining a probability triple over the simplex (instead of <span class="math inline">\(\mathbb{R}^n\)</span>): <span class="math inline">\((\mathcal{S}^n, \mathcal{F}, \mathbb{P})\)</span>. This leads to a different definition of the event space <span class="math inline">\(\mathcal{F}\)</span>, which is also a sigma-algebra and a different definition of the probability measure <span class="math inline">\(\mathbb{P}\)</span>.</p>
+</div>
+</div>
+<!-- Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those).  -->
+<div class="page-columns page-full"><p>Remember our exaple of <a href="../01_fundamentals/background.html#implicit-learning-intuition-and-bias">pigeon superstition</a> in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory, which is exatly those carefully formulated principles that will prevent our automated learners to become supersitious. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Even though most courses from which I studied don’t mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio’s Brown <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> it’s essential in the idea of <strong>uniform convergence</strong> and its bounds, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>.</p></li></div></div>
+<p>For the next example, you don’t have to understand what Gaussian Processes are or are used for. However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results, in contrast with choosing a wrong model or distribution.</p>
+<p>It’s not that these methods don’t have parameters, but the parametrization varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don’t know what is a reasonable distribution or parametric functional form for the relationship that we model.</p>
+<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Stochastic Processes, Graphs and Trees
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<div class="page-columns page-full"><p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: <span class="math inline">\(f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}\)</span>, <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like.</p><div class="no-row-height column-margin column-container"><li id="fn9"><div class="quarto-figure quarto-figure-center"><sup>9</sup>&nbsp;
+<figure class="figure">
+<figure class="figure">
+<img src="img/gp-conditioned.png" title="GP Posterior" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption"><em>Source: <a href="https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/">Bizovi</a></em>: A posterior distribution of the Gaussian Processes, when conditioned on data</figcaption><p></p>
+</figure>
+</div>
+</li></div></div>
+<p><span class="math display">\[
+f(x) \sim GP(\mu(x); K(x,x'))
+\]</span></p>
+<p>The questions arises: how to define a PDF (probability density function) in this space? In my bachelor thesis, I got away with using Gaussian Processes, which are a very special class of stochastic processes. In this special case I could informally define an apriori distribution by defining the mean vector and Kernel (covariance function), then condition it on observed data with a Normal Likelihood.</p>
+<p><span class="math display">\[
+p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(f)}}{p(\left \{ x\right \})}
+\]</span></p>
+</div>
+</div>
 </section>
-<section id="sources-of-uncertainty" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">3.2</span> Sources of Uncertainty</h2>
+<section id="sources-of-uncertainty" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">2.2</span> Sources of Uncertainty</h2>
 <p>Our focus is on agents that interact intelligently to achieve their objectives over time. Given the past sequence of observations o1, . . . , ot and knowledge about the environment, the agent must choose an action at that best achieves its objectives in the presence of various sources of uncertainty,1 including: 1 We focus on discrete time problems. Continuous time problems are studied in the field of control theory. D. E. Kirk, Optimal Control Theory: An Introduction. Prentice-Hall, 1970.</p>
 <p>Our focus is on agents that interact intelligently to achieve their objectives over time. Given the past sequence of observations o1, . . . , ot and knowledge about the environment, the agent must choose an action at that best achieves its objectives in the presence of various sources of uncertainty,1 including:</p>
 <ol type="1">
@@ -395,8 +465,8 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 </div>
 </div>
 </section>
-<section id="mathematical-statistics-in-a-nutshell" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell"><span class="header-section-number">3.3</span> Mathematical Statistics in a nutshell</h2>
+<section id="mathematical-statistics-in-a-nutshell" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell"><span class="header-section-number">2.3</span> Mathematical Statistics in a nutshell</h2>
 <p>importance of the data generating process, see what Ernesto said, then the causal process – all is parameters, known or unknown</p>
 <p>Uses everything probability has to give, but is concerned with inference, estimation, hypothesis testing, prove theorems and probabilistic properties of estimators.</p>
 <ul>
@@ -414,19 +484,19 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 <p>The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.</p>
 <p>One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method.</p>
 </section>
-<section id="models-are-golemns-of-prague" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">3.4</span> Models are Golemns of Prague</h2>
+<section id="models-are-golemns-of-prague" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">2.4</span> Models are Golemns of Prague</h2>
 <p>Data + Domain Assumptions + Statistical Assumptions</p>
 </section>
-<section id="model-specification-fisher-vs-bayes" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="model-specification-fisher-vs-bayes"><span class="header-section-number">3.5</span> Model Specification: Fisher vs Bayes</h2>
+<section id="model-specification-fisher-vs-bayes" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="model-specification-fisher-vs-bayes"><span class="header-section-number">2.5</span> Model Specification: Fisher vs Bayes</h2>
 </section>
-<section id="what-does-a-statistician-want" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">3.6</span> What does a statistician want?</h2>
+<section id="what-does-a-statistician-want" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">2.6</span> What does a statistician want?</h2>
 <p>From their estimators</p>
 </section>
-<section id="case-study-de-moivre-on-us-schooling" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="case-study-de-moivre-on-us-schooling"><span class="header-section-number">3.7</span> Case Study: De Moivre on US Schooling</h2>
+<section id="case-study-de-moivre-on-us-schooling" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="case-study-de-moivre-on-us-schooling"><span class="header-section-number">2.7</span> Case Study: De Moivre on US Schooling</h2>
 <p>Let’s remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()).</p>
 <p>They decided to split up big schools into smaller ones. Can you say if it was a good, bad idea and why did they think that?</p>
 <p>Students hypothesis: - more attention to students in smaller classrooms - private schools, where families are more wealthy - geographical location, i.e.&nbsp;small towns and villages - motivation of the underdog, from small towns - friendships, community and peer competition (easier in smaller schools) - self-selection: what kind of students go into small schools – we assume average IQ is the same, including the distribution. Assume random allocation. - Skewed (even if not, longer tails): meaning, asymmetric distributions. - Finally: variance and standard deviation</p>
@@ -442,8 +512,8 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 <p>So, in this case we will collect data, used to estimate the parameter and its confidence intervels (inference, with the idea of generalizing from the sample to the population). Now, given those confidence intervals, we ask how surprising it is to see the data/estimation, if the null hypothesis was true.</p>
 <p>Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components – as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges.</p>
 </section>
-<section id="case-study-chess-example" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="case-study-chess-example"><span class="header-section-number">3.8</span> Case Study: Chess example</h2>
+<section id="case-study-chess-example" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="case-study-chess-example"><span class="header-section-number">2.8</span> Case Study: Chess example</h2>
 <p>I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?</p>
 <blockquote class="blockquote">
 <p>Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data).</p>
@@ -458,8 +528,8 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 <p>see the difference between ELO vs xbox true skill, how fast it converges to the true ability – that is a model we can investigate.</p>
 </blockquote>
 </section>
-<section id="case-study-amazon-reviews-and-ratings" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="case-study-amazon-reviews-and-ratings"><span class="header-section-number">3.9</span> Case Study: Amazon reviews and ratings</h2>
+<section id="case-study-amazon-reviews-and-ratings" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="case-study-amazon-reviews-and-ratings"><span class="header-section-number">2.9</span> Case Study: Amazon reviews and ratings</h2>
 <p>How do you choose 4.7 (300) vs 4.5 (2000) – according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?</p>
 <ul>
 <li>we can guide ourselfs with the quality and relevance of reviews</li>
@@ -472,27 +542,27 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 <p>good applications for text mining, statistical tests</p>
 </blockquote>
 </section>
-<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">3.10</span> Data Mining and CRISP-DM variants</h2>
+<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">2.10</span> Data Mining and CRISP-DM variants</h2>
 </section>
-<section id="statistical-process-and-science" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">3.11</span> Statistical Process and Science</h2>
+<section id="statistical-process-and-science" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">2.11</span> Statistical Process and Science</h2>
 </section>
-<section id="byop-bring-your-own-problem" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">3.12</span> BYOP: Bring your own problem</h2>
+<section id="byop-bring-your-own-problem" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="byop-bring-your-own-problem"><span class="header-section-number">2.12</span> BYOP: Bring your own problem</h2>
 <p>Discussion over the how/process</p>
 </section>
-<section id="ml-is-a-geocentric-model-of-the-universe" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">3.13</span> ML is a geocentric model of the universe</h2>
+<section id="ml-is-a-geocentric-model-of-the-universe" class="level2" data-number="2.13">
+<h2 data-number="2.13" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">2.13</span> ML is a geocentric model of the universe</h2>
 <p>The good news is that sometimes, you just need a reliable prediction, as you’re not intervening in the system causing a certain phenomena – and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn’t figure out a scientific explanation of the causal process, e.g.&nbsp;for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making.</p>
 <p>Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid – if you go outside that range, can easily get absurd predictions – this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation.</p>
 </section>
-<section id="dead-salmon-a-warning-tale" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">3.14</span> Dead salmon: a warning tale</h2>
+<section id="dead-salmon-a-warning-tale" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">2.14</span> Dead salmon: a warning tale</h2>
 <p>Forward reference to power and multiple testing</p>
 </section>
-<section id="conditioning-marginalisation-and-exchangeability" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="conditioning-marginalisation-and-exchangeability"><span class="header-section-number">3.15</span> Conditioning, marginalisation and Exchangeability</h2>
+<section id="conditioning-marginalisation-and-exchangeability" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="conditioning-marginalisation-and-exchangeability"><span class="header-section-number">2.15</span> Conditioning, marginalisation and Exchangeability</h2>
 <!-- Statistical Foundations: Reference, Revies --->
 
 
@@ -635,13 +705,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/bolt.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></span>
+      <a href="../01_fundamentals/background.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../01_fundamentals/adoreme.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../01_fundamentals/bolt.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
