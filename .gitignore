@@ -330,3 +330,5 @@ engines.build/
 .Rproj.user
 
 **/.Rhistory
+
+**/.empty/
