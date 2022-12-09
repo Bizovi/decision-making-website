@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked slimcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -206,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -225,23 +225,31 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="page-columns page-full"><p>We can start by looking what data scientists from Bolt are saying, and then trying to figure ot the rest in more detail. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Why do we have so much information available from these big companies? Well, because we like to brag and there is no “secret sauce” algorithm.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;<a href="https://medium.com/bolt-labs/how-we-do-data-science-at-bolt-5cf861ae2578">How we do data science at Bolt</a> - Martin Lumiste</p></li></div></div>
-<ul>
-<li>pricing decisions: what factors influence it</li>
-<li>matching passengers and their routes/trips to cars</li>
-<li>food delivery network: routing and optimization <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-<li>balancing the demand and supply. Well, how then do you do testing if the feature influences and shifts both? <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
-<li>reputation systems: ratings, canceling rides</li>
-<li>advertisement and acquisition</li>
-<li>engagement and CRM: churn, inactivity</li>
-<li>finance, fraud prevention, charging systems <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
-<li>entering a new market</li>
-<li>a/b testing app features</li>
-<li>ethical considerations</li>
-</ul>
+<!-- 
+We can start by looking what data scientists from Bolt are saying, and then trying to figure ot the rest in more detail. [^dsc-bolt] Why do we have so much information available from these big companies? Well, because we like to brag and there is no "secret sauce" algorithm. 
+
+[^dsc-bolt]: [How we do data science at Bolt](https://medium.com/bolt-labs/how-we-do-data-science-at-bolt-5cf861ae2578) - Martin Lumiste
 
 
-<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;<a href="https://medium.com/bolt-labs/understanding-the-problem-were-solving-28a6cb8a545f">Food delivery - Understanding the problem we’re solving</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;<a href="https://medium.com/bolt-labs/tips-and-considerations-for-switchback-test-designs-d1bd7c493024">Tips and considerations for switchback test designs</a></p></li><li id="fn4"><p><sup>4</sup>&nbsp;<a href="https://medium.com/bolt-labs/how-to-stop-fraud-with-ml-best-practices-at-bolt-411ca4c1b13">How to stop fraud with ML — best practices at Bolt</a></p></li></div>
+- pricing decisions: what factors influence it
+- matching passengers and their routes/trips to cars
+- food delivery network: routing and optimization [^bolt-delivery]
+- balancing the demand and supply. Well, how then do you do testing if the feature influences and shifts both? [^bolt-switchback]
+- reputation systems: ratings, canceling rides
+- advertisement and acquisition
+- engagement and CRM: churn, inactivity
+- finance, fraud prevention, charging systems [^bolt-fraud]
+- entering a new market
+- a/b testing app features
+- ethical considerations
+
+[^bolt-fraud]: [How to stop fraud with ML — best practices at Bolt](https://medium.com/bolt-labs/how-to-stop-fraud-with-ml-best-practices-at-bolt-411ca4c1b13)
+[^bolt-delivery]: [Food delivery - Understanding the problem we’re solving
+](https://medium.com/bolt-labs/understanding-the-problem-were-solving-28a6cb8a545f)
+[^bolt-switchback]: [Tips and considerations for switchback test designs
+](https://medium.com/bolt-labs/tips-and-considerations-for-switchback-test-designs-d1bd7c493024) -->
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
