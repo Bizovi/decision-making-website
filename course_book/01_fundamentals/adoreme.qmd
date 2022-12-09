@@ -1,6 +1,6 @@
 # Case Study: AI at Adore Me
 
-
+<!-- 
 ## WIP
 
 As i said before, e-commerce and we're pretty tech-savy: have microservices everywhere and live in google-cloud; the second important component is the people: we're small, self-organized teams and we communicate, collaborate a lot -- in every problem we try to have a cross-functional teams. 
@@ -9,6 +9,8 @@ In this case, I will talk about the 5 people in the data science team. So, a sma
 
 And, our two products/applications:
 We have a business model, called try at home -- you receive a box of products, try them on keep what you like, return what you don't, give feedback and eliminate this cognitive load of having a choice, a way to be surprised. This is all stuff at scale -- therefore the AI value prop
+
+--->
 
 
 ```{mermaid}
@@ -47,7 +49,10 @@ flowchart TD
   style CS fill:#f7f5bc
 ```
 
+ 
 ## Organizational design
+
+<!-- 
 - people and teams
 
 **Creative networkers:** (ref: Jurgen)
@@ -73,17 +78,17 @@ What kind of roles are out there and what do they do? Why are the generalists va
 - Software/Cloud Architect
 - DevOps
 - Project/Program Manager: execution!
-- C-Level people: strategy!
+- C-Level people: strategy! -->
 
 
 ## Product Management
-**Data Science Strategy Safari**
+<!-- **Data Science Strategy Safari** -->
 
 
 
 
 ## Tech ecosystem
-
+<!-- 
 **Principles and philosophy: Simple made easy** (ref: Hickey)
 How to manage all this chaos to make better decisions
 - Small and simple (software design principles.) So, why the heck am I talking about software design and architecture in a talk about AI, because you cannot do one w/o another. Even though AI has its particularities, we have to learn from years and years of experience of our fellow software engineeers, product people, devops.
@@ -126,24 +131,24 @@ Then we have a transformation: this huge DAG (Directed Acyclic Graph) -- it is n
 In the end, we have a production artifact. Usually in a project we have many many sources and a few important artifacts, based on which we build models, stat calculations, algorithm, decisions and the AI stuff.
 
 The first lesson is in the importance of data: if your algorithm doesn't have much uncertainty -- you can use a classical algorithm.
-
+ -->
 
 
 ## Full-stack Data Apps
-
+<!-- 
 So, we said that people are important, systems are important, DQ is paramount, and there is no one silver bullet -- so we have to think of ecosystems, which cannot exist without a reliable IT infra, a place where to host your apps and code: you need clean and up to date data, non-ambiguous, and hwich is relevant and predictive for the things you wanna explain.
 
 In our case that foundation is google cloud, dwh build by amazing DE team, BI ecosystem and microservices, -- so, this underground, this infrastructure supports more use-cases and now we co one conceptual level above, and we start looking at how does the ecosystem develop. You have to identify important use-cases for AI, what can bring the most value? In our case was the demand planning, and at very beginning in marketing and acquisition. Our second pillar is the recommender systems.
 
 So, it's not THE magic algorithm, it's an ecosystem of models, tools, data and people -- think of it as a landscape, city, garden and you have to build it one brick at a time, piece by piece and it gets more and more complex.
 
-If you think it through carefully, you can make every block small, composable, easy to modify, and to play well with others. 
+If you think it through carefully, you can make every block small, composable, easy to modify, and to play well with others.  -->
 
 ## Use-cases
 
 
 ### Clustering Customer Feedback
-Let's no discuss an application suitable for NLP. We receive lots of customer feedback. Millions of pieces of text -- so we want to improve our products: recommendations, shipment and general user experience on the website. People in our company, especially PMs, read it very carefully and try to put on the roadmap new features that improve the product. This reading is time consuming and wasteful, so, we thought to automate the clustering (not only classification) -- discover new topics as they appear, bugs, stuff refering to same idea. 
+<!-- Let's no discuss an application suitable for NLP. We receive lots of customer feedback. Millions of pieces of text -- so we want to improve our products: recommendations, shipment and general user experience on the website. People in our company, especially PMs, read it very carefully and try to put on the roadmap new features that improve the product. This reading is time consuming and wasteful, so, we thought to automate the clustering (not only classification) -- discover new topics as they appear, bugs, stuff refering to same idea. 
 
 Moreover, we don't have the resources to go over them manually and label for training a ML model, 50k comments, for ex. So we have to do it in an unsupervised way, meaning we have no true labels, and we have to discover interesting clusters/topics in data. 
 
@@ -158,10 +163,10 @@ We split into sentences, we cleaned up the words, lemmatized, identified negatio
 This is the essence of ML, without going into much detail, the idea of going from experience (meaning data) to expertise (meaning a recipe, program), which can make predictions which generalize beyond the data that you have seen. 
 
 So we have this model, receive new data, run a job, store the prediction in BQ and show the results to POs and devs, the results in a dashboard, in a way which makes it easy to search, filter, find insights. So, we're going slowly towards lots of decisions at scale, but we're still not there -- in the phase of exploration, trying to find interesting patterns in data, getting inspired (analytics).
-
+ -->
 
 ### Launch Sales Curation (Demand Planning)
-Our second big challenge is demand planning. What does that mean? We have many products, with many different sizes, e.g. a bra from 16-28 sizes, 2 possible panties in the set => so the problem explodes in complexity (ordering and manufacturing the right quantity, at the right price, at the right time). But let's take a little piece of it.
+<!-- Our second big challenge is demand planning. What does that mean? We have many products, with many different sizes, e.g. a bra from 16-28 sizes, 2 possible panties in the set => so the problem explodes in complexity (ordering and manufacturing the right quantity, at the right price, at the right time). But let's take a little piece of it.
 
 At the same time we don't want to miss sales: every customer who wanted to buy a product -- we want to make it available for them. Also, we don't order too much, to avoid excess stocks/inventories -- as we could use that money in other ways: to improve the DC, have a better marketing campaign and many others. However, in uncertain times, you might want to stockpile a little, e.g. it helped us when Covid hit, lockdown, demand for home apparel increased, so we had the necessary stock to smooth it out and adapt fast. 
 
@@ -178,11 +183,11 @@ This way, we solved a big problem: some DQ issues, which just couldn't be automa
 We deployed it on APpEngine, and got user auth for free, without writing any code. It took very little time, not just for the forecasting of new products, but also for an auxiliary app that improve user's life. You can think of this little app/module as that component in the "city", that helps the main demand planning application with some particular issure: using data and lots of automation. 
 
 Last remark here, if you heard lately Andrew Ng, he talks a lot about this data-centric approach to modeling, which I totally agree with. If you feed your model garbage data, you get nonsense answers
-
+ -->
 
 
 ### Online model serving
-Everything which I described before is batch, not happening real-time, at high frequencies. But, what about, if you have to display recommendations on the website? What if the standard offerings, vendors of recommender systems aren't flexible enough for your use-case and infrastructure? They don't understand the particularities of lingerie, sizing and fit, colors, levels of sexiness of products, occasions. So, for purposes like this, we build custom algorithms and we have to serve them on the website.
+<!-- Everything which I described before is batch, not happening real-time, at high frequencies. But, what about, if you have to display recommendations on the website? What if the standard offerings, vendors of recommender systems aren't flexible enough for your use-case and infrastructure? They don't understand the particularities of lingerie, sizing and fit, colors, levels of sexiness of products, occasions. So, for purposes like this, we build custom algorithms and we have to serve them on the website.
 
 Sometimes, the purpose is to gather more feedback, product ratings (as in nflx): "we think you would like this and that, pls confirm if it is true." That helps us make better curations of boxes for the try-at-home. Other times, they choose something from a catalog and have the option to receive a few more products as a surprise, to try at home, return at no cost.
 
@@ -194,11 +199,11 @@ So, let's go full stack: you have the AM website, the backend of the whole ecomm
 
 So, this is how we solved the difficult problem, and it was for the first time in which data science served recommendations on the website, and not just precomputed, but real-time. We used Cloud Run (think of lambda functions, on containers/kNative), in which you have more flexibility in how you difine the environment.
 
-Let's see what we got out-of-the-box from GCP to respond to our challenges: we didn't want cold start - we put at least one warm instance; more memory - no problem, simple config; fast database - matter of choosing appropriately. It went surprisingly well. 
+Let's see what we got out-of-the-box from GCP to respond to our challenges: we didn't want cold start - we put at least one warm instance; more memory - no problem, simple config; fast database - matter of choosing appropriately. It went surprisingly well.  -->
 
 
 ### Demand Planning and Vertical Slices
-
+<!-- 
 The last set of ideas i wanna go through is related to vertical slices. Usually we focus too much on the model: how to tweak it, squeeze the last bits of performance, but we rarely think about the ecosystem. So, let's see what do I mean by the vertical slices.
 
 I showed you that application, in which we curated historical sales for forecasting new products, now let's introduct the fact that we have to do the forecasting, and toghether, you have, at the bottom: 
@@ -209,11 +214,11 @@ I showed you that application, in which we curated historical sales for forecast
 
 If we focus on this well-defined task of forecasting new products, we get a vertical slice. But of course, in forecasting, we have to follow a complicated workflow: in our case demand forecast, split it, break down to the size level, look at how much inventory do we have, receive in the future, what would be the demand 12 mos in the future: then optimize -- how much do I need to buy in order to avoid excess inventory and to satisfy the user demand. That would be an end-to-end thing. So, what am I suggesting, collaborate with other teams: technical, domain experts, decision-makers, and try to identify those vertical slices (in the context of a larger workflow), which is a mix of happy friends (application itself -- and everything operational regarding that admin tool, or the website itself); which has a component of computational intelligence (a restricted computational domain with statistics, ML, optimization) -- together with the stuff to train, retrain, validate, use it in production. 
 
-This is how the full picture would look like. 
+This is how the full picture would look like.  -->
 
 ## Conclusions
 
-
+<!-- 
 **Conclusions and Contributions: Agility, Scaling, Pragmatism**
 In conclusion, what is the contribution of all of this? Is this talk philosophical? Well, yes, a little -- a way of doing things, but what real impact did we have for the company and the team doing data science. I have to say that AI is hard, you have to know programming and CS, data, data pipes, math, to be able to build models which solve real challenges. First you have to build that AI, then constrain it, so it doesn't go wild/stupid and break your business. 
 
@@ -224,4 +229,4 @@ So, we want to be agile, flexible, build small components, communicate. This all
 It gives us a pragmatic way of getting stuff done. By getting stuff done, I mean what's the smallest amount which I can build, which makes the life of my client easier (be it a colleague, decision-maker, customer.) -- how can we improve it? Then, how can we iteratively, go into the direction of better and more complicated models, which better reflect the reality and make better predictions, forecasts, more interpretable statistical models.
 
 We can get most of those nuisances out of the way by following a few easy principles, carefully taking into the consideration the domain in which we work. So, what should you take away from this talk? 
-- Demistify what AI means. It is by no means magic and involves, hard, laborious work. We looked at some ways in which we can make that work, easier, more exciting (focus a larget percentage of time on the thing which we're passionate about -- that part of intelligence, statistics, maths, exciting modeling), and less time to waste.
+- Demistify what AI means. It is by no means magic and involves, hard, laborious work. We looked at some ways in which we can make that work, easier, more exciting (focus a larget percentage of time on the thing which we're passionate about -- that part of intelligence, statistics, maths, exciting modeling), and less time to waste. -->

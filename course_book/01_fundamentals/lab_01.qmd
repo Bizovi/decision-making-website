@@ -1,5 +1,5 @@
 # Lab: tidyverse and ecosystem of packages: WIP
-
+<!-- 
 philosophy: not just load data, visualize and run models -- you did that plenty before. move to the idea of full stack data apps and problem framing and formulation through case studies.
 
 Demo a full stack app from adore me, then explain the architecture, and what will we do at the labs. 
@@ -92,4 +92,4 @@ flowchart LR
 ## Practice: A reproducible analysis
 
 
-## Practice: Our first data apps
+## Practice: Our first data apps -->

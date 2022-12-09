@@ -1,6 +1,6 @@
-# Background: WIP
+# Experiment Design and A/B Testing
 
-Experiment Design and A/B Testing
+
 
 ```{mermaid}
 %%| label: fig-mermaid

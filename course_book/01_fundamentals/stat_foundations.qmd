@@ -4,7 +4,7 @@ format:
     toc-location: body
 ---
 
-# Statistical Foundations: WIP
+# Statistical Foundations
 
 In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving **decision-making under uncertainty**. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.
 
@@ -280,8 +280,31 @@ flowchart LR
 
 We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.
 
+[TODO: Provide examples]{.aside}
 
-### Conditioning and Marginalisation 
+### Joint, Conditional, and Marginal Distributions
+<!-- 
+[The reason we went on a theoretical detour to construct the probability triple, was simply to raise awareness of what is the theory that stands behind probability as we will practice it and what are some situations when handwaving could bite us]{.aside}
+
+The point of this course is not to be a comprehensive investigation into probability theory topics like moment-generating functions, expectation, variance, etc. If I stirred your interest and renewed a passion for these topics, feel free to refer to the additional resources in the beginning of the lecture.
+
+Starting point: unconditional probability degree of belief in a proposition in the absence of any other evidence -->
+
+
+
+<!-- The most complete method of reasoning about sets of random variables is by having a joint probability distribution. A joint probability distribution, , assigns a probability value to all possible assignments or realizations of sets of random variables.  -->
+<!-- 
+In the diagram, there are four random variables: 1) Interest Rate , 2) Stock Market , 3) Oil Industry , and 4) Stock Price  (assume for an oil company). The arrows between the random variables tell a story of precedence and causal direction: interest rate influences the stock market which then, in combination with the state of the oil industry will determine the stock price (we will learn more about these arrows in the Graphical Models chapter). For simplicity and to gain intuition about joint distributions, assume that each of these four random variables is binary-valued, meaning they can each take two possible assignments:
+
+
+Thus, our probability space has  values corresponding to the possible assignments to these four variables. So, a joint distribution must be able to assign probability to these 16 combinations. Here is one possible joint distribution:
+
+Collectively, the above 16 probabilities represent the joint distribution  - meaning, you plug in values for all four random variables and it gives you a probability. For example,  yields a probability assignment of 12.15%.
+
+
+Notation note:  . Each defines a function where you supply realizations  and  and the probability function will return . For example, let  outcome of a dice roll and  outcome of a coin flip. Hence, you can supply potential outcomes, like  which means  and the function output would be 
+ 
+ (if you were to do the math). -->
 
 <!-- Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those).  -->
 
@@ -300,6 +323,20 @@ dintr-o distribut¸ie comun˘a.
 P(x) = X
 y
 P(x, y) -->
+
+<!-- conditional probability degree of belief in a proposition given some evidence that has already been revealed -->
+
+### Bayes Rule
+<!-- Given clouds in the morning,
+what's the probability of rain in the afternoon?
+• 80% of rainy afternoons start with cloudy
+ mornings.
+• 40% of days have cloudy mornings.
+• 10% of days have rainy afternoons. -->
+
+
+### Interpretations of probability
+
 
 ## Mathematical Statistics in a nutshell
 
@@ -350,6 +387,8 @@ tT (·)|x1,...,xT -->
 <!-- Modelarea unui fenomen cu ajutorul datelor multidimensionale, care au o distribut¸ie
 comun˘a p(Y, X) ¸si g˘asirea distribut¸iei de probabilitate este dificil˘a f˘ar˘a condit¸ionare.
 ˆIn contrast, condit¸ionarea pe variabilele independente ne aduce informat¸ii ˆın plus -->
+
+
 <!-- 
 despre variabila dependent˘a p(Y |X = x). ˆIn acest mod, ˆın econometrie se deriveaz˘a
 estimatorul, ¸si legea de probabilitate urmat˘a.
@@ -378,7 +417,7 @@ teoretic, funct¸ie
 de regresie, verosimilitate ¸si ne permite o interpretare din punctul de vedere a
 teoriei informat¸iei. -->
 
-
+<!-- 
 importance of the data generating process, see what Ernesto said, then the causal process -- all is parameters, known or unknown 
 
 Uses everything probability has to give, but is concerned with inference, estimation, hypothesis testing, prove theorems and probabilistic properties of estimators.
@@ -399,18 +438,18 @@ Draw a diagram between sample and population.
 
 The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.
 
-One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method.
+One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method. -->
 
 
 ### Models are Golemns of Prague
 
-Data + Domain Assumptions + Statistical Assumptions
+<!-- Data + Domain Assumptions + Statistical Assumptions -->
 
 ### Model Specification: Fisher vs Bayes
 
 
 ### Independence and Exchangeability
-
+<!-- 
 I find it useful to review **exchangeability** and De Finetti's theorem, before presenting the components of a Bayesian model, as it gives a sense of what is the underlying assumption of Hierarchical Models. 
 
 A sequence of random variables is infinitely exchangeable if the joint probability for every set of $n$ variables is invariant under permutation of indices. De Finetti's theorem, states that a sequence of random variables $(y_1, y_2, ...)$, with $P(d\theta)$ -- a measure, is exchangeable if and only if:
@@ -472,11 +511,12 @@ The representation in figure above is a Probabilistic Graphical Model, which is 
 - Given a ``chain`` $X \rightarrow Z \rightarrow Y$, X and Y are conditionally independent on Z: $(X \perp Y) ~|~ Z$
 
 In Bayesian statistics conventional definitions of identifiability do not apply, so I'm more concerned with ``information contents`` given a model and particular dataset. If a posterior distribution of some parameter is flat over a large range, it is an indication that little was learned from data relative to prior information. Viewing indentifiability as the posterior being proper is not very useful in practice, as there isn't a need to even define a finite variance or mean.
-Model critique, improvement and visualization \cite{gabry19} play a key role in the Bayesian workflow, since a large amount of time is spent summarizing models and finding appropriate prior and structural specifications. As A. Gelman mentioned, ``Bayes doesn't give up``, when conventional methods would refuse to estimate the parameters, which implies it is the modeler's responsibility to challenge the model and check assumptions, find ways of better parametrization. In the last decades, the focus has shifted from the mathematical analysis to computational methods as Hamiltonian Monte Carlo, INLA, Variational Inference, which enable a great deal of experimentation with model specifications. Next chapters follow this spirit, favoring intuition and understanding over analytical tractability and focus on mathematical aspects which are really important for building models with ``nice`` properties.
+Model critique, improvement and visualization \cite{gabry19} play a key role in the Bayesian workflow, since a large amount of time is spent summarizing models and finding appropriate prior and structural specifications. As A. Gelman mentioned, ``Bayes doesn't give up``, when conventional methods would refuse to estimate the parameters, which implies it is the modeler's responsibility to challenge the model and check assumptions, find ways of better parametrization. In the last decades, the focus has shifted from the mathematical analysis to computational methods as Hamiltonian Monte Carlo, INLA, Variational Inference, which enable a great deal of experimentation with model specifications. Next chapters follow this spirit, favoring intuition and understanding over analytical tractability and focus on mathematical aspects which are really important for building models with ``nice`` properties. -->
 
+### Storytelling with DAGs
 
 ## What does a statistician want?
-From their estimators
+<!-- From their estimators -->
 
 ### Estimator Properties
 
@@ -487,7 +527,7 @@ From their estimators
 ## Case Studies
 
 ### De Moivre on US Schooling
-
+<!-- 
 Let's remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()). 
 
 They decided to split up big schools into smaller ones. Can you say if it was a good, bad idea and why did they think that?
@@ -518,10 +558,10 @@ We will go into more detail next week in A/B testing and hypothesis testing, but
 
 So, in this case we will collect data, used to estimate the parameter and its confidence intervels (inference, with the idea of generalizing from the sample to the population). Now, given those confidence intervals, we ask how surprising it is to see the data/estimation, if the null hypothesis was true.
 
-Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components -- as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges. 
+Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components -- as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges.  -->
 
 ### Chess example
-I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?
+<!-- I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?
 
 > Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data). 
 
@@ -538,10 +578,10 @@ We will discuss next time a whole range of other pitfalls, including spurious co
 
 > explore python cli app + scraping + arrow + duckdb, see the trajectories of players and so on (chess.com vs fide). For the trajectories, mention the idea of longitudinal data, survival models, growth models, mixed models -- because of the particularities of DGP and causal process 
 
-> see the difference between ELO vs xbox true skill, how fast it converges to the true ability -- that is a model we can investigate. 
+> see the difference between ELO vs xbox true skill, how fast it converges to the true ability -- that is a model we can investigate.  -->
 
 ### Amazon reviews and ratings
-How do you choose 4.7 (300) vs 4.5 (2000) -- according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?
+<!-- How do you choose 4.7 (300) vs 4.5 (2000) -- according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?
 
 - we can guide ourselfs with the quality and relevance of reviews
 - is it representative? (also, outside the box)
@@ -551,21 +591,21 @@ Q: What is the variance and distribution, it depends, also on our risk appetites
 
 Introduce the confusion matrix, which will be discussed at length in ML and hypothesis testing (types of error) -- the point is that sometimes the payoff for correct decison or a mistake is asymmetric. And that matters (fraud vs reco quality) -- so, that is context-dependent. 
 
-> good applications for text mining, statistical tests
+> good applications for text mining, statistical tests -->
 
 ## Data Mining and CRISP-DM variants
 
 
 ### ML is a geocentric model of the universe
-
+<!-- 
 The good news is that sometimes, you just need a reliable prediction, as you're not intervening in the system causing a certain phenomena -- and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn't figure out a scientific explanation of the causal process, e.g. for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making. 
 
-Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid -- if you go outside that range, can easily get absurd predictions -- this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation. 
+Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid -- if you go outside that range, can easily get absurd predictions -- this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation.  -->
 
 ## Statistical Process and Science
 
 ### Dead salmon: a warning tale
-Forward reference to power and multiple testing
+<!-- Forward reference to power and multiple testing -->
 
 
 

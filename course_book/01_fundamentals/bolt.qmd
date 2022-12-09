@@ -1,7 +1,7 @@
 # Case Study: Decisions at Bolt and Uber
 
 
-
+<!-- 
 We can start by looking what data scientists from Bolt are saying, and then trying to figure ot the rest in more detail. [^dsc-bolt] Why do we have so much information available from these big companies? Well, because we like to brag and there is no "secret sauce" algorithm. 
 
 [^dsc-bolt]: [How we do data science at Bolt](https://medium.com/bolt-labs/how-we-do-data-science-at-bolt-5cf861ae2578) - Martin Lumiste
@@ -23,4 +23,4 @@ We can start by looking what data scientists from Bolt are saying, and then tryi
 [^bolt-delivery]: [Food delivery - Understanding the problem we’re solving
 ](https://medium.com/bolt-labs/understanding-the-problem-were-solving-28a6cb8a545f)
 [^bolt-switchback]: [Tips and considerations for switchback test designs
-](https://medium.com/bolt-labs/tips-and-considerations-for-switchback-test-designs-d1bd7c493024)
+](https://medium.com/bolt-labs/tips-and-considerations-for-switchback-test-designs-d1bd7c493024) -->

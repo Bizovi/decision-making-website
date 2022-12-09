@@ -1,4 +1,4 @@
-# Advanced topics in Hypothesis Testing: WIP
+# Advanced topics in Hypothesis Testing
 
 
 ```{mermaid}
@@ -44,4 +44,4 @@ flowchart TD
 
 ## Case Study: Bayesian Covid testing
 
-Multi-armed bandits remark
+<!-- Multi-armed bandits remark  -->
