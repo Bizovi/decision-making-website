@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science - 4&nbsp; Case Study: AI at Adore Me</title>
+<title>Pragmatic Data Science – adoreme</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,16 +38,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -61,6 +63,20 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
@@ -70,13 +86,126 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Pragmatic Data Science</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Course Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-the-fundamenals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">The fundamenals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-the-fundamenals">    
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/background.html">
+ <span class="dropdown-text">Data Science in Business Context</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/stat_foundations.html">
+ <span class="dropdown-text">Statistical foundations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/bolt.html">
+ <span class="dropdown-text">Case Study: Decisions at Bolt and Uber</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/adoreme.html">
+ <span class="dropdown-text">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/lab_01.html">
+ <span class="dropdown-text">Lab: Recap of tidyverse and stats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/slides.html">
+ <span class="dropdown-text">Slides: Data Science in Context</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-causal-inference" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Causal Inference</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-causal-inference">    
+        <li>
+    <a class="dropdown-item" href="../02_causality/background.html">
+ <span class="dropdown-text">Experiment Design and A/B Testing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../02_causality/power.html">
+ <span class="dropdown-text">Advanced Topics in Experiment Design</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../02_causality/lab.html">
+ <span class="dropdown-text">Lab: Deep Dive into Hypothesis testing</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-machine-learning" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Machine Learning</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-machine-learning">    
+        <li>
+    <a class="dropdown-item" href="../03_ml/what_is_learning.html">
+ <span class="dropdown-text">What is machine learning</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-engineering" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Engineering</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-engineering">    
+        <li>
+    <a class="dropdown-item" href="../04_engineering/happy_clients.html">
+ <span class="dropdown-text">How can we keep our clients happy?</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bizovi/data-mining-ase"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at Adore Me</span></h1>
+      <h1 class="quarto-secondary-nav-title"></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -84,167 +213,75 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Pragmatic Data Science</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bizovi/data-mining-ase" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="../Pragmatic-Data-Science.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="../Pragmatic-Data-Science.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-            <i class="bi bi-bi-facebook pe-1"></i>
-          Facebook
-          </a>
-        </li>
-    </ul>
-</div>
-    </div>
-      </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Course Home</a>
+  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">Data Science in Business Context</a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Part I: The fundamenals</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Part II: Elements of Causal Inference</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">Statistical foundations</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link">Case Study: Decisions at Bolt and Uber</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link active">Case Study: AI at AdoreMe (e-commerce)</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link">Lab: Recap of tidyverse and stats</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/slides.html" class="sidebar-item-text sidebar-link">Slides: Data Science in Context</a>
   </div>
 </li>
     </ul>
     </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at Adore Me</span></h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#organizational-design" id="toc-organizational-design"><span class="toc-section-number">4.1</span>  Organizational design</a></li>
-  <li><a href="#product-management" id="toc-product-management"><span class="toc-section-number">4.2</span>  Product Management</a></li>
-  <li><a href="#tech-ecosystem" id="toc-tech-ecosystem"><span class="toc-section-number">4.3</span>  Tech ecosystem</a></li>
-  <li><a href="#full-stack-data-apps" id="toc-full-stack-data-apps"><span class="toc-section-number">4.4</span>  Full-stack Data Apps</a></li>
-  <li><a href="#use-cases" id="toc-use-cases"><span class="toc-section-number">4.5</span>  Use-cases</a>
-  <ul>
-  <li><a href="#clustering-customer-feedback" id="toc-clustering-customer-feedback"><span class="toc-section-number">4.5.1</span>  Clustering Customer Feedback</a></li>
-  <li><a href="#launch-sales-curation-demand-planning" id="toc-launch-sales-curation-demand-planning"><span class="toc-section-number">4.5.2</span>  Launch Sales Curation (Demand Planning)</a></li>
-  <li><a href="#online-model-serving" id="toc-online-model-serving"><span class="toc-section-number">4.5.3</span>  Online model serving</a></li>
-  <li><a href="#demand-planning-and-vertical-slices" id="toc-demand-planning-and-vertical-slices"><span class="toc-section-number">4.5.4</span>  Demand Planning and Vertical Slices</a></li>
+  <li><a href="#case-study-ai-at-adore-me" id="toc-case-study-ai-at-adore-me" class="nav-link active" data-scroll-target="#case-study-ai-at-adore-me">Case Study: AI at Adore Me</a>
+  <ul class="collapse">
+  <li><a href="#organizational-design" id="toc-organizational-design" class="nav-link" data-scroll-target="#organizational-design">Organizational design</a></li>
+  <li><a href="#product-management" id="toc-product-management" class="nav-link" data-scroll-target="#product-management">Product Management</a></li>
+  <li><a href="#tech-ecosystem" id="toc-tech-ecosystem" class="nav-link" data-scroll-target="#tech-ecosystem">Tech ecosystem</a></li>
+  <li><a href="#full-stack-data-apps" id="toc-full-stack-data-apps" class="nav-link" data-scroll-target="#full-stack-data-apps">Full-stack Data Apps</a></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use-cases</a>
+  <ul class="collapse">
+  <li><a href="#clustering-customer-feedback" id="toc-clustering-customer-feedback" class="nav-link" data-scroll-target="#clustering-customer-feedback">Clustering Customer Feedback</a></li>
+  <li><a href="#launch-sales-curation-demand-planning" id="toc-launch-sales-curation-demand-planning" class="nav-link" data-scroll-target="#launch-sales-curation-demand-planning">Launch Sales Curation (Demand Planning)</a></li>
+  <li><a href="#online-model-serving" id="toc-online-model-serving" class="nav-link" data-scroll-target="#online-model-serving">Online model serving</a></li>
+  <li><a href="#demand-planning-and-vertical-slices" id="toc-demand-planning-and-vertical-slices" class="nav-link" data-scroll-target="#demand-planning-and-vertical-slices">Demand Planning and Vertical Slices</a></li>
   </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions"><span class="toc-section-number">4.6</span>  Conclusions</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  </ul></li>
   </ul>
 </nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content"><p>[Mihai Bizovi | Head of Data Science @AdoreMe]</p>
+
+
+
+<section id="case-study-ai-at-adore-me" class="level1">
+<h1>Case Study: AI at Adore Me</h1>
 <!-- 
 ## WIP
 
@@ -293,13 +330,13 @@ We have a business model, called try at home -- you receive a box of products, t
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: What is new in here? People’s dimension, Product Management The idea of tech ecosystem and full stack data apps</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: What is new in here? People’s dimension, Product Management The idea of tech ecosystem and full stack data apps</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="organizational-design" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="organizational-design"><span class="header-section-number">4.1</span> Organizational design</h2>
+<section id="organizational-design" class="level2">
+<h2 class="anchored" data-anchor-id="organizational-design">Organizational design</h2>
 <!-- 
 - people and teams
 
@@ -328,12 +365,12 @@ What kind of roles are out there and what do they do? Why are the generalists va
 - Project/Program Manager: execution!
 - C-Level people: strategy! -->
 </section>
-<section id="product-management" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="product-management"><span class="header-section-number">4.2</span> Product Management</h2>
+<section id="product-management" class="level2">
+<h2 class="anchored" data-anchor-id="product-management">Product Management</h2>
 <!-- **Data Science Strategy Safari** -->
 </section>
-<section id="tech-ecosystem" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="tech-ecosystem"><span class="header-section-number">4.3</span> Tech ecosystem</h2>
+<section id="tech-ecosystem" class="level2">
+<h2 class="anchored" data-anchor-id="tech-ecosystem">Tech ecosystem</h2>
 
 <!-- 
 **Principles and philosophy: Simple made easy** (ref: Hickey)
@@ -380,8 +417,8 @@ In the end, we have a production artifact. Usually in a project we have many man
 The first lesson is in the importance of data: if your algorithm doesn't have much uncertainty -- you can use a classical algorithm.
  -->
 </section>
-<section id="full-stack-data-apps" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="full-stack-data-apps"><span class="header-section-number">4.4</span> Full-stack Data Apps</h2>
+<section id="full-stack-data-apps" class="level2">
+<h2 class="anchored" data-anchor-id="full-stack-data-apps">Full-stack Data Apps</h2>
 <!-- 
 So, we said that people are important, systems are important, DQ is paramount, and there is no one silver bullet -- so we have to think of ecosystems, which cannot exist without a reliable IT infra, a place where to host your apps and code: you need clean and up to date data, non-ambiguous, and hwich is relevant and predictive for the things you wanna explain.
 
@@ -391,10 +428,10 @@ So, it's not THE magic algorithm, it's an ecosystem of models, tools, data and p
 
 If you think it through carefully, you can make every block small, composable, easy to modify, and to play well with others.  -->
 </section>
-<section id="use-cases" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="use-cases"><span class="header-section-number">4.5</span> Use-cases</h2>
-<section id="clustering-customer-feedback" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="clustering-customer-feedback"><span class="header-section-number">4.5.1</span> Clustering Customer Feedback</h3>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use-cases</h2>
+<section id="clustering-customer-feedback" class="level3">
+<h3 class="anchored" data-anchor-id="clustering-customer-feedback">Clustering Customer Feedback</h3>
 
 <!-- Let's no discuss an application suitable for NLP. We receive lots of customer feedback. Millions of pieces of text -- so we want to improve our products: recommendations, shipment and general user experience on the website. People in our company, especially PMs, read it very carefully and try to put on the roadmap new features that improve the product. This reading is time consuming and wasteful, so, we thought to automate the clustering (not only classification) -- discover new topics as they appear, bugs, stuff refering to same idea. 
 
@@ -413,8 +450,8 @@ This is the essence of ML, without going into much detail, the idea of going fro
 So we have this model, receive new data, run a job, store the prediction in BQ and show the results to POs and devs, the results in a dashboard, in a way which makes it easy to search, filter, find insights. So, we're going slowly towards lots of decisions at scale, but we're still not there -- in the phase of exploration, trying to find interesting patterns in data, getting inspired (analytics).
  -->
 </section>
-<section id="launch-sales-curation-demand-planning" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="launch-sales-curation-demand-planning"><span class="header-section-number">4.5.2</span> Launch Sales Curation (Demand Planning)</h3>
+<section id="launch-sales-curation-demand-planning" class="level3">
+<h3 class="anchored" data-anchor-id="launch-sales-curation-demand-planning">Launch Sales Curation (Demand Planning)</h3>
 
 <!-- Our second big challenge is demand planning. What does that mean? We have many products, with many different sizes, e.g. a bra from 16-28 sizes, 2 possible panties in the set => so the problem explodes in complexity (ordering and manufacturing the right quantity, at the right price, at the right time). But let's take a little piece of it.
 
@@ -435,8 +472,8 @@ We deployed it on APpEngine, and got user auth for free, without writing any cod
 Last remark here, if you heard lately Andrew Ng, he talks a lot about this data-centric approach to modeling, which I totally agree with. If you feed your model garbage data, you get nonsense answers
  -->
 </section>
-<section id="online-model-serving" class="level3" data-number="4.5.3">
-<h3 data-number="4.5.3" class="anchored" data-anchor-id="online-model-serving"><span class="header-section-number">4.5.3</span> Online model serving</h3>
+<section id="online-model-serving" class="level3">
+<h3 class="anchored" data-anchor-id="online-model-serving">Online model serving</h3>
 <!-- Everything which I described before is batch, not happening real-time, at high frequencies. But, what about, if you have to display recommendations on the website? What if the standard offerings, vendors of recommender systems aren't flexible enough for your use-case and infrastructure? They don't understand the particularities of lingerie, sizing and fit, colors, levels of sexiness of products, occasions. So, for purposes like this, we build custom algorithms and we have to serve them on the website.
 
 Sometimes, the purpose is to gather more feedback, product ratings (as in nflx): "we think you would like this and that, pls confirm if it is true." That helps us make better curations of boxes for the try-at-home. Other times, they choose something from a catalog and have the option to receive a few more products as a surprise, to try at home, return at no cost.
@@ -451,8 +488,8 @@ So, this is how we solved the difficult problem, and it was for the first time i
 
 Let's see what we got out-of-the-box from GCP to respond to our challenges: we didn't want cold start - we put at least one warm instance; more memory - no problem, simple config; fast database - matter of choosing appropriately. It went surprisingly well.  -->
 </section>
-<section id="demand-planning-and-vertical-slices" class="level3" data-number="4.5.4">
-<h3 data-number="4.5.4" class="anchored" data-anchor-id="demand-planning-and-vertical-slices"><span class="header-section-number">4.5.4</span> Demand Planning and Vertical Slices</h3>
+<section id="demand-planning-and-vertical-slices" class="level3">
+<h3 class="anchored" data-anchor-id="demand-planning-and-vertical-slices">Demand Planning and Vertical Slices</h3>
 <!-- 
 The last set of ideas i wanna go through is related to vertical slices. Usually we focus too much on the model: how to tweak it, squeeze the last bits of performance, but we rarely think about the ecosystem. So, let's see what do I mean by the vertical slices.
 
@@ -467,8 +504,8 @@ If we focus on this well-defined task of forecasting new products, we get a vert
 This is how the full picture would look like.  -->
 </section>
 </section>
-<section id="conclusions" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">4.6</span> Conclusions</h2>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
 
 <!-- 
 **Conclusions and Contributions: Agility, Scaling, Pragmatism**
@@ -484,6 +521,7 @@ We can get most of those nuisances out of the way by following a few easy princi
 - Demistify what AI means. It is by no means magic and involves, hard, laborious work. We looked at some ways in which we can make that work, easier, more exciting (focus a larget percentage of time on the thing which we're passionate about -- that part of intelligence, statistics, maths, exciting modeling), and less time to waste. -->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -507,6 +545,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -620,19 +773,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
       <a href="../01_fundamentals/bolt.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Case Study: Decisions at Bolt and Uber</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../01_fundamentals/lab_01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Lab: Recap of tidyverse and stats</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi</div>   
+  </div>
+</footer>
 
 
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science - 2&nbsp; Statistical Foundations</title>
+<title>Pragmatic Data Science – stat_foundations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,16 +38,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -61,6 +63,20 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
@@ -71,13 +87,126 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked slimcontent">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Pragmatic Data Science</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Course Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-the-fundamenals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">The fundamenals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-the-fundamenals">    
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/background.html">
+ <span class="dropdown-text">Data Science in Business Context</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/stat_foundations.html">
+ <span class="dropdown-text">Statistical foundations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/bolt.html">
+ <span class="dropdown-text">Case Study: Decisions at Bolt and Uber</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/adoreme.html">
+ <span class="dropdown-text">Case Study: AI at AdoreMe (e-commerce)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/lab_01.html">
+ <span class="dropdown-text">Lab: Recap of tidyverse and stats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/slides.html">
+ <span class="dropdown-text">Slides: Data Science in Context</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-causal-inference" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Causal Inference</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-causal-inference">    
+        <li>
+    <a class="dropdown-item" href="../02_causality/background.html">
+ <span class="dropdown-text">Experiment Design and A/B Testing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../02_causality/power.html">
+ <span class="dropdown-text">Advanced Topics in Experiment Design</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../02_causality/lab.html">
+ <span class="dropdown-text">Lab: Deep Dive into Hypothesis testing</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-machine-learning" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Machine Learning</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-machine-learning">    
+        <li>
+    <a class="dropdown-item" href="../03_ml/what_is_learning.html">
+ <span class="dropdown-text">What is machine learning</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-engineering" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Engineering</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-engineering">    
+        <li>
+    <a class="dropdown-item" href="../04_engineering/happy_clients.html">
+ <span class="dropdown-text">How can we keep our clients happy?</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bizovi/data-mining-ase"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Foundations</span></h1>
+      <h1 class="quarto-secondary-nav-title"></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -85,189 +214,97 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Pragmatic Data Science</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bizovi/data-mining-ase" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="../Pragmatic-Data-Science.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="../Pragmatic-Data-Science.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-            <i class="bi bi-bi-facebook pe-1"></i>
-          Facebook
-          </a>
-        </li>
-    </ul>
-</div>
-    </div>
-      </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">Course Home</a>
+  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">Data Science in Business Context</a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Part I: The fundamenals</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical foundations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Case Study: AI at AdoreMe (e-commerce)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Recap of tidyverse and stats</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Part II: Elements of Causal Inference</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experiment Design and A/B Testing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/power.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Advanced Topics in Experiment Design</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/lab.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Deep Dive into Hypothesis testing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active">Statistical foundations</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/bolt.html" class="sidebar-item-text sidebar-link">Case Study: Decisions at Bolt and Uber</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/adoreme.html" class="sidebar-item-text sidebar-link">Case Study: AI at AdoreMe (e-commerce)</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/lab_01.html" class="sidebar-item-text sidebar-link">Lab: Recap of tidyverse and stats</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/slides.html" class="sidebar-item-text sidebar-link">Slides: Data Science in Context</a>
   </div>
 </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#statistical-foundations" id="toc-statistical-foundations" class="nav-link active" data-scroll-target="#statistical-foundations">Statistical Foundations</a>
+  <ul class="collapse">
+  <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link" data-scroll-target="#the-probability-triple">The probability triple</a>
+  <ul class="collapse">
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty">Sources of Uncertainty</a></li>
+  <li><a href="#joint-conditional-and-marginal-distributions" id="toc-joint-conditional-and-marginal-distributions" class="nav-link" data-scroll-target="#joint-conditional-and-marginal-distributions">Joint, Conditional, and Marginal Distributions</a></li>
+  <li><a href="#bayes-rule" id="toc-bayes-rule" class="nav-link" data-scroll-target="#bayes-rule">Bayes Rule</a></li>
+  <li><a href="#interpretations-of-probability" id="toc-interpretations-of-probability" class="nav-link" data-scroll-target="#interpretations-of-probability">Interpretations of probability</a></li>
+  </ul></li>
+  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell" class="nav-link" data-scroll-target="#mathematical-statistics-in-a-nutshell">Mathematical Statistics in a nutshell</a>
+  <ul class="collapse">
+  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague" class="nav-link" data-scroll-target="#models-are-golemns-of-prague">Models are Golemns of Prague</a></li>
+  <li><a href="#model-specification-fisher-vs-bayes" id="toc-model-specification-fisher-vs-bayes" class="nav-link" data-scroll-target="#model-specification-fisher-vs-bayes">Model Specification: Fisher vs Bayes</a></li>
+  <li><a href="#independence-and-exchangeability" id="toc-independence-and-exchangeability" class="nav-link" data-scroll-target="#independence-and-exchangeability">Independence and Exchangeability</a></li>
+  <li><a href="#storytelling-with-dags" id="toc-storytelling-with-dags" class="nav-link" data-scroll-target="#storytelling-with-dags">Storytelling with DAGs</a></li>
+  </ul></li>
+  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want" class="nav-link" data-scroll-target="#what-does-a-statistician-want">What does a statistician want?</a>
+  <ul class="collapse">
+  <li><a href="#estimator-properties" id="toc-estimator-properties" class="nav-link" data-scroll-target="#estimator-properties">Estimator Properties</a></li>
+  <li><a href="#bias-variance-decomposition" id="toc-bias-variance-decomposition" class="nav-link" data-scroll-target="#bias-variance-decomposition">Bias-Variance Decomposition</a></li>
+  <li><a href="#rao-cramer-inequality" id="toc-rao-cramer-inequality" class="nav-link" data-scroll-target="#rao-cramer-inequality">Rao-Cramer Inequality</a></li>
+  </ul></li>
+  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies">Case Studies</a>
+  <ul class="collapse">
+  <li><a href="#de-moivre-on-us-schooling" id="toc-de-moivre-on-us-schooling" class="nav-link" data-scroll-target="#de-moivre-on-us-schooling">De Moivre on US Schooling</a></li>
+  <li><a href="#chess-example" id="toc-chess-example" class="nav-link" data-scroll-target="#chess-example">Chess example</a></li>
+  <li><a href="#amazon-reviews-and-ratings" id="toc-amazon-reviews-and-ratings" class="nav-link" data-scroll-target="#amazon-reviews-and-ratings">Amazon reviews and ratings</a></li>
+  </ul></li>
+  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants" class="nav-link" data-scroll-target="#data-mining-and-crisp-dm-variants">Data Mining and CRISP-DM variants</a>
+  <ul class="collapse">
+  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe" class="nav-link" data-scroll-target="#ml-is-a-geocentric-model-of-the-universe">ML is a geocentric model of the universe</a></li>
+  </ul></li>
+  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science" class="nav-link" data-scroll-target="#statistical-process-and-science">Statistical Process and Science</a>
+  <ul class="collapse">
+  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale" class="nav-link" data-scroll-target="#dead-salmon-a-warning-tale">Dead salmon: a warning tale</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Foundations</span></h1>
-</div>
+<main class="content page-columns page-full column-body" id="quarto-document-content"><p>[Mihai Bizovi | Head of Data Science @AdoreMe]</p>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#the-probability-triple" id="toc-the-probability-triple"><span class="toc-section-number">2.1</span>  The probability triple</a>
-  <ul>
-  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty"><span class="toc-section-number">2.1.1</span>  Sources of Uncertainty</a></li>
-  <li><a href="#joint-conditional-and-marginal-distributions" id="toc-joint-conditional-and-marginal-distributions"><span class="toc-section-number">2.1.2</span>  Joint, Conditional, and Marginal Distributions</a></li>
-  <li><a href="#bayes-rule" id="toc-bayes-rule"><span class="toc-section-number">2.1.3</span>  Bayes Rule</a></li>
-  <li><a href="#interpretations-of-probability" id="toc-interpretations-of-probability"><span class="toc-section-number">2.1.4</span>  Interpretations of probability</a></li>
-  </ul></li>
-  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell"><span class="toc-section-number">2.2</span>  Mathematical Statistics in a nutshell</a>
-  <ul>
-  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague"><span class="toc-section-number">2.2.1</span>  Models are Golemns of Prague</a></li>
-  <li><a href="#model-specification-fisher-vs-bayes" id="toc-model-specification-fisher-vs-bayes"><span class="toc-section-number">2.2.2</span>  Model Specification: Fisher vs Bayes</a></li>
-  <li><a href="#independence-and-exchangeability" id="toc-independence-and-exchangeability"><span class="toc-section-number">2.2.3</span>  Independence and Exchangeability</a></li>
-  <li><a href="#storytelling-with-dags" id="toc-storytelling-with-dags"><span class="toc-section-number">2.2.4</span>  Storytelling with DAGs</a></li>
-  </ul></li>
-  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want"><span class="toc-section-number">2.3</span>  What does a statistician want?</a>
-  <ul>
-  <li><a href="#estimator-properties" id="toc-estimator-properties"><span class="toc-section-number">2.3.1</span>  Estimator Properties</a></li>
-  <li><a href="#bias-variance-decomposition" id="toc-bias-variance-decomposition"><span class="toc-section-number">2.3.2</span>  Bias-Variance Decomposition</a></li>
-  <li><a href="#rao-cramer-inequality" id="toc-rao-cramer-inequality"><span class="toc-section-number">2.3.3</span>  Rao-Cramer Inequality</a></li>
-  </ul></li>
-  <li><a href="#case-studies" id="toc-case-studies"><span class="toc-section-number">2.4</span>  Case Studies</a>
-  <ul>
-  <li><a href="#de-moivre-on-us-schooling" id="toc-de-moivre-on-us-schooling"><span class="toc-section-number">2.4.1</span>  De Moivre on US Schooling</a></li>
-  <li><a href="#chess-example" id="toc-chess-example"><span class="toc-section-number">2.4.2</span>  Chess example</a></li>
-  <li><a href="#amazon-reviews-and-ratings" id="toc-amazon-reviews-and-ratings"><span class="toc-section-number">2.4.3</span>  Amazon reviews and ratings</a></li>
-  </ul></li>
-  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants"><span class="toc-section-number">2.5</span>  Data Mining and CRISP-DM variants</a>
-  <ul>
-  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe"><span class="toc-section-number">2.5.1</span>  ML is a geocentric model of the universe</a></li>
-  </ul></li>
-  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science"><span class="toc-section-number">2.6</span>  Statistical Process and Science</a>
-  <ul>
-  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale"><span class="toc-section-number">2.6.1</span>  Dead salmon: a warning tale</a></li>
-  </ul></li>
-  </ul>
-</nav>
+<section id="statistical-foundations" class="level1 page-columns page-full">
+<h1>Statistical Foundations</h1>
 <p>In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving <strong>decision-making under uncertainty</strong>. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.</p>
 <blockquote class="blockquote">
 <p>In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent <em>stochastic nature</em>.</p>
@@ -310,7 +347,7 @@ A word of encouragement
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: In this chapter and set of lectures, I attempt to reformulate fundamental statistical ideas, concepts, and tools, in order to show their relevance in the day-to-day practice and decision-making. A secondary objective is to fill in the conceptual gaps left by the fact that it’s hard to make sense of it all the first time we’re encountering it in the classroom.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: In this chapter and set of lectures, I attempt to reformulate fundamental statistical ideas, concepts, and tools, in order to show their relevance in the day-to-day practice and decision-making. A secondary objective is to fill in the conceptual gaps left by the fact that it’s hard to make sense of it all the first time we’re encountering it in the classroom.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -341,8 +378,8 @@ Complementary resources if you feel like starting over
 </ul>
 </div>
 </div>
-<section id="the-probability-triple" class="level2 page-columns page-full" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="the-probability-triple"><span class="header-section-number">2.1</span> The probability triple</h2>
+<section id="the-probability-triple" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-probability-triple">The probability triple</h2>
 <div class="page-columns page-full"><p>In the <a href="../01_fundamentals/background.html#why-did-you-study-all-of-that">previous lecture</a>, I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it’s one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the <strong>logic of uncertainty</strong>, a formal language. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;If you studied fuzzy set theory, you might have a case for it being the candidate, however, it fell out of favor in practice – so I would suggest to focus on probability and Bayesian reasoning.</p></li></div></div>
 <p>Often, probability and mathematical statistics are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Probability theory is concerned with the construction of the probability triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>, defining useful tools like random variables and probability/cumulative density functions, extending those to joint, conditional probabilities. Then, introducing the machinery to operate all of that, like expectation, variance, moment-generating functions – in order to reason about distributional properties.</p>
 <ol type="1">
@@ -524,8 +561,8 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 </ul>
 </div></div><p>A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically – which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.</p>
 <p>Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.</p>
-<section id="sources-of-uncertainty" class="level3 page-columns page-full" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">2.1.1</span> Sources of Uncertainty</h3>
+<section id="sources-of-uncertainty" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="sources-of-uncertainty">Sources of Uncertainty</h3>
 <p>In the last chapter, we raised the issue of <a href="../01_fundamentals/background.html#what-is-ai-data-science-cybernetics-">where does uncertainty come from</a>, mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one.</p>
 <div class="page-columns page-full"><p>Think of <strong>agents</strong> who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations <span class="math inline">\((x_1, x_2, ..., x_t)\)</span> and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;This paragraph is taken from the brilliant, open book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a> by M. Kochenderfer, T. Wheeler, and K. Wray</p></li></div></div>
 <div class="cell">
@@ -541,7 +578,7 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.2: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -555,8 +592,8 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 <p>We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">TODO: Provide examples</span></div></div>
 </section>
-<section id="joint-conditional-and-marginal-distributions" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="joint-conditional-and-marginal-distributions"><span class="header-section-number">2.1.2</span> Joint, Conditional, and Marginal Distributions</h3>
+<section id="joint-conditional-and-marginal-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="joint-conditional-and-marginal-distributions">Joint, Conditional, and Marginal Distributions</h3>
 <!-- 
 [The reason we went on a theoretical detour to construct the probability triple, was simply to raise awareness of what is the theory that stands behind probability as we will practice it and what are some situations when handwaving could bite us]{.aside}
 
@@ -594,8 +631,8 @@ y
 P(x, y) -->
 <!-- conditional probability degree of belief in a proposition given some evidence that has already been revealed -->
 </section>
-<section id="bayes-rule" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="bayes-rule"><span class="header-section-number">2.1.3</span> Bayes Rule</h3>
+<section id="bayes-rule" class="level3">
+<h3 class="anchored" data-anchor-id="bayes-rule">Bayes Rule</h3>
 <!-- Given clouds in the morning,
 what's the probability of rain in the afternoon?
 • 80% of rainy afternoons start with cloudy
@@ -603,12 +640,12 @@ what's the probability of rain in the afternoon?
 • 40% of days have cloudy mornings.
 • 10% of days have rainy afternoons. -->
 </section>
-<section id="interpretations-of-probability" class="level3" data-number="2.1.4">
-<h3 data-number="2.1.4" class="anchored" data-anchor-id="interpretations-of-probability"><span class="header-section-number">2.1.4</span> Interpretations of probability</h3>
+<section id="interpretations-of-probability" class="level3">
+<h3 class="anchored" data-anchor-id="interpretations-of-probability">Interpretations of probability</h3>
 </section>
 </section>
-<section id="mathematical-statistics-in-a-nutshell" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell"><span class="header-section-number">2.2</span> Mathematical Statistics in a nutshell</h2>
+<section id="mathematical-statistics-in-a-nutshell" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell">Mathematical Statistics in a nutshell</h2>
 <!-- 
 Colectivitatea reprezint˘a o mult, ime de entit˘at, i, obiecte sau forme reale, care au
 anumite caracteristici de interes corelate. Aceste caracteristici variaz˘a ˆıntre indivizi,
@@ -702,15 +739,15 @@ Draw a diagram between sample and population.
 The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.
 
 One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method. -->
-<section id="models-are-golemns-of-prague" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="models-are-golemns-of-prague"><span class="header-section-number">2.2.1</span> Models are Golemns of Prague</h3>
+<section id="models-are-golemns-of-prague" class="level3">
+<h3 class="anchored" data-anchor-id="models-are-golemns-of-prague">Models are Golemns of Prague</h3>
 <!-- Data + Domain Assumptions + Statistical Assumptions -->
 </section>
-<section id="model-specification-fisher-vs-bayes" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="model-specification-fisher-vs-bayes"><span class="header-section-number">2.2.2</span> Model Specification: Fisher vs Bayes</h3>
+<section id="model-specification-fisher-vs-bayes" class="level3">
+<h3 class="anchored" data-anchor-id="model-specification-fisher-vs-bayes">Model Specification: Fisher vs Bayes</h3>
 </section>
-<section id="independence-and-exchangeability" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="independence-and-exchangeability"><span class="header-section-number">2.2.3</span> Independence and Exchangeability</h3>
+<section id="independence-and-exchangeability" class="level3">
+<h3 class="anchored" data-anchor-id="independence-and-exchangeability">Independence and Exchangeability</h3>
 <!-- 
 I find it useful to review **exchangeability** and De Finetti's theorem, before presenting the components of a Bayesian model, as it gives a sense of what is the underlying assumption of Hierarchical Models. 
 
@@ -775,27 +812,27 @@ The representation in figure above is a Probabilistic Graphical Model, which is 
 In Bayesian statistics conventional definitions of identifiability do not apply, so I'm more concerned with ``information contents`` given a model and particular dataset. If a posterior distribution of some parameter is flat over a large range, it is an indication that little was learned from data relative to prior information. Viewing indentifiability as the posterior being proper is not very useful in practice, as there isn't a need to even define a finite variance or mean.
 Model critique, improvement and visualization \cite{gabry19} play a key role in the Bayesian workflow, since a large amount of time is spent summarizing models and finding appropriate prior and structural specifications. As A. Gelman mentioned, ``Bayes doesn't give up``, when conventional methods would refuse to estimate the parameters, which implies it is the modeler's responsibility to challenge the model and check assumptions, find ways of better parametrization. In the last decades, the focus has shifted from the mathematical analysis to computational methods as Hamiltonian Monte Carlo, INLA, Variational Inference, which enable a great deal of experimentation with model specifications. Next chapters follow this spirit, favoring intuition and understanding over analytical tractability and focus on mathematical aspects which are really important for building models with ``nice`` properties. -->
 </section>
-<section id="storytelling-with-dags" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="storytelling-with-dags"><span class="header-section-number">2.2.4</span> Storytelling with DAGs</h3>
+<section id="storytelling-with-dags" class="level3">
+<h3 class="anchored" data-anchor-id="storytelling-with-dags">Storytelling with DAGs</h3>
 </section>
 </section>
-<section id="what-does-a-statistician-want" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="what-does-a-statistician-want"><span class="header-section-number">2.3</span> What does a statistician want?</h2>
+<section id="what-does-a-statistician-want" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-a-statistician-want">What does a statistician want?</h2>
 <!-- From their estimators -->
-<section id="estimator-properties" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="estimator-properties"><span class="header-section-number">2.3.1</span> Estimator Properties</h3>
+<section id="estimator-properties" class="level3">
+<h3 class="anchored" data-anchor-id="estimator-properties">Estimator Properties</h3>
 </section>
-<section id="bias-variance-decomposition" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="bias-variance-decomposition"><span class="header-section-number">2.3.2</span> Bias-Variance Decomposition</h3>
+<section id="bias-variance-decomposition" class="level3">
+<h3 class="anchored" data-anchor-id="bias-variance-decomposition">Bias-Variance Decomposition</h3>
 </section>
-<section id="rao-cramer-inequality" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="rao-cramer-inequality"><span class="header-section-number">2.3.3</span> Rao-Cramer Inequality</h3>
+<section id="rao-cramer-inequality" class="level3">
+<h3 class="anchored" data-anchor-id="rao-cramer-inequality">Rao-Cramer Inequality</h3>
 </section>
 </section>
-<section id="case-studies" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="case-studies"><span class="header-section-number">2.4</span> Case Studies</h2>
-<section id="de-moivre-on-us-schooling" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="de-moivre-on-us-schooling"><span class="header-section-number">2.4.1</span> De Moivre on US Schooling</h3>
+<section id="case-studies" class="level2">
+<h2 class="anchored" data-anchor-id="case-studies">Case Studies</h2>
+<section id="de-moivre-on-us-schooling" class="level3">
+<h3 class="anchored" data-anchor-id="de-moivre-on-us-schooling">De Moivre on US Schooling</h3>
 <!-- 
 Let's remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()). 
 
@@ -829,8 +866,8 @@ So, in this case we will collect data, used to estimate the parameter and its co
 
 Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components -- as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges.  -->
 </section>
-<section id="chess-example" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="chess-example"><span class="header-section-number">2.4.2</span> Chess example</h3>
+<section id="chess-example" class="level3">
+<h3 class="anchored" data-anchor-id="chess-example">Chess example</h3>
 <!-- I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?
 
 > Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data). 
@@ -850,8 +887,8 @@ We will discuss next time a whole range of other pitfalls, including spurious co
 
 > see the difference between ELO vs xbox true skill, how fast it converges to the true ability -- that is a model we can investigate.  -->
 </section>
-<section id="amazon-reviews-and-ratings" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="amazon-reviews-and-ratings"><span class="header-section-number">2.4.3</span> Amazon reviews and ratings</h3>
+<section id="amazon-reviews-and-ratings" class="level3">
+<h3 class="anchored" data-anchor-id="amazon-reviews-and-ratings">Amazon reviews and ratings</h3>
 <!-- How do you choose 4.7 (300) vs 4.5 (2000) -- according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?
 
 - we can guide ourselfs with the quality and relevance of reviews
@@ -865,24 +902,25 @@ Introduce the confusion matrix, which will be discussed at length in ML and hypo
 > good applications for text mining, statistical tests -->
 </section>
 </section>
-<section id="data-mining-and-crisp-dm-variants" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants"><span class="header-section-number">2.5</span> Data Mining and CRISP-DM variants</h2>
-<section id="ml-is-a-geocentric-model-of-the-universe" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe"><span class="header-section-number">2.5.1</span> ML is a geocentric model of the universe</h3>
+<section id="data-mining-and-crisp-dm-variants" class="level2">
+<h2 class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants">Data Mining and CRISP-DM variants</h2>
+<section id="ml-is-a-geocentric-model-of-the-universe" class="level3">
+<h3 class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe">ML is a geocentric model of the universe</h3>
 <!-- 
 The good news is that sometimes, you just need a reliable prediction, as you're not intervening in the system causing a certain phenomena -- and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn't figure out a scientific explanation of the causal process, e.g. for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making. 
 
 Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid -- if you go outside that range, can easily get absurd predictions -- this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation.  -->
 </section>
 </section>
-<section id="statistical-process-and-science" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="statistical-process-and-science"><span class="header-section-number">2.6</span> Statistical Process and Science</h2>
-<section id="dead-salmon-a-warning-tale" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="dead-salmon-a-warning-tale"><span class="header-section-number">2.6.1</span> Dead salmon: a warning tale</h3>
+<section id="statistical-process-and-science" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-process-and-science">Statistical Process and Science</h2>
+<section id="dead-salmon-a-warning-tale" class="level3">
+<h3 class="anchored" data-anchor-id="dead-salmon-a-warning-tale">Dead salmon: a warning tale</h3>
 <!-- Forward reference to power and multiple testing -->
 <!-- Statistical Foundations: Reference, Revies --->
 
 
+</section>
 </section>
 </section>
 
@@ -908,6 +946,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1021,19 +1174,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../01_fundamentals/background.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science in Business Context</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Science in Business Context</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../01_fundamentals/bolt.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Case Study: Decisions at Bolt and Uber</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Case Study: Decisions at Bolt and Uber</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi</div>   
+  </div>
+</footer>
 
 
 
