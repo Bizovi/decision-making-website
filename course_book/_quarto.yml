@@ -39,13 +39,13 @@ website:
         - href: 01_fundamentals/stat_foundations.qmd
           text: "Statistical foundations"
         - href: 01_fundamentals/bolt.qmd
-          text: "Case Study: Decisions at Bolt and Uber"
+          text: "Case Study: Decisions at Bolt and LRB"
         - href: 01_fundamentals/adoreme.qmd
           text: "Case Study: AI at AdoreMe (e-commerce)" 
         - href: 01_fundamentals/lab_01.qmd
           text: "Lab: Recap of tidyverse and stats"
-        - href: 01_fundamentals/slides.qmd
-          text: "Slides: Data Science in Context"
+        # - href: 01_fundamentals/slides.qmd
+        #   text: "Slides: Data Science in Context"
     - id: causal
       title: "Causal Inference"
       style: "docked"

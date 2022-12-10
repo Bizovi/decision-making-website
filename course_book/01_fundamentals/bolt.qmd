@@ -1,5 +1,22 @@
-# Case Study: Decisions at Bolt and Uber
+# Case Study: Decisions at Bolt and LRB
 
+
+## Warm-up: The newsvendor problem
+
+[Directed Acyclic Graphs tell data and business stories]{.aside}
+
+[Adding machine learning to the mix](https://opimwue.github.io/ddop/tutorial_modules/tutorial.html)
+
+## Warm-up: Pricing at a festival
+
+
+## London Review of Books dynamics
+
+
+## Desired trajecotry and SWOT
+
+
+## The perils of bad strategy
 
 <!-- 
 We can start by looking what data scientists from Bolt are saying, and then trying to figure ot the rest in more detail. [^dsc-bolt] Why do we have so much information available from these big companies? Well, because we like to brag and there is no "secret sauce" algorithm. 

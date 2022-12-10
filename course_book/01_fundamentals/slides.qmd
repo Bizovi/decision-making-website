@@ -1,15 +1,54 @@
 ---
-title: "Habits"
-author: "John Doe"
-format: revealjs
+title: "Data Science in Business Context"
+subtitle: "Motivation -- Fundamentals -- Roadmap"
+
+author: "Mihai Bizovi"
+# date: 2022-12-10
+
+format: 
+  revealjs:
+    theme: [serif]
+    slide-number: c/t
+    width: 1600
+    height: 900
+    # logo: "img/logo.jpeg"
+    footer: "[Course Home](https://course.economic-cybernetics.com)"
+    echo: true
+    transition: slide
+    transition-speed: fast
+    incremental: true
+    institute: ASE Bucharest
 ---
 
-## Getting up
 
--   Turn off alarm
--   Get out of bed
+## Better decisions in a VUCA world, but how? 
 
-## Going to sleep
+```{mermaid}
+%%| label: baw
+%%| fig-width: 14
+%%| echo: false
+%%| fig-cap: |
+%%|     Insight = Aha Moment!
 
--   Get in bed
--   Count sheep
+
+flowchart LR
+    S[Strategy] --> M[Model] --> I[Insight] -- informs --> A[Action] -- drives --> O[Outcome]
+    E[Expertise] --> M
+    D[Good Data] --> M
+
+    subgraph Math / Business 
+    M 
+    I
+    end
+
+    O -- feeds back --> M
+```
+
+
+## Two metaphors:
+
+:::: {layout="[25, -10, 40]"}
+![We see Pollock's **messy reality**, which is the data and observations. We want to get to Picasso's bare bones **essence**, for better and clearer decision-making](img/logo.jpeg "Reality"){.preview-image width="40%"}
+
+![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful](img/elephant-blind.jpeg){width="40%"}
+:::
