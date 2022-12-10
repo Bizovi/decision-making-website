@@ -1,0 +1,22 @@
+/* css styles */
+
+#quarto-document-content {
+    /* width: 1500px;
+    justify-content: center; */
+    margin-left: 10%;
+    /* margin-right: 10%; */
+    /* width: 100%; */
+}
+  
+/* #quarto-margin-sidebar {
+    margin-left: 50%;
+}
+   */
+
+#course-roadmap {
+    width: 130%;
+}
+
+#schedule-and-admin {
+    width: 130%;
+}

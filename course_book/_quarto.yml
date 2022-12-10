@@ -1,27 +1,39 @@
 project:
-  type: book
+  type: website
 
-book:
+website:
   title: "Pragmatic Data Science"
-  author: "Mihai Bizovi | Head of Data Science (AdoreMe)"
-  date: "12/5/2022"
-
-  search: true
-  repo-url: https://github.com/bizovi/data-mining-ase
-  # repo-actions: []
-  downloads: [pdf, epub]
-  sharing: [twitter, facebook]
+  body-header: "\\[Mihai Bizovi | Head of Data Science \\@AdoreMe\\]"
   favicon: img/favicon.jpeg
+  open-graph:
+    locale: es_ES
+    site-name: Quarto
+  google-analytics: "G-TNKQREJHQW"
+
+  navbar:
+    search: true
+    left:
+      - href: index.qmd
+        text: "Course Home"
+      - sidebar:fundamentals
+      - sidebar:causal
+      - sidebar:ml
+      - sidebar:engineering
+    right: 
+      - icon: github
+        href: https://github.com/bizovi/data-mining-ase
+      - icon: linkedin
+        href: https://www.linkedin.com/in/bizovi-mihai-56982abb/
+      - icon: bi-journal-bookmark
+        href: https://blog.economic-cybernetics.com/
 
   sidebar:
-    style: docked
-    background: light
-
-  chapters:
-    - href: index.qmd
-      text: "Course Home"
-    - part: "Part I: The fundamenals"
-      chapters:
+    - id: fundamentals
+      title: "The fundamenals"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
         - href: 01_fundamentals/background.qmd
           text: "Data Science in Business Context"
         - href: 01_fundamentals/stat_foundations.qmd
@@ -32,50 +44,61 @@ book:
           text: "Case Study: AI at AdoreMe (e-commerce)" 
         - href: 01_fundamentals/lab_01.qmd
           text: "Lab: Recap of tidyverse and stats"
-    - part: "Part II: Elements of Causal Inference"
-      chapters:
+        - href: 01_fundamentals/slides.qmd
+          text: "Slides: Data Science in Context"
+    - id: causal
+      title: "Causal Inference"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents:
         - href: 02_causality/background.qmd
           text: "Experiment Design and A/B Testing"
         - href: 02_causality/power.qmd
           text: "Advanced Topics in Experiment Design"
         - href: 02_causality/lab.qmd
           text: "Lab: Deep Dive into Hypothesis testing"
+    - id: ml
+      title: "Machine Learning"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents:
+        - href: 03_ml/what_is_learning.qmd
+          text: "What is machine learning"
+    - id: engineering
+      title: "Engineering"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents:
+        - href: 04_engineering/happy_clients.qmd
+          text: "How can we keep our clients happy?"
 
-    # - part: "Part III: Statistical Learning"
-    #   chapters:
-    #     - background.qmd
-    #     - lab_01.qmd
-    # - part: "Part IV: Unsupervised Learning"
-    #   chapters:
-    #     - lab_01.qmd
-    # - part: "Part V: Generalised linear madness"
-    #   chapters:
-    #     - lab_01.qmd
-    # - part: "Part VI: Miscellaneous"
-    #   chapters:
-    #     - lab_01.qmd
-
-    # - intro.qmd
-    # - summary.qmd
-    - references.qmd
   page-navigation: true
+  page-footer:
+    left: "The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi"
 
 bibliography: references.bib
-
 highlight-style: pygments
 
 format:
   html:
-    theme: simplex # cosmo
-    # max-width: 1600px
-    # margin-left: 30px
-    page-layout: article # full
+    theme: 
+      light: simplex
+      dark: cyborg
+    page-layout: full
     css: styles.css
-    toc-location: body
+    toc-location: left
     
 editor: visual
 
 reference-location: margin
   
 comments:
-  hypothesis: true
+  hypothesis: 
+    theme: clean
+
+# comments:
+#   utterances:
+#     repo: bizovi/data-mining-ase

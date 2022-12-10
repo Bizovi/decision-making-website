@@ -1,3 +1,9 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
 # Data Science in Business Context
 
 Arguably, we live in a *volatile, uncertain, complex, and ambiguous* world that we have to understand in order to navigate it well. By "world", I mean the economy, society, environment, or any other complex system -- especially when human behavior is involved. It is reasonable to ask: wasn't it always the case, depending on how we define the terms, level of analysis, and point of view? 
