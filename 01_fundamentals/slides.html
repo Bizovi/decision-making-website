@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.269">
+  <meta name="generator" content="quarto-1.2.280">
 
-  <meta name="author" content="John Doe">
-  <title>Pragmatic Data Science - Habits</title>
+  <meta name="author" content="Mihai Bizovi">
+  <title>Pragmatic Data Science - Data Science in Business Context</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -334,7 +334,11 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Pragmatic Data Science - Habits">
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<meta property="og:title" content="Pragmatic Data Science - Data Science in Business Context">
+<meta property="og:description" content="Motivation -- Fundamentals -- Roadmap">
 <meta property="og:site-name" content="Quarto">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -343,33 +347,79 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Habits</h1>
+  <h1 class="title">Data Science in Business Context</h1>
+  <p class="subtitle">Motivation – Fundamentals – Roadmap</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-John Doe 
+Mihai Bizovi 
 </div>
-</div>
+        <p class="quarto-title-affiliation">
+            ASE Bucharest
+          </p>
+    </div>
 </div>
 
 </section>
-<section id="getting-up" class="slide level2">
-<h2>Getting up</h2>
-<ul>
-<li>Turn off alarm</li>
-<li>Get out of bed</li>
-</ul>
+<section id="better-decisions-in-a-vuca-world-but-how" class="slide level2">
+<h2>Better decisions in a VUCA world, but how?</h2>
+<div class="cell" data-reveal="true" data-fig-width="14">
+<div class="cell-output-display">
+<div id="baw">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">
+flowchart LR
+    S[Strategy] --&gt; M[Model] --&gt; I[Insight] -- informs --&gt; A[Action] -- drives --&gt; O[Outcome]
+    E[Expertise] --&gt; M
+    D[Good Data] --&gt; M
+
+    subgraph Math / Business 
+    M 
+    I
+    end
+
+    O -- feeds back --&gt; M
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p>Insight = Aha Moment!</p>
+</div>
+</div>
+</div>
 </section>
-<section id="going-to-sleep" class="slide level2">
-<h2>Going to sleep</h2>
-<ul>
-<li>Get in bed</li>
-<li>Count sheep</li>
-</ul>
+<section id="two-metaphors" class="slide level2">
+<h2>Two metaphors:</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<figure>
+<img data-src="img/logo.jpeg" title="Reality" class="preview-image">
+</figure>
+<p></p><figcaption>We see Pollock’s <strong>messy reality</strong>, which is the data and observations. We want to get to Picasso’s bare bones <strong>essence</strong>, for better and clearer decision-making</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 13.3%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 53.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/elephant-blind.jpeg"></p>
+<p></p><figcaption>This is a <strong>big picture</strong> course, which re-contextualizes everything you have learned before, but didn’t see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
-
+<p><a href="https://course.economic-cybernetics.com">Course Home</a></p>
 </div>
 </section>
     </div>
@@ -424,7 +474,7 @@ John Doe
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -529,10 +579,10 @@ John Doe
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
+        transitionSpeed: 'fast',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
@@ -549,9 +599,9 @@ John Doe
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1600,
 
-        height: 700,
+        height: 900,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
