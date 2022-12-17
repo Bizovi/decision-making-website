@@ -1,0 +1,27 @@
+---
+title: "Tidyverse Recap"
+author: "Bizovi Mihai"
+---
+
+For all:
+
+0. Git + Github account
+1. Linux Subsystem activation on Windows
+2. R version >= 4.x.x
+3. Recent-ish Rstudio >= 2022-01-01
+4. [Quarto](https://quarto.org/) - backwards compatible with RMarkdown!
+5. `renv` - dependency manager | lock dependencies, without help in own packages
+
+
+For Python:
+
+1. conda - package manager |> environments
+2. pipx - global packages `brew install pipx` |> tool for global tools
+3. poetry - dependency manager |> packaging own libraries | lock dependencies
+4. VSCode -> python, pylance extensions, jupyter
+  - Alternatively, JupyterLab
+
+
+```{r}
+mtcars |> head()
+```
