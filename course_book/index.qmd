@@ -11,7 +11,12 @@ This is an introductory, big picture graduate course which bridges the gap betwe
 -   Illuminating theoretical ideas (contemplating in the library)
 -   Practicing battle-tested technologies (engineering in the trenches).
 
-::: callout-tip
+::: {.column-margin}
+The best advice I ever got as a novice data scientist was: **"Think of youself as a business person with superpowers"**. I'm attempting to reconcile that spirit of simplicity and elegance with advances in statistical thinking and engineering. 
+:::
+
+
+::: {.callout-tip}
 ## Who should read this book?
 
 > Anyone lost, confused, stuck or overwhelmed by Data Science and Machine Learning complexities, who wants to see the big picture and the possibilities
@@ -25,7 +30,7 @@ This is the **course I wish I had** when starting my journey in data science, wh
 
 To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your carreer and studies.
 
-[^index-1]: This course stands on the "shoulders of giants", and I can only aspire to get to the level of clarity and rigor provided by Hastie/Tibshirani or Andrew Ng. However, there is too much content out there, and the roadmap provided here should help you navigate it and find the shortest path towards better decisions in your firm.
+[^index-1]: This course stands on the "shoulders of giants", and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/). However, there is too much content out there, and the roadmap provided here should help you navigate it and find the shortest path towards better decisions in your firm.
 
 ## Why should you care?
 
@@ -33,7 +38,7 @@ You might've heard that data scientist is the sexiest job of 21st century, that 
 
 Over the past 3 years, you've probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on.
 
-::: callout-tip
+::: {.callout-tip}
 ## Why study all of this?
 
 We live in a volatile, uncertain, complex and ambiguous world,[^index-2] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more complete explanation, read [here](01_fundamentals/background.qmd#why-did-you-study-all-of-that).
@@ -70,18 +75,31 @@ Let's go back to the burning question: what I wish I had in a course? It is hard
 After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
 
 -   Provide motivation for **why** something is important (a field, theory, model, method, technology)
--   Discuss **practical applications** and challenges the firms face, from an insider's perspective:
-    -   Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
-    -   Coding up the solutions and software implementations, with the real-world challenges of deploying models and improving decision making
+-   Discuss **practical applications** and challenges the firms face, from an insider's perspective. Those are our case-studies.
+    - First, we try to deeply understand the problem and frame it in "our" language, that is, clarify and reduce ambiguity
+    - Then, we strip the problem to the simplest model, to illuminate some key aspect, like pricing and demand planning decisions. Then, and only then we bring back all the realism and complexities.
+    - Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
+    - Coding up the solutions and software implementations, with the real-world challenges of deploying models and improving decision making
 -   Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it:
-    -   Present the tool theoretically rigorous and sound, but **only where it matters**
+    -   Present the tool theoretically rigorous and sound, but **only where it matters**. More geometry and graphs over equations, more simulations and stories over proofs.
     -   Leverage previous mathematical, statistical, and domain knowledge
     -   For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
 -   Use **simulations** as a safe playground [^index-5] that we control, to get a feel for the behavior of models and algorithms.
     -   Implement those in code using best practices, as an engineering exercise
     -   With lots of visualization, especially interactive ones
 
+
 [^index-5]: I often find myself truly understanding something, only after I code it up and understand the "mechanics" (of a model) well, then try to think of how I would apply it in practice, in different contexts. This hints to the idea that we need some complementary background and tools, some of them right from the beginning of higher education.
+
+Speaking about the **prerequisites**, there are some tools we have to dust off the shelves and cultivate an appreciation of their importance: linear algebra, calculus, probability theory and mathematical statistics. Not least, a confident handle of a programming language like Python or R is essential, such that we can focus on what truly matters.
+
+::: {.column-margin}
+Those prerequisites are placed in context of the business practice, with swift reviews and references to resources which should fill in all the gaps.
+:::
+
+At the same time, we have to gradually get **rid of the bad habits** that were accumulated: analyses which can't be reproduced, mechanically following a statistical procedure (because the flowchart of statistical tests said so, for example), jumping to a conclusion (as if there is only one, correct, textbook answer), rushing the learning process, handwaving to cover for a poorly articulated argument. On the other side of the spectrum, perfectionism doesn't help either, as this field is inherently iterative and experimental.
+
+[But we need to develop a set of processes to iterate and improve effectively]{.aside}
 
 ## Your Unorthodox Guide
 
@@ -99,19 +117,24 @@ I'm a generalist -- navigating uncertainty and complexity to improve decision-ma
     -   \$250m revenue in 2022, acquired by Victoria's Secret
     -   70 tech people in Bucharest, over 300 employees
     -   My work involves AI Strategy, Product Management, ML Systems Design
--   Some typical applications of AI in an e-commerce I contributed to:
+-   Some typical applications of AI in an e-commerce I contributed to:[^experience]
     -   Demand Planning and Inventory Optimization systems to prevent lost sales and excess inventory
     -   Recommender Systems to help users find relevant, personalized items and bundles
     -   Marketing optimizations in Acquisition/Advertisement, Engagement, CRM, Merchandising, Pricing and Promotion
--   Hobbies:
+-   Hobbies: 
     -   Reading about "Philosophy as a Way of Life" & Cognitive Science
-    -   Painting, Hiking, Jazz/Classical/Metal
+    -   Painting, Hiking, Jazz/Classical/Metal 
     -   Played chess professionally, but that much stress isn't worth it
 
+[^experience]: I find the idea of "Skin in the Game" very appealing. Therefore, a lot of attention will be given to the **pitfalls**, what can go wrong and what I learned from past mistakes, so that you don't have to repeat them.
+
+[Unfortunately, I have none of the answers of how does Intelligence, Rationality, Wisdom contribute to meaning in life -- at best, some plausible hypotheses]{.aside}
+
+Unsurprisingly, there will be lots of painting metaphors when it comes to simplicity, and cognitive science references when talking about ways in which we're biased and foolish. Chess, of course, inspires analogies of competition, strategy, and tactics to its service. 
 
 ## Course Roadmap
 
-We start the course with a first lecture, in which we explore the context of data science in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering the hell we needed those in the first place.
+We start the course with a first module, in which we explore the context of data science in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering the hell we needed those in the first place.
 
 Next, we move on to A/B testing and towards a mindset of causal inference. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
 
@@ -141,9 +164,30 @@ flowchart TD
 
 If you ask what is that engineering branch, you're totally right! During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.
 
-That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us, step-by-step. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.
+That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.
 
 ## Schedule and Admin
+
+The in-person and online courses are usually slow-paced, filled with conversations -- so take the following schedule as a tentative one. There is a tremenous ground to cover, especially when the prerequisites are shaky for the methods used here. The sections of the book are not a 1:1 correspondence with the course: what reads well might not lead to a good lecture. 
+
+In the Winter 2022 module, we focus on statistics, reproducible research, experiment design, and A/B testing with a mindset of causal inference. The Fall 2023 module will cover supervised and unsupervised Machine Learning approaches, plus a few special topics like NLP, Recommender Systems, and Time Series. 
+
+| Course/Lab  | Title                      | Keywords  | Case Studies |
+|---------------|-----------------------|-------------------|---------------|
+| C1 (09 Dec) | Data Science in Context. Motivation + Roadmap | AI, ML, Uncertainty, Decisions  | discussion of applications|
+| C2 (09 Dec) | Why did you study all of that? Course philosophy| Calculus, Linear Algebra, Probability, Stats, Econ | survey of interest and skills  |
+| S1 (10 Dec) | Business Analyst's Workflow. Newsvendor Problem | action, outcome, strategy, expertise, data, models, simulation, DAGs | TIME INC. printing/quantity decisions |
+| S2 (10 Dec) | Strategy & Desired Trajectory | SWOT, Systems Dynamics, KPIs, Stock vs Flow | LRB Journal Subscriptions |
+| C3 (15 Dec) | Newsvendor Problem. Probability distributions. Stochastic Processes  | model specification, inference, simulation, optimization, constraints | groceries and perisable goods |
+| C4 (15 Dec) | Probability Triple. Random Variables. Mathematical Statistics | population, sample, r.v., estimators, mixtures, markov chain | Retail Fashion - appropriate choice of distributions  |
+| C5 (16 Dec) | Pricing Decisions. Bayesian Inference. Link functions | demand elasticity, fixed capacity, Bayes, revenue management, DAGs  | VIP Lounge at Festivals |
+| C6 (16 Dec) | Bayesian Workflow. Regression, what is GLM | prior, likelihood, stochastic optimization  | Flight price optimization (static) |
+| S3 (17 Dec) | The most dangerous equation | estimators properties, CLT, sample size | U.S. small schools and top SAT Scores |
+| S4 (17 Dec) | Reproducible Research | automation, code, data, environment, documents, publishing | Replication crisis, Excel and the Dead Salmon |
+| S5 (17 Dec) | Set Up the Environment. Overview of Data. Version the Code  | Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio, kaggle | Tooling choice and DevExperience impact on productivity |
+| S6 (17 Dec) | Tidyverse warm-up | dplyr, ggplot2, quarto, renv projects, rendering | Tiny Sleep dataset tidy data wrangling  |
+
+
 
 The final grade shouldn't be a reason why you're in this course, but if you need more structure, here's the evaluation criteria below. Attendence is not mandatory, but highly beneficial for the professional development.
 
@@ -156,9 +200,3 @@ The final grade shouldn't be a reason why you're in this course, but if you need
     -   Try to be succint and clear
     -   Think for yourself, zero-tolerance policy for cheating
 
-| Course/Lab  | Title                      | Keywords                                                                    | Comments                                         |
-|---------------|-----------------------|-------------------|---------------|
-| C1 (09 Dec) | Data Science in Context    | AI, ML, Uncertainty, The Process                                            | discussion, use-cases                            |
-| C2 (09 Dec) | Fundamentals of Statistics | Probability triples, Properties of Estimators                               | logistics, admin                                 |
-| S1 (10 Dec) | Set Up the Environment     | Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio | a good setup is a prerequisite for painless labs |
-| S2 (10 Dec) | Tidyverse, warm-up         | ggplot2, quarto, arrow, duckdb                                              | practice and learn some new packages             |
