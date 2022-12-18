@@ -236,7 +236,7 @@ We started from some phenomena of interest and a random experiment. The random v
 ::: {.callout-note}
 ## Random Variable is not a variable, nor random
 
-A random variable is quantificator of elementary events, a function defined on the outcome space which maps the elementary events to the real number line. That mapping can't be done in any way we wish, it has to perserve the informational structure of the sample space. That is one of the technical reasons for sigma-algebras we mentioned before and is related to the idea of **measurability**.
+A random variable is quantificator of elementary events, a function defined on the outcome space which maps the elementary events to the real number line. That mapping can't be done in any way we wish, it has to perserve the informational structure of the sample space. That is one of the technical reasons for sigma-algebras we mentioned before and is related to the idea of **measurability**, meaning we can assign a meaningful "volume".
 
 
 \begin{align}
@@ -266,6 +266,28 @@ $$
 
 
 ![Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some relevant aspect of it to us)! ](img/random_variable.png "Random Variable"){width="90%"}
+
+<!-- 
+::: {.callout-note}
+## An adversarial example. Not in F!
+
+The example shouldn't be too complicated in order not to respect the definition of a random variable. Here's a a mapping of a strange dice $X(w_i)$ given by G. Ruxanda in his lectures:
+
+$$
+X: \{ 
+	(w_1 \rightarrow 0), 
+	(w_2 \rightarrow 0), 
+	(w_3 \rightarrow 1), 
+	(w_4 \rightarrow 0), 
+	(w_5 \rightarrow 1), 
+	(w_6 \rightarrow 1)
+\}
+$$
+
+The best way to see the problem here, is to draw the mapping and pick 3 thresholds for $r$. Then see if we can recover events in $\mathcal{F}$ by $X^{-1}(w)$.
+
+::: -->
+
 
 
 As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of compositional data analysis[^cda] and time series analysis. What I want to say, is that for more "exotic" applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.
