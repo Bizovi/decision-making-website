@@ -186,6 +186,7 @@ In the Winter 2022 module, we focus on statistics, reproducible research, experi
 | S4 (17 Dec) | Reproducible Research | automation, code, data, environment, documents, publishing | Replication crisis, Excel and the Dead Salmon |
 | S5 (17 Dec) | Set Up the Environment. Overview of Data. Version the Code  | Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio, kaggle | Tooling choice and DevExperience impact on productivity |
 | S6 (17 Dec) | Tidyverse warm-up | dplyr, ggplot2, quarto, renv projects, rendering | Tiny Sleep dataset tidy data wrangling  |
+| Winter Break | \*** | \*** | \***  |
 
 
 

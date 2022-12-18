@@ -12,14 +12,16 @@ I think it's a matter of scale and magnitude in VUCA dimensions, where an accele
 
 [^general]: This implies that we already framed the problem and figured out what we want to achieve, and that indeed we chose the right goals and objectives. Moreover, the questions of epistemiology and ethics are a never ending topic for discussion and enquiry.
 
-::: {.callout-tip}
+:::: {.callout-tip}
 ## Decision Science: (not only) truth and action
 
-Let's start from a business setting of an e-commerce, where we want to increase sales, customer satisfaction, and reduce costs. Imagine three scenarios, which neatly fall into the SWOT framework:
+Let's start from a business setting of an e-commerce, where we want to increase sales, customer satisfaction, and reduce costs. Imagine three scenarios, which neatly fall into the SWOT framework: [^traj]
+
 
 - We keep the status quo, doing everyting as before. What is the most likely trajectory of profits? Can we come up with an educated guess? If the trajectory looks good, that is our **strenghts** and compentencies contributing to it, if not, our **weakness**.
 - A feared trajectory, that is, if our business is hit by a shock in supply chain, inflation, by competition or customer demand. It's the **threats**.
 - A desired or aspirational trajectory. Is it reasonable and realistically achievable? If yes, what strategy and tactics should we implement, how sould we act? This is our **opportunity**.
+
 
 After this exercise, we defined more precisely where we stand, that is, quantify the current state of the firm. We framed the problem in terms of most relevant outcomes and we're in the process of figuring out what is the optimal goals to aim for. Obviously, we need a mechanism, measurements to know that we're on track and to recognize when to get there. Now, let's go back to our two questions and unpack them:
 
@@ -28,13 +30,14 @@ After this exercise, we defined more precisely where we stand, that is, quantify
 
 The only missing pieces from this mental model that I argue for is tremendously important: **iteration** and **feedback**. [^cybe] Due to VUCA, we can't be sure our actions are optimal, or even that we're solving the right problem, therefore fast iteration and feedback ensures we're not taking too much risk, that we find out early about problems in our thinking and action, that we can change course to steer the ship back on track.
 
-:::
+::::
 
 [^hume]: This is one of the most important and applicable philosophical ideas, introduced by David Hume: when one makes claims about what ought to be that are based solely on statements about what is.
 
 [^scout]: Recommended reading: Scout Mindset by Julia Galef
 [^cybe]: Sounds an awflul lot like Cybernetics, doesn't it? Especially if we have the idea of a firm as a complex adaptive system as a pressuposition for this discussion.
 
+[^traj]: ![*Source: [Kim Warren](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf)* - Status Quo, Desired and Feared Trajectories](img/trajectories.png){width="90%"}
 
 <!-- You might've heard in the news that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses? -->
 
@@ -273,7 +276,7 @@ In many intro to statistics or science courses, we take for granted the hypothes
 
 I argue, it is an art which requires a kind of **intuition**, **sensibility**, and **attunement** to the problem. In my opinion, it is the most underrated aspect of scientific enquiry and process: a good problem formulation often gets us halfway towards a solution.
 
-In this course we focus on data mining an analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of the behavior, coupled with a deep understanding of the field, existing theories and their shortcomings and inconsistencies. Often, these hypotheses follow as a consequence from the theory itself.
+In this course we focus on data mining and analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of the behavior, coupled with a deep understanding of the field, existing theories and their shortcomings and inconsistencies. Often, these hypotheses follow as a consequence from the theory itself.
 :::
 
 If we don't have to make decisions and want to find interesting patterns in data, to inform our future questions, we have lots of methods for exploratory data analysis -- from visualization (manual) to clustering (automated) and model-driven exploration. Sometimes, we just want to monitor and display the facts and current state of a business on a dashboard -- this is why your previous class was on BI (Business Intelligence).
