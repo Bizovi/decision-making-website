@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -248,13 +311,12 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <ul>
   <li><a href="#statistical-foundations" id="toc-statistical-foundations" class="nav-link active" data-scroll-target="#statistical-foundations">Statistical Foundations</a>
   <ul class="collapse">
+  <li><a href="#the-garden-of-forking-paths" id="toc-the-garden-of-forking-paths" class="nav-link" data-scroll-target="#the-garden-of-forking-paths">The garden of forking paths</a></li>
   <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link" data-scroll-target="#the-probability-triple">The probability triple</a>
   <ul class="collapse">
   <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables">Random Variables</a></li>
-  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty">Sources of Uncertainty</a></li>
   <li><a href="#joint-conditional-and-marginal-distributions" id="toc-joint-conditional-and-marginal-distributions" class="nav-link" data-scroll-target="#joint-conditional-and-marginal-distributions">Joint, Conditional, and Marginal Distributions</a></li>
   <li><a href="#bayes-rule" id="toc-bayes-rule" class="nav-link" data-scroll-target="#bayes-rule">Bayes Rule</a></li>
-  <li><a href="#interpretations-of-probability" id="toc-interpretations-of-probability" class="nav-link" data-scroll-target="#interpretations-of-probability">Interpretations of probability</a></li>
   </ul></li>
   <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell" class="nav-link" data-scroll-target="#mathematical-statistics-in-a-nutshell">Mathematical Statistics in a nutshell</a>
   <ul class="collapse">
@@ -375,9 +437,81 @@ Complementary resources if you feel like starting over
 </ul>
 </div>
 </div>
+<section id="the-garden-of-forking-paths" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-garden-of-forking-paths">The garden of forking paths</h2>
+<div class="page-columns page-full"><p>As a warm-up, try working out through the following problem, sometimes called “The Birthday Paradox”.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> If outcome space, complementarity, <em>sampling with replacement</em>, <em>pigenhole principle</em> or the simulation code you’re seeing seem puzzling, you might benefit from a refresher on probability theory. If you haven’t seen this problem before, you will probably find the results surprising.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;First, an analytical solution on paper, then simulate it in R or Python to check your answer.</p></li></div></div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The Birthday Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is the probability at least two people have the same birthday, in a room of <span class="math inline">\(n=25\)</span> people? Assuming independence, for example no twins, every day is equally likely and ignoring the problem of 29th February. Can you generalize it to an arbitrary <span class="math inline">\(n\)</span>?</p>
+<p>For most practical problems, simulation is an extremely important skill. We might start with it to quickly get an answer, however, for simpler problems, the process of working out the solution analytically sheds light on its structure and easily generalizes to other applications. This simulation indeed, converges to the true results, but it takes a lot of computation, so it might not work when the code needs to run really fast!</p>
+<div class="cell" data-hash="stat_foundations_cache/html/unnamed-chunk-4_581a09b83394d0719ece659ea8d16001">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nr_people <span class="ot">&lt;-</span> <span class="dv">25</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>simulate_birthdays <span class="ot">&lt;-</span> <span class="cf">function</span>(nr_people, <span class="at">nr_sim =</span> <span class="dv">10000</span>) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    birthday_events <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="at">n =</span> nr_sim, {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        birthdays <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, <span class="at">size =</span> nr_people, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">anyDuplicated</span>(birthdays) <span class="sc">&gt;</span> <span class="dv">0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>(birthday_events)  <span class="co"># this returns implicitly!</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pr_same_bday <span class="ot">&lt;-</span> <span class="fu">simulate_birthdays</span>(nr_people)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>bday_match_size <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">90</span>, simulate_birthdays, <span class="at">nr_sim =</span> <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- <details> <summary>Show the answer</summary> -->
+<!-- </details> -->
+<p>So, the probability that a room of 25 people has two people with the same birth date is <span class="math inline">\(\approx\)</span> 0.5649. For 50 people, it’s around 0.9717</p>
+<div class="cell" data-hash="stat_foundations_cache/html/unnamed-chunk-6_6fb70620685be6c0999b14947d82dd0f">
+<details>
+<summary>Show the visualization code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>), <span class="co"># Dist' from plot to side of page</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">mgp =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="fl">0.4</span>, <span class="dv">0</span>), <span class="co"># Dist' plot to label</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">las =</span> <span class="dv">1</span>, <span class="co"># Rotate y-axis text</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">tck =</span> <span class="sc">-</span>.<span class="dv">01</span>, <span class="co"># Reduce tick length</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxs =</span> <span class="st">"i"</span>, <span class="at">yaxs =</span> <span class="st">"i"</span>) <span class="co"># Remove plot padding</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">90</span>, <span class="at">y =</span> bday_match_size, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">5</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">""</span>, <span class="at">ylab =</span> <span class="st">""</span>, <span class="co"># Labels</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="co"># Don't plot the axes</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">frame.plot =</span> <span class="cn">FALSE</span>, <span class="co"># Remove the frame</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="co"># Limits</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.first =</span> <span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>), <span class="at">col =</span> <span class="st">"grey80"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">49</span>, bday_match_size[<span class="dv">50</span>], <span class="dv">49</span>, <span class="dv">0</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>at <span class="ot">&lt;-</span> <span class="fu">pretty</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">90</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">text =</span> at, <span class="at">at =</span> at,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">"grey20"</span>, <span class="at">line =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>at <span class="ot">=</span> <span class="fu">pretty</span>(bday_match_size)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="at">side =</span> <span class="dv">2</span>, <span class="at">text =</span> at, <span class="at">at =</span> at, <span class="at">col =</span> <span class="st">"grey20"</span>, <span class="at">line =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div class="cell-output-display callout-margin-content">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_foundations_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Probability of matching birthdays as a function of the number of people</figcaption><p></p>
+</figure>
+</div>
+</div></div><p>How this counter-intuitive statistical “paradox” relates to satellite collisions, DNA evidence and other coincidences</p>
+<p>The source of confusion within the Birthday Paradox is that the probability grows relative to the number of possible pairings of people, not just the group’s size. The number of pairings grows with respect to the square of the number of participants, such that a group of 23 people contains 253 (23 x 22 / 2) unique pairs of people.</p>
+<p>In each of these pairings, there is a 364/365 chance of having different birthdays, but this needs to happen for every pair for there to be no matching birthdays across the entire group. Therefore the probability of two people having the same birthday in a group of 23 is:</p>
+<p>Go to richard McElreath’s garden of forking paths next</p>
+</section>
 <section id="the-probability-triple" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="the-probability-triple">The probability triple</h2>
-<div class="page-columns page-full"><p>In the <a href="../01_fundamentals/background.html#why-did-you-study-all-of-that">previous lecture</a>, I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it’s one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the <strong>logic of uncertainty</strong>, a formal language. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;If you studied fuzzy set theory, you might have a case for it being the candidate, however, it fell out of favor in practice – so I would suggest to focus on probability and Bayesian reasoning.</p></li></div></div>
+<div class="page-columns page-full"><p>In the <a href="../01_fundamentals/background.html#why-did-you-study-all-of-that">previous lecture</a>, I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it’s one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the <strong>logic of uncertainty</strong>, a formal language. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;If you studied fuzzy set theory, you might have a case for it being the candidate, however, it fell out of favor in practice – so I would suggest to focus on probability and Bayesian reasoning.</p></li></div></div>
 <p>Often, probability and mathematical statistics are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Probability theory is concerned with the construction of probability triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>.</p>
 <p>That is the foundation for developing useful tools like random variables and probability/cumulative density functions. Then, extending those to joint, conditional probabilities and multidimensional cases, introducing the machinery to operate all of that: like expectation, variance, moment-generating functions, conditioning, marginalization, Bayes theorem. This leads to the laws of large numbers, properties of distributions and their transformations.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><strong>We use all of those results</strong> to model relationships between observed and latent variables in business processes and phenomena. It’s a building block for answering the “simple” question: does X cause Y?</span></div></div>
@@ -407,7 +541,7 @@ P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
 </div>
 <p>Other tools are as prevalent and useful: Bayes rule, DAGs (directed acyclic graphs of random variables), the exponential family, laws of large numbers and the cental limit theorem. It holds both in applications and statistics itself.</p>
 <p>In probability theory, we’re still in a mathematical world trying to capture the essence of the real world, but ultimately, we need statistical inference to estimate those parameters from data. Before we get into it in more detail: mathematically, computationally and in terms of business cases, we have to define that foundation – the probability triple.</p>
-<div class="page-columns page-full"><p>To make the following more clear, let’s start with an experiment where we show a customer ten clothing items (a collection), and they have to pick the one they like best. If we repeated it with many customers, preferably representative for the population of interest,<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> a pattern would emerge. This is an example of a discrete Outcome Set (or universal set, of all possible results). Alternatively, think of pebbles in an urn, where each one represents an outcome.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;You might intuitively know what a population is, but there are surprisingly many pitfalls, so we’ll investigate that notion with lots of care.</p></li></div></div>
+<div class="page-columns page-full"><p>To make the following more clear, let’s start with an experiment where we show a customer ten clothing items (a collection), and they have to pick the one they like best. If we repeated it with many customers, preferably representative for the population of interest,<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> a pattern would emerge. This is an example of a discrete Outcome Set (or universal set, of all possible results). Alternatively, think of pebbles in an urn, where each one represents an outcome.</p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;You might intuitively know what a population is, but there are surprisingly many pitfalls, so we’ll investigate that notion with lots of care.</p></li></div></div>
 <p>As an academic aside, we have to thank Kolmogorov for putting probability into a rigorous, axiomatic framework based on set theory and making it open for mathematical enquiry with tools from mathematical analysis, which by that time were well-established. That is important, because we can’t work the same naive way with continuous measurements and phenomena, as we do with pebbles.</p>
 <ol type="1">
 <li>A <strong>random experiment</strong> (<span class="math inline">\(\mathscr{E}\)</span>) is a set of <em>conditions which are favorable for an event</em> in a given form. It is that real-world process of interest which we try to simplify, with the following properties:
@@ -415,7 +549,7 @@ P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
 <li>Possible results and outcomes are known apriori and exhaustably. For example: a coin/dice toss, quantity sold, time in a subscription, a default on the credit, a choice between subscriptions.</li>
 <li>It’s never known which of the results of <span class="math inline">\(\mathscr{E}\)</span> will manifest or appear before we run the experiment, the “experiment” amounting to randomly picking that clothing item or a pebble from the urn.</li>
 <li>Despite that, <strong>there is a perceptible regularity</strong>, which can be eventually measured and quantified, that is, encoding the idea of a probabilistic “law” in the results. That regularity could be a result of the large scale of the phenomena, for example, many customers seeing a product on the shelf.</li>
-<li>Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we’re not thinking in long-run frequency terms. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
+<li>Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we’re not thinking in long-run frequency terms. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></li>
 </ul></li>
 <li><strong>Elementary event</strong> as an auxiliaty construction: one of the possible results of <span class="math inline">\(\mathscr{E}\)</span>, usually denoted by <span class="math inline">\(\omega_i \in \Omega\)</span>.</li>
 <li><strong>Universal set</strong> <span class="math inline">\(\Omega = \{ \omega_1, \omega_2, \dots \}\)</span> is also called (Outcome/ State/ Selection space). It suggests the idea of complementarity and stochasticity: we don’t know which <span class="math inline">\(\omega_i\)</span> will manifest, thus is a key object for a further formalization of probability measures.</li>
@@ -423,7 +557,7 @@ P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
 <li>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> is a sigma-algebra, should be defined on sets of subsets of <span class="math inline">\(\Omega\)</span> and this is where measure theory shines. For technical reasons, we usually can’t define a probability measure on all sets of subsets. On an intuitive note, we define the probability measure on sigma-algebras because if those conditions did not hold, the measure wouldn’t make sense, unions of events would step out of the bounds of event space.</li>
 <li><strong>Probability as an extension of the measure</strong>: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability (number between 0 and 1) to elementary events: <span class="math inline">\(\mathbb{P}(\omega_i)\)</span>. This is why additivity properties are key, as we care about random events, not only elementary events.</li>
 </ol>
-<div class="no-row-height column-margin column-container"><li id="fn8"><div class="quarto-figure quarto-figure-center"><sup>8</sup>&nbsp;
+<div class="no-row-height column-margin column-container"><li id="fn9"><div class="quarto-figure quarto-figure-center"><sup>9</sup>&nbsp;
 <figure class="figure">
 <p><img src="img/coin-flips-lr.png" class="img-fluid figure-img" style="width:90.0%"></p>
 <p></p><figcaption class="figure-caption"><em>Source: <a href="https://bookdown.org/kevin_davisross/probsim-book/interpretations.html">Ross</a></em> This is the view of probability as a long-run frequency of events occuring, for example, flipping a coin</figcaption><p></p>
@@ -492,8 +626,12 @@ Measure theory rabbit hole: Why not all subsets?
     \end{cases}
 \end{equation}\]</span></p>
 <p>He then challenges the readers to come up with the expected value <span class="math inline">\(\mathbb{E}[Z^2]\)</span> and asks on what is it defined? It is indeed a hard question.</p>
-</div></div><p>We stumble upon different interpretations of probability (frequentists vs bayesians), when trying to clarify that “perceptible regularity”, despite the mathematics of probability theory being exactly the same. These are not “theorems” to prove, but rather axioms and philosophies taken as the starting point.</p>
-<div class="page-columns page-full"><p>The frequency theory defines the probability of an outcome as the limiting frequency with which that outcome appears in a long series of similar events. If our experiment or investigation is such that those relative frequencies converge, then we can prove the LLN and the CLT. Basically, that we should view probability and predictions based on historical data. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;<em>“To a frequentist, the probability of an event is intrinsic to that event’s nature and not something perceived, only discovered.”</em></p></li></div></div>
+</div></div><p>We stumble upon different interpretations of probability (frequentists vs bayesians), when trying to clarify that “perceptible regularity”, despite the mathematics of probability theory being exactly the same. These are not “theorems” to prove, but rather axioms and philosophies often taken in practice as the starting point.</p>
+<div class="page-columns page-full"><p>The frequency theory defines the probability of an outcome as the limiting frequency with which that outcome appears in a long series of similar events. If our experiment or investigation is such that those relative frequencies converge, then we can prove the LLN and the CLT. Basically, that we should view probability and predictions based on historical data. <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;<em>“To a frequentist, the probability of an event is intrinsic to that event’s nature and not something perceived, only discovered.”</em></p></li></div></div>
+<p>Formally, we can represent this statement by Bernoulli’s theorem, which is a special case of Law of Large Numbers, where <span class="math inline">\(m_n\)</span> is the number of times an event <span class="math inline">\(A\)</span> occurs in <span class="math inline">\(n\)</span> trials.</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} \frac{m_n}{n} = p
+\]</span></p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -512,6 +650,7 @@ Frequency Convergence as Statistical Stability
 <p>So, which one do you recommend? It depends, <strong>learn both</strong>! But I would agree with <a href="https://xcelab.net/rm/statistical-rethinking/">Richard McElreath</a>’s meme: it’s the scientific process that has the last laugh</p>
 <p><img src="img/meme-causal.jpeg" class="img-fluid" style="width:80.0%"></p>
 </div></div><p>Bayesians view probability as the degree of confidence in a belief, an apriori guess or knowledge, that is, before seeing the data. Then, using inverse probability, you update your beliefs in the face of evidence and data. Often, you do have knowledge and can define your prior probabilities by a process of ellicitation – it should’t be too vague, neither dogmatic. Other Bayesians put in great effort to pick non-informative priors, as the data should quickly overwhelm it.</p>
+<p>TODO: Ellicitation of probability -&gt; we’ll do more later with inference</p>
 <section id="random-variables" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="random-variables">Random Variables</h3>
 <p>Thank you for bearing with me through the theory you have probably seen before, but we’re not done. We’re still in the land of set theory, and it is very hard to operate that way in practice – so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.</p>
@@ -585,7 +724,7 @@ $$
 The best way to see the problem here, is to draw the mapping and pick 3 thresholds for $r$. Then see if we can recover events in $\mathcal{F}$ by $X^{-1}(w)$.
 
 ::: -->
-<div class="page-columns page-full"><p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of compositional data analysis<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p><div class="no-row-height column-margin column-container"><li id="fn10"><div class="quarto-figure quarto-figure-center"><sup>10</sup>&nbsp;
+<div class="page-columns page-full"><p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of compositional data analysis<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p><div class="no-row-height column-margin column-container"><li id="fn11"><div class="quarto-figure quarto-figure-center"><sup>11</sup>&nbsp;
 <figure class="figure">
 <figure class="figure">
 <img src="img/composition.png" title="Simplex" class="img-fluid figure-img" style="width:90.0%">
@@ -609,7 +748,7 @@ The curious case of Compositional Data Analysis
 <p>Compositional data analysis solves those issues by defining a probability triple over the simplex (instead of <span class="math inline">\(\mathbb{R}^n\)</span>): <span class="math inline">\((\mathcal{S}^n, \mathcal{F}, \mathbb{P})\)</span>. This leads to a different definition of the event space <span class="math inline">\(\mathcal{F}\)</span>, which is also a sigma-algebra and a different definition of the probability measure <span class="math inline">\(\mathbb{P}\)</span>.</p>
 </div>
 </div>
-<div class="page-columns page-full"><p>Remember our exaple of <a href="../01_fundamentals/background.html#implicit-learning-intuition-and-bias">pigeon superstition</a> in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> which is exactly those carefully formulated principles that will prevent our automated learners to become supersitious.</p><div class="no-row-height column-margin column-container"><li id="fn11"><p><sup>11</sup>&nbsp;Even though most courses from which I studied don’t mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio’s Brown <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> it’s essential in the idea of <strong>uniform convergence</strong> and its bounds, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>.</p></li></div></div>
+<div class="page-columns page-full"><p>Remember our exaple of <a href="../01_fundamentals/background.html#implicit-learning-intuition-and-bias">pigeon superstition</a> in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> which is exactly those carefully formulated principles that will prevent our automated learners to become supersitious.</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;Even though most courses from which I studied don’t mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio’s Brown <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> it’s essential in the idea of <strong>uniform convergence</strong> and its bounds, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>.</p></li></div></div>
 <p>For the next example, you don’t have to understand what Gaussian Processes are or are used for. However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results, in contrast with choosing a wrong model or distribution.</p>
 <p>It’s not that these methods don’t have parameters, but the parametrization varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don’t know what is a reasonable distribution or parametric functional form for the relationship that we model.</p>
 <div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
@@ -623,7 +762,7 @@ Nonparametrics and Gaussian Processes
 </div>
 <div class="callout-body-container callout-body page-columns page-full">
 <!-- Stochastic Processes, Graphs and Trees -->
-<div class="page-columns page-full"><p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: <span class="math inline">\(f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}\)</span>, <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like.</p><div class="no-row-height column-margin column-container"><li id="fn12"><div class="quarto-figure quarto-figure-center"><sup>12</sup>&nbsp;
+<div class="page-columns page-full"><p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: <span class="math inline">\(f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}\)</span>, <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like.</p><div class="no-row-height column-margin column-container"><li id="fn13"><div class="quarto-figure quarto-figure-center"><sup>13</sup>&nbsp;
 <figure class="figure">
 <figure class="figure">
 <img src="img/gp-conditioned.png" title="GP Posterior" class="img-fluid figure-img" style="width:90.0%">
@@ -651,37 +790,6 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 </ul>
 </div></div><p>A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically – which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.</p>
 <p>Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.</p>
-</section>
-<section id="sources-of-uncertainty" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="sources-of-uncertainty">Sources of Uncertainty</h3>
-<p>In the last chapter, we raised the issue of <a href="../01_fundamentals/background.html#what-is-ai-data-science-cybernetics-">where does uncertainty come from</a>, mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one.</p>
-<div class="page-columns page-full"><p>Think of <strong>agents</strong> who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations <span class="math inline">\((x_1, x_2, ..., x_t)\)</span> and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;This paragraph is taken from the brilliant, open book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a> by M. Kochenderfer, T. Wheeler, and K. Wray</p></li></div></div>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
-    Env(Environment) -- observation --&gt; A(Agent)
-    A -- action --&gt; Env
-</pre>
-<div id="mermaid-tooltip-2" class="mermaidTooltip">
-
-</div>
-<p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li><strong>Outcome uncertainty</strong>, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can’t take everything into account when making a decision – it becomes combinatorialy explosive.</li>
-<li><strong>Model uncertainty</strong>, that is we can’t be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.</li>
-<li><strong>State uncertainty</strong> was discussed at length before, where the true state of the environment is uncertain and moreover, everything changes and is in flux.</li>
-<li><strong>Interaction uncertainty</strong>, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.</li>
-</ul>
-<p>We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">TODO: Provide examples</span></div></div>
 </section>
 <section id="joint-conditional-and-marginal-distributions" class="level3">
 <h3 class="anchored" data-anchor-id="joint-conditional-and-marginal-distributions">Joint, Conditional, and Marginal Distributions</h3>
@@ -730,9 +838,7 @@ what's the probability of rain in the afternoon?
  mornings.
 • 40% of days have cloudy mornings.
 • 10% of days have rainy afternoons. -->
-</section>
-<section id="interpretations-of-probability" class="level3">
-<h3 class="anchored" data-anchor-id="interpretations-of-probability">Interpretations of probability</h3>
+<!-- ### Interpretations of probability -->
 </section>
 </section>
 <section id="mathematical-statistics-in-a-nutshell" class="level2">

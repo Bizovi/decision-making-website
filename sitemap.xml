@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/references.html</loc>
-    <lastmod>2022-12-18T20:16:25.686Z</lastmod>
+    <loc>https://github.com/Bizovi/data-mining-ase/index.html</loc>
+    <lastmod>2023-01-20T22:25:14.752Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Bizovi/data-mining-ase/04_engineering/happy_clients.html</loc>
-    <lastmod>2022-12-18T20:16:28.202Z</lastmod>
+    <lastmod>2023-01-20T22:25:16.828Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/background.html</loc>
-    <lastmod>2022-12-18T20:16:30.110Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/adoreme.html</loc>
-    <lastmod>2022-12-18T20:16:30.678Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/bolt.html</loc>
-    <lastmod>2022-12-18T20:16:31.174Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/stat_foundations.html</loc>
-    <lastmod>2022-12-18T20:16:32.370Z</lastmod>
+    <loc>https://github.com/Bizovi/data-mining-ase/references.html</loc>
+    <lastmod>2023-01-20T22:25:17.216Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/slides.html</loc>
-    <lastmod>2022-12-18T20:16:32.922Z</lastmod>
+    <lastmod>2023-01-20T22:25:17.660Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/bolt.html</loc>
+    <lastmod>2023-01-20T22:25:18.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/adoreme.html</loc>
+    <lastmod>2023-01-20T22:25:19.176Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/lab_01.html</loc>
-    <lastmod>2022-12-18T20:16:34.382Z</lastmod>
+    <lastmod>2023-01-20T22:25:19.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/background.html</loc>
+    <lastmod>2023-01-20T22:25:21.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/stat_foundations.html</loc>
+    <lastmod>2023-01-20T22:25:36.788Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Bizovi/data-mining-ase/03_ml/what_is_learning.html</loc>
-    <lastmod>2022-12-18T20:16:34.870Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/index.html</loc>
-    <lastmod>2022-12-18T20:16:35.774Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/02_causality/background.html</loc>
-    <lastmod>2022-12-18T20:16:36.290Z</lastmod>
+    <lastmod>2023-01-20T22:25:37.148Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Bizovi/data-mining-ase/02_causality/power.html</loc>
-    <lastmod>2022-12-18T20:16:36.814Z</lastmod>
+    <lastmod>2023-01-20T22:25:37.544Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Bizovi/data-mining-ase/02_causality/background.html</loc>
+    <lastmod>2023-01-20T22:25:37.952Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Bizovi/data-mining-ase/02_causality/lab.html</loc>
-    <lastmod>2022-12-18T20:16:37.286Z</lastmod>
+    <lastmod>2023-01-20T22:25:38.324Z</lastmod>
   </url>
 </urlset>

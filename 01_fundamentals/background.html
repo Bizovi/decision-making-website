@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -81,6 +81,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -255,6 +256,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <li><a href="#why-did-you-study-all-of-that" id="toc-why-did-you-study-all-of-that" class="nav-link" data-scroll-target="#why-did-you-study-all-of-that">Why did you study all of that?</a></li>
   <li><a href="#implicit-learning-intuition-and-bias" id="toc-implicit-learning-intuition-and-bias" class="nav-link" data-scroll-target="#implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</a></li>
   <li><a href="#calling-bullshit-in-the-age-of-big-data" id="toc-calling-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</a></li>
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty">Sources of Uncertainty</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -908,6 +910,37 @@ Small Data problems in Big Data
 </div>
 <p>In conclusion, there is no magic to AI, no silver bullet: more data and better models are often necessary, but not sufficient to improve outcomes. We have to ask the right questions. We have to set objectives aligned with business strategy. We have to frame and formulate a problem well, understanding it in its context. We have to collect relevant data, clean it, understand the processes of missingness. If we let AI decide who enters into a quarantine during the pandemic, what it would optimize for? It’s just a machinery combining statistics and optimization.</p>
 <p>Therefore, critical thinking becomes that much more important when we have these powerful quantitative tools at out fingerprints. A part of a data scientist’s job is to constrain artificial stupidity (more exactly, foolishness, because it does perfectly fine what you instructed it to do) and making sure we’re solving the right problem (sounds trivial, but ofter we solve the wrong problem, without being aware of it).</p>
+</section>
+<section id="sources-of-uncertainty" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sources-of-uncertainty">Sources of Uncertainty</h2>
+<p>We already raised the issue of <a href="../01_fundamentals/background.html#what-is-ai-data-science-cybernetics-">where does uncertainty come from</a>, mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one, which will be also very clear later.</p>
+<div class="page-columns page-full"><p>Think of <strong>agents</strong> who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations <span class="math inline">\((x_1, x_2, ..., x_t)\)</span> and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. <a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn33"><p><sup>33</sup>&nbsp;This paragraph is taken from the brilliant, open book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a> by M. Kochenderfer, T. Wheeler, and K. Wray</p></li></div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">flowchart LR
+    Env(Environment) -- observation --&gt; A(Agent)
+    A -- action --&gt; Env
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Outcome uncertainty</strong>, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can’t take everything into account when making a decision – it becomes combinatorialy explosive.</li>
+<li><strong>Model uncertainty</strong>, that is we can’t be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.</li>
+<li><strong>State uncertainty</strong> was discussed at length before, where the true state of the environment is uncertain and moreover, everything changes and is in flux.</li>
+<li><strong>Interaction uncertainty</strong>, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.</li>
+</ul>
+<p>We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">TODO: Provide examples</span></div></div>
 <!-- Data Science Context, in Business, Interdisciplinarity --->
 
 
