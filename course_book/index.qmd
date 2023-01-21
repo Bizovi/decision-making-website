@@ -192,6 +192,22 @@ In the Winter 2022 module, we focus on statistics, reproducible research, experi
 | S5 (17 Dec) | Set Up the Environment. Overview of Data. Version the Code  | Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio, kaggle | Tooling choice and DevExperience impact on productivity |
 | S6 (17 Dec) | Tidyverse warm-up | dplyr, ggplot2, quarto, renv projects, rendering | Tiny Sleep dataset tidy data wrangling  |
 | Winter Break | \*** | \*** | \***  |
+| C7 (12 Jan) | 12 Steps of ML. What is ML?  | PAC Learning, generalization, CRISP-DM | Project requirements simplification |
+| C8 (12 Jan) | 12 Steps of Statistics. A/B Testing Scheme | Default Action, Stat. Hypotheses, confidence intervals, relevance | problem of p-value |
+| C9 (13 Jan) | A/B Testing pitfalls | A/A Tests, Selection bias, Confounders, Novelty | The need for rigorous experiments |
+| C10 (13 Jan) | Error Types, Effect Size, p-values | tests for difference in proportions and means | Strategy for simulation |
+| S7 (14 Jan) | Self-practice: tidyverse data wrangling | \*** | Movie Data |
+| S8 (14 Jan) | Self-practice: ggplot data visualization | \*** | Covid infections, Geographical data |
+| S9 (14 Jan) | Power, Sample Size calculations, Non-inferiority tests | relevance, minimal effect size | Neyman-Pearson, frequentism as action in the long-term |
+| S10 (14 Jan) | Self-practice: Linear regression review | Hypothesis tests as linear models | Guidance with student projects |
+| C11 (19 Jan) | Properties of Metrics for A/B Testing | Sensitivity, stability, directedness | Potential pitfalls |
+| C12 (19 Jan) | Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relevance for ML, Deep Learning |
+| C13 (20 Jan) | LLN, CLT, Asymptotics and Exact Criteria | $\chi^2_k, N, F_{m, n}, t_k$ | Delta method  |
+| C14 (20 Jan) | Bootstrap and Nonparametrics | resampling, ECDF |  Kolmogorov-Smirnov |
+| S11 (21 Jan) | CLT, Choosing a test, Trading off errors, Increasing Power. What next? | Cohen's d, PPV, GLM, nonparametrics, multilevel models | Justifying $\alpha, 1 - \beta, \Delta, n$ by simulation |
+| S12 (21 Jan) | Likelihood, Regularization | Likelihood ratio, James-Stein, curse of dimensionality | Getting a taste of the Fisherian perspective |
+| S13 (21 Jan) | Bayesian inference | Priors, Bayes Factors, Credible intervals | Generative models, Model critique |
+| S14 (21 Jan) | Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |
 
 :::
 
