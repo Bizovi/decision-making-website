@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Pragmatic Data Science – winter_2022</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Pragmatic Data Science</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Course Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-the-fundamenals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">The fundamenals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-the-fundamenals">    
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/background.html">
+ <span class="dropdown-text">Data Science in Business Context</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/stat_foundations.html">
+ <span class="dropdown-text">Statistical foundations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-past-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Past Courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-past-courses">    
+        <li>
+    <a class="dropdown-item" href="../05_archive/winter_2022.html">
+ <span class="dropdown-text">Data Science, Winter 2022</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bizovi/data-mining-ase"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05_archive/winter_2022.html" class="sidebar-item-text sidebar-link active">Data Science, Winter 2022</a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#schedule-and-admin" id="toc-schedule-and-admin" class="nav-link active" data-scroll-target="#schedule-and-admin">Schedule and Admin</a></li>
+  <li><a href="#exam-study-guide" id="toc-exam-study-guide" class="nav-link" data-scroll-target="#exam-study-guide">Exam Study Guide</a>
+  <ul class="collapse">
+  <li><a href="#data-science-in-business-context" id="toc-data-science-in-business-context" class="nav-link" data-scroll-target="#data-science-in-business-context">Data Science in Business Context</a></li>
+  <li><a href="#the-processes-of-data-science" id="toc-the-processes-of-data-science" class="nav-link" data-scroll-target="#the-processes-of-data-science">The processes of data science</a></li>
+  <li><a href="#statistical-fundamentals" id="toc-statistical-fundamentals" class="nav-link" data-scroll-target="#statistical-fundamentals">Statistical fundamentals</a></li>
+  <li><a href="#experiment-design-and-ab-testing" id="toc-experiment-design-and-ab-testing" class="nav-link" data-scroll-target="#experiment-design-and-ab-testing">Experiment Design and A/B Testing</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-page-right" id="quarto-document-content"><p>[Mihai Bizovi | Head of Data Science @AdoreMe]</p>
+
+
+
+<section id="schedule-and-admin" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="schedule-and-admin">Schedule and Admin</h2>
+<p>The in-person and online courses are usually slow-paced, filled with conversations – so take the following schedule as a tentative one. There is a tremenous ground to cover, especially when the prerequisites are shaky for the methods used here. The sections of the book are not a 1:1 correspondence with the course: what reads well might not lead to a good lecture.</p>
+<p>In the Winter 2022 module, we focus on statistics, reproducible research, experiment design, and A/B testing with a mindset of causal inference. The Fall 2023 module will cover supervised and unsupervised Machine Learning approaches, plus a few special topics like NLP, Recommender Systems, and Time Series.</p>
+<div class="column-page-inset-right">
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 31%">
+<col style="width: 26%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Course/Lab</th>
+<th>Title</th>
+<th>Keywords</th>
+<th>Case Studies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C1 (09 Dec)</td>
+<td>Data Science in Context. Motivation + Roadmap</td>
+<td>AI, ML, Uncertainty, Decisions</td>
+<td>discussion of applications</td>
+</tr>
+<tr class="even">
+<td>C2 (09 Dec)</td>
+<td>Why did you study all of that? Course philosophy</td>
+<td>Calculus, Linear Algebra, Probability, Stats, Econ</td>
+<td>survey of interest and skills</td>
+</tr>
+<tr class="odd">
+<td>S1 (10 Dec)</td>
+<td>Business Analyst’s Workflow. Newsvendor Problem</td>
+<td>action, outcome, strategy, expertise, data, models, simulation, DAGs</td>
+<td>TIME INC. printing/quantity decisions</td>
+</tr>
+<tr class="even">
+<td>S2 (10 Dec)</td>
+<td>Strategy &amp; Desired Trajectory</td>
+<td>SWOT, Systems Dynamics, KPIs, Stock vs Flow</td>
+<td>LRB Journal Subscriptions</td>
+</tr>
+<tr class="odd">
+<td>C3 (15 Dec)</td>
+<td>Newsvendor Problem. Probability distributions. Stochastic Processes</td>
+<td>model specification, inference, simulation, optimization, constraints</td>
+<td>groceries and perisable goods</td>
+</tr>
+<tr class="even">
+<td>C4 (15 Dec)</td>
+<td>Probability Triple. Random Variables. Mathematical Statistics</td>
+<td>population, sample, r.v., estimators, mixtures, markov chain</td>
+<td>Retail Fashion - appropriate choice of distributions</td>
+</tr>
+<tr class="odd">
+<td>C5 (16 Dec)</td>
+<td>Pricing Decisions. Bayesian Inference. Link functions</td>
+<td>demand elasticity, fixed capacity, Bayes, revenue management, DAGs</td>
+<td>VIP Lounge at Festivals</td>
+</tr>
+<tr class="even">
+<td>C6 (16 Dec)</td>
+<td>Bayesian Workflow. Regression, what is GLM</td>
+<td>prior, likelihood, stochastic optimization</td>
+<td>Flight price optimization (static)</td>
+</tr>
+<tr class="odd">
+<td>S3 (17 Dec)</td>
+<td>The most dangerous equation</td>
+<td>estimators properties, CLT, sample size</td>
+<td>U.S. small schools and top SAT Scores</td>
+</tr>
+<tr class="even">
+<td>S4 (17 Dec)</td>
+<td>Reproducible Research</td>
+<td>automation, code, data, environment, documents, publishing</td>
+<td>Replication crisis, Excel and the Dead Salmon</td>
+</tr>
+<tr class="odd">
+<td>S5 (17 Dec)</td>
+<td>Set Up the Environment. Overview of Data. Version the Code</td>
+<td>Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio, kaggle</td>
+<td>Tooling choice and DevExperience impact on productivity</td>
+</tr>
+<tr class="even">
+<td>S6 (17 Dec)</td>
+<td>Tidyverse warm-up</td>
+<td>dplyr, ggplot2, quarto, renv projects, rendering</td>
+<td>Tiny Sleep dataset tidy data wrangling</td>
+</tr>
+<tr class="odd">
+<td>Winter Break</td>
+<td>***</td>
+<td>***</td>
+<td>***</td>
+</tr>
+<tr class="even">
+<td>C7 (12 Jan)</td>
+<td>12 Steps of ML. What is ML?</td>
+<td>PAC Learning, generalization, CRISP-DM</td>
+<td>Project requirements simplification</td>
+</tr>
+<tr class="odd">
+<td>C8 (12 Jan)</td>
+<td>12 Steps of Statistics. A/B Testing Scheme</td>
+<td>Default Action, Stat. Hypotheses, confidence intervals, relevance</td>
+<td>problem of p-value</td>
+</tr>
+<tr class="even">
+<td>C9 (13 Jan)</td>
+<td>A/B Testing pitfalls</td>
+<td>A/A Tests, Selection bias, Confounders, Novelty</td>
+<td>The need for rigorous experiments</td>
+</tr>
+<tr class="odd">
+<td>C10 (13 Jan)</td>
+<td>Error Types, Effect Size, p-values</td>
+<td>tests for difference in proportions and means</td>
+<td>Strategy for simulation</td>
+</tr>
+<tr class="even">
+<td>S7 (14 Jan)</td>
+<td>Self-practice: tidyverse data wrangling</td>
+<td>***</td>
+<td>Movie Data</td>
+</tr>
+<tr class="odd">
+<td>S8 (14 Jan)</td>
+<td>Self-practice: ggplot data visualization</td>
+<td>***</td>
+<td>Covid infections, Geographical data</td>
+</tr>
+<tr class="even">
+<td>S9 (14 Jan)</td>
+<td>Power, Sample Size calculations, Non-inferiority tests</td>
+<td>relevance, minimal effect size</td>
+<td>Neyman-Pearson, frequentism as action in the long-term</td>
+</tr>
+<tr class="odd">
+<td>S10 (14 Jan)</td>
+<td>Self-practice: Linear regression review</td>
+<td>Hypothesis tests as linear models</td>
+<td>Guidance with student projects</td>
+</tr>
+<tr class="even">
+<td>C11 (19 Jan)</td>
+<td>Properties of Metrics for A/B Testing</td>
+<td>Sensitivity, stability, directedness</td>
+<td>Potential pitfalls</td>
+</tr>
+<tr class="odd">
+<td>C12 (19 Jan)</td>
+<td>Properties of Estimators</td>
+<td>Bias-Variance, Fisher Information, Rao-Cramer</td>
+<td>Relevance for ML, Deep Learning</td>
+</tr>
+<tr class="even">
+<td>C13 (20 Jan)</td>
+<td>LLN, CLT, Asymptotics and Exact Criteria</td>
+<td><span class="math inline">\(\chi^2_k, N, F_{m, n}, t_k\)</span></td>
+<td>Delta method</td>
+</tr>
+<tr class="odd">
+<td>C14 (20 Jan)</td>
+<td>Bootstrap and Nonparametrics</td>
+<td>resampling, ECDF</td>
+<td>Kolmogorov-Smirnov</td>
+</tr>
+<tr class="even">
+<td>S11 (21 Jan)</td>
+<td>CLT, Choosing a test, Trading off errors, Increasing Power. What next?</td>
+<td>Cohen’s d, PPV, GLM, nonparametrics, multilevel models</td>
+<td>Justifying <span class="math inline">\(\alpha, 1 - \beta, \Delta, n\)</span> by simulation</td>
+</tr>
+<tr class="odd">
+<td>S12 (21 Jan)</td>
+<td>Likelihood, Regularization</td>
+<td>Likelihood ratio, James-Stein, curse of dimensionality</td>
+<td>Getting a taste of the Fisherian perspective</td>
+</tr>
+<tr class="even">
+<td>S13 (21 Jan)</td>
+<td>Bayesian inference</td>
+<td>Priors, Bayes Factors, Credible intervals</td>
+<td>Generative models, Model critique</td>
+</tr>
+<tr class="odd">
+<td>S14 (21 Jan)</td>
+<td>Bootstrap, Multiple Testing</td>
+<td>FDR, Bonferoni</td>
+<td>Computer-age statistical inference</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The final grade shouldn’t be a reason why you’re in this course, but if you need more structure, here’s the evaluation criteria below. Attendence is not mandatory, but highly beneficial for the professional development.</p>
+<ul>
+<li>Lab 50%: for the full stack data app
+<ul>
+<li>Risky/interesting/creative projects will be rewarded</li>
+<li>Focus on quality over quantity, one thing done well rather than trying to apply half of the models discussed in the course.</li>
+<li>Pitch of at most 1 (one) page: what it does and why did you build it</li>
+</ul></li>
+<li>Final Exam 50%: Focused on conceptual understanding:
+<ul>
+<li>There will be no problems to solve by hand.</li>
+<li>Try to be succint and clear</li>
+<li>Think for yourself, zero-tolerance policy for cheating</li>
+</ul></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Understand, not memorize
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The course covered a wide range of topics: some practical and business-oriented, some very conceptual and technical aspects of doing statistics. We connected those two by putting the statistics learned before in a new context and frame.</p>
+<p>You can break down those topics into 4 big buckets and focus on the ones you have least understanding: - Data Science in business context - The processes of doing data science and making decisions - Statistical foundations and machinery - Experiment Design and A/B Testing</p>
+</div>
+</div>
+</section>
+<section id="exam-study-guide" class="level2">
+<h2 class="anchored" data-anchor-id="exam-study-guide">Exam Study Guide</h2>
+<section id="data-science-in-business-context" class="level3">
+<h3 class="anchored" data-anchor-id="data-science-in-business-context">Data Science in Business Context</h3>
+<p>The first 4 topics are covered in detail <a href="https://course.economic-cybernetics.com/01_fundamentals/background.html">here</a> and the <a href="https://course.economic-cybernetics.com">course homepage</a> gives additional context. The latter 3 were discussed extensively in the courses, but I will provide alternative resources for study, in case you missed those lectures.</p>
+<ul>
+<li>Data Science examples of <strong>Business Applications</strong> - be able to explain most common use-cases in multiple industries, like e-commerce, finance and banking, medicine.</li>
+<li><strong>VUCA</strong>, <strong>SWOT</strong> and <strong>Business Strategy</strong> - articulate some properties of the business environment, understand firm’s trajectory and how it could translate into a business strategy. Make sure you understand what a strategy is and how it influences our modeling process.</li>
+<li>What is <strong>AI, Data Science, Cybernetics</strong> - understand that, in a nutshell, it’s about decision-making under uncertainty at scale, in a given domain of expertise.</li>
+<li><strong>Analytics</strong> vs <strong>Stats</strong> vs <strong>ML</strong> - be able to match a particular problem with one (or a combination) of these approaches to data-driven problem solving. Know when NOT to use one.</li>
+<li>What is <strong>Machine Learning</strong>? Understand the idea of inductive reasoning, generalization, and be able to ‘draw’/outline the core mechanism of the machine learning. Give examples when it can go wrong or awry. If you have time, refer to <a href="https://work.caltech.edu/lectures.html">this</a> course, lecture 1 and 2.</li>
+<li><strong>Newsvendor problem</strong> - understand this demand planning model in business terms and translate it into a mathematical model. Refer to <a href="https://youtu.be/QLsSPnwWS_M">this tutorial</a> if you missed the lectures.
+<ul>
+<li>Reason about the role and sources of uncertainty in the decisions and how can we do a stochastic optimization.</li>
+<li>Articulate and formalize the trade-offs we’re facing.</li>
+<li>What happens if the goods are not perishable, what kind of costs we will suffer then?</li>
+<li>What are some different modeling options for the demand. What kind of distributions will be appropriate for slow-moving, fast-moving, intermittent demand.</li>
+</ul></li>
+<li><strong>Price optimization</strong> (fixed capacity) - Give some examples of when it happens in practice. Same questions and concerns as in the newsvendor problem apply. Refer to <a href="https://youtu.be/RScjq1mkDc0">this tutorial</a> by Dr.&nbsp;Adam Fleischhacker if you missed the discussions during the lectures.</li>
+</ul>
+</section>
+<section id="the-processes-of-data-science" class="level3">
+<h3 class="anchored" data-anchor-id="the-processes-of-data-science">The processes of data science</h3>
+<p>All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.</p>
+<ul>
+<li><a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps of ML</a> by Cassie Kozyrkov, CRISP-DM (any resource on the latter will do). Please, read this as it is mandatory.</li>
+<li><a href="https://youtu.be/R4ckbZCgmxQ">12 Steps of Statistics</a> by Cassie Kozyrkov, along with her Google <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">lecture</a> on statistical thinking.</li>
+<li><a href="https://www.causact.com/becoming-a-data-driven-business-analyst.html#becoming-a-data-driven-business-analyst">Business Analyst’s Workflow</a> by Dr.&nbsp;Adam Fleischhacker</li>
+</ul>
+</section>
+<section id="statistical-fundamentals" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-fundamentals">Statistical fundamentals</h3>
+<p>This is the most difficult part of the course, going into the depths of statistical foundations. Even though you encountered most of these topics in the introductory statistics courses, it is very easy to misunderstand and apply these methods mechanically. Therefore, fundamental – doesn’t mean easy, nor basic nor trivial. The exam will not ask you to compute or solve puzzles, but to appropriately define, justify and apply these (choices) in the context of business applications.</p>
+<ul>
+<li>How does linear algebra, probability, statistics, mathematical analysis, operations research, and economics contribute to Data Science and decision-making? Explained <a href="https://course.economic-cybernetics.com/01_fundamentals/background.html#why-did-you-study-all-of-that">here</a></li>
+<li>Probability triple and Random Variables - a semi-formal exposition is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of course website.</li>
+<li>Collectivity, Statistical Population, Sample - where defining the population is the contract for our experiment, and the sampling process is critical. Explained well and in great detail <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a>.</li>
+<li>Parameter, Estimator, Estimation/Statistic - same resources as above</li>
+<li>Stories behnid distributions: <span class="math inline">\(\chi^2_k, t_k, Pois(\lambda), N(\mu, \sigma^2), Exp(\lambda)\)</span> - <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulation</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories / applications with more math</a>. Look at this <a href="https://rpsychologist.com/d3/tdist/">interactive visualization</a> which compares t and N.</li>
+<li>Difference between probability theory and mathematical statistics - <a href="https://johnkerl.org/doc/prbstat/prbstat.html">a beautiful explanation</a></li>
+<li>Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">the theorem and simulations here</a></li>
+<li>Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
+<li>Bias-Variance tradeoff - For an intuitive explanation, watch <a href="https://work.caltech.edu/lectures.html">lecture 8, slides</a>. See how this <a href="https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update">tradeoff needs an update</a> for the modern machine learning.</li>
+<li>Bootstrap - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 10</a> or <a href="https://hastie.su.domains/Papers/ESLII.pdf">page 249</a></li>
+<li>Nonparametric methods - what is the benefit, name a few equivalents. Be able to explain a signed-rank transformation. <a href="https://steverxd.github.io/Stat_tests/">This</a> is the simplest and the most accessible explanation I know of so far.</li>
+<li>Bayesian vs Frequentist inference - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 2, 3, 4</a>. Here is a nice <a href="https://rpsychologist.com/d3/bayes/">interactive visualization</a> for Bayesian updating.</li>
+<li>Likelihood - either from previous books or <a href="https://rpsychologist.com/likelihood/">this interactive visualization</a></li>
+</ul>
+</section>
+<section id="experiment-design-and-ab-testing" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-design-and-ab-testing">Experiment Design and A/B Testing</h3>
+<p>Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design. I’m emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, <span class="math inline">\(\alpha, \beta\)</span>, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.</p>
+<ul>
+<li>Understanding the philosophy of falsification and how it applies to hypothesis testing. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory">Week2 of this course</a> has a great 20 minute explanation.</li>
+<li>Remember the importance of those 12 steps of statistics, especially the <a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">Default Action</a>. For a more classical exposition - check <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">this</a> out.</li>
+<li>Confidence Intervals - first check out this <a href="https://rpsychologist.com/d3/ci/">simulation</a>. Also <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">chapter 12</a>, uses bootstrap to estimate those.</li>
+<li>p-values - <a href="https://rpsychologist.com/pvalue/">simulation</a>, <a href="https://rpsychologist.com/d3/pdist/">simulation of distirbutions under H0/Ha</a></li>
+<li>Type 1, 2 errors, Type 3 errors (solving the wrong problem) - <a href="https://openintro-ims.netlify.app/decerr.html">chapter14</a></li>
+<li>A/B Testing scheme - <a href="https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a">An end-to-end example</a>, but be careful to follow the 12 steps we have and not to forget to define the Default Action.</li>
+<li>Experiment Design and Hypothesis testing pitfalls - <a href="https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing">from HBR</a>, <a href="https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e">8 pitfalls</a>, <a href="https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241">A/A tests</a>, <a href="https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8">user interference</a></li>
+<li>Metric Design and<a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">properties of good metrics</a> - <a href="https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">an example</a></li>
+<li>Relevance and Significance - Read <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">this paper</a> by Werner Stahel (optional)</li>
+<li>Non-Inferiority testing - <a href="https://rpsychologist.com/d3/equivalence/">This visualization</a></li>
+<li>Effect size, Power, Sample Size - <a href="https://mathstat.slu.edu/~speegle/_book/HTCI.html">here</a>, and <a href="https://www.huber.embl.de/msmb/06-chap.html">here</a> and <a href="https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html">here</a>. <a href="https://rpsychologist.com/cohend/">Cohen’s d</a>, <a href="https://rpsychologist.com/d3/nhst/">Power Analysis</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi</div>   
+  </div>
+</footer>
+
+
+
+</body></html>
