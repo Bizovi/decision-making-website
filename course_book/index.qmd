@@ -28,7 +28,7 @@ Maybe, you're an **engineer** getting curious about ML or an **analyst** with a 
 
 This is the **course I wish I had** when starting my journey in data science, which would prepare me for the realities of the industry, often very different from the academic world. At the same time, this is NOT a bootcamp: it is not enough by itself to land you a job, which requires lots of practice and extra study.
 
-To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your carreer and studies.
+To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your career and studies.
 
 [^index-1]: This course stands on the "shoulders of giants", and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/). However, there is too much content out there, and the roadmap provided here should help you navigate it and find the shortest path towards better decisions in your firm.
 
@@ -131,6 +131,13 @@ I'm a generalist -- navigating uncertainty and complexity to improve decision-ma
 [Unfortunately, I have none of the answers of how does Intelligence, Rationality, Wisdom contribute to meaning in life -- at best, some plausible hypotheses]{.aside}
 
 Unsurprisingly, there will be lots of painting metaphors when it comes to simplicity, and cognitive science references when talking about ways in which we're biased and foolish. Chess, of course, inspires analogies of competition, strategy, and tactics to its service. 
+
+You have to know that my concerns are related to a **synoptic integration** of different fields and perspectives over an incremental contribution in a narrow domain. To show how that could be applied in articulating a philosophy for life, here's a deeply personal diagram[^index-8] which emphasises how these different interests fit into a coherent whole. 
+
+[^index-8]: ![Each of these interests and areas have an aspect of "science", craft, worldview, and deep participation / engagement](img/phil_life.png "Philosophy"){width="90%"}
+
+I can't emphasise enough the importance of different levels to "knowing": propositional, procedural, perspectival, and participatory -- as it is not enough to know the facts (or have beliefs), but to know how to do something, to have a perspective of the "world" and a sense of participation in whatever you're engaged in. I mean that we're **agents** in different **arenas** of life, and the sense of meaning comes from an **attunement** to those arenas. We participate in a course of something, which has impact on the environment, which changes us and how we view and relate to the world, self and others.
+
 
 ## Course Roadmap
 
