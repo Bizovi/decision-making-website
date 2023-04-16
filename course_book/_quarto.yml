@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Pragmatic Data Science"
-  body-header: "\\[Mihai Bizovi | Head of Data Science \\@AdoreMe\\]"
+  # body-header: "\\[Mihai Bizovi | Head of Data Science \\@AdoreMe\\]"
   favicon: img/favicon.jpeg
   open-graph:
     locale: es_ES
@@ -17,6 +17,8 @@ website:
         text: "Course Home"
       - sidebar:fundamentals
       - sidebar:archive
+      - href: about_me.qmd
+        text: "About Me"
       # - sidebar:causal
       # - sidebar:ml
       # - sidebar:engineering
