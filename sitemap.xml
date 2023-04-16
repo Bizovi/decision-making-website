@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/index.html</loc>
-    <lastmod>2023-02-01T21:17:09.746Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/03_ml/what_is_learning.html</loc>
+    <lastmod>2023-04-16T00:58:36.158Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/04_engineering/happy_clients.html</loc>
-    <lastmod>2023-02-01T21:17:10.810Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/index.html</loc>
+    <lastmod>2023-04-16T00:58:38.546Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/references.html</loc>
-    <lastmod>2023-02-01T21:17:11.178Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/05_archive/winter_2022.html</loc>
+    <lastmod>2023-04-16T00:58:39.138Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/slides.html</loc>
-    <lastmod>2023-02-01T21:17:11.570Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/01_fundamentals/bolt.html</loc>
+    <lastmod>2023-04-16T00:58:39.494Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/bolt.html</loc>
-    <lastmod>2023-02-01T21:17:12.610Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/01_fundamentals/lab_01.html</loc>
+    <lastmod>2023-04-16T00:58:39.874Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/adoreme.html</loc>
-    <lastmod>2023-02-01T21:17:12.982Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/01_fundamentals/slides.html</loc>
+    <lastmod>2023-04-16T00:58:40.282Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/lab_01.html</loc>
-    <lastmod>2023-02-01T21:17:13.350Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/01_fundamentals/stat_foundations.html</loc>
+    <lastmod>2023-04-16T00:58:58.361Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/background.html</loc>
-    <lastmod>2023-02-01T21:17:14.678Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/01_fundamentals/adoreme.html</loc>
+    <lastmod>2023-04-16T00:58:58.769Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/01_fundamentals/stat_foundations.html</loc>
-    <lastmod>2023-02-01T21:17:30.566Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/01_fundamentals/background.html</loc>
+    <lastmod>2023-04-16T00:59:00.165Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/03_ml/what_is_learning.html</loc>
-    <lastmod>2023-02-01T21:17:30.886Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/02_causality/power.html</loc>
+    <lastmod>2023-04-16T00:59:00.537Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/02_causality/power.html</loc>
-    <lastmod>2023-02-01T21:17:31.258Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/02_causality/background.html</loc>
+    <lastmod>2023-04-16T00:59:00.897Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/02_causality/background.html</loc>
-    <lastmod>2023-02-01T21:17:31.606Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/02_causality/lab.html</loc>
+    <lastmod>2023-04-16T00:59:01.229Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/02_causality/lab.html</loc>
-    <lastmod>2023-02-01T21:17:31.954Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/references.html</loc>
+    <lastmod>2023-04-16T00:59:01.565Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/Bizovi/data-mining-ase/05_archive/winter_2022.html</loc>
-    <lastmod>2023-02-01T21:17:32.482Z</lastmod>
+    <loc>https://github.com/Bizovi/decision-making-website/about_me.html</loc>
+    <lastmod>2023-04-16T00:59:01.981Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Bizovi/decision-making-website/04_engineering/happy_clients.html</loc>
+    <lastmod>2023-04-16T00:59:02.313Z</lastmod>
   </url>
 </urlset>
