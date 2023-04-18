@@ -76,9 +76,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -89,7 +86,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <meta property="og:locale" content="es_ES">
 </head>
 
-<body class="docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -106,8 +103,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
- <span class="menu-text">Course Home</span></a>
+    <a class="nav-link" href="./roadmap.html">
+ <span class="menu-text">Roadmap</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-the-fundamenals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -120,21 +117,14 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </li>  
         <li>
     <a class="dropdown-item" href="./01_fundamentals/stat_foundations.html">
- <span class="dropdown-text">Statistical foundations</span></a>
+ <span class="dropdown-text">Foundations of Probability</span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-past-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Past Courses</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-past-courses">    
-        <li>
-    <a class="dropdown-item" href="./05_archive/winter_2022.html">
- <span class="dropdown-text">Data Science, Winter 2022</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html">
+ <span class="menu-text">Resources</span></a>
   </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./about_me.html">
  <span class="menu-text">About Me</span></a>
@@ -164,20 +154,41 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">Data Science in Business Context</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">Foundations of Probability</a>
+  </div>
+</li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-the-course" id="toc-welcome-to-the-course" class="nav-link active" data-scroll-target="#welcome-to-the-course">Welcome to the course!</a></li>
+  <li><a href="#decision-making-for-the-brave-and-true" id="toc-decision-making-for-the-brave-and-true" class="nav-link active" data-scroll-target="#decision-making-for-the-brave-and-true">Decision-Making for the Brave and True</a></li>
   <li><a href="#why-should-you-care" id="toc-why-should-you-care" class="nav-link" data-scroll-target="#why-should-you-care">Why should you care?</a></li>
   <li><a href="#cybernetics-done-right" id="toc-cybernetics-done-right" class="nav-link" data-scroll-target="#cybernetics-done-right">Cybernetics Done Right</a></li>
   <li><a href="#on-interdisciplinarity" id="toc-on-interdisciplinarity" class="nav-link" data-scroll-target="#on-interdisciplinarity">On Interdisciplinarity</a></li>
-  <li><a href="#course-roadmap" id="toc-course-roadmap" class="nav-link" data-scroll-target="#course-roadmap">Course Roadmap</a></li>
   </ul>
 </nav>
 </nav>
@@ -200,8 +211,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <p>I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop valuable skills, and become more effective at problem-solving.</p>
 </div>
 </div>
-<section id="welcome-to-the-course" class="level2 unnumbered page-columns page-full">
-<h2 class="unnumbered anchored" data-anchor-id="welcome-to-the-course">Welcome to the course!</h2>
+<section id="decision-making-for-the-brave-and-true" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="decision-making-for-the-brave-and-true">Decision-Making for the Brave and True</h2>
 <p>This is an introductory, big picture, free and open-source course which bridges the gap between theory and practice, <strong>cultivating the skills and understanding</strong> necessary to bring value to organisations by <strong>improving decision-making</strong>. It is an attempt to find a golden mean of both worlds:</p>
 <ul>
 <li>Illuminating theoretical ideas (contemplating in the library)</li>
@@ -384,41 +395,6 @@ The danger of thinking in buckets
 <li>It is all overseen by <strong>philosophy</strong>. Some things don’t change.</li>
 <li>Ah! We forgot about <strong>mathematics</strong>. It is everywhere, but also stands proud on its own. An essential prerequisite for everything we do, however, it is hard to do rigorous mathematics in the setup we outlined, as it will take a decade. The good news is – we will be fine just with the starter pack!</li>
 </ul>
-</section>
-<section id="course-roadmap" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="course-roadmap">Course Roadmap</h2>
-<p>We start the course with a first module, in which we explore the context of data science in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering the hell we needed those in the first place.</p>
-<p>Next, we move on to A/B testing and towards a mindset of causal inference. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.</p>
-<p>Did you get comfortable with ML? Good, because it’s time to acknowledge the limitations and get more powerful tools from causal inference, when A/B tests and randomised experiments are unfeasible or unethical, but we can leverage naturally-occuring experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.</p>
-<p>The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
-<div class="column-page-inset-right">
-<div class="cell" data-fig-width="9">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
-  DSc(Decision-Making Under Uncertainty at Scale) -- understanding  --&gt; Stat(Stat Fundamentals) 
-  DSc -- business context  --&gt; VUCA[V.U.C.A.] --&gt; App(Applications) --&gt; R[Role in firms] --&gt; PML(ML Process) --&gt; PS(Stat process)
-  Stat --&gt; Prob(Probability) --&gt; Es(Estimators) --&gt; Boot(Bootstrap) --&gt; AB(A/B Testing) -- optional --&gt; ExpD[/Causality/]
-
-  DSc -- skills/labs  --&gt; Eng(Engineering) --&gt; Data(Data Wrangling) --&gt; Repr[Reproducibility] --&gt; Pipe(Pipelines) -- advanced --&gt; FS[/Full Stack Apps/]
-  ML --&gt; Class(Bayes Classifiers) --&gt; GLM(GLMs) --&gt; T(Tree-based Ensembles) -- advanced --&gt; Caus(Hierarchical Models) --&gt; Misc[/Time Series and Misc/]
-
-  DSc -- workhorse models  --&gt; ML(Statistical Learning) --&gt; Unsup(Dimensionality Reduction) --&gt; Clust(Clustering) -- optional --&gt; RS[/RecSys/] --&gt; Text[/NLP Embeddings/]
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Don’t let the sheer diversity and breadth of topics intimidate you, as we’ll go step by step through each aspect, explaining the why and how. In one way or another, there is little you haven’t seen here, however the way we tie it all together IS challenging.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>If you ask what is that engineering branch, you’re totally right! During the labs we’ll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.</p>
-<p>That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don’t worry about getting everything right, but focus on a problem and single area from the course you’re passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.</p>
 
 
 </section>

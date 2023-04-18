@@ -166,8 +166,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html">
- <span class="menu-text">Course Home</span></a>
+    <a class="nav-link" href="../roadmap.html">
+ <span class="menu-text">Roadmap</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-the-fundamenals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -180,21 +180,14 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </li>  
         <li>
     <a class="dropdown-item" href="../01_fundamentals/stat_foundations.html">
- <span class="dropdown-text">Statistical foundations</span></a>
+ <span class="dropdown-text">Foundations of Probability</span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-past-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Past Courses</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-past-courses">    
-        <li>
-    <a class="dropdown-item" href="../05_archive/winter_2022.html">
- <span class="dropdown-text">Data Science, Winter 2022</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../references.html">
+ <span class="menu-text">Resources</span></a>
   </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../about_me.html">
  <span class="menu-text">About Me</span></a>
@@ -246,7 +239,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active">Statistical foundations</a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active">Foundations of Probability</a>
   </div>
 </li>
     </ul>
@@ -255,41 +248,12 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#statistical-foundations" id="toc-statistical-foundations" class="nav-link active" data-scroll-target="#statistical-foundations">Statistical Foundations</a>
+  <li><a href="#foundations-of-probability" id="toc-foundations-of-probability" class="nav-link active" data-scroll-target="#foundations-of-probability">Foundations of Probability</a>
   <ul class="collapse">
   <li><a href="#the-garden-of-forking-paths" id="toc-the-garden-of-forking-paths" class="nav-link" data-scroll-target="#the-garden-of-forking-paths">The garden of forking paths</a></li>
   <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link" data-scroll-target="#the-probability-triple">The probability triple</a>
   <ul class="collapse">
   <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables">Random Variables</a></li>
-  <li><a href="#joint-conditional-and-marginal-distributions" id="toc-joint-conditional-and-marginal-distributions" class="nav-link" data-scroll-target="#joint-conditional-and-marginal-distributions">Joint, Conditional, and Marginal Distributions</a></li>
-  <li><a href="#bayes-rule" id="toc-bayes-rule" class="nav-link" data-scroll-target="#bayes-rule">Bayes Rule</a></li>
-  </ul></li>
-  <li><a href="#mathematical-statistics-in-a-nutshell" id="toc-mathematical-statistics-in-a-nutshell" class="nav-link" data-scroll-target="#mathematical-statistics-in-a-nutshell">Mathematical Statistics in a nutshell</a>
-  <ul class="collapse">
-  <li><a href="#models-are-golemns-of-prague" id="toc-models-are-golemns-of-prague" class="nav-link" data-scroll-target="#models-are-golemns-of-prague">Models are Golemns of Prague</a></li>
-  <li><a href="#model-specification-fisher-vs-bayes" id="toc-model-specification-fisher-vs-bayes" class="nav-link" data-scroll-target="#model-specification-fisher-vs-bayes">Model Specification: Fisher vs Bayes</a></li>
-  <li><a href="#independence-and-exchangeability" id="toc-independence-and-exchangeability" class="nav-link" data-scroll-target="#independence-and-exchangeability">Independence and Exchangeability</a></li>
-  <li><a href="#storytelling-with-dags" id="toc-storytelling-with-dags" class="nav-link" data-scroll-target="#storytelling-with-dags">Storytelling with DAGs</a></li>
-  </ul></li>
-  <li><a href="#what-does-a-statistician-want" id="toc-what-does-a-statistician-want" class="nav-link" data-scroll-target="#what-does-a-statistician-want">What does a statistician want?</a>
-  <ul class="collapse">
-  <li><a href="#estimator-properties" id="toc-estimator-properties" class="nav-link" data-scroll-target="#estimator-properties">Estimator Properties</a></li>
-  <li><a href="#bias-variance-decomposition" id="toc-bias-variance-decomposition" class="nav-link" data-scroll-target="#bias-variance-decomposition">Bias-Variance Decomposition</a></li>
-  <li><a href="#rao-cramer-inequality" id="toc-rao-cramer-inequality" class="nav-link" data-scroll-target="#rao-cramer-inequality">Rao-Cramer Inequality</a></li>
-  </ul></li>
-  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies">Case Studies</a>
-  <ul class="collapse">
-  <li><a href="#de-moivre-on-us-schooling" id="toc-de-moivre-on-us-schooling" class="nav-link" data-scroll-target="#de-moivre-on-us-schooling">De Moivre on US Schooling</a></li>
-  <li><a href="#chess-example" id="toc-chess-example" class="nav-link" data-scroll-target="#chess-example">Chess example</a></li>
-  <li><a href="#amazon-reviews-and-ratings" id="toc-amazon-reviews-and-ratings" class="nav-link" data-scroll-target="#amazon-reviews-and-ratings">Amazon reviews and ratings</a></li>
-  </ul></li>
-  <li><a href="#data-mining-and-crisp-dm-variants" id="toc-data-mining-and-crisp-dm-variants" class="nav-link" data-scroll-target="#data-mining-and-crisp-dm-variants">Data Mining and CRISP-DM variants</a>
-  <ul class="collapse">
-  <li><a href="#ml-is-a-geocentric-model-of-the-universe" id="toc-ml-is-a-geocentric-model-of-the-universe" class="nav-link" data-scroll-target="#ml-is-a-geocentric-model-of-the-universe">ML is a geocentric model of the universe</a></li>
-  </ul></li>
-  <li><a href="#statistical-process-and-science" id="toc-statistical-process-and-science" class="nav-link" data-scroll-target="#statistical-process-and-science">Statistical Process and Science</a>
-  <ul class="collapse">
-  <li><a href="#dead-salmon-a-warning-tale" id="toc-dead-salmon-a-warning-tale" class="nav-link" data-scroll-target="#dead-salmon-a-warning-tale">Dead salmon: a warning tale</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -303,8 +267,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<section id="statistical-foundations" class="level1 page-columns page-full">
-<h1>Statistical Foundations</h1>
+<section id="foundations-of-probability" class="level1 page-columns page-full">
+<h1>Foundations of Probability</h1>
 <p>In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving <strong>decision-making under uncertainty</strong>. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.</p>
 <blockquote class="blockquote">
 <p>In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent <em>stochastic nature</em>.</p>
@@ -412,7 +376,7 @@ The Birthday Problem
 </div>
 <!-- <details> <summary>Show the answer</summary> -->
 <!-- </details> -->
-<p>So, the probability that a room of 25 people has two people with the same birth date is <span class="math inline">\(\approx\)</span> 0.563. For 50 people, it’s around 0.9698</p>
+<p>So, the probability that a room of 25 people has two people with the same birth date is <span class="math inline">\(\approx\)</span> 0.5659. For 50 people, it’s around 0.9689</p>
 <div class="cell" data-hash="stat_foundations_cache/html/unnamed-chunk-6_6fb70620685be6c0999b14947d82dd0f">
 <details>
 <summary>Show the visualization code</summary>
@@ -736,330 +700,6 @@ p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(
 </ul>
 </div></div><p>A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically – which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.</p>
 <p>Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.</p>
-</section>
-<section id="joint-conditional-and-marginal-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="joint-conditional-and-marginal-distributions">Joint, Conditional, and Marginal Distributions</h3>
-<!-- 
-[The reason we went on a theoretical detour to construct the probability triple, was simply to raise awareness of what is the theory that stands behind probability as we will practice it and what are some situations when handwaving could bite us]{.aside}
-
-The point of this course is not to be a comprehensive investigation into probability theory topics like moment-generating functions, expectation, variance, etc. If I stirred your interest and renewed a passion for these topics, feel free to refer to the additional resources in the beginning of the lecture.
-
-Starting point: unconditional probability degree of belief in a proposition in the absence of any other evidence -->
-<!-- The most complete method of reasoning about sets of random variables is by having a joint probability distribution. A joint probability distribution, , assigns a probability value to all possible assignments or realizations of sets of random variables.  -->
-<!-- 
-In the diagram, there are four random variables: 1) Interest Rate , 2) Stock Market , 3) Oil Industry , and 4) Stock Price  (assume for an oil company). The arrows between the random variables tell a story of precedence and causal direction: interest rate influences the stock market which then, in combination with the state of the oil industry will determine the stock price (we will learn more about these arrows in the Graphical Models chapter). For simplicity and to gain intuition about joint distributions, assume that each of these four random variables is binary-valued, meaning they can each take two possible assignments:
-
-
-Thus, our probability space has  values corresponding to the possible assignments to these four variables. So, a joint distribution must be able to assign probability to these 16 combinations. Here is one possible joint distribution:
-
-Collectively, the above 16 probabilities represent the joint distribution  - meaning, you plug in values for all four random variables and it gives you a probability. For example,  yields a probability assignment of 12.15%.
-
-
-Notation note:  . Each defines a function where you supply realizations  and  and the probability function will return . For example, let  outcome of a dice roll and  outcome of a coin flip. Hence, you can supply potential outcomes, like  which means  and the function output would be 
- 
- (if you were to do the math). -->
-<!-- Three additional critical concepts are: joint probability, which is basically the storytelling behind the data generating process,  conditioning (basically reducing uncertainty and adding information) and marginalization (esp of nuisance parameters -- explain what are those).  -->
-<!-- Condit, ionarea ne aduce informat¸ie ˆın plus (scade incertitudinea asupra variabilei
-aleatoare de interes), ¸si dup˘a cum afirm˘a J.Blitzstein, este esent,a statisticii. Pe de
-alt˘a parte, condit¸ionarea ne permite s˘a factoriz˘am distribut¸ii multidimensionale,
-dup˘a logica influent¸elor. Utilizarea acestei tehnici este central˘a ˆın econometrie
-¸si analiz˘a bayesian˘a.
-Condit, ionare P(x, y) = P(x)P(y|x)
-P(y|x) = P(x, y)
-P(x)
-(2.3)
-Marginalizarea, ˆın cazul discret prin ˆınsumare, ˆın cel continuu prin integrare,
-ne permite s˘a separ˘am o distribut¸ie a unei submult¸imii de variabile aleatoare
-dintr-o distribut¸ie comun˘a.
-P(x) = X
-y
-P(x, y) -->
-<!-- conditional probability degree of belief in a proposition given some evidence that has already been revealed -->
-</section>
-<section id="bayes-rule" class="level3">
-<h3 class="anchored" data-anchor-id="bayes-rule">Bayes Rule</h3>
-<!-- Given clouds in the morning,
-what's the probability of rain in the afternoon?
-• 80% of rainy afternoons start with cloudy
- mornings.
-• 40% of days have cloudy mornings.
-• 10% of days have rainy afternoons. -->
-<!-- ### Interpretations of probability -->
-</section>
-</section>
-<section id="mathematical-statistics-in-a-nutshell" class="level2">
-<h2 class="anchored" data-anchor-id="mathematical-statistics-in-a-nutshell">Mathematical Statistics in a nutshell</h2>
-<!-- 
-Colectivitatea reprezint˘a o mult, ime de entit˘at, i, obiecte sau forme reale, care au
-anumite caracteristici de interes corelate. Aceste caracteristici variaz˘a ˆıntre indivizi,
-obiecte, ˆın timp s, i spat, iu. De¸si acest fapt motiveaz˘a o abordare multidimensional˘a,
-apar problemele dimensionalit˘at¸ii ¸si redundant¸ei. De asemenea, modelele construite
-trebuie s˘a respecte principiul parsimonit˘at¸ii, deseori numit briciul lui Occam.
-Pentru ca modelarea s˘a fie posibil˘a, avem nevoie de o abstractizare a valorilor
-pe care le ia o caracteristic˘a la nivelul colectivit˘at, ii. ˆIn acest context este relevant
-conceptul de variabil˘a aleatoare, care aduce o caracteristic˘a ˆın domeniul cantitativ s, i
-generalizeaz˘a valorile ce pot fi luate de colectivitate. Aceast˘a mult¸ime a observat¸iilor
-¸si este populat¸ia statistic˘a, care va fi suportul pentru distribut, ia de probabilitate.
-Informat, ia pe care o avem niciodat˘a nu va fi complet˘a, din cauza zgomotului,
-naturii stochastice a fenomenelor sau a disponibilit˘at¸ii datelor ˆın timp ¸si la nivelele
-de granularitate necesare. Acest fapt ˆınseamn˘a c˘a trebuie estimate cantit˘at, ile
-relevante s, i testarea semnificat, iei rezultatelor este extrem de important˘a. Validarea
-modelelor ¸si testarea, dup˘a cum vom vedea, poate lua forme diferite ˆın dependent¸˘a
-de tipul model˘arii. -->
-<!-- 
-Exist˘a trei moduri principale de a privi es,antionul, ˆıns˘a pentru modelare, cea
-mai important˘a interpretare este a es,antionului ca model de select, ie: o list˘a a
-vectorilor variabilelor aleatoare pentru fiecare obiect din es,antion {X1, X2, ..., XT }.
-Acest mecanism teoretic generalizeaz˘a observat, iile posibile din es,antion. Xi
-sunt replici identice dup˘a definit, ie (vin din aceias, i distribut, ie), iar dac˘a sunt
-s, i independente observat, iile, metodele de estimare ca Verosimilitatea Maxim˘a
-pot fi folosite. -->
-<!-- 
-Un parametru ˆın abordarea frecventist˘a e o constant˘a important˘a pentru cunoas,tere,
-dar care niciodat˘a nu e cunoscut˘a cu exacitate. Abordarea bayesian˘a consider˘a
-parametrii ca dristribut, ii de probabilitate, ceea ce duce la un alt tip de inferent¸˘a.
-Estimatorul tT (X1, X2, ..., XT ) ≈ ˆθ este funct, ie pe modelul de select, ie {X1, X2, ..., XT },
-care are ca scop aproximarea parametrului. Ace¸sti estimatori, motora¸se de estimare,
-sunt selectat¸i dup˘a propriet˘at¸ile sale de nedeplasare ¸si eficient¸˘a. Deoarece este o
-funct¸ie pe modelul de select¸ie, t este o variabil˘a aleatoare, iar dac˘a ¸stim care este
-distribut¸ia ei, se pot crea teste de semnificat¸ie statistic˘a.
-O remarc˘a important˘a este c˘a valorile estimate deseori corespund cu valoarea
-maxim˘a posterioar˘a (MAP) ˆın analiza bayesian˘a, iar odat˘a ce oper˘am cu distribut, ia
-posterioar˘a, putem extrage mult mai mult˘a informat, ie decˆat o estimat, ie punctual˘a s, i
-intervalele de ˆıncredere, ci ˆınsus, i probabilitatea de a se afla ˆıntr-un anumit interval.
-Estimat, ia const˘a ˆın evaluarea estimatorului cu o manifestare a modelului de
-select, ie (datelor disponibile), obt¸inˆand valoarea empiric˘a a parametrului. ˆθ =
-tT (·)|x1,...,xT -->
-<!-- Modelarea unui fenomen cu ajutorul datelor multidimensionale, care au o distribut¸ie
-comun˘a p(Y, X) ¸si g˘asirea distribut¸iei de probabilitate este dificil˘a f˘ar˘a condit¸ionare.
-ˆIn contrast, condit¸ionarea pe variabilele independente ne aduce informat¸ii ˆın plus -->
-<!-- 
-despre variabila dependent˘a p(Y |X = x). ˆIn acest mod, ˆın econometrie se deriveaz˘a
-estimatorul, ¸si legea de probabilitate urmat˘a.
-Exemplificˆand pe un caz bidimensional, dac˘a X ia valori discrete, p(Y |X =
-x1), ..., p(Y |X = xk) vor fi distribut¸ii unidimensionale. Aceast˘a interpretare este
-important˘a, deoarece ne sugereaz˘a descompunerea efectelor ˆıntre factorii nesemnificativi ¸si cei semnificativi, funct¸iile de regresie ¸si skedastice. Acelea¸si concepte vor fi
-reg˘asite sub o alt˘a form˘a ˆın cadrul ˆınv˘at¸˘arii statistice. Media condit¸ionat¸˘a E[Y |xi
-]
-ˆın cadrul fiec˘arei instant¸e a variabilei aleatoare X = xi va fi o constant˘a, nivelul
-mediu Y cˆand X ia anumite valori. Media condit¸ionat˘a pe X E[Y |X] = f(x) este
-numit˘a regresie ¸si variant¸a condit¸ionat˘a V ar(Y |X) = g(x) - funct¸ia skedastic˘a.
-Rat¸ionamentul de mai sus, ˆımpreun˘a cu cele dou˘a teoreme introduse mai jos,
-permit completarea cadrului teoretic pentru a ˆınt¸elege mai bine argumentele despre
-signal ¸si zgomot ˆın ˆınv˘at¸area automat˘a. Teorema iterativit˘at¸ii mediilor ne spune
-c˘a a¸steptarea mediilor condit¸ionate este ˆıns˘a¸si a¸steptarea necondit¸ionat¸˘a.
-E[E[Y |X]] = EY (2.5)
-O teorem˘a ¸si mai important˘a, cea a descompunerii variant¸ei are o interpretare
-intuitiv˘a: variant¸a poate fi descompus˘a ˆın m˘asura factorilor semnificativi, adic˘a
-signal, care ne arat˘a cum variaz˘a a¸steptarea de la xi
-la xj ¸si zgomot sau factori
-nesemnificativi, adic˘a media variat¸iilor condit¸ionate.
-V ar(Y ) = V ar(E[Y |X]) + E[V ar(Y |X)] (2.6)
-Desigur, acest caz particular poate fi generalizat la dimensiuni multiple, dar ¸si
-exemplul simplu are o narativ˘a ce face evidente conceptele de R2
-teoretic, funct¸ie
-de regresie, verosimilitate ¸si ne permite o interpretare din punctul de vedere a
-teoriei informat¸iei. -->
-<!-- 
-importance of the data generating process, see what Ernesto said, then the causal process -- all is parameters, known or unknown 
-
-Uses everything probability has to give, but is concerned with inference, estimation, hypothesis testing, prove theorems and probabilistic properties of estimators.
-
-- Collectivity (can be anything, trees in central park, pixels, people, etc, etc) -- i.e stuff in the real world
-- Statistical Population (binding contract)
-- Sample (a data collection process is involved here)
-- Parameter (average tree height, some aspect or characteristic of interest, unknown number/constant (bayes, a distribution), which is at population level) -- of the DGP, to be estimated from our sample.
-- Estimator: t_theta(X) -> theta
-    - Confidence intervals: depend on the distribution of the estimator, since X is rv, t(X) is a random variable too -- and it is the job of statisticians to tell us what is that P(t(X)) and their properties: if biased, consistent, efficient
-- Estimation/a Statistic: theta_hat (a way to summarise and synthetise data)
-
-Draw a diagram between sample and population. 
-
-
-![*Source: [Data Science, A first Introduction](https://datasciencebook.ca/)* Population vs Sample](img/population_vs_sample.png "Population vs Sample"){width="90%"}
-
-
-The point of statistics: change our opinion about the action we have (or phenomenon we want to understand) to take in the face of evidence.
-
-One big problem is if we got the model right for our use-case and phenomena. A wrong model choice leads to wrong conclusions. It should be informed as much by stats as by the theory and domain. Think of this in the spirit of the scientific method. -->
-<section id="models-are-golemns-of-prague" class="level3">
-<h3 class="anchored" data-anchor-id="models-are-golemns-of-prague">Models are Golemns of Prague</h3>
-<!-- Data + Domain Assumptions + Statistical Assumptions -->
-</section>
-<section id="model-specification-fisher-vs-bayes" class="level3">
-<h3 class="anchored" data-anchor-id="model-specification-fisher-vs-bayes">Model Specification: Fisher vs Bayes</h3>
-</section>
-<section id="independence-and-exchangeability" class="level3">
-<h3 class="anchored" data-anchor-id="independence-and-exchangeability">Independence and Exchangeability</h3>
-<!-- 
-I find it useful to review **exchangeability** and De Finetti's theorem, before presenting the components of a Bayesian model, as it gives a sense of what is the underlying assumption of Hierarchical Models. 
-
-A sequence of random variables is infinitely exchangeable if the joint probability for every set of $n$ variables is invariant under permutation of indices. De Finetti's theorem, states that a sequence of random variables $(y_1, y_2, ...)$, with $P(d\theta)$ -- a measure, is exchangeable if and only if:
-
-\begin{equation}
-    p(y_1, ..., y_n) = \int \prod_{i=1}^{n} p(y_i | \theta) P(d\theta)
-\end{equation}
-
-
-It follows that there exists a parameter $\theta$, a distribution on $\theta$ and a likelihood $p(y_i | \theta)$ such that the random variable sequence is independent. Covariates can be incorporated into the formulation and theorem applied again for a vector of parameters $\theta$, which resembles the hierarchical formulation introduced in section 3. Thus, there exists a:
-
-- hyperparameter $\phi$
-- a distribution over the hyperparameter $p(\phi | \mathbf{x})$
-- likelihood $p(\theta | \phi, \mathbf{x})$ such that $\theta_i$ are independent when drawn from this distribution
-
-
-These facts highlight the elegance of the hierarchical models, where hyperprior distribution is learned from data and can be marginalized in the case it's a nuisance parameter for a particular analysis. However, de Finetti's theorem doesn't give any prescription on how these priors should be chosen, only that they exist, so best practices in literature should be consulted and appropriateness given the problem at hand assessed.
-
-
-
-\begin{equation}
-    p(\theta | y) \propto \int d\phi ~ p(y | \theta) p(\theta | \phi) p(\phi) 
-\end{equation}
-
-
-Bayesian models are usually built and formulated in a modular way, which forces the modeler to make stochastic and structural assumptions explicit. Because of the fact that formulation captures conditional independencies, it is interesting to view the model as a graph, where nodes are random variables, observed quantities and (directed) edges influences and information flows. The process of Bayesian Inference satisfies at once a few requirements: the ability to update prior beliefs once new data is available, combining different sources of information, modeling the data generating process and quantifying uncertainty in estimates. Let $D = \{ (x_i, y_i) \}_{i=1}^n$ be the data, then the iterative model update works according to the Bayes Rule:
-
-\begin{equation}
- \overbrace{p(\theta | X, y)}^\text{posterior} = \frac{\overbrace{p(\theta | X)}^\text{prior} \cdot \overbrace{p(y | \theta, X)}^\text{likelihood} }{ p(y | X) }
-\end{equation}
-
-
-The posterior can be used as a prior when new data is available and iteratively updating it. This consistency is useful when constructing priors using literature, previous experiments, ``online`` learning and doing meta-analyses. In a business setting, it is an important property in order to capture changes in the phenomena modeled, but avoiding the (possible) instability related to re-training complex machine learning models.
-
-\begin{equation}
- p(\theta' | X', y') = \frac{p(\theta | X, y) \cdot p(y' | \theta')}{p(y'|\theta, X')}
-\end{equation}
-
-Since the model is generative, i.e. after building a full probabilistic model of the data, parameters and latent variables, it is useful not only to infer and summarize parameter distributions, but to generate data as a tool for checking assumptions made. In this regard, prior and posterior predictive distributions are most often used in literature. Sampling using the marginal distribution of the observed value, before fitting any data, gives a sense on what kind of patterns, in which range, with what spread can the priors and likelihood specify.
-
-\begin{equation}
-    p(y) = \int d\theta ~ p(\theta) p(y | \theta) 
-\end{equation}
-
-
-To make a prediction/inference regarding an unobserved or new value $\tilde{y}$ given the posterior distribution of parameters $p(\theta | y)$, they are marginalized. I will extensively use this technique throughout the next chapters and summarize this distributions with ``credible intervals``.
-
-\begin{equation}
-    p(\tilde{y} | y) = \int d\theta ~ \underbrace{p(\tilde{y} | \theta, y)}_\text{likelihood} \cdot  \underbrace{p(\theta | y)}_\text{posterior}
-\end{equation}
-
-
-Latent variables and parameters are treated the same in Bayesian Modeling and dealing with missing data is more natural than in Statistical Learning, because it is viewed as an unobserved value and will have a posterior predictive distribution, as a part of the sampling process. Moreover, if the data is Missing Not at Random, this mechanism can be modeled explicity, but needs more informative priors about the nature of missingness. \cite{best12} has an excellent overview of approaches regarding missing targets or covariates and summarize it with the following graphical models, where $m_i$ is an indicator variable in the case $y_i$ is missing.
-
-
-The representation in figure above is a Probabilistic Graphical Model, which is a directed acyclic graph, where nodes are observed, unobserved variables and parameter, edges are logical or stochastic dependencies. An important way of thinking about causality was pioneered by Judea Pearl, which concerns itself with inference of the graph from data and factorization of joint distribution. Two ideas are relevant for this dissertation: Reichenbach's common cause principle, \cite{reichen62} and the idea of counterfactual formalized by Rubin.
-
-- If $X$ and $Y$ are statistically dependent, there exists $Z$ causally influencing both.
-- Given a ``chain`` $X \rightarrow Z \rightarrow Y$, X and Y are conditionally independent on Z: $(X \perp Y) ~|~ Z$
-
-In Bayesian statistics conventional definitions of identifiability do not apply, so I'm more concerned with ``information contents`` given a model and particular dataset. If a posterior distribution of some parameter is flat over a large range, it is an indication that little was learned from data relative to prior information. Viewing indentifiability as the posterior being proper is not very useful in practice, as there isn't a need to even define a finite variance or mean.
-Model critique, improvement and visualization \cite{gabry19} play a key role in the Bayesian workflow, since a large amount of time is spent summarizing models and finding appropriate prior and structural specifications. As A. Gelman mentioned, ``Bayes doesn't give up``, when conventional methods would refuse to estimate the parameters, which implies it is the modeler's responsibility to challenge the model and check assumptions, find ways of better parametrization. In the last decades, the focus has shifted from the mathematical analysis to computational methods as Hamiltonian Monte Carlo, INLA, Variational Inference, which enable a great deal of experimentation with model specifications. Next chapters follow this spirit, favoring intuition and understanding over analytical tractability and focus on mathematical aspects which are really important for building models with ``nice`` properties. -->
-</section>
-<section id="storytelling-with-dags" class="level3">
-<h3 class="anchored" data-anchor-id="storytelling-with-dags">Storytelling with DAGs</h3>
-</section>
-</section>
-<section id="what-does-a-statistician-want" class="level2">
-<h2 class="anchored" data-anchor-id="what-does-a-statistician-want">What does a statistician want?</h2>
-<!-- From their estimators -->
-<section id="estimator-properties" class="level3">
-<h3 class="anchored" data-anchor-id="estimator-properties">Estimator Properties</h3>
-</section>
-<section id="bias-variance-decomposition" class="level3">
-<h3 class="anchored" data-anchor-id="bias-variance-decomposition">Bias-Variance Decomposition</h3>
-</section>
-<section id="rao-cramer-inequality" class="level3">
-<h3 class="anchored" data-anchor-id="rao-cramer-inequality">Rao-Cramer Inequality</h3>
-</section>
-</section>
-<section id="case-studies" class="level2">
-<h2 class="anchored" data-anchor-id="case-studies">Case Studies</h2>
-<section id="de-moivre-on-us-schooling" class="level3">
-<h3 class="anchored" data-anchor-id="de-moivre-on-us-schooling">De Moivre on US Schooling</h3>
-<!-- 
-Let's remember what we discusssed last time. So, the US gov, tried to find out what makes some schools better than others. They saw that in top schools, small ones were dominating (in terms of nr students, perf. being SAT ~ Norm()). 
-
-They decided to split up big schools into smaller ones. Can you say if it was a good, bad idea and why did they think that?
-
-Students hypothesis:
-- more attention to students in smaller classrooms
-- private schools, where families are more wealthy
-- geographical location, i.e. small towns and villages
-- motivation of the underdog, from small towns
-- friendships, community and peer competition (easier in smaller schools)
-- self-selection: what kind of students go into small schools -- we assume average IQ is the same, including the distribution. Assume random allocation. 
-- Skewed (even if not, longer tails): meaning, asymmetric distributions. 
-- Finally: variance and standard deviation
-
-About the decision sanity: reality vs data. The conservative decision is to do nothing, as restructuring costs a lot, in money and social changes & consequences, it is risky -- that is, the default action, without seeing any data or evidence, we would do nothing. 
-
-S: A good remark about having a diversity, specializations (professional schools) -- can't have a one-size-fits-it-all policy. But we ignore it, oversimplifying the problem.
-
-All of that is true, but just for 10 minutes, we introduce a (false) dichotomy between small and large schools. The alternative is to split big school -- remember, that outside this box, or bad framing of the problem, there are many many potential interventions (professor education, smaller classrooms, fairer allocation of students, raising up the disadvantaged hood schools). 
-
-The punchline: we have all these factors potentially contributing to the performance. Because of DeMoivre and LLN (mean/sqrt(sd)) -- in a simulation, we notice the following thing: (insert graphs).
-
-> Small schools will dominate both the top and bottom, due to larger variance. This is what it means. 
-
-So, we go back to this idea that statistical models, are golemns, they do exactly what they are told to, and this is dangerous. We have to understand deeply in what contexts and in which ways these little robots fail and give absurd and invalid results without us knowing.
-
-We will go into more detail next week in A/B testing and hypothesis testing, but here we go: once we have the default action and the alternative action, the null hypothesis is (sidenote, we don't care about rote calculation -- R packages does it for us, but we care about experiment design and decisions, try to figure out the causal influences):  in which worlds will I take the default actions (worlds, meaning the values of the unknown parameter of interest, describing the behavior of the populations -- in this case quantifying the impact of school size on SAT scores). The alternative hypothesis, is exactly the opposite, all the other worlds (parameter values) when I will take the alternative action.
-
-So, in this case we will collect data, used to estimate the parameter and its confidence intervels (inference, with the idea of generalizing from the sample to the population). Now, given those confidence intervals, we ask how surprising it is to see the data/estimation, if the null hypothesis was true.
-
-Most stats courses jump over these important aspects. Their starting point is: H0, HA are given, model is given, you just compute. In practice, even for experienced statistician, for a new problem, it is very hard to define those 4 components -- as it depends on the domain knowledge and business objectives. Moreover, even the interpretation of p-values is extremely tricky to communicate. We will develop tools to deal with those challenges.  -->
-</section>
-<section id="chess-example" class="level3">
-<h3 class="anchored" data-anchor-id="chess-example">Chess example</h3>
-<!-- I played chess for 14 years, professionally, question about difference in genders and what kind of tournaments and policies should we have. Why are there no women rn in top 100 (Historically, it was judit polgar in the top 20) ?
-
-> Use this chance to extract data and analyse. Same problem with marathon runners (from BS big data). 
-
-Causes?
-- Bias: inferring natural ability -- nonsense from IQ research
-- Misoginism
-- Education and lack of encouragement
-- Lack of opportunities, community, support
-- Historical trajectory -- lack of competition
-
-A lot is explained by how many boys and girls start from a given cohort/age. Similar problem, but slightly different -- for any problem of rank top(n).
-
-We will discuss next time a whole range of other pitfalls, including spurious correlation (nicolas cage and drowning), common cause (babies and storks), ommited variables, mediation, selection bias, reverse causality, even including predictors which shouldn't be there. We need a statistical reasoning for all of these potential pitfalls. 
-
-> explore python cli app + scraping + arrow + duckdb, see the trajectories of players and so on (chess.com vs fide). For the trajectories, mention the idea of longitudinal data, survival models, growth models, mixed models -- because of the particularities of DGP and causal process 
-
-> see the difference between ELO vs xbox true skill, how fast it converges to the true ability -- that is a model we can investigate.  -->
-</section>
-<section id="amazon-reviews-and-ratings" class="level3">
-<h3 class="anchored" data-anchor-id="amazon-reviews-and-ratings">Amazon reviews and ratings</h3>
-<!-- How do you choose 4.7 (300) vs 4.5 (2000) -- according to what bounds, agresti-coull, correction. What chance do you give those with a small sample size? What is the optimal strategy here?
-
-- we can guide ourselfs with the quality and relevance of reviews
-- is it representative? (also, outside the box)
-- text summary
-
-Q: What is the variance and distribution, it depends, also on our risk appetites (w.r.t.) volume or if is one time (e.g. buy shoes vs coffee shops -- repeated interactions).
-
-Introduce the confusion matrix, which will be discussed at length in ML and hypothesis testing (types of error) -- the point is that sometimes the payoff for correct decison or a mistake is asymmetric. And that matters (fraud vs reco quality) -- so, that is context-dependent. 
-
-> good applications for text mining, statistical tests -->
-</section>
-</section>
-<section id="data-mining-and-crisp-dm-variants" class="level2">
-<h2 class="anchored" data-anchor-id="data-mining-and-crisp-dm-variants">Data Mining and CRISP-DM variants</h2>
-<section id="ml-is-a-geocentric-model-of-the-universe" class="level3">
-<h3 class="anchored" data-anchor-id="ml-is-a-geocentric-model-of-the-universe">ML is a geocentric model of the universe</h3>
-<!-- 
-The good news is that sometimes, you just need a reliable prediction, as you're not intervening in the system causing a certain phenomena -- and by retraining ML models you can adapt to minor changes introduced by our interventions. Those ML models, they clearly didn't figure out a scientific explanation of the causal process, e.g. for demand forecasting in uber, and that just the prediction to be used in a larger ecosystem and environment for decision-making. 
-
-Again, that is appropriate in low-stakes, large scale decisons. You might not care so much about the latent, causal process; but of course, you care that it generalizes to the population of interest (that is, a binding contract, a boundary in which your predictions are valid -- if you go outside that range, can easily get absurd predictions -- this is why this kind of system needs checks-and-balances, boxes to constrain the artificial stupidity). It is extraordinarily unlikely that these models translate to novel situations and environments without explicit transfer learning and careful adaptation.  -->
-</section>
-</section>
-<section id="statistical-process-and-science" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-process-and-science">Statistical Process and Science</h2>
-<section id="dead-salmon-a-warning-tale" class="level3">
-<h3 class="anchored" data-anchor-id="dead-salmon-a-warning-tale">Dead salmon: a warning tale</h3>
-<!-- Forward reference to power and multiple testing -->
 <!-- Statistical Foundations: Reference, Revies --->
 
 
