@@ -3,7 +3,6 @@ project:
 
 website:
   title: "Pragmatic Data Science"
-  # body-header: "\\[Mihai Bizovi | Head of Data Science \\@AdoreMe\\]"
   favicon: img/favicon.jpeg
   open-graph:
     locale: es_ES
@@ -13,10 +12,11 @@ website:
   navbar:
     search: true
     left:
-      - href: index.qmd
-        text: "Course Home"
+      - href: roadmap.qmd
+        text: "Roadmap"
       - sidebar:fundamentals
-      - sidebar:archive
+      - href: references.qmd
+        text: "Resources"
       - href: about_me.qmd
         text: "About Me"
       # - sidebar:causal
@@ -40,27 +40,14 @@ website:
         - href: 01_fundamentals/background.qmd
           text: "Data Science in Business Context"
         - href: 01_fundamentals/stat_foundations.qmd
-          text: "Statistical foundations"
+          text: "Foundations of Probability"
         # - href: 01_fundamentals/bolt.qmd
         #   text: "Case Study: Decisions at Bolt and LRB"
         # - href: 01_fundamentals/adoreme.qmd
         #   text: "Case Study: AI at AdoreMe (e-commerce)" 
         # - href: 01_fundamentals/lab_01.qmd
         #   text: "Lab: Recap of tidyverse and stats"
-    - id: archive
-      title: "Past Courses"
-      style: "docked"
-      background: light
-      collapse-level: 2
-      contents: 
-        # - href: 01_fundamentals/background.qmd
-        #   text: "Data Mining, Fall 2021"
-        # - href: 01_fundamentals/stat_foundations.qmd
-        #   text: "Data Science, Winter 2021"
-        - href: 05_archive/winter_2022.qmd
-          text: "Data Science, Winter 2022"
-        # - href: 01_fundamentals/slides.qmd
-        #   text: "Slides: Data Science in Context"
+
     # - id: causal
     #   title: "Causal Inference"
     #   style: "docked"

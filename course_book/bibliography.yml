@@ -1,7 +1,3 @@
-# Standing on the shoulders of giants {.unnumbered}
-
-
-```yml
 - title : Bayesian Data Analysis
   title_short: bda3
   type: book
@@ -125,4 +121,3 @@
     use_cases: 
     - name: medical testing example
       data: simulated, hypothetical
-```
