@@ -337,3 +337,6 @@ engines.build/
 **/libs/
 **/**_cache/
 
+
+**/_site/
+**/.quarto/
