@@ -5,13 +5,39 @@ format:
 ---
 
 
-## Course Roadmap
+## A map for our adventure
 
-We start the course with a first module, in which we explore the context of data science in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering the hell we needed those in the first place.
+We start the course with a first module, in which we explore the [context of data science](01_fundamentals/background.qmd) in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering why they were invented in the first place.
 
-Next, we move on to A/B testing and towards a mindset of causal inference. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+::: {.column-margin}
+These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models and learn the importance of asking the right questions, persuasive communication, and storytelling.
+:::
+
+
+| ![picasso](01_fundamentals/img/safari.svg){width="80%"}| ![big picture](01_fundamentals/img/meme-causal.jpeg){width="80%"}|
+|:--:|:--:|
+| **Module I:** Business Context and Probability Fundamentals | **Module II:** Applied Bayesian Statistics and Causal Inference
+
+Next, we move on to experiment design and A/B testing. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+
+::: {.column-margin}
+We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101!
+:::
+
+
+| ![picasso](01_fundamentals/img/umap.png)| ![big picture](01_fundamentals/img/LE_pyeco1.svg){width="100%"}|
+|:--:|:--:|
+| **Module III:** ML and Deep Learning | **Projects:** Software Engineering and Full-Stack Data Apps
+
+
+
+
 
 Did you get comfortable with ML? Good, because it's time to acknowledge the limitations and get more powerful tools from causal inference, when A/B tests and randomised experiments are unfeasible or unethical, but we can leverage naturally-occuring experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.
+
+::: {.column-margin}
+This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty.
+:::
 
 The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
 
@@ -26,14 +52,14 @@ The icing on the cake is miscellaneous topics dear to me and usually not covered
 %%|   we tie it all together IS challenging.
 
 flowchart TD
-  DSc(Decision-Making Under Uncertainty at Scale) -- understanding  --> Stat(Stat Fundamentals) 
+  DSc(Decision-Making Under Uncertainty at Scale) -- fundamentals  --> Prob(Probability)
   DSc -- business context  --> VUCA[V.U.C.A.] --> App(Applications) --> R[Role in firms] --> PML(ML Process) --> PS(Stat process)
-  Stat --> Prob(Probability) --> Es(Estimators) --> Boot(Bootstrap) --> AB(A/B Testing) -- optional --> ExpD[/Causality/]
+  Prob(Probability) -->  Boot(Inference) --> Es(Estimators) --> AB(A/B Testing) -- advanced --> ExpD[/Causality/]
 
-  DSc -- skills/labs  --> Eng(Engineering) --> Data(Data Wrangling) --> Repr[Reproducibility] --> Pipe(Pipelines) -- advanced --> FS[/Full Stack Apps/]
-  ML --> Class(Bayes Classifiers) --> GLM(GLMs) --> T(Tree-based Ensembles) -- advanced --> Caus(Hierarchical Models) --> Misc[/Time Series and Misc/]
+  DSc -- skills/labs  --> Data(Data Wrangling)  --> Repr[Reproducibility] --> Pymc(PyMC Modeling) --> Pipe(Pipelines) -- advanced --> FS[/Full Stack Apps/]
+  ML -->  GLM(Linear Models) --> Class(Bayes Classifiers)  --> T(Tree-based Ensembles) -- advanced --> Caus(Hierarchical Models) --> Misc[/Time Series/]
 
-  DSc -- workhorse models  --> ML(Statistical Learning) --> Unsup(Dimensionality Reduction) --> Clust(Clustering) -- optional --> RS[/RecSys/] --> Text[/NLP Embeddings/]
+  DSc -- workhorse models  --> ML(Statistical Learning) --> Unsup(Dim. Reduction) --> Clust(Clustering) -- advanced --> RS[/RecSys/] --> Text[/NLP Embeddings/]
 ```
 
 :::
@@ -43,11 +69,82 @@ If you ask what is that engineering branch, you're totally right! During the lab
 That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.
 
 
-## Schedule and Admin
+## Study Guide
 
-The in-person and online courses are usually slow-paced, filled with conversations -- so take the following schedule as a tentative one. There is a tremenous ground to cover, especially when the prerequisites are shaky for the methods used here. The sections of the book are not a 1:1 correspondence with the course: what reads well might not lead to a good lecture. 
+It takes many iterations to build a course website and a set of lectures which are easy to follow and act upon with deliberate practice. After four classes taught, I learned my lessons of what worked and didn't, which will translate in a set of lectures published here. 
 
-In the Winter 2022 module, we focus on statistics, reproducible research, experiment design, and A/B testing with a mindset of causal inference. The Fall 2023 module will cover supervised and unsupervised Machine Learning approaches, plus a few special topics like NLP, Recommender Systems, and Time Series. 
+In the meanwhile, the best I can do in the limited time, is to give you a study guide, which starts here and goes to the best resources I know of for practice and reading.
+
+### Data Science in Business Context
+
+The first 4 topics are covered in detail [here](https://course.economic-cybernetics.com/01_fundamentals/background.html) and the [course homepage](https://course.economic-cybernetics.com) gives additional context. The latter 3 are discussed extensively if you follow the links.
+
+- Data Science examples of **Business Applications** - be able to explain most common use-cases in multiple industries, like e-commerce, finance, banking, and medicine.
+- **VUCA**, **SWOT** and **Business Strategy** - articulate some properties of the business environment, understand firm's trajectory and how it could translate into a business strategy. Make sure you understand what a strategy is and how it influences our modeling process.
+- What is **AI, Data Science, Cybernetics** - understand that, in a nutshell, it's about decision-making under uncertainty at scale, in a given domain of expertise.
+- **Analytics** vs **Stats** vs **ML** - be able to match a particular problem with one (or a combination) of these approaches to data-driven problem solving. Know when NOT to use one.
+- What is **Machine Learning**? Understand the idea of inductive reasoning, generalization, and be able to 'draw'/outline the core mechanism of the machine learning.  Give examples when it can go wrong or awry. If you have time, refer to [this](https://work.caltech.edu/lectures.html) course, lecture 1 and 2.
+- **Newsvendor problem** - understand this demand planning model in business terms and translate it into a mathematical model. Refer to [this tutorial](https://youtu.be/QLsSPnwWS_M).
+	- Reason about the role and sources of uncertainty in the decisions and how can we do a stochastic optimization. 
+	- Articulate and formalize the trade-offs we're facing. 
+	- What happens if the goods are not perishable, what kind of costs we will suffer then?
+	- What are some different modeling options for the demand. What kind of distributions will be appropriate for slow-moving, fast-moving, intermittent demand.
+- **Price optimization** (fixed capacity) - Give some examples of when it happens in practice. Same questions and concerns as in the newsvendor problem apply. Refer to [this tutorial](https://youtu.be/RScjq1mkDc0) by Dr. Adam Fleischhacker.
+
+### The processes of data science
+
+All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
+
+- [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) by Cassie Kozyrkov, CRISP-DM (any resource on the latter will do).
+- [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ) by Cassie Kozyrkov, along with her Google [lecture](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) on statistical thinking.
+- [Business Analyst's Workflow](https://www.causact.com/becoming-a-data-driven-business-analyst.html#becoming-a-data-driven-business-analyst) by Dr. Adam Fleischhacker
+
+
+### Statistical fundamentals
+
+This is the most difficult part of the course, going into the depths of statistical foundations. Even though you encountered most of these topics in the introductory statistics courses, it is very easy to misunderstand and apply these methods mechanically. 
+
+Therefore, fundamental -- doesn't mean easy, nor basic nor trivial. The exams I give never ask you to compute or solve puzzles, but to appropriately define, justify and apply these (choices) in the context of business applications.
+
+- How does linear algebra, probability, statistics, mathematical analysis, operations research, and economics contribute to Data Science and decision-making? Explained [here](https://course.economic-cybernetics.com/01_fundamentals/background.html#why-did-you-study-all-of-that)
+- Probability triple and Random Variables - a semi-formal exposition is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of course website.
+- Collectivity, Statistical Population, Sample - where defining the population is the contract for our experiment, and the sampling process is critical. Explained well and in great detail [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
+- Parameter, Estimator, Estimation/Statistic - same resources as above
+- Stories behnid distributions: $\chi^2_k, t_k, Pois(\lambda), N(\mu, \sigma^2), Exp(\lambda)$ - [examples with simulation](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view). Look at this [interactive visualization](https://rpsychologist.com/d3/tdist/) which compares t and N.
+- Difference between probability theory and mathematical statistics - [a beautiful explanation](https://johnkerl.org/doc/prbstat/prbstat.html)
+- Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. [the theorem and simulations here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem)
+- Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in [openforecast](https://openforecast.org/sba/estimatesProperties.html)
+- Bias-Variance tradeoff - For an intuitive explanation, watch [lecture 8, slides](https://work.caltech.edu/lectures.html). See how this [tradeoff needs an update](https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update) for the modern machine learning. 
+- Bootstrap - [chapter 10](https://hastie.su.domains/CASI_files/PDF/casi.pdf) or [page 249](https://hastie.su.domains/Papers/ESLII.pdf)
+- Nonparametric methods -  what is the benefit, name a few equivalents. Be able to explain a signed-rank transformation. [This](https://steverxd.github.io/Stat_tests/) is the simplest and the most accessible explanation I know of so far.
+- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf). Here is a nice [interactive visualization](https://rpsychologist.com/d3/bayes/) for Bayesian updating.
+- Likelihood - either from previous books or [this interactive visualization](https://rpsychologist.com/likelihood/)
+
+### Experiment Design and A/B Testing
+
+Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design.
+
+I'm emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.
+
+- Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
+- Remember the importance of those 12 steps of statistics, especially the [Default Action](https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c). For a more classical exposition - check [this](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html) out.
+- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those.
+- p-values - [simulation](https://rpsychologist.com/pvalue/), [simulation of distirbutions under H0/Ha](https://rpsychologist.com/d3/pdist/)
+- Type 1, 2 errors, Type 3 errors (solving the wrong problem), [chapter14](https://openintro-ims.netlify.app/decerr.html)
+- A/B Testing scheme, [An end-to-end example](https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a), but be careful to follow the 12 steps we have and not to forget to define the Default Action.
+- Experiment Design and Hypothesis testing pitfalls - [from HBR](https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing), [8 pitfalls](https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e), [A/A tests](https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241), [user interference](https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8)
+- Metric Design and [properties of good metrics](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/) - [an example](https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb)
+- Relevance and Significance - Read [this paper](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) by Werner Stahel
+- Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/)
+- Effect size, Power, Sample Size - [here](https://mathstat.slu.edu/~speegle/_book/HTCI.html), and [here](https://www.huber.embl.de/msmb/06-chap.html) and [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html). [Cohen's d](https://rpsychologist.com/cohend/), [Power Analysis](https://rpsychologist.com/d3/nhst/)
+
+
+
+## Past Course Curriculum
+
+The in-person and online courses I hold are usually slow-paced and filled with conversations. There is a tremenous ground to cover, especially when the prerequisites are shaky for the methods used. The sections of the book do not correspond with past courses: what reads well might not lead to a good lecture.
+
+While I work on writing and publishing my ideal set of lectures, case-studies, and projects -- which in all honesty might take years, I will leave you an example of a course I held last year, which had a primary focus on statistics, reproducible research, experiment design, and A/B testing.
 
 ::: {.column-page-inset-right}
 
@@ -84,89 +181,3 @@ In the Winter 2022 module, we focus on statistics, reproducible research, experi
 | S14 (21 Jan) | Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |
 
 :::
-
-The final grade shouldn't be a reason why you're in this course, but if you need more structure, here's the evaluation criteria below. Attendence is not mandatory, but highly beneficial for the professional development.
-
--   Lab 50%: for the full stack data app
-    -   Risky/interesting/creative projects will be rewarded
-    -   Focus on quality over quantity, one thing done well rather than trying to apply half of the models discussed in the course.
-    -   Pitch of at most 1 (one) page: what it does and why did you build it
--   Final Exam 50%: Focused on conceptual understanding:
-    -   There will be no problems to solve by hand.
-    -   Try to be succint and clear
-    -   Think for yourself, zero-tolerance policy for cheating
-
-
-
-::: {.callout-tip}
-# Understand, not memorize
-The course covered a wide range of topics: some practical and business-oriented, some very conceptual and technical aspects of doing statistics. We connected those two by putting the statistics learned before in a new context and frame.
-
-You can break down those topics into 4 big buckets and focus on the ones you have least understanding:
-- Data Science in business context
-- The processes of doing data science and making decisions
-- Statistical foundations and machinery
-- Experiment Design and A/B Testing
-:::
-
-## Exam Study Guide
-
-### Data Science in Business Context
-
-The first 4 topics are covered in detail [here](https://course.economic-cybernetics.com/01_fundamentals/background.html) and the [course homepage](https://course.economic-cybernetics.com) gives additional context. The latter 3 were discussed extensively in the courses, but I will provide alternative resources for study, in case you missed those lectures.
-
-- Data Science examples of **Business Applications** - be able to explain most common use-cases in multiple industries, like e-commerce, finance and banking, medicine.
-- **VUCA**, **SWOT** and **Business Strategy** - articulate some properties of the business environment, understand firm's trajectory and how it could translate into a business strategy. Make sure you understand what a strategy is and how it influences our modeling process.
-- What is **AI, Data Science, Cybernetics** - understand that, in a nutshell, it's about decision-making under uncertainty at scale, in a given domain of expertise.
-- **Analytics** vs **Stats** vs **ML** - be able to match a particular problem with one (or a combination) of these approaches to data-driven problem solving. Know when NOT to use one.
-- What is **Machine Learning**? Understand the idea of inductive reasoning, generalization, and be able to 'draw'/outline the core mechanism of the machine learning.  Give examples when it can go wrong or awry. If you have time, refer to [this](https://work.caltech.edu/lectures.html) course, lecture 1 and 2.
-- **Newsvendor problem** - understand this demand planning model in business terms and translate it into a mathematical model. Refer to [this tutorial](https://youtu.be/QLsSPnwWS_M) if you missed the lectures.
-	- Reason about the role and sources of uncertainty in the decisions and how can we do a stochastic optimization. 
-	- Articulate and formalize the trade-offs we're facing. 
-	- What happens if the goods are not perishable, what kind of costs we will suffer then?
-	- What are some different modeling options for the demand. What kind of distributions will be appropriate for slow-moving, fast-moving, intermittent demand.
-- **Price optimization** (fixed capacity) - Give some examples of when it happens in practice. Same questions and concerns as in the newsvendor problem apply. Refer to [this tutorial](https://youtu.be/RScjq1mkDc0) by Dr. Adam Fleischhacker if you missed the discussions during the lectures.
-
-### The processes of data science
-
-All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
-
-- [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) by Cassie Kozyrkov, CRISP-DM (any resource on the latter will do). Please, read this as it is mandatory.
-- [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ) by Cassie Kozyrkov, along with her Google [lecture](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) on statistical thinking.
-- [Business Analyst's Workflow](https://www.causact.com/becoming-a-data-driven-business-analyst.html#becoming-a-data-driven-business-analyst) by Dr. Adam Fleischhacker
-
-
-### Statistical fundamentals
-
-This is the most difficult part of the course, going into the depths of statistical foundations. Even though you encountered most of these topics in the introductory statistics courses, it is very easy to misunderstand and apply these methods mechanically. Therefore, fundamental -- doesn't mean easy, nor basic nor trivial. The exam will not ask you to compute or solve puzzles, but to appropriately define, justify and apply these (choices) in the context of business applications.
-
-- How does linear algebra, probability, statistics, mathematical analysis, operations research, and economics contribute to Data Science and decision-making? Explained [here](https://course.economic-cybernetics.com/01_fundamentals/background.html#why-did-you-study-all-of-that)
-- Probability triple and Random Variables - a semi-formal exposition is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of course website.
-- Collectivity, Statistical Population, Sample - where defining the population is the contract for our experiment, and the sampling process is critical. Explained well and in great detail [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
-- Parameter, Estimator, Estimation/Statistic - same resources as above
-- Stories behnid distributions: $\chi^2_k, t_k, Pois(\lambda), N(\mu, \sigma^2), Exp(\lambda)$ - [examples with simulation](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view). Look at this [interactive visualization](https://rpsychologist.com/d3/tdist/) which compares t and N.
-- Difference between probability theory and mathematical statistics - [a beautiful explanation](https://johnkerl.org/doc/prbstat/prbstat.html)
-- Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. [the theorem and simulations here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem)
-- Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in [openforecast](https://openforecast.org/sba/estimatesProperties.html)
-- Bias-Variance tradeoff - For an intuitive explanation, watch [lecture 8, slides](https://work.caltech.edu/lectures.html). See how this [tradeoff needs an update](https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update) for the modern machine learning. 
-- Bootstrap - [chapter 10](https://hastie.su.domains/CASI_files/PDF/casi.pdf) or [page 249](https://hastie.su.domains/Papers/ESLII.pdf)
-- Nonparametric methods -  what is the benefit, name a few equivalents. Be able to explain a signed-rank transformation. [This](https://steverxd.github.io/Stat_tests/) is the simplest and the most accessible explanation I know of so far.
-- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf). Here is a nice [interactive visualization](https://rpsychologist.com/d3/bayes/) for Bayesian updating.
-- Likelihood - either from previous books or [this interactive visualization](https://rpsychologist.com/likelihood/)
-
-### Experiment Design and A/B Testing
-
-Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design. I'm emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.
-
-- Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
-- Remember the importance of those 12 steps of statistics, especially the [Default Action](https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c). For a more classical exposition - check [this](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html) out.
-- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those.
-- p-values - [simulation](https://rpsychologist.com/pvalue/), [simulation of distirbutions under H0/Ha](https://rpsychologist.com/d3/pdist/)
-- Type 1, 2 errors, Type 3 errors (solving the wrong problem) - [chapter14](https://openintro-ims.netlify.app/decerr.html)
-- A/B Testing scheme - [An end-to-end example](https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a), but be careful to follow the 12 steps we have and not to forget to define the Default Action.
-- Experiment Design and Hypothesis testing pitfalls - [from HBR](https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing), [8 pitfalls](https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e), [A/A tests](https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241), [user interference](https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8)
-- Metric Design and[ properties of good metrics](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/) - [an example](https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb)
-- Relevance and Significance - Read [this paper](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) by Werner Stahel (optional)
-- Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/)
-- Effect size, Power, Sample Size - [here](https://mathstat.slu.edu/~speegle/_book/HTCI.html), and [here](https://www.huber.embl.de/msmb/06-chap.html) and [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html). [Cohen's d](https://rpsychologist.com/cohend/), [Power Analysis](https://rpsychologist.com/d3/nhst/)
-

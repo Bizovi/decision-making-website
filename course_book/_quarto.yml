@@ -39,6 +39,10 @@ website:
       contents: 
         - href: 01_fundamentals/background.qmd
           text: "Data Science in Business Context"
+        - href: 01_fundamentals/learning.qmd
+          text: "Learning from Data: Intuition and Bias"
+        - href: 01_fundamentals/prerequisites.qmd
+          text: "Prereq: Why did you study all of that?"
         - href: 01_fundamentals/stat_foundations.qmd
           text: "Foundations of Probability"
         # - href: 01_fundamentals/bolt.qmd

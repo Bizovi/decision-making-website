@@ -1,0 +1,114 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
+
+
+
+
+## Why did you study all of that?
+
+Why did we have to go through all those excruciating months doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics? 
+
+It was very frustrating for me, because it wasn't clear how they fit together, what is the common thread, and more importantly, what part of the theory and particular concepts would be helpful in solving the kind of problems we discussed, and which ones are designed to enhance our academic understanding.
+
+::: {.column-margin}
+:::
+
+::: {.callout-tip}
+## Sounds good -- doesn't work?
+
+An important question is what works well in practice and why. On the other hand, what is intellectually fascinating, but not at all straightforward to apply. What is a minimal or most powerful set of the prerequisites that you need? 
+
+Let's draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned form the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects -- the inspirations and tools are quite carefully picked. 
+:::
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   Think of this as a stuctural organization of the fields and courses
+%%|   you studied before. Some are more useful in analytics, some in ML
+%%|   and some in making causal inferences, that is, based on data + theory.
+
+flowchart TD
+  LA[Linear Algebra] --> OR[Operations Research]
+  MA[Mathematical Analysis] --> OR
+  MA --> SD[Systems Dynamics]
+  %% CS[CS Algorithms] --> OR
+  
+  PT[Probability] --> MS[Statistics] --> EC[Econometrics]
+  EC --> Caus[/Causal Inference\]
+  EC --> TS[Time Series]
+
+ %% subgraph 1
+  Caus --- DM[/Data Mining\] --- ML[/Machine Learning\] 
+  ML --- Caus
+ %% end
+
+  OR --> ML
+  MS --> ML
+  MA --> PT
+  SD --> Caus
+
+  Caus --- Econ[[Economics]]  
+  Econ --- GT[Game Theory]
+  Econ --- DT[Decision Theory]
+
+  style Caus fill:#f7f5bc
+  style ML fill:#f7f5bc
+  style DM fill:#f7f5bc
+
+  DM --- FSDA[/Full-Stack Apps\]
+  FSDA --- DB[Databases/SQL]
+  FSDA --- OOP[OOP]
+  Econ --- TS
+
+  style FSDA fill:#f7f5bc
+```
+
+
+- **Linear Algebra** is a language of `data`. The vast majority of models and training algorithms can be reduced to operations on matrices. Therefore, it is not a coincidence that is almost the only tool we have, in order to take these models and implement them in code, on a computer. 
+  - My perspective over linear algebra is ultimately **computational** and **geometric**, in the sense of the "space" the data points live in and the transformations of that space. 
+  - Ultimately, no matter the data type: image, video, text, voice, structured, panel -- all can be represented as **multidimensional arrays** (or tensors, if you wish).
+- **Mathematical Analysis** is all about `change`, formalizing how a function behaves with respect to its arguments and parameters. It is an essential building block in **optimization** and deep learning (automated differentiation).
+  - I would argue that in order to understand any complex system, be it a firm, an economy, the climate or environnment, we have to model how it **evolves in time**.
+  - This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be impossible to reason about without the mathematical analysis.
+- **Probability** and **Statistics** is the language of `uncertainty`, the only instrument we have, that allows us to say something intelligent about how confident are we.
+  - We will explore the role of statistics at lenght, but as a quote, think of it as a tool which enables us to **change our mind** and decisions in the face of evidence.
+- **Econometrics**, in my personal opinion, tries to separate the signal for the noise and make inferences about the **causal processes** in economic decisions and phenomena. It specializes statistics in the domain of economics, by infusing economic theory -- because you can't derive a scientific theory from data alone.   
+- **Time Series Analysis**, senso largo, bridges the gap between Systems Dynamics (which takes a more theoretical perspective) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolves in time, that are dynamic in their nature.
+  - I like the metaphor of **Data Assimilation**, which is actually an entire field trying to introduce the empirical dimension to differential equations.
+- **Operations Research** is about **optimization** with constraints and **efficiency**. However, the problem is that often, we start from an Integer/Linear Programming problem formulation, and that is easy part -- to apply an existing algorithm. The hard part is to reduce a messy real world problem at a large scale to that formulation, especially under uncertainty and nonlinearity. 
+- **Economics** touches upon a wide range of aspects of our society and human behavior. In mathematically-oriented courses, you can think of it as **optimization with constraints**, the constraints being given by our positive or normative theory of economic **decision-making**.
+  - In this course and in practice, we care more about **business economics**. It's a very different beast from theoretical ideas in macroeconomics (ISLM, DSGE type of models) or microeconomic utilitarianism. 
+  - By business economics, we mean marketing, management, corporate finance, decision theory, supply chain, and logistics. 
+  - What you have to know about marketing, especially if you are skeptical like me, is that it became innovative, mathematical, rigorous and data-driven. Look at any marketing journal: how much econometrics and ML models are in there.
+  - So, if you hold the opinion that marketing and management are fields full of fluff -- I advise you to rethink your positions. In the context of tech firms, you can't bullshit your way through it.
+  - Moreover, when you combine marketing with **behavioral economics** and psychology, it introduces another layer of nuance and understanding over our decision-making.
+  - When we make decisions, we like to think of ourselfs as objective, but we have lots of **biases** and blind spots which prevent us to see the reality clearly. We often find patterns and regularities which are just noise, not causal. So, the usefulness of this kind of domain knowledge from economics about human behavior helps us to be wiser, that is, to prevent self-deception and self-sabotage towards achieving the goals and objectives. 
+
+::: {.callout-tip}
+## A word of encouragement
+
+None of those courses were useless. Think of how can we take parts from each of those prerequisites, which are relevant in ML/DSc, so that we have more tools to solve problems of the complexity we encounter. To reiterate, data science is an umbrella term, borrowing from them all.
+:::
+
+
+
+<!-- Data Science Context, in Business, Interdisciplinarity --->
+[^pragmatic-ai-gcp]: M. Bizovi - [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)
+[^jordan-ai]: K. Pretz - [Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says 
+[^jordan-revolution]:  M. Jordan - [Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9): The Revolution Hasn’t Happened Yet
+[^cassie-mfml]: C.Kozyrkov - [Making Friends with Machine Learning](https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG)
+[^cassie-ref]: C. Kozyrkov (Chief Decision Scientist | Google) - https://kozyrkov.medium.com/ 
+[^cassie-ai-def]: C. Kozyrkov - [AI is decision-making at scale](https://www.youtube.com/watch?v=bCjMhZZYlP4)
+[^cassie-steps]: C.Kozyrkov - [12 Steps to Applied AI](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3)
+[^pair]: People and AI Research | Google - [Guidebook](https://pair.withgoogle.com/guidebook/)
+[^mit-ai-covid]: W.Heaven - [Hundreds of AI tools have been built to catch covid. None of them helped.](https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/)
+[^war-wrong-problem]:  V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo)
+[^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)
+
+[^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html)
