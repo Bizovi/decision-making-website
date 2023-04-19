@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Pragmatic Data Science – learning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../01_fundamentals/prerequisites.html" rel="next">
+<link href="../01_fundamentals/background.html" rel="prev">
+<link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Pragmatic Data Science</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../roadmap.html">
+ <span class="menu-text">Roadmap</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-the-fundamenals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">The fundamenals</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-the-fundamenals">    
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/background.html">
+ <span class="dropdown-text">Data Science in Business Context</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/learning.html">
+ <span class="dropdown-text">Learning from Data: Intuition and Bias</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/prerequisites.html">
+ <span class="dropdown-text">Prereq: Why did you study all of that?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../01_fundamentals/stat_foundations.html">
+ <span class="dropdown-text">Foundations of Probability</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../references.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bizovi/data-mining-ase"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">Data Science in Business Context</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/learning.html" class="sidebar-item-text sidebar-link active">Learning from Data: Intuition and Bias</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">Prereq: Why did you study all of that?</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">Foundations of Probability</a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#implicit-learning-intuition-and-bias" id="toc-implicit-learning-intuition-and-bias" class="nav-link active" data-scroll-target="#implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</a></li>
+  <li><a href="#calling-bullshit-in-the-age-of-big-data" id="toc-calling-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+
+
+<section id="implicit-learning-intuition-and-bias" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</h2>
+<p>In the last two sections of this lecture I felt it is necessary to raise two more warning tales, precisely because we will work with such a powerful machinery and attempt to tackle complex problems in our jobs and lives.</p>
+<p>A good metaphor for what we’re doing in this course is the way people learn. In a way we’re pattern recognition machines, with a powerful capacity for <strong>implicit learning</strong>, meaning we can’t articulate or explain how we did it. For example, riding a bike, catching a baseball, speaking, reading and writing, behaving in social situations and so on.</p>
+<div class="callout-note callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Implicit Learning of Artificial Grammars
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<div class="page-columns page-full"><p>There is a famous experiment, in which researchers invented words from two languages, meaning two set of rules,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> let’s say between 3 and 8 characters, with appropriate vowels and so on. Total gibberish, but here we are, with two sets of words.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For the curious, they used a Markov Chain artificial grammar, which would be pretty straightforward to implement in R, and is a way of looking at the language which brought the first breakthroughs in NLP (natural language processing)</p></li></div></div>
+<p>Participants saw the lists and they had to say from what “language” does a word come from. It is a good example of <strong>experiment design</strong> coming from cognitive science research.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="img/imlicit-grammar.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption"><em>Source: <a href="https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm">John Kihlstrom</a></em>; They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either “no idea”, or giving some rules, which when implemented on a computer, were not able to perform better than a coin flip.</figcaption><p></p>
+</figure>
+</div>
+<p>Following the experiment, this means that those rules articulated by the people in the experiment were NOT how they were thinking. There is something going on which can’t really be articulated. This means that we have a capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning.</p>
+<div class="page-columns page-full"><p>Another hypothesis about how animals learn is the idea that some <strong>prior</strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> knowledge or mechanism – which is there due to evolution optimizing for fittedness, is necessary to kickstart the process. The discussion about the fascinating interaction between nature and nurture is outside the scope of the point I’m trying to make right now. So, here we go with two more experiments:</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;We will go into more technical details when discussing Statistical Learning and ML models, of why is it the case that biasing a learning process with prior information is essential to successful learning.</p></li></div></div>
+<div class="callout-note callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Bait Shyness – Rats Learning to Avoid Poisonous Baits
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<p>When rats stumble upon food with new smell or look, they first eat very small amounts. If they got sick, that novel food is likely to be associated with illness, and in the future the rat will avoid it. Quoting Dr.&nbsp;Shai-Ben David:</p>
+<blockquote class="blockquote page-columns page-full">
+<div class="page-columns page-full"><p>Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a></p></li></div></div>
+</blockquote>
+</div>
+</div>
+<p>The bait shyness is an example of learning, not just rote memorization. More exactly of a basic inductive reasoning, or in a more statistical language, of generalization from a sample. But we intuitively know, that when generalizing a pattern, regularity is sometimes error prone: we pick up on noise, spurious correlations instead of signal, we’re fooled by randomness.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+B.F. Skinner: Pigeon Superstition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In an experiment, B.F. Skinner put a bunch of hungry pigeons in a cage and gave them food at random intervals via an automated mechanism. They were doing something when the food was first delivered, like turning around or pecking – which reinforced that behavior.</p>
+<p>Therefore, they spent more time doing that exact same thing, without regard with the chances of those actions getting them more food. That is a minimal example of superstition, a topic on which philosophers spilled so much ink.</p>
+</div>
+</div>
+<div class="page-columns page-full"><p>Shai-Ben David goes on to argue – what stands at the foundations of Machine Learning, are carefully formulated principles which will prevent our automated learners, who don’t have a common sense like us, to reach these foolish and superstitious conclusions. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><div class="quarto-figure quarto-figure-center"><sup>4</sup>&nbsp;
+<figure class="figure">
+<figure class="figure">
+<img src="img/pigeon-chamber.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption"><em>Source: <a href="https://www.skewsme.com/behavior/">skewsme</a></em>; Here’s Skinner’s pigeon chambers</figcaption><p></p>
+</figure>
+</div>
+</li></div></div>
+<p>What is the common thread among these three stories about learining? In a nutshell, it’s about cultivating the wisdom and ablility to differentiate between correlational and causal patterns.</p>
+<ul>
+<li>When all goes well we call it intelligence, intuition, a business knack. It’s our pattern recognition picking up on some real, causal regularities. It’s the common sense working as it is supposed to.</li>
+<li>When learning goes awry, it’s a bias and in worst cases – bigoted prejudice.</li>
+<li>I am not a fan of how behavioral economics treats biases, <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> but here are a few so prevalent and harmful outside their intended evolutionary purpose, that we have to mention them: confirmation bias, recency, selection, various discounting biases.</li>
+<li>We attribute a causal explanation to a phenomena when it’s not. For example, size of the wedding to a long-lasting marriage, extroversion and attractiveness with competence, how religious are people vs years of life.</li>
+<li>There are numerous examples, and I don’t have to repeat that correlation doesn’t imply causation, due to common causes, hidden variables, mediators, reverse causes and confounders.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;The reasons come from cutting-edge Cognitive Science research, which challenge the normative position of economic rationality. Moreover, they challenge the economic orthodoxy when it comes to rationality – it is a much more complex beast than a maximisation of expected utility.</p></li></div><p>So, what can we do as individuals and professionals? I think one way to get wiser is to cultivate a kind of <strong>active open-mindedness</strong>, which tries to scan for those biases and bring them into our awareness, such that we can correct our beliefs, behavior and decisions. Another thing we can do is to update our beliefs often, in the face of new evidence, keeping a <strong>scout mindset</strong>, trying to see clearly, instead of getting too attached and invested in our beliefs and positions.</p>
+<p>I think we’re extremely lucky to be in a field like data science, where we can use formal tools from probability, causal inference, machine learning, optimization, combined with large amounts of data and domain expertise – in order to practice that kind of a mindset. However, let’s keep in mind how easy researchers are getting fooled, not only by randomness, and that we’ll never be immune to misjudgement.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The double edged sword of our intelligence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The same machinery which makes us intelligent general problem solvers and extraordinarily adaptable, makes us prone, vulnerable to bullshit and self-deceptive, self-destructive behavior.</p>
+<p>It is the same, in a more techincal sense, with overfitting ML models and drawing wrong inferences. In business settings, I believe that firms will realize and appreciate that a <code>decison scientist</code> has this exact role – to help others rationally pursue their goals and strategy.</p>
+</div>
+</div>
+</section>
+<section id="calling-bullshit-in-the-age-of-big-data" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</h2>
+<p>You probably noticed that I used the word bullshit a few times in this lecture. It is not a pejorative, but a technical/formal term introduced by Harry Frankfurt in his essay “on Bullshit”. In romanian, the closest equivalent would be <em>“vrăjeală”</em>, a kind of sophistry.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The critical difference between Lie and Bullshit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A liar functions on respect for the truth, as he inverts parts of a partially true story to convince you of a different conclusion. It is interesting that we can’t really lie to ouselfs, we kind of know it’s a lie – so we do the other, we distract our attention away from it.</p>
+<p>In Bullshit, you try to convince someone of something without regard for the truth. You distract their attention, drown them in irrelevant, but supersalient stuff.</p>
+</div>
+</div>
+<div class="page-columns page-full"><p>In our age, BS is much more sophisticated than the “good old” advertisement trying to manipulate you to buy something. I can’t recommend enough that you watch the lectures by Carl T. Bergstrom and Javin West,<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> where they explain at length numerous ways we’re being convinced by bullshit arguments, but which are quantitative and have lots of jargon and pretty charts in them.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;Carl T. Bergstrom and Javin West - <a href="https://www.callingbullshit.org/index.html">Calling Bullshit: The art of Skepticism in a Data-Driven World</a></p></li></div></div>
+<p>The kind of intimidating jargon comes from finance people, economists, when explaining why interest rates were risen, what happened in 2007-2008 great financial crisis. My “favorite” is cryptocurrency-related sophistry and some particular CEOs expertly making things more ambiguous, mysterious, and complicated with their corporate claptrap.</p>
+<p>These lectures are short, fun, informative and useful for developing the critical thinking necessary when assesing the quality of the evidence or reasoning which led to a particular conclusion. I will try to incorporate here and there some examples from their course, where it fits naturally with our use-cases and theoretical topics, especially in <a href="https://www.callingbullshit.org/syllabus.html#Causality">causality</a>.</p>
+<p>There are tempting arguments which boil down to this: due to ever increasing volumes and richness of data, together with computing power and innovations in AI – it will lead to the <strong>end of theory</strong>. I couldn’t disagree more!</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Small Data problems in Big Data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In huge datasets of clients and web events, there are lots of observations and many features/attributes being collected, which theoretically should be excellent for a powerful ML model.</p>
+<p>However, at the level of each observation, when we go to a very granular aggregation level, the information can be extremely sparse, with high cardinality, inconsistent (all data quality issues). For example, in an e-commerce, for a customer, you might have no information about their purchases, and just a few basic facts about their website navigation.</p>
+<p>So, you have the cold start problem, data missing not at random, censoring/survival challenges, selection biases. The data at the lowest level becomes discrete, noisy, heteroskedastic. You know the saying: garbage in garbage out.</p>
+<p>Even in ML when there is a big, clean and rich dataset, we can’t escape theory (which is our understanding of the world), in one way or anover. For example, in demand forecasting, we need to provide the model relevant data, factors which are related, plausibly influencing that demand: like weather, holidays, promotions, competition, and so on.</p>
+<p>We can’t just pour all this data into a ML model and expect the best. It isn’t clear that feeding irrelevant data doesn’t break or bias our model, such that it picks up on noise and <strong>spurious correlation</strong>, especially in very powerful DL models. That definitely doesn’t help with better decisions.</p>
+</div>
+</div>
+<p>In conclusion, there is no magic to AI, no silver bullet: more data and better models are often necessary, but not sufficient to improve outcomes. We have to ask the right questions. We have to set objectives aligned with business strategy. We have to frame and formulate a problem well, understanding it in its context. We have to collect relevant data, clean it, understand the processes of missingness. If we let AI decide who enters into a quarantine during the pandemic, what it would optimize for? It’s just a machinery combining statistics and optimization.</p>
+<p>Therefore, critical thinking becomes that much more important when we have these powerful quantitative tools at out fingerprints. A part of a data scientist’s job is to constrain artificial stupidity (more exactly, foolishness, because it does perfectly fine what you instructed it to do) and making sure we’re solving the right problem (sounds trivial, but ofter we solve the wrong problem, without being aware of it).</p>
+<!-- Data Science Context, in Business, Interdisciplinarity --->
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../01_fundamentals/background.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Science in Business Context</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../01_fundamentals/prerequisites.html" class="pagination-link">
+        <span class="nav-page-text">Prereq: Why did you study all of that?</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi</div>   
+  </div>
+</footer>
+
+
+
+</body></html>
