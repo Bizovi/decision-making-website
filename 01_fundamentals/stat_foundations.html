@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -381,7 +381,7 @@ The Birthday Problem
 <div class="callout-body-container callout-body">
 <p>What is the probability at least two people have the same birthday, in a room of <span class="math inline">\(n=25\)</span> people? Assuming independence, for example no twins, every day is equally likely and ignoring the problem of 29th February. Can you generalize it to an arbitrary <span class="math inline">\(n\)</span>?</p>
 <p>For most practical problems, simulation is an extremely important skill. We might start with it to quickly get an answer, however, for simpler problems, the process of working out the solution analytically sheds light on its structure and easily generalizes to other applications. This simulation indeed, converges to the true results, but it takes a lot of computation, so it might not work when the code needs to run really fast!</p>
-<div class="cell" data-hash="stat_foundations_cache/html/unnamed-chunk-4_581a09b83394d0719ece659ea8d16001">
+<div class="cell" data-hash="stat_foundations_cache/html/unnamed-chunk-2_b2e41f9216394932bea3dc39abd913a6">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nr_people <span class="ot">&lt;-</span> <span class="dv">25</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>simulate_birthdays <span class="ot">&lt;-</span> <span class="cf">function</span>(nr_people, <span class="at">nr_sim =</span> <span class="dv">10000</span>) {</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    birthday_events <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="at">n =</span> nr_sim, {</span>
@@ -395,8 +395,8 @@ The Birthday Problem
 </div>
 <!-- <details> <summary>Show the answer</summary> -->
 <!-- </details> -->
-<p>So, the probability that a room of 25 people has two people with the same birth date is <span class="math inline">\(\approx\)</span> 0.5621. For 50 people, it’s around 0.9708</p>
-<div class="cell" data-hash="stat_foundations_cache/html/unnamed-chunk-6_6fb70620685be6c0999b14947d82dd0f">
+<p>So, the probability that a room of 25 people has two people with the same birth date is <span class="math inline">\(\approx\)</span> 0.577. For 50 people, it’s around 0.9683</p>
+<div class="cell" data-hash="stat_foundations_cache/html/unnamed-chunk-3_1d7df490b35e7402bfb7fe91b4c45dc6">
 <details>
 <summary>Show the visualization code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>), <span class="co"># Dist' from plot to side of page</span></span>
@@ -429,7 +429,7 @@ The Birthday Problem
 <div class="no-row-height column-margin column-container"><div class="cell-output-display callout-margin-content">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="stat_foundations_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="stat_foundations_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Probability of matching birthdays as a function of the number of people</figcaption><p></p>
 </figure>
 </div>
