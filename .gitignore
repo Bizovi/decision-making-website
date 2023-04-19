@@ -340,3 +340,4 @@ engines.build/
 
 **/_site/
 **/.quarto/
+**/_freeze/
