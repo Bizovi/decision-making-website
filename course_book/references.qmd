@@ -1,5 +1,119 @@
-# Standing on the shoulders of giants {.unnumbered}
+There are too many tutorials and datasets for practice out there: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic -- you fill find here a list of curated resources, most with code, data, and explained theory or methodology.
 
+
+There is little point in replicating examples from other books, which are well done, especially if they already have been migrated to python (if were written in other languages).
+
+::: {.column-margin}
+Often, you will have to combine various aspects of an use-case from different sources, taking the best from each author.
+:::
+
+::: {.callout-important}
+## Right level of granularity
+
+Instead of recommending whole books, which in this field are huge: 500-900p of dense material, in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks, and ordered in a way to facilitate a more linear development.
+
+:::
+
+I made sure to include code and practical examples for each statistical tool and theoretical topic, so you can immediately apply the concepts studied.
+
+
+## Building Blocks of Bayesian Statistics
+
+We start simple, by modeling a single random variable $Y$ via simulation, choosing the appropriate distribution for each phenomenon, a prior for the parameters -- then sampling from the posterior with pymc, numpyro, or stan.
+
+::: {.callout-note}
+## Bayes Theorem. Belief Updating
+A good introduction is in Chapter 1 of [BDA3 book](http://www.stat.columbia.edu/~gelman/book/), which is a short and highly recommended reading:
+
+- Football spreads, estimating from data
+- Mendelian genetics with simulated data
+- Spelling correction with simulated data, but probabilities of spelling mistakes maybe can be found
+- Medical testing example in [Blitzstein](https://projects.iq.harvard.edu/stat110/home)
+:::
+
+::: {.callout-note}
+## Poisson Distribution. Gamma-Poisson model
+
+Counts of independent events in a unit of (space/time/...), with a low probability. You can review the maths [here](https://www.bayesrulesbook.com/chapter-5.html#gamma-poisson-conjugate-family). Below is a list of applications you can practice on:
+
+- Deaths by horses in Prussian Army. Here is the [historical data](https://rpubs.com/SmilodonCub/567089) and a [blog post](https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f) if you need a refresher on Poisson distribution.
+- Asthma mortality (BDA3)
+- [Airplane fatal accidents](https://www.briancallander.com/posts/bda3/chapter_02_exercise_13.html) and passenger deaths
+- Estimating WWII [production of German](https://en.wikipedia.org/wiki/German_tank_problem#Bayesian_analysis) tanks based on samples captured
+- Comparing football teams and [goals in football matches](https://allendowney.github.io/ThinkBayes2/chap08.html)
+- [Comparing birth rates](https://allendowney.github.io/ThinkBayes2/hospital_birth_rate.html) in two hospitals
+:::
+
+Note that **prior choice** and justification is an art and science: you will have to learn and practice how to articulate assumptions and encode your domain knowledge into the priors. There is no universal recipe, but there are some guiding principles.
+
+
+::: {.callout-tip}
+## Poisson changepoint detection
+
+Estimating rates, modeling a structural shift/change:
+
+- [Coal Mining disasters](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/pymc_overview.html#case-study-2-coal-mining-disasters), pymc
+- [Text Messages](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Ch1_Introduction_PyMC_current.ipynb), pymc
+- [U.S. School Shootings](https://sidravi1.github.io/blog/2018/05/22/what-happened-in-2006), is there an increase in attempts and occurences?
+:::
+
+
+## Groups and Hierarchies
+
+::: {.callout-note}
+## Gamma-Poisson for groups
+
+The models become more complicated as we attempt to estimate parameters for **each group** of $n$ observations:
+
+- Kidney Cancer rates, with priors chosen in accordance to the sample size (BDA3). [An R visualization](https://robinryder.wordpress.com/2019/09/13/reproducing-the-kidney-cancer-example-from-bda/)
+- [Guns and suicides](https://sidravi1.github.io/blog/2018/06/15/empirical-and-hierarchical-bayes), with ideas from empirical and hierarchical Bayes.
+- Richard McElreath's example of Starbucks coffee-shops queue lengths
+:::
+
+::: {.callout-tip}
+## Estimating Customer Lifetime Value
+
+- Model: Combining Gamma-Poisson and Beta-Binomial, with parameters at customer level
+- The math and [code in pymc3](https://sidravi1.github.io/blog/2018/07/08/fader-hardie-clv)
+
+:::
+
+
+## Generalized Linear Models
+
+::: {.callout-note}
+## Poisson Regression
+
+- [Number of laws](https://www.bayesrulesbook.com/chapter-12.html) regarding equality, which includes a discussion for the issue of overdispersion.
+- Stop and frisk data, the [frequentist version](https://omarfsosa.github.io/poisson_regression_in_python)
+- [Campus crime](https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html) and estimating household size in Philippines.
+- [Alcohol and meds interaction](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-poisson-regression.html), with simulated data
+:::
+
+::: {.callout-note}
+## Overdispersion. Negative Binomial. Zero-Inflation
+
+- [Cockroaches and pest management](https://avehtari.github.io/ROS-Examples/Roaches/roaches.html), where Negative-Binomial, Poisson and Zero-Inflated NBD is investigated.
+- [Fishing catches in a park](https://num.pyro.ai/en/stable/examples/zero_inflated_poisson.html), in numpyro
+
+:::
+
+
+## Hierarchical GLMs
+
+::: {.callout-note}
+## Hierarchical Poisson Regression
+
+- [Airbnb number of reviews](https://www.bayesrulesbook.com/chapter-18.html#hierarchical-poisson-negative-binomial-regression)
+- Estimating the strength of a [rugby team](https://www.pymc.io/projects/examples/en/latest/case_studies/rugby_analytics.html)
+- [Paper investigating seat-belt use rates](https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.544), with data probably taken from the department of transportation [crashes website](https://crashstats.nhtsa.dot.gov/#!/)
+:::
+
+
+## Datasets for Machine Learning
+
+
+## Bibliography
 
 ```yml
 - title : Bayesian Data Analysis
@@ -11,40 +125,14 @@
   link: http://www.stat.columbia.edu/~gelman/book/
   lectures: https://avehtari.github.io/BDA_course_Aalto/Aalto2022.html
 
-  chapters:
-  - number: 1
-    name: Probability and Inference
-  - number: 2
-    name: Single-parameter models
-  
-  tools:
-  - name: bayes-theorem
-    chapter_number: 1
-    use_cases: 
-    - name: football spreads, estimating from data
-      data: provided in bda3 website
-    - name: mendelian genetics
-      data: simulated
-    - name: spelling correction
-      data: simulated, but maybe can be found
-  - name: gamma-poisson
-    chapter_number: 2
-    use_cases:
-    - name: kidney cancer rates by states
-      data: provided in bda3 website
-  - name: beta-binomial
-    chapter_number: 2
-    use_cases:
-    - name: probability of female birth
-      data: from earlier studies and literatures
-    - name: share of very liberal in 2008 elections, exercise 21
-      data: polling, provided in bda3 website
-  - name: prior-choice
-    chapter_number: 2
-    use_cases:
-    - name: free-throw training programm, exercise 22
-      data: simulated, hypothetical
-
+- title: Bayesian Methods for Hackers
+  title_short: bmh
+  type: book
+  edition: 1
+  author: Cameron Davidson
+  year: 2015
+  link: https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/
+  github: https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
 
 - title: Statistical Rethinking
   title_short: rethinking
@@ -55,56 +143,12 @@
   link: https://xcelab.net/rm/statistical-rethinking/
   lectures: https://github.com/rmcelreath/stat_rethinking_2023
 
-
-- title: Bayesian Methods for Hackers
-  title_short: bmh
-  type: book
-  edition: 1
-  author: Cameron Davidson
-  year: 2015
-  link: https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/
-  github: https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers 
-
-  chapters:
-  - number: 2
-    name: A little more on PyMC3
-  - number: 4
-    name: The greatest equation never told
-
-  tools:
-  - name: lln
-    chapter_number: 4
-    use_cases:
-    - name: reddit rankings by lower bound
-      data: scraped via praw, up and downvotes
-  - name: beta-binomial
-    chapter_number: 2
-    use_cases:
-    - name: A/B testing for proportions
-      data: simulated
-    - name: Wilson and Agresti-Coull intervals
-      data: reddit upvotes
-  - name: gamma-poisson
-    chapter_number: 2
-    use_cases:
-    - name: Count data with a changepoint
-      data: text messages -- but would need to find better one
-
-
 - title: The Most Dangerous Equation
   title_short: danger-eqn
   type: article
   author: Howard Wainer
   year: 2009
   link: http://assets.press.princeton.edu/chapters/s8863.pdf
-  tools:
-  - name: clt
-    use_cases:
-    - name: US Schools performance given nr_students
-      data: From Brazil EMEA, in Causal Inference for the Brave and True; US?
-    - name: Quality control of roman coins
-      data: simulate any quality control process
-
 
 - title : Introduction to Probability
   title_short: probability-blitzstein
@@ -114,15 +158,4 @@
   year: 2019
   link: https://projects.iq.harvard.edu/stat110/home
   lectures: https://projects.iq.harvard.edu/stat110/youtube
-
-  chapters:
-  - number: 2
-    name: Conditional Probability
-  
-  tools:
-  - name: bayes-theorem
-    chapter_number: 2
-    use_cases: 
-    - name: medical testing example
-      data: simulated, hypothetical
 ```

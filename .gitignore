@@ -341,3 +341,6 @@ engines.build/
 **/_site/
 **/.quarto/
 **/_freeze/
+
+# weird stuff from zsh
+**/~/ 
