@@ -305,35 +305,44 @@ Right level of granularity
 </div>
 <div class="callout-body-container callout-body">
 <p>Instead of recommending whole books, which in this field are huge: 500-900p of dense material – in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks.</p>
-<p>They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. Think of them as lego pieces.</p>
+<p>They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. <strong>Think of them as lego pieces.</strong></p>
 </div>
 </div>
 <p>I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner – I can just do my best to make your journey less frustrating and more efficient.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Often, you will have to combine various aspects of an use-case, model, method – from different sources, taking the best from each author.</p>
-</div></div><section id="building-blocks-of-bayesian-statistics" class="level2">
+</div></div><section id="building-blocks-of-bayesian-statistics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</h2>
-<p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span> via simulation, choosing the appropriate distribution for each phenomenon, a prior for the parameters – then sampling from the posterior with pymc, numpyro, or stan.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
+<p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
+<div class="callout-note callout callout-style-default callout-captioned page-columns page-full">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Bayes Theorem. Belief Updating
+Bayes Rule. Update your beliefs, often!
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>A good introduction is in Chapter 1 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3 book</a>, which is a short and highly recommended reading:</p>
+<div class="callout-body-container callout-body page-columns page-full">
+<div class="page-columns page-full"><p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div></div>
 <ul>
-<li>Football spreads, estimating from data</li>
-<li>Mendelian genetics with simulated data</li>
-<li>Spelling correction with simulated data, but probabilities of spelling mistakes maybe can be found</li>
-<li>Medical testing example in <a href="https://projects.iq.harvard.edu/stat110/home">Blitzstein</a></li>
+<li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
+<ul>
+<li>If you’re into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?</li>
+<li>For brevity, I won’t elaborate much from now on, how to take an use-case and example to its limit. <strong>If you’re passionate about a particular topic – go for it!</strong></li>
+</ul></li>
+<li>(BDA3, Ch1): <strong>Spelling correction</strong>, based on <a href="http://norvig.com/ngrams/">empirical frequencies</a> provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself – it is good for a warm-up, but challenging enough to keep you occupied.</li>
+<li>(<a href="https://projects.iq.harvard.edu/stat110/home">Probability 110</a>): <strong>Medical testing</strong> for rare diseases, hypothetical example with code in my <a href="https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb">course repository</a>. We use the same idea to reason about how confident are we our code has no bugs.
+<ul>
+<li>If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could’ve applied the same idea!</li>
+</ul></li>
 </ul>
 </div>
 </div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
+<p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -926,6 +935,7 @@ Gaussian Processes
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
