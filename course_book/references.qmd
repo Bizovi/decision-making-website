@@ -11,7 +11,7 @@ There are too many courses, tutorials, and datasets for practicing ML/Stats on t
 There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.
 
 
-::: {.callout-important}
+::: {.callout-tip}
 ## Right level of granularity
 
 Instead of recommending whole books, which in this field are huge: 500-900p of dense material -- in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks. 
@@ -26,7 +26,23 @@ I made sure to include interesting examples and archetypal applications for each
 Often, you will have to combine various aspects of an use-case, model, method -- from different sources, taking the best from each author.
 :::
 
+## Prerequisites: Probability and Python
 
+We start from the foundations of probability, however, I do not cover calculus, linear algebra, or other mathematical tools for data analysis. We do much more programming than mathematics, therefore, the ability to code in a programming language like Python or R is a must.
+
+::: {.callout-warning}
+## Need a crash course in probability and statistics?
+
+If you understand and can explain the following ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky, here are some readings:
+
+- **Probability Triple** and **Random Variables** - a quasi formal introduction is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of the course website. From my experience, not many students have this understanding after their probability theory classes.
+- **Collectivity** ("physical" structure), **Statistical Population**, **Sample** - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
+- **Parameter** (Estimand), **Estimator**, **Estimation/Statistic** - same resources as above [^4]
+- Stories behnid distributions: $Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k$. What about $Beta(a, b)$, $Gamma(k, \theta)$, and $Dirichlet(\bar{\theta})$ -- what are they good for?
+  - Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) from Joe Blitzstein.
+:::
+
+[^4]: Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian "frequentism".
 
 ## Building Blocks of Bayesian Statistics
 
@@ -89,6 +105,15 @@ Estimating rates, modeling a structural shift/change:
 - [U.S. School Shootings](https://sidravi1.github.io/blog/2018/05/22/what-happened-in-2006), is there an increase in attempts and occurences?
 :::
 
+::: {.callout-note}
+## Bayesian vs Frequentist vs Fisherian Inference
+
+- Likelihood - either from previous books or [this interactive visualization](https://rpsychologist.com/likelihood/)
+- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf). Here is a nice [interactive visualization](https://rpsychologist.com/d3/bayes/) for Bayesian updating.
+:::
+
+
+
 ::: {.callout-tip}
 ## Link functions. Golf case-study
 
@@ -123,7 +148,8 @@ The domain/geometry inspired, custom model is presented in [pymc](https://www.py
 
 ::: {.callout-tip}
 ## The most dangerous equation
-
+- Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. [the theorem and simulations here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem)
+- Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in [openforecast](https://openforecast.org/sba/estimatesProperties.html)
 :::
 
 ::: {.callout-note}
@@ -153,6 +179,26 @@ The models become more complicated as we attempt to estimate parameters for **ea
 - Hierarchical baseball, efron, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/hierarchical_partial_pooling.html), idea of partial pooling
 - Rat tumors, [pymc](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-hierarchical-binomial-model.html), binomial
 :::
+
+## A/B Testing and Experiment Design
+
+
+Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design.
+
+I'm emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.
+
+- Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
+- Remember the importance of those 12 steps of statistics, especially the [Default Action](https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c). For a more classical exposition - check [this](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html) out.
+- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those.
+- p-values - [simulation](https://rpsychologist.com/pvalue/), [simulation of distirbutions under H0/Ha](https://rpsychologist.com/d3/pdist/)
+- Type 1, 2 errors, Type 3 errors (solving the wrong problem), [chapter14](https://openintro-ims.netlify.app/decerr.html)
+- A/B Testing scheme, [An end-to-end example](https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a), but be careful to follow the 12 steps we have and not to forget to define the Default Action.
+- Experiment Design and Hypothesis testing pitfalls - [from HBR](https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing), [8 pitfalls](https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e), [A/A tests](https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241), [user interference](https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8)
+- Metric Design and [properties of good metrics](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/) - [an example](https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb)
+- Relevance and Significance - Read [this paper](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) by Werner Stahel
+- Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/)
+- Effect size, Power, Sample Size - [here](https://mathstat.slu.edu/~speegle/_book/HTCI.html), and [here](https://www.huber.embl.de/msmb/06-chap.html) and [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html). [Cohen's d](https://rpsychologist.com/cohend/), [Power Analysis](https://rpsychologist.com/d3/nhst/)
+
 
 
 ## Gaussian Linear Regression
@@ -187,6 +233,8 @@ The models become more complicated as we attempt to estimate parameters for **ea
 ## Model Critique and Evaluation
 
 - Technical: prior and posterior checks [pymc docs](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/posterior_predictive.html#posterior-predictive)
+- Bootstrap - [chapter 10](https://hastie.su.domains/CASI_files/PDF/casi.pdf) or [page 249](https://hastie.su.domains/Papers/ESLII.pdf)
+
 :::
 
 
@@ -194,6 +242,7 @@ The models become more complicated as we attempt to estimate parameters for **ea
 ## Model Comparison and Selection
 
 - [pymc](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-model-selection.html). - Model selection with fake data and polynomials
+- Bias-Variance tradeoff - For an intuitive explanation, watch [lecture 8, slides](https://work.caltech.edu/lectures.html). See how this [tradeoff needs an update](https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update) for the modern machine learning. 
 
 :::
 
@@ -324,6 +373,8 @@ The models become more complicated as we attempt to estimate parameters for **ea
 
 - [BART](https://bayesiancomputationbook.com/markdown/chp_07.html) from osvaldo, on bike shares
 - [Podcast Episode](https://learnbayesstats.com/episode/80-bayesian-additive-regression-trees-sameer-deshpande/) and an [R package](https://github.com/skdeshpande91/flexBART in R)
+- Nonparametric methods -  what is the benefit, name a few equivalents. Be able to explain a signed-rank transformation. [This](https://steverxd.github.io/Stat_tests/) is the simplest and the most accessible explanation I know of so far.
+
 :::
 
 
