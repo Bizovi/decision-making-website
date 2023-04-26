@@ -1,20 +1,31 @@
-There are too many tutorials and datasets for practice out there: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic -- you fill find here a list of curated resources, most with code, data, and explained theory or methodology.
-
-
-There is little point in replicating examples from other books, which are well done, especially if they already have been migrated to python (if were written in other languages).
+I assume you read the conceptual stuff on this website, understood its use-cases, and the big picture of what to learn. Now, the question is **where and how to start** practicing, while catching up on the maths and programming.
 
 ::: {.column-margin}
-Often, you will have to combine various aspects of an use-case from different sources, taking the best from each author.
+![Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!](01_fundamentals/img/karate-kid.webp "Practice"){width="90%"}
 :::
+
+
+There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic -- you fill find here a list of **carefully curated resources**. Most of them have have **code**, **data**, and explained **theory** or methodology in a freely available e-book.
+
+
+There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.
+
 
 ::: {.callout-important}
 ## Right level of granularity
 
-Instead of recommending whole books, which in this field are huge: 500-900p of dense material, in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks, and ordered in a way to facilitate a more linear development.
+Instead of recommending whole books, which in this field are huge: 500-900p of dense material -- in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks. 
 
+They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. Think of them as lego pieces.
 :::
 
-I made sure to include code and practical examples for each statistical tool and theoretical topic, so you can immediately apply the concepts studied.
+
+I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner -- I can just do my best to make your journey less frustrating and more efficient.
+
+::: {.column-margin}
+Often, you will have to combine various aspects of an use-case, model, method -- from different sources, taking the best from each author.
+:::
+
 
 
 ## Building Blocks of Bayesian Statistics
@@ -31,8 +42,15 @@ A good introduction is in Chapter 1 of [BDA3 book](http://www.stat.columbia.edu/
 - Medical testing example in [Blitzstein](https://projects.iq.harvard.edu/stat110/home)
 :::
 
+
 ::: {.callout-note}
-## Poisson Distribution. Gamma-Poisson model
+## Beta-Binomial Model
+
+:::
+
+
+::: {.callout-note}
+## Poisson Distribution. Gamma-Poisson Model
 
 Counts of independent events in a unit of (space/time/...), with a low probability. You can review the maths [here](https://www.bayesrulesbook.com/chapter-5.html#gamma-poisson-conjugate-family). Below is a list of applications you can practice on:
 
@@ -57,8 +75,42 @@ Estimating rates, modeling a structural shift/change:
 - [U.S. School Shootings](https://sidravi1.github.io/blog/2018/05/22/what-happened-in-2006), is there an increase in attempts and occurences?
 :::
 
+::: {.callout-tip}
+## Link functions. Golf case-study
 
-## Groups and Hierarchies
+The domain/geometry inspired, custom model is presented in [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html) version, [stan](https://mc-stan.org/users/documentation/case-studies/golf.html) by Andrew Gelman, and [stan](https://avehtari.github.io/ROS-Examples/Golf/golf.html) by Aki Vehtari.
+:::
+
+::: {.callout-note}
+## InverseGamma-Normal
+
+- Speed of light experiment BDA3
+- Football concussions [study](https://www.bayesrulesbook.com/chapter-5.html#normal-normal-conjugate-family)
+
+:::
+
+
+
+## Groups and Partial Pooling
+
+::: {.callout-note}
+## Beta-Binomial for groups
+
+:::
+
+::: {.callout-note}
+## Normal Approximation. Agresti-Coull confidence interval
+
+:::
+
+::: {.callout-tip}
+## A/B Testing and Multi-Armed Bandits
+:::
+
+::: {.callout-tip}
+## The most dangerous equation
+
+:::
 
 ::: {.callout-note}
 ## Gamma-Poisson for groups
@@ -79,7 +131,103 @@ The models become more complicated as we attempt to estimate parameters for **ea
 :::
 
 
+::: {.callout-note}
+## Hierarchical Beta-Binomial
+ 
+- [baseball batting](https://bambinos.github.io/bambi/notebooks/hierarchical_binomial_bambi.html), from Eric Ma tutorial in pycon, and the equivalent [numpyro code](https://num.pyro.ai/en/stable/examples/baseball.html)
+- Police shooting training, race, [bambi](https://bambinos.github.io/bambi/notebooks/shooter_crossed_random_ANOVA.html) -- full bayesian workflow
+- Hierarchical baseball, efron, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/hierarchical_partial_pooling.html), idea of partial pooling
+- Rat tumors, [pymc](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-hierarchical-binomial-model.html), binomial
+:::
+
+
+## Gaussian Linear Regression
+
+::: {.callout-note}
+## Examples. Introduction to the workflow
+
+- [bambi](https://bambinos.github.io/bambi/notebooks/ESCS_multiple_regression.html), Eugene-Springfield community sample data: OCEAN as related to drugs -- no categorical variables, y distribution normal-ish with a quirk
+- [pymc](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/pymc_overview.html#case-study-1-educational-outcomes-for-hearing-impaired-children) - Educational outcomes for hearing-impaired children, a nice workflow
+- [marriages and waffles](https://num.pyro.ai/en/stable/tutorials/bayesian_regression.html) -- numpyro, mcelreath, there is also a pymc version
+- [Kentucky derby horse race](https://bookdown.org/roback/bookdown-BeyondMLR/ch-MLRreview.html) - frequentist version in R
+- [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/moderation_analysis.html) moderation analysis: muscle mass and age
+:::
+
+::: {.callout-tip}
+## Common statistical tests are linear models
+
+- [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html) - Krutsche fake data drug trial, t-test, [bambi](https://bambinos.github.io/bambi/notebooks/t-test.html). 
+- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests) and the [python port](https://www.georgeho.org/tests-as-linear/) 
+:::
+
+::: {.callout-tip}
+## Splines and Nonlinear Transformations
+
+- [Splines](https://bayesiancomputationbook.com/markdown/chp_05.html#id36) from Osvaldo, on Bike Ridership (UCI data, bike sharing)
+- [Splines](https://www.pymc.io/projects/examples/en/latest/case_studies/spline.html), rethinking, cherry blossoms data
+- Log-log, power laws
+:::
+
+
+::: {.callout-note}
+## Model Critique and Evaluation
+
+- Technical: prior and posterior checks [pymc docs](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/posterior_predictive.html#posterior-predictive)
+:::
+
+
+::: {.callout-note}
+## Model Comparison and Selection
+
+- [pymc](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-model-selection.html). - Model selection with fake data and polynomials
+
+:::
+
+::: {.callout-warning}
+## Bad posterior geometry. Reparametrization
+
+- Technical: (mu, sigma) - Neal's Funnel [numpyro](https://num.pyro.ai/en/stable/examples/funnel.html), there is equivalent pymc
+- More solutions in numpyro for bad [posterior geometry](https://num.pyro.ai/en/stable/tutorials/bad_posterior_geometry.html)
+:::
+
+::: {.callout-note}
+## Regularization and Variable Selection
+
+- [Spike and Slab kaggle](https://www.kaggle.com/code/melondonkey/bayesian-spike-and-slab-in-pymc3/notebook)
+- [Horseshoe prior](https://austinrochford.com/posts/2021-05-29-horseshoe-pymc3.html) pymc3
+- [Robust LR](https://bambinos.github.io/bambi/notebooks/t_regression.html), bambi, simulated data, also is in pymc
+:::
+
+
+
+::: {.callout-tip}
+## Portfolio optimization a la Markowitz
+
+- Technical: Wishart and Portfolios from [BMH](https://nbviewer.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter6_Priorities/Ch6_Priors_PyMC3.ipynb) -- can also do optimization ala markowitz, but with uncertainty from posteriors
+:::
+
+::: {.callout-warning}
+## Modeling how Data goes Missing
+
+- Missing data imputation, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/Missing_Data_Imputation.html), both for linear and hierarchical
+- Discrete missing data imputation [numpyro](https://num.pyro.ai/en/stable/tutorials/discrete_imputation.html), with simulated data and causal graphs
+- Pymcon - missing data [tutorial](https://gist.github.com/junpenglao/7c505c6c76f99c928a4e2c1161cff43a) in pymc3
+- [Missing Data Imputation](http://stronginference.com/missing-data-imputation.html)
+:::
+
+
+
 ## Generalized Linear Models
+
+::: {.callout-note}
+## Logistic Regression
+
+- Beetles survival by concentration chemical, logistic regression, [bambi](https://bambinos.github.io/bambi/notebooks/alternative_links_binary.html), tries out different link functions, but example is very nice
+- Logistic regression, vote intention by age, clinton/trump/.. [bambi](https://bambinos.github.io/bambi/notebooks/logistic_regression.html), ANES data, 1200 samples
+- Influences on income bracket, model comparison, [bambi](https://bambinos.github.io/bambi/notebooks/model_comparison.html)
+- Multinomial regression [iris](https://bambinos.github.io/bambi/notebooks/categorical_regression.html), via bambi
+:::
+
 
 ::: {.callout-note}
 ## Poisson Regression
@@ -95,11 +243,50 @@ The models become more complicated as we attempt to estimate parameters for **ea
 
 - [Cockroaches and pest management](https://avehtari.github.io/ROS-Examples/Roaches/roaches.html), where Negative-Binomial, Poisson and Zero-Inflated NBD is investigated.
 - [Fishing catches in a park](https://num.pyro.ai/en/stable/examples/zero_inflated_poisson.html), in numpyro
+- [Students' absence](https://bambinos.github.io/bambi/notebooks/negative_binomial.html), UCLA data, application of negative binomial, written in bambi
+:::
+
+::: {.callout-note}
+## Proportions. Compositional Data Analysis
+
+[Dirichlet regression](https://joshuacook.netlify.app/post/dirichlet-regression-pymc/), pymc3 - fake proportions dataset, but take some real ones from compositional data analysis books
 
 :::
 
 
+
+
 ## Hierarchical GLMs
+
+::: {.callout-note}
+## Hierarchical Gaussian Regression
+
+- Radon: Primary code reference: [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/multilevel_modeling.html) - A Primer on Bayesian Methods for Multilevel Modeling
+	- [bambinos](https://bambinos.github.io/bambi/notebooks/radon_example.html) a higher level API, models the log-radon
+	- [Omar Sosa - Practical introduction to Bayesian hierarchical modeling](https://github.com/omarfsosa/tech-talk-hierarchical-models) with numpyro
+	- [McStanPy](https://mc-stan.org/users/documentation/case-studies/radon_cmdstanpy_plotnine.html) implementation
+- [Bayesian Multilevel Regression](https://num.pyro.ai/en/stable/tutorials/bayesian_hierarchical_linear_regression.html) numpyro, linear regression [OSIC Pulmonary Fibrosis Progression](https://www.kaggle.com/c/osic-pulmonary-fibrosis-progression)
+- BeyondMLR [stage anxiety music performers](https://bookdown.org/roback/bookdown-BeyondMLR/ch-multilevelintro.html#cs:music)
+- Stack facial feedback hypothesis, re-analysis, ctx replication crisis, via [bambi](https://bambinos.github.io/bambi/notebooks/Strack_RRR_re_analysis.html) -- full workflow, with iteration
+:::
+
+::: {.callout-note}
+## Longitudinal Data and Studies
+- [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/longitudinal_models.html) longitudinal data with drinking teens, alcohol consumption per cohorts, in time
+- [Sleepstudy and reaction times](https://bambinos.github.io/bambi/notebooks/sleepstudy.html) bambi, by subject
+	- Same idea in [pig growth study](https://bambinos.github.io/bambi/notebooks/multi-level_regression.html)
+- Beyond MLR [charter schools longitudinal](https://bookdown.org/roback/bookdown-BeyondMLR/ch-lon.html#cs:charter)
+:::
+
+::: {.callout-note}
+## Hierarchical Logistic Regression
+
+- Beyond MLR logistic, college basketball referee foul differential [here](https://bookdown.org/roback/bookdown-BeyondMLR/ch-GLMM.html#cs:refs)
+- [Graduate Admissions](https://num.pyro.ai/en/stable/examples/ucbadmit.html), from McElreath,  UC Berkeley in Fall 1973 (numpyro)
+	- point to pymc port of rethinking
+- item-response nba fouls rasch (pymc) with nba data, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/item_response_nba.html)
+:::
+
 
 ::: {.callout-note}
 ## Hierarchical Poisson Regression
@@ -107,6 +294,30 @@ The models become more complicated as we attempt to estimate parameters for **ea
 - [Airbnb number of reviews](https://www.bayesrulesbook.com/chapter-18.html#hierarchical-poisson-negative-binomial-regression)
 - Estimating the strength of a [rugby team](https://www.pymc.io/projects/examples/en/latest/case_studies/rugby_analytics.html)
 - [Paper investigating seat-belt use rates](https://onlinelibrary.wiley.com/doi/full/10.1002/sta4.544), with data probably taken from the department of transportation [crashes website](https://crashstats.nhtsa.dot.gov/#!/)
+:::
+
+::: {.callout-note}
+## Models with 3 Levels
+
+- Beyond MLR [3-level seed germination](https://bookdown.org/roback/bookdown-BeyondMLR/ch-3level.html#cs:seeds)
+:::
+
+
+## Bayesian Machine Learning
+
+::: {.callout-note}
+## Bayesian Additive Regression Trees
+
+- [BART](https://bayesiancomputationbook.com/markdown/chp_07.html) from osvaldo, on bike shares
+- [Podcast Episode](https://learnbayesstats.com/episode/80-bayesian-additive-regression-trees-sameer-deshpande/) and an [R package](https://github.com/skdeshpande91/flexBART in R)
+:::
+
+
+::: {.callout-note}
+## Gaussian Processes
+
+- Gelman: [Birthdays](https://omarfsosa.github.io/speedy_gaussian_processes), hilbert space approximation [repo](https://github.com/omarfsosa/hsgp), also in [stan](https://avehtari.github.io/casestudies/Birthdays/birthdays.html)
+
 :::
 
 
