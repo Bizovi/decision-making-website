@@ -262,8 +262,10 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#building-blocks-of-bayesian-statistics" id="toc-building-blocks-of-bayesian-statistics" class="nav-link active" data-scroll-target="#building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</a></li>
+  <li><a href="#prerequisites-probability-and-python" id="toc-prerequisites-probability-and-python" class="nav-link active" data-scroll-target="#prerequisites-probability-and-python">Prerequisites: Probability and Python</a></li>
+  <li><a href="#building-blocks-of-bayesian-statistics" id="toc-building-blocks-of-bayesian-statistics" class="nav-link" data-scroll-target="#building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</a></li>
   <li><a href="#groups-and-partial-pooling" id="toc-groups-and-partial-pooling" class="nav-link" data-scroll-target="#groups-and-partial-pooling">Groups and Partial Pooling</a></li>
+  <li><a href="#ab-testing-and-experiment-design" id="toc-ab-testing-and-experiment-design" class="nav-link" data-scroll-target="#ab-testing-and-experiment-design">A/B Testing and Experiment Design</a></li>
   <li><a href="#gaussian-linear-regression" id="toc-gaussian-linear-regression" class="nav-link" data-scroll-target="#gaussian-linear-regression">Gaussian Linear Regression</a></li>
   <li><a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link" data-scroll-target="#generalized-linear-models">Generalized Linear Models</a></li>
   <li><a href="#hierarchical-glms" id="toc-hierarchical-glms" class="nav-link" data-scroll-target="#hierarchical-glms">Hierarchical GLMs</a></li>
@@ -294,7 +296,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </div>
 </div></div><p>There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic – you fill find here a list of <strong>carefully curated resources</strong>. Most of them have have <strong>code</strong>, <strong>data</strong>, and explained <strong>theory</strong> or methodology in a freely available e-book.</p>
 <p>There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -312,9 +314,35 @@ Right level of granularity
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Often, you will have to combine various aspects of an use-case, model, method – from different sources, taking the best from each author.</p>
-</div></div><section id="building-blocks-of-bayesian-statistics" class="level2 page-columns page-full">
+</div></div><section id="prerequisites-probability-and-python" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="prerequisites-probability-and-python">Prerequisites: Probability and Python</h2>
+<p>We start from the foundations of probability, however, I do not cover calculus, linear algebra, or other mathematical tools for data analysis. We do much more programming than mathematics, therefore, the ability to code in a programming language like Python or R is a must.</p>
+<div class="callout-warning callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Need a crash course in probability and statistics?
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<p>If you understand and can explain the following ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky, here are some readings:</p>
+<ul>
+<li><strong>Probability Triple</strong> and <strong>Random Variables</strong> - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
+<li><strong>Collectivity</strong> (“physical” structure), <strong>Statistical Population</strong>, <strong>Sample</strong> - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a>.</li>
+<li><strong>Parameter</strong> (Estimand), <strong>Estimator</strong>, <strong>Estimation/Statistic</strong> - same resources as above <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Stories behnid distributions: <span class="math inline">\(Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k\)</span>. What about <span class="math inline">\(Beta(a, b)\)</span>, <span class="math inline">\(Gamma(k, \theta)\)</span>, and <span class="math inline">\(Dirichlet(\bar{\theta})\)</span> – what are they good for?
+<ul>
+<li>Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories / applications with more math</a> from Joe Blitzstein.</li>
+</ul></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian “frequentism”.</p></li></div></div>
+</div>
+</section>
+<section id="building-blocks-of-bayesian-statistics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</h2>
-<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
+<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
 <p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
 <div class="callout-note callout callout-style-default callout-captioned page-columns page-full">
 <div class="callout-header d-flex align-content-center">
@@ -326,7 +354,7 @@ Bayes Rule. Update your beliefs, often!
 </div>
 </div>
 <div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div></div>
+<div class="page-columns page-full"><p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div></div>
 <ul>
 <li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
 <ul>
@@ -393,6 +421,22 @@ Poisson changepoint detection
 <li><a href="https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/pymc_overview.html#case-study-2-coal-mining-disasters">Coal Mining disasters</a>, pymc</li>
 <li><a href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Ch1_Introduction_PyMC_current.ipynb">Text Messages</a>, pymc</li>
 <li><a href="https://sidravi1.github.io/blog/2018/05/22/what-happened-in-2006">U.S. School Shootings</a>, is there an increase in attempts and occurences?</li>
+</ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Bayesian vs Frequentist vs Fisherian Inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Likelihood - either from previous books or <a href="https://rpsychologist.com/likelihood/">this interactive visualization</a></li>
+<li>Bayesian vs Frequentist inference - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 2, 3, 4</a>. Here is a nice <a href="https://rpsychologist.com/d3/bayes/">interactive visualization</a> for Bayesian updating.</li>
 </ul>
 </div>
 </div>
@@ -477,7 +521,10 @@ The most dangerous equation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<ul>
+<li>Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">the theorem and simulations here</a></li>
+<li>Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
+</ul>
 </div>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -532,6 +579,24 @@ Hierarchical Beta-Binomial
 </ul>
 </div>
 </div>
+</section>
+<section id="ab-testing-and-experiment-design" class="level2">
+<h2 class="anchored" data-anchor-id="ab-testing-and-experiment-design">A/B Testing and Experiment Design</h2>
+<p>Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design.</p>
+<p>I’m emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, <span class="math inline">\(\alpha, \beta\)</span>, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.</p>
+<ul>
+<li>Understanding the philosophy of falsification and how it applies to hypothesis testing. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory">Week2 of this course</a> has a great 20 minute explanation.</li>
+<li>Remember the importance of those 12 steps of statistics, especially the <a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">Default Action</a>. For a more classical exposition - check <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">this</a> out.</li>
+<li>Confidence Intervals - first check out this <a href="https://rpsychologist.com/d3/ci/">simulation</a>. Also <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">chapter 12</a>, uses bootstrap to estimate those.</li>
+<li>p-values - <a href="https://rpsychologist.com/pvalue/">simulation</a>, <a href="https://rpsychologist.com/d3/pdist/">simulation of distirbutions under H0/Ha</a></li>
+<li>Type 1, 2 errors, Type 3 errors (solving the wrong problem), <a href="https://openintro-ims.netlify.app/decerr.html">chapter14</a></li>
+<li>A/B Testing scheme, <a href="https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a">An end-to-end example</a>, but be careful to follow the 12 steps we have and not to forget to define the Default Action.</li>
+<li>Experiment Design and Hypothesis testing pitfalls - <a href="https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing">from HBR</a>, <a href="https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e">8 pitfalls</a>, <a href="https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241">A/A tests</a>, <a href="https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8">user interference</a></li>
+<li>Metric Design and <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">properties of good metrics</a> - <a href="https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">an example</a></li>
+<li>Relevance and Significance - Read <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">this paper</a> by Werner Stahel</li>
+<li>Non-Inferiority testing - <a href="https://rpsychologist.com/d3/equivalence/">This visualization</a></li>
+<li>Effect size, Power, Sample Size - <a href="https://mathstat.slu.edu/~speegle/_book/HTCI.html">here</a>, and <a href="https://www.huber.embl.de/msmb/06-chap.html">here</a> and <a href="https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html">here</a>. <a href="https://rpsychologist.com/cohend/">Cohen’s d</a>, <a href="https://rpsychologist.com/d3/nhst/">Power Analysis</a></li>
+</ul>
 </section>
 <section id="gaussian-linear-regression" class="level2">
 <h2 class="anchored" data-anchor-id="gaussian-linear-regression">Gaussian Linear Regression</h2>
@@ -599,6 +664,7 @@ Model Critique and Evaluation
 <div class="callout-body-container callout-body">
 <ul>
 <li>Technical: prior and posterior checks <a href="https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/posterior_predictive.html#posterior-predictive">pymc docs</a></li>
+<li>Bootstrap - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 10</a> or <a href="https://hastie.su.domains/Papers/ESLII.pdf">page 249</a></li>
 </ul>
 </div>
 </div>
@@ -614,6 +680,7 @@ Model Comparison and Selection
 <div class="callout-body-container callout-body">
 <ul>
 <li><a href="https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-model-selection.html">pymc</a>. - Model selection with fake data and polynomials</li>
+<li>Bias-Variance tradeoff - For an intuitive explanation, watch <a href="https://work.caltech.edu/lectures.html">lecture 8, slides</a>. See how this <a href="https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update">tradeoff needs an update</a> for the modern machine learning.</li>
 </ul>
 </div>
 </div>
@@ -866,6 +933,7 @@ Bayesian Additive Regression Trees
 <ul>
 <li><a href="https://bayesiancomputationbook.com/markdown/chp_07.html">BART</a> from osvaldo, on bike shares</li>
 <li><a href="https://learnbayesstats.com/episode/80-bayesian-additive-regression-trees-sameer-deshpande/">Podcast Episode</a> and an <a href="https://github.com/skdeshpande91/flexBART%20in%20R">R package</a></li>
+<li>Nonparametric methods - what is the benefit, name a few equivalents. Be able to explain a signed-rank transformation. <a href="https://steverxd.github.io/Stat_tests/">This</a> is the simplest and the most accessible explanation I know of so far.</li>
 </ul>
 </div>
 </div>
