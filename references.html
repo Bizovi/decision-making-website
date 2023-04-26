@@ -281,12 +281,20 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<p>There are too many tutorials and datasets for practice out there: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic – you fill find here a list of curated resources, most with code, data, and explained theory or methodology.</p>
-<p>There is little point in replicating examples from other books, which are well done, especially if they already have been migrated to python (if were written in other languages).</p>
+<p>I assume you read the conceptual stuff on this website, understood its use-cases, and the big picture of what to learn. Now, the question is <strong>where and how to start</strong> practicing, while catching up on the maths and programming.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>Often, you will have to combine various aspects of an use-case from different sources, taking the best from each author.</p>
-</div></div><div class="callout-important callout callout-style-default callout-captioned">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="01_fundamentals/img/karate-kid.webp" title="Practice" class="img-fluid figure-img" style="width:90.0%">
+</figure>
+<p></p><figcaption class="figure-caption">Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!</figcaption><p></p>
+</figure>
+</div>
+</div></div><p>There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic – you fill find here a list of <strong>carefully curated resources</strong>. Most of them have have <strong>code</strong>, <strong>data</strong>, and explained <strong>theory</strong> or methodology in a freely available e-book.</p>
+<p>There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -296,11 +304,15 @@ Right level of granularity
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Instead of recommending whole books, which in this field are huge: 500-900p of dense material, in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks, and ordered in a way to facilitate a more linear development.</p>
+<p>Instead of recommending whole books, which in this field are huge: 500-900p of dense material – in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks.</p>
+<p>They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. Think of them as lego pieces.</p>
 </div>
 </div>
-<p>I made sure to include code and practical examples for each statistical tool and theoretical topic, so you can immediately apply the concepts studied.</p>
-<section id="building-blocks-of-bayesian-statistics" class="level2">
+<p>I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner – I can just do my best to make your journey less frustrating and more efficient.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Often, you will have to combine various aspects of an use-case, model, method – from different sources, taking the best from each author.</p>
+</div></div><section id="building-blocks-of-bayesian-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</h2>
 <p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span> via simulation, choosing the appropriate distribution for each phenomenon, a prior for the parameters – then sampling from the posterior with pymc, numpyro, or stan.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -385,7 +397,7 @@ Link functions. Golf case-study
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The domain/geometry inspired, custom model is presented in <a href="pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html">pymc</a> version, <a href="https://mc-stan.org/users/documentation/case-studies/golf.html">stan</a> by Andrew Gelman, and <a href="https://avehtari.github.io/ROS-Examples/Golf/golf.html">stan</a> by Aki Vehtari.</p>
+<p>The domain/geometry inspired, custom model is presented in <a href="https://www.pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html">pymc</a> version, <a href="https://mc-stan.org/users/documentation/case-studies/golf.html">stan</a> by Andrew Gelman, and <a href="https://avehtari.github.io/ROS-Examples/Golf/golf.html">stan</a> by Aki Vehtari.</p>
 </div>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
