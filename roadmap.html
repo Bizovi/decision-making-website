@@ -308,6 +308,7 @@ Do you have a process for Statistics and ML?
 </div>
 </div>
 <p>There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some <em>mathematical</em> and in some we <strong>code and practice</strong>.</p>
+<p>The courses I teach are usually short and intensive, so the following schedule would take two weeks to cover, meaning the next two weeks I can focus on Bayesian statistics, causal inference, or machine learning – with more emphasis on modeling or engineering, depending on the audience.</p>
 <div class="column-page-inset-right">
 <table class="table">
 <thead>
@@ -344,8 +345,8 @@ Do you have a process for Statistics and ML?
 <td>LRB Journal Subscriptions</td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>Projects Overview. Full-stack data apps. Overview of Data.</td>
+<td><strong>5</strong></td>
+<td><strong>Projects Overview</strong>. <strong>Full-stack data apps</strong>. Overview of Data.</td>
 <td>NLP, RecSys, Time Series, Classification</td>
 <td>Mercari, Favoritas, H&amp;M, Olist (e-commerce)</td>
 </tr>
@@ -357,13 +358,13 @@ Do you have a process for Statistics and ML?
 </tr>
 <tr class="odd">
 <td><strong>7</strong></td>
-<td>Set Up the Environment. Reproducible Research I</td>
+<td><strong>Set Up the Environment</strong>. <strong>Reproducible Research I</strong></td>
 <td>terminal, conda, python, vscode, jupyter, git &amp; github, poetry, pytest</td>
 <td>DevXP, productivity, reproducibility</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>Bernoulli, Binomial, Simulation, DAGs as stories</td>
+<td>Bernoulli, Binomial, Poisson, Simulation, DAGs as stories</td>
 <td>numpy, pandas, pymc, matplotlib, arviz, graphviz</td>
 <td>couples showing up to safari</td>
 </tr>
@@ -418,6 +419,8 @@ Do you have a process for Statistics and ML?
 </tbody>
 </table>
 </div>
+<p>Why these exact topics, since other courses in 16 lectures teach you either statistical learning, probability, statistics, causality, deep learning? Of course, and they’re excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.</p>
+<p>Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges. Here are all of these concepts illustrated in the following mind-map:</p>
 <div class="column-page-inset-right">
 <div class="cell" data-fig-width="9">
 <div class="cell-output-display">
@@ -425,17 +428,17 @@ Do you have a process for Statistics and ML?
 <figure class="figure">
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  Prob(Probability) --&gt; Boot(Inference) -- LLN --&gt; Es(Estimators)  --&gt; PS(Stat process)
+  Prob(Probability) --&gt; Boot(Inference) -- LLN --&gt; Es(Estimators)  --&gt; PS[[Stat process]]
   Prob --&gt;  Cond(DAGs) -- Cond-g --&gt;  Bayes(Bayes Rule)
 
   DSc(Decisions, AI) -- statistics  --&gt; Prob(Probability)
-  DSc -- business  --&gt; VUCA[V.U.C.A.] --&gt; App(Applications) --&gt; R[Role in firms] 
+  DSc -- business  --&gt; VUCA(V.U.C.A.) --&gt; App(Applications) --&gt; R(Role in firms)
 
 
-  R --&gt; BAW(Analyst's Workflow)
+  R --&gt; BAW[[Analyst's Workflow]]
 
-  DSc -- method. --&gt; A[Analytics] --- Caus[Causal Inference] --- ML[Learning from Data]
-  ML --&gt; PML(ML Process)
+  DSc -- method. --&gt; A(Analytics) --- Caus(Causal Inference) --- ML(Learning from Data)
+  ML --&gt; PML[[ML Process]]
 
   App --&gt; NV(Newsvendor) --&gt; Proj(Projects Overview)
 
@@ -444,7 +447,7 @@ Do you have a process for Statistics and ML?
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: A mindmap to help you navigate the first module.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: A mindmap to help you navigate the first module, with 3 main branhes and programming sprinkled everywhere: business, statistics, and methodology.</figcaption><p></p>
 </figure>
 </div>
 </div>
