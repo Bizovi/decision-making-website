@@ -4,33 +4,41 @@ format:
     toc-location: left
 ---
 
-
-## A map for our adventure
-
-We start the course with a first module, in which we explore the [context of data science](01_fundamentals/background.qmd) in businesses, figure out what does AI mean, and where is it useful. Then, we review important statisical concepts and tools, exapting/repurposing them for our objectives, while remembering why they were invented in the first place.
-
-::: {.column-margin}
-These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models and learn the importance of asking the right questions, persuasive communication, and storytelling.
-:::
-
+## A map for the adventure
 
 | ![picasso](01_fundamentals/img/safari.svg){width="80%"}| ![big picture](01_fundamentals/img/meme-causal.jpeg){width="80%"}|
 |:--:|:--:|
-| **Module I:** Business Context and Probability Fundamentals | **Module II:** Applied Bayesian Statistics and Causal Inference
+| **[Module I](#module-i-business-context-and-probability):** Business Context and Probability Fundamentals[^r1] | **[Module II](#module-iia-bayesian-statistics):** Applied Bayesian Statistics and Causal Inference
 
-Next, we move on to experiment design and A/B testing. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+[^r1]: These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models and learn the importance of asking the right questions, persuasive communication, and storytelling.
 
-::: {.column-margin}
-We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101!
-:::
+
+[We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101!]{.aside}
 
 
 | ![picasso](01_fundamentals/img/umap.png)| ![big picture](01_fundamentals/img/LE_pyeco1.svg){width="100%"}|
 |:--:|:--:|
-| **Module III:** ML and Deep Learning | **Projects:** Software Engineering and Full-Stack Data Apps
+| **[Module III](#module-iii-ml-and-deep-learning):** ML and Deep Learning | **[Projects](#module-iv-full-stack-data-apps):** Software Engineering and Full-Stack Data Apps
 
 
 
+
+We start the course with a first module, in which we explore the [context of data science](01_fundamentals/background.qmd) in businesses, figure out what does AI mean, and where is it useful. Then, we review important statistical concepts and tools, exapting/repurposing them for our objectives, while remembering why they were invented in the first place.
+
+
+
+
+
+
+::: {.callout-tip}
+## Go to "Resources" page for practice!
+
+Conceptual understanding by itself is not enough. So, I curated a [list of resources](references.qmd) to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
+
+Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.
+:::
+
+Next, we move on to experiment design and A/B testing. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
 
 
 Did you get comfortable with ML? Good, because it's time to acknowledge the limitations and get more powerful tools from causal inference, when A/B tests and randomised experiments are unfeasible or unethical, but we can leverage naturally-occuring experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.
@@ -41,41 +49,39 @@ This is how we jump through various buckets, highlighting the golden thread link
 
 The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
 
-::: {.column-page-inset-right}
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|   Don't let the sheer diversity and breadth of topics intimidate you, 
-%%|   as we'll go step by step through each aspect, explaining the why and how.
-%%|   In one way or another, there is little you haven't seen here, however the way
-%%|   we tie it all together IS challenging.
-
-flowchart TD
-  DSc(Decision-Making Under Uncertainty at Scale) -- fundamentals  --> Prob(Probability)
-  DSc -- business context  --> VUCA[V.U.C.A.] --> App(Applications) --> R[Role in firms] --> PML(ML Process) --> PS(Stat process)
-  Prob(Probability) -->  Boot(Inference) --> Es(Estimators) --> AB(A/B Testing) -- advanced --> ExpD[/Causality/]
-
-  DSc -- skills/labs  --> Data(Data Wrangling)  --> Repr[Reproducibility] --> Pymc(PyMC Modeling) --> Pipe(Pipelines) -- advanced --> FS[/Full Stack Apps/]
-  ML -->  GLM(Linear Models) --> Class(Bayes Classifiers)  --> T(Tree-based Ensembles) -- advanced --> Caus(Hierarchical Models) --> Misc[/Time Series/]
-
-  DSc -- workhorse models  --> ML(Statistical Learning) --> Unsup(Dim. Reduction) --> Clust(Clustering) -- advanced --> RS[/RecSys/] --> Text[/NLP Embeddings/]
-```
-
-:::
 
 If you ask what is that engineering branch, you're totally right! During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.
 
 That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.
 
 
-## Study Guide
+## Module I: Business Context and Probability
 
-It takes many iterations to build a course website and a set of lectures which are easy to follow and act upon with deliberate practice. After four classes taught, I learned my lessons of what worked and didn't, which will translate in a set of lectures published here. 
+::: {.column-page-inset-right}
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   The first module is putting the rest of the course on a solid foundation, emphasizing again and again the key idea of Decision-Making Under Uncertainty at Scale.
 
-In the meanwhile, the best I can do in the limited time, is to give you a study guide, which starts here and goes to the best resources I know of for practice and reading.
+flowchart LR
+  Prob(Probability) --> Boot(Inference) -- LLN --> Es(Estimators)  --> PS(Stat process)
+  Prob -->  Cond(DAGs) -- Cond-g -->  Bayes(Bayes Rule)
 
-### Data Science in Business Context
+  DSc(Decisions, AI) -- statistics  --> Prob(Probability)
+  DSc -- business  --> VUCA[V.U.C.A.] --> App(Applications) --> R[Role in firms] 
+
+
+  R --> BAW(Analyst's Workflow)
+
+  DSc -- method. --> A[Analytics] --- Caus[Causal Inference] --- ML[Learning from Data]
+  ML --> PML(ML Process)
+
+  App --> NV(Newsvendor) --> Proj(Projects Overview)
+
+```
+
+:::
 
 The first 4 topics are covered in detail [here](https://course.economic-cybernetics.com/01_fundamentals/background.html) and the [course homepage](https://course.economic-cybernetics.com) gives additional context. The latter 3 are discussed extensively if you follow the links.
 
@@ -91,13 +97,6 @@ The first 4 topics are covered in detail [here](https://course.economic-cybernet
 	- What are some different modeling options for the demand. What kind of distributions will be appropriate for slow-moving, fast-moving, intermittent demand.
 - **Price optimization** (fixed capacity) - Give some examples of when it happens in practice. Same questions and concerns as in the newsvendor problem apply. Refer to [this tutorial](https://youtu.be/RScjq1mkDc0) by Dr. Adam Fleischhacker.
 
-### The processes of data science
-
-All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
-
-- [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) by Cassie Kozyrkov, CRISP-DM (any resource on the latter will do).
-- [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ) by Cassie Kozyrkov, along with her Google [lecture](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) on statistical thinking.
-- [Business Analyst's Workflow](https://www.causact.com/becoming-a-data-driven-business-analyst.html#becoming-a-data-driven-business-analyst) by Dr. Adam Fleischhacker
 
 
 ### Statistical fundamentals
@@ -108,6 +107,114 @@ Therefore, fundamental -- doesn't mean easy, nor basic nor trivial. The exams I 
 
 - How does linear algebra, probability, statistics, mathematical analysis, operations research, and economics contribute to Data Science and decision-making? Explained [here](01_fundamentals/prerequisites.qmd)
 - Difference between probability theory and mathematical statistics - [a beautiful explanation](https://johnkerl.org/doc/prbstat/prbstat.html)
+
+
+### The processes of data science
+
+All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
+
+- [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) by Cassie Kozyrkov, CRISP-DM (any resource on the latter will do).
+- [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ) by Cassie Kozyrkov, along with her Google [lecture](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) on statistical thinking.
+- [Business Analyst's Workflow](https://www.causact.com/becoming-a-data-driven-business-analyst.html#becoming-a-data-driven-business-analyst) by Dr. Adam Fleischhacker
+
+
+## Module IIa: Bayesian Statistics
+
+
+::: {.column-page-inset-right}
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   We develop a composable toolbox, capable to tackle the challenges of nonlinearity, heterogeneity, low level of aggregation, discreteness, missing data and heteroskedasticity. By putting together the right pieces in a right way, we can improve predictions and decisions in most aspects of a business. 
+
+flowchart TD
+  DM(Decisions)
+  DM --> BB(Beta-Bin*) --> GPo(Gamma-Pois*) --> NIG(IG-Norm) --> G(Groups)
+  BB --> LR(Logistic Regr.)
+  DM --> LM(Linear Regr.) --> GLM(GLMs)  --> Caus(Hierarchical Models) --> Misc[/Time Series/]
+  LR --> GLM
+  GPo --> GLM
+  G <--> Caus
+
+  LM --> P(Prior Choice) --> Reg(Regularization) --> VS(Variable Selection)
+  LM --> MS(Model Selection) --> LOO(LOO-PIT)
+  LM --> Rb(Robustness) --> NA(Missing Data) --> Surv(Survival and Censoring)
+  LM -- nonlinear --> NL(Splines) --> BART(BART) --> GP(Gaussian Proc.)
+
+  DM --> DA(Decision Theory) --> NV(Newsvendor pb.)
+  DA --> CF(Classification)
+```
+
+:::
+
+## Module IIb: A/B Testing and Causal Inference
+
+
+## Module III: ML and Deep Learning
+
+
+::: {.column-page-inset-right}
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   In this ML/DL module, we focus on practical, challenging use-cases and reliable, workhorse methods -- while keeping in mind the particularities of the domain and applications. 
+
+flowchart LR
+
+  DSc --> Unsup(Dim. Reduction) --> Clust(Clustering) --> MM(Mixtures) --> HDB(HDBScan)
+  Unsup --> PCA --> CA --> UMAP
+
+  DSc --> Cl(Classification) --> T(Tree-based Models) --> BG(Bagging) --> XG(Boosting)
+
+  Cl --> Im(Imbalance) --> F(Fraud Detection)
+
+  DSc(Decisions, Scale) --> Text[/NLP/] --> EM[Embeddings] --> Attn[Attention] --> ABSA[ABSA]
+  DSc --> RS[/RecSys/] --> Mtr[Metrics] --> FM[Factorization Mach.] --> HM[Hybrid Models]
+  DSc --> CV(DL: Vision) --> Conv[CNNs] --> AK[Approx. kNN]
+
+  Conv --> HM
+
+  DSc --> TS(Time Series) --> MTS[Metrics] --> XGB[ML Approaches] --> DL[DL Approaches]
+  EM --> HM
+
+```
+
+:::
+
+
+## Module IV: Full-Stack Data Apps
+
+
+::: {.column-page-inset-right}
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   We will need to learn a lot of engineering and new tools, so that we're able to collect, clean, explore, visualize data, train models, and build useful applications which improve outcomes for our clients.
+
+flowchart LR
+  DSc(Data Apps)  --> Data(Data Wrangling)  --> EDA(EDA) --> DV(Visualization)
+  EDA --> LP(Literate Programming)
+  
+  DSc --> Repr[Reproducibility] --> DP[Data Pipelines]
+  DSc --> M[Modeling] --> Pymc(PyMC) --> Tr[Torch]
+  DSc --> MLP[ML Pipes] --> Srv(Serving Models)
+  
+  DV --> FS[/Full Stack Apps/]
+  Tr --> FS
+  Srv --> FS
+
+  Repr --> LP
+  DP --> FS
+  FS --> Dep[Deploy]
+```
+
+:::
 
 
 ## Past Course Syllabus
