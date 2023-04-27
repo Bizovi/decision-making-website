@@ -91,7 +91,7 @@ The courses I teach are usually short and intensive, so the following schedule w
 |   | Lecture Agenda                      | Keywords  | Case Studies |
 |---|---------------------------|---------------|--------------|
 | 1 | [Data Science in Business Context](https://course.economic-cybernetics.com/01_fundamentals/background.html). Decision-Making Under Uncertainty | AI, Cybernetics, Uncertainty, Scale, Analytics vs Stats vs ML  | survey of applications in various domains |
-|2 | [Interdisciplinarity](https://course.economic-cybernetics.com).  Overview of prerequisites. | Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), [Why did you study all of that?]((01_fundamentals/prerequisites.qmd)) |
+| 2 | [Interdisciplinarity](https://course.economic-cybernetics.com).  Overview of prerequisites. | Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), [Why did you study all of that?]((01_fundamentals/prerequisites.qmd)) |
 | 3 | Business Analyst's Workflow. Newsvendor Problem  | action, outcome, strategy, expertise, data, models, simulation, DAGs | TIME INC. printing quantity decisions |
 | 4 | Strategy and the Desired Trajectory | SWOT, Systems Dynamics, KPIs, Stock vs Flow | LRB Journal Subscriptions |
 | **5** | **Projects Overview**. **Full-stack data apps**. Overview of Data. | NLP, RecSys, Time Series, Classification | Mercari, Favoritas, H&M, Olist (e-commerce)  |
@@ -173,33 +173,29 @@ flowchart TD
 :::
 
 
-::: {.column-page-inset-right}
+<!-- ::: {.column-page-inset-right}
 
 | Week  | Title                      | Keywords  | Case Studies |
 |---------------|-----------------------|-------------------|---------------|
-| S13 (21 Jan) | Bayesian inference | Priors, Bayes Factors, Credible intervals | Generative models, Model critique |
-| W1 (L7) | Pricing Decisions. Bayesian Inference. Link functions | demand elasticity, fixed capacity, Bayes, revenue management, DAGs  | VIP Lounge at Festivals |
-| W1 (L8) | Bayesian Workflow. Regression, what is GLM | prior, likelihood, stochastic optimization  | Flight price optimization (static) |
-| S12 (21 Jan) | Likelihood, Regularization | Likelihood ratio, James-Stein, curse of dimensionality | Getting a taste of the Fisherian perspective |
 
-:::
+::: -->
 
 
 ## Module IIb: A/B Testing and Causal Inference
 
 ::: {.column-page-inset-right}
 
-| Week  | Title                      | Keywords  | Case Studies |
-|---------------|-----------------------|-------------------|---------------|
-| C9 (13 Jan) | A/B Testing pitfalls | A/A Tests, Selection bias, Confounders, Novelty | The need for rigorous experiments |
-| C10 (13 Jan) | Error Types, Effect Size, p-values | tests for difference in proportions and means | Strategy for simulation |
-| S9 (14 Jan) | Power, Sample Size calculations, Non-inferiority tests | relevance, minimal effect size | Neyman-Pearson, frequentism as action in the long-term |
-| S10 (14 Jan) | Self-practice: Linear regression review | Hypothesis tests as linear models | Guidance with student projects |
-| C11 (19 Jan) | Properties of Metrics for A/B Testing | Sensitivity, stability, directedness | Potential pitfalls |
-| C12 (19 Jan) | Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relevance for ML, Deep Learning |
-| C14 (20 Jan) | Bootstrap and Nonparametrics | resampling, ECDF |  Kolmogorov-Smirnov |
-| S11 (21 Jan) | CLT, Choosing a test, Trading off errors, Increasing Power. What next? | Cohen's d, PPV, GLM, nonparametrics, multilevel models | Justifying $\alpha, 1 - \beta, \Delta, n$ by simulation |
-| S14 (21 Jan) | Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |
+|   | Lecture Agenda                      | Keywords  | Case Studies |
+|---|----------------|---------------|--------------|
+| 1 | A/B Testing pitfalls | A/A Tests, Selection bias, Confounders, Novelty | The need for rigorous experiments |
+| 2 | Error Types, Effect Size, p-values | tests for difference in proportions and means | Strategy for simulation |
+| 3 | Power, Sample Size calculations, Non-inferiority tests | relevance, minimal effect size | Neyman-Pearson, frequentism as action in the long-term |
+| 4 | Linear regression review | Hypothesis tests as linear models | Guidance with student projects |
+| 5 | Properties of Metrics for A/B Testing | Sensitivity, stability, directedness | Potential pitfalls |
+| 6 | Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relevance for ML, Deep Learning |
+| 7 | Bootstrap and Nonparametrics | resampling, ECDF |  Kolmogorov-Smirnov |
+| 8 | CLT, Choosing a test, Trading off errors, Increasing Power | Cohen's d, PPV, GLM, nonparametrics | Justifying $\alpha, 1 - \beta, \Delta, n$ by simulation |
+| 9 | Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |
 
 :::
 
