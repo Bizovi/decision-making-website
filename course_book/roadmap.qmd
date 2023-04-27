@@ -6,28 +6,27 @@ format:
 
 ## A map for the adventure
 
-| ![picasso](01_fundamentals/img/safari.svg){width="80%"}| ![big picture](01_fundamentals/img/meme-causal.jpeg){width="80%"}|
+I always start with the first module, in which we explore [decisions](01_fundamentals/background.qmd) in businesses, figure out what does AI mean, and where it adds value. If we view statistics as **changing our minds and actions in the face of evidence** -- fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.
+
+- [**Module I**](#module-i-business-decisions-and-probability): Business Decisions and Probability Fundamentals
+- [**Module IIa**](#module-iia-bayesian-statistics): Applied Bayesian Statistics
+- [**Module IIb**](#module-iib-ab-testing-and-causal-inference): A/B Testing and Causal Inference[^r3]
+- [**Module III**](#module-iii-ml-and-deep-learning): Probabilistic ML and Deep Learning
+- [**Projects**](#module-iv-full-stack-data-apps): Software Engineering and Full-Stack Data Apps
+
+[^r3]: ![ We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101! *(Source: [McElreath](https://youtu.be/KNPYUVmY3NM))*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
+
+<!-- | ![picasso](01_fundamentals/img/safari.svg){width="80%"}| ![big picture](01_fundamentals/img/meme-causal.jpeg){width="80%"}|
 |:--:|:--:|
-| **[Module I](#module-i-business-context-and-probability):** Business Context and Probability Fundamentals[^r1] | **[Module II](#module-iia-bayesian-statistics):** Applied Bayesian Statistics and Causal Inference
-
-[^r1]: These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models and learn the importance of asking the right questions, persuasive communication, and storytelling.
+| **[Module I](#module-i-business-context-and-probability):** Business Context and Probability Fundamentals | **[Module II](#module-iia-bayesian-statistics):** Applied Bayesian Statistics and Causal Inference -->
 
 
-[We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101!]{.aside}
-
-
-| ![picasso](01_fundamentals/img/umap.png)| ![big picture](01_fundamentals/img/LE_pyeco1.svg){width="100%"}|
+<!-- | ![picasso](01_fundamentals/img/umap.png)| ![big picture](01_fundamentals/img/LE_pyeco1.svg){width="100%"}|
 |:--:|:--:|
-| **[Module III](#module-iii-ml-and-deep-learning):** ML and Deep Learning | **[Projects](#module-iv-full-stack-data-apps):** Software Engineering and Full-Stack Data Apps
+| **[Module III](#module-iii-ml-and-deep-learning):** ML and Deep Learning | **[Projects](#module-iv-full-stack-data-apps):** Software Engineering and Full-Stack Data Apps -->
 
 
-
-
-We start the course with a first module, in which we explore the [context of data science](01_fundamentals/background.qmd) in businesses, figure out what does AI mean, and where is it useful. Then, we review important statistical concepts and tools, exapting/repurposing them for our objectives, while remembering why they were invented in the first place.
-
-
-
-
+These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That's why it's essential to take every tool, and **apply** it in the context of an appropriate use-case/application -- meaning, **we'll code a lot**.
 
 
 ::: {.callout-tip}
@@ -38,24 +37,40 @@ Conceptual understanding by itself is not enough. So, I curated a [list of resou
 Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.
 :::
 
-Next, we move on to experiment design and A/B testing. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+Once we have a confident grasp of the fundamentals, we continue with understanding and applying Bayesian Statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face. 
+
+Did you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do controlled experiments. We'll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it's so easy to fall into.
 
 
-Did you get comfortable with ML? Good, because it's time to acknowledge the limitations and get more powerful tools from causal inference, when A/B tests and randomised experiments are unfeasible or unethical, but we can leverage naturally-occuring experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.
+Often, A/B tests and randomised experiments are unfeasible or unethical. We also acknowledged the limitations of inferring an association[^caus1], so it's time to get more powerful tools from causal inference. We can leverage natural experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding. 
 
-::: {.column-margin}
-This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty.
+[^caus1]: Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the "world" works -- translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).
+
+
+::: {.callout-important}
+## What if I care only about ML?
+
+Even if you're interested only in machine learning, most practitioners will emphasize the importance of mastering regression (generalized linear models) and doing A/B tests to gather evidence that our new model brings an improvement. 
+
+This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML -- the lines between these two fields are indeed very blurry.
 :::
+
+Often, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+
+During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.
+
+::: {.callout-tip}
+## Build an impressive project for your portfolio
+
+That is your final project for the course[^proj] and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity. 
+:::
+
+[^proj]: A project can be much simpler: a quarto blog to showcase your research, a python package and CLI application to train a model, a streamlit app to demo a model.
 
 The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
 
 
-If you ask what is that engineering branch, you're totally right! During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.
-
-That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.
-
-
-## Module I: Business Context and Probability
+## Module I: Business Decisions and Probability
 
 ::: {.column-page-inset-right}
 ```{mermaid}
