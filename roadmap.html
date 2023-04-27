@@ -203,7 +203,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#a-map-for-the-adventure" id="toc-a-map-for-the-adventure" class="nav-link active" data-scroll-target="#a-map-for-the-adventure">A map for the adventure</a></li>
-  <li><a href="#module-i-business-context-and-probability" id="toc-module-i-business-context-and-probability" class="nav-link" data-scroll-target="#module-i-business-context-and-probability">Module I: Business Context and Probability</a>
+  <li><a href="#module-i-business-decisions-and-probability" id="toc-module-i-business-decisions-and-probability" class="nav-link" data-scroll-target="#module-i-business-decisions-and-probability">Module I: Business Decisions and Probability</a>
   <ul class="collapse">
   <li><a href="#statistical-fundamentals" id="toc-statistical-fundamentals" class="nav-link" data-scroll-target="#statistical-fundamentals">Statistical fundamentals</a></li>
   <li><a href="#the-processes-of-data-science" id="toc-the-processes-of-data-science" class="nav-link" data-scroll-target="#the-processes-of-data-science">The processes of data science</a></li>
@@ -226,36 +226,27 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 <section id="a-map-for-the-adventure" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="a-map-for-the-adventure">A map for the adventure</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: center;"><img src="01_fundamentals/img/safari.svg" class="img-fluid" style="width:80.0%" alt="picasso"></th>
-<th style="text-align: center;"><img src="01_fundamentals/img/meme-causal.jpeg" class="img-fluid" style="width:80.0%" alt="big picture"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong><a href="#module-i-business-context-and-probability">Module I</a>:</strong> Business Context and Probability Fundamentals<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
-<td style="text-align: center;"><strong><a href="#module-iia-bayesian-statistics">Module II</a>:</strong> Applied Bayesian Statistics and Causal Inference</td>
-</tr>
-</tbody>
-</table>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;These fundamentals are not “just theory”, it is what will make or break our project in practice. We will achieve a lot with simple, elegant models and learn the importance of asking the right questions, persuasive communication, and storytelling.</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That’s not your stats 101!</span></div></div>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: center;"><img src="01_fundamentals/img/umap.png" class="img-fluid" alt="picasso"></th>
-<th style="text-align: center;"><img src="01_fundamentals/img/LE_pyeco1.svg" class="img-fluid" style="width:100.0%" alt="big picture"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong><a href="#module-iii-ml-and-deep-learning">Module III</a>:</strong> ML and Deep Learning</td>
-<td style="text-align: center;"><strong><a href="#module-iv-full-stack-data-apps">Projects</a>:</strong> Software Engineering and Full-Stack Data Apps</td>
-</tr>
-</tbody>
-</table>
-<p>We start the course with a first module, in which we explore the <a href="./01_fundamentals/background.html">context of data science</a> in businesses, figure out what does AI mean, and where is it useful. Then, we review important statistical concepts and tools, exapting/repurposing them for our objectives, while remembering why they were invented in the first place.</p>
+<p>I always start with the first module, in which we explore <a href="./01_fundamentals/background.html">decisions</a> in businesses, figure out what does AI mean, and where it adds value. If we view statistics as <strong>changing our minds and actions in the face of evidence</strong> – fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.</p>
+<ul>
+<li><a href="#module-i-business-decisions-and-probability"><strong>Module I</strong></a>: Business Decisions and Probability Fundamentals</li>
+<li><a href="#module-iia-bayesian-statistics"><strong>Module IIa</strong></a>: Applied Bayesian Statistics</li>
+<li><a href="#module-iib-ab-testing-and-causal-inference"><strong>Module IIb</strong></a>: A/B Testing and Causal Inference<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li><a href="#module-iii-ml-and-deep-learning"><strong>Module III</strong></a>: Probabilistic ML and Deep Learning</li>
+<li><a href="#module-iv-full-stack-data-apps"><strong>Projects</strong></a>: Software Engineering and Full-Stack Data Apps</li>
+</ul>
+<!-- | ![picasso](01_fundamentals/img/safari.svg){width="80%"}| ![big picture](01_fundamentals/img/meme-causal.jpeg){width="80%"}|
+|:--:|:--:|
+| **[Module I](#module-i-business-context-and-probability):** Business Context and Probability Fundamentals | **[Module II](#module-iia-bayesian-statistics):** Applied Bayesian Statistics and Causal Inference -->
+<!-- | ![picasso](01_fundamentals/img/umap.png)| ![big picture](01_fundamentals/img/LE_pyeco1.svg){width="100%"}|
+|:--:|:--:|
+| **[Module III](#module-iii-ml-and-deep-learning):** ML and Deep Learning | **[Projects](#module-iv-full-stack-data-apps):** Software Engineering and Full-Stack Data Apps -->
+<div class="no-row-height column-margin column-container"><li id="fn1"><div class="quarto-figure quarto-figure-center"><sup>1</sup>&nbsp;
+<figure class="figure">
+<p><img src="01_fundamentals/img/meme-causal.jpeg" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption class="figure-caption">We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That’s not your stats 101! <em>(Source: <a href="https://youtu.be/KNPYUVmY3NM">McElreath</a>)</em></figcaption><p></p>
+</figure>
+</div>
+</li></div><p>These fundamentals are not “just theory”, it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That’s why it’s essential to take every tool, and <strong>apply</strong> it in the context of an appropriate use-case/application – meaning, <strong>we’ll code a lot</strong>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -270,17 +261,42 @@ Go to “Resources” page for practice!
 <p>Also, keep an eye on the course <a href="https://github.com/Bizovi/decision-making">github repo</a>, in which we’ll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.</p>
 </div>
 </div>
-<p>Next, we move on to experiment design and A/B testing. Once you get a taste of decisions with high stakes, we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.</p>
-<p>Did you get comfortable with ML? Good, because it’s time to acknowledge the limitations and get more powerful tools from causal inference, when A/B tests and randomised experiments are unfeasible or unethical, but we can leverage naturally-occuring experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty.</p>
-</div></div><p>The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
-<p>If you ask what is that engineering branch, you’re totally right! During the labs we’ll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.</p>
-<p>That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don’t worry about getting everything right, but focus on a problem and single area from the course you’re passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.</p>
+<p>Once we have a confident grasp of the fundamentals, we continue with understanding and applying Bayesian Statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face.</p>
+<p>Did you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do controlled experiments. We’ll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it’s so easy to fall into.</p>
+<div class="page-columns page-full"><p>Often, A/B tests and randomised experiments are unfeasible or unethical. We also acknowledged the limitations of inferring an association<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, so it’s time to get more powerful tools from causal inference. We can leverage natural experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the “world” works – translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).</p></li></div></div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+What if I care only about ML?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even if you’re interested only in machine learning, most practitioners will emphasize the importance of mastering regression (generalized linear models) and doing A/B tests to gather evidence that our new model brings an improvement.</p>
+<p>This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML – the lines between these two fields are indeed very blurry.</p>
+</div>
+</div>
+<p>Often, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.</p>
+<p>During the labs we’ll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.</p>
+<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Build an impressive project for your portfolio
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<div class="page-columns page-full"><p>That is your final project for the course<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don’t worry about getting everything right, but focus on a problem and single area from the course you’re passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;A project can be much simpler: a quarto blog to showcase your research, a python package and CLI application to train a model, a streamlit app to demo a model.</p></li></div></div>
+</div>
+</div>
+<p>The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
 </section>
-<section id="module-i-business-context-and-probability" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="module-i-business-context-and-probability">Module I: Business Context and Probability</h2>
+<section id="module-i-business-decisions-and-probability" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="module-i-business-decisions-and-probability">Module I: Business Decisions and Probability</h2>
 <div class="column-page-inset-right">
 <div class="cell" data-fig-width="9">
 <div class="cell-output-display">
