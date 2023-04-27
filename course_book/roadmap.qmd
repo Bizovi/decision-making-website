@@ -82,7 +82,9 @@ The most difficult part of the module is the statistical fundamentals, as it is 
 All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
 :::
 
-There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some *mathematical* and in some we **code and practice**.
+There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some *mathematical* and in some we **code and practice**. 
+
+The courses I teach are usually short and intensive, so the following schedule would take two weeks to cover, meaning the next two weeks I can focus on Bayesian statistics, causal inference, or machine learning -- with more emphasis on modeling or engineering, depending on the audience.
 
 ::: {.column-page-inset-right}
 
@@ -92,10 +94,10 @@ There are many ways to organize this module in lectures. You can find a possible
 |2 | [Interdisciplinarity](https://course.economic-cybernetics.com).  Overview of prerequisites. | Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), [Why did you study all of that?]((01_fundamentals/prerequisites.qmd)) |
 | 3 | Business Analyst's Workflow. Newsvendor Problem  | action, outcome, strategy, expertise, data, models, simulation, DAGs | TIME INC. printing quantity decisions |
 | 4 | Strategy and the Desired Trajectory | SWOT, Systems Dynamics, KPIs, Stock vs Flow | LRB Journal Subscriptions |
-| 5 | Projects Overview. Full-stack data apps. Overview of Data. | NLP, RecSys, Time Series, Classification | Mercari, Favoritas, H&M, Olist (e-commerce)  |
+| **5** | **Projects Overview**. **Full-stack data apps**. Overview of Data. | NLP, RecSys, Time Series, Classification | Mercari, Favoritas, H&M, Olist (e-commerce)  |
 | *6* | *Probability Triple. Random Variables. Mathematical Statistics* | population, sample, r.v., estimators, mixtures, markov chain | Retail Fashion - appropriate choice of distributions  |
-| **7** | Set Up the Environment. Reproducible Research I | terminal, conda, python, vscode, jupyter, git & github, poetry, pytest | DevXP, productivity, reproducibility |
-| 8 | Bernoulli, Binomial, Simulation, DAGs as stories | numpy, pandas, pymc, matplotlib, arviz, graphviz | couples showing up to safari |
+| **7** | **Set Up the Environment**. **Reproducible Research I** | terminal, conda, python, vscode, jupyter, git & github, poetry, pytest | DevXP, productivity, reproducibility |
+| 8 | Bernoulli, Binomial, Poisson, Simulation, DAGs as stories | numpy, pandas, pymc, matplotlib, arviz, graphviz | couples showing up to safari |
 | 9 | Bayes Rule | DAGs, Conditioning, Marginalization, Priors | Football Spreads, Medical testing |
 | 10 | Beta-Binomial Model | pymc, praw, priors, conjugate families | A/B testing |
 | 11 | [Newsvendor Problem](https://youtu.be/QLsSPnwWS_M). Probability distributions. Stochastic Processes | model specification, inference, simulation, optimization, constraints | groceries and perisable goods, [price optimization](https://youtu.be/RScjq1mkDc0) |
@@ -107,27 +109,29 @@ There are many ways to organize this module in lectures. You can find a possible
 
 :::
 
+Why these exact topics, since other courses in 16 lectures teach you either statistical learning, probability, statistics, causality, deep learning? Of course, and they're excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.
 
+Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges. Here are all of these concepts illustrated in the following mind-map:
 
 ::: {.column-page-inset-right}
 ```{mermaid}
 %%| label: fig-mermaid
 %%| fig-width: 9
 %%| fig-cap: |
-%%|   A mindmap to help you navigate the first module. 
+%%|   A mindmap to help you navigate the first module, with 3 main branhes and programming sprinkled everywhere: business, statistics, and methodology.
 
 flowchart LR
-  Prob(Probability) --> Boot(Inference) -- LLN --> Es(Estimators)  --> PS(Stat process)
+  Prob(Probability) --> Boot(Inference) -- LLN --> Es(Estimators)  --> PS[[Stat process]]
   Prob -->  Cond(DAGs) -- Cond-g -->  Bayes(Bayes Rule)
 
   DSc(Decisions, AI) -- statistics  --> Prob(Probability)
-  DSc -- business  --> VUCA[V.U.C.A.] --> App(Applications) --> R[Role in firms] 
+  DSc -- business  --> VUCA(V.U.C.A.) --> App(Applications) --> R(Role in firms)
 
 
-  R --> BAW(Analyst's Workflow)
+  R --> BAW[[Analyst's Workflow]]
 
-  DSc -- method. --> A[Analytics] --- Caus[Causal Inference] --- ML[Learning from Data]
-  ML --> PML(ML Process)
+  DSc -- method. --> A(Analytics) --- Caus(Causal Inference) --- ML(Learning from Data)
+  ML --> PML[[ML Process]]
 
   App --> NV(Newsvendor) --> Proj(Projects Overview)
 
