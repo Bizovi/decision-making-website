@@ -72,12 +72,49 @@ The icing on the cake is miscellaneous topics dear to me and usually not covered
 
 ## Module I: Business Decisions and Probability
 
+The first module is putting the rest of the course on a solid foundation, emphasizing again and again the key idea of Decision-Making Under Uncertainty at Scale. Understand the problem, the methodology, and the tools at your disposal.
+
+The most difficult part of the module is the statistical fundamentals, as it is very easy to misunderstand and apply these methods mechanically. Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.
+
+::: {.callout-important}
+## Do you have a process for Statistics and ML?
+
+All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
+:::
+
+There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some *mathematical* and in some we **code and practice**.
+
+::: {.column-page-inset-right}
+
+|   | Lecture Agenda                      | Keywords  | Case Studies |
+|---|---------------------------|---------------|--------------|
+| 1 | [Data Science in Business Context](https://course.economic-cybernetics.com/01_fundamentals/background.html). Decision-Making Under Uncertainty | AI, Cybernetics, Uncertainty, Scale, Analytics vs Stats vs ML  | survey of applications in various domains |
+|2 | [Interdisciplinarity](https://course.economic-cybernetics.com).  Overview of prerequisites. | Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), [Why did you study all of that?]((01_fundamentals/prerequisites.qmd)) |
+| 3 | Business Analyst's Workflow. Newsvendor Problem  | action, outcome, strategy, expertise, data, models, simulation, DAGs | TIME INC. printing quantity decisions |
+| 4 | Strategy and the Desired Trajectory | SWOT, Systems Dynamics, KPIs, Stock vs Flow | LRB Journal Subscriptions |
+| 5 | Projects Overview. Full-stack data apps. Overview of Data. | NLP, RecSys, Time Series, Classification | Mercari, Favoritas, H&M, Olist (e-commerce)  |
+| *6* | *Probability Triple. Random Variables. Mathematical Statistics* | population, sample, r.v., estimators, mixtures, markov chain | Retail Fashion - appropriate choice of distributions  |
+| **7** | Set Up the Environment. Reproducible Research I | terminal, conda, python, vscode, jupyter, git & github, poetry, pytest | DevXP, productivity, reproducibility |
+| 8 | Bernoulli, Binomial, Simulation, DAGs as stories | numpy, pandas, pymc, matplotlib, arviz, graphviz | couples showing up to safari |
+| 9 | Bayes Rule | DAGs, Conditioning, Marginalization, Priors | Football Spreads, Medical testing |
+| 10 | Beta-Binomial Model | pymc, praw, priors, conjugate families | A/B testing |
+| 11 | [Newsvendor Problem](https://youtu.be/QLsSPnwWS_M). Probability distributions. Stochastic Processes | model specification, inference, simulation, optimization, constraints | groceries and perisable goods, [price optimization](https://youtu.be/RScjq1mkDc0) |
+| *12* | *The most dangerous equation* | estimators properties, CLT, LLN, sample size | U.S. small schools, reddit upvote share, hackernoon algo |
+| *13* | *Estimator properties. Bias-Variance* | $\chi^2_k, N, F_{m, n}, t_k$ | What does a statistician want?  |
+| 14 | [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3). [What is ML?](https://work.caltech.edu/lectures.html)  | PAC Learning, generalization, CRISP-DM | Project requirements simplification |
+| 15 | [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ). A/B Testing Scheme | Default Action, Stat. Hypotheses, confidence intervals, relevance | problem of p-value, [statistics workflow](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) |
+| **16** | **Reproducible Research II**| automation, code, data, environment, documents, publishing | Replication crisis, Excel and the Dead Salmon |
+
+:::
+
+
+
 ::: {.column-page-inset-right}
 ```{mermaid}
 %%| label: fig-mermaid
 %%| fig-width: 9
 %%| fig-cap: |
-%%|   The first module is putting the rest of the course on a solid foundation, emphasizing again and again the key idea of Decision-Making Under Uncertainty at Scale.
+%%|   A mindmap to help you navigate the first module. 
 
 flowchart LR
   Prob(Probability) --> Boot(Inference) -- LLN --> Es(Estimators)  --> PS(Stat process)
@@ -95,66 +132,6 @@ flowchart LR
   App --> NV(Newsvendor) --> Proj(Projects Overview)
 
 ```
-
-:::
-
-The first 4 topics are covered in detail [here](https://course.economic-cybernetics.com/01_fundamentals/background.html) and the [course homepage](https://course.economic-cybernetics.com) gives additional context. The latter 3 are discussed extensively if you follow the links.
-
-- Data Science examples of **Business Applications** - be able to explain most common use-cases in multiple industries, like e-commerce, finance, banking, and medicine.
-- **VUCA**, **SWOT** and **Business Strategy** - articulate some properties of the business environment, understand firm's trajectory and how it could translate into a business strategy. Make sure you understand what a strategy is and how it influences our modeling process.
-- What is **AI, Data Science, Cybernetics** - understand that, in a nutshell, it's about decision-making under uncertainty at scale, in a given domain of expertise.
-- **Analytics** vs **Stats** vs **ML** - be able to match a particular problem with one (or a combination) of these approaches to data-driven problem solving. Know when NOT to use one.
-- What is **Machine Learning**? Understand the idea of inductive reasoning, generalization, and be able to 'draw'/outline the core mechanism of the machine learning.  Give examples when it can go wrong or awry. If you have time, refer to [this](https://work.caltech.edu/lectures.html) course, lecture 1 and 2.
-- **Newsvendor problem** - understand this demand planning model in business terms and translate it into a mathematical model. Refer to [this tutorial](https://youtu.be/QLsSPnwWS_M).
-	- Reason about the role and sources of uncertainty in the decisions and how can we do a stochastic optimization. 
-	- Articulate and formalize the trade-offs we're facing. 
-	- What happens if the goods are not perishable, what kind of costs we will suffer then?
-	- What are some different modeling options for the demand. What kind of distributions will be appropriate for slow-moving, fast-moving, intermittent demand.
-- **Price optimization** (fixed capacity) - Give some examples of when it happens in practice. Same questions and concerns as in the newsvendor problem apply. Refer to [this tutorial](https://youtu.be/RScjq1mkDc0) by Dr. Adam Fleischhacker.
-
-
-
-### Statistical fundamentals
-
-This is the most difficult part of the course, going into the depths of statistical foundations. Even though you encountered most of these topics in the introductory statistics courses, it is very easy to misunderstand and apply these methods mechanically. 
-
-Therefore, fundamental -- doesn't mean easy, nor basic nor trivial. The exams I give never ask you to compute or solve puzzles, but to appropriately define, justify and apply these (choices) in the context of business applications.
-
-- How does linear algebra, probability, statistics, mathematical analysis, operations research, and economics contribute to Data Science and decision-making? Explained [here](01_fundamentals/prerequisites.qmd)
-- Difference between probability theory and mathematical statistics - [a beautiful explanation](https://johnkerl.org/doc/prbstat/prbstat.html)
-
-
-### The processes of data science
-
-All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
-
-- [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) by Cassie Kozyrkov, CRISP-DM (any resource on the latter will do).
-- [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ) by Cassie Kozyrkov, along with her Google [lecture](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) on statistical thinking.
-- [Business Analyst's Workflow](https://www.causact.com/becoming-a-data-driven-business-analyst.html#becoming-a-data-driven-business-analyst) by Dr. Adam Fleischhacker
-
-
-### A possible schedule of one hour lectures
-
-::: {.column-page-inset-right}
-
-| Week  | Title                      | Keywords  | Case Studies |
-|------|-----------------------|---------------|--------------|
-| W1 (L1) | Data Science in Business Context. Decision-Making Under Uncertainty at Scale | AI, ML, Uncertainty, Decisions  | survey of applications in various domains |
-| W1 (L2) | Interdisciplinarity. Why did you study all of that? Overview of prerequisites.| Calculus, Linear Algebra, Probability, Stats, Economics | survey of interest and assessment of students' skills  |
-| W1 (L3) | Business Analyst's Workflow. Newsvendor Problem and em' tradeoffs. Analytics vs Stats vs ML | action, outcome, strategy, expertise, data, models, simulation, DAGs | TIME INC. printing quantity decisions |
-| W1 (L4) | Strategy and the Desired Trajectory | SWOT, Systems Dynamics, KPIs, Stock vs Flow | LRB Journal Subscriptions |
-| *W1 (L6)* | Probability Triple. Random Variables. Mathematical Statistics | population, sample, r.v., estimators, mixtures, markov chain | Retail Fashion - appropriate choice of distributions  |
-| W1 (L5) | Newsvendor Problem. Probability distributions. Stochastic Processes | model specification, inference, simulation, optimization, constraints | groceries and perisable goods |
-| *W1 (L7)* | The most dangerous equation | estimators properties, CLT, sample size | U.S. small schools and top SAT Scores |
-| *W1 (L8)* | LLN, CLT, Asymptotics and Exact Criteria | $\chi^2_k, N, F_{m, n}, t_k$ | Delta method  |
-| **W2 (L9)** | Reproducible Research | automation, code, data, environment, documents, publishing | Replication crisis, Excel and the Dead Salmon |
-| **W2 (L10)** | Set Up the Environment. Overview of Data. Version the Code  | Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio, kaggle | Tooling choice and DevExperience impact on productivity |
-|**W2 (L11)** | Tidyverse warm-up | dplyr, ggplot2, quarto, renv projects, rendering | Tiny Sleep dataset tidy data wrangling  |
-| W2 (L12) | 12 Steps of ML. What is ML?  | PAC Learning, generalization, CRISP-DM | Project requirements simplification |
-| W2 (L13) | 12 Steps of Statistics. A/B Testing Scheme | Default Action, Stat. Hypotheses, confidence intervals, relevance | problem of p-value |
-| **W2 (L14)** | Practice: tidyverse data wrangling | \*** | Movie Data |
-| **W2 (L15)** | Practice: ggplot data visualization | \*** | Covid infections, Geographical data |
-| W2 (L16) | Bayes Rule | DAGs, Conditioning, Marginalization | Football Spreads, Medical testing |
 
 :::
 
