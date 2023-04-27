@@ -203,12 +203,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#a-map-for-the-adventure" id="toc-a-map-for-the-adventure" class="nav-link active" data-scroll-target="#a-map-for-the-adventure">A map for the adventure</a></li>
-  <li><a href="#module-i-business-decisions-and-probability" id="toc-module-i-business-decisions-and-probability" class="nav-link" data-scroll-target="#module-i-business-decisions-and-probability">Module I: Business Decisions and Probability</a>
-  <ul class="collapse">
-  <li><a href="#statistical-fundamentals" id="toc-statistical-fundamentals" class="nav-link" data-scroll-target="#statistical-fundamentals">Statistical fundamentals</a></li>
-  <li><a href="#the-processes-of-data-science" id="toc-the-processes-of-data-science" class="nav-link" data-scroll-target="#the-processes-of-data-science">The processes of data science</a></li>
-  <li><a href="#a-possible-schedule-of-one-hour-lectures" id="toc-a-possible-schedule-of-one-hour-lectures" class="nav-link" data-scroll-target="#a-possible-schedule-of-one-hour-lectures">A possible schedule of one hour lectures</a></li>
-  </ul></li>
+  <li><a href="#module-i-business-decisions-and-probability" id="toc-module-i-business-decisions-and-probability" class="nav-link" data-scroll-target="#module-i-business-decisions-and-probability">Module I: Business Decisions and Probability</a></li>
   <li><a href="#module-iia-bayesian-statistics" id="toc-module-iia-bayesian-statistics" class="nav-link" data-scroll-target="#module-iia-bayesian-statistics">Module IIa: Bayesian Statistics</a></li>
   <li><a href="#module-iib-ab-testing-and-causal-inference" id="toc-module-iib-ab-testing-and-causal-inference" class="nav-link" data-scroll-target="#module-iib-ab-testing-and-causal-inference">Module IIb: A/B Testing and Causal Inference</a></li>
   <li><a href="#module-iii-ml-and-deep-learning" id="toc-module-iii-ml-and-deep-learning" class="nav-link" data-scroll-target="#module-iii-ml-and-deep-learning">Module III: ML and Deep Learning</a></li>
@@ -297,6 +292,132 @@ Build an impressive project for your portfolio
 </section>
 <section id="module-i-business-decisions-and-probability" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="module-i-business-decisions-and-probability">Module I: Business Decisions and Probability</h2>
+<p>The first module is putting the rest of the course on a solid foundation, emphasizing again and again the key idea of Decision-Making Under Uncertainty at Scale. Understand the problem, the methodology, and the tools at your disposal.</p>
+<p>The most difficult part of the module is the statistical fundamentals, as it is very easy to misunderstand and apply these methods mechanically. Therefore, fundamental – doesn’t mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Do you have a process for Statistics and ML?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.</p>
+</div>
+</div>
+<p>There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some <em>mathematical</em> and in some we <strong>code and practice</strong>.</p>
+<div class="column-page-inset-right">
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Lecture Agenda</th>
+<th>Keywords</th>
+<th>Case Studies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><a href="https://course.economic-cybernetics.com/01_fundamentals/background.html">Data Science in Business Context</a>. Decision-Making Under Uncertainty</td>
+<td>AI, Cybernetics, Uncertainty, Scale, Analytics vs Stats vs ML</td>
+<td>survey of applications in various domains</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="https://course.economic-cybernetics.com">Interdisciplinarity</a>. Overview of prerequisites.</td>
+<td>Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg</td>
+<td><a href="https://johnkerl.org/doc/prbstat/prbstat.html">Probability vs Statistics</a>, <a href="(01_fundamentals/prerequisites.qmd)">Why did you study all of that?</a></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Business Analyst’s Workflow. Newsvendor Problem</td>
+<td>action, outcome, strategy, expertise, data, models, simulation, DAGs</td>
+<td>TIME INC. printing quantity decisions</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Strategy and the Desired Trajectory</td>
+<td>SWOT, Systems Dynamics, KPIs, Stock vs Flow</td>
+<td>LRB Journal Subscriptions</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Projects Overview. Full-stack data apps. Overview of Data.</td>
+<td>NLP, RecSys, Time Series, Classification</td>
+<td>Mercari, Favoritas, H&amp;M, Olist (e-commerce)</td>
+</tr>
+<tr class="even">
+<td><em>6</em></td>
+<td><em>Probability Triple. Random Variables. Mathematical Statistics</em></td>
+<td>population, sample, r.v., estimators, mixtures, markov chain</td>
+<td>Retail Fashion - appropriate choice of distributions</td>
+</tr>
+<tr class="odd">
+<td><strong>7</strong></td>
+<td>Set Up the Environment. Reproducible Research I</td>
+<td>terminal, conda, python, vscode, jupyter, git &amp; github, poetry, pytest</td>
+<td>DevXP, productivity, reproducibility</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Bernoulli, Binomial, Simulation, DAGs as stories</td>
+<td>numpy, pandas, pymc, matplotlib, arviz, graphviz</td>
+<td>couples showing up to safari</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Bayes Rule</td>
+<td>DAGs, Conditioning, Marginalization, Priors</td>
+<td>Football Spreads, Medical testing</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Beta-Binomial Model</td>
+<td>pymc, praw, priors, conjugate families</td>
+<td>A/B testing</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><a href="https://youtu.be/QLsSPnwWS_M">Newsvendor Problem</a>. Probability distributions. Stochastic Processes</td>
+<td>model specification, inference, simulation, optimization, constraints</td>
+<td>groceries and perisable goods, <a href="https://youtu.be/RScjq1mkDc0">price optimization</a></td>
+</tr>
+<tr class="even">
+<td><em>12</em></td>
+<td><em>The most dangerous equation</em></td>
+<td>estimators properties, CLT, LLN, sample size</td>
+<td>U.S. small schools, reddit upvote share, hackernoon algo</td>
+</tr>
+<tr class="odd">
+<td><em>13</em></td>
+<td><em>Estimator properties. Bias-Variance</em></td>
+<td><span class="math inline">\(\chi^2_k, N, F_{m, n}, t_k\)</span></td>
+<td>What does a statistician want?</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps of ML</a>. <a href="https://work.caltech.edu/lectures.html">What is ML?</a></td>
+<td>PAC Learning, generalization, CRISP-DM</td>
+<td>Project requirements simplification</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><a href="https://youtu.be/R4ckbZCgmxQ">12 Steps of Statistics</a>. A/B Testing Scheme</td>
+<td>Default Action, Stat. Hypotheses, confidence intervals, relevance</td>
+<td>problem of p-value, <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">statistics workflow</a></td>
+</tr>
+<tr class="even">
+<td><strong>16</strong></td>
+<td><strong>Reproducible Research II</strong></td>
+<td>automation, code, data, environment, documents, publishing</td>
+<td>Replication crisis, Excel and the Dead Salmon</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="column-page-inset-right">
 <div class="cell" data-fig-width="9">
 <div class="cell-output-display">
@@ -323,165 +444,12 @@ Build an impressive project for your portfolio
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: The first module is putting the rest of the course on a solid foundation, emphasizing again and again the key idea of Decision-Making Under Uncertainty at Scale.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: A mindmap to help you navigate the first module.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<p>The first 4 topics are covered in detail <a href="https://course.economic-cybernetics.com/01_fundamentals/background.html">here</a> and the <a href="https://course.economic-cybernetics.com">course homepage</a> gives additional context. The latter 3 are discussed extensively if you follow the links.</p>
-<ul>
-<li>Data Science examples of <strong>Business Applications</strong> - be able to explain most common use-cases in multiple industries, like e-commerce, finance, banking, and medicine.</li>
-<li><strong>VUCA</strong>, <strong>SWOT</strong> and <strong>Business Strategy</strong> - articulate some properties of the business environment, understand firm’s trajectory and how it could translate into a business strategy. Make sure you understand what a strategy is and how it influences our modeling process.</li>
-<li>What is <strong>AI, Data Science, Cybernetics</strong> - understand that, in a nutshell, it’s about decision-making under uncertainty at scale, in a given domain of expertise.</li>
-<li><strong>Analytics</strong> vs <strong>Stats</strong> vs <strong>ML</strong> - be able to match a particular problem with one (or a combination) of these approaches to data-driven problem solving. Know when NOT to use one.</li>
-<li>What is <strong>Machine Learning</strong>? Understand the idea of inductive reasoning, generalization, and be able to ‘draw’/outline the core mechanism of the machine learning. Give examples when it can go wrong or awry. If you have time, refer to <a href="https://work.caltech.edu/lectures.html">this</a> course, lecture 1 and 2.</li>
-<li><strong>Newsvendor problem</strong> - understand this demand planning model in business terms and translate it into a mathematical model. Refer to <a href="https://youtu.be/QLsSPnwWS_M">this tutorial</a>.
-<ul>
-<li>Reason about the role and sources of uncertainty in the decisions and how can we do a stochastic optimization.</li>
-<li>Articulate and formalize the trade-offs we’re facing.</li>
-<li>What happens if the goods are not perishable, what kind of costs we will suffer then?</li>
-<li>What are some different modeling options for the demand. What kind of distributions will be appropriate for slow-moving, fast-moving, intermittent demand.</li>
-</ul></li>
-<li><strong>Price optimization</strong> (fixed capacity) - Give some examples of when it happens in practice. Same questions and concerns as in the newsvendor problem apply. Refer to <a href="https://youtu.be/RScjq1mkDc0">this tutorial</a> by Dr.&nbsp;Adam Fleischhacker.</li>
-</ul>
-<section id="statistical-fundamentals" class="level3">
-<h3 class="anchored" data-anchor-id="statistical-fundamentals">Statistical fundamentals</h3>
-<p>This is the most difficult part of the course, going into the depths of statistical foundations. Even though you encountered most of these topics in the introductory statistics courses, it is very easy to misunderstand and apply these methods mechanically.</p>
-<p>Therefore, fundamental – doesn’t mean easy, nor basic nor trivial. The exams I give never ask you to compute or solve puzzles, but to appropriately define, justify and apply these (choices) in the context of business applications.</p>
-<ul>
-<li>How does linear algebra, probability, statistics, mathematical analysis, operations research, and economics contribute to Data Science and decision-making? Explained <a href="./01_fundamentals/prerequisites.html">here</a></li>
-<li>Difference between probability theory and mathematical statistics - <a href="https://johnkerl.org/doc/prbstat/prbstat.html">a beautiful explanation</a></li>
-</ul>
-</section>
-<section id="the-processes-of-data-science" class="level3">
-<h3 class="anchored" data-anchor-id="the-processes-of-data-science">The processes of data science</h3>
-<p>All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.</p>
-<ul>
-<li><a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps of ML</a> by Cassie Kozyrkov, CRISP-DM (any resource on the latter will do).</li>
-<li><a href="https://youtu.be/R4ckbZCgmxQ">12 Steps of Statistics</a> by Cassie Kozyrkov, along with her Google <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">lecture</a> on statistical thinking.</li>
-<li><a href="https://www.causact.com/becoming-a-data-driven-business-analyst.html#becoming-a-data-driven-business-analyst">Business Analyst’s Workflow</a> by Dr.&nbsp;Adam Fleischhacker</li>
-</ul>
-</section>
-<section id="a-possible-schedule-of-one-hour-lectures" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="a-possible-schedule-of-one-hour-lectures">A possible schedule of one hour lectures</h3>
-<div class="column-page-inset-right">
-<table class="table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 39%">
-<col style="width: 25%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Title</th>
-<th>Keywords</th>
-<th>Case Studies</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>W1 (L1)</td>
-<td>Data Science in Business Context. Decision-Making Under Uncertainty at Scale</td>
-<td>AI, ML, Uncertainty, Decisions</td>
-<td>survey of applications in various domains</td>
-</tr>
-<tr class="even">
-<td>W1 (L2)</td>
-<td>Interdisciplinarity. Why did you study all of that? Overview of prerequisites.</td>
-<td>Calculus, Linear Algebra, Probability, Stats, Economics</td>
-<td>survey of interest and assessment of students’ skills</td>
-</tr>
-<tr class="odd">
-<td>W1 (L3)</td>
-<td>Business Analyst’s Workflow. Newsvendor Problem and em’ tradeoffs. Analytics vs Stats vs ML</td>
-<td>action, outcome, strategy, expertise, data, models, simulation, DAGs</td>
-<td>TIME INC. printing quantity decisions</td>
-</tr>
-<tr class="even">
-<td>W1 (L4)</td>
-<td>Strategy and the Desired Trajectory</td>
-<td>SWOT, Systems Dynamics, KPIs, Stock vs Flow</td>
-<td>LRB Journal Subscriptions</td>
-</tr>
-<tr class="odd">
-<td><em>W1 (L6)</em></td>
-<td>Probability Triple. Random Variables. Mathematical Statistics</td>
-<td>population, sample, r.v., estimators, mixtures, markov chain</td>
-<td>Retail Fashion - appropriate choice of distributions</td>
-</tr>
-<tr class="even">
-<td>W1 (L5)</td>
-<td>Newsvendor Problem. Probability distributions. Stochastic Processes</td>
-<td>model specification, inference, simulation, optimization, constraints</td>
-<td>groceries and perisable goods</td>
-</tr>
-<tr class="odd">
-<td><em>W1 (L7)</em></td>
-<td>The most dangerous equation</td>
-<td>estimators properties, CLT, sample size</td>
-<td>U.S. small schools and top SAT Scores</td>
-</tr>
-<tr class="even">
-<td><em>W1 (L8)</em></td>
-<td>LLN, CLT, Asymptotics and Exact Criteria</td>
-<td><span class="math inline">\(\chi^2_k, N, F_{m, n}, t_k\)</span></td>
-<td>Delta method</td>
-</tr>
-<tr class="odd">
-<td><strong>W2 (L9)</strong></td>
-<td>Reproducible Research</td>
-<td>automation, code, data, environment, documents, publishing</td>
-<td>Replication crisis, Excel and the Dead Salmon</td>
-</tr>
-<tr class="even">
-<td><strong>W2 (L10)</strong></td>
-<td>Set Up the Environment. Overview of Data. Version the Code</td>
-<td>Command Line, R, RStudio, Renv, Python, JupyterLab, Quarto, github, RStudio, kaggle</td>
-<td>Tooling choice and DevExperience impact on productivity</td>
-</tr>
-<tr class="odd">
-<td><strong>W2 (L11)</strong></td>
-<td>Tidyverse warm-up</td>
-<td>dplyr, ggplot2, quarto, renv projects, rendering</td>
-<td>Tiny Sleep dataset tidy data wrangling</td>
-</tr>
-<tr class="even">
-<td>W2 (L12)</td>
-<td>12 Steps of ML. What is ML?</td>
-<td>PAC Learning, generalization, CRISP-DM</td>
-<td>Project requirements simplification</td>
-</tr>
-<tr class="odd">
-<td>W2 (L13)</td>
-<td>12 Steps of Statistics. A/B Testing Scheme</td>
-<td>Default Action, Stat. Hypotheses, confidence intervals, relevance</td>
-<td>problem of p-value</td>
-</tr>
-<tr class="even">
-<td><strong>W2 (L14)</strong></td>
-<td>Practice: tidyverse data wrangling</td>
-<td>***</td>
-<td>Movie Data</td>
-</tr>
-<tr class="odd">
-<td><strong>W2 (L15)</strong></td>
-<td>Practice: ggplot data visualization</td>
-<td>***</td>
-<td>Covid infections, Geographical data</td>
-</tr>
-<tr class="even">
-<td>W2 (L16)</td>
-<td>Bayes Rule</td>
-<td>DAGs, Conditioning, Marginalization</td>
-<td>Football Spreads, Medical testing</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 </section>
 <section id="module-iia-bayesian-statistics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="module-iia-bayesian-statistics">Module IIa: Bayesian Statistics</h2>
