@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pragmatic Data Science</title>
+<title>Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./roadmap.html" rel="next">
 <link href="./img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +83,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <meta property="og:title" content="">
 <meta property="og:description" content="This is an introductory, big picture, free and open-source course which bridges the gap between theory and practice, cultivating the skills and understanding necessary to bring value to…">
 <meta property="og:image" content="https://github.com/bizovi/data-mining-ase/01_fundamentals/img/logo.jpeg">
-<meta property="og:site-name" content="Quarto">
+<meta property="og:site-name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
 
@@ -94,7 +95,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Pragmatic Data Science</span>
+    <span class="navbar-title">Decision Science Course</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -103,54 +104,31 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./roadmap.html">
+    <a class="nav-link active" href="./roadmap.html" aria-current="page">
  <span class="menu-text">Roadmap</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-the-fundamenals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">The fundamenals</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-the-fundamenals">    
-        <li>
-    <a class="dropdown-item" href="./01_fundamentals/background.html">
- <span class="dropdown-text">Data Science in Business Context</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./01_fundamentals/learning.html">
- <span class="dropdown-text">Learning from Data: Intuition and Bias</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./01_fundamentals/prerequisites.html">
- <span class="dropdown-text">Prereq: Why did you study all of that?</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./01_fundamentals/stat_foundations.html">
- <span class="dropdown-text">Foundations of Probability</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./references.html">
  <span class="menu-text">Resources</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about_me.html">
  <span class="menu-text">About Me</span></a>
   </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+</i> 
+ <span class="menu-text">Blog</span></a>
+  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/data-mining-ase"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -179,24 +157,68 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">i. Course Philosophy</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./roadmap.html" class="sidebar-item-text sidebar-link">ii. Course Roadmap</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">1. Business Decisions and Probability</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">Data Science in Business Context</a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">Learning from Data: Intuition and Bias</a>
+  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">Prerequisites: Why did you study all of that?</a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">Prereq: Why did you study all of that?</a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">Foundations of Probability</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">Learning from Data: Intuition and Bias</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./references.html" class="sidebar-item-text sidebar-link">2a. Applied Bayesian Statistics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Study Resources</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">2b. A/B Testing and Causal Inference</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">3. Probabilistic ML and Deep Learning</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">4. Full Stack Data Apps</span>
+  </li>
     </ul>
     </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
@@ -229,16 +251,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <p>I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop valuable skills, and become more effective at problem-solving.</p>
 </div>
 </div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<ul>
-<li><a href="./roadmap.html#module-i-business-decisions-and-probability"><strong>Module I</strong></a>: Business Decisions and Probability Fundamentals</li>
-<li><a href="./roadmap.html#module-iia-bayesian-statistics"><strong>Module IIa</strong></a>: Applied Bayesian Statistics</li>
-<li><a href="./roadmap.html#module-iib-ab-testing-and-causal-inference"><strong>Module IIb</strong></a>: A/B Testing and Causal Inference</li>
-<li><a href="./roadmap.html#module-iii-ml-and-deep-learning"><strong>Module III</strong></a>: Probabilistic ML and Deep Learning</li>
-<li><a href="./roadmap.html#module-iv-full-stack-data-apps"><strong>Projects</strong></a>: Software Engineering and Full-Stack Data Apps</li>
-</ul>
-</div></div><section id="decision-making-for-the-brave-and-true" class="level2 unnumbered page-columns page-full">
+<section id="decision-making-for-the-brave-and-true" class="level2 unnumbered page-columns page-full">
 <h2 class="unnumbered anchored" data-anchor-id="decision-making-for-the-brave-and-true">Decision-Making for the Brave and True</h2>
 <p>This is an introductory, big picture, free and open-source course which bridges the gap between theory and practice, <strong>cultivating the skills and understanding</strong> necessary to bring value to organisations by <strong>improving decision-making</strong>. It is an attempt to find a golden mean of both worlds:</p>
 <ul>
@@ -682,6 +695,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./roadmap.html" class="pagination-link">
+        <span class="nav-page-text">ii. Course Roadmap</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
