@@ -24,14 +24,6 @@ I aspire to contribute to the understanding of this complex landscape and teach 
 
 ::::
 
-::: {.column-margin}
-- [**Module I**](roadmap.qmd#module-i-business-decisions-and-probability): Business Decisions and Probability Fundamentals
-- [**Module IIa**](roadmap.qmd#module-iia-bayesian-statistics): Applied Bayesian Statistics
-- [**Module IIb**](roadmap.qmd#module-iib-ab-testing-and-causal-inference): A/B Testing and Causal Inference
-- [**Module III**](roadmap.qmd#module-iii-ml-and-deep-learning): Probabilistic ML and Deep Learning
-- [**Projects**](roadmap.qmd#module-iv-full-stack-data-apps): Software Engineering and Full-Stack Data Apps
-:::
-
 
 ## Decision-Making for the Brave and True {.unnumbered}
 
