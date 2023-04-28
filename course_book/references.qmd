@@ -74,9 +74,29 @@ We applied Bayes rule and got some insightful results in three totally different
 
 
 ::: {.callout-note}
-## Beta-Binomial Model
+## Beta-Binomial Model. Estimating proportions
 
+I know, I know, the coin-tossing -- simple, yet fundamental and found anywhere there is a binary outcome $Y_i \in \{0, 1\}$. There are many ways to estimate the success probability $\theta$, when we observe $k$ successes from $n$ trials.
+
+- [In Bayes' Rules](https://www.bayesrulesbook.com/chapter-3.html) is a detailed exposition of the theory, with examples about Michelle's election support and Milgram's experiment.
+- Share of biking traffic in different neighborhoods (BDA3, Ch2, Pr. 8)
+- A/B Testing for proportions in [BMH](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter2_MorePyMC/Ch2_MorePyMC_PyMC_current.ipynb). Just remember that experiment design is much more nuanced than performing such inference or a test.
+- Political attitudes in 2008 Election [data](http://www.stat.columbia.edu/~gelman/book/data/) (BDA3, Ch2, Pr. 21)
+- Proportion of female births, given prior information. (BDA3, Ch2)
+
+There are many more applications, but the ones below require more research and work. They are open ended and you can take these topics very far.
+
+- The debate on the hot hand phenomenon is not yet over. [Here](https://blogs.cornell.edu/info2040/2018/11/29/hothand/) are the [bayesians weighting in](https://statmodeling.stat.columbia.edu/2015/07/09/hey-guess-what-there-really-is-a-hot-hand/) and some [new research](https://www.thecut.com/2016/08/how-researchers-discovered-the-basketball-hot-hand.html).
+- Basketball shot percentages and true shooting, brilliantly explained by [thinking basketball](https://youtube.com/playlist?list=PLtzZl14BrKjTJZdubjNEY5jU0fGOiy51x) in a playlist about NBA statistics.
+- Important problem in ecology: estimating size of population based on samples (BDA3, Ch3, Pr. 6). The challenge is that in $Bin(\theta, N)$ both parameters are unknown. Here is an [old paper](https://pluto.huji.ac.il/~galelidan/52558/Material/Raftery.pdf).
+- Confidence intervals and [lower bound](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter4_TheGreatestTheoremNeverTold/Ch4_LawOfLargeNumbers_PyMC_current.ipynb) for reddit posts like/dislike ratio. Read more about simple ranking algorithms and the issues of sample size: [reddit](https://www.evanmiller.org/how-not-to-sort-by-average-rating.html), [hacker news](https://news.ycombinator.com/item?id=1781013). It is a good opportunity to work with the reddit API in order to collect data about posts and comments.
 :::
+
+The next step is learning how to model count data, which will open up to us applications of a different flavor. It is not a coincidence that when learning linear regression, we will extend it to poisson and logistic regression.
+
+[You can notice how the issues of sample size creep in, as well as how to properly model variation within and between groups. I recommend you look up again the CLT, in the next section]{.aside}
+
+Note that **prior choice** and justification is an art and science: you will have to learn and practice how to articulate assumptions and encode your domain knowledge into the priors. There is no universal recipe, but there are some guiding principles.
 
 
 ::: {.callout-note}
@@ -85,47 +105,62 @@ We applied Bayes rule and got some insightful results in three totally different
 Counts of independent events in a unit of (space/time/...), with a low probability. You can review the maths [here](https://www.bayesrulesbook.com/chapter-5.html#gamma-poisson-conjugate-family). Below is a list of applications you can practice on:
 
 - Deaths by horses in Prussian Army. Here is the [historical data](https://rpubs.com/SmilodonCub/567089) and a [blog post](https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f) if you need a refresher on Poisson distribution.
-- Asthma mortality (BDA3)
+- Asthma mortality (BDA3, Ch2)
 - [Airplane fatal accidents](https://www.briancallander.com/posts/bda3/chapter_02_exercise_13.html) and passenger deaths
 - Estimating WWII [production of German](https://en.wikipedia.org/wiki/German_tank_problem#Bayesian_analysis) tanks based on samples captured
 - Comparing football teams and [goals in football matches](https://allendowney.github.io/ThinkBayes2/chap08.html)
 - [Comparing birth rates](https://allendowney.github.io/ThinkBayes2/hospital_birth_rate.html) in two hospitals
+
+Check out the link functions for more sophisticated models. Also, in the examples above, we estimate the groups separately (corresponding to no pooling) -- there are better ways. Also, you will see a poisson example of how to take into account the sample size 
 :::
 
-Note that **prior choice** and justification is an art and science: you will have to learn and practice how to articulate assumptions and encode your domain knowledge into the priors. There is no universal recipe, but there are some guiding principles.
+The next examples are a little detour, to appreciate the flexibility of the modeling approach we're taking. We're building upon previous models, by inferring which rate $\lambda_1$ or $\lambda_2$ is the most plausible at a given point in time. This way, we add complexity and realism to the model, by incorporating knowledge about the phenomenon we're interested in.
 
+[Ideally, we would leverage models which work well with time-series, like Hidden Markov Models. There is also a large literature in mining subsequences in a time series.]{.aside}
 
 ::: {.callout-tip}
 ## Poisson changepoint detection
 
-Estimating rates, modeling a structural shift/change:
+Estimating rates, modeling a structural shift/change is a relevant, challenging, and unsolved problem in many fields. The models below are too simplistic to be useful in practice, but they capture the essence of real dynamics: things change not only continuously, but also structurally.
 
 - [Coal Mining disasters](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/pymc_overview.html#case-study-2-coal-mining-disasters), pymc
 - [Text Messages](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Ch1_Introduction_PyMC_current.ipynb), pymc
 - [U.S. School Shootings](https://sidravi1.github.io/blog/2018/05/22/what-happened-in-2006), is there an increase in attempts and occurences?
 :::
 
+By now, you encountered many simple Bayesian models, so it's useful to contrast it with the Fisherian and Neyman-Pearson (frequentist) approaches. The motivation is simple: the likelihood approach is widely used in Machine Learning (and Statistical Learning) teaching and practice. A nuanced understanding of frequentist methods will improve the way you ask statistical questions, perform and design experiments.
+
+[In the courses I teach, I dedicate quite a lot of time on how not to fall into the most common pitfalls when applying frequentist methods. It's an useful skill when critically reading the literature.]{.aside}
+
 ::: {.callout-note}
 ## Bayesian vs Frequentist vs Fisherian Inference
 
 - Likelihood - either from previous books or [this interactive visualization](https://rpsychologist.com/likelihood/)
-- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf). Here is a nice [interactive visualization](https://rpsychologist.com/d3/bayes/) for Bayesian updating.
+- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf) in Computer Age Statistical Inference.
+- The best teaching of (mostly) frequentist statistics I know of is in these two courses by TU Eindhoven and it is well worth your time:
+  - Improving your statistical questions, [coursera](https://www.coursera.org/learn/improving-statistical-questions)
+  - Improving your statistical inferences, [coursera](https://www.coursera.org/learn/statistical-inferences)
 :::
 
 
+We already worked with multiple parameters, even touching upon the relationship between two variables: counts and time $Y_t$, but not really -- it's more helpful to think about that in terms of stochastic processes. Therefore, we need a new tool, which is a link function, a nonlinear transformation $g(x)$ which maps $X$ to the correct support of $Y$. I recommend to introduce this before jumping into linear regression (LR), in order not to have the (flawed) impression that the LR is the only game in the town.
 
 ::: {.callout-tip}
 ## Link functions. Golf case-study
 
-The domain/geometry inspired, custom model is presented in [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html) version, [stan](https://mc-stan.org/users/documentation/case-studies/golf.html) by Andrew Gelman, and [stan](https://avehtari.github.io/ROS-Examples/Golf/golf.html) by Aki Vehtari.
+The domain/geometry inspired, custom model is presented in [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html) version, [stan](https://mc-stan.org/users/documentation/case-studies/golf.html) by Andrew Gelman, and [stan](https://avehtari.github.io/ROS-Examples/Golf/golf.html) by Aki Vehtari. It is modeling the relationship between distance and the probability of put, which is nonlinear and the sigmoid function won't work well for this case.
 :::
+
+Of course, we cannot forget about the Normal/Gaussian distribution, which is so prevalent in nature and pops up everywhere in the statistical practice. It is the building block of many following models. Remember the key idea of the expectation of independent random variables and estimating the mean from samples. Also, keep in mind any time you're doing regression that it's all about the conditional expectation $\mathbb{E}_\theta[Y|X=x]$.
 
 ::: {.callout-note}
 ## InverseGamma-Normal
 
-- Speed of light experiment BDA3
-- Football concussions [study](https://www.bayesrulesbook.com/chapter-5.html#normal-normal-conjugate-family)
+- You can find the theory and mathematical exposition in Bayes Rules, with a case-study of football concussions [study](https://www.bayesrulesbook.com/chapter-5.html#normal-normal-conjugate-family)
+- Speed of light experiment (BDA3, Ch3), [data](http://www.stat.columbia.edu/~gelman/book/data/). You will find here and in any statistics textbook the cases of known and unknown variance, and how the $t_k$ test is derived from the first principles.
+- As in the case of proportions, we can use the model above to model the difference between the means of two independent groups.
 
+TODO: more examples from science, business, and human behavior
 :::
 
 
