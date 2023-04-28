@@ -399,13 +399,30 @@ Bayes Rule. Update your beliefs, often!
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Beta-Binomial Model
+Beta-Binomial Model. Estimating proportions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>I know, I know, the coin-tossing – simple, yet fundamental and found anywhere there is a binary outcome <span class="math inline">\(Y_i \in \{0, 1\}\)</span>. There are many ways to estimate the success probability <span class="math inline">\(\theta\)</span>, when we observe <span class="math inline">\(k\)</span> successes from <span class="math inline">\(n\)</span> trials.</p>
+<ul>
+<li><a href="https://www.bayesrulesbook.com/chapter-3.html">In Bayes’ Rules</a> is a detailed exposition of the theory, with examples about Michelle’s election support and Milgram’s experiment.</li>
+<li>Share of biking traffic in different neighborhoods (BDA3, Ch2, Pr. 8)</li>
+<li>A/B Testing for proportions in <a href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter2_MorePyMC/Ch2_MorePyMC_PyMC_current.ipynb">BMH</a>. Just remember that experiment design is much more nuanced than performing such inference or a test.</li>
+<li>Political attitudes in 2008 Election <a href="http://www.stat.columbia.edu/~gelman/book/data/">data</a> (BDA3, Ch2, Pr. 21)</li>
+<li>Proportion of female births, given prior information. (BDA3, Ch2)</li>
+</ul>
+<p>There are many more applications, but the ones below require more research and work. They are open ended and you can take these topics very far.</p>
+<ul>
+<li>The debate on the hot hand phenomenon is not yet over. <a href="https://blogs.cornell.edu/info2040/2018/11/29/hothand/">Here</a> are the <a href="https://statmodeling.stat.columbia.edu/2015/07/09/hey-guess-what-there-really-is-a-hot-hand/">bayesians weighting in</a> and some <a href="https://www.thecut.com/2016/08/how-researchers-discovered-the-basketball-hot-hand.html">new research</a>.</li>
+<li>Basketball shot percentages and true shooting, brilliantly explained by <a href="https://youtube.com/playlist?list=PLtzZl14BrKjTJZdubjNEY5jU0fGOiy51x">thinking basketball</a> in a playlist about NBA statistics.</li>
+<li>Important problem in ecology: estimating size of population based on samples (BDA3, Ch3, Pr. 6). The challenge is that in <span class="math inline">\(Bin(\theta, N)\)</span> both parameters are unknown. Here is an <a href="https://pluto.huji.ac.il/~galelidan/52558/Material/Raftery.pdf">old paper</a>.</li>
+<li>Confidence intervals and <a href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter4_TheGreatestTheoremNeverTold/Ch4_LawOfLargeNumbers_PyMC_current.ipynb">lower bound</a> for reddit posts like/dislike ratio. Read more about simple ranking algorithms and the issues of sample size: <a href="https://www.evanmiller.org/how-not-to-sort-by-average-rating.html">reddit</a>, <a href="https://news.ycombinator.com/item?id=1781013">hacker news</a>. It is a good opportunity to work with the reddit API in order to collect data about posts and comments.</li>
+</ul>
 </div>
 </div>
+<p>The next step is learning how to model count data, which will open up to us applications of a different flavor. It is not a coincidence that when learning linear regression, we will extend it to poisson and logistic regression.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">You can notice how the issues of sample size creep in, as well as how to properly model variation within and between groups. I recommend you look up again the CLT, in the next section</span></div></div>
+<p>Note that <strong>prior choice</strong> and justification is an art and science: you will have to learn and practice how to articulate assumptions and encode your domain knowledge into the priors. There is no universal recipe, but there are some guiding principles.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -419,15 +436,17 @@ Poisson Distribution. Gamma-Poisson Model
 <p>Counts of independent events in a unit of (space/time/…), with a low probability. You can review the maths <a href="https://www.bayesrulesbook.com/chapter-5.html#gamma-poisson-conjugate-family">here</a>. Below is a list of applications you can practice on:</p>
 <ul>
 <li>Deaths by horses in Prussian Army. Here is the <a href="https://rpubs.com/SmilodonCub/567089">historical data</a> and a <a href="https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f">blog post</a> if you need a refresher on Poisson distribution.</li>
-<li>Asthma mortality (BDA3)</li>
+<li>Asthma mortality (BDA3, Ch2)</li>
 <li><a href="https://www.briancallander.com/posts/bda3/chapter_02_exercise_13.html">Airplane fatal accidents</a> and passenger deaths</li>
 <li>Estimating WWII <a href="https://en.wikipedia.org/wiki/German_tank_problem#Bayesian_analysis">production of German</a> tanks based on samples captured</li>
 <li>Comparing football teams and <a href="https://allendowney.github.io/ThinkBayes2/chap08.html">goals in football matches</a></li>
 <li><a href="https://allendowney.github.io/ThinkBayes2/hospital_birth_rate.html">Comparing birth rates</a> in two hospitals</li>
 </ul>
+<p>Check out the link functions for more sophisticated models. Also, in the examples above, we estimate the groups separately (corresponding to no pooling) – there are better ways. Also, you will see a poisson example of how to take into account the sample size</p>
 </div>
 </div>
-<p>Note that <strong>prior choice</strong> and justification is an art and science: you will have to learn and practice how to articulate assumptions and encode your domain knowledge into the priors. There is no universal recipe, but there are some guiding principles.</p>
+<p>The next examples are a little detour, to appreciate the flexibility of the modeling approach we’re taking. We’re building upon previous models, by inferring which rate <span class="math inline">\(\lambda_1\)</span> or <span class="math inline">\(\lambda_2\)</span> is the most plausible at a given point in time. This way, we add complexity and realism to the model, by incorporating knowledge about the phenomenon we’re interested in.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Ideally, we would leverage models which work well with time-series, like Hidden Markov Models. There is also a large literature in mining subsequences in a time series.</span></div></div>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,7 +457,7 @@ Poisson changepoint detection
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Estimating rates, modeling a structural shift/change:</p>
+<p>Estimating rates, modeling a structural shift/change is a relevant, challenging, and unsolved problem in many fields. The models below are too simplistic to be useful in practice, but they capture the essence of real dynamics: things change not only continuously, but also structurally.</p>
 <ul>
 <li><a href="https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/pymc_overview.html#case-study-2-coal-mining-disasters">Coal Mining disasters</a>, pymc</li>
 <li><a href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Ch1_Introduction_PyMC_current.ipynb">Text Messages</a>, pymc</li>
@@ -446,6 +465,8 @@ Poisson changepoint detection
 </ul>
 </div>
 </div>
+<p>By now, you encountered many simple Bayesian models, so it’s useful to contrast it with the Fisherian and Neyman-Pearson (frequentist) approaches. The motivation is simple: the likelihood approach is widely used in Machine Learning (and Statistical Learning) teaching and practice. A nuanced understanding of frequentist methods will improve the way you ask statistical questions, perform and design experiments.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">In the courses I teach, I dedicate quite a lot of time on how not to fall into the most common pitfalls when applying frequentist methods. It’s an useful skill when critically reading the literature.</span></div></div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -458,10 +479,16 @@ Bayesian vs Frequentist vs Fisherian Inference
 <div class="callout-body-container callout-body">
 <ul>
 <li>Likelihood - either from previous books or <a href="https://rpsychologist.com/likelihood/">this interactive visualization</a></li>
-<li>Bayesian vs Frequentist inference - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 2, 3, 4</a>. Here is a nice <a href="https://rpsychologist.com/d3/bayes/">interactive visualization</a> for Bayesian updating.</li>
+<li>Bayesian vs Frequentist inference - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 2, 3, 4</a> in Computer Age Statistical Inference.</li>
+<li>The best teaching of (mostly) frequentist statistics I know of is in these two courses by TU Eindhoven and it is well worth your time:
+<ul>
+<li>Improving your statistical questions, <a href="https://www.coursera.org/learn/improving-statistical-questions">coursera</a></li>
+<li>Improving your statistical inferences, <a href="https://www.coursera.org/learn/statistical-inferences">coursera</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
+<p>We already worked with multiple parameters, even touching upon the relationship between two variables: counts and time <span class="math inline">\(Y_t\)</span>, but not really – it’s more helpful to think about that in terms of stochastic processes. Therefore, we need a new tool, which is a link function, a nonlinear transformation <span class="math inline">\(g(x)\)</span> which maps <span class="math inline">\(X\)</span> to the correct support of <span class="math inline">\(Y\)</span>. I recommend to introduce this before jumping into linear regression (LR), in order not to have the (flawed) impression that the LR is the only game in the town.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -472,9 +499,10 @@ Link functions. Golf case-study
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The domain/geometry inspired, custom model is presented in <a href="https://www.pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html">pymc</a> version, <a href="https://mc-stan.org/users/documentation/case-studies/golf.html">stan</a> by Andrew Gelman, and <a href="https://avehtari.github.io/ROS-Examples/Golf/golf.html">stan</a> by Aki Vehtari.</p>
+<p>The domain/geometry inspired, custom model is presented in <a href="https://www.pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html">pymc</a> version, <a href="https://mc-stan.org/users/documentation/case-studies/golf.html">stan</a> by Andrew Gelman, and <a href="https://avehtari.github.io/ROS-Examples/Golf/golf.html">stan</a> by Aki Vehtari. It is modeling the relationship between distance and the probability of put, which is nonlinear and the sigmoid function won’t work well for this case.</p>
 </div>
 </div>
+<p>Of course, we cannot forget about the Normal/Gaussian distribution, which is so prevalent in nature and pops up everywhere in the statistical practice. It is the building block of many following models. Remember the key idea of the expectation of independent random variables and estimating the mean from samples. Also, keep in mind any time you’re doing regression that it’s all about the conditional expectation <span class="math inline">\(\mathbb{E}_\theta[Y|X=x]\)</span>.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -486,9 +514,11 @@ InverseGamma-Normal
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Speed of light experiment BDA3</li>
-<li>Football concussions <a href="https://www.bayesrulesbook.com/chapter-5.html#normal-normal-conjugate-family">study</a></li>
+<li>You can find the theory and mathematical exposition in Bayes Rules, with a case-study of football concussions <a href="https://www.bayesrulesbook.com/chapter-5.html#normal-normal-conjugate-family">study</a></li>
+<li>Speed of light experiment (BDA3, Ch3), <a href="http://www.stat.columbia.edu/~gelman/book/data/">data</a>. You will find here and in any statistics textbook the cases of known and unknown variance, and how the <span class="math inline">\(t_k\)</span> test is derived from the first principles.</li>
+<li>As in the case of proportions, we can use the model above to model the difference between the means of two independent groups.</li>
 </ul>
+<p>TODO: more examples from science, business, and human behavior</p>
 </div>
 </div>
 </section>
