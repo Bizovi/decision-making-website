@@ -522,6 +522,34 @@ Do you have a process for Statistics and ML?
 <section id="module-iib-ab-testing-and-causal-inference" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="module-iib-ab-testing-and-causal-inference">Module IIb: A/B Testing and Causal Inference</h2>
 <div class="column-page-inset-right">
+<div class="cell" data-fig-width="9">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">flowchart TD
+  H(Hypotheses) --&gt; P(Phil. Science) --&gt; GQ(Good Questions) --&gt; Pre[Pre-Registration] --&gt; Repl[Replications] --&gt; B[Publication Bias] --&gt; OS[Open Science] --&gt; FSS[Falsification] --&gt; Repr[Reproducibility] --&gt; MA[Meta-Analysis] --&gt; E[Ethics &amp; Integrity]
+
+  GQ --&gt; S[Simulation] --&gt; Th[Theory Construction] --&gt; NF[Null is False]
+  H --&gt; A(Path of Action) --&gt; ET(Error Types) --&gt; PV[p-values] --&gt; EC(Error Control)
+  EC --&gt; PPV[PPV] --&gt; Sign[Signficant Findings] --&gt; ERJ[Justification]
+  A --&gt; Eff[Effect Sizes] --&gt; Ch[Cohen's d] --&gt; Corr[Correlations] --&gt; Min[Min Effect] --&gt; TM[Telescope Method] --&gt; RB[Resource-Based]
+  A --&gt; Conf[Confidence Intervals] --&gt; SS[Power Analysis] --&gt; PCAn[p-curve analysis] --&gt; CPc[Capture Percent.] --&gt; CISD[confint std-dev] --&gt; Anova[Anova Power]
+
+  NF --&gt; RP[Risky Predictions] --&gt; EQ[Equivalence Testing] --&gt; IP[Interval Predictions]
+
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: When discussing hypothesis testing and experiment design, we can’t avoid an overview of fequentist methods (path of action) and a discussion of the philosophy of science.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="column-page-inset-right">
 <table class="table">
 <colgroup>
 <col style="width: 6%">
@@ -604,7 +632,7 @@ Do you have a process for Statistics and ML?
 <div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">flowchart LR
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">flowchart LR
 
   DSc --&gt; Unsup(Dim. Reduction) --&gt; Clust(Clustering) --&gt; MM(Mixtures) --&gt; HDB(HDBScan)
   Unsup --&gt; PCA --&gt; CA --&gt; UMAP
@@ -623,11 +651,11 @@ Do you have a process for Statistics and ML?
   EM --&gt; HM
 
 </pre>
-<div id="mermaid-tooltip-3" class="mermaidTooltip">
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: In this ML/DL module, we focus on practical, challenging use-cases and reliable, workhorse methods – while keeping in mind the particularities of the domain and applications.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: In this ML/DL module, we focus on practical, challenging use-cases and reliable, workhorse methods – while keeping in mind the particularities of the domain and applications.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -642,7 +670,7 @@ Do you have a process for Statistics and ML?
 <div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">flowchart LR
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">flowchart LR
   DSc(Data Apps)  --&gt; Data(Data Wrangling)  --&gt; EDA(EDA) --&gt; DV(Visualization)
   EDA --&gt; LP(Literate Programming)
   
@@ -658,11 +686,11 @@ Do you have a process for Statistics and ML?
   DP --&gt; FS
   FS --&gt; Dep[Deploy]
 </pre>
-<div id="mermaid-tooltip-4" class="mermaidTooltip">
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: We will need to learn a lot of engineering and new tools, so that we’re able to collect, clean, explore, visualize data, train models, and build useful applications which improve outcomes for our clients.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: We will need to learn a lot of engineering and new tools, so that we’re able to collect, clean, explore, visualize data, train models, and build useful applications which improve outcomes for our clients.</figcaption><p></p>
 </figure>
 </div>
 </div>

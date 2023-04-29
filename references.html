@@ -376,7 +376,7 @@ Bayes Rule. Update your beliefs, often!
 </div>
 </div>
 <div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div></div>
+<div class="page-columns page-full"><p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div></div>
 <ul>
 <li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
 <ul>
@@ -389,6 +389,7 @@ Bayes Rule. Update your beliefs, often!
 <li>If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could’ve applied the same idea!</li>
 </ul></li>
 </ul>
+<p>For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
 </div>
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
@@ -467,6 +468,7 @@ Poisson changepoint detection
 </div>
 <p>By now, you encountered many simple Bayesian models, so it’s useful to contrast it with the Fisherian and Neyman-Pearson (frequentist) approaches. The motivation is simple: the likelihood approach is widely used in Machine Learning (and Statistical Learning) teaching and practice. A nuanced understanding of frequentist methods will improve the way you ask statistical questions, perform and design experiments.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">In the courses I teach, I dedicate quite a lot of time on how not to fall into the most common pitfalls when applying frequentist methods. It’s an useful skill when critically reading the literature.</span></div></div>
+<p>When we get to the topic of A/B testing and experiment design, we will unavoidably stumble upon a few fascinating philosophical questions in relation to the nature of evidence. A quick overview of the below resources will give you most background you need to understand the heck those philosophical positions are about.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -478,8 +480,10 @@ Bayesian vs Frequentist vs Fisherian Inference
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Likelihood - either from previous books or <a href="https://rpsychologist.com/likelihood/">this interactive visualization</a></li>
-<li>Bayesian vs Frequentist inference - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 2, 3, 4</a> in Computer Age Statistical Inference.</li>
+<li>I like very much the following metaphor, explained <a href="https://www.coursera.org/learn/statistical-inferences/lecture/qC3A1/frequentism-likelihoods-bayesian-statistics">here</a>, of looking at these 3 approaches as a: Path of Action, Path of Devotion, Path of Knowledge.</li>
+<li>Watch this <a href="https://www.youtube.com/watch?v=LYcu3LoGqKc">lecture</a> by Zoltan Dienes to get a sense of the orthodox, Neyman-Pearson approach: its power and limitations.</li>
+<li>Likelihood - either from previous books or <a href="https://rpsychologist.com/likelihood/">this interactive visualization</a>. You can use the <a href="https://www.coursera.org/learn/statistical-inferences/lecture/8yZDk/likelihoods">lecture and lab</a> from TU Eindhoven courses mentioned below.</li>
+<li>Bayesian vs Frequentist inference - <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 2, 3, 4</a> in Computer Age Statistical Inference. This <a href="https://www.youtube.com/watch?v=NHFfJEvzPIo">lecture</a> by Zoltan Dienes contrasts Bayes Factors vs classical methods in t-test situations.</li>
 <li>The best teaching of (mostly) frequentist statistics I know of is in these two courses by TU Eindhoven and it is well worth your time:
 <ul>
 <li>Improving your statistical questions, <a href="https://www.coursera.org/learn/improving-statistical-questions">coursera</a></li>
@@ -638,6 +642,7 @@ Hierarchical Beta-Binomial
 <p>I’m emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, <span class="math inline">\(\alpha, \beta\)</span>, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.</p>
 <ul>
 <li>Understanding the philosophy of falsification and how it applies to hypothesis testing. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory">Week2 of this course</a> has a great 20 minute explanation.</li>
+<li>Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">Here</a> you can see the reasoning for testing and <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">an article by Cassie</a> for statistics.</li>
 <li>Remember the importance of those 12 steps of statistics, especially the <a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">Default Action</a>. For a more classical exposition - check <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">this</a> out.</li>
 <li>Confidence Intervals - first check out this <a href="https://rpsychologist.com/d3/ci/">simulation</a>. Also <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">chapter 12</a>, uses bootstrap to estimate those.</li>
 <li>p-values - <a href="https://rpsychologist.com/pvalue/">simulation</a>, <a href="https://rpsychologist.com/d3/pdist/">simulation of distirbutions under H0/Ha</a></li>
@@ -648,6 +653,7 @@ Hierarchical Beta-Binomial
 <li>Relevance and Significance - Read <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">this paper</a> by Werner Stahel</li>
 <li>Non-Inferiority testing - <a href="https://rpsychologist.com/d3/equivalence/">This visualization</a></li>
 <li>Effect size, Power, Sample Size - <a href="https://mathstat.slu.edu/~speegle/_book/HTCI.html">here</a>, and <a href="https://www.huber.embl.de/msmb/06-chap.html">here</a> and <a href="https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html">here</a>. <a href="https://rpsychologist.com/cohend/">Cohen’s d</a>, <a href="https://rpsychologist.com/d3/nhst/">Power Analysis</a></li>
+<li>Philosophy of science: Popper and Latakos, in this <a href="https://www.youtube.com/watch?v=cgvKG_3Ck7Y">lecture</a></li>
 </ul>
 </section>
 <section id="gaussian-linear-regression" class="level2">
