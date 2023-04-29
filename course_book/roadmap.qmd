@@ -185,6 +185,30 @@ flowchart TD
 
 ::: {.column-page-inset-right}
 
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: | 
+%%|   When discussing hypothesis testing and experiment design, we can't avoid an overview of fequentist methods (path of action) and a discussion of the philosophy of science.
+
+flowchart TD
+  H(Hypotheses) --> P(Phil. Science) --> GQ(Good Questions) --> Pre[Pre-Registration] --> Repl[Replications] --> B[Publication Bias] --> OS[Open Science] --> FSS[Falsification] --> Repr[Reproducibility] --> MA[Meta-Analysis] --> E[Ethics & Integrity]
+
+  GQ --> S[Simulation] --> Th[Theory Construction] --> NF[Null is False]
+  H --> A(Path of Action) --> ET(Error Types) --> PV[p-values] --> EC(Error Control)
+  EC --> PPV[PPV] --> Sign[Signficant Findings] --> ERJ[Justification]
+  A --> Eff[Effect Sizes] --> Ch[Cohen's d] --> Corr[Correlations] --> Min[Min Effect] --> TM[Telescope Method] --> RB[Resource-Based]
+  A --> Conf[Confidence Intervals] --> SS[Power Analysis] --> PCAn[p-curve analysis] --> CPc[Capture Percent.] --> CISD[confint std-dev] --> Anova[Anova Power]
+
+  NF --> RP[Risky Predictions] --> EQ[Equivalence Testing] --> IP[Interval Predictions]
+
+```
+:::
+
+
+
+::: {.column-page-inset-right}
+
 |   | Lecture Agenda                      | Keywords  | Case Studies |
 |---|----------------|---------------|--------------|
 | 1 | A/B Testing pitfalls | A/A Tests, Selection bias, Confounders, Novelty | The need for rigorous experiments |

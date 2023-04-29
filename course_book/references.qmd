@@ -55,7 +55,7 @@ Limiting? Yes, as in reality we care about the relationship between random varia
 ::: {.callout-note}
 ## Bayes Rule. Update your beliefs, often!
 
-Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of [BDA3](http://www.stat.columbia.edu/~gelman/book/), Chapter 1/2 of [Bayes Rules](https://www.bayesrulesbook.com/chapter-2.html), and Chapter 1/2 of [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/).[^2] If you prefer videos, enjoy the 3Blue1Brown [visual masterpiece](https://www.youtube.com/watch?v=HZGCoVF3YvM) on how to think like a Bayesian.
+Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of [BDA3](http://www.stat.columbia.edu/~gelman/book/), Chapter 1/2 of [Bayes Rules](https://www.bayesrulesbook.com/chapter-2.html), and Chapter 1/2 of [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/).[^2] If you prefer videos, enjoy the 3Blue1Brown [visual masterpiece](https://www.youtube.com/watch?v=HZGCoVF3YvM) on how to think like a Bayesian or [here](https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking).
 
 - (BDA3, Ch1): **Football spreads**, that can be estimated from [data about matches](http://www.stat.columbia.edu/~gelman/book/data/football.asc). What is the probability that a team wins? Are experts right, on average?
   - If you're into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?
@@ -64,6 +64,7 @@ Any introduction to the subject will work out, a few excellent ones being Chapte
 - ([Probability 110](https://projects.iq.harvard.edu/stat110/home)): **Medical testing** for rare diseases, hypothetical example with code in my [course repository](https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb). We use the same idea to reason about how confident are we our code has no bugs.
   - If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could've applied the same idea!
 
+For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses [here](https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics) and [here](https://www.coursera.org/learn/bayesian/home/week/3) for the theory and examples.
 :::
 
 [^2]: You will notice in the callouts that I point out where to read the theory -- for a conceptual understanding and to figure out the mathematical details
@@ -132,11 +133,15 @@ By now, you encountered many simple Bayesian models, so it's useful to contrast 
 
 [In the courses I teach, I dedicate quite a lot of time on how not to fall into the most common pitfalls when applying frequentist methods. It's an useful skill when critically reading the literature.]{.aside}
 
+When we get to the topic of A/B testing and experiment design, we will unavoidably stumble upon a few fascinating philosophical questions in relation to the nature of evidence. A quick overview of the below resources will give you most background you need to understand the heck those philosophical positions are about.
+
 ::: {.callout-note}
 ## Bayesian vs Frequentist vs Fisherian Inference
 
-- Likelihood - either from previous books or [this interactive visualization](https://rpsychologist.com/likelihood/)
-- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf) in Computer Age Statistical Inference.
+- I like very much the following metaphor, explained [here](https://www.coursera.org/learn/statistical-inferences/lecture/qC3A1/frequentism-likelihoods-bayesian-statistics), of looking at these 3 approaches as a: Path of Action, Path of Devotion, Path of Knowledge.
+- Watch this [lecture](https://www.youtube.com/watch?v=LYcu3LoGqKc) by Zoltan Dienes to get a sense of the orthodox, Neyman-Pearson approach: its power and limitations.
+- Likelihood - either from previous books or [this interactive visualization](https://rpsychologist.com/likelihood/). You can use the [lecture and lab](https://www.coursera.org/learn/statistical-inferences/lecture/8yZDk/likelihoods) from TU Eindhoven courses mentioned below.
+- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf) in Computer Age Statistical Inference. This [lecture](https://www.youtube.com/watch?v=NHFfJEvzPIo) by Zoltan Dienes contrasts Bayes Factors vs classical methods in t-test situations.
 - The best teaching of (mostly) frequentist statistics I know of is in these two courses by TU Eindhoven and it is well worth your time:
   - Improving your statistical questions, [coursera](https://www.coursera.org/learn/improving-statistical-questions)
   - Improving your statistical inferences, [coursera](https://www.coursera.org/learn/statistical-inferences)
@@ -223,6 +228,7 @@ Once you have a good grip on those statistical fundamentals, which are like cogs
 I'm emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.
 
 - Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
+- Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. [Here](https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis) you can see the reasoning for testing and [an article by Cassie](https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c) for statistics.
 - Remember the importance of those 12 steps of statistics, especially the [Default Action](https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c). For a more classical exposition - check [this](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html) out.
 - Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those.
 - p-values - [simulation](https://rpsychologist.com/pvalue/), [simulation of distirbutions under H0/Ha](https://rpsychologist.com/d3/pdist/)
@@ -233,6 +239,7 @@ I'm emphasizing again the understanding and letting go of mechanical application
 - Relevance and Significance - Read [this paper](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) by Werner Stahel
 - Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/)
 - Effect size, Power, Sample Size - [here](https://mathstat.slu.edu/~speegle/_book/HTCI.html), and [here](https://www.huber.embl.de/msmb/06-chap.html) and [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html). [Cohen's d](https://rpsychologist.com/cohend/), [Power Analysis](https://rpsychologist.com/d3/nhst/)
+- Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y)
 
 
 
