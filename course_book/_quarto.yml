@@ -15,7 +15,7 @@ website:
       - href: roadmap.qmd
         text: "Roadmap"
       - href: references.qmd
-        text: "Resources"
+        text: "2a. Resources"
     right: 
       - href: about_me.qmd
         text: "About Me"
@@ -32,7 +32,7 @@ website:
     title: "Decision-Making for the brave and true"
     style: "docked"
     background: light
-    collapse-level: 2
+    collapse-level: 1
 
     contents: 
       - href: index.qmd
@@ -54,10 +54,35 @@ website:
         href: references.qmd
         contents:
           - href: references.qmd
-            text: "Study Resources"      
-      - section: "2b. A/B Testing and Causal Inference"
+            text: "Building Blocks"
+          - href: references.qmd#groups-and-partial-pooling  
+            text: "Groups and Partial Pooling"
+          - href: references.qmd#groups-and-partial-pooling
+            text: "Gaussian Linear Regression"
+          - href: references.qmd#generalized-linear-models
+            text: "Generalized Linear Models"
+          - href: references.qmd#hierarchical-glms
+            text: "Hierarchical GLMs"
+      - section: "2b. Hypotheses and A/B Testing"
+        href: roadmap.qmd#module-iib-hypotheses-and-ab-testing
+        contents:
+          - href: roadmap.qmd#module-iib-hypotheses-and-ab-testing
+            text: "Roadmap for learning"
+      - section: "2c. Causal Inference with DAGs"
+        href: roadmap.qmd#module-iic-causal-inference-with-dags
+        contents:
+          - href: roadmap.qmd#module-iic-causal-inference-with-dags
+            text: "Roadmap for learning"
       - section: "3. Probabilistic ML and Deep Learning"
+        href: roadmap.qmd#module-iii-ml-and-deep-learning
+        contents:
+          - href: roadmap.qmd#module-iii-ml-and-deep-learning
+            text: "Roadmap for learning"
       - section: "4. Full Stack Data Apps"
+        href: roadmap.qmd#module-iv-full-stack-data-apps
+        contents:
+          - href: roadmap.qmd#module-iv-full-stack-data-apps
+            text: "Roadmap for learning"
 
 
   page-navigation: true

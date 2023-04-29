@@ -10,7 +10,8 @@ I always start with the first module, in which we explore [decisions](01_fundame
 
 - [**Module I**](#module-i-business-decisions-and-probability): Business Decisions and Probability Fundamentals
 - [**Module IIa**](#module-iia-bayesian-statistics): Applied Bayesian Statistics
-- [**Module IIb**](#module-iib-ab-testing-and-causal-inference): A/B Testing and Causal Inference[^r3]
+- [**Module IIb**](#module-iib-hypotheses-and-ab-testing): Hypothesis Formulation and A/B Testing[^r3]
+- [**Module IIc**](#module-iic-causal-inference-with-dags): Causal Inference with Directed Acyclic Graphs
 - [**Module III**](#module-iii-ml-and-deep-learning): Probabilistic ML and Deep Learning
 - [**Projects**](#module-iv-full-stack-data-apps): Software Engineering and Full-Stack Data Apps
 
@@ -181,7 +182,7 @@ flowchart TD
 ::: -->
 
 
-## Module IIb: A/B Testing and Causal Inference
+## Module IIb: Hypotheses and A/B Testing
 
 ::: {.column-page-inset-right}
 
@@ -222,6 +223,8 @@ flowchart TD
 | 9 | Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |
 
 :::
+
+## Module IIc: Causal Inference with DAGs
 
 
 ## Module III: ML and Deep Learning
