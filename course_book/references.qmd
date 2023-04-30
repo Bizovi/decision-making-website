@@ -459,33 +459,50 @@ In the [probability fundamentals](01_fundamentals/stat_foundations.qmd) section,
 
 ## Hierarchical GLMs
 
+We finally reached to the most exciting point in our journey so far, where we can properly model and explain sources of variation at multiple levels (of analysis). This is where we relax the assumption of iid, replacing it with one of exchangeability. 
+
+The point is that correlated data causes problems in modeling, when we don't account properly for it: be it groups, clusters, categorical variables, time series, geography, etc. BeyondMLR has a very well thought, [practical motivation](https://bookdown.org/roback/bookdown-BeyondMLR/ch-corrdata.html) for multilevel models.
+
+
 ::: {.callout-note}
 ## Hierarchical Gaussian Regression
 
+We come back to the radon example, by adding one covariate at each level: house and county. This explains a part of variation which was missed before and leverages pooling to take care of low sample size in some counties.
+
 - Radon: Primary code reference: [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/multilevel_modeling.html) - A Primer on Bayesian Methods for Multilevel Modeling
-	- [bambinos](https://bambinos.github.io/bambi/notebooks/radon_example.html) a higher level API, models the log-radon
+	- [bambinos](https://bambinos.github.io/bambi/notebooks/radon_example.html) a higher level API, models the log-radon. Alternatively, [McStanPy](https://mc-stan.org/users/documentation/case-studies/radon_cmdstanpy_plotnine.html) implementation
 	- [Omar Sosa - Practical introduction to Bayesian hierarchical modeling](https://github.com/omarfsosa/tech-talk-hierarchical-models) with numpyro
-	- [McStanPy](https://mc-stan.org/users/documentation/case-studies/radon_cmdstanpy_plotnine.html) implementation
-- [Bayesian Multilevel Regression](https://num.pyro.ai/en/stable/tutorials/bayesian_hierarchical_linear_regression.html) numpyro, linear regression [OSIC Pulmonary Fibrosis Progression](https://www.kaggle.com/c/osic-pulmonary-fibrosis-progression)
-- BeyondMLR [stage anxiety music performers](https://bookdown.org/roback/bookdown-BeyondMLR/ch-multilevelintro.html#cs:music)
-- Stack facial feedback hypothesis, re-analysis, ctx replication crisis, via [bambi](https://bambinos.github.io/bambi/notebooks/Strack_RRR_re_analysis.html) -- full workflow, with iteration
+- [Bayesian Multilevel Regression](https://num.pyro.ai/en/stable/tutorials/bayesian_hierarchical_linear_regression.html) numpyro on [OSIC Pulmonary Fibrosis Progression](https://www.kaggle.com/c/osic-pulmonary-fibrosis-progression) data, which assesses the risks of smoking and not only.
+- BeyondMLR presents a really interesting psychological study about [stage anxiety](https://bookdown.org/roback/bookdown-BeyondMLR/ch-multilevelintro.html#cs:music) for music performers at a conservatory.
+- A repeated analysis of Stack's facial feedback hypothesis, in the context of replication crisis, via [bambi](https://bambinos.github.io/bambi/notebooks/Strack_RRR_re_analysis.html) -- full workflow.
 :::
+
+Longitudinal data is a special case of multilevel models, but has the distinct feature, that at the group level, the data isn't iid, but comes as a realization of the stochastic process.
+
+
+[Often called Panel Data in economics and social sciences. You will see a different terminology in that literature: of mixed models.]{.aside}
+
 
 ::: {.callout-note}
 ## Longitudinal Data and Studies
-- [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/longitudinal_models.html) longitudinal data with drinking teens, alcohol consumption per cohorts, in time
-- [Sleepstudy and reaction times](https://bambinos.github.io/bambi/notebooks/sleepstudy.html) bambi, by subject
-	- Same idea in [pig growth study](https://bambinos.github.io/bambi/notebooks/multi-level_regression.html)
-- Beyond MLR [charter schools longitudinal](https://bookdown.org/roback/bookdown-BeyondMLR/ch-lon.html#cs:charter)
+
+These examples model the trend with a covariate, as a function of time -- which is a happy case when we can do that. However, in practice, things become more complicated if we have to model and identify a stochastic process like $AR(k)$, or $MA(n)$.
+
+- Longitudinal data with drinking teens, alcohol consumption per cohorts, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/longitudinal_models.html).
+- [Sleep study and reaction times](https://bambinos.github.io/bambi/notebooks/sleepstudy.html) in time by subject. The same modeling idea is in [pig growth study](https://bambinos.github.io/bambi/notebooks/multi-level_regression.html), both implemented in bambi.
+- Beyond MLR [charter schools longitudinal](https://bookdown.org/roback/bookdown-BeyondMLR/ch-lon.html#cs:charter) study.
 :::
+
+If in the previous sections, I didn't have a strong preference for the Bayesian Approach, in the case of multilevel models, I strongly believe Bayesian Inference to be superior and less prone to overfitting and numerical instability.
+
+Another aspect of this, is that most mixed models packages will make certain decisions for us, without our consent, which could influence our results and conclusions. As you'll see in these tutorials, we are forced to construct the model and declare, justify every choice of prior and model structure.
 
 ::: {.callout-note}
 ## Hierarchical Logistic Regression
 
-- Beyond MLR logistic, college basketball referee foul differential [here](https://bookdown.org/roback/bookdown-BeyondMLR/ch-GLMM.html#cs:refs)
+- Beyond MLR, college basketball referee foul differential [here](https://bookdown.org/roback/bookdown-BeyondMLR/ch-GLMM.html#cs:refs)
 - [Graduate Admissions](https://num.pyro.ai/en/stable/examples/ucbadmit.html), from McElreath,  UC Berkeley in Fall 1973 (numpyro)
-	- point to pymc port of rethinking
-- item-response nba fouls rasch (pymc) with nba data, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/item_response_nba.html)
+- Rasch item-response model for Nba fouls in crunch time, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/item_response_nba.html)
 :::
 
 
@@ -500,11 +517,18 @@ In the [probability fundamentals](01_fundamentals/stat_foundations.qmd) section,
 ::: {.callout-note}
 ## Models with 3 Levels
 
+At last, it is useful to see an example where we have an even more complicated multilevel structure, as it will be the case in some practical applications.
+
 - Beyond MLR [3-level seed germination](https://bookdown.org/roback/bookdown-BeyondMLR/ch-3level.html#cs:seeds)
 :::
 
+This is really, the end of the Module 2a. Applied Bayesian Statistics. These tools are so general and powerful, that they will last you a lifetime. However, there is so much more to learn and so many more challenges to tackle -- that there is no end to the mastery of Multilevel GLMs.
+
+Even after you learned all the technical intricacies, we're hit again with the reality that association doesn't imply causation. So, after being competent with this amazing tool -- we have to go back to ideas from causal inference, if we want to get a more than associative insight about our theory and understanding of phenomena.
 
 ## Bayesian Machine Learning
+
+As a bouns, I'm adding two extremely flexible, general-purpose models, which you can treat as in the Machine Learning practices, but are Bayesian to the core. These are extremely useful if we care more about predictive accuracy, either for decision-making, or as a part of causal inference process, where a certain complicated relationship details aren't important to us, just the conditional average treatment effects.
 
 ::: {.callout-note}
 ## Bayesian Additive Regression Trees
