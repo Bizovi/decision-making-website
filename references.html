@@ -910,8 +910,11 @@ Modeling how Data goes Missing
 </div>
 </div>
 </section>
-<section id="generalized-linear-models" class="level2">
+<section id="generalized-linear-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="generalized-linear-models">Generalized Linear Models</h2>
+<p>Not every phenomena we model is continuous or appropriate for gaussian linear regression, but we can easily extend it with the building blocks we learned at the beginning. It’s all about those link functions and relaxing some of the assumptions of the linear regression. I want to point out how the following mirrors the simple, single-variable models we first practiced on.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">I do not want to make the transition from gaussian case to logistic, poisson and other variants sound trivial. Their behavior, evaluation, and interpretation is different and distinct. You can not equivocate them.</span></div></div>
+<p>As a theoretical background of what connects these models into one single family, hence the name of GLMs, I suggest you read the section in the “Beyond MLR” about the <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-glms.html">exponential family</a>. Richard McElreath has similar information-theoretic arguments in his lectures on Statistical Rethinking.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -922,14 +925,17 @@ Logistic Regression
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>As a fun aside about ML, logistic regression is the only model which is calibrated out-of-the-box, meaning the scores for the classification can be interpreted as probabilities, due to its specific loss function.</p>
+<p>For the rest of the cases, you would need to calibrate via an isotonic or piecewise-linear regression, on a separate, validation dataset. So, going back to the practice, here are some examples using the logistic regression:</p>
 <ul>
-<li>Beetles survival by concentration chemical, logistic regression, <a href="https://bambinos.github.io/bambi/notebooks/alternative_links_binary.html">bambi</a>, tries out different link functions, but example is very nice</li>
-<li>Logistic regression, vote intention by age, clinton/trump/.. <a href="https://bambinos.github.io/bambi/notebooks/logistic_regression.html">bambi</a>, ANES data, 1200 samples</li>
-<li>Influences on income bracket, model comparison, <a href="https://bambinos.github.io/bambi/notebooks/model_comparison.html">bambi</a></li>
-<li>Multinomial regression <a href="https://bambinos.github.io/bambi/notebooks/categorical_regression.html">iris</a>, via bambi</li>
+<li>Beetles survival by concentration of chemical, via <a href="https://bambinos.github.io/bambi/notebooks/alternative_links_binary.html">bambi</a> – tries out different link functions and is a simple example to get started with.</li>
+<li>Vote intention by age in the U.S., via <a href="https://bambinos.github.io/bambi/notebooks/logistic_regression.html">bambi</a>, 2016 ANES data, 1200 samples.</li>
+<li>Socio-economic influences on income bracket (<span class="math inline">\(\ge \$50k\)</span>), also does model comparison, implementation in <a href="https://bambinos.github.io/bambi/notebooks/model_comparison.html">bambi</a></li>
+<li>Multinomial regression <a href="https://bambinos.github.io/bambi/notebooks/categorical_regression.html">iris</a>, via bambi, with the most boring dataset, but you’ll see that you have a solution for the multiclass classification without the multiple comparisons.</li>
 </ul>
 </div>
 </div>
+<p>When you have a numeric target variable, think twice if it is appropriate for the gaussian distribution. Sometimes, what we model is really, counts, or non-negative, or monotonically increasing with respect to a <span class="math inline">\(X_i\)</span> (that alone deserves its own case-study). Sometimes, even poisson doesn’t work out due to overdispersion or zero-inflation, and it is not a rare exception, especially when modeling aspects of customer behavior.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -941,10 +947,10 @@ Poisson Regression
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://www.bayesrulesbook.com/chapter-12.html">Number of laws</a> regarding equality, which includes a discussion for the issue of overdispersion.</li>
-<li>Stop and frisk data, the <a href="https://omarfsosa.github.io/poisson_regression_in_python">frequentist version</a></li>
-<li><a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html">Campus crime</a> and estimating household size in Philippines.</li>
-<li><a href="https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-poisson-regression.html">Alcohol and meds interaction</a>, with simulated data</li>
+<li><a href="https://www.bayesrulesbook.com/chapter-12.html">Number of laws</a> regarding equality, which includes a discussion for the issue of overdispersion. Not sure at all that this would be a prototypical DGP story for a Poisson.</li>
+<li>Stop and frisk data from BDA3 and RoS, the <a href="https://omarfsosa.github.io/poisson_regression_in_python">frequentist version</a></li>
+<li><a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html">Campus crime</a> and estimating household size in Philippines from BeyondMLR.</li>
+<li><a href="https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-poisson-regression.html">Alcohol and meds interaction</a>, with simulated data.</li>
 </ul>
 </div>
 </div>
@@ -958,6 +964,7 @@ Overdispersion. Negative Binomial. Zero-Inflation
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>The negative binomial distribution is often found in customer behavior, in contractual or non-contractual settings, when it comes to purchases, subscription renewals.</p>
 <ul>
 <li><a href="https://avehtari.github.io/ROS-Examples/Roaches/roaches.html">Cockroaches and pest management</a>, where Negative-Binomial, Poisson and Zero-Inflated NBD is investigated.</li>
 <li><a href="https://num.pyro.ai/en/stable/examples/zero_inflated_poisson.html">Fishing catches in a park</a>, in numpyro</li>
@@ -965,6 +972,8 @@ Overdispersion. Negative Binomial. Zero-Inflation
 </ul>
 </div>
 </div>
+<p>In the <a href="./01_fundamentals/stat_foundations.html">probability fundamentals</a> section, we discussed the use-case of estimating proportions and named the field of compositional data analysis. It is often found in practice, but disguises itself, which causes the wrong method to be applied.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">If you encountered such a problem, when you care about proportions, mix of stuff, or compositions, not their absolute values or quantities, you can check out <a href="http://www.sediment.uni-goettingen.de/staff/tolosana/extra/CoDa.pdf">these lecture notes</a></span></div></div>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
