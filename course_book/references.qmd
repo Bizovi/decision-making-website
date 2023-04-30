@@ -402,32 +402,50 @@ In Bayesian Statistics, we also have to be very explicit and declare our assumpt
 
 ## Generalized Linear Models
 
+Not every phenomena we model is continuous or appropriate for gaussian linear regression, but we can easily extend it with the building blocks we learned at the beginning. It's all about those link functions and relaxing some of the assumptions of the linear regression. I want to point out how the following mirrors the simple, single-variable models we first practiced on.
+
+[I do not want to make the transition from gaussian case to logistic, poisson and other variants sound trivial. Their behavior, evaluation, and interpretation is different and distinct. You can not equivocate them.]{.aside}
+
+As a theoretical background of what connects these models into one single family, hence the name of GLMs, I suggest you read the section in the "Beyond MLR" about the [exponential family](https://bookdown.org/roback/bookdown-BeyondMLR/ch-glms.html). Richard McElreath has similar information-theoretic arguments in his lectures on Statistical Rethinking.
+
 ::: {.callout-note}
 ## Logistic Regression
 
-- Beetles survival by concentration chemical, logistic regression, [bambi](https://bambinos.github.io/bambi/notebooks/alternative_links_binary.html), tries out different link functions, but example is very nice
-- Logistic regression, vote intention by age, clinton/trump/.. [bambi](https://bambinos.github.io/bambi/notebooks/logistic_regression.html), ANES data, 1200 samples
-- Influences on income bracket, model comparison, [bambi](https://bambinos.github.io/bambi/notebooks/model_comparison.html)
-- Multinomial regression [iris](https://bambinos.github.io/bambi/notebooks/categorical_regression.html), via bambi
+As a fun aside about ML, logistic regression is the only model which is calibrated out-of-the-box, meaning the scores for the classification can be interpreted as probabilities, due to its specific loss function. 
+
+For the rest of the cases, you would need to calibrate via an isotonic or piecewise-linear regression, on a separate, validation dataset. So, going back to the practice, here are some examples using the logistic regression:
+
+- Beetles survival by concentration of chemical, via [bambi](https://bambinos.github.io/bambi/notebooks/alternative_links_binary.html) -- tries out different link functions and is a simple example to get started with.
+- Vote intention by age in the U.S., via [bambi](https://bambinos.github.io/bambi/notebooks/logistic_regression.html), 2016 ANES data, 1200 samples.
+- Socio-economic influences on income bracket ($\ge \$50k$), also does model comparison, implementation in [bambi](https://bambinos.github.io/bambi/notebooks/model_comparison.html)
+- Multinomial regression [iris](https://bambinos.github.io/bambi/notebooks/categorical_regression.html), via bambi, with the most boring dataset, but you'll see that you have a solution for the multiclass classification without the multiple comparisons.
 :::
 
+When you have a numeric target variable, think twice if it is appropriate for the gaussian distribution. Sometimes, what we model is really, counts, or non-negative, or monotonically increasing with respect to a $X_i$ (that alone deserves its own case-study). Sometimes, even poisson doesn't work out due to overdispersion or zero-inflation, and it is not a rare exception, especially when modeling aspects of customer behavior.
 
 ::: {.callout-note}
 ## Poisson Regression
 
-- [Number of laws](https://www.bayesrulesbook.com/chapter-12.html) regarding equality, which includes a discussion for the issue of overdispersion.
-- Stop and frisk data, the [frequentist version](https://omarfsosa.github.io/poisson_regression_in_python)
-- [Campus crime](https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html) and estimating household size in Philippines.
-- [Alcohol and meds interaction](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-poisson-regression.html), with simulated data
+- [Number of laws](https://www.bayesrulesbook.com/chapter-12.html) regarding equality, which includes a discussion for the issue of overdispersion. Not sure at all that this would be a prototypical DGP story for a Poisson.
+- Stop and frisk data from BDA3 and RoS, the [frequentist version](https://omarfsosa.github.io/poisson_regression_in_python)
+- [Campus crime](https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html) and estimating household size in Philippines from BeyondMLR.
+- [Alcohol and meds interaction](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-poisson-regression.html), with simulated data.
 :::
 
 ::: {.callout-note}
 ## Overdispersion. Negative Binomial. Zero-Inflation
 
+The negative binomial distribution is often found in customer behavior, in contractual or non-contractual settings, when it comes to purchases, subscription renewals.
+
 - [Cockroaches and pest management](https://avehtari.github.io/ROS-Examples/Roaches/roaches.html), where Negative-Binomial, Poisson and Zero-Inflated NBD is investigated.
 - [Fishing catches in a park](https://num.pyro.ai/en/stable/examples/zero_inflated_poisson.html), in numpyro
 - [Students' absence](https://bambinos.github.io/bambi/notebooks/negative_binomial.html), UCLA data, application of negative binomial, written in bambi
 :::
+
+In the [probability fundamentals](01_fundamentals/stat_foundations.qmd) section, we discussed the use-case of estimating proportions and named the field of compositional data analysis. It is often found in practice, but disguises itself, which causes the wrong method to be applied.
+
+[If you encountered such a problem, when you care about proportions, mix of stuff, or compositions, not their absolute values or quantities, you can check out [these lecture notes](http://www.sediment.uni-goettingen.de/staff/tolosana/extra/CoDa.pdf) ]{.aside}
+
 
 ::: {.callout-note}
 ## Proportions. Compositional Data Analysis
