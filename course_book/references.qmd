@@ -156,6 +156,10 @@ We already worked with multiple parameters, even touching upon the relationship 
 The domain/geometry inspired, custom model is presented in [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/putting_workflow.html) version, [stan](https://mc-stan.org/users/documentation/case-studies/golf.html) by Andrew Gelman, and [stan](https://avehtari.github.io/ROS-Examples/Golf/golf.html) by Aki Vehtari. It is modeling the relationship between distance and the probability of put, which is nonlinear and the sigmoid function won't work well for this case.
 :::
 
+::: {.column-margin}
+This is an appropriate point to introduce linear regression and logistic regression. It is not too early, given the importance of those tools, however the presentation should be practical and pretty high level, as there is much nuance to deep-dive later.
+:::
+
 Of course, we cannot forget about the Normal/Gaussian distribution, which is so prevalent in nature and pops up everywhere in the statistical practice. It is the building block of many following models. Remember the key idea of the expectation of independent random variables and estimating the mean from samples. Also, keep in mind any time you're doing regression that it's all about the conditional expectation $\mathbb{E}_\theta[Y|X=x]$.
 
 ::: {.callout-note}
@@ -172,74 +176,98 @@ TODO: more examples from science, business, and human behavior
 
 ## Groups and Partial Pooling
 
-::: {.callout-note}
-## Beta-Binomial for groups
+We already worked with groups in the case of difference in means (proportions and continuous variables) and making inferences for three and more groups, treating them as separate. We will see that such an approach is called "no pooling".
 
+In the traditional teaching of statistics, the above would be covered by t-test, tests for proportions, and when it comes to groups, by ANOVA. If you were lucky, these would've been treated as particular versions of linear regression, like in "Most common statistical tests are linear models".
+
+::: {.column-margin}
+One more reason for this is that groups and categorical variables do not receive the deserved, nuanced exposition in linear regression. Also, comparing groups is so widespread, that having a tool to deal with the challenges which it poses is immediately useful in your practice inside any firm.
 :::
 
-::: {.callout-note}
-## Normal Approximation. Agresti-Coull confidence interval
+In this section, the goal is to show the idea of hierarchical models and **partial pooling**. I agree with BDA3 approach to teach it before regression, as the latter needs a lot of nuance and a long time to learn to apply properly.
 
+::: {.callout-note}
+## Beta-Binomial for groups. Normal Approximation
+
+There is no point in repeating all from the first section, as it is straightforward to apply for groups, as you'll see when we compare it with a hierarchical approach. 
+
+However, it is a good chance for a frequentist detour, to the Agresti-Coull confidence intervals, $\chi^2$ tests of independence, and nonparametric tests for proportions in multiple groups.
+
+- Erica Ma has a great [talk](https://youtu.be/Pt37qA351yk) for hypothesis testing for 2+ groups.
+- I think the authoritative resource on Bayesian versions of the distribution-free methods for hypothesis testing is "Bayesian Statistics for Experimental Scientists", found [here](https://mitpress.mit.edu/9780262044585/bayesian-statistics-for-experimental-scientists/). Unfortunately, it is expensive, so I suggest you look at the table of contents and search for the implementations elsewhere.
 :::
+
+Foreshadowing the module 2b on A/B testing is the topic of Multi-Armed Bandits. There are cases in which we are testing multiple groups, e.g. which images to show on the website, and we do it at scale. Moreover, we want to experiment countinuously and automatically, trading off between exploration and exploitation to maximize the payoff or minimize regret. 
+
+[MABs are a big topic in itself, and a very narrow, particular example of reinforcement learning. It can be very powerful when carefully designed and applied appropriately.]{.aside}
 
 ::: {.callout-tip}
 ## A/B Testing and Multi-Armed Bandits
+
+I suggest you start from the didactic examples in Bayesian Methods for Hackers, [Chapter 6](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter6_Priorities/Ch6_Priors_PyMC_current.ipynb). If you have an use-case in which this fits perfectly, you can check out the theory and more variants to implement it in more specialized resources.
 :::
+
+We encountered the problem of sample size when ranking reddit posts, but it deserves a few lectures in itself. Once you master a few methods of reasoning about $n$, you can cut through so much bullshit in media, research, and literature. 
 
 ::: {.callout-tip}
 ## The most dangerous equation
+
+I think that ["The most dangerous equation"](http://assets.press.princeton.edu/chapters/s8863.pdf) is a must read for anyone, not just practicing scientists and statisticians. You can see below two resources for the mathematical background of LLT, CLT, and some key properties of estimators.
+
 - Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. [the theorem and simulations here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem)
 - Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in [openforecast](https://openforecast.org/sba/estimatesProperties.html)
+
+Continuing on the reddit examples, there are some amazing case-studies in the "Calling Bullshit" website and book. One of them is exactly such a ranking problem: [best barbecue in the states](https://www.callingbullshit.org/case_studies/case_study_barbecue.html). I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill -- to call out the bullshit.
 :::
+
+For the continuity with the previous "Building Blocks" section, here are a few example for groups, where the dependent variable is following the Poisson distribution. In this case, the novelty is choosing a gamma prior based on the sample size information of each group. If you think we can do better than this trick -- you're totally right.
 
 ::: {.callout-note}
 ## Gamma-Poisson for groups
 
 The models become more complicated as we attempt to estimate parameters for **each group** of $n$ observations:
 
-- Kidney Cancer rates, with priors chosen in accordance to the sample size (BDA3). [An R visualization](https://robinryder.wordpress.com/2019/09/13/reproducing-the-kidney-cancer-example-from-bda/)
+- Kidney Cancer rates, with priors chosen in accordance to the sample size (BDA3, Ch2). [An R visualization](https://robinryder.wordpress.com/2019/09/13/reproducing-the-kidney-cancer-example-from-bda/)
 - [Guns and suicides](https://sidravi1.github.io/blog/2018/06/15/empirical-and-hierarchical-bayes), with ideas from empirical and hierarchical Bayes.
-- Richard McElreath's example of Starbucks coffee-shops queue lengths
+:::
+
+::: {.column-margin}
+Just as a remark, **complete pooling** is when we ignore the fact that we have groups, and make one, global estimate. Of course, it would fall in the category of underfitting or model mis-specification, if the categories or groups are relevant.
+:::
+
+Finally, we're ready to see how partial pooling and hierarchical (multilevel) models are such an important and powerful innovation, to the point where some practitioners argue (and I agree), that it should be the default way of (regression) modeling. Meaning, a strong justification is needed why your model doesn't need that structure or modeling of heterogeneity. Keep in mind this advice, but always start with the most simple models when iterating towards the final one.
+
+::: {.callout-note}
+## Hierarchical Models for Groups
+ 
+**Gaussian**. The main example is a classic: modeling the level of radon in houses on the first floor and basement, where the groups are counties (BDA3). We will see this example again in the Hierarchical GLMs section, where predictors at house-level and county-level are added.
+
+- [Omar Sosa - Practical introduction to Bayesian hierarchical modeling](https://github.com/omarfsosa/tech-talk-hierarchical-models) with numpyro, focuses on exactly the idea we need.
+- Primary code reference: [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/multilevel_modeling.html) - A Primer on Bayesian Methods for Multilevel Modeling
+
+**Beta-Bionmial** examples:
+
+- Eric Ma tutorial at pycon, about [baseball batting](https://bambinos.github.io/bambi/notebooks/hierarchical_binomial_bambi.html), and the equivalent [numpyro code](https://num.pyro.ai/en/stable/examples/baseball.html). Another baseball example is a [classic by Efron](https://www.pymc.io/projects/examples/en/latest/case_studies/hierarchical_partial_pooling.html), implemented in pymc.
+- Police shooting training -- detecting race bias. A full Bayesian workflow in [bambi](https://bambinos.github.io/bambi/notebooks/shooter_crossed_random_ANOVA.html).
+- Another classic example is about Rat Tumors experiment, implemented in [pymc](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-hierarchical-binomial-model.html), from BDA3, Ch5.
+
+A great **Gamma-Poisson** example is presented by Richard McElreath in Statistical Rethinking lectures: "Starbucks coffee-shops waiting time in queue".
+
+:::
+
+
+One of my favorite business applications of the ideas outlined in this section, is in the seemingly innocent problem of computing the lifetime value of a customer. Just to show how tricky this problem is, there is a niche, but extensive literature on the probem, starting from 2000-2005 by Rossi, Fader, and Hardie, which is entering into the mainstream only now, by 2020-2023.
+
+::: {.column-margin}
+The below is by far not the only model: there are versions for contractual and non-contractual settings with different assumptions. The culmination of this research, in my opinion, is Eva Ascarza's 2013 [paper](http://www.evaascarza.com/ascarza_hardie_13.pdf).
 :::
 
 ::: {.callout-tip}
 ## Estimating Customer Lifetime Value
 
-- Model: Combining Gamma-Poisson and Beta-Binomial, with parameters at customer level
-- The math and [code in pymc3](https://sidravi1.github.io/blog/2018/07/08/fader-hardie-clv)
-
+Model: Combining Gamma-Poisson and Beta-Binomial, with parameters at customer level. The math and code in pymc3 can be found [here](https://sidravi1.github.io/blog/2018/07/08/fader-hardie-clv).
 :::
 
-
-::: {.callout-note}
-## Hierarchical Beta-Binomial
- 
-- [baseball batting](https://bambinos.github.io/bambi/notebooks/hierarchical_binomial_bambi.html), from Eric Ma tutorial in pycon, and the equivalent [numpyro code](https://num.pyro.ai/en/stable/examples/baseball.html)
-- Police shooting training, race, [bambi](https://bambinos.github.io/bambi/notebooks/shooter_crossed_random_ANOVA.html) -- full bayesian workflow
-- Hierarchical baseball, efron, [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/hierarchical_partial_pooling.html), idea of partial pooling
-- Rat tumors, [pymc](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-hierarchical-binomial-model.html), binomial
-:::
-
-## A/B Testing and Experiment Design
-
-
-Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design.
-
-I'm emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.
-
-- Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
-- Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. [Here](https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis) you can see the reasoning for testing and [an article by Cassie](https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c) for statistics.
-- Remember the importance of those 12 steps of statistics, especially the [Default Action](https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c). For a more classical exposition - check [this](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html) out.
-- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those.
-- p-values - [simulation](https://rpsychologist.com/pvalue/), [simulation of distirbutions under H0/Ha](https://rpsychologist.com/d3/pdist/)
-- Type 1, 2 errors, Type 3 errors (solving the wrong problem), [chapter14](https://openintro-ims.netlify.app/decerr.html)
-- A/B Testing scheme, [An end-to-end example](https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a), but be careful to follow the 12 steps we have and not to forget to define the Default Action.
-- Experiment Design and Hypothesis testing pitfalls - [from HBR](https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing), [8 pitfalls](https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e), [A/A tests](https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241), [user interference](https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8)
-- Metric Design and [properties of good metrics](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/) - [an example](https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb)
-- Relevance and Significance - Read [this paper](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) by Werner Stahel
-- Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/)
-- Effect size, Power, Sample Size - [here](https://mathstat.slu.edu/~speegle/_book/HTCI.html), and [here](https://www.huber.embl.de/msmb/06-chap.html) and [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html). [Cohen's d](https://rpsychologist.com/cohend/), [Power Analysis](https://rpsychologist.com/d3/nhst/)
-- Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y)
 
 
 

@@ -57,7 +57,7 @@ website:
             text: "Building Blocks"
           - href: references.qmd#groups-and-partial-pooling  
             text: "Groups and Partial Pooling"
-          - href: references.qmd#groups-and-partial-pooling
+          - href: references.qmd#gaussian-linear-regression
             text: "Gaussian Linear Regression"
           - href: references.qmd#generalized-linear-models
             text: "Generalized Linear Models"
@@ -68,6 +68,8 @@ website:
         contents:
           - href: roadmap.qmd#module-iib-hypotheses-and-ab-testing
             text: "Roadmap for learning"
+          - href: 02_causality/ab_testing.qmd
+            text: A/B Testing study resources
       - section: "2c. Causal Inference with DAGs"
         href: roadmap.qmd#module-iic-causal-inference-with-dags
         contents:
