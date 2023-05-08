@@ -4,25 +4,25 @@ format:
     toc-location: left
 ---
 
+::::: {.column-page-inset-right}
 :::: {.columns}
 
-::: {.column width="30%"}
+::: {.column width="25%"}
 ![](01_fundamentals/img/bizovi-pic-website.jpeg "Portrait"){width="90%"}
 :::
 
-::: {.column width="5%"}
-<!-- empty column to create gap -->
-:::
+::: {.column width="75%"}
+[Mihai Bizovi](about_me.qmd) | Head of Data Science \@AdoreMe
 
-::: {.column width="65%"}
-Mihai Bizovi | Head of Data Science \@AdoreMe
+This website emerges out of teaching data science to students of various backgrounds and my practice in the industry as an engineer and leader.
 
-This website emerges out of teaching data science to students of various backgrounds and my practice in the industry.
+I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop **valuable skills**, and become more **effective at problem-solving**. To achieve this, we need to master "the fundamentals."
 
-I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop valuable skills, and become more effective at problem-solving.
+I believe that improving **decision-making** is the reason why we practice AI. We mostly forgot that as teachers. We're also getting increasingly specialized, let's say, in Deep Learning -- which makes us miss the interdisciplinary, big picture.
 :::
 
 ::::
+:::::
 
 
 ## Decision-Making for the Brave and True {.unnumbered}
@@ -40,11 +40,13 @@ The best advice I ever got as a novice data scientist was: **"Think of youself a
 ::: {.callout-tip}
 ## Who should read this book?
 
-*Anyone lost, confused, stuck or overwhelmed by Data Science and Machine Learning complexities, who wants to see the big picture and the possibilities.*
+*Anyone lost, confused, stuck or overwhelmed by Data Science and Machine Learning complexities, who wants to see the big picture, a path forward, and the possibilities.*
 
 If you stumbled upon this website, you're probably a student in Business Analytics, or know me personally -- well, because I shamelessly promoted it.
 
 Maybe, you're an **engineer** getting curious about ML or an **analyst** with a knack for the business, looking to improve your workflow and expand the quantitative toolbox. Maybe you're a **product manager** or an **entrepreneur** who wants to infuse AI into your startup.
+
+In my opinion, junior data scientists and ML practitioners a few years into their journey will benefit the most from the re-contextualization of fundamentals that I'm doing here, which could enable them to take another **leap in career**.
 :::
 
 This is the **course I wish I had** when starting my journey in data science, which would prepare me for the realities of the industry, often very different from the academic world. In my teaching, I achieve this by putting business decisions, understanding the domain, and working software at the forefront of each (statistical) tool we learn. 
@@ -53,20 +55,40 @@ The course is challenging due to its breath and depth. At the same time, this is
 
 Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea after years, with greater wisdom and skill -- to unlock its real power.
 
-[^index-1]: This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/) when it comes to ML, and Richard McElreath or Andrew Gelman on Bayesian Statistics / Causal Inference.
+[^index-1]: This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/) when it comes to ML, and [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/) or [Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/) on Bayesian Statistics / Causal Inference.
 
-Given the over-abundance of learning resources, it is too much to sift through a hundred pages of Coursera in the data science section, books, and tutorials to find the optimal ones. The [roadmap](roadmap.qmd) provided here should help you navigate it and find the shortest path towards developing your skills and better decisions in your firm.
+::: {.callout-warning}
+## Overwhelming amount of content. What is best for learning?
+
+Given the over-abundance of learning resources, it is too much to sift through a hundred pages of Coursera in the data science section, books, and tutorials to find the optimal ones. Inevitably, there is so much bullshit and repetition.
+
+The [roadmap](roadmap.qmd) provided here should help you navigate it and find the shortest path towards developing your skills and better decisions in your firm. Pick a module you're passionate about, for example, Bayesian Statistics and look in the [resources](references.qmd) page for a guide where to start reading and practicing.
+:::
 
 ## Why should you care?
 
-You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
+You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, Deep Reinforcement Learning models are beating people at Go, Dota, Chess, solving almost-impossible protein-folding problems. The world is awash in the newest ChatGPT and Midjourney frenzy, with new developments every month and week. 
+
+::: {.column-margin}
+![](img/dont.jpg){width="80%"}
+:::
+
+::: {.callout-important}
+## How do I keep up?
+
+You don't, at least if you want to have a balanced life. That's why I choose to focus on fundamentals which stood the test of time, which are anyways a prerequisite before you dive into understanding the technicalities of those cutting-edge models and systems.
+
+You will be surprised how far can you go with simple, even linear models. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.
+:::
+
+But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
 
 In university years, you've probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on.
 
 ::: {.callout-tip}
 ## Why study all of this?
 
-We live in a volatile, uncertain, complex and ambiguous world,[^index-2] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more complete explanation, read [here](01_fundamentals/prerequisites.qmd).
+We live in a volatile, uncertain, complex and ambiguous world,[^index-2] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more in-depth explanation of the essence of each subject/domain, read [here](01_fundamentals/prerequisites.qmd).
 
 I want you to take away ONE thing, that is "AI" and Data Science in Businesses boils down to: **Decision-Making under Uncertainty at Scale**
 :::
@@ -86,104 +108,60 @@ It can be a function of decision-making support or the system/product itself, li
 :::
 
 
-That's it, whatever will be published here can't be the be-all-end-all bootcamp or course. But here are a few of my beliefs, which may persuade you to take the long road to your own development in AI instead of searching for "the tutorial":
+## What will you learn?
+
+I always start with the first module, in which we explore [decisions](01_fundamentals/background.qmd) in businesses, figure out what does AI mean, and where it adds value. If we view statistics as **changing our minds and actions in the face of evidence** -- fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.
+
+- [**Module 1**](01_fundamentals/roadmap.qmd): Business Decisions and Probability Fundamentals
+- [**Module 2a**](02_causality/roadmap.qmd): Applied Bayesian Statistics
+- [**Module 2b**](02_causality/roadmap_abtest.qmd): Hypothesis Formulation and A/B Testing[^r3]
+- **Module 2c**: Causal Inference with Directed Acyclic Graphs
+- [**Module 3a**](03_ml/roadmap.qmd): Probabilistic Machine Learning
+- **Module 3b**: Deep Learning and Special Topics
+- [**Projects**](04_engineering/roadmap.qmd): Software Engineering and Full-Stack Data Apps
+
+[^r3]: ![ We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101! *(Source: [McElreath](https://youtu.be/KNPYUVmY3NM))*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
 
 
-- There is no shortcut to deep understanding
-    - Of a domain, especially in an interdisciplinary setting
-    - With communities engaged in an evolving dialogue
-- There is no shortcut to being skillful at something
-- The journey from novice to expert is not linear, however, the "interest compounds"
-- The journey need not be painful, but it can be seriously playful,a source of wonder and meaning
-- Without skin in the game, we can't claim we truly get something
-- Without a vision which is flexible enough, but at the same time long-lived:
-    - In the case of rigidity - there is a risk of being stuck, pursue obsessively, counterproductively the wrong thing
-    - In the case of everything goes - there is a risk of wandering aimlessly and not finding a home
-- Fixating on beliefs and propositional knowing (the facts!) is counterproductive. Which should put into question all written above
-- Fixating on skills makes you lose the grasp of the big picture
+These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That's why it's essential to take every tool, and **apply** it in the context of an appropriate use-case/application -- meaning, **we'll code a lot**.
 
-## Cybernetics Done Right
 
-The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in **Complex Adaptive Systems**. It is what was originally meant by AI, before symbolic, expert systems, and deep learning.
+::: {.callout-tip}
+## Go to "Resources" page for practice!
 
-The way I think of data science -- is in the context of those complex adaptive systems. We will discuss it in more detail and nuance, as this perspective is powerful and rarely taught.
+Conceptual understanding by itself is not enough. So, I curated a [list of resources](references.qmd) to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
 
-::: {.callout-warning}
-## So, what's the problem with Cybernetics education? 
-The idea behind a **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems, that is what we know today as weak/specialised AI combined with quantitative economics.
-
-Unfortunately, the execution is extremely difficult to pull off without a consistent vision, expertise, and an account of recent developments. It is even more difficult to put those economic models from '80s in practice, especially in a data-driven age.
-
-I am taking the first step to fix this, developing a vision to make it relevant for industry and businesses again. The easiest way is by smuggling ideas from systems' thinking into the practice of data science.
+Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.
 :::
 
-[^index-4]: Cybernetics: (gr, kybernetes) -- to steer towards a desired outcome or trajectory. It highlights the aspects of agency, action, pattern recognition, and prediction.
+Once we have a confident grasp of the fundamentals, we continue with understanding and applying Bayesian Statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face. 
 
-Let's go back to the burning question: what I wish I had in a course? It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied.
-
-After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
-
--   Provide motivation for **why** something is important (a field, theory, model, method, technology)
--   Discuss **practical applications** and challenges the firms face, from an insider's perspective. Those are our case-studies.
-    - First, we try to deeply understand the problem and frame it in "our" language, that is, clarify and reduce ambiguity
-    - Then, we strip the problem to the simplest model, to illuminate some key aspect, like pricing and demand planning decisions. Then, and only then we bring back all the realism and complexities.
-    - Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
-    - Coding up the solutions and software implementations, with the real-world challenges of deploying models and improving decision making
-    - Implement those in code using best practices, as an engineering exercise
-    - With lots of visualization, especially interactive ones
--   Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it:
-    -   Present the tool theoretically rigorous and sound, but **only where it matters**. More geometry and graphs over equations, more simulations and stories over proofs.
-    -   Leverage previous mathematical, statistical, and domain knowledge
-    -   For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
--   Use **simulations** as a safe playground [^index-5] that we control, to get a feel for the behavior of models and algorithms.
-    - It forces us to declare our assumptions about the problem
-    - Before we commit to a costly real-life experiment or modeling project, it is essential to know that a model works in principle for our application: is able to recover the parameters, causal structure and generalize beyond the sample.
+Did you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do controlled experiments. We'll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it's so easy to fall into.
 
 
-[^index-5]: I often find myself truly understanding something, only after I code it up and understand the mechanics of a model well, then try to think of how I would apply it in practice, in different contexts. This hints to the idea that we need complementary computational background and tools, right from the beginning of higher education.
+Often, A/B tests and randomised experiments are unfeasible or unethical. We also acknowledged the limitations of inferring an association[^caus1], so it's time to get more powerful tools from causal inference. We can leverage natural experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding. 
 
-Speaking about the **prerequisites**, there are some tools we have to dust off the shelves and cultivate an appreciation of their importance: linear algebra, calculus, probability theory and mathematical statistics. Not least, being competent in a programming language like Python or R is essential, such that we can focus on what truly matters.
+[^caus1]: Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the "world" works -- translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).
 
-::: {.column-margin}
-Those prerequisites are placed in context of the business practice, with swift reviews and references to resources which should fill in all the gaps.
+
+::: {.callout-important}
+## What if I care only about ML?
+
+Even if you're interested only in machine learning, most practitioners will emphasize the importance of mastering regression (generalized linear models) and doing A/B tests to gather evidence that our new model brings an improvement. 
+
+This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML -- the lines between these two fields are indeed very blurry.
 :::
 
-At the same time, we have to gradually get **rid of the bad habits** that were accumulated: analyses which can't be reproduced, mechanically following a statistical procedure (because the flowchart of statistical tests said so, for example), jumping to a conclusion (as if there is only one, correct, textbook answer), rushing the learning process, handwaving to cover for a poorly articulated argument. On the other side of the spectrum, perfectionism doesn't help either, as this field is inherently iterative and experimental.
+Often, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
 
-Therefore, we need to develop a set of processes and methodologies to iterate and improve effectively. Especially, we focus on the process of problem-solving: from formulation to modeling and operationalization.
+During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.
 
-## On Interdisciplinarity
+::: {.callout-tip}
+## Build an impressive project for your portfolio
 
-This is my second attempt at formulating a philosophy and principles for a challenging endeavor like this one. A moment of inspiration hit me and the following "map" resulted -- which strikes a resemblence with an idea of R. Sapolsky in one of his [lectures](https://youtu.be/NNnIGh9g6fA).
-
-
-::: {.callout-warning}
-## The danger of thinking in buckets
-
-Here's the point, which you can find in the lecture [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/).
-
-- Sapolsky starts out with: our brains think about stuff by creating boundaries – i.e. ‘buckets’ – around ideas.
-- These buckets can influence our memory, our language, and our ability to see the ‘big picture’.
-- An implication of our bucketing minds is that we are bad at differentiating facts that fall within the same category. Two shades of red are labelled ‘red’.
-- A second larger implication is that when we focus on categories while talking about behavior, we lose out on the big picture.
-- It’s easy to see a single one of these categories as providing The Explanation. But they are merely various Behavior Buckets. They are all a part of the big picture explanation.
-- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history!
+That is your final project for the course[^proj] and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity. 
 :::
 
-A major goal is to not fall for bucket thinking – we must resist the temptation to find "The Explanation" in one bucket. Much time will be spent traversing the various buckets and when we stop for a while, we practice and try to understand. 
+[^proj]: A project can be much simpler: a quarto blog to showcase your research, a python package and CLI application to train a model, a streamlit app to demo a model.
 
-Repeat until we've came full circle with a renowed appreciation, perspective, and ability. Sapolsky talks about evolution, neuroscience, molecular genetics, ethology, etc. We're going trough different ones:
-
-- **Problem space** (challenge land): understanding a domain where "we" have to make decisions, improve the relevant things for clients and stakeholders. There is much uncertainty there, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System.
-    - Be it in firms, economics, and finance
-    - Be it in biology and life sciences
-    - Be it in engineering systems
-    - This is where we get our data from and who we build software for!
-- **Science**, especially **cognitive science**, which will give us insights about our intelligence, rationality, wisdom, foolishness, and biases. This is the place where we'll get the process/method, learn how to observe, formulate scientific hypotheses, use theories, theoretical models to make predictions and perform experiments. 
-- In **probability**, we reason about uncertainty in the real world, build narratives and tell stories with DAGs of random variables, which are prague golemns, little robots which generate data. In the happy case they match the theoretical models and result in plausible patterns. We'll spend much time simulating phenomena, being the masters of these alternative multiverses. Not bad, aye?
-- In **statistics**, we change our minds and actions in the face of evidence. We learn the skills of exploratory data analysis, experiment design, and causal inference. Why build models? To make better decisions, of course.
-- **Machine Learning** and Deep Learning, the younger tribes of statistics are the future: they learn from data and when things go well, make reliable and robust predictions, in order to optimize the heck out of any process. Think of them as shamans or oracles, who sometimes overfit, therefore are prone to acting foolishly.
-- We come back to the homeland of many of you: **computer science** and software engineering, the place where nowadays everything on this map becomes reality. We will learn how to build full-stack, data-driven software, good practices of the guild. While spending time here, an appreciation for the contribution of CS to all other places we already visited will become obvious.
-- It is all overseen by **philosophy**. Some things don't change.
-- Ah! We forgot about **mathematics**. It is everywhere, but also stands proud on its own. An essential prerequisite for everything we do, however, it is hard to do rigorous mathematics in the setup we outlined, as it will take a decade. The good news is -- we will be fine just with the starter pack!
-
+The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.

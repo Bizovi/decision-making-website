@@ -13,12 +13,9 @@ In order to be a successful Data Scientist, one has to speak the language of pro
 
 > In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent *stochastic nature*. 
 
-
 Data is just the appearance, an external manifestation of some `latent processes` (seen as random mechanisms). Even though we won't know the exact outcome for sure, we can model general regularities and relationships as a result of the large scale of phenomena. [^large-scale]
 
 [^large-scale]: Think of **measurements** taken from the Large Hadron Collider experiments: the volume, noise, and complexity of data. Ultimately, we want to make inferences about the **underlying**, physical processes which govern the behavior and interaction of particles. How do we know that inference is accurate and true? A necessary, but not sufficient condition is that the conditions of that experiment are repeatable -- such that "on average", a pattern emerges.
-
-
 
 
 
@@ -65,22 +62,6 @@ I find those interesting for their own sake and understanding the foundations of
 
 The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessible and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing -- which will be our gateway into truly modern statistics.
 
-
-
-::: {.callout-tip}
-## Complementary resources if you feel like starting over
-- Realize that lots of common statistical tests are particular versions of linear models [^11]. It takes a few hours to go through the theory and the code in the referenced book.
-- Here's the approach taken by [^24], which integrates data analysis and simulation in learning of statistics.
-- Upgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is [^12], which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.
-- Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is [^45], which is a course in collaboration with the RStudio team.
-
-There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:
-
-- Cetinkaya-Runde, Hardin - [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) goes through all the fundamentals in a clear, concrete, extensive way, with code!
-- Crump - [Answering questions with data](https://www.crumplab.com/statistics/) -- introductory statistics for Psychology Students has an interesting approach, focused on the challenges of Psychology
-- Thulin - [Modern Statistics with R](http://www.modernstatisticswithr.com/) goes through the whole process, with R, with additional topics, normally not present in a statistics course 
-- Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data
-:::
 
 ## The garden of forking paths
 

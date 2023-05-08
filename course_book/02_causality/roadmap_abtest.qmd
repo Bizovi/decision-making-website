@@ -1,0 +1,47 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
+## Module IIb: Hypotheses and A/B Testing
+
+::: {.column-page-inset-right}
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: | 
+%%|   When discussing hypothesis testing and experiment design, we can't avoid an overview of fequentist methods (path of action) and a discussion of the philosophy of science.
+
+flowchart TD
+  H(Hypotheses) --> P(Phil. Science) --> GQ(Good Questions) --> Pre[Pre-Registration] --> Repl[Replications] --> B[Publication Bias] --> OS[Open Science] --> FSS[Falsification] --> Repr[Reproducibility] --> MA[Meta-Analysis] --> E[Ethics & Integrity]
+
+  GQ --> S[Simulation] --> Th[Theory Construction] --> NF[Null is False]
+  H --> A(Path of Action) --> ET(Error Types) --> PV[p-values] --> EC(Error Control)
+  EC --> PPV[PPV] --> Sign[Signficant Findings] --> ERJ[Justification]
+  A --> Eff[Effect Sizes] --> Ch[Cohen's d] --> Corr[Correlations] --> Min[Min Effect] --> TM[Telescope Method] --> RB[Resource-Based]
+  A --> Conf[Confidence Intervals] --> SS[Power Analysis] --> PCAn[p-curve analysis] --> CPc[Capture Percent.] --> CISD[confint std-dev] --> Anova[Anova Power]
+
+  NF --> RP[Risky Predictions] --> EQ[Equivalence Testing] --> IP[Interval Predictions]
+
+```
+:::
+
+
+
+::: {.column-page-inset-right}
+
+|   | Lecture Agenda                      | Keywords  | Case Studies |
+|---|----------------|---------------|--------------|
+| 1 | A/B Testing pitfalls | A/A Tests, Selection bias, Confounders, Novelty | The need for rigorous experiments |
+| 2 | Error Types, Effect Size, p-values | tests for difference in proportions and means | Strategy for simulation |
+| 3 | Power, Sample Size calculations, Non-inferiority tests | relevance, minimal effect size | Neyman-Pearson, frequentism as action in the long-term |
+| 4 | Linear regression review | Hypothesis tests as linear models | Guidance with student projects |
+| 5 | Properties of Metrics for A/B Testing | Sensitivity, stability, directedness | Potential pitfalls |
+| 6 | Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relevance for ML, Deep Learning |
+| 7 | Bootstrap and Nonparametrics | resampling, ECDF |  Kolmogorov-Smirnov |
+| 8 | CLT, Choosing a test, Trading off errors, Increasing Power | Cohen's d, PPV, GLM, nonparametrics | Justifying $\alpha, 1 - \beta, \Delta, n$ by simulation |
+| 9 | Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |
+
+:::

@@ -1,0 +1,110 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
+
+## Cybernetics Done Right
+
+The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in **Complex Adaptive Systems**. It is what was originally meant by AI, before symbolic, expert systems, and deep learning.
+
+The way I think of data science -- is in the context of those complex adaptive systems. We will discuss it in more detail and nuance, as this perspective is powerful and rarely taught.
+
+::: {.callout-warning}
+## So, what's the problem with Cybernetics education? 
+The idea behind a **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems, that is what we know today as weak/specialised AI combined with quantitative economics.
+
+Unfortunately, the execution is extremely difficult to pull off without a consistent vision, expertise, and an account of recent developments. It is even more difficult to put those economic models from '80s in practice, especially in a data-driven age.
+
+I am taking the first step to fix this, developing a vision to make it relevant for industry and businesses again. The easiest way is by smuggling ideas from systems' thinking into the practice of data science.
+:::
+
+[^index-4]: Cybernetics: (gr, kybernetes) -- to steer towards a desired outcome or trajectory. It highlights the aspects of agency, action, pattern recognition, and prediction.
+
+Let's go back to the burning question: **what I wish I had in a course?** It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied.
+
+After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
+
+-   Provide motivation for **why** something is important (a field, theory, model, method, technology)
+-   Discuss **practical applications** and challenges the firms face, from an insider's perspective. Those are our case-studies.
+    - First, we try to deeply understand the problem and frame it in "our" language, that is, clarify and reduce ambiguity
+    - Then, we strip the problem to the simplest model, to illuminate some key aspect, like pricing and demand planning decisions. Then, and only then we bring back all the realism and complexities.
+    - Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
+    - Coding up the solutions and software implementations, with the real-world challenges of deploying models and improving decision making
+    - Implement those in code using best practices, as an engineering exercise
+    - With lots of visualization, especially interactive ones
+-   Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it:
+    -   Present the tool theoretically rigorous and sound, but **only where it matters**. More geometry and graphs over equations, more simulations and stories over proofs.
+    -   Leverage previous mathematical, statistical, and domain knowledge
+    -   For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
+-   Use **simulations** as a safe playground [^index-5] that we control, to get a feel for the behavior of models and algorithms.
+    - It forces us to declare our assumptions about the problem
+    - Before we commit to a costly real-life experiment or modeling project, it is essential to know that a model works in principle for our application: is able to recover the parameters, causal structure and generalize beyond the sample.
+
+
+[^index-5]: I often find myself truly understanding something, only after I code it up and understand the mechanics of a model well, then try to think of how I would apply it in practice, in different contexts. This hints to the idea that we need complementary computational background and tools, right from the beginning of higher education.
+
+Speaking about the **prerequisites**, there are some tools we have to dust off the shelves and cultivate an appreciation of their importance: linear algebra, calculus, probability theory and mathematical statistics. Not least, being competent in a programming language like Python or R is essential, such that we can focus on what truly matters.
+
+::: {.column-margin}
+Those prerequisites are placed in context of the business practice, with swift reviews and references to resources which should fill in all the gaps.
+:::
+
+At the same time, we have to gradually get **rid of the bad habits** that were accumulated: analyses which can't be reproduced, mechanically following a statistical procedure (because the flowchart of statistical tests said so, for example), jumping to a conclusion (as if there is only one, correct, textbook answer), rushing the learning process, handwaving to cover for a poorly articulated argument. On the other side of the spectrum, perfectionism doesn't help either, as this field is inherently iterative and experimental.
+
+Therefore, we need to develop a set of processes and methodologies to iterate and improve effectively. Especially, we focus on the process of problem-solving: from formulation to modeling and operationalization.
+
+## On Interdisciplinarity
+
+This is my second attempt at formulating a philosophy and principles for a challenging endeavor like this one. A moment of inspiration hit me and the following "map" resulted -- which strikes a resemblence with an idea of R. Sapolsky in one of his [lectures](https://youtu.be/NNnIGh9g6fA).
+
+
+::: {.callout-warning}
+## The danger of thinking in buckets
+
+Here's the point, which you can find in the lecture [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/).
+
+- Sapolsky starts out with: our brains think about stuff by creating boundaries – i.e. ‘buckets’ – around ideas.
+- These buckets can influence our memory, our language, and our ability to see the ‘big picture’.
+- An implication of our bucketing minds is that we are bad at differentiating facts that fall within the same category. Two shades of red are labelled ‘red’.
+- A second larger implication is that when we focus on categories while talking about behavior, we lose out on the big picture.
+- It’s easy to see a single one of these categories as providing The Explanation. But they are merely various Behavior Buckets. They are all a part of the big picture explanation.
+- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history!
+:::
+
+A major goal is to not fall for bucket thinking – we must resist the temptation to find "The Explanation" in one bucket. Much time will be spent traversing the various buckets and when we stop for a while, we practice and try to understand. 
+
+Repeat until we've came full circle with a renowed appreciation, perspective, and ability. Sapolsky talks about evolution, neuroscience, molecular genetics, ethology, etc. We're going trough different ones:
+
+- **Problem space** (challenge land): understanding a domain where "we" have to make decisions, improve the relevant things for clients and stakeholders. There is much uncertainty there, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System.
+    - Be it in firms, economics, and finance
+    - Be it in biology and life sciences
+    - Be it in engineering systems
+    - This is where we get our data from and who we build software for!
+- **Science**, especially **cognitive science**, which will give us insights about our intelligence, rationality, wisdom, foolishness, and biases. This is the place where we'll get the process/method, learn how to observe, formulate scientific hypotheses, use theories, theoretical models to make predictions and perform experiments. 
+- In **probability**, we reason about uncertainty in the real world, build narratives and tell stories with DAGs of random variables, which are prague golemns, little robots which generate data. In the happy case they match the theoretical models and result in plausible patterns. We'll spend much time simulating phenomena, being the masters of these alternative multiverses. Not bad, aye?
+- In **statistics**, we change our minds and actions in the face of evidence. We learn the skills of exploratory data analysis, experiment design, and causal inference. Why build models? To make better decisions, of course.
+- **Machine Learning** and Deep Learning, the younger tribes of statistics are the future: they learn from data and when things go well, make reliable and robust predictions, in order to optimize the heck out of any process. Think of them as shamans or oracles, who sometimes overfit, therefore are prone to acting foolishly.
+- We come back to the homeland of many of you: **computer science** and software engineering, the place where nowadays everything on this map becomes reality. We will learn how to build full-stack, data-driven software, good practices of the guild. While spending time here, an appreciation for the contribution of CS to all other places we already visited will become obvious.
+- It is all overseen by **philosophy**. Some things don't change.
+- Ah! We forgot about **mathematics**. It is everywhere, but also stands proud on its own. An essential prerequisite for everything we do, however, it is hard to do rigorous mathematics in the setup we outlined, as it will take a decade. The good news is -- we will be fine just with the starter pack!
+
+
+## 10 Lessons in Humility
+
+Whatever will be published here can't be the be-all-end-all bootcamp or course. But here are a few of my beliefs, which may persuade you to take the long road to your own development in AI instead of searching for "the tutorial":
+
+
+- There is no shortcut to deep understanding
+    - Of a domain, especially in an interdisciplinary setting
+    - With communities engaged in an evolving dialogue
+- There is no shortcut to being skillful at something
+- The journey from novice to expert is not linear, however, the "interest compounds"
+- The journey need not be painful, but it can be seriously playful,a source of wonder and meaning
+- Without skin in the game, we can't claim we truly get something
+- Without a vision which is flexible enough, but at the same time long-lived:
+    - In the case of rigidity - there is a risk of being stuck, pursue obsessively, counterproductively the wrong thing
+    - In the case of everything goes - there is a risk of wandering aimlessly and not finding a home
+- Fixating on beliefs and propositional knowing (the facts!) is counterproductive. Which should put into question all written above
+- Fixating on skills makes you lose the grasp of the big picture

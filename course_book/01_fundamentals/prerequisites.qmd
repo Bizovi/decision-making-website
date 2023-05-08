@@ -98,6 +98,21 @@ None of those courses were useless. Think of how can we take parts from each of 
 
 
 
+## Give statistics another chance
+- Realize that lots of common statistical tests are particular versions of linear models [^11]. It takes a few hours to go through the theory and the code in the referenced book.
+- Here's the approach taken by [^24], which integrates data analysis and simulation in learning of statistics.
+- Upgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is [^12], which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.
+- Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is [^45], which is a course in collaboration with the RStudio team.
+
+There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:
+
+- Cetinkaya-Runde, Hardin - [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) goes through all the fundamentals in a clear, concrete, extensive way, with code!
+- Crump - [Answering questions with data](https://www.crumplab.com/statistics/) -- introductory statistics for Psychology Students has an interesting approach, focused on the challenges of Psychology
+- Thulin - [Modern Statistics with R](http://www.modernstatisticswithr.com/) goes through the whole process, with R, with additional topics, normally not present in a statistics course 
+- Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data
+
+
+
 <!-- Data Science Context, in Business, Interdisciplinarity --->
 [^pragmatic-ai-gcp]: M. Bizovi - [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)
 [^jordan-ai]: K. Pretz - [Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says 
@@ -112,3 +127,10 @@ None of those courses were useless. Think of how can we take parts from each of 
 [^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)
 
 [^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html)
+
+
+<!-- Statistical Foundations: Reference, Revies --->
+[^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
+[^12]: Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) has two companion books, one with R and another in Python
+[^24]: Speegle, Clair - [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html)
+[^45]: Bryan - [STAT 545](https://stat545.com/) It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.

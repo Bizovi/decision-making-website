@@ -1,0 +1,39 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
+
+## Module IV: Full-Stack Data Apps
+
+
+::: {.column-page-inset-right}
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   We will need to learn a lot of engineering and new tools, so that we're able to collect, clean, explore, visualize data, train models, and build useful applications which improve outcomes for our clients.
+
+flowchart LR
+  DSc(Data Apps)  --> Data(Data Wrangling)  --> EDA(EDA) --> DV(Visualization)
+  EDA --> LP(Literate Programming)
+  
+  DSc --> Repr[Reproducibility] --> DP[Data Pipelines]
+  DSc --> M[Modeling] --> Pymc(PyMC) --> Tr[Torch]
+  DSc --> MLP[ML Pipes] --> Srv(Serving Models)
+  
+  DV --> FS[/Full Stack Apps/]
+  Tr --> FS
+  Srv --> FS
+
+  Repr --> LP
+  DP --> FS
+  FS --> Dep[Deploy]
+```
+
+:::
+
+
+

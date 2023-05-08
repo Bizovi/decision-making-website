@@ -1,0 +1,39 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
+
+## Module III: ML and Deep Learning
+
+
+::: {.column-page-inset-right}
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   In this ML/DL module, we focus on practical, challenging use-cases and reliable, workhorse methods -- while keeping in mind the particularities of the domain and applications. 
+
+flowchart LR
+
+  DSc --> Unsup(Dim. Reduction) --> Clust(Clustering) --> MM(Mixtures) --> HDB(HDBScan)
+  Unsup --> PCA --> CA --> UMAP
+
+  DSc --> Cl(Classification) --> T(Tree-based Models) --> BG(Bagging) --> XG(Boosting)
+
+  Cl --> Im(Imbalance) --> F(Fraud Detection)
+
+  DSc(Decisions, Scale) --> Text[/NLP/] --> EM[Embeddings] --> Attn[Attention] --> ABSA[ABSA]
+  DSc --> RS[/RecSys/] --> Mtr[Metrics] --> FM[Factorization Mach.] --> HM[Hybrid Models]
+  DSc --> CV(DL: Vision) --> Conv[CNNs] --> AK[Approx. kNN]
+
+  Conv --> HM
+
+  DSc --> TS(Time Series) --> MTS[Metrics] --> XGB[ML Approaches] --> DL[DL Approaches]
+  EM --> HM
+
+```
+
+:::
