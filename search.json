@@ -63,13 +63,6 @@
     "text": "What will you learn?\nI always start with the first module, in which we explore decisions in businesses, figure out what does AI mean, and where it adds value. If we view statistics as changing our minds and actions in the face of evidence – fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.\n\nModule 1: Business Decisions and Probability Fundamentals\nModule 2a: Applied Bayesian Statistics\nModule 2b: Hypothesis Formulation and A/B Testing4\nModule 2c: Causal Inference with Directed Acyclic Graphs\nModule 3a: Probabilistic Machine Learning\nModule 3b: Deep Learning and Special Topics\nProjects: Software Engineering and Full-Stack Data Apps\n\n4 \n\n\nWe will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That’s not your stats 101! (Source: McElreath)\n\n\nThese fundamentals are not “just theory”, it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That’s why it’s essential to take every tool, and apply it in the context of an appropriate use-case/application – meaning, we’ll code a lot.\n\n\n\n\n\n\nGo to “Resources” page for practice!\n\n\n\nConceptual understanding by itself is not enough. So, I curated a list of resources to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.\nAlso, keep an eye on the course github repo, in which we’ll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.\n\n\nOnce we have a confident grasp of the fundamentals, we continue with understanding and applying Bayesian Statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face.\nDid you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do controlled experiments. We’ll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it’s so easy to fall into.\nOften, A/B tests and randomised experiments are unfeasible or unethical. We also acknowledged the limitations of inferring an association5, so it’s time to get more powerful tools from causal inference. We can leverage natural experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.5 Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the “world” works – translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).\n\n\n\n\n\n\nWhat if I care only about ML?\n\n\n\nEven if you’re interested only in machine learning, most practitioners will emphasize the importance of mastering regression (generalized linear models) and doing A/B tests to gather evidence that our new model brings an improvement.\nThis is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML – the lines between these two fields are indeed very blurry.\n\n\nOften, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.\nDuring the labs we’ll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.\n\n\n\n\n\n\nBuild an impressive project for your portfolio\n\n\n\nThat is your final project for the course6 and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don’t worry about getting everything right, but focus on a problem and single area from the course you’re passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.6 A project can be much simpler: a quarto blog to showcase your research, a python package and CLI application to train a model, a streamlit app to demo a model.\n\n\nThe icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before."
   },
   {
-    "objectID": "04_engineering/happy_clients.html",
-    "href": "04_engineering/happy_clients.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "Understanding User Needs"
-  },
-  {
     "objectID": "04_engineering/roadmap.html",
     "href": "04_engineering/roadmap.html",
     "title": "Decision Science Course",
@@ -77,32 +70,11 @@
     "text": "flowchart LR\n  DSc(Data Apps)  --> Data(Data Wrangling)  --> EDA(EDA) --> DV(Visualization)\n  EDA --> LP(Literate Programming)\n  \n  DSc --> Repr[Reproducibility] --> DP[Data Pipelines]\n  DSc --> M[Modeling] --> Pymc(PyMC) --> Tr[Torch]\n  DSc --> MLP[ML Pipes] --> Srv(Serving Models)\n  \n  DV --> FS[/Full Stack Apps/]\n  Tr --> FS\n  Srv --> FS\n\n  Repr --> LP\n  DP --> FS\n  FS --> Dep[Deploy]\n\n\n\n\n\nFigure 1: We will need to learn a lot of engineering and new tools, so that we’re able to collect, clean, explore, visualize data, train models, and build useful applications which improve outcomes for our clients."
   },
   {
-    "objectID": "02_causality/power.html",
-    "href": "02_causality/power.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "flowchart TD\n    Motiv[Zoo of tests] --> Rob[Robustness] --> Wil[Wilcoxin]\n    Wil --> MW[Mann-Whitney] --> KS[Kolmogorov]\n\n    Motiv --> Power[Power] --> SS[Sample Size] --> MT[Multiple Testing]\n\n    Motiv --> Caus[Causality] --> CF[Confounders] --> Med[Mediators] --> O[Omitted Variable]\n\n    KS --> Bayes[Bayes: Beyond Linear]\n    MT --> Bayes\n    O --> Bayes\n\n    Motiv --> Other[Other Designs]\n    Other --> Long[Longitudinal] --> H[Hierarchical] --> F[Factor]\n    F --> Bayes\n\n    Bayes --> CS[Case Study: Treatments]\n\n\n\n\n\nFigure 1: In the next lecture we will dive into A/B testing and causality, bootstrap, nonparametrics"
-  },
-  {
-    "objectID": "02_causality/background.html",
-    "href": "02_causality/background.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "flowchart TD\n    Motiv[Why experiments?] --> S[The Scheme] --> DA[Default Action]\n    DA --> Err[Error Types] --> M[Metrics & Pitfalls] --> E[Effect Size]\n\n    Motiv --> H[Hypothesis Testing] --> L[Linear Models]\n    Motiv --> NP[Nonparametrics] --> ECDF[ECDF] --> BSt[Bootstrap] --> Bayes[Bayesian]\n\n    L --> G[Graphs: DAGs] --> Iden[Identifiability] --> Rel[Relevance]\n\n    Rel --> Pow[Sample Size & Power]\n    Bayes --> Pow\n    E --> Pow\n\n    Pow --> Ex[Case Study]\n\n\n\n\n\nFigure 1: In the next lecture we will dive into A/B testing and causality, bootstrap, nonparametrics"
-  },
-  {
     "objectID": "02_causality/roadmap.html",
     "href": "02_causality/roadmap.html",
     "title": "Decision Science Course",
     "section": "",
     "text": "flowchart TD\n  DM(Decisions)\n  DM --> BB(Beta-Bin*) --> GPo(Gamma-Pois*) --> NIG(IG-Norm) --> G(Groups)\n  BB --> LR(Logistic Regr.)\n  DM --> LM(Linear Regr.) --> GLM(GLMs)  --> Caus(Hierarchical Models) --> Misc[/Time Series/]\n  LR --> GLM\n  GPo --> GLM\n  G <--> Caus\n\n  LM --> P(Prior Choice) --> Reg(Regularization) --> VS(Variable Selection)\n  LM --> MS(Model Selection) --> LOO(LOO-PIT)\n  LM --> Rb(Robustness) --> NA(Missing Data) --> Surv(Survival and Censoring)\n  LM -- nonlinear --> NL(Splines) --> BART(BART) --> GP(Gaussian Proc.)\n\n  DM --> DA(Decision Theory) --> NV(Newsvendor pb.)\n  DA --> CF(Classification)\n\n\n\n\n\nFigure 1: We develop a composable toolbox, capable to tackle the challenges of nonlinearity, heterogeneity, low level of aggregation, discreteness, missing data and heteroskedasticity. By putting together the right pieces in a right way, we can improve predictions and decisions in most aspects of a business."
-  },
-  {
-    "objectID": "02_causality/lab.html",
-    "href": "02_causality/lab.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "Deep Dive into Hypothesis Testing"
   },
   {
     "objectID": "02_causality/ab_testing.html",
@@ -124,13 +96,6 @@
     "title": "Decision Science Course",
     "section": "",
     "text": "flowchart LR\n\n  DSc --> Unsup(Dim. Reduction) --> Clust(Clustering) --> MM(Mixtures) --> HDB(HDBScan)\n  Unsup --> PCA --> CA --> UMAP\n\n  DSc --> Cl(Classification) --> T(Tree-based Models) --> BG(Bagging) --> XG(Boosting)\n\n  Cl --> Im(Imbalance) --> F(Fraud Detection)\n\n  DSc(Decisions, Scale) --> Text[/NLP/] --> EM[Embeddings] --> Attn[Attention] --> ABSA[ABSA]\n  DSc --> RS[/RecSys/] --> Mtr[Metrics] --> FM[Factorization Mach.] --> HM[Hybrid Models]\n  DSc --> CV(DL: Vision) --> Conv[CNNs] --> AK[Approx. kNN]\n\n  Conv --> HM\n\n  DSc --> TS(Time Series) --> MTS[Metrics] --> XGB[ML Approaches] --> DL[DL Approaches]\n  EM --> HM\n\n\n\n\n\n\nFigure 1: In this ML/DL module, we focus on practical, challenging use-cases and reliable, workhorse methods – while keeping in mind the particularities of the domain and applications."
-  },
-  {
-    "objectID": "03_ml/what_is_learning.html",
-    "href": "03_ml/what_is_learning.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "What is Machine Learning?"
   },
   {
     "objectID": "references.html",
@@ -196,13 +161,6 @@
     "text": "Bibliography\n- title : Bayesian Data Analysis\n  title_short: bda3\n  type: book\n  edition: 3\n  author: Andrew Gelman\n  year: 2013\n  link: http://www.stat.columbia.edu/~gelman/book/\n  lectures: https://avehtari.github.io/BDA_course_Aalto/Aalto2022.html\n\n- title: Bayesian Methods for Hackers\n  title_short: bmh\n  type: book\n  edition: 1\n  author: Cameron Davidson\n  year: 2015\n  link: https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/\n  github: https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers\n\n- title: Statistical Rethinking\n  title_short: rethinking\n  type: book\n  edition: 2\n  author: Richard McElreath\n  year: 2021\n  link: https://xcelab.net/rm/statistical-rethinking/\n  lectures: https://github.com/rmcelreath/stat_rethinking_2023\n\n- title: The Most Dangerous Equation\n  title_short: danger-eqn\n  type: article\n  author: Howard Wainer\n  year: 2009\n  link: http://assets.press.princeton.edu/chapters/s8863.pdf\n\n- title : Introduction to Probability\n  title_short: probability-blitzstein\n  type: book\n  edition: 2\n  author: Joe Blitzstein\n  year: 2019\n  link: https://projects.iq.harvard.edu/stat110/home\n  lectures: https://projects.iq.harvard.edu/stat110/youtube"
   },
   {
-    "objectID": "01_fundamentals/adoreme.html",
-    "href": "01_fundamentals/adoreme.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "flowchart TD\n    B[Business Challenges] --> Org[Organisational Design]\n    B --> PM[Product Management]\n    B --> Tech[Tech Ecosystem]\n\n    Org --> CN[Creative Networkers] --> DM[Decision-Makers] \n    DM --> TT[Team Topologies] --> MMT[Management 3.0]\n\n    PM --> DSS[Strategic Alignment] --> WP[Wrong Problem] --> ES[Event Storming]\n    ES --> PAIR[People + AI] --> Proc[The full process]\n\n    Tech --> FSDA[Full Stack Apps] --> RCD[Restricted Computational Domain]\n    RCD --> Agile[Agile, XP, Anarchy] --> DX[Developer Experience]\n    DX --> Pr[Principles]\n\n    MMT --> CS[Case Studies]\n    Proc --> CS\n    Pr --> CS\n\n    CS --> CF[Clustering Customer Feedback] --> DP[New Products Forecasting] --> OS[Serving Recommendations]\n    OS --> DPE[Demand Planning] --> IO[Inventory Optimization]\n    IO --> CCs[Conclusions & Contributions]\n\n  style PM fill:#f7f5bc\n  style Tech fill:#f7f5bc\n  style Org fill:#f7f5bc\n  style CS fill:#f7f5bc\n\n\n\n\n\nFigure 1: What is new in here? People’s dimension, Product Management The idea of tech ecosystem and full stack data apps"
-  },
-  {
     "objectID": "01_fundamentals/background.html",
     "href": "01_fundamentals/background.html",
     "title": "Decision Science Course",
@@ -257,20 +215,6 @@
     "title": "Decision Science Course",
     "section": "Give statistics another chance",
     "text": "Give statistics another chance\n\nRealize that lots of common statistical tests are particular versions of linear models 1. It takes a few hours to go through the theory and the code in the referenced book.\nHere’s the approach taken by 2, which integrates data analysis and simulation in learning of statistics.\nUpgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is 3, which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.\nBe comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is 4, which is a course in collaboration with the RStudio team.\n\n1 Doogue - Common statistical tests are linear models2 Speegle, Clair - Probability, Statistics, and Data: A fresh approach using R3 Poldrack - Statistical Thinking for the 21st Century has two companion books, one with R and another in Python4 Bryan - STAT 545 It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:\n\nCetinkaya-Runde, Hardin - Introduction to Modern Statistics goes through all the fundamentals in a clear, concrete, extensive way, with code!\nCrump - Answering questions with data – introductory statistics for Psychology Students has an interesting approach, focused on the challenges of Psychology\nThulin - Modern Statistics with R goes through the whole process, with R, with additional topics, normally not present in a statistics course\nHolmes, Huber - Modern Statistics for Modern Biology is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data"
-  },
-  {
-    "objectID": "01_fundamentals/bolt.html",
-    "href": "01_fundamentals/bolt.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "Directed Acyclic Graphs tell data and business stories\nAdding machine learning to the mix"
-  },
-  {
-    "objectID": "01_fundamentals/lab_01.html",
-    "href": "01_fundamentals/lab_01.html",
-    "title": "Decision Science Course",
-    "section": "",
-    "text": "Lab: tidyverse and ecosystem of packages: WIP"
   },
   {
     "objectID": "01_fundamentals/stat_foundations.html",
