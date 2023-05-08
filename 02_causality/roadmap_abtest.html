@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Decision Science Course – prerequisites</title>
+<title>Decision Science Course – roadmap_abtest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01_fundamentals/stat_foundations.html" rel="next">
-<link href="../01_fundamentals/roadmap.html" rel="prev">
+<link href="../02_causality/ab_testing.html" rel="next">
+<link href="../roadmap.qmd#module-iib-hypotheses-and-ab-testing" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -82,11 +82,12 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -163,11 +164,11 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">1. Business Decisions and Probability</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
@@ -180,7 +181,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link active">3. Prerequisites: Why did you study all of that?</a>
+  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">3. Prerequisites: Why did you study all of that?</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -238,14 +239,14 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../roadmap.qmd#module-iib-hypotheses-and-ab-testing" class="sidebar-item-text sidebar-link">2b. Hypotheses and A/B Testing</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link active">1. Syllabus &amp; Roadmap</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -296,156 +297,125 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-did-you-study-all-of-that" id="toc-why-did-you-study-all-of-that" class="nav-link active" data-scroll-target="#why-did-you-study-all-of-that">Why did you study all of that?</a></li>
-  <li><a href="#give-statistics-another-chance" id="toc-give-statistics-another-chance" class="nav-link" data-scroll-target="#give-statistics-another-chance">Give statistics another chance</a></li>
+  <li><a href="#module-iib-hypotheses-and-ab-testing" id="toc-module-iib-hypotheses-and-ab-testing" class="nav-link active" data-scroll-target="#module-iib-hypotheses-and-ab-testing">Module IIb: Hypotheses and A/B Testing</a></li>
   </ul>
 </nav>
 </nav>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-page-right" id="quarto-document-content">
 
 
 
-<section id="why-did-you-study-all-of-that" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="why-did-you-study-all-of-that">Why did you study all of that?</h2>
-<p>Why did we have to go through all those excruciating months doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics?</p>
-<p>It was very frustrating for me, because it wasn’t clear how they fit together, what is the common thread, and more importantly, what part of the theory and particular concepts would be helpful in solving the kind of problems we discussed, and which ones are designed to enhance our academic understanding.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-
-</div></div><div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Sounds good – doesn’t work?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>An important question is what works well in practice and why. On the other hand, what is intellectually fascinating, but not at all straightforward to apply. What is a minimal or most powerful set of the prerequisites that you need?</p>
-<p>Let’s draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned form the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects – the inspirations and tools are quite carefully picked.</p>
-</div>
-</div>
+<section id="module-iib-hypotheses-and-ab-testing" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="module-iib-hypotheses-and-ab-testing">Module IIb: Hypotheses and A/B Testing</h2>
+<div class="column-page-inset-right">
 <div class="cell" data-fig-width="9">
 <div class="cell-output-display">
 <div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
-  LA[Linear Algebra] --&gt; OR[Operations Research]
-  MA[Mathematical Analysis] --&gt; OR
-  MA --&gt; SD[Systems Dynamics]
-  %% CS[CS Algorithms] --&gt; OR
-  
-  PT[Probability] --&gt; MS[Statistics] --&gt; EC[Econometrics]
-  EC --&gt; Caus[/Causal Inference\]
-  EC --&gt; TS[Time Series]
+  H(Hypotheses) --&gt; P(Phil. Science) --&gt; GQ(Good Questions) --&gt; Pre[Pre-Registration] --&gt; Repl[Replications] --&gt; B[Publication Bias] --&gt; OS[Open Science] --&gt; FSS[Falsification] --&gt; Repr[Reproducibility] --&gt; MA[Meta-Analysis] --&gt; E[Ethics &amp; Integrity]
 
- %% subgraph 1
-  Caus --- DM[/Data Mining\] --- ML[/Machine Learning\] 
-  ML --- Caus
- %% end
+  GQ --&gt; S[Simulation] --&gt; Th[Theory Construction] --&gt; NF[Null is False]
+  H --&gt; A(Path of Action) --&gt; ET(Error Types) --&gt; PV[p-values] --&gt; EC(Error Control)
+  EC --&gt; PPV[PPV] --&gt; Sign[Signficant Findings] --&gt; ERJ[Justification]
+  A --&gt; Eff[Effect Sizes] --&gt; Ch[Cohen's d] --&gt; Corr[Correlations] --&gt; Min[Min Effect] --&gt; TM[Telescope Method] --&gt; RB[Resource-Based]
+  A --&gt; Conf[Confidence Intervals] --&gt; SS[Power Analysis] --&gt; PCAn[p-curve analysis] --&gt; CPc[Capture Percent.] --&gt; CISD[confint std-dev] --&gt; Anova[Anova Power]
 
-  OR --&gt; ML
-  MS --&gt; ML
-  MA --&gt; PT
-  SD --&gt; Caus
+  NF --&gt; RP[Risky Predictions] --&gt; EQ[Equivalence Testing] --&gt; IP[Interval Predictions]
 
-  Caus --- Econ[[Economics]]  
-  Econ --- GT[Game Theory]
-  Econ --- DT[Decision Theory]
-
-  style Caus fill:#f7f5bc
-  style ML fill:#f7f5bc
-  style DM fill:#f7f5bc
-
-  DM --- FSDA[/Full-Stack Apps\]
-  FSDA --- DB[Databases/SQL]
-  FSDA --- OOP[OOP]
-  Econ --- TS
-
-  style FSDA fill:#f7f5bc
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Think of this as a stuctural organization of the fields and courses you studied before. Some are more useful in analytics, some in ML and some in making causal inferences, that is, based on data + theory.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: When discussing hypothesis testing and experiment design, we can’t avoid an overview of fequentist methods (path of action) and a discussion of the philosophy of science.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<ul>
-<li><strong>Linear Algebra</strong> is a language of <code>data</code>. The vast majority of models and training algorithms can be reduced to operations on matrices. Therefore, it is not a coincidence that is almost the only tool we have, in order to take these models and implement them in code, on a computer.
-<ul>
-<li>My perspective over linear algebra is ultimately <strong>computational</strong> and <strong>geometric</strong>, in the sense of the “space” the data points live in and the transformations of that space.</li>
-<li>Ultimately, no matter the data type: image, video, text, voice, structured, panel – all can be represented as <strong>multidimensional arrays</strong> (or tensors, if you wish).</li>
-</ul></li>
-<li><strong>Mathematical Analysis</strong> is all about <code>change</code>, formalizing how a function behaves with respect to its arguments and parameters. It is an essential building block in <strong>optimization</strong> and deep learning (automated differentiation).
-<ul>
-<li>I would argue that in order to understand any complex system, be it a firm, an economy, the climate or environnment, we have to model how it <strong>evolves in time</strong>.</li>
-<li>This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be impossible to reason about without the mathematical analysis.</li>
-</ul></li>
-<li><strong>Probability</strong> and <strong>Statistics</strong> is the language of <code>uncertainty</code>, the only instrument we have, that allows us to say something intelligent about how confident are we.
-<ul>
-<li>We will explore the role of statistics at lenght, but as a quote, think of it as a tool which enables us to <strong>change our mind</strong> and decisions in the face of evidence.</li>
-</ul></li>
-<li><strong>Econometrics</strong>, in my personal opinion, tries to separate the signal for the noise and make inferences about the <strong>causal processes</strong> in economic decisions and phenomena. It specializes statistics in the domain of economics, by infusing economic theory – because you can’t derive a scientific theory from data alone.<br>
-</li>
-<li><strong>Time Series Analysis</strong>, senso largo, bridges the gap between Systems Dynamics (which takes a more theoretical perspective) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolves in time, that are dynamic in their nature.
-<ul>
-<li>I like the metaphor of <strong>Data Assimilation</strong>, which is actually an entire field trying to introduce the empirical dimension to differential equations.</li>
-</ul></li>
-<li><strong>Operations Research</strong> is about <strong>optimization</strong> with constraints and <strong>efficiency</strong>. However, the problem is that often, we start from an Integer/Linear Programming problem formulation, and that is easy part – to apply an existing algorithm. The hard part is to reduce a messy real world problem at a large scale to that formulation, especially under uncertainty and nonlinearity.</li>
-<li><strong>Economics</strong> touches upon a wide range of aspects of our society and human behavior. In mathematically-oriented courses, you can think of it as <strong>optimization with constraints</strong>, the constraints being given by our positive or normative theory of economic <strong>decision-making</strong>.
-<ul>
-<li>In this course and in practice, we care more about <strong>business economics</strong>. It’s a very different beast from theoretical ideas in macroeconomics (ISLM, DSGE type of models) or microeconomic utilitarianism.</li>
-<li>By business economics, we mean marketing, management, corporate finance, decision theory, supply chain, and logistics.</li>
-<li>What you have to know about marketing, especially if you are skeptical like me, is that it became innovative, mathematical, rigorous and data-driven. Look at any marketing journal: how much econometrics and ML models are in there.</li>
-<li>So, if you hold the opinion that marketing and management are fields full of fluff – I advise you to rethink your positions. In the context of tech firms, you can’t bullshit your way through it.</li>
-<li>Moreover, when you combine marketing with <strong>behavioral economics</strong> and psychology, it introduces another layer of nuance and understanding over our decision-making.</li>
-<li>When we make decisions, we like to think of ourselfs as objective, but we have lots of <strong>biases</strong> and blind spots which prevent us to see the reality clearly. We often find patterns and regularities which are just noise, not causal. So, the usefulness of this kind of domain knowledge from economics about human behavior helps us to be wiser, that is, to prevent self-deception and self-sabotage towards achieving the goals and objectives.</li>
-</ul></li>
-</ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-A word of encouragement
+<div class="column-page-inset-right">
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 33%">
+<col style="width: 31%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Lecture Agenda</th>
+<th>Keywords</th>
+<th>Case Studies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A/B Testing pitfalls</td>
+<td>A/A Tests, Selection bias, Confounders, Novelty</td>
+<td>The need for rigorous experiments</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Error Types, Effect Size, p-values</td>
+<td>tests for difference in proportions and means</td>
+<td>Strategy for simulation</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Power, Sample Size calculations, Non-inferiority tests</td>
+<td>relevance, minimal effect size</td>
+<td>Neyman-Pearson, frequentism as action in the long-term</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Linear regression review</td>
+<td>Hypothesis tests as linear models</td>
+<td>Guidance with student projects</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Properties of Metrics for A/B Testing</td>
+<td>Sensitivity, stability, directedness</td>
+<td>Potential pitfalls</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Properties of Estimators</td>
+<td>Bias-Variance, Fisher Information, Rao-Cramer</td>
+<td>Relevance for ML, Deep Learning</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Bootstrap and Nonparametrics</td>
+<td>resampling, ECDF</td>
+<td>Kolmogorov-Smirnov</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>CLT, Choosing a test, Trading off errors, Increasing Power</td>
+<td>Cohen’s d, PPV, GLM, nonparametrics</td>
+<td>Justifying <span class="math inline">\(\alpha, 1 - \beta, \Delta, n\)</span> by simulation</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Bootstrap, Multiple Testing</td>
+<td>FDR, Bonferoni</td>
+<td>Computer-age statistical inference</td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>None of those courses were useless. Think of how can we take parts from each of those prerequisites, which are relevant in ML/DSc, so that we have more tools to solve problems of the complexity we encounter. To reiterate, data science is an umbrella term, borrowing from them all.</p>
-</div>
-</div>
-</section>
-<section id="give-statistics-another-chance" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="give-statistics-another-chance">Give statistics another chance</h2>
-<ul>
-<li>Realize that lots of common statistical tests are particular versions of linear models <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It takes a few hours to go through the theory and the code in the referenced book.</li>
-<li>Here’s the approach taken by <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which integrates data analysis and simulation in learning of statistics.</li>
-<li>Upgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.</li>
-<li>Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which is a course in collaboration with the RStudio team.</li>
-</ul>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Doogue - <a href="https://steverxd.github.io/Stat_tests/">Common statistical tests are linear models</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Speegle, Clair - <a href="https://mathstat.slu.edu/~speegle/_book/preface.html">Probability, Statistics, and Data: A fresh approach using R</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Poldrack - <a href="https://statsthinking21.github.io/statsthinking21-core-site/">Statistical Thinking for the 21st Century</a> has two companion books, one with R and another in Python</p></li><li id="fn4"><p><sup>4</sup>&nbsp;Bryan - <a href="https://stat545.com/">STAT 545</a> It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.</p></li></div><p>There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:</p>
-<ul>
-<li>Cetinkaya-Runde, Hardin - <a href="https://openintro-ims.netlify.app/index.html">Introduction to Modern Statistics</a> goes through all the fundamentals in a clear, concrete, extensive way, with code!</li>
-<li>Crump - <a href="https://www.crumplab.com/statistics/">Answering questions with data</a> – introductory statistics for Psychology Students has an interesting approach, focused on the challenges of Psychology</li>
-<li>Thulin - <a href="http://www.modernstatisticswithr.com/">Modern Statistics with R</a> goes through the whole process, with R, with additional topics, normally not present in a statistics course</li>
-<li>Holmes, Huber - <a href="https://www.huber.embl.de/msmb/index.html">Modern Statistics for Modern Biology</a> is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data</li>
-</ul>
-<!-- Data Science Context, in Business, Interdisciplinarity --->
-<!-- Statistical Foundations: Reference, Revies --->
 
 
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -696,15 +666,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/roadmap.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Syllabus &amp; Roadmap</span>
+      <a href="../roadmap.qmd#module-iib-hypotheses-and-ab-testing" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2b. Hypotheses and A/B Testing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../01_fundamentals/stat_foundations.html" class="pagination-link">
-        <span class="nav-page-text">4. Foundations of Probability</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../02_causality/ab_testing.html" class="pagination-link">
+        <span class="nav-page-text">2. A/B Testing study resources</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
