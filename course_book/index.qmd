@@ -62,7 +62,7 @@ Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together 
 
 Given the over-abundance of learning resources, it is too much to sift through a hundred pages of Coursera in the data science section, books, and tutorials to find the optimal ones. Inevitably, there is so much bullshit and repetition.
 
-The [roadmap](roadmap.qmd) provided here should help you navigate it and find the shortest path towards developing your skills and better decisions in your firm. Pick a module you're passionate about, for example, Bayesian Statistics and look in the [resources](references.qmd) page for a guide where to start reading and practicing.
+The [roadmap](#what-will-you-learn) provided here should help you navigate it and find the shortest path towards developing your skills and better decisions in your firm. Pick a module you're passionate about, for example, Bayesian Statistics and look in the [resources](references.qmd) page for a guide where to start reading and practicing.
 :::
 
 ## Why should you care?

@@ -26,7 +26,7 @@ The courses I teach are usually short and intensive, so the following schedule w
 |   | Lecture Agenda                      | Keywords  | Case Studies |
 |---|---------------------------|---------------|--------------|
 | 1 | [Data Science in Business Context](https://course.economic-cybernetics.com/01_fundamentals/background.html). Decision-Making Under Uncertainty | AI, Cybernetics, Uncertainty, Scale, Analytics vs Stats vs ML  | survey of applications in various domains |
-| 2 | [Interdisciplinarity](https://course.economic-cybernetics.com).  Overview of prerequisites. | Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), [Why did you study all of that?]((01_fundamentals/prerequisites.qmd)) |
+| 2 | [Interdisciplinarity](https://course.economic-cybernetics.com).  Overview of prerequisites. | Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), [Why did you study all of that?](prerequisites.qmd) |
 | 3 | Business Analyst's Workflow. Newsvendor Problem  | action, outcome, strategy, expertise, data, models, simulation, DAGs | TIME INC. printing quantity decisions |
 | 4 | Strategy and the Desired Trajectory | SWOT, Systems Dynamics, KPIs, Stock vs Flow | LRB Journal Subscriptions |
 | **5** | **Projects Overview**. **Full-stack data apps**. Overview of Data. | NLP, RecSys, Time Series, Classification | Mercari, Favoritas, H&M, Olist (e-commerce)  |
