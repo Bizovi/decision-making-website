@@ -2,6 +2,7 @@
 format:
   html:
     toc-location: left
+lang: en
 ---
 
 ::::: {.column-page-inset-right}
@@ -18,7 +19,7 @@ This website emerges out of teaching data science to students of various backgro
 
 I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop **valuable skills**, and become more **effective at problem-solving**. To achieve this, we need to master "the fundamentals."
 
-I believe that improving **decision-making** is the reason why we practice AI. We mostly forgot that as teachers. We're also getting increasingly specialized, let's say, in Deep Learning -- which makes us miss the interdisciplinary, big picture.
+I believe that improving **decision-making** is the reason why we practice AI. We mostly forgot that as teachers. We're also getting increasingly specialized -- which makes us miss the interdisciplinary, big picture.
 :::
 
 ::::
@@ -29,11 +30,18 @@ I believe that improving **decision-making** is the reason why we practice AI. W
 
 This is an introductory, big picture, free and open-source course which bridges the gap between theory and practice, **cultivating the skills and understanding** necessary to bring value to organisations by **improving decision-making**. It is an attempt to find a golden mean of both worlds:
 
+::: {.column-margin}
+![There is a similar gap between the "math world" and "real world" *(Source: Generated with DALL-E)*](img/gap_theory_practice.png){width="80%"}
+:::
+
 -   Illuminating theoretical ideas (contemplating in the library)
 -   Practicing battle-tested technologies (engineering in the trenches).
 
-::: {.column-margin}
-The best advice I ever got as a novice data scientist was: **"Think of youself as a business person with superpowers"**. I'm attempting to reconcile that spirit of simplicity and elegance with advances in statistical thinking and engineering. 
+
+::: {.callout-tip}
+## Think of youself as a business person with superpowers
+
+This is the **best advice** I ever got as a novice data scientist. With advances in statistical methods, computing and engineering, it is easy to lose track of this simple and elegant idea.
 :::
 
 
@@ -53,7 +61,7 @@ This is the **course I wish I had** when starting my journey in data science, wh
 
 The course is challenging due to its breath and depth. At the same time, this is NOT a bootcamp: it is not enough by itself to land you a job, which requires lots of practice and extra study.  To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions.
 
-Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea after years, with greater wisdom and skill -- to unlock its real power.
+Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea years after, with greater wisdom and skill -- to unlock its real power.
 
 [^index-1]: This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/) when it comes to ML, and [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/) or [Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/) on Bayesian Statistics / Causal Inference.
 
@@ -81,7 +89,7 @@ You don't, at least if you want to have a balanced life. That's why I choose to 
 You will be surprised how far can you go with simple, even linear models. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.
 :::
 
-But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?
+But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses?
 
 In university years, you've probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on.
 
@@ -99,12 +107,12 @@ It can be a function of decision-making support or the system/product itself, li
 
 > When somebody asks you what have you learned in this book and course, I suggest two metaphors:[^index-3] one of simplification and another of seeing relations
 
-[^index-3]: Due to my philosophical readings, some of the language here has a very specific meaning, which is totally outside the scope. For the curious, I will write a few blog posts outlining some philosophical arguments which struck a chord in me and which I found tremenously useful in day-to-day life.
+[^index-3]: Due to my philosophical readings, you will see many more such metaphors. There are certain ideas I found tremenously useful in day-to-day life.
 
 ::: {layout="[29, -10, 40]"}
 ![We see Pollock's **messy reality**, which is the data and observations. We want to get to Picasso's bare bones **essence**, for clarity and better decision-making](01_fundamentals/img/logo.jpeg "Reality"){.preview-image width="40%"}
 
-![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful](01_fundamentals/img/elephant-blind.jpeg){width="40%"}
+![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it fits together or how can it be implemented in practice to bring value to organisations, that is: be useful](01_fundamentals/img/elephant-blind.jpeg){width="40%"}
 :::
 
 
@@ -112,19 +120,33 @@ It can be a function of decision-making support or the system/product itself, li
 
 I always start with the first module, in which we explore [decisions](01_fundamentals/background.qmd) in businesses, figure out what does AI mean, and where it adds value. If we view statistics as **changing our minds and actions in the face of evidence** -- fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.
 
+These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That's why it's essential to take every tool, and **apply** it in the context of an appropriate use-case/application -- meaning, **we'll code a lot**.
+
+::: {.callout-note}
+## The art of formulating a hypothesis
+
+In statistics' classes, the problem is usually completely framed. Experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101!
+:::
+
+
 - [**Module 1**](01_fundamentals/roadmap.qmd): Business Decisions and Probability Fundamentals
 - [**Module 2a**](02_causality/roadmap.qmd): Applied Bayesian Statistics
-- [**Module 2b**](02_causality/roadmap_abtest.qmd): Hypothesis Formulation and A/B Testing[^r3]
+- [**Module 2b**](02_causality/roadmap_abtest.qmd): Hypothesis Formulation and A/B Testing
 - **Module 2c**: Causal Inference with Directed Acyclic Graphs
 - [**Module 3a**](03_ml/roadmap.qmd): Probabilistic Machine Learning
 - **Module 3b**: Deep Learning and Special Topics
 - [**Projects**](04_engineering/roadmap.qmd): Software Engineering and Full-Stack Data Apps
 
-[^r3]: ![ We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That's not your stats 101! *(Source: [McElreath](https://youtu.be/KNPYUVmY3NM))*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
 
+::: {.column-margin}
+![*(Source: [R. McElreath](https://youtu.be/KNPYUVmY3NM) -- Science before statistics)*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
+:::
 
-These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That's why it's essential to take every tool, and **apply** it in the context of an appropriate use-case/application -- meaning, **we'll code a lot**.
+::: {.callout-warning}
+## All modules are work in progress (as of Dec 2023)
 
+The good news is that you can safely use the curated resources and suggested practices!
+:::
 
 ::: {.callout-tip}
 ## Go to "Resources" page for practice!
@@ -156,12 +178,26 @@ Often, we care not just about a single decision or developing better policies, b
 
 During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.
 
+::: {.column-margin}
+
+![Navigate the complexities of the field and choose your path & adventure. *(Source: Generated with DALL-E)*](img/dalle_garden_forking_paths.png) 
+
+:::
+
 ::: {.callout-tip}
 ## Build an impressive project for your portfolio
 
-That is your final project for the course[^proj] and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity. 
-:::
+That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering curiosity. 
 
-[^proj]: A project can be much simpler: a quarto blog to showcase your research, a python package and CLI application to train a model, a streamlit app to demo a model.
+- For engineers: if you like programming
+  - Interactive, data-driven application to support decisions
+  - A CLI app to train a model
+- For analysts: if you like data analysis
+  - Answer an interesting question, with some inference
+  - Showcase your findings in a quarto blog
+- For data scientists and statisticians:
+  - Solve a business problem with models
+
+:::
 
 The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
