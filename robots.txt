@@ -1,1 +1,1 @@
-Sitemap: https://github.com/bizovi/data-mining-ase/sitemap.xml
+Sitemap: https://Bizovi.github.io/decision-making-website/sitemap.xml

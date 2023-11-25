@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -59,7 +59,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
@@ -81,8 +82,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="">
-<meta property="og:description" content="This is an introductory, big picture, free and open-source course which bridges the gap between theory and practice, cultivating the skills and understanding necessary to bring value to…">
-<meta property="og:image" content="https://github.com/bizovi/data-mining-ase/01_fundamentals/img/logo.jpeg">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://Bizovi.github.io/decision-making-website/01_fundamentals/img/logo.jpeg">
 <meta property="og:site-name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -98,206 +99,223 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <span class="navbar-title">Decision Science Course</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./references.html" aria-current="page">
+    <a class="nav-link active" href="./references.html" rel="" target="" aria-current="page">
  <span class="menu-text">2a. Bayes</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about_me.html">
+    <a class="nav-link" href="./about_me.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/" rel="" target=""><i class="bi bi-journal-bookmark" role="img">
 </i> 
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">i. Introduction</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">i. Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">i. Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">ii. Course Philosophy</a>
+  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ii. Course Philosophy</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">1. Business Decisions and Probability</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Business Decisions and Probability</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">2. Data Science in Business Context</a>
+  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Data Science in Business Context</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">3. Prerequisites: Why did you study all of that?</a>
+  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Prerequisites: Why did you study all of that?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">4. Foundations of Probability</a>
+  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Foundations of Probability</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">5. Learning from Data: Intuition and Bias</a>
+  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./references.html" class="sidebar-item-text sidebar-link">2a. Applied Bayesian Statistics</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2a. Applied Bayesian Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_causality/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./02_causality/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">2. Building Blocks</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Building Blocks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#groups-and-partial-pooling" class="sidebar-item-text sidebar-link">3. Groups and Partial Pooling</a>
+  <a href="./references.html#groups-and-partial-pooling" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Groups and Partial Pooling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#gaussian-linear-regression" class="sidebar-item-text sidebar-link">4. Gaussian Linear Regression</a>
+  <a href="./references.html#gaussian-linear-regression" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Gaussian Linear Regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#generalized-linear-models" class="sidebar-item-text sidebar-link">5. Generalized Linear Models</a>
+  <a href="./references.html#generalized-linear-models" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Generalized Linear Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#hierarchical-glms" class="sidebar-item-text sidebar-link">6. Hierarchical GLMs</a>
+  <a href="./references.html#hierarchical-glms" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Hierarchical GLMs</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">2b. Hypotheses and A/B Testing</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2b. Hypotheses and A/B Testing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">2. A/B Testing study resources</a>
+  <a href="./02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. A/B Testing study resources</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">3a. Probabilistic Machine Learning</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3a. Probabilistic Machine Learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">4. Full Stack Data Apps</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Full Stack Data Apps</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
       </ul>
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#decision-making-for-the-brave-and-true" id="toc-decision-making-for-the-brave-and-true" class="nav-link active" data-scroll-target="#decision-making-for-the-brave-and-true">Decision-Making for the Brave and True</a></li>
-  <li><a href="#why-should-you-care" id="toc-why-should-you-care" class="nav-link" data-scroll-target="#why-should-you-care">Why should you care?</a></li>
-  <li><a href="#what-will-you-learn" id="toc-what-will-you-learn" class="nav-link" data-scroll-target="#what-will-you-learn">What will you learn?</a></li>
-  </ul>
+    
 </nav>
-</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -314,26 +332,44 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <p><a href="./about_me.html">Mihai Bizovi</a> | Head of Data Science @AdoreMe</p>
 <p>This website emerges out of teaching data science to students of various backgrounds and my practice in the industry as an engineer and leader.</p>
 <p>I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop <strong>valuable skills</strong>, and become more <strong>effective at problem-solving</strong>. To achieve this, we need to master “the fundamentals.”</p>
-<p>I believe that improving <strong>decision-making</strong> is the reason why we practice AI. We mostly forgot that as teachers. We’re also getting increasingly specialized, let’s say, in Deep Learning – which makes us miss the interdisciplinary, big picture.</p>
+<p>I believe that improving <strong>decision-making</strong> is the reason why we practice AI. We mostly forgot that as teachers. We’re also getting increasingly specialized – which makes us miss the interdisciplinary, big picture.</p>
 </div>
 </div>
 </div>
 <section id="decision-making-for-the-brave-and-true" class="level2 unnumbered page-columns page-full">
 <h2 class="unnumbered anchored" data-anchor-id="decision-making-for-the-brave-and-true">Decision-Making for the Brave and True</h2>
 <p>This is an introductory, big picture, free and open-source course which bridges the gap between theory and practice, <strong>cultivating the skills and understanding</strong> necessary to bring value to organisations by <strong>improving decision-making</strong>. It is an attempt to find a golden mean of both worlds:</p>
-<ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/gap_theory_practice.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">There is a similar gap between the “math world” and “real world” <em>(Source: Generated with DALL-E)</em></figcaption>
+</figure>
+</div>
+</div></div><ul>
 <li>Illuminating theoretical ideas (contemplating in the library)</li>
 <li>Practicing battle-tested technologies (engineering in the trenches).</li>
 </ul>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>The best advice I ever got as a novice data scientist was: <strong>“Think of youself as a business person with superpowers”</strong>. I’m attempting to reconcile that spirit of simplicity and elegance with advances in statistical thinking and engineering.</p>
-</div></div><div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
+Think of youself as a business person with superpowers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is the <strong>best advice</strong> I ever got as a novice data scientist. With advances in statistical methods, computing and engineering, it is easy to lose track of this simple and elegant idea.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Who should read this book?
 </div>
 </div>
@@ -346,13 +382,13 @@ Who should read this book?
 </div>
 <p>This is the <strong>course I wish I had</strong> when starting my journey in data science, which would prepare me for the realities of the industry, often very different from the academic world. In my teaching, I achieve this by putting business decisions, understanding the domain, and working software at the forefront of each (statistical) tool we learn.</p>
 <p>The course is challenging due to its breath and depth. At the same time, this is NOT a bootcamp: it is not enough by itself to land you a job, which requires lots of practice and extra study. To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions.</p>
-<div class="page-columns page-full"><p>Think of it as a skeleton, a <strong>conceptual frame</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea after years, with greater wisdom and skill – to unlock its real power.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by <a href="https://www.statlearning.com/">Hastie/Tibshirani</a> or <a href="https://www.andrewng.org/courses/">Andrew Ng</a> when it comes to ML, and <a href="https://xcelab.net/rm/statistical-rethinking/">Richard McElreath</a> or <a href="http://www.stat.columbia.edu/~gelman/book/">Andrew Gelman</a> on Bayesian Statistics / Causal Inference.</p></li></div></div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="page-columns page-full"><p>Think of it as a skeleton, a <strong>conceptual frame</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea years after, with greater wisdom and skill – to unlock its real power.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by <a href="https://www.statlearning.com/">Hastie/Tibshirani</a> or <a href="https://www.andrewng.org/courses/">Andrew Ng</a> when it comes to ML, and <a href="https://xcelab.net/rm/statistical-rethinking/">Richard McElreath</a> or <a href="http://www.stat.columbia.edu/~gelman/book/">Andrew Gelman</a> on Bayesian Statistics / Causal Inference.</p></li></div></div>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Overwhelming amount of content. What is best for learning?
 </div>
 </div>
@@ -368,12 +404,12 @@ Overwhelming amount of content. What is best for learning?
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p><img src="img/dont.jpg" class="img-fluid" style="width:80.0%"></p>
-</div></div><div class="callout-important callout callout-style-default callout-captioned">
+</div></div><div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 How do I keep up?
 </div>
 </div>
@@ -382,35 +418,33 @@ How do I keep up?
 <p>You will be surprised how far can you go with simple, even linear models. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.</p>
 </div>
 </div>
-<p>But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses?</p>
+<p>But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses?</p>
 <p>In university years, you’ve probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on.</p>
-<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Why study all of this?
 </div>
 </div>
-<div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>We live in a volatile, uncertain, complex and ambiguous world,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more in-depth explanation of the essence of each subject/domain, read <a href="./01_fundamentals/prerequisites.html">here</a>.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;<a href="https://www.vuca-world.org/where-does-the-term-vuca-come-from/">VUCA: a mental model to better understand the world</a></p></li></div></div>
+<div class="callout-body-container callout-body">
+<p>We live in a volatile, uncertain, complex and ambiguous world,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more in-depth explanation of the essence of each subject/domain, read <a href="./01_fundamentals/prerequisites.html">here</a>.</p>
 <p>I want you to take away ONE thing, that is “AI” and Data Science in Businesses boils down to: <strong>Decision-Making under Uncertainty at Scale</strong></p>
 </div>
 </div>
-<p>It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. Even if you are not a data scientist, you will work with them in one form or another <em>(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)</em>. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;<a href="https://www.vuca-world.org/where-does-the-term-vuca-come-from/">VUCA: a mental model to better understand the world</a></p></li></div><p>It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. Even if you are not a data scientist, you will work with them in one form or another <em>(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)</em>. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.</p>
 <blockquote class="blockquote page-columns page-full">
-<div class="page-columns page-full"><p>When somebody asks you what have you learned in this book and course, I suggest two metaphors:<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> one of simplification and another of seeing relations</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Due to my philosophical readings, some of the language here has a very specific meaning, which is totally outside the scope. For the curious, I will write a few blog posts outlining some philosophical arguments which struck a chord in me and which I found tremenously useful in day-to-day life.</p></li></div></div>
+<div class="page-columns page-full"><p>When somebody asks you what have you learned in this book and course, I suggest two metaphors:<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> one of simplification and another of seeing relations</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Due to my philosophical readings, you will see many more such metaphors. There are certain ideas I found tremenously useful in day-to-day life.</p></li></div></div>
 </blockquote>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 36.7%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figure class="figure">
-<img src="01_fundamentals/img/logo.jpeg" title="Reality" class="preview-image img-fluid figure-img">
-</figure>
-<p></p><figcaption class="figure-caption">We see Pollock’s <strong>messy reality</strong>, which is the data and observations. We want to get to Picasso’s bare bones <strong>essence</strong>, for clarity and better decision-making</figcaption><p></p>
+<p><img src="01_fundamentals/img/logo.jpeg" title="Reality" class="preview-image img-fluid figure-img"></p>
+<figcaption class="figure-caption">We see Pollock’s <strong>messy reality</strong>, which is the data and observations. We want to get to Picasso’s bare bones <strong>essence</strong>, for clarity and better decision-making</figcaption>
 </figure>
 </div>
 </div>
@@ -421,7 +455,7 @@ Why study all of this?
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01_fundamentals/img/elephant-blind.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">This is a <strong>big picture</strong> course, which re-contextualizes everything you have learned before, but didn’t see how it all fits together or can it be implemented in practice to bring value to organisations, that is: be useful</figcaption><p></p>
+<figcaption class="figure-caption">This is a <strong>big picture</strong> course, which re-contextualizes everything you have learned before, but didn’t see how it fits together or how can it be implemented in practice to bring value to organisations, that is: be useful</figcaption>
 </figure>
 </div>
 </div>
@@ -431,28 +465,56 @@ Why study all of this?
 <section id="what-will-you-learn" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="what-will-you-learn">What will you learn?</h2>
 <p>I always start with the first module, in which we explore <a href="./01_fundamentals/background.html">decisions</a> in businesses, figure out what does AI mean, and where it adds value. If we view statistics as <strong>changing our minds and actions in the face of evidence</strong> – fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.</p>
+<p>These fundamentals are not “just theory”, it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That’s why it’s essential to take every tool, and <strong>apply</strong> it in the context of an appropriate use-case/application – meaning, <strong>we’ll code a lot</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The art of formulating a hypothesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In statistics’ classes, the problem is usually completely framed. Experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That’s not your stats 101!</p>
+</div>
+</div>
 <ul>
 <li><a href="./01_fundamentals/roadmap.html"><strong>Module 1</strong></a>: Business Decisions and Probability Fundamentals</li>
 <li><a href="./02_causality/roadmap.html"><strong>Module 2a</strong></a>: Applied Bayesian Statistics</li>
-<li><a href="./02_causality/roadmap_abtest.html"><strong>Module 2b</strong></a>: Hypothesis Formulation and A/B Testing<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+<li><a href="./02_causality/roadmap_abtest.html"><strong>Module 2b</strong></a>: Hypothesis Formulation and A/B Testing</li>
 <li><strong>Module 2c</strong>: Causal Inference with Directed Acyclic Graphs</li>
 <li><a href="./03_ml/roadmap.html"><strong>Module 3a</strong></a>: Probabilistic Machine Learning</li>
 <li><strong>Module 3b</strong>: Deep Learning and Special Topics</li>
 <li><a href="./04_engineering/roadmap.html"><strong>Projects</strong></a>: Software Engineering and Full-Stack Data Apps</li>
 </ul>
-<div class="no-row-height column-margin column-container"><li id="fn4"><div class="quarto-figure quarto-figure-center"><sup>4</sup>&nbsp;
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01_fundamentals/img/meme-causal.jpeg" class="img-fluid figure-img" style="width:90.0%"></p>
-<p></p><figcaption class="figure-caption">We will see that formulating a hypothesis is an art in itself, and that experiment design in practice is fascinating and complicated, full of pitfalls and dangers. That’s not your stats 101! <em>(Source: <a href="https://youtu.be/KNPYUVmY3NM">McElreath</a>)</em></figcaption><p></p>
+<figcaption class="figure-caption"><em>(Source: <a href="https://youtu.be/KNPYUVmY3NM">R. McElreath</a> – Science before statistics)</em></figcaption>
 </figure>
 </div>
-</li></div><p>These fundamentals are not “just theory”, it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That’s why it’s essential to take every tool, and <strong>apply</strong> it in the context of an appropriate use-case/application – meaning, <strong>we’ll code a lot</strong>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+</div></div><div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
+All modules are work in progress (as of Dec 2023)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The good news is that you can safely use the curated resources and suggested practices!</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Go to “Resources” page for practice!
 </div>
 </div>
@@ -463,13 +525,13 @@ Go to “Resources” page for practice!
 </div>
 <p>Once we have a confident grasp of the fundamentals, we continue with understanding and applying Bayesian Statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face.</p>
 <p>Did you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do controlled experiments. We’ll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it’s so easy to fall into.</p>
-<div class="page-columns page-full"><p>Often, A/B tests and randomised experiments are unfeasible or unethical. We also acknowledged the limitations of inferring an association<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, so it’s time to get more powerful tools from causal inference. We can leverage natural experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the “world” works – translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).</p></li></div></div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="page-columns page-full"><p>Often, A/B tests and randomised experiments are unfeasible or unethical. We also acknowledged the limitations of inferring an association<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, so it’s time to get more powerful tools from causal inference. We can leverage natural experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the “world” works – translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).</p></li></div></div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 What if I care only about ML?
 </div>
 </div>
@@ -480,17 +542,41 @@ What if I care only about ML?
 </div>
 <p>Often, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.</p>
 <p>During the labs we’ll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.</p>
-<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/dalle_garden_forking_paths.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Navigate the complexities of the field and choose your path &amp; adventure. <em>(Source: Generated with DALL-E)</em></figcaption>
+</figure>
+</div>
+</div></div><div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Build an impressive project for your portfolio
 </div>
 </div>
-<div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>That is your final project for the course<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don’t worry about getting everything right, but focus on a problem and single area from the course you’re passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;A project can be much simpler: a quarto blog to showcase your research, a python package and CLI application to train a model, a streamlit app to demo a model.</p></li></div></div>
+<div class="callout-body-container callout-body">
+<p>That is your final project for the course and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. Don’t worry about getting everything right, but focus on a problem and single area from the course you’re passionate about: be it data visualization, ML, statistics or sheer engineering curiosity.</p>
+<ul>
+<li>For engineers: if you like programming
+<ul>
+<li>Interactive, data-driven application to support decisions</li>
+<li>A CLI app to train a model</li>
+</ul></li>
+<li>For analysts: if you like data analysis
+<ul>
+<li>Answer an interesting question, with some inference</li>
+<li>Showcase your findings in a quarto blog</li>
+</ul></li>
+<li>For data scientists and statisticians:
+<ul>
+<li>Solve a business problem with models</li>
+</ul></li>
+</ul>
 </div>
 </div>
 <p>The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
@@ -642,9 +728,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -709,6 +809,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -761,6 +947,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

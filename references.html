@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -123,7 +94,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
@@ -142,6 +114,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
@@ -158,211 +131,223 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <span class="navbar-title">Decision Science Course</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./references.html" aria-current="page">
+    <a class="nav-link active" href="./references.html" rel="" target="" aria-current="page">
  <span class="menu-text">2a. Bayes</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about_me.html">
+    <a class="nav-link" href="./about_me.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/" rel="" target=""><i class="bi bi-journal-bookmark" role="img">
 </i> 
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">2a. Applied Bayesian Statistics</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">i. Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">i. Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">ii. Course Philosophy</a>
+  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ii. Course Philosophy</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">1. Business Decisions and Probability</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Business Decisions and Probability</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">2. Data Science in Business Context</a>
+  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Data Science in Business Context</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">3. Prerequisites: Why did you study all of that?</a>
+  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Prerequisites: Why did you study all of that?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">4. Foundations of Probability</a>
+  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Foundations of Probability</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">5. Learning from Data: Intuition and Bias</a>
+  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./references.html" class="sidebar-item-text sidebar-link active">2a. Applied Bayesian Statistics</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a href="./references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">2a. Applied Bayesian Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_causality/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./02_causality/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">2. Building Blocks</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">2. Building Blocks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#groups-and-partial-pooling" class="sidebar-item-text sidebar-link">3. Groups and Partial Pooling</a>
+  <a href="./references.html#groups-and-partial-pooling" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Groups and Partial Pooling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#gaussian-linear-regression" class="sidebar-item-text sidebar-link">4. Gaussian Linear Regression</a>
+  <a href="./references.html#gaussian-linear-regression" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Gaussian Linear Regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#generalized-linear-models" class="sidebar-item-text sidebar-link">5. Generalized Linear Models</a>
+  <a href="./references.html#generalized-linear-models" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Generalized Linear Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html#hierarchical-glms" class="sidebar-item-text sidebar-link">6. Hierarchical GLMs</a>
+  <a href="./references.html#hierarchical-glms" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Hierarchical GLMs</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">2b. Hypotheses and A/B Testing</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2b. Hypotheses and A/B Testing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">2. A/B Testing study resources</a>
+  <a href="./02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. A/B Testing study resources</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">3a. Probabilistic Machine Learning</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3a. Probabilistic Machine Learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">4. Full Stack Data Apps</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Full Stack Data Apps</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
       </ul>
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#prerequisites-probability-and-python" id="toc-prerequisites-probability-and-python" class="nav-link active" data-scroll-target="#prerequisites-probability-and-python">Prerequisites: Probability and Python</a></li>
-  <li><a href="#building-blocks-of-bayesian-statistics" id="toc-building-blocks-of-bayesian-statistics" class="nav-link" data-scroll-target="#building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</a></li>
-  <li><a href="#groups-and-partial-pooling" id="toc-groups-and-partial-pooling" class="nav-link" data-scroll-target="#groups-and-partial-pooling">Groups and Partial Pooling</a></li>
-  <li><a href="#gaussian-linear-regression" id="toc-gaussian-linear-regression" class="nav-link" data-scroll-target="#gaussian-linear-regression">Gaussian Linear Regression</a></li>
-  <li><a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link" data-scroll-target="#generalized-linear-models">Generalized Linear Models</a></li>
-  <li><a href="#hierarchical-glms" id="toc-hierarchical-glms" class="nav-link" data-scroll-target="#hierarchical-glms">Hierarchical GLMs</a></li>
-  <li><a href="#bayesian-machine-learning" id="toc-bayesian-machine-learning" class="nav-link" data-scroll-target="#bayesian-machine-learning">Bayesian Machine Learning</a></li>
-  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography">Bibliography</a></li>
-  </ul>
+    
 </nav>
-</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -376,20 +361,18 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figure class="figure">
-<img src="01_fundamentals/img/karate-kid.webp" title="Practice" class="img-fluid figure-img" style="width:90.0%">
-</figure>
-<p></p><figcaption class="figure-caption">Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!</figcaption><p></p>
+<p><img src="01_fundamentals/img/karate-kid.webp" title="Practice" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption">Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!</figcaption>
 </figure>
 </div>
 </div></div><p>There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic – you fill find here a list of <strong>carefully curated resources</strong>. Most of them have have <strong>code</strong>, <strong>data</strong>, and explained <strong>theory</strong> or methodology in a freely available e-book.</p>
 <p>There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Right level of granularity
 </div>
 </div>
@@ -405,12 +388,12 @@ Right level of granularity
 </div></div><section id="prerequisites-probability-and-python" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="prerequisites-probability-and-python">Prerequisites: Probability and Python</h2>
 <p>We start from the foundations of probability, however, I do not cover calculus, linear algebra, or other mathematical tools for data analysis. We do much more programming than mathematics, therefore, the ability to code in a programming language like Python or R is a must.</p>
-<div class="callout-warning callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout callout-style-default callout-warning callout-titled page-columns page-full">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Need a crash course in probability and statistics?
 </div>
 </div>
@@ -432,17 +415,17 @@ Need a crash course in probability and statistics?
 <h2 class="anchored" data-anchor-id="building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</h2>
 <div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
 <p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
-<div class="callout-note callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Bayes Rule. Update your beliefs, often!
 </div>
 </div>
-<div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div></div>
+<div class="callout-body-container callout-body">
+<p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p>
 <ul>
 <li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
 <ul>
@@ -458,14 +441,14 @@ Bayes Rule. Update your beliefs, often!
 <p>For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
 </div>
 </div>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
 <p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Beta-Binomial Model. Estimating proportions
 </div>
 </div>
@@ -490,12 +473,12 @@ Beta-Binomial Model. Estimating proportions
 <p>The next step is learning how to model count data, which will open up to us applications of a different flavor. It is not a coincidence that when learning linear regression, we will extend it to poisson and logistic regression.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">You can notice how the issues of sample size creep in, as well as how to properly model variation within and between groups. I recommend you look up again the CLT, in the next section</span></div></div>
 <p>Note that <strong>prior choice</strong> and justification is an art and science: you will have to learn and practice how to articulate assumptions and encode your domain knowledge into the priors. There is no universal recipe, but there are some guiding principles.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Poisson Distribution. Gamma-Poisson Model
 </div>
 </div>
@@ -514,12 +497,12 @@ Poisson Distribution. Gamma-Poisson Model
 </div>
 <p>The next examples are a little detour, to appreciate the flexibility of the modeling approach we’re taking. We’re building upon previous models, by inferring which rate <span class="math inline">\(\lambda_1\)</span> or <span class="math inline">\(\lambda_2\)</span> is the most plausible at a given point in time. This way, we add complexity and realism to the model, by incorporating knowledge about the phenomenon we’re interested in.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Ideally, we would leverage models which work well with time-series, like Hidden Markov Models. There is also a large literature in mining subsequences in a time series.</span></div></div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Poisson changepoint detection
 </div>
 </div>
@@ -535,12 +518,12 @@ Poisson changepoint detection
 <p>By now, you encountered many simple Bayesian models, so it’s useful to contrast it with the Fisherian and Neyman-Pearson (frequentist) approaches. The motivation is simple: the likelihood approach is widely used in Machine Learning (and Statistical Learning) teaching and practice. A nuanced understanding of frequentist methods will improve the way you ask statistical questions, perform and design experiments.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">In the courses I teach, I dedicate quite a lot of time on how not to fall into the most common pitfalls when applying frequentist methods. It’s an useful skill when critically reading the literature.</span></div></div>
 <p>When we get to the topic of A/B testing and experiment design, we will unavoidably stumble upon a few fascinating philosophical questions in relation to the nature of evidence. A quick overview of the below resources will give you most background you need to understand the heck those philosophical positions are about.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Bayesian vs Frequentist vs Fisherian Inference
 </div>
 </div>
@@ -559,12 +542,12 @@ Bayesian vs Frequentist vs Fisherian Inference
 </div>
 </div>
 <p>We already worked with multiple parameters, even touching upon the relationship between two variables: counts and time <span class="math inline">\(Y_t\)</span>, but not really – it’s more helpful to think about that in terms of stochastic processes. Therefore, we need a new tool, which is a link function, a nonlinear transformation <span class="math inline">\(g(x)\)</span> which maps <span class="math inline">\(X\)</span> to the correct support of <span class="math inline">\(Y\)</span>. I recommend to introduce this before jumping into linear regression (LR), in order not to have the (flawed) impression that the LR is the only game in the town.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Link functions. Golf case-study
 </div>
 </div>
@@ -576,12 +559,12 @@ Link functions. Golf case-study
 <div class="no-row-height column-margin column-container"><div class="">
 <p>This is an appropriate point to introduce linear regression and logistic regression. It is not too early, given the importance of those tools, however the presentation should be practical and pretty high level, as there is much nuance to deep-dive later.</p>
 </div></div><p>Of course, we cannot forget about the Normal/Gaussian distribution, which is so prevalent in nature and pops up everywhere in the statistical practice. It is the building block of many following models. Remember the key idea of the expectation of independent random variables and estimating the mean from samples. Also, keep in mind any time you’re doing regression that it’s all about the conditional expectation <span class="math inline">\(\mathbb{E}_\theta[Y|X=x]\)</span>.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 InverseGamma-Normal
 </div>
 </div>
@@ -603,12 +586,12 @@ InverseGamma-Normal
 <div class="no-row-height column-margin column-container"><div class="">
 <p>One more reason for this is that groups and categorical variables do not receive the deserved, nuanced exposition in linear regression. Also, comparing groups is so widespread, that having a tool to deal with the challenges which it poses is immediately useful in your practice inside any firm.</p>
 </div></div><p>In this section, the goal is to show the idea of hierarchical models and <strong>partial pooling</strong>. I agree with BDA3 approach to teach it before regression, as the latter needs a lot of nuance and a long time to learn to apply properly.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Beta-Binomial for groups. Normal Approximation
 </div>
 </div>
@@ -623,12 +606,12 @@ Beta-Binomial for groups. Normal Approximation
 </div>
 <p>Foreshadowing the module 2b on A/B testing is the topic of Multi-Armed Bandits. There are cases in which we are testing multiple groups, e.g.&nbsp;which images to show on the website, and we do it at scale. Moreover, we want to experiment countinuously and automatically, trading off between exploration and exploitation to maximize the payoff or minimize regret.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">MABs are a big topic in itself, and a very narrow, particular example of reinforcement learning. It can be very powerful when carefully designed and applied appropriately.</span></div></div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 A/B Testing and Multi-Armed Bandits
 </div>
 </div>
@@ -637,12 +620,12 @@ A/B Testing and Multi-Armed Bandits
 </div>
 </div>
 <p>We encountered the problem of sample size when ranking reddit posts, but it deserves a few lectures in itself. Once you master a few methods of reasoning about <span class="math inline">\(n\)</span>, you can cut through so much bullshit in media, research, and literature.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 The most dangerous equation
 </div>
 </div>
@@ -656,12 +639,12 @@ The most dangerous equation
 </div>
 </div>
 <p>For the continuity with the previous “Building Blocks” section, here are a few example for groups, where the dependent variable is following the Poisson distribution. In this case, the novelty is choosing a gamma prior based on the sample size information of each group. If you think we can do better than this trick – you’re totally right.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Gamma-Poisson for groups
 </div>
 </div>
@@ -677,12 +660,12 @@ Gamma-Poisson for groups
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Just as a remark, <strong>complete pooling</strong> is when we ignore the fact that we have groups, and make one, global estimate. Of course, it would fall in the category of underfitting or model mis-specification, if the categories or groups are relevant.</p>
 </div></div><p>Finally, we’re ready to see how partial pooling and hierarchical (multilevel) models are such an important and powerful innovation, to the point where some practitioners argue (and I agree), that it should be the default way of (regression) modeling. Meaning, a strong justification is needed why your model doesn’t need that structure or modeling of heterogeneity. Keep in mind this advice, but always start with the most simple models when iterating towards the final one.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Hierarchical Models for Groups
 </div>
 </div>
@@ -705,12 +688,12 @@ Hierarchical Models for Groups
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>The below is by far not the only model: there are versions for contractual and non-contractual settings with different assumptions. The culmination of this research, in my opinion, is Eva Ascarza’s 2013 <a href="http://www.evaascarza.com/ascarza_hardie_13.pdf">paper</a>.</p>
-</div></div><div class="callout-tip callout callout-style-default callout-captioned">
+</div></div><div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Estimating Customer Lifetime Value
 </div>
 </div>
@@ -723,12 +706,12 @@ Estimating Customer Lifetime Value
 <h2 class="anchored" data-anchor-id="gaussian-linear-regression">Gaussian Linear Regression</h2>
 <p>There is a converging consensus that Linear Regression is the most important thing to master in statistics. I mean it in the most general sense – not only knowing model details, assumptions, extensions and limitations, but how to use it effectively in practice in an end-to-end workflow.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">To avoid naming confusions in the context of GLMs we’re going to study, and the fact that Regression can be done by many classes of models, I call the good old Linear Regression – “Gaussian Linear Regression”</span></div></div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Examples. Introduction to the workflow
 </div>
 </div>
@@ -745,31 +728,31 @@ Examples. Introduction to the workflow
 </div>
 </div>
 <p>I have a third favorite book, which is freely available, called “Beyond Multiple Linear Regression”. It covers all that we discuss here, but from a frequentist perspective. Despite that, the examples are amazing and it has enough of theory to make it a self-contained resource – therefore, makes a perfect candidate for a port in pymc/numpyro. For a review of linear regression, take a look at the <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-MLRreview.html">Kentucky derby horse race</a>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Common statistical tests are linear models
 </div>
 </div>
-<div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div></div>
+<div class="callout-body-container callout-body">
+<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 <ul>
 <li><a href="https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html">pymc</a> - Krutsche fake data drug trial, t-test, <a href="https://bambinos.github.io/bambi/notebooks/t-test.html">bambi</a>.</li>
 <li><a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and the <a href="https://www.georgeho.org/tests-as-linear/">python port</a></li>
 </ul>
 </div>
 </div>
-<p>Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors).</p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><p>Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors).</p>
 <p>However, things go wrong in practice all the time: poorly specified and parametrized models lead to computational problems. It is important to be able to diagnose the chains, and even more, actively critique and interogate your models. At some point, you have to get an understanding of what MCMC, HMC does under the hood – and when you would trade off the accuracy for faster, approximate inference.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Splines and Nonlinear Transformations
 </div>
 </div>
@@ -784,12 +767,12 @@ Splines and Nonlinear Transformations
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">There are objections to the Bias-Variance decomposition when seen as a tradeoff, in the context of Deep Learning – however, in the most general sense, it is a universal problem not only in statistics, but also for human cognition.</span></div></div>
 <p>By introducing splines and nonlinear transformations, we can easily increase the dimensionality of <span class="math inline">\(X\)</span>, with respect to <span class="math inline">\(n\)</span> – which causes massive problems for inference. This is the appropriate moment to introduce a fundamental tradeoff between model complexity and out-of-sample predictive performance.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Model Critique and Evaluation
 </div>
 </div>
@@ -809,12 +792,12 @@ Model Critique and Evaluation
 </div>
 </div>
 <p>Once we are able to critique and evaluate a single model, it makes perfect sense to compare models of increasing complexity and with alternative assumptions. The following uses the same tools as before, but in a iterative workflow.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Model Comparison and Selection
 </div>
 </div>
@@ -828,12 +811,12 @@ Model Comparison and Selection
 </div>
 <p>There are cases when the problem is in sampling and one common cause, besides mis-specification, are models with bad posterior geometry (from the perspective of samplers). As a rule of thumb “round and smooth” is good. A prevalent solution in literature is to use better parametrizations, but in order to fix your problem, you first have to be aware that it might be the case.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">These examples in 2D are intuitive, however things become much more complicated and counterintuitive in multidimensional parameter spaces. The long story short, in practice, is to use heavier regularization (via stronger priors) in those cases.</span></div></div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Bad posterior geometry. Reparametrization
 </div>
 </div>
@@ -844,12 +827,12 @@ Bad posterior geometry. Reparametrization
 </ul>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Regularization and Variable Selection
 </div>
 </div>
@@ -865,12 +848,12 @@ Regularization and Variable Selection
 </div>
 <p>I can’t resist to suggest a case-study from finance, the good old portfolio returns optimization. The methods used in practice are much more sophisticated than the below, but it’s useful to be aware of the fundamentals. The Wishart distribution, used as a prior for positive semi-definite matrices (covariation), can be an useful building block in more complicated models to capture the covariation structure, let’s say, from different time series.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">As a very advanced aside, I am fascinated by Michael I. Jordan’s approach to multidimensional time series modeling, where the covariation structure is evolving in time.</span></div></div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Portfolio optimization a la Markowitz
 </div>
 </div>
@@ -881,12 +864,12 @@ Portfolio optimization a la Markowitz
 </div>
 </div>
 <p>If you got to this last topic, probably months have passed. There are a reason universities dedicate entire semesters for regression – there are so many nuances to get right, from both practical and theoretical perspective. One of these complexities is how to handle missing data, which deserves a course on its own.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Modeling how Data goes Missing
 </div>
 </div>
@@ -906,12 +889,12 @@ Modeling how Data goes Missing
 <p>Not every phenomena we model is continuous or appropriate for gaussian linear regression, but we can easily extend it with the building blocks we learned at the beginning. It’s all about those link functions and relaxing some of the assumptions of the linear regression. I want to point out how the following mirrors the simple, single-variable models we first practiced on.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">I do not want to make the transition from gaussian case to logistic, poisson and other variants sound trivial. Their behavior, evaluation, and interpretation is different and distinct. You can not equivocate them.</span></div></div>
 <p>As a theoretical background of what connects these models into one single family, hence the name of GLMs, I suggest you read the section in the “Beyond MLR” about the <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-glms.html">exponential family</a>. Richard McElreath has similar information-theoretic arguments in his lectures on Statistical Rethinking.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Logistic Regression
 </div>
 </div>
@@ -927,12 +910,12 @@ Logistic Regression
 </div>
 </div>
 <p>When you have a numeric target variable, think twice if it is appropriate for the gaussian distribution. Sometimes, what we model is really, counts, or non-negative, or monotonically increasing with respect to a <span class="math inline">\(X_i\)</span> (that alone deserves its own case-study). Sometimes, even poisson doesn’t work out due to overdispersion or zero-inflation, and it is not a rare exception, especially when modeling aspects of customer behavior.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Poisson Regression
 </div>
 </div>
@@ -945,12 +928,12 @@ Poisson Regression
 </ul>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Overdispersion. Negative Binomial. Zero-Inflation
 </div>
 </div>
@@ -965,12 +948,12 @@ Overdispersion. Negative Binomial. Zero-Inflation
 </div>
 <p>In the <a href="./01_fundamentals/stat_foundations.html">probability fundamentals</a> section, we discussed the use-case of estimating proportions and named the field of compositional data analysis. It is often found in practice, but disguises itself, which causes the wrong method to be applied.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">If you encountered such a problem, when you care about proportions, mix of stuff, or compositions, not their absolute values or quantities, you can check out <a href="http://www.sediment.uni-goettingen.de/staff/tolosana/extra/CoDa.pdf">these lecture notes</a></span></div></div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Proportions. Compositional Data Analysis
 </div>
 </div>
@@ -983,12 +966,12 @@ Proportions. Compositional Data Analysis
 <h2 class="anchored" data-anchor-id="hierarchical-glms">Hierarchical GLMs</h2>
 <p>We finally reached to the most exciting point in our journey so far, where we can properly model and explain sources of variation at multiple levels (of analysis). This is where we relax the assumption of iid, replacing it with one of exchangeability.</p>
 <p>The point is that correlated data causes problems in modeling, when we don’t account properly for it: be it groups, clusters, categorical variables, time series, geography, etc. BeyondMLR has a very well thought, <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-corrdata.html">practical motivation</a> for multilevel models.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Hierarchical Gaussian Regression
 </div>
 </div>
@@ -1008,12 +991,12 @@ Hierarchical Gaussian Regression
 </div>
 <p>Longitudinal data is a special case of multilevel models, but has the distinct feature, that at the group level, the data isn’t iid, but comes as a realization of the stochastic process.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Often called Panel Data in economics and social sciences. You will see a different terminology in that literature: of mixed models.</span></div></div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Longitudinal Data and Studies
 </div>
 </div>
@@ -1028,12 +1011,12 @@ Longitudinal Data and Studies
 </div>
 <p>If in the previous sections, I didn’t have a strong preference for the Bayesian Approach, in the case of multilevel models, I strongly believe Bayesian Inference to be superior and less prone to overfitting and numerical instability.</p>
 <p>Another aspect of this, is that most mixed models packages will make certain decisions for us, without our consent, which could influence our results and conclusions. As you’ll see in these tutorials, we are forced to construct the model and declare, justify every choice of prior and model structure.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Hierarchical Logistic Regression
 </div>
 </div>
@@ -1045,12 +1028,12 @@ Hierarchical Logistic Regression
 </ul>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Hierarchical Poisson Regression
 </div>
 </div>
@@ -1062,12 +1045,12 @@ Hierarchical Poisson Regression
 </ul>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Models with 3 Levels
 </div>
 </div>
@@ -1084,12 +1067,12 @@ Models with 3 Levels
 <section id="bayesian-machine-learning" class="level2">
 <h2 class="anchored" data-anchor-id="bayesian-machine-learning">Bayesian Machine Learning</h2>
 <p>As a bouns, I’m adding two extremely flexible, general-purpose models, which you can treat as in the Machine Learning practices, but are Bayesian to the core. These are extremely useful if we care more about predictive accuracy, either for decision-making, or as a part of causal inference process, where a certain complicated relationship details aren’t important to us, just the conditional average treatment effects.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Bayesian Additive Regression Trees
 </div>
 </div>
@@ -1101,12 +1084,12 @@ Bayesian Additive Regression Trees
 </ul>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Gaussian Processes
 </div>
 </div>
@@ -1309,9 +1292,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1376,6 +1373,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1431,6 +1514,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

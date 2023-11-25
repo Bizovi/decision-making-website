@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -60,7 +60,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
@@ -94,205 +95,223 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <span class="navbar-title">Decision Science Course</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../references.html" aria-current="page">
+    <a class="nav-link active" href="../references.html" rel="" target="" aria-current="page">
  <span class="menu-text">2a. Bayes</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about_me.html">
+    <a class="nav-link" href="../about_me.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://blog.economic-cybernetics.com/"><i class="bi bi-journal-bookmark" role="img">
+    <a class="nav-link" href="https://blog.economic-cybernetics.com/" rel="" target=""><i class="bi bi-journal-bookmark" role="img">
 </i> 
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">1. Business Decisions and Probability</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/learning.html">5. Learning from Data: Intuition and Bias</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">i. Introduction</a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">i. Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../philosophy.html" class="sidebar-item-text sidebar-link">ii. Course Philosophy</a>
+  <a href="../philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ii. Course Philosophy</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">1. Business Decisions and Probability</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Business Decisions and Probability</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="../01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">2. Data Science in Business Context</a>
+  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Data Science in Business Context</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">3. Prerequisites: Why did you study all of that?</a>
+  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Prerequisites: Why did you study all of that?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">4. Foundations of Probability</a>
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Foundations of Probability</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/learning.html" class="sidebar-item-text sidebar-link active">5. Learning from Data: Intuition and Bias</a>
+  <a href="../01_fundamentals/learning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../references.html" class="sidebar-item-text sidebar-link">2a. Applied Bayesian Statistics</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2a. Applied Bayesian Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="../02_causality/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">2. Building Blocks</a>
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Building Blocks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html#groups-and-partial-pooling" class="sidebar-item-text sidebar-link">3. Groups and Partial Pooling</a>
+  <a href="../references.html#groups-and-partial-pooling" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Groups and Partial Pooling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html#gaussian-linear-regression" class="sidebar-item-text sidebar-link">4. Gaussian Linear Regression</a>
+  <a href="../references.html#gaussian-linear-regression" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Gaussian Linear Regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html#generalized-linear-models" class="sidebar-item-text sidebar-link">5. Generalized Linear Models</a>
+  <a href="../references.html#generalized-linear-models" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Generalized Linear Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html#hierarchical-glms" class="sidebar-item-text sidebar-link">6. Hierarchical GLMs</a>
+  <a href="../references.html#hierarchical-glms" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Hierarchical GLMs</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">2b. Hypotheses and A/B Testing</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2b. Hypotheses and A/B Testing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">2. A/B Testing study resources</a>
+  <a href="../02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. A/B Testing study resources</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../03_ml/roadmap.html" class="sidebar-item-text sidebar-link">3a. Probabilistic Machine Learning</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a href="../03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3a. Probabilistic Machine Learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_ml/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="../03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">4. Full Stack Data Apps</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a href="../04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Full Stack Data Apps</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">1. Syllabus &amp; Roadmap</a>
+  <a href="../04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
   </div>
 </li>
       </ul>
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#implicit-learning-intuition-and-bias" id="toc-implicit-learning-intuition-and-bias" class="nav-link active" data-scroll-target="#implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</a></li>
-  <li><a href="#calling-bullshit-in-the-age-of-big-data" id="toc-calling-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</a></li>
-  </ul>
+    
 </nav>
-</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -305,53 +324,51 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</h2>
 <p>In the last two sections of this lecture I felt it is necessary to raise two more warning tales, precisely because we will work with such a powerful machinery and attempt to tackle complex problems in our jobs and lives.</p>
 <p>A good metaphor for what we’re doing in this course is the way people learn. In a way we’re pattern recognition machines, with a powerful capacity for <strong>implicit learning</strong>, meaning we can’t articulate or explain how we did it. For example, riding a bike, catching a baseball, speaking, reading and writing, behaving in social situations and so on.</p>
-<div class="callout-note callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Implicit Learning of Artificial Grammars
 </div>
 </div>
-<div class="callout-body-container callout-body page-columns page-full">
-<div class="page-columns page-full"><p>There is a famous experiment, in which researchers invented words from two languages, meaning two set of rules,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> let’s say between 3 and 8 characters, with appropriate vowels and so on. Total gibberish, but here we are, with two sets of words.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For the curious, they used a Markov Chain artificial grammar, which would be pretty straightforward to implement in R, and is a way of looking at the language which brought the first breakthroughs in NLP (natural language processing)</p></li></div></div>
+<div class="callout-body-container callout-body">
+<p>There is a famous experiment, in which researchers invented words from two languages, meaning two set of rules,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> let’s say between 3 and 8 characters, with appropriate vowels and so on. Total gibberish, but here we are, with two sets of words.</p>
 <p>Participants saw the lists and they had to say from what “language” does a word come from. It is a good example of <strong>experiment design</strong> coming from cognitive science research.</p>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For the curious, they used a Markov Chain artificial grammar, which would be pretty straightforward to implement in R, and is a way of looking at the language which brought the first breakthroughs in NLP (natural language processing)</p></li></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<figure class="figure">
-<img src="img/imlicit-grammar.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%">
-</figure>
-<p></p><figcaption class="figure-caption"><em>Source: <a href="https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm">John Kihlstrom</a></em>; They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either “no idea”, or giving some rules, which when implemented on a computer, were not able to perform better than a coin flip.</figcaption><p></p>
+<p><img src="img/imlicit-grammar.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption"><em>Source: <a href="https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm">John Kihlstrom</a></em>; They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either “no idea”, or giving some rules, which when implemented on a computer, were not able to perform better than a coin flip.</figcaption>
 </figure>
 </div>
 <p>Following the experiment, this means that those rules articulated by the people in the experiment were NOT how they were thinking. There is something going on which can’t really be articulated. This means that we have a capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning.</p>
 <div class="page-columns page-full"><p>Another hypothesis about how animals learn is the idea that some <strong>prior</strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> knowledge or mechanism – which is there due to evolution optimizing for fittedness, is necessary to kickstart the process. The discussion about the fascinating interaction between nature and nurture is outside the scope of the point I’m trying to make right now. So, here we go with two more experiments:</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;We will go into more technical details when discussing Statistical Learning and ML models, of why is it the case that biasing a learning process with prior information is essential to successful learning.</p></li></div></div>
-<div class="callout-note callout callout-style-default callout-captioned page-columns page-full">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Bait Shyness – Rats Learning to Avoid Poisonous Baits
 </div>
 </div>
-<div class="callout-body-container callout-body page-columns page-full">
+<div class="callout-body-container callout-body">
 <p>When rats stumble upon food with new smell or look, they first eat very small amounts. If they got sick, that novel food is likely to be associated with illness, and in the future the rat will avoid it. Quoting Dr.&nbsp;Shai-Ben David:</p>
-<blockquote class="blockquote page-columns page-full">
-<div class="page-columns page-full"><p>Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a></p></li></div></div>
+<blockquote class="blockquote">
+<p>Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </blockquote>
 </div>
 </div>
-<p>The bait shyness is an example of learning, not just rote memorization. More exactly of a basic inductive reasoning, or in a more statistical language, of generalization from a sample. But we intuitively know, that when generalizing a pattern, regularity is sometimes error prone: we pick up on noise, spurious correlations instead of signal, we’re fooled by randomness.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a></p></li></div><p>The bait shyness is an example of learning, not just rote memorization. More exactly of a basic inductive reasoning, or in a more statistical language, of generalization from a sample. But we intuitively know, that when generalizing a pattern, regularity is sometimes error prone: we pick up on noise, spurious correlations instead of signal, we’re fooled by randomness.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 B.F. Skinner: Pigeon Superstition
 </div>
 </div>
@@ -360,15 +377,7 @@ B.F. Skinner: Pigeon Superstition
 <p>Therefore, they spent more time doing that exact same thing, without regard with the chances of those actions getting them more food. That is a minimal example of superstition, a topic on which philosophers spilled so much ink.</p>
 </div>
 </div>
-<div class="page-columns page-full"><p>Shai-Ben David goes on to argue – what stands at the foundations of Machine Learning, are carefully formulated principles which will prevent our automated learners, who don’t have a common sense like us, to reach these foolish and superstitious conclusions. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><div class="quarto-figure quarto-figure-center"><sup>4</sup>&nbsp;
-<figure class="figure">
-<figure class="figure">
-<img src="img/pigeon-chamber.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%">
-</figure>
-<p></p><figcaption class="figure-caption"><em>Source: <a href="https://www.skewsme.com/behavior/">skewsme</a></em>; Here’s Skinner’s pigeon chambers</figcaption><p></p>
-</figure>
-</div>
-</li></div></div>
+<div class="page-columns page-full"><p>Shai-Ben David goes on to argue – what stands at the foundations of Machine Learning, are carefully formulated principles which will prevent our automated learners, who don’t have a common sense like us, to reach these foolish and superstitious conclusions. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><img src="img/pigeon-chamber.jpeg" title="Implicit learning" class="img-fluid" style="width:90.0%" alt="Source: skewsme; Here’s Skinner’s pigeon chambers"></li></div></div>
 <p>What is the common thread among these three stories about learining? In a nutshell, it’s about cultivating the wisdom and ablility to differentiate between correlational and causal patterns.</p>
 <ul>
 <li>When all goes well we call it intelligence, intuition, a business knack. It’s our pattern recognition picking up on some real, causal regularities. It’s the common sense working as it is supposed to.</li>
@@ -379,12 +388,12 @@ B.F. Skinner: Pigeon Superstition
 </ul>
 <div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;The reasons come from cutting-edge Cognitive Science research, which challenge the normative position of economic rationality. Moreover, they challenge the economic orthodoxy when it comes to rationality – it is a much more complex beast than a maximisation of expected utility.</p></li></div><p>So, what can we do as individuals and professionals? I think one way to get wiser is to cultivate a kind of <strong>active open-mindedness</strong>, which tries to scan for those biases and bring them into our awareness, such that we can correct our beliefs, behavior and decisions. Another thing we can do is to update our beliefs often, in the face of new evidence, keeping a <strong>scout mindset</strong>, trying to see clearly, instead of getting too attached and invested in our beliefs and positions.</p>
 <p>I think we’re extremely lucky to be in a field like data science, where we can use formal tools from probability, causal inference, machine learning, optimization, combined with large amounts of data and domain expertise – in order to practice that kind of a mindset. However, let’s keep in mind how easy researchers are getting fooled, not only by randomness, and that we’ll never be immune to misjudgement.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 The double edged sword of our intelligence
 </div>
 </div>
@@ -397,12 +406,12 @@ The double edged sword of our intelligence
 <section id="calling-bullshit-in-the-age-of-big-data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</h2>
 <p>You probably noticed that I used the word bullshit a few times in this lecture. It is not a pejorative, but a technical/formal term introduced by Harry Frankfurt in his essay “on Bullshit”. In romanian, the closest equivalent would be <em>“vrăjeală”</em>, a kind of sophistry.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 The critical difference between Lie and Bullshit
 </div>
 </div>
@@ -415,12 +424,12 @@ The critical difference between Lie and Bullshit
 <p>The kind of intimidating jargon comes from finance people, economists, when explaining why interest rates were risen, what happened in 2007-2008 great financial crisis. My “favorite” is cryptocurrency-related sophistry and some particular CEOs expertly making things more ambiguous, mysterious, and complicated with their corporate claptrap.</p>
 <p>These lectures are short, fun, informative and useful for developing the critical thinking necessary when assesing the quality of the evidence or reasoning which led to a particular conclusion. I will try to incorporate here and there some examples from their course, where it fits naturally with our use-cases and theoretical topics, especially in <a href="https://www.callingbullshit.org/syllabus.html#Causality">causality</a>.</p>
 <p>There are tempting arguments which boil down to this: due to ever increasing volumes and richness of data, together with computing power and innovations in AI – it will lead to the <strong>end of theory</strong>. I couldn’t disagree more!</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Small Data problems in Big Data
 </div>
 </div>
@@ -583,9 +592,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -650,6 +673,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -705,6 +814,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 
