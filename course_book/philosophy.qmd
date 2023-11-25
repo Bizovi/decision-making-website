@@ -9,6 +9,10 @@ format:
 
 The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in **Complex Adaptive Systems**. It is what was originally meant by AI, before symbolic, expert systems, and deep learning.
 
+::: {.column-margin}
+![The golden thread across disciplines. *(Source: Generated with DALL-E)*](img/network_golden%20thread.png)
+:::
+
 The way I think of data science -- is in the context of those complex adaptive systems. We will discuss it in more detail and nuance, as this perspective is powerful and rarely taught.
 
 ::: {.callout-warning}
@@ -59,6 +63,9 @@ Therefore, we need to develop a set of processes and methodologies to iterate an
 
 This is my second attempt at formulating a philosophy and principles for a challenging endeavor like this one. A moment of inspiration hit me and the following "map" resulted -- which strikes a resemblence with an idea of R. Sapolsky in one of his [lectures](https://youtu.be/NNnIGh9g6fA).
 
+::: {.column-margin}
+![We will take short trips in the fields outlined below. *(Source: Generated with DALL-E)*](img/map_dsc.png)
+:::
 
 ::: {.callout-warning}
 ## The danger of thinking in buckets

@@ -12,40 +12,53 @@ I think it's a matter of scale and magnitude in VUCA dimensions, where an accele
 
 [^general]: This implies that we already framed the problem and figured out what we want to achieve, and that indeed we chose the right goals and objectives. Moreover, the questions of epistemiology and ethics are a never ending topic for discussion and enquiry.
 
+
 :::: {.callout-tip}
 ## Decision Science: (not only) truth and action
 
-Let's start from a business setting of an e-commerce, where we want to increase sales, customer satisfaction, and reduce costs. Imagine three scenarios, which neatly fall into the SWOT framework: [^traj]
+Let's start from a business setting of an e-commerce, where we want to increase sales, customer satisfaction, and reduce costs. Imagine three scenarios, which neatly fall into the SWOT framework:
+
+![*Source: [Kim Warren](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf)* - Status Quo, Desired and Feared Trajectories](img/trajectories.png){width="60%"}
+
 
 
 - We keep the status quo, doing everyting as before. What is the most likely trajectory of profits? Can we come up with an educated guess? If the trajectory looks good, that is our **strenghts** and compentencies contributing to it, if not, our **weakness**.
 - A feared trajectory, that is, if our business is hit by a shock in supply chain, inflation, by competition or customer demand. It's the **threats**.
 - A desired or aspirational trajectory. Is it reasonable and realistically achievable? If yes, what strategy and tactics should we implement, how sould we act? This is our **opportunity**.
+::::
 
-
-After this exercise, we defined more precisely where we stand, that is, quantify the current state of the firm. We framed the problem in terms of most relevant outcomes and we're in the process of figuring out what is the optimal goals to aim for. Obviously, we need a mechanism, measurements to know that we're on track and to recognize when to get there. Now, let's go back to our two questions and unpack them:
+After this exercise, we defined more precisely where we stand, that is, quantify the current state of the firm. We framed the problem in terms of most relevant outcomes and we're in the process of figuring out what are the optimal goals to aim for. Obviously, we need a mechanism, measurements to know that we're on track and to recognize when we get there. Now, let's go back to our two questions and unpack them:
 
 - **What is true?** In the most general sense, we're not asking for a mathematical and logical truth, but if it's plausible, probable, deserves serious consideration, is backed by evidence. I also mean that we understand the underlying causal mechanisms. Not least, an assessment of the current situation. The metaphor which I suggest for this is "seeing clearly", through the fog, illusions, and biases. [^scout]
 - **How should I act?** What is plausible doesn't entirely answer this question, we can't derive an ought from is.[^hume] In business settings, I would think about action in terms of strategic alignment and optimisation.
 
-The only missing pieces from this mental model that I argue for is tremendously important: **iteration** and **feedback**. [^cybe] Due to VUCA, we can't be sure our actions are optimal, or even that we're solving the right problem, therefore fast iteration and feedback ensures we're not taking too much risk, that we find out early about problems in our thinking and action, that we can change course to steer the ship back on track.
+The only missing pieces from this mental model that I argue for is tremendously important: **iteration** and **feedback**. Due to VUCA, we can't be sure our actions are optimal, or even that we're solving the right problem, therefore fast iteration and feedback ensures we're not taking too much risk, that we find out early about problems in our thinking and action, that we can change course to steer the ship back on track.
 
-::::
+::: {.callout-note}
+## Wait, this sounds familiar
+
+Sounds an awflul lot like Cybernetics, doesn't it? Especially if we have the idea of a firm as a complex adaptive system as a pressuposition for this discussion.
+:::
 
 [^hume]: This is one of the most important and applicable philosophical ideas, introduced by David Hume: when one makes claims about what ought to be that are based solely on statements about what is.
 
 [^scout]: Recommended reading: Scout Mindset by Julia Galef
-[^cybe]: Sounds an awflul lot like Cybernetics, doesn't it? Especially if we have the idea of a firm as a complex adaptive system as a pressuposition for this discussion.
 
-[^traj]: ![*Source: [Kim Warren](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf)* - Status Quo, Desired and Feared Trajectories](img/trajectories.png){width="90%"}
+
+
 
 <!-- You might've heard in the news that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses? -->
 
 Now that it's more clear what I meant in the course introduction by improving business outcomes and bringing value to organizations, I didn't yet explain what does analytics, data science, machine learning, and AI do or are, and how to they fit in the picture we painted so far.
 
-You might've noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don't get lost in various detours taken and keep the big picture in mind. My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. [^thread]
 
-[^thread]: This is a course in which we look at the widest possible range of methods and models, without going into depth, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job when you encounter it and learn the details later, how to actually do it. We dive into more detail when presenting "workhorse-models", proven by practice to apply well in a large variety of use-cases. 
+## How to navigate a lecture
+
+You might've noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don't get lost in various detours taken and keep the big picture in mind. 
+
+My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. [^thread]
+
+[^thread]: This is a course in which we look at the widest possible range of methods and models, without going into excruciating detail, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job. 
 
 
 ```{mermaid}
@@ -58,29 +71,43 @@ You might've noticed that every lecture starts with a brief motivation, and then
 %%|   but I will try to do my best to communicate that spirit in written form
 
 flowchart TD
-  DM[Decision-Making] --> Domains[Domains] -- case studies --> U[Uber / Rides] --> Ecom[E-Commerce]
-  DM --> AI[What is AI?] --> Cy[Cybernetics Detour] --> Choice[Stats/ML/Analytics]
-  Choice  --> F[Why did you study those?]
-  DM --> BS[on Bullshit] --> Fool[Foolishness] --> Caus[Causal vs Correlational] --> BD[Big Data?]
+  DM[Decision-Making] --> SWOT[SWOT] --> St[Strategy]
+  
+  St --> Domains[Domains] -- case studies --> U[Uber / Rides] --> Ecom[E-Commerce]
+  St --> BAW[Analyst's workflow] --> F[Why did you study those?]
+  DM --> AI[What is AI?] --> Cy[Cybernetics Detour] 
+  Cy --> Choice[Stats/ML/Analytics]
 
-  Ecom --> BYOP[Bring your own problem]
-  F --> BYOP
-  BD --> BYOP
+  F --> BYOP[Bring your own problem]
+
 
   style U fill:#f7f5bc
   style Ecom fill:#f7f5bc
+  style F fill:#f7f5bc
 ```
 
 We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor's degree. Next, we discuss what can go wrong while drawing conclusions from data -- culminating in a discussion of a problem of choice you're passionate about.
+
+## What is Strategy?
+
+Sounds like a naive question, but bad strategy is prevalent -- which comes from a misunderstanding about what is a strategy. I highly recommend [this article published by McKinsey](https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy) -- we learn better from other's mistakes.
+
+In short, it is not just **aspiration** towards goal or having a **vision** or setting a **target**. By analogy, remember the SMART criteria when you're setting goals. As true consultants, we can summarize the steps involved in developing a strategy in a matrix.
+
+| Step | Outcome | Characteristics
+|------|-------|------|
+| Honest diagnosis | Identify obstacles |     Few critical, relevant aspects
+| Guiding policy |  General approach to overcome | Focused on key aspects
+| Coherent actions | Support policy with action plan   |  Coordinated and focused
+
+
+Since strategy informs so much of decision-making, know your firm's strategy -- ask around, understand it, contribute to it. Call out bad strategy.
 
 
 
 ## Data Science in the Wild
 
-At this point, you might get tired of me emphasizing the decision-making aspect of data science as the main point of why it is important. It's time we move from the general and abstact towards particular examples and applications in various industries. This will lead us to acknowledge how **prevalent** is AI (that we haven't fully defined yet) in firms, services and technologies we use every day. [^reverse]
-
-[^reverse]: When reading this section, I want to get you into a mindset of the reverse engineer: step back and think deeply about products and services you use every day, put yourself in the shoes of the business making those decisions and building those systems. What were they thinking about? What challenges were they facing that were an appropriate use-case for ML, Statistics, and AI?
-
+At this point, you might get tired of me emphasizing the decision-making aspect of data science as the main point of why it is important. It's time we move from the general and abstact towards particular examples and applications in various industries. This will lead us to acknowledge how **prevalent** is AI (that we haven't fully defined yet) in firms, services and technologies we use every day. 
 
 ::: {.callout-important}
 ## During a lecture, I usually ask students
@@ -88,6 +115,22 @@ Can you give some examples of businesses, sevices, technologies, problems, and d
 
 See below some very good answers and argumentations provided by the students last year, then we'll examine in more details one of them. Of course, there is always that one person, very passionate about sports or blockchain.
 :::
+
+
+::: {.callout-tip}
+## Do some reverse engineering!
+
+When reading this section, I want to get you into a mindset of the reverse engineer: step back and think deeply about products and services you use every day:
+
+- Put yourself in the shoes of the business making those decisions and building those systems
+- What were the goals, user/client needs?
+- What was the firm's objective?
+- What constraints did they hit? Why it was a difficult problem?
+- What made it an appropriate use-case for ML, Statistics, and AI?
+- What are some potential approaches they settled on?
+- What would be a baseline, simple, naive solution?
+:::
+
 
 
 - **Dynamic pricing** in Bolt and Uber, which takes into account the weather, especially if it rains, peak hours: balancing demand and supply. It is at the intersection of ML and economic theory, as they are a platform or marketplace. Prices also change with respect to competitors, so we see aspects of an oligopoly behavior. [^uber_jack]  
@@ -115,14 +158,14 @@ I would like to add a few more examples, from an insider and practitioner's pers
 - **Programmatic Advertisement**: finding best placement for ads on various platforms, right now dominated by meta and google
 
 :::{.callout-tip}
-## Check out the Case Studies for a Deeper Understanding
+## Classroom Case Studies for a Deeper Understanding
 
 We will explore some challenges and applications from this list in a series of case studies and labs. The idea is to improve our ability to identify opportunities and formulate problems from the point of view of an organisation, such that we can match those with the methods, models and algorithms discussed in the course. 
 
 I'll have to introduce a lot of new concepts when the language we developed so far will turn out to be insufficient to talk about and understand what's happening inside these firms. Thus, each case study is an opportunity to play around with a novel idea. [^skip-to-cases]
 
-- [In the first deep-dive](bolt.qmd), we will look at Uber and Bolt, with publicly available information, trying to figure out what do their data scientists do. 
-- Then, we will look at the [lingerie e-commerce](adoreme.qmd) where I work at, AdoreMe and a different set of problems we're facing.
+- In the first deep-dive, we will look at Uber and Bolt, with publicly available information, trying to figure out what do their data scientists do. 
+- Then, we will look at the lingerie e-commerce where I work at, AdoreMe and a different set of problems we're facing.
 :::
 
 [^skip-to-cases]: If you have a pretty good idea about what is AI, Analytics, ML, Deep Learning, Big Data, Causal Inference and when to use one approach or another, feel free to skip the history and terminology and go straight to the case studies.
@@ -146,7 +189,7 @@ For all pragmatic intents and purposes, especially in businesses, AI is about **
 
 One important keyword here is `uncertainty`, as there is no point in building AI solutions based on complex models if we don't have uncertainty. We have to be able to change our mind and actions in the face of evidence.
 
-On the other hand, `scale` is the reason ML and Deep Learning is so powerful, because you can take lots of small decisions in an automated way, with little curation or guidance from humans. This is why many traditionally "paperwork" industried like legal and accounting embrace digitalisation and automation now. 
+On the other hand, `scale` is the reason ML and Deep Learning is so powerful, because you can take lots of small decisions in an automated way, with little curation or guidance from humans. This is why many traditionally "paperwork" industries like legal and accounting embrace digitalisation and automation now. 
 :::
 
 Ultimately, why would I build a system which predicts demand for products in a direct-to-consumer ecommerce like Allbirds, Macy's, or AdoreMe? Either in a marketplace like Emag or Amazon? Why would I try to find out the factors which contribute to a successful advertisement?
@@ -176,7 +219,7 @@ So, we still have to make decisions. Those have to have a level of **robustness*
 ::: {.callout-warning}
 ## When you don't need AI and Statistics
 
-As a though experiment, itmagine we have an equation or program, with well-defined rules, which perfectly predicts the price on stock markets, or perfectly predicts how many items will a client buy and how she will respond if we change the price (an intervention). We won't need machine learning, causal inference, or AI there.
+As a though experiment, imagine we have an equation or program, with well-defined rules, which perfectly predicts the price on stock markets, or perfectly predicts how many items will a client buy and how she will respond if we change the price (an intervention). We won't need machine learning, causal inference, or AI there.
 
 Of course, we don't have that kind of program. It's only somewhat true in cases when we have a well-tested theory, which stood the test of time and went through the scientific process to become the best theory with respect to all others. For example newtonian physics, relativity, quantum mechanics, evolution. 
 :::
@@ -232,7 +275,7 @@ In economic cybernetics, we're concerned with economics, society and human behav
 
 To explain how Cybernetics evolved into Weak AI, there is a conglomeration of fields which went a bit out of fashion and favor: Game Theory, General Systems' Theory, Agent-Based Modeling, Systems' Dynamics, Complexity and Chaos, Evolutionary Algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practice.
 
-So, we kind of settled on a more pragmatic set of tools, which is dominated pattern recognition and optimisation, in one form or another trying to learn from data (ML, DL, Causality) and act optimally (Dynamic Programming, Reinforcement Learning). .
+So, we kind of settled on a more pragmatic set of tools, which is dominated by pattern recognition and optimisation, in one form or another trying to learn from data (ML, DL, Causality) and act optimally (Dynamic Programming, Reinforcement Learning). .
 
 Wait. What's going on here? Am I saying that we did a bachelor's degree in AI under the term of Economic Cybernetics? For me, personally, after having this epiphany -- everything I studied makes so much more sense in retrospective.
 
@@ -255,7 +298,7 @@ In practice, if you're a data/business analyst, ML/data engineer, data scientist
 
 ## Analytics, ML or Statistics?
 
-At this point, you should have a pretty good idea why data science is important, what are some possible applications and domains, what does it do and concerned about. It is the motivation, real-world use-cases, and conceptual understanding that I promised at the beginning of the course.
+At this point, you should have a pretty good idea why data science is important, what are some possible applications and domains, what does it do and is concerned about. It is the motivation, real-world use-cases, and conceptual understanding that I promised at the beginning of the course.
 
 Disentangling the ambiguity around AI was one of the most difficult aspects of the course to articulate. Now, it's time to transition to a lower level of analysis (inside data science, not outside it), break down the landscape into manageable chunks and develop our toolbox, in which we learn how to formulate problems well and match them with existing models, methods, and technologies.
 
@@ -309,7 +352,7 @@ Pay close attention to the process of developing data-driven products [^cassie-s
 
 The next two questions are tremendously important and will prevent you from embarking on an AI project which is doomed from the start:
 
-- Is there a value proposition for AI? In other words, is there an underlying pattern to be discuvered?
+- Is there a value proposition for AI? In other words, is there an underlying pattern to be discovered?
 - Do I have the (necessary and relevant) data?
 
 If yes and yes, we MIGHT be in business! But we shall not forget about the pragmatic aspects: is it feasible to be done with a small team, without a huge investment? What is the simplest way we can solve it? Are we solving the right problem? Are we making the job of people in the firm easier and more efficient?
@@ -333,9 +376,11 @@ So, before we get into the nuances of model validation, selection, and experimen
 
 Why go through all of that pain to critique our own model with such a vigor? The answer is simple -- if it passes this rigorous critique, it has greater chance of finding a real/causal pattern and generalize to examples outside our sample. 
 
-This is a lot to take in! But there is one more thing to explore -- there is one course by Dr. Adam Fleischhacker [^business-analytics], which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:
+## Business Analysts' Workflow
 
-[^business-analytics]: Adam Fleischhacker - [Introduction to Business Analytics](https://www.causact.com/): Intro to Bayesian Business Analytics in the R Eco-System
+This is a lot to take in! But there is one more thing to explore -- a brilliant idea from a  course by Dr. Adam Fleischhacker [^business-analytics], which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:
+
+[^business-analytics]: Adam Fleischhacker - [Introduction to Business Analytics](https://www.causact.com/): Intro to Bayesian Business Analytics in the R Ecosystem
 
 > "You will translate real-world scenarios into both mathematical and computational representations that yield actionable insight. You will then take that insight back to the real-world to persuade stakeholders to alter and improve their real-world decisions."
 

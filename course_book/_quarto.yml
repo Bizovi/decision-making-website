@@ -40,10 +40,10 @@ website:
       - section: "1. Business Decisions and Probability"
         href: 01_fundamentals/background.qmd
         contents:
-        - href: 01_fundamentals/roadmap.qmd
-          text: "1. Syllabus & Roadmap"
         - href: 01_fundamentals/background.qmd
-          text: "2. Data Science in Business Context"
+          text: "1. Data Science in Business Context"
+        - href: 01_fundamentals/roadmap.qmd
+          text: "2. Syllabus & Roadmap"
         - href: 01_fundamentals/prerequisites.qmd
           text: "3. Prerequisites: Why did you study all of that?"
         - href: 01_fundamentals/stat_foundations.qmd
