@@ -79,9 +79,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -89,7 +86,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -105,12 +102,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../references.html" rel="" target="" aria-current="page">
- <span class="menu-text">2a. Bayes</span></a>
-  </li>  
-</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../about_me.html" rel="" target="">
@@ -278,57 +269,31 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3a. Probabilistic Machine Learning</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Full Stack Data Apps</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
     
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-page-right" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 
 
 <section id="module-i-business-decisions-and-probability" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="module-i-business-decisions-and-probability">Module I: Business Decisions and Probability</h2>
 <p>The first module is putting the rest of the course on a solid foundation, emphasizing again and again the key idea of Decision-Making Under Uncertainty at Scale. Understand the problem, the methodology, and the tools at your disposal.</p>
-<p>The most difficult part of the module is the statistical fundamentals, as it is very easy to misunderstand and apply these methods mechanically. Therefore, fundamental – doesn’t mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/karate-kid.webp" title="Practice" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption">Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!</figcaption>
+</figure>
+</div>
+</div></div><p>The most difficult part of the module is the statistical fundamentals, as it is very easy to misunderstand and apply these methods mechanically. Therefore, fundamental – doesn’t mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -339,11 +304,13 @@ Do you have a process for Statistics and ML?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.</p>
+<p>All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes (ML, Experimentation, Causal Inference) and think how would you structure your project in practice for a particular application.</p>
 </div>
 </div>
-<p>There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some <em>mathematical</em> and in some we <strong>code and practice</strong>.</p>
-<p>The courses I teach are usually short and intensive, so the following schedule would take two weeks to cover, meaning the next two weeks I can focus on Bayesian statistics, causal inference, or machine learning – with more emphasis on modeling or engineering, depending on the audience.</p>
+<p>There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some mathematical and in some we code and practice.</p>
+</section>
+<section id="decision-science" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="decision-science">Decision Science</h2>
 <div class="column-page-inset-right">
 <table class="table">
 <thead>
@@ -351,143 +318,282 @@ Do you have a process for Statistics and ML?
 <th></th>
 <th>Lecture Agenda</th>
 <th>Keywords</th>
-<th>Case Studies</th>
+<th>Case Studies / Activities</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td><a href="https://course.economic-cybernetics.com/01_fundamentals/background.html">Data Science in Business Context</a>. Decision-Making Under Uncertainty</td>
-<td>AI, Cybernetics, Uncertainty, Scale, Analytics vs Stats vs ML</td>
-<td>survey of applications in various domains</td>
+<td><a href="../index.html">Introduction</a> &amp; <a href="../philosophy.html">Course Philosophy</a>. Roadmap</td>
+<td>Decisions, VUCA, Modeling, <a href="../01_fundamentals/prerequisites.html">prerequisites</a>, project requirements</td>
+<td>survey of applications in various domains, admin stuff</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td><a href="https://course.economic-cybernetics.com">Interdisciplinarity</a>. Overview of prerequisites.</td>
-<td>Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg</td>
-<td><a href="https://johnkerl.org/doc/prbstat/prbstat.html">Probability vs Statistics</a>, <a href="../01_fundamentals/prerequisites.html">Why did you study all of that?</a></td>
+<td><a href="../01_fundamentals/background.html">Data Science in Business Context</a>. Strategy</td>
+<td>SWOT, Tradeoffs, Strategy, Business Analyst’s Workflow, Value Chain, Fermi Estimation</td>
+<td>case-studies: LRB subscriptions, DTC fashion e-commerce</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Business Analyst’s Workflow. Newsvendor Problem</td>
-<td>action, outcome, strategy, expertise, data, models, simulation, DAGs</td>
-<td>TIME INC. printing quantity decisions</td>
+<td><a href="../01_fundamentals/background.html#cybernetics-is-what-we-call-ai">Decision-Making Under Uncertainty at Scale</a></td>
+<td>AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty</td>
+<td>data roles in firms, Uber and dynamic pricing</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Strategy and the Desired Trajectory</td>
-<td>SWOT, Systems Dynamics, KPIs, Stock vs Flow</td>
-<td>LRB Journal Subscriptions</td>
+<td><a href="https://youtu.be/QLsSPnwWS_M">Newsvendor Problem</a> and Demand Planning</td>
+<td>DAGs, model choice, inference and optimization, constraints</td>
+<td>TIME INC. printing quantity decisions. Simulations</td>
 </tr>
 <tr class="odd">
-<td><strong>5</strong></td>
-<td><strong>Projects Overview</strong>. <strong>Full-stack data apps</strong>. Overview of Data.</td>
-<td>NLP, RecSys, Time Series, Classification</td>
-<td>Mercari, Favoritas, H&amp;M, Olist (e-commerce)</td>
+<td>5</td>
+<td><a href="../01_fundamentals/learning.html">Learning, Intuition, and Bias</a>. What is ML?</td>
+<td>intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff</td>
+<td>credit defaults, recommender systems, demand forecasting</td>
 </tr>
 <tr class="even">
-<td><em>6</em></td>
-<td><em>Probability Triple. Random Variables. Mathematical Statistics</em></td>
-<td>population, sample, r.v., estimators, mixtures, markov chain</td>
-<td>Retail Fashion - appropriate choice of distributions</td>
+<td>6</td>
+<td><a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps of ML</a></td>
+<td>CRISP-DM, Feasibility, Validation</td>
+<td>case-study: Mercari challenge</td>
 </tr>
 <tr class="odd">
-<td><strong>7</strong></td>
-<td><strong>Set Up the Environment</strong>. <strong>Reproducible Research I</strong></td>
-<td>terminal, conda, python, vscode, jupyter, git &amp; github, poetry, pytest</td>
-<td>DevXP, productivity, reproducibility</td>
+<td>7</td>
+<td><a href="https://youtu.be/RScjq1mkDc0">Price optimization</a> under limited capacity</td>
+<td>demand elasticity, dynamic pricing, regression, pricing strategy &amp; revenue management</td>
+<td>case-studies: concerts, airlines, taxis/rides</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>Bernoulli, Binomial, Poisson, Simulation, DAGs as stories</td>
-<td>numpy, pandas, pymc, matplotlib, arviz, graphviz</td>
-<td>couples showing up to safari</td>
+<td><a href="https://youtu.be/R4ckbZCgmxQ">12 Steps of Statistics</a>. A/B Testing Scheme</td>
+<td><a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">default action</a>, hypotheses, confidence intervals, relevance, effect sizes, power</td>
+<td>case-study: conversion rate optimization and marketing</td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>Bayes Rule</td>
-<td>DAGs, Conditioning, Marginalization, Priors</td>
-<td>Football Spreads, Medical testing</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Beta-Binomial Model</td>
-<td>pymc, praw, priors, conjugate families</td>
-<td>A/B testing</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td><a href="https://youtu.be/QLsSPnwWS_M">Newsvendor Problem</a>. Probability distributions. Stochastic Processes</td>
-<td>model specification, inference, simulation, optimization, constraints</td>
-<td>groceries and perisable goods, <a href="https://youtu.be/RScjq1mkDc0">price optimization</a></td>
-</tr>
-<tr class="even">
-<td><em>12</em></td>
-<td><em>The most dangerous equation</em></td>
-<td>estimators properties, CLT, LLN, sample size</td>
-<td>U.S. small schools, reddit upvote share, hackernoon algo</td>
-</tr>
-<tr class="odd">
-<td><em>13</em></td>
-<td><em>Estimator properties. Bias-Variance</em></td>
-<td><span class="math inline">\(\chi^2_k, N, F_{m, n}, t_k\)</span></td>
-<td>What does a statistician want?</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td><a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps of ML</a>. <a href="https://work.caltech.edu/lectures.html">What is ML?</a></td>
-<td>PAC Learning, generalization, CRISP-DM</td>
-<td>Project requirements simplification</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td><a href="https://youtu.be/R4ckbZCgmxQ">12 Steps of Statistics</a>. A/B Testing Scheme</td>
-<td>Default Action, Stat. Hypotheses, confidence intervals, relevance</td>
-<td>problem of p-value, <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">statistics workflow</a></td>
-</tr>
-<tr class="even">
-<td><strong>16</strong></td>
-<td><strong>Reproducible Research II</strong></td>
-<td>automation, code, data, environment, documents, publishing</td>
-<td>Replication crisis, Excel and the Dead Salmon</td>
+<td>BI &amp; Analytics. Data Mining. Open datasets overview</td>
+<td>Tuckey’s EDA, Data Wrangling, Databases, Data Visualization</td>
+<td>kaggle e-commerce relational database, duckDB</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Why these exact topics, since other courses in 16 lectures teach you either statistical learning, probability, statistics, causality, deep learning? Of course, and they’re excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.</p>
-<p>Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges. Here are all of these concepts illustrated in the following mind-map:</p>
+<p>I assume you read the conceptual stuff on this website, understood its use-cases, and the big picture of what to learn. Now, the question is <strong>where and how to start</strong> practicing, while catching up on the maths and programming.</p>
+</section>
+<section id="probability-and-statistics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="probability-and-statistics">Probability and Statistics</h2>
+<p>There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic – you fill find here a list of <strong>carefully curated resources</strong>. Most of them have have <strong>code</strong>, <strong>data</strong>, and explained <strong>theory</strong> or methodology in a freely available e-book.</p>
+<p>There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Right level of granularity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Instead of recommending whole books, which in this field are huge: 500-900p of dense material – in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks.</p>
+<p>They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. <strong>Think of them as lego pieces.</strong></p>
+</div>
+</div>
+<p>I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner – I can just do my best to make your journey less frustrating and more efficient.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Often, you will have to combine various aspects of an use-case, model, method – from different sources, taking the best from each author.</p>
+</div></div><div class="column-page-inset-right">
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Lecture Agenda</th>
+<th>Keywords</th>
+<th>Case Studies / Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Combinatorics. Sampling &amp; Urn Models</td>
+<td>replacement, multiplication rule, naive <span class="math inline">\(\mathbb{P}\)</span></td>
+<td>Birthday Paradox, Bootstrap</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Probability Triple. Random Variables. What is a model?</td>
+<td>experiment, sample space, measure, population, estimand, estimators, golemns</td>
+<td><a href="https://johnkerl.org/doc/prbstat/prbstat.html">Probability vs Statistics</a>, Kolmogorov, Garden Forking Paths</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Binomial, Poisson, Beta, Gamma. Stories behind distributions</td>
+<td>PMF, PDF, CDF, Hypergeometric, Negative Binomial, <span class="math inline">\(\chi^2_k\)</span>, mixtures, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N\)</span>, Weibull</td>
+<td>couples showing up to safari, arrival times, basketball shots, hot hand</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Conditioning and Bayes Rule. Likelihood Ratios</td>
+<td>DAGs, Conditioning, Marginalization, Priors, Updating</td>
+<td>Monty Hall, Simpsons’ Paradox, Football Spreads, Medical testing</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>CLT and LLNs. Convergence types. Estimator properties</td>
+<td>sample size, convergence in probability, distribution, almost-sure</td>
+<td>The most dangerous equation, hackernoon ranking algo</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Bias-Variance, Fisher Information, Rao-Cramer</td>
+<td>Efficiency, Bias, James-Stein, curse of dimensionality</td>
+<td>Bootstrap, simulations and visualizations</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Neyman-Pearson frequentism. Popper and falsification</td>
+<td>Type I, II errors, confint, p-value, PPV, effect sizes, power analysis, range predictions, <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_A\)</span></td>
+<td>How to ask better questions. Stahel’s relevance</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Frequentism vs Likelihood vs Bayes</td>
+<td>philosophical roots, agreements, weaknesses</td>
+<td>The path of action vs devotion vs belief</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Dead Salmon Experiment. Replication Crisis</td>
+<td>multiple testing, harking, snooping, publishing bias, open science, underpowered studies</td>
+<td>Examination of controversies in medicine, psychology, and social science</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We start from the foundations of probability, however, I do not cover calculus, linear algebra, or other mathematical tools for data analysis. We do much more programming than mathematics, therefore, the ability to code in a programming language like Python or R is a must.</p>
+<div class="callout callout-style-default callout-warning callout-titled page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Need a crash course in probability and statistics?
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<p>If you understand and can explain the following ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky, here are some readings:</p>
+<ul>
+<li><strong>Probability Triple</strong> and <strong>Random Variables</strong> - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
+<li><strong>Collectivity</strong> (“physical” structure), <strong>Statistical Population</strong>, <strong>Sample</strong> - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a>.</li>
+<li><strong>Parameter</strong> (Estimand), <strong>Estimator</strong>, <strong>Estimation/Statistic</strong> - same resources as above <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Stories behnid distributions: <span class="math inline">\(Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k\)</span>. What about <span class="math inline">\(Beta(a, b)\)</span>, <span class="math inline">\(Gamma(k, \theta)\)</span>, and <span class="math inline">\(Dirichlet(\bar{\theta})\)</span> – what are they good for?
+<ul>
+<li>Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories / applications with more math</a> from Joe Blitzstein.</li>
+</ul></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian “frequentism”.</p></li></div></div>
+</div>
+<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
+<p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bayes Rule. Update your beliefs, often!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p>
+<ul>
+<li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
+<ul>
+<li>If you’re into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?</li>
+<li>For brevity, I won’t elaborate much from now on, how to take an use-case and example to its limit. <strong>If you’re passionate about a particular topic – go for it!</strong></li>
+</ul></li>
+<li>(BDA3, Ch1): <strong>Spelling correction</strong>, based on <a href="http://norvig.com/ngrams/">empirical frequencies</a> provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself – it is good for a warm-up, but challenging enough to keep you occupied.</li>
+<li>(<a href="https://projects.iq.harvard.edu/stat110/home">Probability 110</a>): <strong>Medical testing</strong> for rare diseases, hypothetical example with code in my <a href="https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb">course repository</a>. We use the same idea to reason about how confident are we our code has no bugs.
+<ul>
+<li>If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could’ve applied the same idea!</li>
+</ul></li>
+</ul>
+<p>For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
+<p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
+</section>
+<section id="r-computational-toolbox" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="r-computational-toolbox">R: Computational Toolbox</h2>
 <div class="column-page-inset-right">
-<div class="cell" data-fig-width="9">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart LR
-  Prob(Probability) --&gt; Boot(Inference) -- LLN --&gt; Es(Estimators)  --&gt; PS[[Stat process]]
-  Prob --&gt;  Cond(DAGs) -- Cond-g --&gt;  Bayes(Bayes Rule)
-
-  DSc(Decisions, AI) -- statistics  --&gt; Prob(Probability)
-  DSc -- business  --&gt; VUCA(V.U.C.A.) --&gt; App(Applications) --&gt; R(Role in firms)
-
-
-  R --&gt; BAW[[Analyst's Workflow]]
-
-  DSc -- method. --&gt; A(Analytics) --- Caus(Causal Inference) --- ML(Learning from Data)
-  ML --&gt; PML[[ML Process]]
-
-  App --&gt; NV(Newsvendor) --&gt; Proj(Projects Overview)
-
-</pre>
+<table class="table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 24%">
+<col style="width: 32%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Lecture Agenda</th>
+<th>Keywords</th>
+<th>Case Studies / Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Set Up the Environment. Reproducible Research</td>
+<td>WSL/terminal, R, RStudio, Quarto, git &amp; github, tidyverse, arrow &amp; duckdb</td>
+<td>Literate programming, Managing Environments</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Advanced R. Functional programming</td>
+<td>data types, copy-on-modify, functions, filter, map, reduce, control flow</td>
+<td>R gotchas and how discipline + tidyverse solves them</td>
+</tr>
+</tbody>
+</table>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;1: A mindmap to help you navigate the first module, with 3 main branhes and programming sprinkled everywhere: business, statistics, and methodology.</figcaption>
-</figure>
+</section>
+<section id="python-computational-toolbox" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="python-computational-toolbox">Python: Computational Toolbox</h2>
+<div class="column-page-inset-right">
+<table class="table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 24%">
+<col style="width: 32%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Lecture Agenda</th>
+<th>Keywords</th>
+<th>Case Studies / Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Set Up the Environment. Reproducible Research</td>
+<td>WSL/terminal, conda, python, vscode, jupyter, git &amp; github, arrow &amp; duckdb</td>
+<td>Literate programming, Managing Environments</td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div>
-</div>
+<p>Why these exact topics, since other courses in 18 lectures teach you either statistical learning, probability, statistics, causality, or deep learning? Of course, and they’re excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.</p>
+<p>Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges.</p>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -838,7 +944,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../01_fundamentals/background.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Business Decisions and Probability</span>

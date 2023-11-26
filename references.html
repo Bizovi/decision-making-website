@@ -136,12 +136,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./references.html" rel="" target="" aria-current="page">
- <span class="menu-text">2a. Bayes</span></a>
-  </li>  
-</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about_me.html" rel="" target="">
@@ -309,40 +303,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3a. Probabilistic Machine Learning</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03_ml/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Full Stack Data Apps</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_engineering/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
     
@@ -356,93 +316,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<p>I assume you read the conceptual stuff on this website, understood its use-cases, and the big picture of what to learn. Now, the question is <strong>where and how to start</strong> practicing, while catching up on the maths and programming.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01_fundamentals/img/karate-kid.webp" title="Practice" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption class="figure-caption">Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!</figcaption>
-</figure>
-</div>
-</div></div><p>There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic – you fill find here a list of <strong>carefully curated resources</strong>. Most of them have have <strong>code</strong>, <strong>data</strong>, and explained <strong>theory</strong> or methodology in a freely available e-book.</p>
-<p>There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Right level of granularity
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Instead of recommending whole books, which in this field are huge: 500-900p of dense material – in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks.</p>
-<p>They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. <strong>Think of them as lego pieces.</strong></p>
-</div>
-</div>
-<p>I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner – I can just do my best to make your journey less frustrating and more efficient.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Often, you will have to combine various aspects of an use-case, model, method – from different sources, taking the best from each author.</p>
-</div></div><section id="prerequisites-probability-and-python" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="prerequisites-probability-and-python">Prerequisites: Probability and Python</h2>
-<p>We start from the foundations of probability, however, I do not cover calculus, linear algebra, or other mathematical tools for data analysis. We do much more programming than mathematics, therefore, the ability to code in a programming language like Python or R is a must.</p>
-<div class="callout callout-style-default callout-warning callout-titled page-columns page-full">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Need a crash course in probability and statistics?
-</div>
-</div>
-<div class="callout-body-container callout-body page-columns page-full">
-<p>If you understand and can explain the following ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky, here are some readings:</p>
-<ul>
-<li><strong>Probability Triple</strong> and <strong>Random Variables</strong> - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
-<li><strong>Collectivity</strong> (“physical” structure), <strong>Statistical Population</strong>, <strong>Sample</strong> - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a>.</li>
-<li><strong>Parameter</strong> (Estimand), <strong>Estimator</strong>, <strong>Estimation/Statistic</strong> - same resources as above <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>Stories behnid distributions: <span class="math inline">\(Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k\)</span>. What about <span class="math inline">\(Beta(a, b)\)</span>, <span class="math inline">\(Gamma(k, \theta)\)</span>, and <span class="math inline">\(Dirichlet(\bar{\theta})\)</span> – what are they good for?
-<ul>
-<li>Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories / applications with more math</a> from Joe Blitzstein.</li>
-</ul></li>
-</ul>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian “frequentism”.</p></li></div></div>
-</div>
-</section>
-<section id="building-blocks-of-bayesian-statistics" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="building-blocks-of-bayesian-statistics">Building Blocks of Bayesian Statistics</h2>
-<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
-<p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Bayes Rule. Update your beliefs, often!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p>
-<ul>
-<li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
-<ul>
-<li>If you’re into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?</li>
-<li>For brevity, I won’t elaborate much from now on, how to take an use-case and example to its limit. <strong>If you’re passionate about a particular topic – go for it!</strong></li>
-</ul></li>
-<li>(BDA3, Ch1): <strong>Spelling correction</strong>, based on <a href="http://norvig.com/ngrams/">empirical frequencies</a> provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself – it is good for a warm-up, but challenging enough to keep you occupied.</li>
-<li>(<a href="https://projects.iq.harvard.edu/stat110/home">Probability 110</a>): <strong>Medical testing</strong> for rare diseases, hypothetical example with code in my <a href="https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb">course repository</a>. We use the same idea to reason about how confident are we our code has no bugs.
-<ul>
-<li>If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could’ve applied the same idea!</li>
-</ul></li>
-</ul>
-<p>For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
-<p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -577,7 +450,6 @@ InverseGamma-Normal
 <p>TODO: more examples from science, business, and human behavior</p>
 </div>
 </div>
-</section>
 <section id="groups-and-partial-pooling" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="groups-and-partial-pooling">Groups and Partial Pooling</h2>
 <p>We already worked with groups in the case of difference in means (proportions and continuous variables) and making inferences for three and more groups, treating them as separate. We will see that such an approach is called “no pooling”.</p>
@@ -738,14 +610,14 @@ Common statistical tests are linear models
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <ul>
 <li><a href="https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html">pymc</a> - Krutsche fake data drug trial, t-test, <a href="https://bambinos.github.io/bambi/notebooks/t-test.html">bambi</a>.</li>
 <li><a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and the <a href="https://www.georgeho.org/tests-as-linear/">python port</a></li>
 </ul>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><p>Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors).</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><p>Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors).</p>
 <p>However, things go wrong in practice all the time: poorly specified and parametrized models lead to computational problems. It is important to be able to diagnose the chains, and even more, actively critique and interogate your models. At some point, you have to get an understanding of what MCMC, HMC does under the hood – and when you would trade off the accuracy for faster, approximate inference.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
