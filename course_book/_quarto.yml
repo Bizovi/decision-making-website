@@ -11,9 +11,9 @@ website:
 
   navbar:
     search: true
-    left:
-      - href: references.qmd
-        text: "2a. Bayes"
+    # left:
+    #   - href: references.qmd
+    #     text: "2a. Bayes"
     right: 
       - href: about_me.qmd
         text: "About Me"
@@ -77,21 +77,21 @@ website:
       #   contents:
       #     - href: index.qmd#what-will-you-learn
       #       text: "1. Syllabus & Roadmap"
-      - section: "3a. Probabilistic Machine Learning"
-        href: 03_ml/roadmap.qmd
-        contents:
-          - href: 03_ml/roadmap.qmd
-            text: "1. Syllabus & Roadmap"
+      # - section: "3a. Probabilistic Machine Learning"
+      #   href: 03_ml/roadmap.qmd
+      #   contents:
+      #     - href: 03_ml/roadmap.qmd
+      #       text: "1. Syllabus & Roadmap"
       # - section: "3b. Deep Learning and Special Topics (TBD)"
       #   href: 03_ml/roadmap.qmd
       #   contents:
       #     - href: 03_ml/roadmap.qmd
       #       text: "1. Syllabus & Roadmap"
-      - section: "4. Full Stack Data Apps"
-        href: 04_engineering/roadmap.qmd
-        contents:
-          - href: 04_engineering/roadmap.qmd
-            text: "1. Syllabus & Roadmap"
+      # - section: "4. Full Stack Data Apps"
+      #   href: 04_engineering/roadmap.qmd
+      #   contents:
+      #     - href: 04_engineering/roadmap.qmd
+      #       text: "1. Syllabus & Roadmap"
       # - href: references.qmd
       #   text: "X. Resources"
 

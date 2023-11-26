@@ -13,9 +13,9 @@ In order to be a successful Data Scientist, one has to speak the language of pro
 
 > In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent *stochastic nature*. 
 
-Data is just the appearance, an external manifestation of some `latent processes` (seen as random mechanisms). Even though we won't know the exact outcome for sure, we can model general regularities and relationships as a result of the large scale of phenomena. [^large-scale]
+Data is just the appearance, an external manifestation of some `latent processes` (seen as random mechanisms). Even though we won't know the exact outcome for sure, we can model general regularities and relationships as a result of the large scale of phenomena.
 
-[^large-scale]: Think of **measurements** taken from the Large Hadron Collider experiments: the volume, noise, and complexity of data. Ultimately, we want to make inferences about the **underlying**, physical processes which govern the behavior and interaction of particles. How do we know that inference is accurate and true? A necessary, but not sufficient condition is that the conditions of that experiment are repeatable -- such that "on average", a pattern emerges.
+Think of **measurements** taken from the Large Hadron Collider experiments: the volume, noise, and complexity of data. Ultimately, we want to make inferences about the **underlying**, physical processes which govern the behavior and interaction of particles. How do we know that inference is accurate and true? A necessary, but not sufficient condition is that the conditions of that experiment are repeatable -- such that "on average", a pattern emerges.
 
 
 
@@ -31,30 +31,27 @@ Moreover, theoretical ideas underlying statistical practice, which we often take
 %%| label: fig-mermaid
 %%| fig-width: 9
 %%| fig-cap: |
-%%|   In this chapter and set of lectures, I attempt to reformulate fundamental
+%%|   In this chapter and set of lectures, I attempt to review fundamental
 %%|   statistical ideas, concepts, and tools, in order to show their relevance in 
 %%|   the day-to-day practice and decision-making. A secondary objective is to 
 %%|   fill in the conceptual gaps left by the fact that it's hard to make sense 
 %%|   of it all the first time we're encountering it in the classroom.
 
 flowchart TD
-	Motiv[Why again?] --> ProbT[Probability Triple] --> SI[Uncertainty]
-	SI --> MS[Mathematical Statistics] --> GP[Prague Golemn]
+	Motiv[Prob vs Stats] --> C[Combinatorics] --> BD[Birthday Paradox] --> SP[Simpson's Paradox] --> Bayes[Bayes Rule] --> LL[Likelihood]
+	
+	Bayes --> Ind[Independence] --> Ex[Exchangeability]
+	Motiv --> ProbT[Probability Triple] --> SI[Uncertainty] --> RV[Random Variables] --> PDF[Stories Distribution] --> DAG[DAGs] --> LLN[LLNs]
 
-	Motiv --> Estim[Estimators] --> Prop[Desired Properties] --> US[Example: US Schools] --> Cond[Conditioning] --> Marg[Marginalisation] --> Ex[Exchangeability]
+	Motiv --> MS[Mathematical Statistics] --> GP[Prague Golemn] --> Estim[Estimators] --> Prop[Desired Properties] --> US[CLT & US Schools] --> NP[Neyman-Pearson]
 
-	Motiv --> DM[Data Mining Process] --> G[Prediction & Geocentrism] --> Sci[Scientific Process]
-
-	Ex --> Dead[Dead Salmon]
-	GP --> Dead
-	Sci --> Dead
-
-	Dead --> Mod[Modern Stats]
 ```
 
 The plan for this lecture is the following: we start by constructing the probability triple, formalize sources of uncertainty, and investigate the building blocks of a statistical model. I then highlight in a few case-studies what can go wrong in the process of statistical inference and how difficult it is to choose the right model. 
 
-::: {.column-margin}
+::: {.callout-important}
+## Rabbit hole warning
+
 How far you go back into the abstract foundations? For practical intents and purposes, you won't need measure theory and proof-based mathematical analysis. 
 
 I find those interesting for their own sake and understanding the foundations of higher-level tools we use. However, I can't argue it's an efficient use of your time.
@@ -376,7 +373,7 @@ Compositional data analysis solves those issues by defining a probability triple
 [^cda]:  ![*Source: [Dumuid](https://www.mdpi.com/1660-4601/17/7/2220)*: Data in a Simplex, which is later translated to $R^n$ by a carefully constructed basis expansion](img/composition.png "Simplex"){width="90%"}
 
 
-Remember our exaple of [pigeon superstition](background.qmd#implicit-learning-intuition-and-bias) in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,[^ml-measure] which is exactly those carefully formulated principles that will prevent our automated learners to become supersitious. 
+Remember our exaple of [pigeon superstition](learning.qmd#implicit-learning-intuition-and-bias) in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,[^ml-measure] which is exactly those carefully formulated principles that will prevent our automated learners to become supersitious. 
 
 [^ml-measure]: Even though most courses from which I studied don't mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio's Brown [answer](https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR) it's essential in the idea of **uniform convergence** and its bounds, where *"you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets"*. 
 
@@ -447,7 +444,7 @@ We will focus very little on this last aspect of uncertainty, but you have some 
 
 
 <!-- Statistical Foundations: Reference, Revies --->
-[^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
+<!-- [^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
 [^12]: Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) has two companion books, one with R and another in Python
 [^24]: Speegle, Clair - [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html)
-[^45]: Bryan - [STAT 545](https://stat545.com/) It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.
+[^45]: Bryan - [STAT 545](https://stat545.com/) It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory. -->

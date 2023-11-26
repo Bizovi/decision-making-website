@@ -9,67 +9,147 @@ format:
 
 The first module is putting the rest of the course on a solid foundation, emphasizing again and again the key idea of Decision-Making Under Uncertainty at Scale. Understand the problem, the methodology, and the tools at your disposal.
 
+::: {.column-margin}
+![Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!](img/karate-kid.webp "Practice"){width="90%"}
+:::
+
 The most difficult part of the module is the statistical fundamentals, as it is very easy to misunderstand and apply these methods mechanically. Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.
 
 ::: {.callout-important}
 ## Do you have a process for Statistics and ML?
 
-All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes and think how would you structure your project in practice for a particular application.
+All too often we jump into data analysis and modeling without formulating well the objectives and the problem. Focusing on how to implement and use a model  without following a rigorous process can be error-prone and counterproductive. You have to understand these 3 processes (ML, Experimentation, Causal Inference) and think how would you structure your project in practice for a particular application.
 :::
 
-There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some *mathematical* and in some we **code and practice**. 
+There are many ways to organize this module in lectures. You can find a possible schedule in the table, with associated readings/resources and a mind-map of topics in the diagram below it. Some lectures are conceptual, some mathematical and in some we code and practice. 
 
-The courses I teach are usually short and intensive, so the following schedule would take two weeks to cover, meaning the next two weeks I can focus on Bayesian statistics, causal inference, or machine learning -- with more emphasis on modeling or engineering, depending on the audience.
+## Decision Science
 
 ::: {.column-page-inset-right}
 
-|   | Lecture Agenda                      | Keywords  | Case Studies |
-|---|---------------------------|---------------|--------------|
-| 1 | [Data Science in Business Context](https://course.economic-cybernetics.com/01_fundamentals/background.html). Decision-Making Under Uncertainty | AI, Cybernetics, Uncertainty, Scale, Analytics vs Stats vs ML  | survey of applications in various domains |
-| 2 | [Interdisciplinarity](https://course.economic-cybernetics.com).  Overview of prerequisites. | Calculus, Linear Algebra, Probability, Stats, Economics. Math Iceberg | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), [Why did you study all of that?](prerequisites.qmd) |
-| 3 | Business Analyst's Workflow. Newsvendor Problem  | action, outcome, strategy, expertise, data, models, simulation, DAGs | TIME INC. printing quantity decisions |
-| 4 | Strategy and the Desired Trajectory | SWOT, Systems Dynamics, KPIs, Stock vs Flow | LRB Journal Subscriptions |
-| **5** | **Projects Overview**. **Full-stack data apps**. Overview of Data. | NLP, RecSys, Time Series, Classification | Mercari, Favoritas, H&M, Olist (e-commerce)  |
-| *6* | *Probability Triple. Random Variables. Mathematical Statistics* | population, sample, r.v., estimators, mixtures, markov chain | Retail Fashion - appropriate choice of distributions  |
-| **7** | **Set Up the Environment**. **Reproducible Research I** | terminal, conda, python, vscode, jupyter, git & github, poetry, pytest | DevXP, productivity, reproducibility |
-| 8 | Bernoulli, Binomial, Poisson, Simulation, DAGs as stories | numpy, pandas, pymc, matplotlib, arviz, graphviz | couples showing up to safari |
-| 9 | Bayes Rule | DAGs, Conditioning, Marginalization, Priors | Football Spreads, Medical testing |
-| 10 | Beta-Binomial Model | pymc, praw, priors, conjugate families | A/B testing |
-| 11 | [Newsvendor Problem](https://youtu.be/QLsSPnwWS_M). Probability distributions. Stochastic Processes | model specification, inference, simulation, optimization, constraints | groceries and perisable goods, [price optimization](https://youtu.be/RScjq1mkDc0) |
-| *12* | *The most dangerous equation* | estimators properties, CLT, LLN, sample size | U.S. small schools, reddit upvote share, hackernoon algo |
-| *13* | *Estimator properties. Bias-Variance* | $\chi^2_k, N, F_{m, n}, t_k$ | What does a statistician want?  |
-| 14 | [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3). [What is ML?](https://work.caltech.edu/lectures.html)  | PAC Learning, generalization, CRISP-DM | Project requirements simplification |
-| 15 | [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ). A/B Testing Scheme | Default Action, Stat. Hypotheses, confidence intervals, relevance | problem of p-value, [statistics workflow](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) |
-| **16** | **Reproducible Research II**| automation, code, data, environment, documents, publishing | Replication crisis, Excel and the Dead Salmon |
+|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
+|---|-------------------------------------|-----------|---------------------------|
+| 1 | [Introduction](../index.qmd) & [Course Philosophy](../philosophy.qmd).  Roadmap | Decisions, VUCA, Modeling, [prerequisites](prerequisites.qmd), project requirements  | survey of applications in various domains, admin stuff |
+| 2 | [Data Science in Business Context](background.qmd). Strategy | SWOT, Tradeoffs, Strategy, Business Analyst's Workflow, Value Chain, Fermi Estimation  | case-studies: LRB subscriptions, DTC fashion e-commerce |
+| 3 | [Decision-Making Under Uncertainty at Scale](background.qmd#cybernetics-is-what-we-call-ai) | AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty  | data roles in firms, Uber and dynamic pricing |
+| 4 | [Newsvendor Problem](https://youtu.be/QLsSPnwWS_M) and Demand Planning  | DAGs, model choice, inference and optimization, constraints | TIME INC. printing quantity decisions. Simulations |
+| 5 | [Learning, Intuition, and Bias](learning.qmd). What is ML? | intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff | credit defaults, recommender systems, demand forecasting |
+| 6 | [12 Steps of ML](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) | CRISP-DM, Feasibility, Validation | case-study: Mercari challenge |
+| 7 | [Price optimization](https://youtu.be/RScjq1mkDc0) under limited capacity | demand elasticity, dynamic pricing, regression, pricing strategy & revenue management | case-studies: concerts, airlines, taxis/rides |
+| 8 | [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ). A/B Testing Scheme | [default action](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF), hypotheses, confidence intervals, relevance, effect sizes, power | case-study: conversion rate optimization and marketing |
+| 9 | BI & Analytics. Data Mining. Open datasets overview | Tuckey's EDA, Data Wrangling, Databases, Data Visualization | kaggle e-commerce relational database, duckDB |
 
 :::
 
-Why these exact topics, since other courses in 16 lectures teach you either statistical learning, probability, statistics, causality, deep learning? Of course, and they're excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.
+I assume you read the conceptual stuff on this website, understood its use-cases, and the big picture of what to learn. Now, the question is **where and how to start** practicing, while catching up on the maths and programming.
 
-Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges. Here are all of these concepts illustrated in the following mind-map:
+## Probability and Statistics
+
+There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic -- you fill find here a list of **carefully curated resources**. Most of them have have **code**, **data**, and explained **theory** or methodology in a freely available e-book.
+
+
+There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.
+
+
+::: {.callout-tip}
+## Right level of granularity
+
+Instead of recommending whole books, which in this field are huge: 500-900p of dense material -- in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks. 
+
+They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. **Think of them as lego pieces.**
+:::
+
+
+I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner -- I can just do my best to make your journey less frustrating and more efficient.
+
+::: {.column-margin}
+Often, you will have to combine various aspects of an use-case, model, method -- from different sources, taking the best from each author.
+:::
 
 ::: {.column-page-inset-right}
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|   A mindmap to help you navigate the first module, with 3 main branhes and programming sprinkled everywhere: business, statistics, and methodology.
 
-flowchart LR
-  Prob(Probability) --> Boot(Inference) -- LLN --> Es(Estimators)  --> PS[[Stat process]]
-  Prob -->  Cond(DAGs) -- Cond-g -->  Bayes(Bayes Rule)
-
-  DSc(Decisions, AI) -- statistics  --> Prob(Probability)
-  DSc -- business  --> VUCA(V.U.C.A.) --> App(Applications) --> R(Role in firms)
-
-
-  R --> BAW[[Analyst's Workflow]]
-
-  DSc -- method. --> A(Analytics) --- Caus(Causal Inference) --- ML(Learning from Data)
-  ML --> PML[[ML Process]]
-
-  App --> NV(Newsvendor) --> Proj(Projects Overview)
-
-```
+|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
+|---|-------------------------------------|-----------|---------------------------|
+| 1 | Combinatorics. Sampling & Urn Models | replacement, multiplication rule, naive $\mathbb{P}$ | Birthday Paradox, Bootstrap |
+| 2 | Probability Triple. Random Variables. What is a model? | experiment, sample space, measure, population, estimand, estimators, golemns  | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), Kolmogorov, Garden Forking Paths |
+| 3 | Binomial, Poisson, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, $\chi^2_k$, mixtures, $t_k$, $N$, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |
+| 4 | Conditioning and Bayes Rule. Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
+| 5 | CLT and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo |
+| 6 | Bias-Variance, Fisher Information, Rao-Cramer | Efficiency, Bias, James-Stein, curse of dimensionality | Bootstrap, simulations and visualizations |
+| 7 | Neyman-Pearson frequentism. Popper and falsification | Type I, II errors, confint, p-value, PPV, effect sizes, power analysis, range predictions, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance  |
+| 8 | Frequentism vs Likelihood vs Bayes | philosophical roots, agreements, weaknesses | The path of action vs devotion vs belief  |
+| 9 | Dead Salmon Experiment. Replication Crisis | multiple testing, harking, snooping, publishing bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science  |
 
 :::
+
+
+We start from the foundations of probability, however, I do not cover calculus, linear algebra, or other mathematical tools for data analysis. We do much more programming than mathematics, therefore, the ability to code in a programming language like Python or R is a must.
+
+::: {.callout-warning}
+## Need a crash course in probability and statistics?
+
+If you understand and can explain the following ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky, here are some readings:
+
+- **Probability Triple** and **Random Variables** - a quasi formal introduction is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of the course website. From my experience, not many students have this understanding after their probability theory classes.
+- **Collectivity** ("physical" structure), **Statistical Population**, **Sample** - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
+- **Parameter** (Estimand), **Estimator**, **Estimation/Statistic** - same resources as above [^4]
+- Stories behnid distributions: $Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k$. What about $Beta(a, b)$, $Gamma(k, \theta)$, and $Dirichlet(\bar{\theta})$ -- what are they good for?
+  - Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) from Joe Blitzstein.
+:::
+
+[^4]: Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian "frequentism".
+
+
+We start simple, by modeling a single random variable $Y$, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations  -- then sampling from the posterior with `pymc`, `numpyro`, and `bambi`.[^1]
+
+[^1]: The R equivalents would be `stan` and `brms`, `rstanarm`. `bambi` and `brms` are a high-level API for most common models.
+
+Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.
+
+::: {.callout-note}
+## Bayes Rule. Update your beliefs, often!
+
+Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of [BDA3](http://www.stat.columbia.edu/~gelman/book/), Chapter 1/2 of [Bayes Rules](https://www.bayesrulesbook.com/chapter-2.html), and Chapter 1/2 of [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/).[^2] If you prefer videos, enjoy the 3Blue1Brown [visual masterpiece](https://www.youtube.com/watch?v=HZGCoVF3YvM) on how to think like a Bayesian or [here](https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking).
+
+- (BDA3, Ch1): **Football spreads**, that can be estimated from [data about matches](http://www.stat.columbia.edu/~gelman/book/data/football.asc). What is the probability that a team wins? Are experts right, on average?
+  - If you're into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?
+  - For brevity, I won't elaborate much from now on, how to take an use-case and example to its limit. **If you're passionate about a particular topic -- go for it!**
+- (BDA3, Ch1): **Spelling correction**, based on [empirical frequencies](http://norvig.com/ngrams/) provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself -- it is good for a warm-up, but challenging enough to keep you occupied.
+- ([Probability 110](https://projects.iq.harvard.edu/stat110/home)): **Medical testing** for rare diseases, hypothetical example with code in my [course repository](https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb). We use the same idea to reason about how confident are we our code has no bugs.
+  - If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could've applied the same idea!
+
+For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses [here](https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics) and [here](https://www.coursera.org/learn/bayesian/home/week/3) for the theory and examples.
+:::
+
+[^2]: You will notice in the callouts that I point out where to read the theory -- for a conceptual understanding and to figure out the mathematical details
+
+[Or maybe you're passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence]{.aside}
+
+We applied Bayes rule and got some insightful results in three totally different domains. However, we weren't doing neither statistics, nor inference -- but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it's time for full-luxury Bayes and the simplest cases of inference.
+
+
+## R: Computational Toolbox
+
+::: {.column-page-inset-right}
+
+|   | Lecture Agenda  | Keywords              | Case Studies / Activities |
+|---|-----------------|-----------------------|---------------------------|
+| 1 | Set Up the Environment. Reproducible Research | WSL/terminal, R, RStudio, Quarto, git & github, tidyverse, arrow & duckdb | Literate programming, Managing Environments |
+| 2 | Advanced R. Functional programming | data types, copy-on-modify, functions, filter, map, reduce, control flow | R gotchas and how discipline + tidyverse solves them |
+
+:::
+
+## Python: Computational Toolbox
+
+::: {.column-page-inset-right}
+
+|   | Lecture Agenda  | Keywords              | Case Studies / Activities |
+|---|-----------------|-----------------------|---------------------------|
+| 1 | Set Up the Environment. Reproducible Research | WSL/terminal, conda, python, vscode, jupyter, git & github, arrow & duckdb | Literate programming, Managing Environments |
+
+:::
+
+
+Why these exact topics, since other courses in 18 lectures teach you either statistical learning, probability, statistics, causality, or deep learning? Of course, and they're excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.
+
+Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges.

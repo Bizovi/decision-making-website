@@ -4,10 +4,6 @@ format:
     toc-location: left
 ---
 
-
-
-
-
 ## Why did you study all of that?
 
 Why did we have to go through all those excruciating months doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics? 
@@ -77,7 +73,7 @@ flowchart TD
   - I would argue that in order to understand any complex system, be it a firm, an economy, the climate or environnment, we have to model how it **evolves in time**.
   - This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be impossible to reason about without the mathematical analysis.
 - **Probability** and **Statistics** is the language of `uncertainty`, the only instrument we have, that allows us to say something intelligent about how confident are we.
-  - We will explore the role of statistics at lenght, but as a quote, think of it as a tool which enables us to **change our mind** and decisions in the face of evidence.
+  - We will explore the role of statistics at length, but as a quote, think of it as a tool which enables us to **change our mind** and decisions in the face of evidence.
 - **Econometrics**, in my personal opinion, tries to separate the signal for the noise and make inferences about the **causal processes** in economic decisions and phenomena. It specializes statistics in the domain of economics, by infusing economic theory -- because you can't derive a scientific theory from data alone.   
 - **Time Series Analysis**, senso largo, bridges the gap between Systems Dynamics (which takes a more theoretical perspective) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolves in time, that are dynamic in their nature.
   - I like the metaphor of **Data Assimilation**, which is actually an entire field trying to introduce the empirical dimension to differential equations.
