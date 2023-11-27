@@ -13,11 +13,11 @@ website:
     search: true
     left:
       - href: 01_fundamentals/1_applications.qmd
-        text: "| Business |"
+        text: "| 1. Business |"
       - href: 01_fundamentals/stat_foundations.qmd
-        text: "| Stats |"
+        text: "| 2. Stats |"
       - href: references.qmd
-        text: "| Bayes |"
+        text: "| 3. Bayes |"
     right: 
       - href: about_me.qmd
         text: "About Me"
@@ -40,7 +40,7 @@ website:
       - href: index.qmd
         text: "i. Introduction"
       - href: 01_fundamentals/roadmap.qmd
-        text: "ii. Syllabus & Roadmap"
+        text: "ii. Schedule & Roadmap"
       - href: philosophy.qmd
         text: "iii. Course Philosophy"
       - text: "iv. Why study all of that?"

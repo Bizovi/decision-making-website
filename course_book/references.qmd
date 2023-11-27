@@ -1,5 +1,26 @@
 
 
+There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic -- you fill find here a list of **carefully curated resources**. Most of them have have **code**, **data**, and explained **theory** or methodology in a freely available e-book.
+
+::: {.column-margin}
+Often, you will have to combine various aspects of an use-case, model, method -- from different sources, taking the best from each author.
+:::
+
+
+There is little point in replicating well-executed examples from other authors, just for the sake of consistency of code and style. I will, however, migrate examples not available in our frameworks or language of choice. Other times we can benefit from a significant improvement over the original presentation or improving code quality.
+
+
+::: {.callout-tip}
+## Right level of granularity
+
+Instead of recommending whole books, which in this field are huge: 500-900p of dense material -- in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks. 
+
+They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. **Think of them as lego pieces.**
+:::
+
+I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner -- I can just do my best to make your journey less frustrating and more efficient.
+
+
 ::: {.column-page-inset-right}
 
 ```{mermaid}

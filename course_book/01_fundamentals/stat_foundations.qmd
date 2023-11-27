@@ -138,6 +138,49 @@ In each of these pairings, there is a 364/365 chance of having different birthda
 
 Go to richard McElreath's garden of forking paths next 
 
+
+::: {.callout-warning}
+## Need a crash course in probability and statistics?
+
+If you understand and can explain the following ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky, here are some readings:
+
+- **Probability Triple** and **Random Variables** - a quasi formal introduction is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of the course website. From my experience, not many students have this understanding after their probability theory classes.
+- **Collectivity** ("physical" structure), **Statistical Population**, **Sample** - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
+- **Parameter** (Estimand), **Estimator**, **Estimation/Statistic** - same resources as above [^4]
+- Stories behnid distributions: $Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k$. What about $Beta(a, b)$, $Gamma(k, \theta)$, and $Dirichlet(\bar{\theta})$ -- what are they good for?
+  - Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) from Joe Blitzstein.
+:::
+
+[^4]: Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian "frequentism".
+
+
+We start simple, by modeling a single random variable $Y$, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations  -- then sampling from the posterior with `pymc`, `numpyro`, and `bambi`.[^1]
+
+[^1]: The R equivalents would be `stan` and `brms`, `rstanarm`. `bambi` and `brms` are a high-level API for most common models.
+
+Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.
+
+::: {.callout-note}
+## Bayes Rule. Update your beliefs, often!
+
+Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of [BDA3](http://www.stat.columbia.edu/~gelman/book/), Chapter 1/2 of [Bayes Rules](https://www.bayesrulesbook.com/chapter-2.html), and Chapter 1/2 of [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/).[^2] If you prefer videos, enjoy the 3Blue1Brown [visual masterpiece](https://www.youtube.com/watch?v=HZGCoVF3YvM) on how to think like a Bayesian or [here](https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking).
+
+- (BDA3, Ch1): **Football spreads**, that can be estimated from [data about matches](http://www.stat.columbia.edu/~gelman/book/data/football.asc). What is the probability that a team wins? Are experts right, on average?
+  - If you're into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?
+  - For brevity, I won't elaborate much from now on, how to take an use-case and example to its limit. **If you're passionate about a particular topic -- go for it!**
+- (BDA3, Ch1): **Spelling correction**, based on [empirical frequencies](http://norvig.com/ngrams/) provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself -- it is good for a warm-up, but challenging enough to keep you occupied.
+- ([Probability 110](https://projects.iq.harvard.edu/stat110/home)): **Medical testing** for rare diseases, hypothetical example with code in my [course repository](https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb). We use the same idea to reason about how confident are we our code has no bugs.
+  - If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could've applied the same idea!
+
+For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses [here](https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics) and [here](https://www.coursera.org/learn/bayesian/home/week/3) for the theory and examples.
+:::
+
+[^2]: You will notice in the callouts that I point out where to read the theory -- for a conceptual understanding and to figure out the mathematical details
+
+[Or maybe you're passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence]{.aside}
+
+We applied Bayes rule and got some insightful results in three totally different domains. However, we weren't doing neither statistics, nor inference -- but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it's time for full-luxury Bayes and the simplest cases of inference.
+
 ## The probability triple
 
 In the [previous lecture](background.qmd#why-did-you-study-all-of-that), I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it's one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the **logic of uncertainty**, a formal language. [^fuzzy]
