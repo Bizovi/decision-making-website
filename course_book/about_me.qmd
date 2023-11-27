@@ -4,62 +4,34 @@ format:
     toc-location: left
 ---
 
-## Your Unorthodox Guide
 
 
-::: {.column-margin}
-![**Mihai Bizovi** | Head of Data Science \@AdoreMe](01_fundamentals/img/bizovi-pic-website.jpeg "Portrait"){width="60%"}
-:::
+
+
+
+
+## ~whoami: as engineer and leader
 
 **At my day job,** I'm a generalist -- navigating uncertainty and complexity to improve decision-making at scale.
 
+::: {.column-margin}
+![**Mihai Bizovi** | Head of Data Science \@AdoreMe (acquired by Victoria's Secret)](01_fundamentals/img/bizovi-pic-website.jpeg "Portrait"){width="60%"}
+:::
+
+- Responsible for AI Strategy, Decision Science, ML Systems Design
+- Historically had many hats -- Statistics, ML & Data engineering, AI PM
+- Critical applications along the value chain: 
+  - demand forecasting & inventory optimization systems
+  - recommender systems, NLP for try-at-home
+  - marketing: acquisition, CRO experiment design, CRM
+- I really believe in the idea of Skin in the Game
+
+
+
+## ~whoami: as teacher and researcher
+
 **As a teacher,** I aspire to contribute to the understanding of AI's complex landscape; how to navigate it, develop valuable skills, and become more effective at problem-solving.
 
-**As a person,** I aspire to a life of wisdom and meaning. Learning how to be present and deeply understanding what is friendship, caring, love, beauty, and spirituality.
-
-
-:::: {.columns}
-
-::: {.column width="50%"}
-![](img/phil_life.png "Philosophy"){width="90%"}
-:::
-
-
-::: {.column width="50%"}
-These are some roles that are important to me: the craft of AI, teaching, and just being. 
-
-On another note, my interests in AI, art, cognitive science, and philosophy have an aspect of science, craft, worldview, and deep participation, engagement. Moreover, they are deeply interconnected and I would even say, **synoptically integrated**.
-
-:::
-::::
-
-It is important to me that these conceptual frames fit into a coherent whole and contribute in a practical way towards a good life. When I started the blog in 2017, my work was at the center (metaphorically and literally), but now the golden thread is **philosophy as a way of life**.
-
-[Unfortunately, I have none of the answers of how does Intelligence, Rationality, Wisdom contribute to meaning in life -- at best, some plausible hypotheses]{.aside}
-
-I can't emphasise enough the importance of different levels of "knowing": propositional, procedural, perspectival, and participatory -- as it is not enough to know the facts (or have beliefs), but to know how to do something, to have a perspective of the "world" and a sense of participation in whatever you're engaged in. I mean that we're **agents** in different **arenas** of life, and the sense of meaning comes from an **attunement** to those arenas. We participate in a course of something, which has impact on the environment, which changes us and how we view and relate to the world, self and others.
-
-
-
-## Long Story Short
-
--   Graduate of Cybernetics (2017) and Quantitative Economics (2019)
-    -   Did some research in Complex Systems, Agent-Based Modeling, Systems' Dynamics, and Heterodox Economics, which was lots of fun
-    -   My serious work was at the intersection of Bayesian Statistics and Machine Learning (thesis, dissertation)
-- Teaching Data Science (by which I mean Decision Science) at university and private courses. You can check out the key ideas in the [course homepage](https://course.economic-cybernetics.com).
--   Head of Data Science at AdoreMe Tech, with the firm since 2016
-    -   Lingerie e-commerce in the U.S., with a PAYG, subscription and try-at-home business models
-    -   \$250m revenue in 2022, acquired by Victoria's Secret
-    -   70 tech people in Bucharest, over 300 employees
-    -   My work involves AI Strategy, Product Management, ML Systems Design [^index-6]
--   Some typical applications of AI in an e-commerce I contributed to:
-    -   Demand Planning and Inventory Optimization systems to prevent lost sales and excess inventory
-    -   Recommender Systems to help users find relevant, personalized items and bundles
-    -   Marketing optimizations in Acquisition/Advertisement, Engagement, CRM, Merchandising, Pricing and Promotion
--   Hobbies: 
-    -   Reading about "Philosophy as a Way of Life" & Cognitive Science
-    -   Painting, Hiking, Jazz/Classical/Metal 
-    -   Played chess professionally, but that much stress isn't worth it
 
 ::: {.column-margin}
 
@@ -67,5 +39,39 @@ I can't emphasise enough the importance of different levels of "knowing": propos
 
 :::
 
+- Maven *(yid: meyvn)* -- someone experienced to help you find a path 
+- Graduate of Cybernetics and Quantitative Economics
+  - Thesis & Dissertation on Bayesian Microeconometrics
+  - Research in Probabilistic Methods for Time Series
+  - Started in Systems' Dynamics and Economic Complexity
+- Speaking at conferences
+- Teaching since 2021 (ASE, Google Atelier) -- 4th iteration
+
+
+## ~whoami: as a person
+
+**As a person,** I aspire to a life of wisdom and meaning. Learning how to be present and deeply understanding what is the good, true, beautiful, love, and friendship.
+
+::: {.column-margin}
+![synoptic is to take the best of multiple perspectives, reduce conflict and contradiction -- then see where the evidence converges](img/phil_life.png "Philosophy"){width="90%"}
+:::
+
+- Cultivating wisdom -- philosophy as a way of life
+- Participating in meaningful friendships
+- Painting, hiking, coffee, 14 years of pro-ish chess
+- Art appreciation: blues, jazz, indie, opera, cinema
+- Reading: Cognitive Science, Evolution, Economics
+- How it fits together: synoptic integration
+
+
+On another note, my interests in AI, art, cognitive science, and philosophy have an aspect of science, craft, worldview, and deep participation, engagement. Moreover, they are deeply interconnected and I would even say, **synoptically integrated**. It is important to me that these conceptual frames fit into a coherent whole and contribute in a practical way towards a good life.
+
+
+I can't emphasise enough the importance of different levels of "knowing": propositional, procedural, perspectival, and participatory -- as it is not enough to know the facts (or have beliefs), but to know how to do something, to have a perspective of the "world" and a sense of participation in whatever you're engaged in. 
+
+I mean that we're **agents** in different **arenas** of life and the sense of meaning comes from an **attunement** to those arenas. We participate in a course of something, which has impact on the environment, which changes us and how we view and relate to the world, self and others.
+
+
+[Unfortunately, I have none of the answers of how does Intelligence, Rationality, Wisdom contribute to meaning in life -- at best, some plausible hypotheses]{.aside}
 
 Unsurprisingly, there will be lots of painting metaphors when it comes to simplicity, and cognitive science references when talking about ways in which we're biased and foolish. Chess, of course, inspires analogies of competition, strategy, and tactics to its service. 

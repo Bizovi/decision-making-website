@@ -11,9 +11,13 @@ website:
 
   navbar:
     search: true
-    # left:
-    #   - href: references.qmd
-    #     text: "2a. Bayes"
+    left:
+      - href: 01_fundamentals/1_applications.qmd
+        text: "| Business |"
+      - href: 01_fundamentals/stat_foundations.qmd
+        text: "| Stats |"
+      - href: references.qmd
+        text: "| Bayes |"
     right: 
       - href: about_me.qmd
         text: "About Me"
@@ -56,7 +60,7 @@ website:
         - href: 01_fundamentals/prerequisites.qmd
           text: "5. Learning from Data: Intuition and Bias"
       - text: "-----"
-      - section: "2. Fundamentals of Statistics"
+      - section: "2. Fundamentals of Probability & Statistics"
         href: 01_fundamentals/stat_foundations.qmd
         contents:
         - href: 01_fundamentals/stat_foundations.qmd
@@ -74,7 +78,7 @@ website:
 
   page-navigation: true
   page-footer:
-    left: "The course I wish I had when getting started. Built with ❤️ by Mihai Bizovi"
+    left: "The course I wish I had. Built with ❤️ by Mihai Bizovi"
 
 bibliography: references.bib
 highlight-style: pygments
