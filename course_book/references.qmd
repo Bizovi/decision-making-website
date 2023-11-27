@@ -1,5 +1,32 @@
 
 
+::: {.column-page-inset-right}
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   We develop a composable toolbox, capable to tackle the challenges of nonlinearity, heterogeneity, low level of aggregation, discreteness, missing data and heteroskedasticity. By putting together the right pieces in a right way, we can improve predictions and decisions in most aspects of a business. 
+
+flowchart TD
+  DM(Probability & Stats)
+  DM --> BB(Beta-Bin*) --> GPo(Gamma-Pois*) --> NIG(IG-Norm) --> G(Groups)
+  BB --> LR(Logistic Regr.)
+  DM --> LM(Linear Regr.) --> GLM(GLMs)  --> Caus(Hierarchical Models) --> Misc[/Time Series/]
+  LR --> GLM
+  GPo --> GLM
+  G <--> Caus
+
+  LM --> P(Prior Choice) --> Reg(Regularization) --> VS(Variable Selection)
+  LM --> MS(Model Selection) --> LOO(LOO-PIT)
+  LM --> Rb(Robustness) --> NA(Missing Data) --> Surv(Survival and Censoring)
+  LM -- nonlinear --> NL(Splines) --> BART(BART) --> GP(Gaussian Proc.)
+
+```
+
+:::
+
+
 ::: {.callout-note}
 ## Beta-Binomial Model. Estimating proportions
 

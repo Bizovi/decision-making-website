@@ -35,66 +35,42 @@ website:
     contents: 
       - href: index.qmd
         text: "i. Introduction"
+      - href: 01_fundamentals/roadmap.qmd
+        text: "ii. Syllabus & Roadmap"
       - href: philosophy.qmd
-        text: "ii. Course Philosophy"
-      - section: "1. Business Decisions and Probability"
+        text: "iii. Course Philosophy"
+      - text: "iv. Why study all of that?"
+        href: 01_fundamentals/learning.qmd
+      - text: "-----"
+      - section: "1. Business School for Data Scientists"
         href: 01_fundamentals/background.qmd
         contents:
+        - href: 01_fundamentals/1_applications.qmd
+          text: "1. Application Domains & Use-Cases"
+        - href: 01_fundamentals/2_performance_strategy.qmd
+          text: "2. Performance and Strategy"
         - href: 01_fundamentals/background.qmd
-          text: "1. Data Science in Business Context"
-        - href: 01_fundamentals/roadmap.qmd
-          text: "2. Syllabus & Roadmap"
+          text: "3. What is AI and Cybernetics?"
+        - href: 01_fundamentals/4_ml_stats.qmd
+          text: "4. Analytics, ML, Stats"
         - href: 01_fundamentals/prerequisites.qmd
-          text: "3. Prerequisites: Why did you study all of that?"
-        - href: 01_fundamentals/stat_foundations.qmd
-          text: "4. Foundations of Probability"
-        - href: 01_fundamentals/learning.qmd
           text: "5. Learning from Data: Intuition and Bias"
-      - section: "2a. Applied Bayesian Statistics"
+      - text: "-----"
+      - section: "2. Fundamentals of Statistics"
+        href: 01_fundamentals/stat_foundations.qmd
+        contents:
+        - href: 01_fundamentals/stat_foundations.qmd
+          text: "1. The Probability Triple"
+        - href: 02_causality/roadmap_abtest.qmd
+          text: "2. Syllabus & Roadmap"
+        - href: 02_causality/ab_testing.qmd
+          text: "3. A/B Testing study resources"
+      - text: "-----"
+      - section: "3. Applied Bayesian Statistics"
         href: references.qmd
         contents:
-          - href: 02_causality/roadmap.qmd
-            text: "1. Syllabus & Roadmap"
           - href: references.qmd
-            text: "2. Building Blocks"
-          - href: references.qmd#groups-and-partial-pooling  
-            text: "3. Groups and Partial Pooling"
-          - href: references.qmd#gaussian-linear-regression
-            text: "4. Gaussian Linear Regression"
-          - href: references.qmd#generalized-linear-models
-            text: "5. Generalized Linear Models"
-          - href: references.qmd#hierarchical-glms
-            text: "6. Hierarchical GLMs"
-      - section: "2b. Hypotheses and A/B Testing"
-        href: 02_causality/roadmap_abtest.qmd
-        contents:
-          - href: 02_causality/roadmap_abtest.qmd
-            text: "1. Syllabus & Roadmap"
-          - href: 02_causality/ab_testing.qmd
-            text: "2. A/B Testing study resources"
-      # - section: "2c. Causal Inference with DAGs (TBD)"
-      #   href: index.qmd#what-will-you-learn
-      #   contents:
-      #     - href: index.qmd#what-will-you-learn
-      #       text: "1. Syllabus & Roadmap"
-      # - section: "3a. Probabilistic Machine Learning"
-      #   href: 03_ml/roadmap.qmd
-      #   contents:
-      #     - href: 03_ml/roadmap.qmd
-      #       text: "1. Syllabus & Roadmap"
-      # - section: "3b. Deep Learning and Special Topics (TBD)"
-      #   href: 03_ml/roadmap.qmd
-      #   contents:
-      #     - href: 03_ml/roadmap.qmd
-      #       text: "1. Syllabus & Roadmap"
-      # - section: "4. Full Stack Data Apps"
-      #   href: 04_engineering/roadmap.qmd
-      #   contents:
-      #     - href: 04_engineering/roadmap.qmd
-      #       text: "1. Syllabus & Roadmap"
-      # - href: references.qmd
-      #   text: "X. Resources"
-
+            text: "1. Study Guide"
 
   page-navigation: true
   page-footer:
@@ -111,6 +87,7 @@ format:
     page-layout: full
     css: styles.css
     toc-location: left
+    toc: true
     
 editor: source
 reference-location: margin

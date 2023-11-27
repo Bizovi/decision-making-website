@@ -1,0 +1,94 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
+
+# Analytics, ML or Statistics?
+
+At this point, you should have a pretty good idea why data science is important, what are some possible applications and domains, what does it do and is concerned about. It is the motivation, real-world use-cases, and conceptual understanding that I promised at the beginning of the course.
+
+Disentangling the ambiguity around AI was one of the most difficult aspects of the course to articulate. Now, it's time to transition to a lower level of analysis (inside data science, not outside it), break down the landscape into manageable chunks and develop our toolbox, in which we learn how to formulate problems well and match them with existing models, methods, and technologies.
+
+One of the first tools I want to introduce, is distinguishing three ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:
+
+* **Analytics and Data Mining**, where the main goal is formulating better research questions and hypotheses, that is, get **inspiration**, find interesting and relevant patterns and relationships in massive datasets
+* **Machine Learning**, as a way to use training algorithms to go automatically from experience (data) to expertise (a program or recipe for prediction). Put in other words, learning from data, finding invariants, patterns which generalize beyond our sample and training data.
+* **Causal Inference** [^caus-stats] for making decisions with high stakes, where we have to understand the causal processes of the system in order to intervene optimally. It enables greater transparency, reliability, and rigor in the inferences and conclusions drawn.
+
+[^caus-stats]: I find that statistics is not the right term here, as it is too broad, especially recently when the lines between ML and Stats are getting more blurry, as one adopts methods from other. 
+
+![*Source: xkcd;* Which one to choose and when? We will have some unlearning to do here, as much of the previous courses were in one way or another focused on analytics. Even in statistics or econometrics, there is little from the field of causality, which is necessary to apply it to real-world challenges. On the other hand, you applied ML methods, but in my opinion, without understanding what ML is, without a rigorous process which would ensure we don't overfit or snoop the data, without a clear plan of how to deploy it to production and make decisions based on those predictions.](img/ds-adventure.png "Analysis"){width="90%"}
+
+::: {.callout-important}
+## The art of formulating a hypothesis
+
+In many intro to statistics or science courses, we take for granted the hypothesis, it is often our starting point. How does one come up with a business or scientific hypothesis with makes sense, is reasonable, plausible, deserves serious consideration? Since there are an infinity of possible ones, how do we pick the most relevant?
+
+I argue, it is an art which requires a kind of **intuition**, **sensibility**, and **attunement** to the problem. In my opinion, it is the most underrated aspect of scientific enquiry and process: a good problem formulation often gets us halfway towards a solution.
+
+In this course we focus on data mining and analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of the behavior, coupled with a deep understanding of the field, existing theories and their shortcomings and inconsistencies. Often, these hypotheses follow as a consequence from the theory itself.
+:::
+
+If we don't have to make decisions and want to find interesting patterns in data, to inform our future questions, we have lots of methods for exploratory data analysis -- from visualization (manual) to clustering (automated) and model-driven exploration. Sometimes, we just want to monitor and display the facts and current state of a business on a dashboard -- this is why your previous class was on BI (Business Intelligence).
+
+Then, in the decision-making processs, these questions and hypotheses can be communicated to statisticians and decision-makers, so that they have a clearer direction and more promising candidates to experiment with. This doesn't mean that what we found the causal process which makes some clients more profitable than others, when we notice a difference between groups or clusters of clients.
+
+
+If we do have to make a few, high-stakes, strategic decisions of major importance to business outcomes and user experience, that means we need some rigorous statistics. For example, how to price the products, whether to enter a new market, what products to develop, how to allocate advertisement spending across different platforms, whether to deploy a new recommender system. We will discuss at length what can go wrong in drawing conclusions from data alone (with analytics or ML), and how that can backfire spectacularly.
+
+
+If we have to make lots of decisions at scale and high frequency, for example -- doing demand forecasting and inventory optimization for 100k product SKUs, it cannot be done manually or with carefully designed experiments. In this case, an appropriate choice would be to learn from data and get predictions as reliable as possible. Keep in mind, that we will have to be very careful when defining what the model is optimizing for -- it has to be aligned with business objectives.
+
+Why ML, since we put so much emphasis onto scientific rigor and trying to infer the causal processes? Sometimes -- you don't have a theory. For example, in recommender systems it's just too complicated, with so many heterogenous users and items, each with their specific preferences and idiosyncracies.
+
+
+
+::: {.callout-tip}
+## Why not use all at various stages of a project?
+
+It is not a debate of which one is better: ML vs Stats vs Analytics. One has to cycle through these approaches, gain greater understanding, experience, and skill in order to use the appropriate tools in the right context. 
+
+I recommend the following 4-part presentation [^cassie-mfml] by Cassie Kozyrkov, so that you get a good idea of how AI fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium.
+:::
+
+Pay close attention to the process of developing data-driven products [^cassie-steps] and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians, and data engineers. A good blueprint [^pair] for thinking about how to define and plan an AI project is given by Google's PAIR (People and AI Research group). We will discuss all of this in detail during our next lectures and case studies.
+
+
+::: {.callout-important}
+## Are we in the business of ML?
+
+The next two questions are tremendously important and will prevent you from embarking on an AI project which is doomed from the start:
+
+- Is there a value proposition for AI? In other words, is there an underlying pattern to be discovered?
+- Do I have the (necessary and relevant) data?
+
+If yes and yes, we MIGHT be in business! But we shall not forget about the pragmatic aspects: is it feasible to be done with a small team, without a huge investment? What is the simplest way we can solve it? Are we solving the right problem? Are we making the job of people in the firm easier and more efficient?
+:::
+
+Make no mistake, the data science field is fascinating and full of exciting applications, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI and get humble, down to earth about what it can and can't do -- its power, but also the limitations:
+
+- Just take a look at how many AI tools have been built to catch covid, and none helped [^mit-ai-covid]
+- One part of the problem is the mismatch between the real/business problem and objectives, versus what models optimize for. Vincent Warmerdam brilliantly explains it in "The profession of solving the wrong problem"[^war-wrong-problem] and "How to constrain artificial stupidity" [^war-stupidity].
+
+
+::: {.callout-warning}
+## Split your damn data! (on data snooping)
+
+Since we're engaging in the business of data mining and analytics at one point or another of the project, we have to be extra careful. Intuitively, you understand that discovering hypotheses and testing them on the same set of data is a bad idea, because we'll get an overly confident estimation of how good it is. 
+
+However, sometimes, we don't shy away from doing an exploratory data analysis, finding relevant and predictive features for our target variable by trying out a few models. Next day, we forget about this, having the conclusions crystalized in our mind, and apply a new, final model ... on the same data. Often we get away with this, but it is as bad, meaning equivalent to the first case -- we contaminated the data with our mining.
+
+So, before we get into the nuances of model validation, selection, and experiment design, get into the habit of always splitting your data. Give that test dataset to a friend, locked under a key and don't let her give you that data, until you have your final model to be deployed and used for decisions.
+:::
+
+Why go through all of that pain to critique our own model with such a vigor? The answer is simple -- if it passes this rigorous critique, it has greater chance of finding a real/causal pattern and generalize to examples outside our sample. 
+
+[^cassie-mfml]: C.Kozyrkov - [Making Friends with Machine Learning](https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG)
+[^cassie-ref]: C. Kozyrkov (Chief Decision Scientist | Google) - https://kozyrkov.medium.com/ 
+[^cassie-steps]: C.Kozyrkov - [12 Steps to Applied AI](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3)
+[^pair]: People and AI Research | Google - [Guidebook](https://pair.withgoogle.com/guidebook/)
+[^mit-ai-covid]: W.Heaven - [Hundreds of AI tools have been built to catch covid. None of them helped.](https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/)
+[^war-wrong-problem]:  V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo)
+[^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)
