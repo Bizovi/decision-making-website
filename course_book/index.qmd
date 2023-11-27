@@ -5,25 +5,17 @@ format:
 lang: en
 ---
 
-::::: {.column-page-inset-right}
-:::: {.columns}
+This website emerges out of teaching data science to students of various backgrounds and my practice in the industry as an engineer and leader.
 
-::: {.column width="25%"}
-![](01_fundamentals/img/bizovi-pic-website.jpeg "Portrait"){width="90%"}
+::: {.column-margin}
+![**Mihai Bizovi** | Head of Data Science \@AdoreMe](01_fundamentals/img/bizovi-pic-website.jpeg "Portrait"){width="60%"}
 :::
 
-::: {.column width="75%"}
-[Mihai Bizovi](about_me.qmd) | Head of Data Science \@AdoreMe
-
-This website emerges out of teaching data science to students of various backgrounds and my practice in the industry as an engineer and leader.
 
 I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop **valuable skills**, and become more **effective at problem-solving**. To achieve this, we need to master "the fundamentals."
 
 I believe that improving **decision-making** is the reason why we practice AI, but courses often don't emphasize that. We're also getting increasingly specialized -- which makes us miss the interdisciplinary, big picture.
-:::
 
-::::
-:::::
 
 
 ## Decision-Making for the Brave and True {.unnumbered}
@@ -41,7 +33,7 @@ This is an introductory, big picture, free and open-source course which bridges 
 ::: {.callout-tip}
 ## Think of youself as a business person with superpowers
 
-This is the **best advice** I ever got as a novice data scientist. With advances in statistical methods, computing and engineering, it is easy to lose track of this simple and elegant idea.
+This is the **best advice** I ever got as a novice data scientist. It is easy to lose track of this simple and elegant idea with the recent advances in statistics and machine learning.
 :::
 
 This is the **course I wish I had** when starting my journey in data science, which would prepare me for the realities of the industry, often very different from the academic world. In my teaching, I achieve this by putting business decisions, understanding the domain, and working software at the forefront of each (statistical) tool we learn. 
@@ -59,7 +51,14 @@ In my opinion, junior data scientists and ML practitioners a few years into thei
 :::
 
 
-The course is challenging due to its breath and depth. At the same time, this is NOT a bootcamp: it is not enough by itself to land you a job, which requires lots of practice and extra study.  To the service of understanding, it becomes quite abstract and conceptual at times, but I hope you bear with me until you see the benefits of those abstractions.
+The course is challenging due to its breadth (across disciplines) and depth (starting from fundamentals). In service of understanding, it becomes conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Keep in mind that:
+
+- It is NOT a theoretical course, nor a replacement for Probability & Mathematical statistics and other prerequisites. There are two possibilities:
+  - You already had those courses and will look at them with a fresh perspective 
+  - Otherwise, treat it as learning roadmap of the most relevant ideas. 
+- At the same time, this is NOT a bootcamp, nor a replacement for learning programming in Python/R for data science
+  - Therefore, it is not enough by itself to land you a job
+  - For that, there are many wonderful resources for practice and study
 
 Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea years after, with greater wisdom and skill -- to unlock its real power.
 
@@ -68,9 +67,9 @@ Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together 
 ::: {.callout-warning}
 ## Overwhelming amount of content. What is best for learning?
 
-Given the over-abundance of learning resources, it is too much to sift through a hundred pages of Coursera in the data science section, books, and tutorials to find the optimal ones. Inevitably, there is so much bullshit and repetition.
+Given the over-abundance of learning resources, it is too much to sift through a hundred pages of Coursera in the data science section, books, and tutorials to find optimal ones. Inevitably, there is so much bullshit and repetition.
 
-The [roadmap provided here](#what-will-you-learn) should help you navigate it and find the shortest path towards developing your skills and better decisions in your firm. Pick a module you're passionate about, for example, Bayesian Statistics and look in the [resources](references.qmd) page for a guide where to start reading and practicing.
+The [roadmap provided here](01_fundamentals/roadmap.qmd) should help you navigate it and find the shortest path towards developing your skills and better decisions in your firm. Pick a module you're passionate about, for example, Bayesian Statistics and look in the [resources](references.qmd) page for a guide where to start reading and practicing.
 :::
 
 ## Why should you care?
@@ -89,7 +88,9 @@ You don't, at least if you want to have a balanced life. That's why I choose to 
 You will be surprised how far can you go with simple, even linear models. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.
 :::
 
-But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses?
+But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses? It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. 
+
+Even if you are not a data scientist, you will work with them in one form or another *(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)*. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.
 
 In university years, you've probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on.
 
@@ -103,7 +104,6 @@ I want you to take away ONE thing, that is "AI" and Data Science in Businesses b
 
 [^index-2]: [VUCA: a mental model to better understand the world](https://www.vuca-world.org/where-does-the-term-vuca-come-from/)
 
-It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. Even if you are not a data scientist, you will work with them in one form or another *(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)*. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.
 
 > When somebody asks you what have you learned in this book and course, I suggest two metaphors:[^index-3] one of simplification and another of seeing relations
 
@@ -118,37 +118,32 @@ It can be a function of decision-making support or the system/product itself, li
 
 ## What will you learn?
 
-I always start with an exploration of [decisions in businesses](01_fundamentals/background.qmd), then clarify what does AI mean and where does it add value. If we view statistics as **changing our minds and actions in the face of evidence** -- fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.
+I always start with an exploration of [decisions in businesses](01_fundamentals/1_applications.qmd), then clarify what does AI mean and where does it add value. If we view statistics as **changing our minds and actions in the face of evidence** -- fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.
 
-These fundamentals are not "just theory", it is what will make or break our project in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That's why it's essential to take every tool and **apply** it in the context of an appropriate use-case/application -- meaning, **we'll code a lot**.
-
-
-My attempt in organizing the teaching is to split the course into self-contained modules, with the exception of the first one, which should give you all the necessary prerequisites. I'm catching up on writing for the modules 1, 2a, 2b -- but the progress has been very slow. The good news is that you can safely use the carefully curated lists of resources and suggested practices.
-
-- [**Module 1**](01_fundamentals/roadmap.qmd): Business Decisions and Probability Fundamentals
-- [**Module 2a**](02_causality/roadmap.qmd): Applied Bayesian Statistics
-- [**Module 2b**](02_causality/roadmap_abtest.qmd): Experiment Design and A/B Testing
+These fundamentals are not "just theory", it is what will make or break projects in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That's why it's essential to take every tool and **apply** it in the context of an appropriate use-case/application -- meaning, **we'll code a lot**.
 
 
+My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.
+
+- [**Module 1**](01_fundamentals/roadmap.qmd): Business School for Data Scientists
+- [**Module 2**](01_fundamentals/stat_foundations.qmd): The Fundamentals of Probability and Statistics
+- [**Module 3**](references.qmd): Applied Bayesian Statistics
+
+
+
+
+**My preferred sequence** is to go in parallel with the "business school" and the fundamentals of probability and statistics. I call it business school, because it's at the intersection of business economics and data science -- focused on the process (of ML, statistics) and not so much on content, focused on the problem and not so much on solutions.
+
+
+Once we have a confident grasp of the fundamentals, we continue on the path of **Applied Bayesian Statistics**. It is an extremely flexible and "composable" approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face. 
 
 
 ::: {.column-margin}
 ![*(Source: [R. McElreath](https://youtu.be/KNPYUVmY3NM) -- Science before statistics)*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
 :::
 
-Once we have a confident grasp of the fundamentals, we continue with understanding and applying Bayesian Statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face. 
+Did you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do **randomized experiments**. We'll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it's so easy to fall into.
 
-
-::: {.callout-tip}
-## Go to "Resources" page for practice!
-
-Conceptual understanding by itself is not enough. So, I curated a [list of resources](references.qmd) to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
-
-Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.
-:::
-
-
-Did you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do randomized experiments. We'll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it's so easy to fall into.
 
 ::: {.callout-note}
 ## The art of formulating a hypothesis
@@ -156,18 +151,16 @@ Did you get comfortable with building custom statistical models for inference an
 In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks -- especially when it comes to pricing and recommender systems. That's not your stats 101!
 :::
 
-
 Often, A/B tests and randomised experiments are unfeasible or unethical. Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the "world" works -- translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).
 
 
-Thus, we acknowledged the limitations of inferring an association, so it's time to get more powerful tools from causal inference. We can leverage natural experiments. This is truly challenging: it is an art and science, in contrast with the auto-magic pattern recognition of ML. It requires deep thinking and understanding. 
-
+Thus, we acknowledged the limitations of inferring an association, so it's time to get more powerful tools from **causal inference**. It will enable us to extract new insights from natural experiments and observational data. Causal inference requires deep thinking and understanding, which is truly challenging -- it is an art and science, in contrast with the auto-magic pattern recognition of ML. 
 
 
 ::: {.callout-important}
 ## What if I care only about ML?
 
-Even if you're interested only in machine learning, most practitioners will emphasize the importance of mastering regression (generalized linear models) and doing A/B tests to gather evidence that our new model brings an improvement. 
+Even if you're interested only in machine learning, most practitioners will emphasize the importance of mastering regression (often starting with generalized linear models) and doing A/B tests resulting in evidence that our new model brings an improvement (or not). 
 
 This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML -- the lines between these two fields are indeed very blurry.
 :::
@@ -201,14 +194,25 @@ That is your final project for the course and something you can brag about in yo
 The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
 
 
+
+::: {.callout-tip}
+## Go to "Resources" page for practice!
+
+Conceptual understanding by itself is not enough. So, I curated a [list of resources](references.qmd) to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
+
+Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.
+:::
+
+
 ::: {.callout-warning}
 ## All modules are work in progress (as of Dec 2023)
 
-I haven't done any writing on ML, Causal Inference, or building full-stack data apps. The idea is to bring new insights and ways of learning, since there are already many excellent resources on the web -- so, redundancy is the last thing I want.
+I haven't done any writing on ML, Causal Inference, or building full-stack data apps. The idea is to bring new insights and ways of learning, since there are already many excellent resources on the web.
 
-- **Module 2c**: Causal Inference with Directed Acyclic Graphs
-- **Module 3a**: Probabilistic Machine Learning
-- **Module 3b**: Deep Learning and Special Topics
-- **Projects**: Software Engineering and Full-Stack Data Apps
+- **Module 4**: Causal Inference and Directed Acyclic Graphs
+- **Module 5**: Probabilistic Machine Learning
+- **Module 6**: Deep Learning and Special Topics
+- **Module 7**: Software Engineering and Full-Stack Data Apps
 
 :::
+

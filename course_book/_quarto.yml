@@ -95,3 +95,6 @@ reference-location: margin
 comments:
   hypothesis: 
     theme: clean
+
+resources:
+  - CNAME

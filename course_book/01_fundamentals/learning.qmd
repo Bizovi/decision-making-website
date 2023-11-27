@@ -125,7 +125,7 @@ Therefore, critical thinking becomes that much more important when we have these
 
 
 <!-- Data Science Context, in Business, Interdisciplinarity --->
-[^pragmatic-ai-gcp]: M. Bizovi - [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)
+<!-- 
 [^jordan-ai]: K. Pretz - [Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says 
 [^jordan-revolution]:  M. Jordan - [Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9): The Revolution Hasn’t Happened Yet
 [^cassie-mfml]: C.Kozyrkov - [Making Friends with Machine Learning](https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG)
@@ -137,4 +137,4 @@ Therefore, critical thinking becomes that much more important when we have these
 [^war-wrong-problem]:  V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo)
 [^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)
 
-[^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html)
+[^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html) -->

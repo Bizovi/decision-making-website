@@ -61,8 +61,11 @@ I can't emphasise enough the importance of different levels of "knowing": propos
     -   Painting, Hiking, Jazz/Classical/Metal 
     -   Played chess professionally, but that much stress isn't worth it
 
-[^index-6]: ![See one of my conference talks at BigDataWeek, intended for a mixed tech/business audience: [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)](01_fundamentals/img/me.jpeg "Reality"){width="90%"}
+::: {.column-margin}
 
+![See one of my conference talks at BigDataWeek, intended for a mixed tech/business audience: [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)](01_fundamentals/img/me.jpeg "Reality"){width="90%"}
+
+:::
 
 
 Unsurprisingly, there will be lots of painting metaphors when it comes to simplicity, and cognitive science references when talking about ways in which we're biased and foolish. Chess, of course, inspires analogies of competition, strategy, and tactics to its service. 

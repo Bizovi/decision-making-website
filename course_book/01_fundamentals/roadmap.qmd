@@ -153,3 +153,4 @@ We applied Bayes rule and got some insightful results in three totally different
 Why these exact topics, since other courses in 18 lectures teach you either statistical learning, probability, statistics, causality, or deep learning? Of course, and they're excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.
 
 Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges.
+
