@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Decision Science Course – prerequisites</title>
+<title>Decision Science Course – performance_strategy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01_fundamentals/4_ml_stats.html" rel="prev">
+<link href="../01_fundamentals/4_ml_stats.html" rel="next">
+<link href="../01_fundamentals/1_applications.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -134,7 +135,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">1. Business School for Data Scientists</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/prerequisites.html">5. Learning from Data: Intuition and Bias</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">1. Business School for Data Scientists</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/2_performance_strategy.html">2. Performance and Strategy</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -188,7 +189,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/2_performance_strategy.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_fundamentals/2_performance_strategy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2. Performance and Strategy</span></a>
   </div>
 </li>
@@ -206,7 +207,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link active">
+  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
   </div>
 </li>
@@ -266,8 +267,12 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-did-you-study-all-of-that" id="toc-why-did-you-study-all-of-that" class="nav-link active" data-scroll-target="#why-did-you-study-all-of-that">Why did you study all of that?</a></li>
-  <li><a href="#give-statistics-another-chance" id="toc-give-statistics-another-chance" class="nav-link" data-scroll-target="#give-statistics-another-chance">Give statistics another chance</a></li>
+  <li><a href="#business-performance-and-strategy" id="toc-business-performance-and-strategy" class="nav-link active" data-scroll-target="#business-performance-and-strategy">Business Performance and Strategy</a>
+  <ul class="collapse">
+  <li><a href="#how-to-navigate-a-lecture" id="toc-how-to-navigate-a-lecture" class="nav-link" data-scroll-target="#how-to-navigate-a-lecture">How to navigate a lecture</a></li>
+  <li><a href="#what-is-strategy" id="toc-what-is-strategy" class="nav-link" data-scroll-target="#what-is-strategy">What is Strategy?</a></li>
+  <li><a href="#business-analysts-workflow" id="toc-business-analysts-workflow" class="nav-link" data-scroll-target="#business-analysts-workflow">Business Analysts’ Workflow</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -280,138 +285,158 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<section id="why-did-you-study-all-of-that" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="why-did-you-study-all-of-that">Why did you study all of that?</h2>
-<p>Why did we have to go through all those excruciating months doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics?</p>
-<p>It was very frustrating for me, because it wasn’t clear how they fit together, what is the common thread, and more importantly, what part of the theory and particular concepts would be helpful in solving the kind of problems we discussed, and which ones are designed to enhance our academic understanding.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-
-</div></div><div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sounds good – doesn’t work?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>An important question is what works well in practice and why. On the other hand, what is intellectually fascinating, but not at all straightforward to apply. What is a minimal or most powerful set of the prerequisites that you need?</p>
-<p>Let’s draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned form the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects – the inspirations and tools are quite carefully picked.</p>
-</div>
-</div>
-<div class="cell" data-fig-width="9">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
-  LA[Linear Algebra] --&gt; OR[Operations Research]
-  MA[Mathematical Analysis] --&gt; OR
-  MA --&gt; SD[Systems Dynamics]
-  %% CS[CS Algorithms] --&gt; OR
-  
-  PT[Probability] --&gt; MS[Statistics] --&gt; EC[Econometrics]
-  EC --&gt; Caus[/Causal Inference\]
-  EC --&gt; TS[Time Series]
-
- %% subgraph 1
-  Caus --- DM[/Data Mining\] --- ML[/Machine Learning\] 
-  ML --- Caus
- %% end
-
-  OR --&gt; ML
-  MS --&gt; ML
-  MA --&gt; PT
-  SD --&gt; Caus
-
-  Caus --- Econ[[Economics]]  
-  Econ --- GT[Game Theory]
-  Econ --- DT[Decision Theory]
-
-  style Caus fill:#f7f5bc
-  style ML fill:#f7f5bc
-  style DM fill:#f7f5bc
-
-  DM --- FSDA[/Full-Stack Apps\]
-  FSDA --- DB[Databases/SQL]
-  FSDA --- OOP[OOP]
-  Econ --- TS
-
-  style FSDA fill:#f7f5bc
-</pre>
-</div>
-<figcaption class="figure-caption">Figure&nbsp;1: Think of this as a stuctural organization of the fields and courses you studied before. Some are more useful in analytics, some in ML and some in making causal inferences, that is, based on data + theory.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li><strong>Linear Algebra</strong> is a language of <code>data</code>. The vast majority of models and training algorithms can be reduced to operations on matrices. Therefore, it is not a coincidence that is almost the only tool we have, in order to take these models and implement them in code, on a computer.
-<ul>
-<li>My perspective over linear algebra is ultimately <strong>computational</strong> and <strong>geometric</strong>, in the sense of the “space” the data points live in and the transformations of that space.</li>
-<li>Ultimately, no matter the data type: image, video, text, voice, structured, panel – all can be represented as <strong>multidimensional arrays</strong> (or tensors, if you wish).</li>
-</ul></li>
-<li><strong>Mathematical Analysis</strong> is all about <code>change</code>, formalizing how a function behaves with respect to its arguments and parameters. It is an essential building block in <strong>optimization</strong> and deep learning (automated differentiation).
-<ul>
-<li>I would argue that in order to understand any complex system, be it a firm, an economy, the climate or environnment, we have to model how it <strong>evolves in time</strong>.</li>
-<li>This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be impossible to reason about without the mathematical analysis.</li>
-</ul></li>
-<li><strong>Probability</strong> and <strong>Statistics</strong> is the language of <code>uncertainty</code>, the only instrument we have, that allows us to say something intelligent about how confident are we.
-<ul>
-<li>We will explore the role of statistics at length, but as a quote, think of it as a tool which enables us to <strong>change our mind</strong> and decisions in the face of evidence.</li>
-</ul></li>
-<li><strong>Econometrics</strong>, in my personal opinion, tries to separate the signal for the noise and make inferences about the <strong>causal processes</strong> in economic decisions and phenomena. It specializes statistics in the domain of economics, by infusing economic theory – because you can’t derive a scientific theory from data alone.<br>
-</li>
-<li><strong>Time Series Analysis</strong>, senso largo, bridges the gap between Systems Dynamics (which takes a more theoretical perspective) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolves in time, that are dynamic in their nature.
-<ul>
-<li>I like the metaphor of <strong>Data Assimilation</strong>, which is actually an entire field trying to introduce the empirical dimension to differential equations.</li>
-</ul></li>
-<li><strong>Operations Research</strong> is about <strong>optimization</strong> with constraints and <strong>efficiency</strong>. However, the problem is that often, we start from an Integer/Linear Programming problem formulation, and that is easy part – to apply an existing algorithm. The hard part is to reduce a messy real world problem at a large scale to that formulation, especially under uncertainty and nonlinearity.</li>
-<li><strong>Economics</strong> touches upon a wide range of aspects of our society and human behavior. In mathematically-oriented courses, you can think of it as <strong>optimization with constraints</strong>, the constraints being given by our positive or normative theory of economic <strong>decision-making</strong>.
-<ul>
-<li>In this course and in practice, we care more about <strong>business economics</strong>. It’s a very different beast from theoretical ideas in macroeconomics (ISLM, DSGE type of models) or microeconomic utilitarianism.</li>
-<li>By business economics, we mean marketing, management, corporate finance, decision theory, supply chain, and logistics.</li>
-<li>What you have to know about marketing, especially if you are skeptical like me, is that it became innovative, mathematical, rigorous and data-driven. Look at any marketing journal: how much econometrics and ML models are in there.</li>
-<li>So, if you hold the opinion that marketing and management are fields full of fluff – I advise you to rethink your positions. In the context of tech firms, you can’t bullshit your way through it.</li>
-<li>Moreover, when you combine marketing with <strong>behavioral economics</strong> and psychology, it introduces another layer of nuance and understanding over our decision-making.</li>
-<li>When we make decisions, we like to think of ourselfs as objective, but we have lots of <strong>biases</strong> and blind spots which prevent us to see the reality clearly. We often find patterns and regularities which are just noise, not causal. So, the usefulness of this kind of domain knowledge from economics about human behavior helps us to be wiser, that is, to prevent self-deception and self-sabotage towards achieving the goals and objectives.</li>
-</ul></li>
-</ul>
+<section id="business-performance-and-strategy" class="level1 page-columns page-full">
+<h1>Business Performance and Strategy</h1>
+<p>Arguably, we live in a <em>volatile, uncertain, complex, and ambiguous</em> world that we have to understand in order to navigate it well. By “world”, I mean the economy, society, environment, or any other complex system – especially when human behavior is involved. It is reasonable to ask: wasn’t it always the case, depending on how we define the terms, level of analysis, and point of view?</p>
+<div class="page-columns page-full"><p>I think it’s a matter of scale and magnitude in VUCA dimensions, where an accelerating rate of change poses a great challenge to our capacity to adapt. Instead of an evolutionary or philosophical comment on why we need this field of data/decision science, I have two questions on my mind when it comes to living well or improving business outcomes: <strong>what is true</strong> and <strong>how should I act</strong>? <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This implies that we already framed the problem and figured out what we want to achieve, and that indeed we chose the right goals and objectives. Moreover, the questions of epistemiology and ethics are a never ending topic for discussion and enquiry.</p></li></div></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-A word of encouragement
+Decision Science: (not only) truth and action
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>None of those courses were useless. Think of how can we take parts from each of those prerequisites, which are relevant in ML/DSc, so that we have more tools to solve problems of the complexity we encounter. To reiterate, data science is an umbrella term, borrowing from them all.</p>
+<p>Let’s start from a business setting of an e-commerce, where we want to increase sales, customer satisfaction, and reduce costs. Imagine three scenarios, which neatly fall into the SWOT framework:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/trajectories.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="figure-caption"><em>Source: <a href="https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf">Kim Warren</a></em> - Status Quo, Desired and Feared Trajectories</figcaption>
+</figure>
+</div>
+<ul>
+<li>We keep the status quo, doing everyting as before. What is the most likely trajectory of profits? Can we come up with an educated guess? If the trajectory looks good, that is our <strong>strenghts</strong> and compentencies contributing to it, if not, our <strong>weakness</strong>.</li>
+<li>A feared trajectory, that is, if our business is hit by a shock in supply chain, inflation, by competition or customer demand. It’s the <strong>threats</strong>.</li>
+<li>A desired or aspirational trajectory. Is it reasonable and realistically achievable? If yes, what strategy and tactics should we implement, how sould we act? This is our <strong>opportunity</strong>.</li>
+</ul>
 </div>
 </div>
+<p>After this exercise, we defined more precisely where we stand, that is, quantify the current state of the firm. We framed the problem in terms of most relevant outcomes and we’re in the process of figuring out what are the optimal goals to aim for. Obviously, we need a mechanism, measurements to know that we’re on track and to recognize when we get there. Now, let’s go back to our two questions and unpack them:</p>
+<ul>
+<li><strong>What is true?</strong> In the most general sense, we’re not asking for a mathematical and logical truth, but if it’s plausible, probable, deserves serious consideration, is backed by evidence. I also mean that we understand the underlying causal mechanisms. Not least, an assessment of the current situation. The metaphor which I suggest for this is “seeing clearly”, through the fog, illusions, and biases. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+<li><strong>How should I act?</strong> What is plausible doesn’t entirely answer this question, we can’t derive an ought from is.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In business settings, I would think about action in terms of strategic alignment and optimisation.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Recommended reading: Scout Mindset by Julia Galef</p></li><li id="fn3"><p><sup>3</sup>&nbsp;This is one of the most important and applicable philosophical ideas, introduced by David Hume: when one makes claims about what ought to be that are based solely on statements about what is.</p></li></div><p>The only missing pieces from this mental model that I argue for is tremendously important: <strong>iteration</strong> and <strong>feedback</strong>. Due to VUCA, we can’t be sure our actions are optimal, or even that we’re solving the right problem, therefore fast iteration and feedback ensures we’re not taking too much risk, that we find out early about problems in our thinking and action, that we can change course to steer the ship back on track.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wait, this sounds familiar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sounds an awflul lot like Cybernetics, doesn’t it? Especially if we have the idea of a firm as a complex adaptive system as a pressuposition for this discussion.</p>
+</div>
+</div>
+<!-- You might've heard in the news that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses? -->
+<p>Now that it’s more clear what I meant in the course introduction by improving business outcomes and bringing value to organizations, I didn’t yet explain what does analytics, data science, machine learning, and AI do or are, and how to they fit in the picture we painted so far.</p>
+<section id="how-to-navigate-a-lecture" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="how-to-navigate-a-lecture">How to navigate a lecture</h2>
+<p>You might’ve noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don’t get lost in various detours taken and keep the big picture in mind.</p>
+<div class="page-columns page-full"><p>My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This is a course in which we look at the widest possible range of methods and models, without going into excruciating detail, as I don’t know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job.</p></li></div></div>
+<div class="cell" data-fig-width="9">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
+  DM[Decision-Making] --&gt; SWOT[SWOT] --&gt; St[Strategy]
+  
+  St --&gt; Domains[Domains] -- case studies --&gt; U[Uber / Rides] --&gt; Ecom[E-Commerce]
+  St --&gt; BAW[Analyst's workflow] --&gt; F[Why did you study those?]
+  DM --&gt; AI[What is AI?] --&gt; Cy[Cybernetics Detour] 
+  Cy --&gt; Choice[Stats/ML/Analytics]
+
+  F --&gt; BYOP[Bring your own problem]
+
+
+  style U fill:#f7f5bc
+  style Ecom fill:#f7f5bc
+  style F fill:#f7f5bc
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: A mind map and roadmap of the ideas and topics in this lecture. It is designed to give you a wide context in which AI is used and misused. The classroom version is designed to be participatory and conversational, but I will try to do my best to communicate that spirit in written form</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor’s degree. Next, we discuss what can go wrong while drawing conclusions from data – culminating in a discussion of a problem of choice you’re passionate about.</p>
 </section>
-<section id="give-statistics-another-chance" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="give-statistics-another-chance">Give statistics another chance</h2>
+<section id="what-is-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-strategy">What is Strategy?</h2>
+<p>Sounds like a naive question, but bad strategy is prevalent – which comes from a misunderstanding about what is a strategy. I highly recommend <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy">this article published by McKinsey</a> – we learn better from other’s mistakes.</p>
+<p>In short, it is not just <strong>aspiration</strong> towards goal or having a <strong>vision</strong> or setting a <strong>target</strong>. By analogy, remember the SMART criteria when you’re setting goals. As true consultants, we can summarize the steps involved in developing a strategy in a matrix.</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 36%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Outcome</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Honest diagnosis</td>
+<td>Identify obstacles</td>
+<td>Few critical, relevant aspects</td>
+</tr>
+<tr class="even">
+<td>Guiding policy</td>
+<td>General approach to overcome</td>
+<td>Focused on key aspects</td>
+</tr>
+<tr class="odd">
+<td>Coherent actions</td>
+<td>Support policy with action plan</td>
+<td>Coordinated and focused</td>
+</tr>
+</tbody>
+</table>
+<p>Since strategy informs so much of decision-making, know your firm’s strategy – ask around, understand it, contribute to it. Call out bad strategy.</p>
+</section>
+<section id="business-analysts-workflow" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="business-analysts-workflow">Business Analysts’ Workflow</h2>
+<div class="page-columns page-full"><p>This is a lot to take in! But there is one more thing to explore – a brilliant idea from a course by Dr.&nbsp;Adam Fleischhacker <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Adam Fleischhacker - <a href="https://www.causact.com/">Introduction to Business Analytics</a>: Intro to Bayesian Business Analytics in the R Ecosystem</p></li></div></div>
+<blockquote class="blockquote">
+<p>“You will translate real-world scenarios into both mathematical and computational representations that yield actionable insight. You will then take that insight back to the real-world to persuade stakeholders to alter and improve their real-world decisions.”</p>
+</blockquote>
+<p>Dr.&nbsp;Fleischhacker makes an illuminating distinction between the <strong>business analyst’s workflow</strong> and a machine learning workflow, and sets up the normative criteria which make it successful. In our course, his workflow falls under the discussions related to <strong>causal inference</strong>. One interesting thing to note, is the convergence in the approach of an extremely diverse set of people: Cassie Kozyrkov, Vincent Warmerdam, Adam Fleischhacker, Richard McElreath, Andrew Ng – all coming from different backgrounds and activating in different environments and domains.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/analyst-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption"><em>Source: causact.com</em>; “(The workflow) starts with strategy, expertise, and data as inputs and results in the business analyst leading their firms to act on value-adding insights”</figcaption>
+</figure>
+</div>
+<p>Let’s briefly review those normative criteria of this workflow. It might be a confirmation bias on my part, but the fact that these are present in the current course in one way or another, means I stumbled upon them by trial-and-error and painful mistakes:</p>
 <ul>
-<li>Realize that lots of common statistical tests are particular versions of linear models <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It takes a few hours to go through the theory and the code in the referenced book.</li>
-<li>Here’s the approach taken by <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which integrates data analysis and simulation in learning of statistics.</li>
-<li>Upgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.</li>
-<li>Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which is a course in collaboration with the RStudio team.</li>
-</ul>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Doogue - <a href="https://steverxd.github.io/Stat_tests/">Common statistical tests are linear models</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Speegle, Clair - <a href="https://mathstat.slu.edu/~speegle/_book/preface.html">Probability, Statistics, and Data: A fresh approach using R</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Poldrack - <a href="https://statsthinking21.github.io/statsthinking21-core-site/">Statistical Thinking for the 21st Century</a> has two companion books, one with R and another in Python</p></li><li id="fn4"><p><sup>4</sup>&nbsp;Bryan - <a href="https://stat545.com/">STAT 545</a> It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.</p></li></div><p>There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:</p>
+<li><strong>Outcome-focused</strong>: What is the point of fancy models, if we don’t achieve good or desired outcomes? If I was implying it so far, for the rest of the course we’ll ask this explicitly every time we tackle a business problem.</li>
+<li><strong>Strategically-aligned</strong>: <em>“Not all outcomes are created equal. Companies seeking to capture market share might increase expenses to aid market capture. Companies seeking to be cost leaders might leave some customers unsatisifed to keep expenses low. So a one-size-fits-all approach to defining good outcomes is ill-advised.”</em></li>
+<li><strong>Action-oriented</strong>: We insisted so much on insights influencing, driving actions and decisions that there is little to add here. The remaining question is how can we communicate and articulate it well to convince decision-makers and stakeholders.</li>
+<li><strong>Computationally Rigorous</strong>: Refers to the know-how, the engineering in the trenches. Even though we’ll spend most of the time in the frequentist land – I think the future is at the intersection of Causality and Bayesian Inference.
 <ul>
-<li>Cetinkaya-Runde, Hardin - <a href="https://openintro-ims.netlify.app/index.html">Introduction to Modern Statistics</a> goes through all the fundamentals in a clear, concrete, extensive way, with code!</li>
-<li>Crump - <a href="https://www.crumplab.com/statistics/">Answering questions with data</a> – introductory statistics for Psychology Students has an interesting approach, focused on the challenges of Psychology</li>
-<li>Thulin - <a href="http://www.modernstatisticswithr.com/">Modern Statistics with R</a> goes through the whole process, with R, with additional topics, normally not present in a statistics course</li>
-<li>Holmes, Huber - <a href="https://www.huber.embl.de/msmb/index.html">Modern Statistics for Modern Biology</a> is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data</li>
+<li>Taking it one step further, this kind of workflow should be reproducible and (mostly) automated. This is why we’ll explore an ecosystem of software engineering tools and practices in the labs.</li>
+<li>Ideally, given in the hands of our clients/users in form of a full stack data app. This is where we take off our consulting hat and start building software products.</li>
+</ul></li>
 </ul>
-<!-- Data Science Context, in Business, Interdisciplinarity --->
-<!-- Statistical Foundations: Reference, Revies --->
+<p>This is in contrast with a predictive, machine learning workflow, which we called before “workhorse models”, a “hammer” for which everything is a nail. We got a taste of its power and limitations, and tried to articulate which are appropriate applications for ML. This course gives equal attention to ML and Causality, due to the prevalence of use-cases from which we can learn from data to make tons of decisions at scale and high frequency.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/ml-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption"><em>Source: causact.com</em>; “The machine learning analyst transforms historical data with known outcomes into future outcome predictions.”</figcaption>
+</figure>
+</div>
 
 
+</section>
 </section>
 
 
@@ -766,11 +791,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/4_ml_stats.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4. Analytics, ML, Stats</span>
+      <a href="../01_fundamentals/1_applications.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Application Domains &amp; Use-Cases</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../01_fundamentals/4_ml_stats.html" class="pagination-link">
+        <span class="nav-page-text">4. Analytics, ML, Stats</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
