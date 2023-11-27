@@ -79,6 +79,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="">
@@ -107,15 +109,15 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./01_fundamentals/1_applications.html" rel="" target="" aria-current="page">
- <span class="menu-text">| Business |</span></a>
+ <span class="menu-text">| 1. Business |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./01_fundamentals/stat_foundations.html" rel="" target="">
- <span class="menu-text">| Stats |</span></a>
+ <span class="menu-text">| 2. Stats |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./references.html" rel="" target="">
- <span class="menu-text">| Bayes |</span></a>
+ <span class="menu-text">| 3. Bayes |</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -171,7 +173,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ii. Syllabus &amp; Roadmap</span></a>
+ <span class="menu-text">ii. Schedule &amp; Roadmap</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -285,7 +287,15 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <li><a href="#are-you-ready-for-an-adventure" id="toc-are-you-ready-for-an-adventure" class="nav-link active" data-scroll-target="#are-you-ready-for-an-adventure">Are you ready for an adventure?</a></li>
   <li><a href="#decision-making-for-the-brave-and-true" id="toc-decision-making-for-the-brave-and-true" class="nav-link" data-scroll-target="#decision-making-for-the-brave-and-true">Decision-Making for the Brave and True</a></li>
   <li><a href="#why-should-you-care" id="toc-why-should-you-care" class="nav-link" data-scroll-target="#why-should-you-care">Why should you care?</a></li>
-  <li><a href="#what-will-you-learn" id="toc-what-will-you-learn" class="nav-link" data-scroll-target="#what-will-you-learn">What will you learn?</a></li>
+  <li><a href="#what-will-you-learn" id="toc-what-will-you-learn" class="nav-link" data-scroll-target="#what-will-you-learn">What will you learn?</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#module-1-business-school-for-data-scientists" id="toc-module-1-business-school-for-data-scientists" class="nav-link" data-scroll-target="#module-1-business-school-for-data-scientists">Module 1: Business School for Data Scientists</a></li>
+  <li><a href="#module-2-probability-and-statistics" id="toc-module-2-probability-and-statistics" class="nav-link" data-scroll-target="#module-2-probability-and-statistics">Module 2: Probability and Statistics</a></li>
+  <li><a href="#module-3-applied-bayesian-statistics" id="toc-module-3-applied-bayesian-statistics" class="nav-link" data-scroll-target="#module-3-applied-bayesian-statistics">Module 3: Applied Bayesian Statistics</a></li>
+  <li><a href="#notes-about-causal-inference-and-ml" id="toc-notes-about-causal-inference-and-ml" class="nav-link" data-scroll-target="#notes-about-causal-inference-and-ml">Notes about Causal Inference and ML</a></li>
+  <li><a href="#full-stack-data-apps" id="toc-full-stack-data-apps" class="nav-link" data-scroll-target="#full-stack-data-apps">Full-Stack Data Apps</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -309,7 +319,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </section>
 <section id="decision-making-for-the-brave-and-true" class="level2 unnumbered page-columns page-full">
 <h2 class="unnumbered anchored" data-anchor-id="decision-making-for-the-brave-and-true">Decision-Making for the Brave and True</h2>
-<p>This is an introductory, big picture, free and open-source course which bridges the gap between theory and practice, <strong>cultivating the skills and understanding</strong> necessary to bring value to organisations by <strong>improving decision-making</strong>. It is an attempt to find a golden mean of both worlds:</p>
+<p>This is an introductory <strong>graduate-level</strong>, free and open-source course which bridges the gap between theory and practice, <strong>cultivating the skills and understanding</strong> necessary to bring value to organisations by <strong>improving decision-making</strong>. It is an attempt to find a golden mean of both worlds:</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
@@ -354,7 +364,7 @@ Who should read this book?
 </div>
 <p>The course is challenging due to its breadth (across disciplines) and depth (starting from fundamentals). In service of understanding, it becomes conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Keep in mind that:</p>
 <ul>
-<li>It is NOT a theoretical course, nor a replacement for Probability &amp; Mathematical statistics and other prerequisites. There are two possibilities:
+<li>It is NOT a theoretical course, nor a replacement for probability &amp; mathematical statistics and other prerequisites. There are two possibilities:
 <ul>
 <li>You already had those courses and will look at them with a fresh perspective</li>
 <li>Otherwise, treat it as learning roadmap of the most relevant ideas.</li>
@@ -397,8 +407,8 @@ How do I keep up?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You don’t, at least if you want to have a balanced life. That’s why I choose to focus on fundamentals which stood the test of time, which are anyways a prerequisite before you dive into understanding the technicalities of those cutting-edge models and systems.</p>
-<p>You will be surprised how far can you go with simple, even linear models. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.</p>
+<p>You don’t, at least if you want to have a balanced life. That’s why I choose to focus on fundamentals which stood the <strong>test of time</strong>, which are anyways a prerequisite before you dive into understanding the technicalities of those cutting-edge models and systems.</p>
+<p>You will be surprised <strong>how far can you go with simple, even linear models</strong>. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.</p>
 </div>
 </div>
 <p>But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses? It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others.</p>
@@ -447,25 +457,94 @@ Why study all of this?
 </section>
 <section id="what-will-you-learn" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="what-will-you-learn">What will you learn?</h2>
-<p>I always start with an exploration of <a href="./01_fundamentals/1_applications.html">decisions in businesses</a>, then clarify what does AI mean and where does it add value. If we view statistics as <strong>changing our minds and actions in the face of evidence</strong> – fundamental statistical concepts and tools will shine in a new light. It will become clear why those models and methodologies were invented in the first place.</p>
-<p>These fundamentals are not “just theory”, it is what will make or break projects in practice. We will achieve a lot with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That’s why it’s essential to take every tool and <strong>apply</strong> it in the context of an appropriate use-case/application – meaning, <strong>we’ll code a lot</strong>.</p>
-<p>My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.</p>
+<p>I am tempted to say “act rationally” to improve business outcomes <em>(top line, bottom line, customer satisfaction, efficiency)</em>. However, what you will learn is much more nuanced than that – hence, the short answer below which will take a while to unpack.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Short version
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome \]</span></p>
+<p>Necessary, but insufficient fundamentals in <strong>business economics</strong> and <strong>statistical modeling</strong>:</p>
 <ul>
-<li><a href="./01_fundamentals/roadmap.html"><strong>Module 1</strong></a>: Business School for Data Scientists</li>
-<li><a href="./01_fundamentals/stat_foundations.html"><strong>Module 2</strong></a>: The Fundamentals of Probability and Statistics</li>
-<li><a href="./references.html"><strong>Module 3</strong></a>: Applied Bayesian Statistics</li>
+<li>in order to ask the right questions</li>
+<li>so that we can build custom statistical models</li>
+<li>which bring insight into consequences of actions and interventions</li>
+<li>so that we’re informed which actions that should be taken</li>
+<li>such that a firm can achieve its tactical and strategic objectives</li>
 </ul>
-<p><strong>My preferred sequence</strong> is to go in parallel with the “business school” and the fundamentals of probability and statistics. I call it business school, because it’s at the intersection of business economics and data science – focused on the process (of ML, statistics) and not so much on content, focused on the problem and not so much on solutions.</p>
-<p>Once we have a confident grasp of the fundamentals, we continue on the path of <strong>Applied Bayesian Statistics</strong>. It is an extremely flexible and “composable” approach to building explainable models of increasing complexity and realism. To put it bluntly, it will enable us to improve on most challenges in decision-making that businesses face.</p>
+</div>
+</div>
+<p>My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Go to “Resources” page for practice!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Conceptual understanding by itself is not enough. So, I curated a <a href="./references.html">list of resources</a> to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.</p>
+<p>Also, keep an eye on the course <a href="https://github.com/Bizovi/decision-making">github repo</a>, in which we’ll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.</p>
+</div>
+</div>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<p>I think this course will bring most value to masters’ students, professionals, and students in their last year of BSc – precisely because of presumed exposure or competence in the following subjects:</p>
+<ul>
+<li>For <strong>Linear Algebra</strong> and <strong>Calculus</strong> – only exposure is needed, but competence and mathematical maturity will help a lot. If you need a refresher, a crash course will do (for example, Grant Sanderson’s <a href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&amp;si=3pvYphbdL56dnYVH"><em>“Essence of LinAlg”</em></a>)</li>
+<li>For <strong>Probability Theory</strong> – competence is needed, even though we start from the very beginning (review of combinatorics). I suggest you read along and practice with a more comprehensive resource, like Joe Blitzstein’s <a href="https://projects.iq.harvard.edu/stat110/home">“Probability 110”</a></li>
+<li>For <strong>Mathematical Statistics</strong> the story is the same as for Probability. You will need at least to be familiar with hypothesis testing and regression. This course can catalyze the process. My favorite resource so far is <a href="https://www.huber.embl.de/msmb/02-chap.html">Huber’s “Modern Statistics for Modern Biology”</a>.</li>
+<li><strong>Python or R programming</strong> for Data Science is <strong>mandatory</strong>, including data wrangling, visualization, scientific computing, databases. I recommend two free books:
+<ul>
+<li><a href="https://r4ds.had.co.nz/">“R for Data Science”</a> by Hadley Wickham</li>
+<li><a href="https://wesmckinney.com/book/">“Python for Data Analysis”</a> by Wes McKinney.</li>
+<li>Of course, the more experience you have in one or both, the better</li>
+</ul></li>
+<li>This is completely optional, but if you have to deal with financial statements at your job or have an interest in finance, I strongly suggest you check out A. Damodaran’s <a href="https://youtube.com/playlist?list=PLUkh9m2BorqmKaLrNBjKtFDhpdFdi8f7C&amp;si=UjEkr1_smeILJ8ZF">crash course</a>.</li>
+</ul>
+</section>
+<section id="module-1-business-school-for-data-scientists" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="module-1-business-school-for-data-scientists">Module 1: Business School for Data Scientists</h3>
+<div class="page-columns page-full"><p>I always start with an exploration of decisions that businesses face across many industries and use-cases. Then, I clarify what does AI<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> mean and where does it add value, what is the difference between Analytics, Statistics, and ML.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Remember “Decision-Making Under Uncertainty at Scale”</p></li></div></div>
+<p>In this module we focus on understanding the business domain, the <strong>problem space</strong>, learn how to ask good statistical questions in context of firm’s strategy. An essential aid in this pursuit are different <strong>processes and methodologies</strong> that get us from <strong>question to insight</strong>, action and outcomes. However, at this point we lack the actual modeling know-how, which is a good segway to the next module.</p>
+<blockquote class="blockquote">
+<p>“What is methodology good for? Sounds like I could use that time to learn ML”</p>
+</blockquote>
+<p>These methodolgical fundamentals are not “just theory”, it is what will make or break projects in practice. There are so many pitfalls in ML and statistics that we cannot afford to do it ad-hoc. In contrast, taking a systematic approach will dramatically increase our chances of succeess.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Newsvendor problem, Price Optimization, Learning Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you worry that the business school is too conceptual – don’t despair, as we’ll have three very <strong>techical lectures</strong>, involving math and programming.</p>
+<ul>
+<li>I use the newsvendor problem as a starting point in modeling for demand planning</li>
+<li>The pricing optimization as a starting point towards revenue management</li>
+<li>The Learning Problem highlights and formalizes what is at the core of Machine Learning – in what conditions can we learn from data, generalize</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="module-2-probability-and-statistics" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="module-2-probability-and-statistics">Module 2: Probability and Statistics</h3>
+<p>If we view statistics as <strong>changing our minds and actions in the face of evidence</strong> – the good ol’ t-test will shine in a new light. It will become clear why those models and procedures were invented in the first place.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01_fundamentals/img/meme-causal.jpeg" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption class="figure-caption"><em>(Source: <a href="https://youtu.be/KNPYUVmY3NM">R. McElreath</a> – Science before statistics)</em></figcaption>
-</figure>
-</div>
-</div></div><p>Did you get comfortable with building custom statistical models for inference and prediction? For decisions with high stakes, we often want to do <strong>randomized experiments</strong>. We’ll develop a rigorous methodology for designing and performing A/B tests, learn how to recognize and avoid pitfalls that it’s so easy to fall into.</p>
+<p>Some lectures are heavier in mathematics, especially when talking about estimators and their properties. We’ll use stories and simulations as much as possible to boost our intuition.</p>
+</div></div><p>We will go far with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That’s why it’s essential to take every tool and <strong>apply</strong> it in the context of an appropriate use-case/application – meaning, <strong>we’ll code a lot</strong>. You will not be puzzled anymore where those wild distributions (Poisson, Hypergeometric, Weibull, …) come from (what are their stories) and where are they used.</p>
+<p>The module culminates in practical aspects of <strong>A/B testing</strong>, sample size justification and <strong>power analysis</strong>, experiment design, and a conversation about the causes and remedies to the <strong>replication crisis</strong>. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, Causal Inference.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -479,8 +558,41 @@ The art of formulating a hypothesis
 <p>In statistics’ classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks – especially when it comes to pricing and recommender systems. That’s not your stats 101!</p>
 </div>
 </div>
-<p>Often, A/B tests and randomised experiments are unfeasible or unethical. Realize that we cannot reach a causal conclusion from observational data alone. We need a theory, which is our understanding of how the “world” works – translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).</p>
-<p>Thus, we acknowledged the limitations of inferring an association, so it’s time to get more powerful tools from <strong>causal inference</strong>. It will enable us to extract new insights from natural experiments and observational data. Causal inference requires deep thinking and understanding, which is truly challenging – it is an art and science, in contrast with the auto-magic pattern recognition of ML.</p>
+<p><strong>My preferred sequence</strong> is to go in parallel with the “business school” and stats, since there is a great synergy. The prior focuses on the <strong>process</strong> (over content) of analytics, ML, statistics. The prior focuses on the <strong>problem</strong> and not so much on solutions.</p>
+</section>
+<section id="module-3-applied-bayesian-statistics" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="module-3-applied-bayesian-statistics">Module 3: Applied Bayesian Statistics</h3>
+<p>Once we have a confident grasp of the fundamentals, we continue on the path of <strong>Applied Bayesian Statistics</strong>. It is an extremely flexible and “composable” approach to building explainable models of increasing complexity and realism.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01_fundamentals/img/meme-causal.jpeg" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption"><em>(Source: <a href="https://youtu.be/KNPYUVmY3NM">R. McElreath</a> – Science before statistics)</em></figcaption>
+</figure>
+</div>
+</div></div><p>Instead of applying an out-of-the-box model, we will build custom ones for each individual application in an iterative way. Choosing appropriate probability distributions and modeling assumptions will be critical in this process, along with model critique and validation.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hierarchical Generalized Linear Models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many experts in the field argue that this should be the default way we do regression analysis and that we need a very strong justification to show that a linear regression is the appropriate model.</p>
+<p>To put it bluntly, this modeling approach will enable us to improve on most challenges in decision-making and inference that businesses face.</p>
+</div>
+</div>
+<p>One notable difference between the Bayesian approach and the traditional way advanced econometrics is taught, is that we will focus on computation instead of proofs and heavy-duty mathematical statistics. We declare the model and the sampler does the job for us! If it explodes, we probably modeled it wrong.</p>
+</section>
+<section id="notes-about-causal-inference-and-ml" class="level3">
+<h3 class="anchored" data-anchor-id="notes-about-causal-inference-and-ml">Notes about Causal Inference and ML</h3>
+<p>Did you get comfortable with building custom statistical models for inference and prediction? What about decisions with high stakes, where we sometimes want to do <strong>randomized experiments</strong>?</p>
+<p>Often, A/B tests and randomised experiments are <strong>unfeasible</strong> or <strong>unethical</strong>. Also realize that we cannot reach a causal conclusion from observational data alone – we can talk just about <strong>associations</strong>. We need a theory, which is our understanding of how the “world” works – translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).</p>
+<p>This motivates a deep-dive into the field of Causal Inference – a link between the theoretical models and observational data, where we sometimes can take advantage of certain “natural experiments”. Causal inference requires deep thinking and understanding, which is truly challenging – an art and science, in contrast with the “auto-magic”, unreasonably effective pattern recognition of ML.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -496,6 +608,10 @@ What if I care only about ML?
 </div>
 </div>
 <p>Often, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.</p>
+<p>The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
+</section>
+<section id="full-stack-data-apps" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="full-stack-data-apps">Full-Stack Data Apps</h3>
 <p>During the labs we’ll build from the ground up a tech stack for reproducible data analysis, model and data pipelines, culminating in a full-stack data app (with user interface, backend, database), which solves a real-world problem.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -534,21 +650,6 @@ Build an impressive project for your portfolio
 </ul>
 </div>
 </div>
-<p>The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Go to “Resources” page for practice!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Conceptual understanding by itself is not enough. So, I curated a <a href="./references.html">list of resources</a> to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.</p>
-<p>Also, keep an eye on the course <a href="https://github.com/Bizovi/decision-making">github repo</a>, in which we’ll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.</p>
-</div>
-</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -560,6 +661,7 @@ All modules are work in progress (as of Dec 2023)
 </div>
 <div class="callout-body-container callout-body">
 <p>I haven’t done any writing on ML, Causal Inference, or building full-stack data apps. The idea is to bring new insights and ways of learning, since there are already many excellent resources on the web.</p>
+<p>Here are the future modules on my backlog. I will start working on them only after I feel like the book is rock solid in teaching the fundamentals.</p>
 <ul>
 <li><strong>Module 4</strong>: Causal Inference and Directed Acyclic Graphs</li>
 <li><strong>Module 5</strong>: Probabilistic Machine Learning</li>
@@ -570,6 +672,7 @@ All modules are work in progress (as of Dec 2023)
 </div>
 
 
+</section>
 </section>
 
 
@@ -927,7 +1030,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./01_fundamentals/roadmap.html" class="pagination-link">
-        <span class="nav-page-text">ii. Syllabus &amp; Roadmap</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">ii. Schedule &amp; Roadmap</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
