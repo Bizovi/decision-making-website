@@ -91,29 +91,46 @@ Instead of taking regression as the starting point, then going into advanced eco
 
 :::
 
-## R: Computational Toolbox
+## Python/R Computational Toolbox
 
-::: {.column-page-inset-right}
+In order to make the most out of the three modules, we need to be skilled (or at least competent) programmers, from the perspective of data science. It is a skill which can be developed independently -- I give a few recommendations in the introduction (prerequisites section).
 
-|   | Lecture Agenda  | Keywords              | Case Studies / Activities |
-|---|-----------------|-----------------------|---------------------------|
-| 1 | Set Up the Environment. Reproducible Research | WSL/terminal, R, RStudio, Quarto, git & github, tidyverse, arrow & duckdb | Literate programming, Managing Environments |
-| 2 | Advanced R. Functional programming | data types, copy-on-modify, functions, filter, map, reduce, control flow | R gotchas and how discipline + tidyverse solves them |
+::: {.column-margin}
 
-:::
-
-## Python: Computational Toolbox
-
-::: {.column-page-inset-right}
-
-|   | Lecture Agenda  | Keywords              | Case Studies / Activities |
-|---|-----------------|-----------------------|---------------------------|
-| 1 | Set Up the Environment. Reproducible Research | WSL/terminal, conda, python, vscode, jupyter, git & github, arrow & duckdb | Literate programming, Managing Environments |
+In this course I heavily rely on the principles of reproducible research, which have 3 key aspects: data, computational environment, and code.
 
 :::
 
+A second aspect that we need for the programming part not to slow us down and stand in the way, is to have a good, pleasant, and reliable development environment setup. Here is a starting, non-exhaustive list of tools you will need. 
 
-Why these exact topics, since other courses in 18 lectures teach you either statistical learning, probability, statistics, causality, or deep learning? Of course, and they're excellent at teaching exactly that, so I refer to those amazing resources, books, courses when it comes to the tool/model and didactic examples.
+For Windows 11+ users, I strongly recommend you use WSLII -- and get familiar with the command line & linux. Between R and Python, I choose technologies which make it easy to draw parallels and transition from one to another.
 
-Our goal in the first module is to have a solid general foundation for all of those topics and domains. In order to achieve that, we need to understand the business environment and challenges it faces, mathematically and conceptually get the main ideas from probability and statistics, and be prepared with our computational skills and tooling to tackle those challenges.
+::: {.callout-tip}
+## For R (v4.3.1)
 
+- RStudio as our main IDE
+- Quarto for literate programming
+- git & github
+- renv for managing environments
+- database: duckdb (analytical, in-process)
+- data wrangling: tidyverse, data.table (bigger data), arrow
+- data visualization: ggplot, plotly
+- interactive applications: shiny
+- APIs: plumbr
+
+R has many gotchas, which is the main reason that makes the language hard. Therefore, we need to some additional concepts in R, especially functional programming and understanding the S3 object system. Tidyverse is an important ecosystem which tries to solve a lot of the issues in base R.
+:::
+
+::: {.callout-tip}
+## For Python (v3.10.x)
+
+- VScode as our main IDE
+- Jupyter Notebooks or Quarto for literate programming
+- git & github
+- conda and poetry for managing environments
+- database: duckdb (analytical, in-process), sqlite (transactional, in-process)
+- data wrangling: pandas 2.0, pypolars (bigger data), arrow
+- interactive applications: streamlit, shiny, or dash
+- APIs: fastapi
+
+:::
