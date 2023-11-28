@@ -16,7 +16,7 @@ By convention, lectures whith mathematical inclination are marked by (*) and **p
 ::: {.column-page-inset-right}
 
 |   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
-|---|-------------------------------------|-----------|---------------------------|
+|-|-------------------------------------|-----------|---------------------------|
 | 1 | [Introduction](../index.qmd) & [Course Philosophy](../philosophy.qmd).  Roadmap | Decisions, VUCA, Modeling, [prerequisites](prerequisites.qmd), project requirements  | survey of applications in various domains, admin stuff |
 | 2 | [Data Science in Business Context](background.qmd). Strategy | SWOT, Tradeoffs, Strategy, Business Analyst's Workflow, Value Chain, Fermi Estimation  | case-studies: LRB subscriptions, DTC fashion e-commerce |
 | 3 | [Decision-Making Under Uncertainty at Scale](background.qmd#cybernetics-is-what-we-call-ai) | AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty  | data roles in firms, Uber and dynamic pricing |
@@ -34,21 +34,26 @@ By convention, lectures whith mathematical inclination are marked by (*) and **p
 
 There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals.
 
+::: {.column-margin}
+
+I prefer to fill in the gaps with **stories** and **simulations**, however, in some cases the mathematical formalism and abstractions can't be avoided and actually help understanding
+
+:::
+
 Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.
 
-We start from the foundations of probability, however, I do not cover calculus, linear algebra, or other mathematical tools for data analysis. We do much more programming than mathematics, therefore, the ability to code in a programming language like Python or R is a must.
 
 ::: {.column-page-inset-right}
 
 |   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
 |---|-------------------------------------|-----------|---------------------------|
-| 1 | Combinatorics. Sampling & Urn Models | replacement, multiplication rule, naive $\mathbb{P}$ | Birthday Paradox, Bootstrap |
-| 2 | Probability Triple. Random Variables. What is a model? | experiment, sample space, measure, population, estimand, estimators, golemns  | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), Kolmogorov, Garden Forking Paths |
-| 3 | Binomial, Poisson, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, $\chi^2_k$, mixtures, $t_k$, $N$, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |
-| 4 | Conditioning and Bayes Rule. Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
-| 5 | CLT and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo |
-| 6 | Bias-Variance, Fisher Information, Rao-Cramer | Efficiency, Bias, James-Stein, curse of dimensionality | Bootstrap, simulations and visualizations |
-| 7 | Neyman-Pearson frequentism. Popper and falsification | Type I, II errors, confint, p-value, PPV, effect sizes, power analysis, range predictions, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance  |
+| 1* | Combinatorics. Sampling & Urn Models | replacement, multiplication rule, naive $\mathbb{P}$ | Birthday Paradox, Bootstrap |
+| 2* | Probability Triple. Random Variables. What is a model? | experiment, sample space, measure, population, estimand, estimators, golemns  | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), Kolmogorov, Garden Forking Paths |
+| 3** | **Binomial, Poisson**, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, $\chi^2_k$, mixtures, $t_k$, $N$, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |
+| 4* | **Conditioning and Bayes Rule**. Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
+| 5* | **CLT** and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo |
+| 6* | **Bias-Variance**, Fisher Information, Rao-Cramer | Efficiency, Bias, James-Stein, curse of dimensionality | Bootstrap, simulations and visualizations |
+| 7* | Neyman-Pearson frequentism. Popper and falsification | Type I, II errors, confint, p-value, PPV, effect sizes, **power analysis, range predictions**, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance  |
 | 8 | Frequentism vs Likelihood vs Bayes | philosophical roots, agreements, weaknesses | The path of action vs devotion vs belief  |
 | 9 | Dead Salmon Experiment. Replication Crisis | multiple testing, harking, snooping, publishing bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science  |
 
@@ -60,7 +65,7 @@ We start from the foundations of probability, however, I do not cover calculus, 
 ::: {.column-page-inset-right}
 
 |   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
-|---|------------|-----------|--------------|
+|-|------------|-----------|--------------|
 | 1 | Introduction to Bayesian Statistics. Simple Models and Conjugate priors  | Beta-Binomial, Gamma-Poisson, Mixtures, Link functions, IG-Normal | Elections, Football Goals, Coal Mining disaseetrs, Golf accuracy, Speed of Light |
 | 2 | Multiple Groups and Hierarchical Models | Complete, No, Partial pooling | A/B testing, baseball, review ranking, Radon, Starbucks wait times, Customer LTV |
 | 3 | Regression and Bayesian Workflow | Categorical variables, Results summarization, Modeling assumptions | OCEAN, Education, height, waffles |
