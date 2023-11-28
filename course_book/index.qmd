@@ -152,7 +152,13 @@ Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision
 
 ### Prerequisites
 
+
 I think this course will bring most value to masters' students, professionals, and students in their last year of BSc -- precisely because of presumed exposure or competence in the following subjects:
+
+::: {.column-margin}
+![Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!](01_fundamentals/img/karate-kid.webp "Practice"){width="90%"}
+:::
+
 
 - For **Linear Algebra** and **Calculus** -- only exposure is needed, but competence and mathematical maturity will help a lot. If you need a refresher, a crash course will do (for example, Grant Sanderson's [*"Essence of LinAlg"*](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=3pvYphbdL56dnYVH))
 - For **Probability Theory** -- competence is needed, even though we start from the very beginning (review of combinatorics). I suggest you read along and practice with a more comprehensive resource, like Joe Blitzstein's ["Probability 110"](https://projects.iq.harvard.edu/stat110/home)
