@@ -62,6 +62,16 @@ Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most course
 
 ## Module III: Applied Bayesian Statistics
 
+After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool.
+
+::: {.column-margin}
+
+We are not wasting time by switching to Bayes (7 lectures to get to GLMs), because we treat all models under the same framework.
+
+:::
+
+Instead of taking regression as the starting point, then going into advanced econometrics -- I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good starting point. 
+
 ::: {.column-page-inset-right}
 
 |   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
