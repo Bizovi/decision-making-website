@@ -44,7 +44,7 @@ website:
       - href: philosophy.qmd
         text: "iii. Course Philosophy"
       - text: "iv. Why study all of that?"
-        href: 01_fundamentals/learning.qmd
+        href: 01_fundamentals/prerequisites.qmd
       - text: "-----"
       - section: "1. Business School for Data Scientists"
         href: 01_fundamentals/background.qmd
@@ -57,7 +57,7 @@ website:
           text: "3. What is AI and Cybernetics?"
         - href: 01_fundamentals/4_ml_stats.qmd
           text: "4. Analytics, ML, Stats"
-        - href: 01_fundamentals/prerequisites.qmd
+        - href: 01_fundamentals/learning.qmd
           text: "5. Learning from Data: Intuition and Bias"
       - text: "-----"
       - section: "2. Fundamentals of Probability & Statistics"
