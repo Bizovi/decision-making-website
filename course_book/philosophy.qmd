@@ -7,47 +7,51 @@ format:
 
 ## Cybernetics Done Right
 
-The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in **Complex Adaptive Systems**. It is what was originally meant by AI, before symbolic, expert systems, and deep learning.
+The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in **Complex Adaptive Systems**. It is what was originally meant by AI, before symbolic, expert systems, and deep learning. The way I think of data science -- is in the context of those complex adaptive systems. We will discuss it in more detail and nuance, as this perspective is powerful (systems dynamics is especially useful) and rarely taught.
+
 
 ::: {.column-margin}
 ![The golden thread across disciplines. *(Source: Generated with DALL-E)*](img/network_golden%20thread.png)
 :::
 
-The way I think of data science -- is in the context of those complex adaptive systems. We will discuss it in more detail and nuance, as this perspective is powerful and rarely taught.
 
 ::: {.callout-warning}
 ## So, what's the problem with Cybernetics education? 
-The idea behind a **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems, that is what we know today as weak/specialised AI combined with quantitative economics.
+The idea behind a **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems, that is -- what we know today as weak/specialised AI combined with quantitative economics.
 
 Unfortunately, the execution is extremely difficult to pull off without a consistent vision, expertise, and an account of recent developments. It is even more difficult to put those economic models from '80s in practice, especially in a data-driven age.
 
-I am taking the first step to fix this, developing a vision to make it relevant for industry and businesses again. The easiest way is by smuggling ideas from systems' thinking into the practice of data science.
+I am taking the first step to fix this, developing a vision to make it relevant for industry and businesses again. The easiest way is by smuggling ideas from systems' thinking into the practice of data science, which provides new insights into the problem space, but doesn't give us many practical solutions.
 :::
 
 [^index-4]: Cybernetics: (gr, kybernetes) -- to steer towards a desired outcome or trajectory. It highlights the aspects of agency, action, pattern recognition, and prediction.
 
-Let's go back to the burning question: **what I wish I had in a course?** It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied.
+Let's go back to the burning question: **what I wish I had in a course?** It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied. After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
 
-After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
-
--   Provide motivation for **why** something is important (a field, theory, model, method, technology)
--   Discuss **practical applications** and challenges the firms face, from an insider's perspective. Those are our case-studies.
-    - First, we try to deeply understand the problem and frame it in "our" language, that is, clarify and reduce ambiguity
-    - Then, we strip the problem to the simplest model, to illuminate some key aspect, like pricing and demand planning decisions. Then, and only then we bring back all the realism and complexities.
-    - Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
-    - Coding up the solutions and software implementations, with the real-world challenges of deploying models and improving decision making
-    - Implement those in code using best practices, as an engineering exercise
-    - With lots of visualization, especially interactive ones
--   Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it:
-    -   Present the tool theoretically rigorous and sound, but **only where it matters**. More geometry and graphs over equations, more simulations and stories over proofs.
-    -   Leverage previous mathematical, statistical, and domain knowledge
-    -   For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
--   Use **simulations** as a safe playground [^index-5] that we control, to get a feel for the behavior of models and algorithms.
+- Provide motivation for **why** something is important (a field, theory, model, method, technology), showcase relatable expamples and the **story** behind the idea
+- Discuss **practical applications** and challenges the firms face, from an insider's perspective. Those are our case-studies, outlined systematically in the following way:
+    - First, we try to deeply understand the problem and frame it in "our" language of decision-making. We clarify our assumptions and reduce ambiguity
+    - Then, we strip the problem to the simplest model, to illuminate some key aspect, like uncertainty in pricing and demand planning decisions. 
+    - Then, and only then we bring back all the realism, nuances, and complexities. Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
+    - In projects, we implement software solutions, with the main focus on the real-world challenges of deploying models and improving decision making. Data visualization, especially if interactive will help a lot in being persuasive
+    - Keep in mind the recommended practices from reproducible research and software engineering, so that our apps are easy to maintain and extend 
+- Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it, and where does it fit in the methodology: [^dreyfus]
+    - Present the tool theoretically rigorous and sound, but **only where it matters**. 
+    - More geometry and graphs over equations, more simulations and stories over proofs. Low-level details need careful, individual, hands-on study
+    - Leverage previous mathematical, statistical, and domain knowledge
+    - For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
+- Heavily use **simulations** as a safe playground that we control, to get a feel for the behavior of models and algorithms.
     - It forces us to declare our assumptions about the problem
     - Before we commit to a costly real-life experiment or modeling project, it is essential to know that a model works in principle for our application: is able to recover the parameters, causal structure and generalize beyond the sample.
 
+[^dreyfus]: In teaching and learning, I heavily rely on the Dreyfus model of **skill acquisition**, which describes the following stages: Novice, Competent, Proficient, Expert, Master. This 10 minutes [presentation](https://youtu.be/p8jFp1c4F2E?si=RtMuqW7Gyo2gDeIX) is well worth your time.
 
-[^index-5]: I often find myself truly understanding something, only after I code it up and understand the mechanics of a model well, then try to think of how I would apply it in practice, in different contexts. This hints to the idea that we need complementary computational background and tools, right from the beginning of higher education.
+::: {.callout-tip}
+## Understand by building it (Feynman)!
+
+I often find myself truly understanding something, only after I code it up and understand the mechanics of a model well, then try to think of how I would apply it in practice, in different contexts. This hints to the idea that we need a complementary computational background and set of tools, right from the beginning of higher education.
+
+:::
 
 Speaking about the **prerequisites**, there are some tools we have to dust off the shelves and cultivate an appreciation of their importance: linear algebra, calculus, probability theory and mathematical statistics. Not least, being competent in a programming language like Python or R is essential, such that we can focus on what truly matters.
 
@@ -61,30 +65,29 @@ Therefore, we need to develop a set of processes and methodologies to iterate an
 
 ## On Interdisciplinarity
 
-This is my second attempt at formulating a philosophy and principles for a challenging endeavor like this one. A moment of inspiration hit me and the following "map" resulted -- which strikes a resemblence with an idea of R. Sapolsky in one of his [lectures](https://youtu.be/NNnIGh9g6fA).
+This is my second attempt at formulating a philosophy and principles for a challenging endeavor like this one. A moment of inspiration hit me and the following "map" resulted -- which strikes a resemblence with an idea of R. Sapolsky in one of his [lectures](https://youtu.be/NNnIGh9g6fA) and [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/).
 
 ::: {.column-margin}
 ![We will take short trips in the fields outlined below. *(Source: Generated with DALL-E)*](img/map_dsc.png)
 :::
 
 ::: {.callout-warning}
-## The danger of thinking in buckets
+## The danger of thinking in buckets (Sapolsky)
 
-Here's the point, which you can find in the lecture [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/).
 
-- Sapolsky starts out with: our brains think about stuff by creating boundaries – i.e. ‘buckets’ – around ideas.
-- These buckets can influence our memory, our language, and our ability to see the ‘big picture’.
-- An implication of our bucketing minds is that we are bad at differentiating facts that fall within the same category. Two shades of red are labelled ‘red’.
-- A second larger implication is that when we focus on categories while talking about behavior, we lose out on the big picture.
-- It’s easy to see a single one of these categories as providing The Explanation. But they are merely various Behavior Buckets. They are all a part of the big picture explanation.
-- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history!
+- Our brains think about stuff by creating boundaries, i.e. ‘buckets' around ideas.
+- These buckets can influence our memory, our language, behavior(?), and our ability to see the ‘big picture’.
+- An implication of our bucketing minds is that we are **bad at differentiating** facts that fall within the same category. Two shades of red are labelled ‘red’.
+- A second, larger implication is that when we focus on categories while talking about behavior, we tend to **exagerrate differences** and lose out on the big picture
+- It’s easy to see a single one of these categories as providing The Explanation. But they are merely various "behavior buckets". They are all a part of the big picture explanation.
+- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history with catastrophic consequences in some cases!
 :::
 
-A major goal is to not fall for bucket thinking – we must resist the temptation to find "The Explanation" in one bucket. Much time will be spent traversing the various buckets and when we stop for a while, we practice and try to understand. 
+A major goal is: not to fall for bucket thinking – we must resist the temptation to find "The Explanation" in one bucket. Much time will be spent traversing the various buckets and when we stop for a while, we practice and try to understand. 
 
-Repeat until we've came full circle with a renowed appreciation, perspective, and ability. Sapolsky talks about evolution, neuroscience, molecular genetics, ethology, etc. We're going trough different ones:
+Repeat until we've came full circle with a renowed appreciation, perspective, and ability. Sapolsky talks about human behavior in terms of evolution, neuroscience, molecular genetics, ethology, etc. We talk about decision-making by walking trough different ones:
 
-- **Problem space** (challenge land): understanding a domain where "we" have to make decisions, improve the relevant things for clients and stakeholders. There is much uncertainty there, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System.
+- **Problem space** (challenge land): understanding a domain where we have to make decisions, improve the relevant things for clients and stakeholders. There is much uncertainty here, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System.
     - Be it in firms, economics, and finance
     - Be it in biology and life sciences
     - Be it in engineering systems
