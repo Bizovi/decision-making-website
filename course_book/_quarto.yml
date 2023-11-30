@@ -12,9 +12,9 @@ website:
   navbar:
     search: true
     left:
-      - href: 01_fundamentals/1_applications.qmd
+      - href: 01_fundamentals/0_study_guide.qmd
         text: "| 1. Business |"
-      - href: 01_fundamentals/stat_foundations.qmd
+      - href: 01_fundamentals/prob_study_guide.qmd
         text: "| 2. Stats |"
       - href: references.qmd
         text: "| 3. Bayes |"

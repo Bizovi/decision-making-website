@@ -83,7 +83,7 @@ Demand planning, especially demand forecasting and inventory optimization is an 
 
 In the economics' courses you might've solved this problem analytically, under strong assumptions, but we have a huge problem of trying to quantify and take into account the uncertainty. Therefore, we rely on simulation, motivate the need for statistical inference and optimization algorithms. [^newsvendor]
 
-[^newsvendor]: There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in [Chapter 3](https://www.persuasivepython.com/2-decisionanalysis) and [Chapter 5](https://www.persuasivepython.com/4-multidimarrays) of "Persuasive Python". [Chapter 20](https://www.causact.com/intro#intro) of his Business Analytics book contains another classic economic problem interpreted in modern way.
+[^newsvendor]: There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in [Chapter 3](https://www.persuasivepython.com/2-decisionanalysis) and [Chapter 5](https://www.persuasivepython.com/4-multidimarrays) of "Persuasive Python". [Chapter 20](https://www.causact.com/intro#intro) of his Business Analytics book contains another classic economic problem interpreted in modern way. If you prefer, there is a [video lecture](https://www.youtube.com/watch?v=QLsSPnwWS_M) on the newsvendor.
 
 ::: {.callout-note}
 ## Case-Study: TIME INC. printing
@@ -102,8 +102,30 @@ For an academic paper with a meta-analysis of data-driven approaches to the news
 
 ## Learning, Intuition, and Bias. What is ML? 
 
-- intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff 
-- credit defaults, recommender systems, demand forecasting |
+At this point you will have a better grasp of the business environment, the processes involved in decision-making and had exposure to multiple contexts via case-studies. The newsvendor problem exposed the fact that we need additional skills and understanding of statistical modeling, machine learning and analytics. Read [chapter five](learning.qmd).
+
+I start the introduction to machine learning in an unorthodox way, from a **cognitive science perspective**. The reason is: because we gain additional insights into decision-making. But don't worry, top courses like Shai Ben-David's "Understanding Machine Learning" [^lrn-data] and Yaser Abu-Mostafa's "Learning from data" [^yaser] start with similar motivations. 
+
+[^lrn-data]: Shai-Ben David - [Understanding Machine Learning, 2014](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf). Read chapter 1 and 2 for the intuition. The following ones are difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML. 
+
+[^yaser]: [Learning from data](https://work.caltech.edu/telecourse) is still a great foundational course a decade later. The teaching in the recorded lectures is exceptional
+
+- Implicit learning, intuition, and bias. Bait shyness and pigeon superstition
+- The double edged sword of our intelligence. Bounded rationality
+- Calling bullshit in the age of Big Data. Small data problems in Big Data
+- Intelligence, Rationality, Wisdom, and Foolishness
+- The learning problem and empirical risk minimization
+- The surprising consequences of Bias-Variance tradeoff
+
+::: {.callout-note}
+## Case-Study: ML workflow Demonstration
+
+We can pick a (seemingly) simpler use-case like housing prices prediction, credit default, churn, demand forecasting, or recommender systems -- and show how training and prediction look like in code.
+
+I will show that there is much more nuance behind the scenes than what kaggle datasets show, and that often the problem framing makes ML look deceptively simple.
+
+:::
+
 
 
 ## 12 Steps of ML
