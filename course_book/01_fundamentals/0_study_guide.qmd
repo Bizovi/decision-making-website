@@ -28,6 +28,7 @@ I build upon the previous lecture to develop the story of decisions in a busines
 - What is strategy? What makes good or bad strategy? [^perils-strat]
 - Business Analyst's Workflow
 - What is a Value Chain? Data Science Strategy Safari [^strat-safari]
+- Overview of **open datasets**, especially for BI & Analytics
 
 [^strat-dyn]: Read Kim Warren's article on "The Dynamics of Strategy" [here](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf)
 
@@ -135,7 +136,7 @@ By now, I introduced the bare minimum of motivation, formalism, and practices of
 - Present the 12 steps with representative examples of classification and regression
 - Is the ML project feasible? If yes, is it a good idea?
 - Split your damn data. Cross-Validation and hyperparameters. Pitfalls
-- Similarities with CRISP-DM and tidy modeling
+- Similarities with CRISP-DM, tuckey's EDA, and tidy modeling
 
 ::: {.callout-note}
 ## Case-Study: Mercari pricing challenge
@@ -173,26 +174,49 @@ Adam Fleischhacker has an excellent [tutorial](https://www.youtube.com/watch?v=R
 
 ## 12 Steps of Statistics. A/B Testing Scheme 
 
-- [default action](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF), hypotheses, confidence intervals, relevance, effect sizes, power 
+I assume you have been working on Module 2 (Fundamentals of Statistics and Probability) in parallel, so that we can get to a point where we discuss the practical and methodological aspects of A/B testing and randomized experiments.
+
+In this lecture I bridge the gap between the theory/fundamentals and practice. We will see how an end-to-end process of experiment design looks like. In the end, you will learn how to make justified choices in how you set-up and run an experiment.
+
+- Path of action and the importance of defining a [default action]((https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF))
+- What is a statistical hypothesis anyways? How does it relate to the original question? 
+- Relevance, significance, effect sizes, power, and sample size
 
 ::: {.callout-note}
 ## Case-Study: Conversion Rate Optimization
 
+Marketing is one area of online businesses which heavily relies on randomized experiments and A/B tests. Firms try to make the most out of their **advertisement spending** (customer acquisition), by testing **changes in user experience**, promotion, merchandising, to convince a larger proportion of them to buy the product or subscribe (conversion rate).
+
 :::
 
 
-## BI & Analytics. Open datasets overview 
+## Churn and Lifetime Value. Open datasets
 
-- Tuckey's EDA, Data Wrangling, Databases, Data Visualization 
+Customer retention and repurchase is what makes or breaks businesses, especially in the past few years, with so many subscription and SAAS business models. Therefore, this topic deserves a full lecture -- to cover the contractual and PAYG/non-contractual settings.
+
+I show that predicting churn and remaining customer lifetime value is not just a simple classification / regression problem. First, we need some tools from survival analysis and second -- what we really want to know is who can be convinced to remain by an intervention, like promotions or loyalty programs. [^convince]
+
+::: {.callout-note}
+## Case-Study: BTYD models (Buy till you die)
+
+There is a body of work spanning two decades by Bruce Hardie and Peter Fader, who developed statistical models that estimate the remaining LTV (Lifetime Value) of customers, which depends on their survival/activity and repurchase patterns.
+
+We will implement a model for contractual and non-contractual settings on the limited data available on the web. Luckily, that would be sufficient to apply them for your own use-cases.
+:::
+
+
+Last, but not least, I present an overview of curated open datasets from various sources, organized by industry -- which should serve as an inspiration for future practice and your project. There is a shortlist of the ones I found most intriguing and representative, then a long tail of alternatives and fun stuff.
+
+In previous courses you probably did a lot of exploratory data analysis. It is a skill which demands lots of practice and experience in order to do it well (finding inspiration and interesting patterns in data). Having a methodology for EDA helps, however, in practice we have to work with databases.
 
 ::: {.callout-note}
 ## Case-Study: DuckDB and e-commerce database
 
-kaggle e-commerce relational database, duckDB 
+I use a relational dataset from a real e-commerce which was made public in Kaggle, in order to showcase how to interact with databases and highlight the importance of knowing SQL. 
+
+We use a recent innovation in databases, duckDB, which allows us to have an analytic, in-process database, with almost zero setup or dependencies. Once the e-commerce data is loaded and modeled inside the DB, we can start cleaning it, putting it all together, and extracting insights from it. This particular dataset is very rich in information and lends itself well to open-ended investigations. 
+
 :::
 
-::: {.callout-note}
-## Case-Study: Customer Lifetime Value
 
-BTYD Models
-:::
+[^convince]: This is a good opportunity to introduce the idea of Uplift and Calibration of classification scores returned by a ML model.
