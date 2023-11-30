@@ -53,41 +53,6 @@ Sounds an awflul lot like Cybernetics, doesn't it? Especially if we have the ide
 Now that it's more clear what I meant in the course introduction by improving business outcomes and bringing value to organizations, I didn't yet explain what does analytics, data science, machine learning, and AI do or are, and how to they fit in the picture we painted so far.
 
 
-## How to navigate a lecture
-
-You might've noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don't get lost in various detours taken and keep the big picture in mind. 
-
-My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. [^thread]
-
-[^thread]: This is a course in which we look at the widest possible range of methods and models, without going into excruciating detail, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job. 
-
-
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|   A mind map and roadmap of the ideas and topics in this lecture. 
-%%|   It is designed to give you a wide context in which AI is used and misused.
-%%|   The classroom version is designed to be participatory and conversational, 
-%%|   but I will try to do my best to communicate that spirit in written form
-
-flowchart TD
-  DM[Decision-Making] --> SWOT[SWOT] --> St[Strategy]
-  
-  St --> Domains[Domains] -- case studies --> U[Uber / Rides] --> Ecom[E-Commerce]
-  St --> BAW[Analyst's workflow] --> F[Why did you study those?]
-  DM --> AI[What is AI?] --> Cy[Cybernetics Detour] 
-  Cy --> Choice[Stats/ML/Analytics]
-
-  F --> BYOP[Bring your own problem]
-
-
-  style U fill:#f7f5bc
-  style Ecom fill:#f7f5bc
-  style F fill:#f7f5bc
-```
-
-We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor's degree. Next, we discuss what can go wrong while drawing conclusions from data -- culminating in a discussion of a problem of choice you're passionate about.
 
 ## What is Strategy?
 
