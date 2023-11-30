@@ -1,46 +1,110 @@
 
-### Module 1: Business School for Data Scientists
+# Business School: Study Guide
 
-I always start with an exploration of decisions that businesses face across many industries and use-cases. Then, I clarify what does AI[^dmuu] mean and where does it add value, what is the difference between Analytics, Statistics, and ML. 
-
-[^dmuu]: Remember "Decision-Making Under Uncertainty at Scale"
-
-In this module we focus on understanding the business domain, the **problem space**, learn how to ask good statistical questions in context of firm's strategy. An essential aid in this pursuit are different **processes and methodologies** that get us from **question to insight**, action and outcomes. However, at this point we lack the actual modeling know-how, which is a good segway to the next module. 
-
-> "What is methodology good for? Sounds like I could use that time to learn ML"
-
-These methodolgical fundamentals are not "just theory", it is what will make or break projects in practice. There are so many pitfalls in ML and statistics that we cannot afford to do it ad-hoc. In contrast, taking a systematic approach will dramatically increase our chances of succeess.
-
-::: {.callout-note}
-## Newsvendor problem, Price Optimization, Learning Problem
-
-If you worry that the business school is too conceptual -- don't despair, as we'll have three very **techical lectures**, involving math and programming. 
-
-- I use the newsvendor problem as a starting point in modeling for demand planning
-- The pricing optimization as a starting point towards revenue management
-- The Learning Problem highlights and formalizes what is at the core of Machine Learning -- in what conditions can we learn from data, generalize
-:::
-
-
-
-The "business school" emphasizes again and again the idea of **Decision-Making Under Uncertainty at Scale**, across many industries and use-cases. We walk through three perspectives: Analytics, Machine Learning, and Statistics -- then develop methodologies for each one. There are two representative case-studies in which we go in-depth: the Newsvendor Problem and Price Optimization.
+In the study guide we go into more details and granularity -- with references, readings, and practices for particular topics within each lecture. Keep in mind the [course philosophy](../philosophy.qmd), which will help you in how to approach the study of a complicated subject and refer to ["Why did you study all of that?"](prerequisites.qmd) if I invoke a certain prerequisite and you feel rusty.
 
 ::: {.column-margin}
-By convention, lectures whith mathematical inclination are marked by (*) and **programming** in bold and (**). Often we do both.
+
+Some lectures are conceptual and you might go into more depth by reading. Some are highly technical and you want to go through the math and practice/code on suggested case-studies.
 :::
 
-::: {.column-page-inset-right}
 
-|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
-|-|-------------------------------------|-----------|---------------------------|
-| 1 | [Introduction](../index.qmd) & [Course Philosophy](../philosophy.qmd).  Roadmap | Decisions, VUCA, Modeling, [prerequisites](prerequisites.qmd), project requirements  | survey of applications in various domains, admin stuff |
-| 2 | [Data Science in Business Context](background.qmd). Strategy | SWOT, Tradeoffs, Strategy, Business Analyst's Workflow, Value Chain, Fermi Estimation  | case-studies: LRB subscriptions, DTC fashion e-commerce |
-| 3 | [Decision-Making Under Uncertainty at Scale](background.qmd#cybernetics-is-what-we-call-ai) | AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty  | data roles in firms, Uber and dynamic pricing |
-| 4* | [**Newsvendor Problem**](https://youtu.be/QLsSPnwWS_M) and Demand Planning  | DAGs, model choice, inference and optimization, constraints. The general demand planning problem | TIME INC. printing quantity decisions. Simulations and restaurant data (ddop) |
-| 5* | [Learning, Intuition, and Bias](learning.qmd). What is ML? | intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff | credit defaults, recommender systems, demand forecasting |
-| 6** | [**12 Steps of ML**](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) | CRISP-DM, Feasibility, Validation | case-study: Mercari challenge |
-| 7* | [**Price optimization**](https://youtu.be/RScjq1mkDc0) under limited capacity | demand elasticity, dynamic pricing, regression, pricing strategy & revenue management | case-studies: concerts, airlines, taxis/rides |
-| 8* | [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ). A/B Testing Scheme | [default action](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF), hypotheses, confidence intervals, relevance, effect sizes, power | case-study: conversion rate optimization and marketing |
-| 9** | BI & Analytics. Data Mining. Open datasets overview | Tuckey's EDA, Data Wrangling, Databases, Data Visualization | kaggle e-commerce relational database, duckDB |
+## Introduction and Course Philosophy
+
+First, make sure you read the [introduction](../index.qmd#module-1-business-school-for-data-scientists) for a motivation and brief summary of what are we going to study, then review the [schedule and syllabus](roadmap.qmd#module-i-business-school-for-data-scientists) in order to understand how the course can be structured in particular lectures. 
+
+- Understand the particularities of decision-making in the business environment
+- Why I prefer "decision science" over "data science"
+- Necessary admin stuff and [project requirements](../index.qmd#full-stack-data-apps). Think about your goals, aspirations, interests and hobbies, so that you can pick a fun use-case
+- For a survey of applications and **use-cases in various domains**, [read here](1_applications.qmd).
+
+## Decisions and Strategy in Business Context
+
+I build upon the previous lecture to develop the story of decisions in a business environment. We need additional terminology, concepts, and models in order to structure the problem space. What is key here, is to get immersed and **put yourself in the shoes** of decision-makers. Read the [second chapter](2_performance_strategy.qmd).
+
+- Evolution of firm's performance in time. Why, Where, How? [^strat-dyn]
+    - Status quo, desired, and feared trajectories. 
+    - Tradeoffs and limited resources, SWOT Analysis
+- What is strategy? What makes good or bad strategy? [^perils-strat]
+- Business Analyst's Workflow
+- What is a Value Chain? Data Science Strategy Safari [^strat-safari]
+
+[^strat-dyn]: Read Kim Warren's article on "The Dynamics of Strategy" [here](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf)
+
+[^perils-strat]: Read the article published in McKinsey by Richard Rumelt ["The perils of bad strategy"](https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy)
+
+[^strat-safari]: Read about the framework of aligning business objectives to data science use-cases. Data Science Strategy Safari at [bayesianquest](https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/)
+
+::: {.callout-note}
+## Case-Study: LRB Subscriptions
+
+Take a subscription-based publication like [London Review of Books](https://www.lrb.co.uk/), and analyze it using the tools and frameworks you learned in the course. Think about acquisition, churn, printing, transportation, and market share. How can it grow? What would make it profitable?
+:::
+
+
+::: {.callout-note}
+## Case-Study: Food Stamps and Fermi Estimation
+
+There is a good reason why management consultants practice Fermi Estimation (sanity, order-of-magnitude checks) and it is asked in many interviews. Take a look at the case study on [Food Stamp Fraud](https://callingbullshit.org/case_studies/case_study_foodstamp_fraud.html) by Carl Bergstrom and Jevin West in Calling Bullshit.
+:::
+
+
+
+## Decision-Making Under Uncertainty at Scale
+
+In the previous lecture we learned how to better structure business problems and now it's time to bridge it with the subject matter of this course. Read the [third chapter](4_ml_stats.qmd).
+
+- Clarify what I mean by AI and Cybernetics and the historical confusion
+- When do we need Analytics vs Statistics vs Machine Learning?
+- A note on interdisciplinarity and thinking in buckets
+- Agents and Environments. Sources of Uncertainty 
+
+::: {.callout-note}
+## Case-Study: DTC Fashion E-Commerces
+
+Choose a direct-to-consumer e-commerce, like Zara, H&M, or a marketplace like Zalando (the big players in the oligopoly). How does a potential business strategy look like? What are some use-cases for Data Science / AI which can improve their outcomes?
+:::
+
+::: {.callout-note}
+## Case-Study: Uber and Dynamic Pricing
+
+In the case of Uber, Bolt (ride sharing platforms), we're very much interested in same questions as before, however, we need to get a grasp on the idea of market-making. If you were to reverse-engineer the pricing algorithms, how would you go about doing it?
 
 :::
+
+
+
+## Newsvendor Problem and Demand Planning
+
+- DAGs, model choice, inference and optimization, constraints. The general demand planning problem 
+- TIME INC. printing quantity decisions. Simulations and restaurant data (ddop)
+
+
+## Learning, Intuition, and Bias. What is ML? 
+
+- intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff 
+- credit defaults, recommender systems, demand forecasting |
+
+
+## 12 Steps of ML
+
+-  CRISP-DM, Feasibility, Validation
+- case-study: Mercari challenge 
+
+
+##  Price optimization under limited capacity 
+
+-  demand elasticity, dynamic pricing, regression, pricing strategy & revenue management
+- case-studies: concerts, airlines, taxis/rides |
+
+
+## 12 Steps of Statistics. A/B Testing Scheme 
+
+- [default action](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF), hypotheses, confidence intervals, relevance, effect sizes, power 
+- case-study: conversion rate optimization and marketing
+
+
+## BI & Analytics. Open datasets overview 
+
+- Tuckey's EDA, Data Wrangling, Databases, Data Visualization 
+- kaggle e-commerce relational database, duckDB 
