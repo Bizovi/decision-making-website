@@ -79,9 +79,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -255,18 +252,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
  <span class="menu-text">1. The Probability Triple</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. A/B Testing study resources</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -295,7 +280,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <ul>
   <li><a href="#business-performance-and-strategy" id="toc-business-performance-and-strategy" class="nav-link active" data-scroll-target="#business-performance-and-strategy">Business Performance and Strategy</a>
   <ul class="collapse">
-  <li><a href="#how-to-navigate-a-lecture" id="toc-how-to-navigate-a-lecture" class="nav-link" data-scroll-target="#how-to-navigate-a-lecture">How to navigate a lecture</a></li>
   <li><a href="#what-is-strategy" id="toc-what-is-strategy" class="nav-link" data-scroll-target="#what-is-strategy">What is Strategy?</a></li>
   <li><a href="#business-analysts-workflow" id="toc-business-analysts-workflow" class="nav-link" data-scroll-target="#business-analysts-workflow">Business Analysts’ Workflow</a></li>
   </ul></li>
@@ -360,38 +344,6 @@ Wait, this sounds familiar
 </div>
 <!-- You might've heard in the news that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses? -->
 <p>Now that it’s more clear what I meant in the course introduction by improving business outcomes and bringing value to organizations, I didn’t yet explain what does analytics, data science, machine learning, and AI do or are, and how to they fit in the picture we painted so far.</p>
-<section id="how-to-navigate-a-lecture" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="how-to-navigate-a-lecture">How to navigate a lecture</h2>
-<p>You might’ve noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don’t get lost in various detours taken and keep the big picture in mind.</p>
-<div class="page-columns page-full"><p>My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This is a course in which we look at the widest possible range of methods and models, without going into excruciating detail, as I don’t know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job.</p></li></div></div>
-<div class="cell" data-fig-width="9">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
-  DM[Decision-Making] --&gt; SWOT[SWOT] --&gt; St[Strategy]
-  
-  St --&gt; Domains[Domains] -- case studies --&gt; U[Uber / Rides] --&gt; Ecom[E-Commerce]
-  St --&gt; BAW[Analyst's workflow] --&gt; F[Why did you study those?]
-  DM --&gt; AI[What is AI?] --&gt; Cy[Cybernetics Detour] 
-  Cy --&gt; Choice[Stats/ML/Analytics]
-
-  F --&gt; BYOP[Bring your own problem]
-
-
-  style U fill:#f7f5bc
-  style Ecom fill:#f7f5bc
-  style F fill:#f7f5bc
-</pre>
-</div>
-<figcaption class="figure-caption">Figure&nbsp;1: A mind map and roadmap of the ideas and topics in this lecture. It is designed to give you a wide context in which AI is used and misused. The classroom version is designed to be participatory and conversational, but I will try to do my best to communicate that spirit in written form</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor’s degree. Next, we discuss what can go wrong while drawing conclusions from data – culminating in a discussion of a problem of choice you’re passionate about.</p>
-</section>
 <section id="what-is-strategy" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-strategy">What is Strategy?</h2>
 <p>Sounds like a naive question, but bad strategy is prevalent – which comes from a misunderstanding about what is a strategy. I highly recommend <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy">this article published by McKinsey</a> – we learn better from other’s mistakes.</p>
@@ -431,7 +383,7 @@ Wait, this sounds familiar
 </section>
 <section id="business-analysts-workflow" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="business-analysts-workflow">Business Analysts’ Workflow</h2>
-<div class="page-columns page-full"><p>This is a lot to take in! But there is one more thing to explore – a brilliant idea from a course by Dr.&nbsp;Adam Fleischhacker <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Adam Fleischhacker - <a href="https://www.causact.com/">Introduction to Business Analytics</a>: Intro to Bayesian Business Analytics in the R Ecosystem</p></li></div></div>
+<div class="page-columns page-full"><p>This is a lot to take in! But there is one more thing to explore – a brilliant idea from a course by Dr.&nbsp;Adam Fleischhacker <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Adam Fleischhacker - <a href="https://www.causact.com/">Introduction to Business Analytics</a>: Intro to Bayesian Business Analytics in the R Ecosystem</p></li></div></div>
 <blockquote class="blockquote">
 <p>“You will translate real-world scenarios into both mathematical and computational representations that yield actionable insight. You will then take that insight back to the real-world to persuade stakeholders to alter and improve their real-world decisions.”</p>
 </blockquote>

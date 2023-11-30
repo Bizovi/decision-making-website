@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../02_causality/roadmap_abtest.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -79,8 +78,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -147,7 +144,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/prob_study_guide.html">2. Fundamentals of Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../02_causality/ab_testing.html">3. A/B Testing study resources</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -236,11 +233,11 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
@@ -255,13 +252,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/ab_testing.html" class="sidebar-item-text sidebar-link active">
+  <a href="../02_causality/roadmap_abtest.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. A/B Testing study resources</span></a>
   </div>
 </li>
@@ -287,13 +278,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#ab-testing-and-experiment-design" id="toc-ab-testing-and-experiment-design" class="nav-link active" data-scroll-target="#ab-testing-and-experiment-design">A/B Testing and Experiment Design</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -304,28 +289,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<section id="ab-testing-and-experiment-design" class="level2">
-<h2 class="anchored" data-anchor-id="ab-testing-and-experiment-design">A/B Testing and Experiment Design</h2>
-<p>Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design.</p>
-<p>I’m emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, <span class="math inline">\(\alpha, \beta\)</span>, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.</p>
-<ul>
-<li>Understanding the philosophy of falsification and how it applies to hypothesis testing. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory">Week2 of this course</a> has a great 20 minute explanation.</li>
-<li>Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">Here</a> you can see the reasoning for testing and <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">an article by Cassie</a> for statistics.</li>
-<li>Remember the importance of those 12 steps of statistics, especially the <a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">Default Action</a>. For a more classical exposition - check <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">this</a> out.</li>
-<li>Confidence Intervals - first check out this <a href="https://rpsychologist.com/d3/ci/">simulation</a>. Also <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">chapter 12</a>, uses bootstrap to estimate those.</li>
-<li>p-values - <a href="https://rpsychologist.com/pvalue/">simulation</a>, <a href="https://rpsychologist.com/d3/pdist/">simulation of distirbutions under H0/Ha</a></li>
-<li>Type 1, 2 errors, Type 3 errors (solving the wrong problem), <a href="https://openintro-ims.netlify.app/decerr.html">chapter14</a></li>
-<li>A/B Testing scheme, <a href="https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a">An end-to-end example</a>, but be careful to follow the 12 steps we have and not to forget to define the Default Action.</li>
-<li>Experiment Design and Hypothesis testing pitfalls - <a href="https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing">from HBR</a>, <a href="https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e">8 pitfalls</a>, <a href="https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241">A/A tests</a>, <a href="https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8">user interference</a></li>
-<li>Metric Design and <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">properties of good metrics</a> - <a href="https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">an example</a></li>
-<li>Relevance and Significance - Read <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">this paper</a> by Werner Stahel</li>
-<li>Non-Inferiority testing - <a href="https://rpsychologist.com/d3/equivalence/">This visualization</a></li>
-<li>Effect size, Power, Sample Size - <a href="https://mathstat.slu.edu/~speegle/_book/HTCI.html">here</a>, and <a href="https://www.huber.embl.de/msmb/06-chap.html">here</a> and <a href="https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html">here</a>. <a href="https://rpsychologist.com/cohend/">Cohen’s d</a>, <a href="https://rpsychologist.com/d3/nhst/">Power Analysis</a></li>
-<li>Philosophy of science: Popper and Latakos, in this <a href="https://www.youtube.com/watch?v=cgvKG_3Ck7Y">lecture</a></li>
-</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -676,15 +641,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-      <a href="../02_causality/roadmap_abtest.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Syllabus &amp; Roadmap</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

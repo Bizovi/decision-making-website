@@ -289,18 +289,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
  <span class="menu-text">1. The Probability Triple</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. A/B Testing study resources</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -658,24 +646,6 @@ A/B Testing and Multi-Armed Bandits
 </div>
 </div>
 <p>We encountered the problem of sample size when ranking reddit posts, but it deserves a few lectures in itself. Once you master a few methods of reasoning about <span class="math inline">\(n\)</span>, you can cut through so much bullshit in media, research, and literature.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The most dangerous equation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I think that <a href="http://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> is a must read for anyone, not just practicing scientists and statisticians. You can see below two resources for the mathematical background of LLT, CLT, and some key properties of estimators.</p>
-<ul>
-<li>Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">the theorem and simulations here</a></li>
-<li>Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
-</ul>
-<p>Continuing on the reddit examples, there are some amazing case-studies in the “Calling Bullshit” website and book. One of them is exactly such a ranking problem: <a href="https://www.callingbullshit.org/case_studies/case_study_barbecue.html">best barbecue in the states</a>. I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill – to call out the bullshit.</p>
-</div>
-</div>
 <p>For the continuity with the previous “Building Blocks” section, here are a few example for groups, where the dependent variable is following the Poisson distribution. In this case, the novelty is choosing a gamma prior based on the sample size information of each group. If you think we can do better than this trick – you’re totally right.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -766,24 +736,7 @@ Examples. Introduction to the workflow
 </div>
 </div>
 <p>I have a third favorite book, which is freely available, called “Beyond Multiple Linear Regression”. It covers all that we discuss here, but from a frequentist perspective. Despite that, the examples are amazing and it has enough of theory to make it a self-contained resource – therefore, makes a perfect candidate for a port in pymc/numpyro. For a review of linear regression, take a look at the <a href="https://bookdown.org/roback/bookdown-BeyondMLR/ch-MLRreview.html">Kentucky derby horse race</a>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Common statistical tests are linear models
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<ul>
-<li><a href="https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html">pymc</a> - Krutsche fake data drug trial, t-test, <a href="https://bambinos.github.io/bambi/notebooks/t-test.html">bambi</a>.</li>
-<li><a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and the <a href="https://www.georgeho.org/tests-as-linear/">python port</a></li>
-</ul>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><p>Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors).</p>
+<p>Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors).</p>
 <p>However, things go wrong in practice all the time: poorly specified and parametrized models lead to computational problems. It is important to be able to diagnose the chains, and even more, actively critique and interogate your models. At some point, you have to get an understanding of what MCMC, HMC does under the hood – and when you would trade off the accuracy for faster, approximate inference.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1185,7 +1138,6 @@ Gaussian Processes
 
 
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

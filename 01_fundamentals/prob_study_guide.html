@@ -78,6 +78,9 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -253,18 +256,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
  <span class="menu-text">1. The Probability Triple</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. A/B Testing study resources</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -291,7 +282,18 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#module-ii-probability-and-statistics" id="toc-module-ii-probability-and-statistics" class="nav-link active" data-scroll-target="#module-ii-probability-and-statistics">Module II: Probability and Statistics</a></li>
+  <li><a href="#probability-and-statistics-study-guide" id="toc-probability-and-statistics-study-guide" class="nav-link active" data-scroll-target="#probability-and-statistics-study-guide">Probability and Statistics: Study Guide</a>
+  <ul class="collapse">
+  <li><a href="#combinatorics.-sampling.-urn-models" id="toc-combinatorics.-sampling.-urn-models" class="nav-link" data-scroll-target="#combinatorics.-sampling.-urn-models">Combinatorics. Sampling. Urn Models</a></li>
+  <li><a href="#probability-triple.-random-variables.-models" id="toc-probability-triple.-random-variables.-models" class="nav-link" data-scroll-target="#probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</a></li>
+  <li><a href="#stories-behind-distributions" id="toc-stories-behind-distributions" class="nav-link" data-scroll-target="#stories-behind-distributions">Stories behind distributions</a></li>
+  <li><a href="#conditioning-and-bayes-rule" id="toc-conditioning-and-bayes-rule" class="nav-link" data-scroll-target="#conditioning-and-bayes-rule">Conditioning and Bayes Rule</a></li>
+  <li><a href="#llns-clts.-estimator-properties" id="toc-llns-clts.-estimator-properties" class="nav-link" data-scroll-target="#llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</a></li>
+  <li><a href="#bias-variance.-fisher-information" id="toc-bias-variance.-fisher-information" class="nav-link" data-scroll-target="#bias-variance.-fisher-information">Bias-Variance. Fisher Information</a></li>
+  <li><a href="#hypothesis-testing.-neyman-pearson" id="toc-hypothesis-testing.-neyman-pearson" class="nav-link" data-scroll-target="#hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</a></li>
+  <li><a href="#frequentism-vs-likelihood-vs-bayes" id="toc-frequentism-vs-likelihood-vs-bayes" class="nav-link" data-scroll-target="#frequentism-vs-likelihood-vs-bayes">Frequentism vs Likelihood vs Bayes</a></li>
+  <li><a href="#dead-salmon-experiment.-replication-crisis" id="toc-dead-salmon-experiment.-replication-crisis" class="nav-link" data-scroll-target="#dead-salmon-experiment.-replication-crisis">Dead Salmon Experiment. Replication Crisis</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -304,84 +306,234 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<section id="module-ii-probability-and-statistics" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="module-ii-probability-and-statistics">Module II: Probability and Statistics</h2>
-<p>There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals.</p>
+<section id="probability-and-statistics-study-guide" class="level1 page-columns page-full">
+<h1>Probability and Statistics: Study Guide</h1>
+<p>Many mistakes in statistical modeling and inference come from a misunderstanding about the nature of statistical inference. This is why we start from the very beginning, with counting. But first, read the <a href="../index.html#module-2-probability-and-statistics">motivation</a> from course introduction.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>I prefer to fill in the gaps with <strong>stories</strong> and <strong>simulations</strong>, however, in some cases the mathematical formalism and abstractions can’t be avoided and actually help understanding</p>
-</div></div><p>Therefore, fundamental – doesn’t mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.</p>
-<div class="column-page-inset-right">
-<table class="table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Lecture Agenda</th>
-<th>Keywords</th>
-<th>Case Studies / Activities</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1*</td>
-<td>Combinatorics. Sampling &amp; Urn Models</td>
-<td>replacement, multiplication rule, naive <span class="math inline">\(\mathbb{P}\)</span></td>
-<td>Birthday Paradox, Bootstrap</td>
-</tr>
-<tr class="even">
-<td>2*</td>
-<td>Probability Triple. Random Variables. What is a model?</td>
-<td>experiment, sample space, measure, population, estimand, estimators, golemns</td>
-<td><a href="https://johnkerl.org/doc/prbstat/prbstat.html">Probability vs Statistics</a>, Kolmogorov, Garden Forking Paths</td>
-</tr>
-<tr class="odd">
-<td>3**</td>
-<td><strong>Binomial, Poisson</strong>, Beta, Gamma. Stories behind distributions</td>
-<td>PMF, PDF, CDF, Hypergeometric, Negative Binomial, <span class="math inline">\(\chi^2_k\)</span>, mixtures, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N\)</span>, Weibull</td>
-<td>couples showing up to safari, arrival times, basketball shots, hot hand</td>
-</tr>
-<tr class="even">
-<td>4*</td>
-<td><strong>Conditioning and Bayes Rule</strong>. Likelihood Ratios</td>
-<td>DAGs, Conditioning, Marginalization, Priors, Updating</td>
-<td>Monty Hall, Simpsons’ Paradox, Football Spreads, Medical testing</td>
-</tr>
-<tr class="odd">
-<td>5*</td>
-<td><strong>CLT</strong> and LLNs. Convergence types. Estimator properties</td>
-<td>sample size, convergence in probability, distribution, almost-sure</td>
-<td>The most dangerous equation, hackernoon ranking algo</td>
-</tr>
-<tr class="even">
-<td>6*</td>
-<td><strong>Bias-Variance</strong>, Fisher Information, Rao-Cramer</td>
-<td>Efficiency, Bias, James-Stein, curse of dimensionality</td>
-<td>Bootstrap, simulations and visualizations</td>
-</tr>
-<tr class="odd">
-<td>7*</td>
-<td>Neyman-Pearson frequentism. Popper and falsification</td>
-<td>Type I, II errors, confint, p-value, PPV, effect sizes, <strong>power analysis, range predictions</strong>, <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_A\)</span></td>
-<td>How to ask better questions. Stahel’s relevance</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Frequentism vs Likelihood vs Bayes</td>
-<td>philosophical roots, agreements, weaknesses</td>
-<td>The path of action vs devotion vs belief</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Dead Salmon Experiment. Replication Crisis</td>
-<td>multiple testing, harking, snooping, publishing bias, open science, underpowered studies</td>
-<td>Examination of controversies in medicine, psychology, and social science</td>
-</tr>
-</tbody>
-</table>
+<p>In contrast with the previous module, the lectures here are generally more mathematical, hands-on, and time-consuming. But don’t worry, I keep the promise of stories and graphs over proofs.</p>
+</div></div><div class="cell" data-fig-width="9">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
+
+    U[Uncertainty] -- P. construction --&gt; Comb[1. Combinatorics] --&gt; PTr[2. Prob Triple, r.v.] --&gt; RV[3. Distribution stories] --&gt; B[4. Bayes &amp; Conditioning]
+
+    U -- estimator properties --&gt; E[5. LLN, CLT, Properties] --&gt; BV[6. Bias-Variance]
+
+    U -- hypothesis testing --&gt; NP[7. Neyman-Pearson] --&gt; M1[/Module 1: A/B Testing/] --&gt; Persp[8. Freq, Lik, Bayes] --&gt; RC[9. Replication Crisis]
+
+    style RV fill:#f7f5bc
+    style B fill:#f7f5bc
+    style NP fill:#f7f5bc
+
+    style M1 fill:#ffb6c1
+</pre>
 </div>
+<figcaption class="figure-caption">Figure&nbsp;1: A mind map of lectures grouped by theme so you can navigate the study guide easier. See below all the topics, case-studies, references, and readings for each chapter or lecture.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="combinatorics.-sampling.-urn-models" class="level2">
+<h2 class="anchored" data-anchor-id="combinatorics.-sampling.-urn-models">Combinatorics. Sampling. Urn Models</h2>
+<p>There are several excellent courses which start from counting, and I think there are some extremely useful and practical things which you missed about combinatorics. Also, there is a way to learn you never have to remember stuff by heart.</p>
+<ul>
+<li>Multiplication rule</li>
+<li>Sampling with and without replacement. Ordered vs unordered</li>
+<li>Naive Probability</li>
+<li>A result about Bootsrap</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Birthday Paradox. Pigenhole Principle. Collision Problems
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
+<p>| experiment, sample space, measure, population, estimand, estimators, golemns | <a href="https://johnkerl.org/doc/prbstat/prbstat.html">Probability vs Statistics</a>, Kolmogorov, Garden Forking Paths |</p>
+<p>If you understand and can explain the following ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky, here are some readings:</p>
+<ul>
+<li><strong>Probability Triple</strong> and <strong>Random Variables</strong> - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
+<li><strong>Collectivity</strong> (“physical” structure), <strong>Statistical Population</strong>, <strong>Sample</strong> - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a>.</li>
+<li><strong>Parameter</strong> (Estimand), <strong>Estimator</strong>, <strong>Estimation/Statistic</strong> - same resources as above <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Stories behnid distributions: <span class="math inline">\(Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k\)</span>. What about <span class="math inline">\(Beta(a, b)\)</span>, <span class="math inline">\(Gamma(k, \theta)\)</span>, and <span class="math inline">\(Dirichlet(\bar{\theta})\)</span> – what are they good for?
+<ul>
+<li>Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories / applications with more math</a> from Joe Blitzstein.</li>
+</ul></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian “frequentism”.</p></li></div></section>
+<section id="stories-behind-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
+<p><strong>Binomial, Poisson</strong>, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, <span class="math inline">\(\chi^2_k\)</span>, mixtures, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N\)</span>, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |</p>
+</section>
+<section id="conditioning-and-bayes-rule" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="conditioning-and-bayes-rule">Conditioning and Bayes Rule</h2>
+<p>Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons’ Paradox, Football Spreads, Medical testing |</p>
+<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
+<p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bayes Rule. Update your beliefs, often!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p>
+<ul>
+<li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
+<ul>
+<li>If you’re into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?</li>
+<li>For brevity, I won’t elaborate much from now on, how to take an use-case and example to its limit. <strong>If you’re passionate about a particular topic – go for it!</strong></li>
+</ul></li>
+<li>(BDA3, Ch1): <strong>Spelling correction</strong>, based on <a href="http://norvig.com/ngrams/">empirical frequencies</a> provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself – it is good for a warm-up, but challenging enough to keep you occupied.</li>
+<li>(<a href="https://projects.iq.harvard.edu/stat110/home">Probability 110</a>): <strong>Medical testing</strong> for rare diseases, hypothetical example with code in my <a href="https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb">course repository</a>. We use the same idea to reason about how confident are we our code has no bugs.
+<ul>
+<li>If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could’ve applied the same idea!</li>
+</ul></li>
+</ul>
+<p>For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
+<p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
+</section>
+<section id="llns-clts.-estimator-properties" class="level2">
+<h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
+<p><strong>CLT</strong> and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo |</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The most dangerous equation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I think that <a href="http://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> is a must read for anyone, not just practicing scientists and statisticians. You can see below two resources for the mathematical background of LLT, CLT, and some key properties of estimators.</p>
+<ul>
+<li>Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">the theorem and simulations here</a></li>
+<li>Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
+</ul>
+<p>Continuing on the reddit examples, there are some amazing case-studies in the “Calling Bullshit” website and book. One of them is exactly such a ranking problem: <a href="https://www.callingbullshit.org/case_studies/case_study_barbecue.html">best barbecue in the states</a>. I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill – to call out the bullshit.</p>
+</div>
+</div>
+</section>
+<section id="bias-variance.-fisher-information" class="level2">
+<h2 class="anchored" data-anchor-id="bias-variance.-fisher-information">Bias-Variance. Fisher Information</h2>
+<p><strong>Bias-Variance</strong>, Fisher Information, Rao-Cramer | Efficiency, Bias, James-Stein, curse of dimensionality | Bootstrap, simulations and visualizations |</p>
+<p>Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relevance for ML, Deep Learning |</p>
+</section>
+<section id="hypothesis-testing.-neyman-pearson" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</h2>
+<p>In order to make sense of frequentist hypothesis testing, I strongly recommend you read about the original idea of Neyman and Pearson (error control – don’t make a fool of yourself too often in the long run).</p>
+<p>We will start from the first principles and will let go of mechanical application of procedures and conventions (p-values, <span class="math inline">\(\alpha, \beta\)</span>, test choice). You should to be able to justify all the choices you make during the phase of experiment design, i.e.&nbsp;before running the experiment. This is certainly the most difficult lecture of the module.</p>
+<ul>
+<li>Picking a default action. Type I, II errors. How costly is each type of mistakes?</li>
+<li>Minimal <strong>effect size</strong> of interest, <a href="https://rpsychologist.com/cohend/">Cohen’s</a> <span class="math inline">\(d\)</span></li>
+<li><a href="https://rpsychologist.com/d3/nhst/">Power Analysis</a> and Sample Size justification. How surprising are significant findings under each hypothesis? Positive Predictive Value</li>
+<li>p-values <a href="https://rpsychologist.com/pvalue/">simulation</a>, <a href="https://rpsychologist.com/d3/pdist/">p-curve</a> under <span class="math inline">\(H_0, H_A\)</span>.</li>
+<li>Confidence Intervals - first check out this <a href="https://rpsychologist.com/d3/ci/">simulation</a>. Also <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">chapter 12</a>, uses bootstrap to estimate those. Capture percent</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>In order to put everything together, there are four resources I can recommend:</p>
+<ul>
+<li><a href="https://mathstat.slu.edu/~speegle/_book/HTCI.html">T-test end to end</a></li>
+<li><a href="https://www.huber.embl.de/msmb/06-chap.html">here</a></li>
+<li><a href="https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html">here</a></li>
+<li>improving your statistical inferences</li>
+</ul>
+</div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Asking better questions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Make riskier predictions: Non-Inferiority testing - <a href="https://rpsychologist.com/d3/equivalence/">This visualization</a>, Equivalence Testing, Range predictions</li>
+<li>Publication bias, open science, pre-registrations</li>
+<li>Telescope method and resource-based</li>
+<li>Type 3 errors (solving the wrong problem), <a href="https://openintro-ims.netlify.app/decerr.html">chapter14</a></li>
+<li>Read Werner Stahel’s <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">Relevance</a> paper and Gelman’s Sign and Magnitude errors</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Choosing a model. Common statistical tests are linear models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<ul>
+<li><a href="https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html">pymc</a> - Krutsche fake data drug trial, t-test, <a href="https://bambinos.github.io/bambi/notebooks/t-test.html">bambi</a>.</li>
+<li><a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and the <a href="https://www.georgeho.org/tests-as-linear/">python port</a></li>
+<li>Choosing a statistical test: difference in proportions and means, test of <span class="math inline">\(\sigma\)</span>, correlations</li>
+<li>Bootstrap and nonparametric tests</li>
+</ul>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A detour on the philosophy of science
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Understanding the philosophy of falsification and how it applies to hypothesis testing. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory">Week2 of this course</a> has a great 20 minute explanation.</li>
+<li>Philosophy of science: Popper and Latakos, in this <a href="https://www.youtube.com/watch?v=cgvKG_3Ck7Y">lecture</a></li>
+<li>“The null is always false”</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="frequentism-vs-likelihood-vs-bayes" class="level2">
+<h2 class="anchored" data-anchor-id="frequentism-vs-likelihood-vs-bayes">Frequentism vs Likelihood vs Bayes</h2>
+<p>Frequentism vs Likelihood vs Bayes | philosophical roots, agreements, weaknesses | The path of action vs devotion vs belief |</p>
+<p>Bootstrap and Nonparametrics | resampling, ECDF | Kolmogorov-Smirnov |</p>
+<p>When discussing hypothesis testing and experiment design, we can’t avoid an overview of frequentist methods (path of action) and a discussion of the philosophy of science.</p>
+<p>Path of action vs path of devotion vs path of belief</p>
+</section>
+<section id="dead-salmon-experiment.-replication-crisis" class="level2">
+<h2 class="anchored" data-anchor-id="dead-salmon-experiment.-replication-crisis">Dead Salmon Experiment. Replication Crisis</h2>
+<p>multiple testing, harking, snooping, publishing bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science |</p>
+<p>Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |</p>
+<p>Reproducibility vs Replication, Meta-Analysis</p>
+<p>Ethics and Integrity</p>
+<p>Simulation,</p>
 
 
 </section>
+</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

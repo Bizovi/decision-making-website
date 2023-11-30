@@ -79,7 +79,12 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -252,18 +257,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
  <span class="menu-text">1. The Probability Triple</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. A/B Testing study resources</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -293,6 +286,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <li><a href="#what-is-ai-data-science-cybernetics" id="toc-what-is-ai-data-science-cybernetics" class="nav-link active" data-scroll-target="#what-is-ai-data-science-cybernetics">What is AI, Data Science, Cybernetics?</a>
   <ul class="collapse">
   <li><a href="#cybernetics-is-what-we-call-ai" id="toc-cybernetics-is-what-we-call-ai" class="nav-link" data-scroll-target="#cybernetics-is-what-we-call-ai">Cybernetics is what we call AI</a></li>
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty">Sources of Uncertainty</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -453,6 +447,34 @@ The meaning of AI changed in the meanwhile
 </div>
 </div>
 <div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;M. Jordan - <a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a>: The Revolution Hasn’t Happened Yet</p></li></div><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;K. Pretz - <a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says</p></li></div><p>In practice, if you’re a data/business analyst, ML/data engineer, data scientist, statistician, product manager – Cybernetics is a way of thinking in systems and formulate problems well. When it comes to implementation, we mostly use data and the tools, models, methods discussed in this course.</p>
+</section>
+<section id="sources-of-uncertainty" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sources-of-uncertainty">Sources of Uncertainty</h2>
+<p>We already raised the issue of <a href="../01_fundamentals/background.html#what-is-ai-data-science-cybernetics-">where does uncertainty come from</a>, mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one, which will be also very clear later.</p>
+<div class="page-columns page-full"><p>Think of <strong>agents</strong> who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations <span class="math inline">\((x_1, x_2, ..., x_t)\)</span> and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;This paragraph is taken from the brilliant, open book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a> by M. Kochenderfer, T. Wheeler, and K. Wray</p></li></div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart LR
+    Env(Environment) -- observation --&gt; A(Agent)
+    A -- action --&gt; Env
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Outcome uncertainty</strong>, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can’t take everything into account when making a decision – it becomes combinatorialy explosive.</li>
+<li><strong>Model uncertainty</strong>, that is we can’t be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.</li>
+<li><strong>State uncertainty</strong> was discussed at length before, where the true state of the environment is uncertain and moreover, everything changes and is in flux.</li>
+<li><strong>Interaction uncertainty</strong>, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.</li>
+</ul>
+<p>We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
+<!-- [TODO: Provide examples]{.aside} -->
 <!-- Data Science Context, in Business, Interdisciplinarity --->
 <!-- [^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html) -->
 

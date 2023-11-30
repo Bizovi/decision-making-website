@@ -78,6 +78,9 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -253,18 +256,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
  <span class="menu-text">1. The Probability Triple</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/roadmap_abtest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Syllabus &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_causality/ab_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. A/B Testing study resources</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -319,9 +310,40 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <h1>Business School: Study Guide</h1>
 <p>In the study guide we go into more details and granularity – with references, readings, and practices for particular topics within each lecture. Keep in mind the <a href="../philosophy.html">course philosophy</a>, which will help you in how to approach the study of a complicated subject and refer to <a href="../01_fundamentals/prerequisites.html">“Why did you study all of that?”</a> if I invoke a certain prerequisite and you feel rusty.</p>
 
+<!-- ## How to navigate a lecture
+
+You might've noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don't get lost in various detours taken and keep the big picture in mind.  -->
+<!-- My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. [^thread]
+
+[^thread]: This is a course in which we look at the widest possible range of methods and models, without going into excruciating detail, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job.  -->
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Some lectures are conceptual and you might go into more depth by reading. Some are highly technical and you want to go through the math and practice/code on suggested case-studies.</p>
-</div></div><section id="introduction-and-course-philosophy" class="level2">
+</div></div><div class="cell" data-fig-width="9">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
+
+    DM[Decision Science] -- big picture --&gt; App[1. Domains &amp; Use-Cases] --&gt; Strat[2. Business Strategy] --&gt; Adv[3. Analytics vs ML vs Stats]
+
+    DM -- bussiness econ --&gt; NW[4. Newsvendor] --&gt; PD[7. Pricing Decisions] --&gt; Churn[9. Churn &amp; LTV]
+
+    DM -- methodology --&gt; ML[5. Learning &amp; Bias] --&gt; ML12[6. 12 Steps of ML] --&gt; Stat[8. 12 Steps of Stats]
+
+
+    style NW fill:#f7f5bc
+    style PD fill:#f7f5bc
+    style Churn fill:#f7f5bc
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: A mind map of lectures grouped by theme so you can navigate the study guide easier. See below all the topics, case-studies, references, and readings for each chapter or lecture.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor's degree. Next, we discuss what can go wrong while drawing conclusions from data -- culminating in a discussion of a problem of choice you're passionate about. -->
+<section id="introduction-and-course-philosophy" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-course-philosophy">Introduction and Course Philosophy</h2>
 <p>First, make sure you read the <a href="../index.html#module-1-business-school-for-data-scientists">introduction</a> for a motivation and brief summary of what are we going to study, then review the <a href="../01_fundamentals/roadmap.html#module-i-business-school-for-data-scientists">schedule and syllabus</a> in order to understand how the course can be structured in particular lectures.</p>
 <ul>
@@ -511,15 +533,10 @@ Case-Study: Concerts, Events, and Airlines
 </div>
 </div>
 </section>
-<section id="steps-of-statistics.-ab-testing-scheme" class="level2">
+<section id="steps-of-statistics.-ab-testing-scheme" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="steps-of-statistics.-ab-testing-scheme">12 Steps of Statistics. A/B Testing Scheme</h2>
 <p>I assume you have been working on Module 2 (Fundamentals of Statistics and Probability) in parallel, so that we can get to a point where we discuss the practical and methodological aspects of A/B testing and randomized experiments.</p>
 <p>In this lecture I bridge the gap between the theory/fundamentals and practice. We will see how an end-to-end process of experiment design looks like. In the end, you will learn how to make justified choices in how you set-up and run an experiment.</p>
-<ul>
-<li>Path of action and the importance of defining a <a href="(https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF)">default action</a></li>
-<li>What is a statistical hypothesis anyways? How does it relate to the original question?</li>
-<li>Relevance, significance, effect sizes, power, and sample size</li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -531,13 +548,25 @@ Case-Study: Conversion Rate Optimization
 </div>
 <div class="callout-body-container callout-body">
 <p>Marketing is one area of online businesses which heavily relies on randomized experiments and A/B tests. Firms try to make the most out of their <strong>advertisement spending</strong> (customer acquisition), by testing <strong>changes in user experience</strong>, promotion, merchandising, to convince a larger proportion of them to buy the product or subscribe (conversion rate).</p>
+<p>Read this <a href="https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a">end-to-end example</a>, which takes a lot of attention and care into verifying potential pitfalls. If you need other perspectives about what can go wrong, you can refer to: <a href="https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing">HBR article</a>, <a href="https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e">8 pitfalls and solutions</a>, <a href="https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241">A/A tests</a>, and <a href="https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8">user interference</a></p>
 </div>
 </div>
-</section>
+<ul>
+<li>Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> Maybe we want to explore or predict?</li>
+<li><a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">Default action</a> is one of the most important ideas in statistics.</li>
+<li>What is a statistical hypothesis anyways? How does it relate to the original question?
+<ul>
+<li>Make sure you define the minimal effect size of interest/relevance</li>
+<li>Type 3 errors: be careful what is the question you really ask of your test</li>
+</ul></li>
+<li>Watch the <a href="https://youtu.be/R4ckbZCgmxQ?si=pkxQD3lG3CIo4NKf">12 steps to statistics</a> by Cassie Kozyrkov for a methodology of how to perform experiments in business settings. For a more traditional exposition, check out Poldrack’s <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">Chapter 9</a>.</li>
+<li>One of the most difficult aspects in practice is metric design, since we deal with tradeoffs so often. An useful way to think about properties of good metrics is described in <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">this paper, STEDII</a>. Also see <a href="https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">this example</a> discussing sensitivity, stability, and directedness.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Read Cassie Kozyrkov’s article to recognize when <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">“not to waste your time with statistics”</a>. You can also watch <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">this video</a>. You can also see her <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">full, short lecture</a> for Google employees.</p></li></div></section>
 <section id="churn-and-lifetime-value.-open-datasets" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="churn-and-lifetime-value.-open-datasets">Churn and Lifetime Value. Open datasets</h2>
 <p>Customer retention and repurchase is what makes or breaks businesses, especially in the past few years, with so many subscription and SAAS business models. Therefore, this topic deserves a full lecture – to cover the contractual and PAYG/non-contractual settings.</p>
-<div class="page-columns page-full"><p>I show that predicting churn and remaining customer lifetime value is not just a simple classification / regression problem. First, we need some tools from survival analysis and second – what we really want to know is who can be convinced to remain by an intervention, like promotions or loyalty programs. <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;This is a good opportunity to introduce the idea of Uplift and Calibration of classification scores returned by a ML model.</p></li></div></div>
+<div class="page-columns page-full"><p>I show that predicting churn and remaining customer lifetime value is not just a simple classification / regression problem. First, we need some tools from survival analysis and second – what we really want to know is who can be convinced to remain by an intervention, like promotions or loyalty programs. <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn11"><p><sup>11</sup>&nbsp;This is a good opportunity to introduce the idea of Uplift and Calibration of classification scores returned by a ML model.</p></li></div></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
