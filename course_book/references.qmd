@@ -217,17 +217,6 @@ I suggest you start from the didactic examples in Bayesian Methods for Hackers, 
 
 We encountered the problem of sample size when ranking reddit posts, but it deserves a few lectures in itself. Once you master a few methods of reasoning about $n$, you can cut through so much bullshit in media, research, and literature. 
 
-::: {.callout-tip}
-## The most dangerous equation
-
-I think that ["The most dangerous equation"](http://assets.press.princeton.edu/chapters/s8863.pdf) is a must read for anyone, not just practicing scientists and statisticians. You can see below two resources for the mathematical background of LLT, CLT, and some key properties of estimators.
-
-- Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. [the theorem and simulations here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem)
-- Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in [openforecast](https://openforecast.org/sba/estimatesProperties.html)
-
-Continuing on the reddit examples, there are some amazing case-studies in the "Calling Bullshit" website and book. One of them is exactly such a ranking problem: [best barbecue in the states](https://www.callingbullshit.org/case_studies/case_study_barbecue.html). I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill -- to call out the bullshit.
-:::
-
 For the continuity with the previous "Building Blocks" section, here are a few example for groups, where the dependent variable is following the Poisson distribution. In this case, the novelty is choosing a gamma prior based on the sample size information of each group. If you think we can do better than this trick -- you're totally right.
 
 ::: {.callout-note}
@@ -299,16 +288,6 @@ Also, the second resource, which I would say is even beter, takes on the perspec
 
 I have a third favorite book, which is freely available, called "Beyond Multiple Linear Regression". It covers all that we discuss here, but from a frequentist perspective. Despite that, the examples are amazing and it has enough of theory to make it a self-contained resource -- therefore, makes a perfect candidate for a port in pymc/numpyro. For a review of linear regression, take a look at the [Kentucky derby horse race](https://bookdown.org/roback/bookdown-BeyondMLR/ch-MLRreview.html).
 
-::: {.callout-tip}
-## Common statistical tests are linear models
-
-Now, once you got the absolute basics of regression, it's important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models[^tests-lr].
-
-- [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html) - Krutsche fake data drug trial, t-test, [bambi](https://bambinos.github.io/bambi/notebooks/t-test.html). 
-- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests) and the [python port](https://www.georgeho.org/tests-as-linear/) 
-:::
-
-[^tests-lr]: This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.
 
 Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors). 
 

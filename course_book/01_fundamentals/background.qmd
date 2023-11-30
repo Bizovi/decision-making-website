@@ -128,6 +128,35 @@ In practice, if you're a data/business analyst, ML/data engineer, data scientist
 
 
 
+## Sources of Uncertainty
+
+We already raised the issue of [where does uncertainty come from](background.qmd#what-is-ai-data-science-cybernetics-), mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one, which will be also very clear later.
+
+Think of **agents** who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations $(x_1, x_2, ..., x_t)$ and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. [^dm]
+
+[^dm]: This paragraph is taken from the brilliant, open book [Algorithms for Decision Making, MIT Press - 2022](https://algorithmsbook.com/) by M. Kochenderfer, T. Wheeler, and K. Wray
+
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-cap: |
+%%|   This diagram captures the story from the previous chapter in a way
+%%|   which allows itself to a more formal treatment, 
+%%|   a kind of joint learning, representation, and dynamic optimization.
+
+flowchart LR
+	Env(Environment) -- observation --> A(Agent)
+	A -- action --> Env
+```
+
+- **Outcome uncertainty**, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can't take everything into account when making a decision -- it becomes combinatorialy explosive.
+- **Model uncertainty**, that is we can't be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.
+- **State uncertainty** was discussed at length before, where the true state of the environment is uncertain and moreover, everything changes and is in flux.
+- **Interaction uncertainty**, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.
+
+We will focus very little on this last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems and agent-based modeling in cybernetics, and finally, graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.
+
+<!-- [TODO: Provide examples]{.aside} -->
+
 
 
 

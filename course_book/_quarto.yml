@@ -69,10 +69,6 @@ website:
           text: "Syllabus & Study Guide"
         - href: 01_fundamentals/stat_foundations.qmd
           text: "1. The Probability Triple"
-        - href: 02_causality/roadmap_abtest.qmd
-          text: "2. Syllabus & Roadmap"
-        - href: 02_causality/ab_testing.qmd
-          text: "3. A/B Testing study resources"
       - text: "-----"
       - section: "3. Applied Bayesian Statistics"
         href: references.qmd
