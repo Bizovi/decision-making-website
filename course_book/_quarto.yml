@@ -47,8 +47,10 @@ website:
         href: 01_fundamentals/prerequisites.qmd
       - text: "-----"
       - section: "1. Business School for Data Scientists"
-        href: 01_fundamentals/background.qmd
+        href: 01_fundamentals/0_study_guide.qmd
         contents:
+        - href: 01_fundamentals/0_study_guide.qmd
+          text: "Syllabus & Study Guide"
         - href: 01_fundamentals/1_applications.qmd
           text: "1. Application Domains & Use-Cases"
         - href: 01_fundamentals/2_performance_strategy.qmd
@@ -61,8 +63,10 @@ website:
           text: "5. Learning from Data: Intuition and Bias"
       - text: "-----"
       - section: "2. Fundamentals of Probability & Statistics"
-        href: 01_fundamentals/stat_foundations.qmd
+        href: 01_fundamentals/prob_study_guide.qmd
         contents:
+        - href: 01_fundamentals/prob_study_guide.qmd
+          text: "Syllabus & Study Guide"
         - href: 01_fundamentals/stat_foundations.qmd
           text: "1. The Probability Triple"
         - href: 02_causality/roadmap_abtest.qmd
@@ -74,7 +78,7 @@ website:
         href: references.qmd
         contents:
           - href: references.qmd
-            text: "1. Study Guide"
+            text: "Syllabus & Study Guide"
 
   page-navigation: true
   page-footer:

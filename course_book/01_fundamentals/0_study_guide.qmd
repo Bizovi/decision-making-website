@@ -1,0 +1,46 @@
+
+### Module 1: Business School for Data Scientists
+
+I always start with an exploration of decisions that businesses face across many industries and use-cases. Then, I clarify what does AI[^dmuu] mean and where does it add value, what is the difference between Analytics, Statistics, and ML. 
+
+[^dmuu]: Remember "Decision-Making Under Uncertainty at Scale"
+
+In this module we focus on understanding the business domain, the **problem space**, learn how to ask good statistical questions in context of firm's strategy. An essential aid in this pursuit are different **processes and methodologies** that get us from **question to insight**, action and outcomes. However, at this point we lack the actual modeling know-how, which is a good segway to the next module. 
+
+> "What is methodology good for? Sounds like I could use that time to learn ML"
+
+These methodolgical fundamentals are not "just theory", it is what will make or break projects in practice. There are so many pitfalls in ML and statistics that we cannot afford to do it ad-hoc. In contrast, taking a systematic approach will dramatically increase our chances of succeess.
+
+::: {.callout-note}
+## Newsvendor problem, Price Optimization, Learning Problem
+
+If you worry that the business school is too conceptual -- don't despair, as we'll have three very **techical lectures**, involving math and programming. 
+
+- I use the newsvendor problem as a starting point in modeling for demand planning
+- The pricing optimization as a starting point towards revenue management
+- The Learning Problem highlights and formalizes what is at the core of Machine Learning -- in what conditions can we learn from data, generalize
+:::
+
+
+
+The "business school" emphasizes again and again the idea of **Decision-Making Under Uncertainty at Scale**, across many industries and use-cases. We walk through three perspectives: Analytics, Machine Learning, and Statistics -- then develop methodologies for each one. There are two representative case-studies in which we go in-depth: the Newsvendor Problem and Price Optimization.
+
+::: {.column-margin}
+By convention, lectures whith mathematical inclination are marked by (*) and **programming** in bold and (**). Often we do both.
+:::
+
+::: {.column-page-inset-right}
+
+|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
+|-|-------------------------------------|-----------|---------------------------|
+| 1 | [Introduction](../index.qmd) & [Course Philosophy](../philosophy.qmd).  Roadmap | Decisions, VUCA, Modeling, [prerequisites](prerequisites.qmd), project requirements  | survey of applications in various domains, admin stuff |
+| 2 | [Data Science in Business Context](background.qmd). Strategy | SWOT, Tradeoffs, Strategy, Business Analyst's Workflow, Value Chain, Fermi Estimation  | case-studies: LRB subscriptions, DTC fashion e-commerce |
+| 3 | [Decision-Making Under Uncertainty at Scale](background.qmd#cybernetics-is-what-we-call-ai) | AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty  | data roles in firms, Uber and dynamic pricing |
+| 4* | [**Newsvendor Problem**](https://youtu.be/QLsSPnwWS_M) and Demand Planning  | DAGs, model choice, inference and optimization, constraints. The general demand planning problem | TIME INC. printing quantity decisions. Simulations and restaurant data (ddop) |
+| 5* | [Learning, Intuition, and Bias](learning.qmd). What is ML? | intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff | credit defaults, recommender systems, demand forecasting |
+| 6** | [**12 Steps of ML**](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) | CRISP-DM, Feasibility, Validation | case-study: Mercari challenge |
+| 7* | [**Price optimization**](https://youtu.be/RScjq1mkDc0) under limited capacity | demand elasticity, dynamic pricing, regression, pricing strategy & revenue management | case-studies: concerts, airlines, taxis/rides |
+| 8* | [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ). A/B Testing Scheme | [default action](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF), hypotheses, confidence intervals, relevance, effect sizes, power | case-study: conversion rate optimization and marketing |
+| 9** | BI & Analytics. Data Mining. Open datasets overview | Tuckey's EDA, Data Wrangling, Databases, Data Visualization | kaggle e-commerce relational database, duckDB |
+
+:::
