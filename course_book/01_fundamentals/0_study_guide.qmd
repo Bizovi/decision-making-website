@@ -210,16 +210,25 @@ I assume you have been working on Module 2 (Fundamentals of Statistics and Proba
 
 In this lecture I bridge the gap between the theory/fundamentals and practice. We will see how an end-to-end process of experiment design looks like. In the end, you will learn how to make justified choices in how you set-up and run an experiment.
 
-- Path of action and the importance of defining a [default action]((https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF))
-- What is a statistical hypothesis anyways? How does it relate to the original question? 
-- Relevance, significance, effect sizes, power, and sample size
 
 ::: {.callout-note}
 ## Case-Study: Conversion Rate Optimization
 
 Marketing is one area of online businesses which heavily relies on randomized experiments and A/B tests. Firms try to make the most out of their **advertisement spending** (customer acquisition), by testing **changes in user experience**, promotion, merchandising, to convince a larger proportion of them to buy the product or subscribe (conversion rate).
 
+Read this [end-to-end example](https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a), which takes a lot of attention and care into verifying potential pitfalls. If you need other perspectives about what can go wrong, you can refer to: [HBR article](https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing), [8 pitfalls and solutions](https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e), [A/A tests](https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241), and [user interference](https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8)
+
 :::
+
+- Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. [^should-exp] Maybe we want to explore or predict?
+- [Default action](https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c) is one of the most important ideas in statistics.
+- What is a statistical hypothesis anyways? How does it relate to the original question?
+    - Make sure you define the minimal effect size of interest/relevance
+    - Type 3 errors: be careful what is the question you really ask of your test
+- Watch the [12 steps to statistics](https://youtu.be/R4ckbZCgmxQ?si=pkxQD3lG3CIo4NKf) by Cassie Kozyrkov for a methodology of how to perform experiments in business settings. For a more traditional exposition, check out Poldrack's [Chapter 9](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html).
+- One of the most difficult aspects in practice is metric design, since we deal with tradeoffs so often. An useful way to think about properties of good metrics is described in [this paper, STEDII](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/). Also see [this example](https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb) discussing sensitivity, stability, and directedness.
+
+[^should-exp]: Read Cassie Kozyrkov's article to recognize when ["not to waste your time with statistics"](https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c). You can also watch [this video](https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis). You can also see her [full, short lecture](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF) for Google employees. 
 
 
 ## Churn and Lifetime Value. Open datasets

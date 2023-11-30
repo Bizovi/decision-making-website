@@ -32,15 +32,18 @@ flowchart TD
 
 ## Combinatorics. Sampling. Urn Models
 
- replacement, multiplication rule, naive $\mathbb{P}$ | Birthday Paradox, Bootstrap |
+There are several excellent courses which start from counting, and I think there are some extremely useful and practical things which you missed about combinatorics. Also, there is a way to learn you never have to remember stuff by heart.
 
+- Multiplication rule
+- Sampling with and without replacement. Ordered vs unordered
+- Naive Probability
+- Birthday Paradox and Collision Problems
+- A result about Bootsrap
 
 ## Probability Triple. Random Variables. Models
 
  | experiment, sample space, measure, population, estimand, estimators, golemns  | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), Kolmogorov, Garden Forking Paths |
 
-::: {.callout-warning}
-## Need a crash course in probability and statistics?
 
 If you understand and can explain the following ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky, here are some readings:
 
@@ -49,7 +52,6 @@ If you understand and can explain the following ideas in a simple, yet rigorous 
 - **Parameter** (Estimand), **Estimator**, **Estimation/Statistic** - same resources as above [^4]
 - Stories behnid distributions: $Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k$. What about $Beta(a, b)$, $Gamma(k, \theta)$, and $Dirichlet(\bar{\theta})$ -- what are they good for?
   - Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) from Joe Blitzstein.
-:::
 
 [^4]: Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian "frequentism".
 
@@ -129,26 +131,18 @@ Once you have a good grip on those statistical fundamentals, which are like cogs
 I'm emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.
 
 - Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
-- Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. [Here](https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis) you can see the reasoning for testing and [an article by Cassie](https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c) for statistics.
-- Remember the importance of those 12 steps of statistics, especially the [Default Action](https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c). For a more classical exposition - check [this](https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html) out.
 - Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those.
 - p-values - [simulation](https://rpsychologist.com/pvalue/), [simulation of distirbutions under H0/Ha](https://rpsychologist.com/d3/pdist/)
 - Type 1, 2 errors, Type 3 errors (solving the wrong problem), [chapter14](https://openintro-ims.netlify.app/decerr.html)
-- A/B Testing scheme, [An end-to-end example](https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a), but be careful to follow the 12 steps we have and not to forget to define the Default Action.
-- Experiment Design and Hypothesis testing pitfalls - [from HBR](https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing), [8 pitfalls](https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e), [A/A tests](https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241), [user interference](https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8)
-- Metric Design and [properties of good metrics](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/) - [an example](https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb)
 - Relevance and Significance - Read [this paper](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) by Werner Stahel
 - Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/)
 - Effect size, Power, Sample Size - [here](https://mathstat.slu.edu/~speegle/_book/HTCI.html), and [here](https://www.huber.embl.de/msmb/06-chap.html) and [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html). [Cohen's d](https://rpsychologist.com/cohend/), [Power Analysis](https://rpsychologist.com/d3/nhst/)
 - Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y)
 
 
-Refactor and edit
-- A/B Testing pitfalls | A/A Tests, Selection bias, Confounders, Novelty | The need for rigorous experiments |
 - Error Types, Effect Size, p-values | tests for difference in proportions and means | Strategy for simulation |
 Power, Sample Size calculations, Non-inferiority tests | relevance, minimal effect size | Neyman-Pearson, frequentism as action in the long-term |
 Linear regression review | Hypothesis tests as linear models | Guidance with student projects |
-Properties of Metrics for A/B Testing | Sensitivity, stability, directedness | Potential pitfalls |
 CLT, Choosing a test, Trading off errors, Increasing Power | Cohen's d, PPV, GLM, nonparametrics | Justifying $\alpha, 1 - \beta, \Delta, n$ by simulation |
 
 Error types, p-values, error control
