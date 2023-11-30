@@ -54,10 +54,13 @@ There is a good reason why management consultants practice Fermi Estimation (san
 
 In the previous lecture we learned how to better structure business problems and now it's time to bridge it with the subject matter of this course. Read the [third chapter](4_ml_stats.qmd).
 
-- Clarify what I mean by AI and Cybernetics and the historical confusion
+- Clarify what I mean by AI and Cybernetics and the historical confusion [^jordan]
 - When do we need Analytics vs Statistics vs Machine Learning?
 - A note on interdisciplinarity and thinking in buckets
 - Agents and Environments. Sources of Uncertainty 
+
+
+[^jordan]: K. Pretz, "[Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says"; M. Jordan, "[Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9) - The Revolution Hasn’t Happened Yet"
 
 ::: {.callout-note}
 ## Case-Study: DTC Fashion E-Commerces
@@ -76,8 +79,25 @@ In the case of Uber, Bolt (ride sharing platforms), we're very much interested i
 
 ## Newsvendor Problem and Demand Planning
 
-- DAGs, model choice, inference and optimization, constraints. The general demand planning problem 
-- TIME INC. printing quantity decisions. Simulations and restaurant data (ddop)
+Demand planning, especially demand forecasting and inventory optimization is an obvious and widespread application of the models and methods from the course. The newsvendor problem is a good way to get started in this area of businesses.
+
+In the economics' courses you might've solved this problem analytically, under strong assumptions, but we have a huge problem of trying to quantify and take into account the uncertainty. Therefore, we rely on simulation, motivate the need for statistical inference and optimization algorithms. [^newsvendor]
+
+[^newsvendor]: There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in [Chapter 3](https://www.persuasivepython.com/2-decisionanalysis) and [Chapter 5](https://www.persuasivepython.com/4-multidimarrays) of "Persuasive Python". [Chapter 20](https://www.causact.com/intro#intro) of his Business Analytics book contains another classic economic problem interpreted in modern way.
+
+::: {.callout-note}
+## Case-Study: TIME INC. printing
+
+In the paper ["Newsvendors Tackle the Newsvendor Problem"](https://www.jstor.org/stable/20141257), Koschat, Berk et. al. show how an analysis and optimization of printing decisions led to TIME INC. to revise its policies and generate additional $\$3.5m$ in profit.
+:::
+
+::: {.callout-note}
+## Case-Study: Restaurant Data and Project Ideas 
+
+Besides Persuasive Python, you can find an alternative case-study on ["Yaz" restaurant data](https://opimwue.github.io/ddop/tutorial_modules/tutorial.html), which makes playing around with the newsvendor problem easy, due to its Python package. 
+:::
+
+For an academic paper with a meta-analysis of data-driven approaches to the newswendor problem, check out [S. Buttler, A. Philippi](https://ml-eval.github.io/assets/pdf/ICLR22_Workshop_ML_Eval_DDNV.pdf).
 
 
 ## Learning, Intuition, and Bias. What is ML? 
