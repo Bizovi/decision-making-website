@@ -21,11 +21,13 @@ flowchart TD
 
     U -- estimator properties --> E[5. LLN, CLT, Properties] --> BV[6. Bias-Variance]
 
-    U -- hypothesis testing --> NP[7. Neyman-Pearson] --> Persp[8. Freq, Lik, Bayes] --> RC[9. Replication Crisis]
+    U -- hypothesis testing --> NP[7. Neyman-Pearson] --> M1[/Module 1: A/B Testing/] --> Persp[8. Freq, Lik, Bayes] --> RC[9. Replication Crisis]
 
     style RV fill:#f7f5bc
     style B fill:#f7f5bc
     style NP fill:#f7f5bc
+
+    style M1 fill:#ffb6c1
 ```
 
 
@@ -37,8 +39,12 @@ There are several excellent courses which start from counting, and I think there
 - Multiplication rule
 - Sampling with and without replacement. Ordered vs unordered
 - Naive Probability
-- Birthday Paradox and Collision Problems
 - A result about Bootsrap
+
+::: {.callout-note}
+## Birthday Paradox. Pigenhole Principle. Collision Problems
+
+:::
 
 ## Probability Triple. Random Variables. Models
 
@@ -122,52 +128,61 @@ Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relev
 
 ## Hypothesis testing. Neyman-Pearson
 
-Neyman-Pearson frequentism. Popper and falsification | Type I, II errors, confint, p-value, PPV, effect sizes, **power analysis, range predictions**, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance  |
+In order to make sense of frequentist hypothesis testing, I strongly recommend you read about the original idea of Neyman and Pearson (error control -- don't make a fool of yourself too often in the long run).
+
+We will start from the first principles and will let go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, test choice). You should to be able to justify all the choices you make during the phase of experiment design, i.e. before running the experiment. This is certainly the most difficult lecture of the module.
+
+- Picking a default action. Type I, II errors. How costly is each type of mistakes?
+- Minimal **effect size** of interest, [Cohen's](https://rpsychologist.com/cohend/) $d$
+- [Power Analysis](https://rpsychologist.com/d3/nhst/) and Sample Size justification. How surprising are significant findings under each hypothesis? Positive Predictive Value
+- p-values [simulation](https://rpsychologist.com/pvalue/), [p-curve](https://rpsychologist.com/d3/pdist/) under $H_0, H_A$. 
+- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those. Capture percent
 
 
+::: {.column-margin}
+In order to put everything together, there are four resources I can recommend:
 
-Once you have a good grip on those statistical fundamentals, which are like cogs in the machinery of statistics, you can apply them to hypothesis testing and experiment design.
+- [T-test end to end](https://mathstat.slu.edu/~speegle/_book/HTCI.html)
+- [here](https://www.huber.embl.de/msmb/06-chap.html)
+- [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html)
+- improving your statistical inferences
+:::
 
-I'm emphasizing again the understanding and letting go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, statistical tests). You have to be able to justify all the choices you make during the phase of experiment design, that is before running the experiment.
+::: {.callout-note}
+## Asking better questions
 
-- Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
-- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those.
-- p-values - [simulation](https://rpsychologist.com/pvalue/), [simulation of distirbutions under H0/Ha](https://rpsychologist.com/d3/pdist/)
-- Type 1, 2 errors, Type 3 errors (solving the wrong problem), [chapter14](https://openintro-ims.netlify.app/decerr.html)
-- Relevance and Significance - Read [this paper](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) by Werner Stahel
-- Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/)
-- Effect size, Power, Sample Size - [here](https://mathstat.slu.edu/~speegle/_book/HTCI.html), and [here](https://www.huber.embl.de/msmb/06-chap.html) and [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html). [Cohen's d](https://rpsychologist.com/cohend/), [Power Analysis](https://rpsychologist.com/d3/nhst/)
-- Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y)
+- Make riskier predictions: Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/), Equivalence Testing, Range predictions
+- Publication bias, open science, pre-registrations
+- Telescope method and resource-based
+- Type 3 errors (solving the wrong problem), [chapter14](https://openintro-ims.netlify.app/decerr.html)
+- Read Werner Stahel's [Relevance](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) paper and Gelman's Sign and Magnitude errors
 
-
-- Error Types, Effect Size, p-values | tests for difference in proportions and means | Strategy for simulation |
-Power, Sample Size calculations, Non-inferiority tests | relevance, minimal effect size | Neyman-Pearson, frequentism as action in the long-term |
-Linear regression review | Hypothesis tests as linear models | Guidance with student projects |
-CLT, Choosing a test, Trading off errors, Increasing Power | Cohen's d, PPV, GLM, nonparametrics | Justifying $\alpha, 1 - \beta, \Delta, n$ by simulation |
-
-Error types, p-values, error control
-GQ(Good Questions) --> Pre[Pre-Registration]
-Publication bias, open science
-Significant findings, sample size justification and power analysis
-Effect sizes, cohen's d, minimal effect of interest, telescope method, resource-based
-
-Test on correlations
-
-A --> Conf[Confidence Intervals] --> SS[Power Analysis] --> PCAn[p-curve analysis] --> CPc[Capture Percent.] --> CISD[confint std-dev] --> Anova[Anova Power]
-
-NF --> RP[Risky Predictions] --> EQ[Equivalence Testing] --> IP[Interval Predictions]
-
+:::
 
 ::: {.callout-tip}
-## Common statistical tests are linear models
+## Choosing a model. Common statistical tests are linear models
 
 Now, once you got the absolute basics of regression, it's important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models[^tests-lr].
 
 - [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html) - Krutsche fake data drug trial, t-test, [bambi](https://bambinos.github.io/bambi/notebooks/t-test.html). 
 - [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests) and the [python port](https://www.georgeho.org/tests-as-linear/) 
+- Choosing a statistical test: difference in proportions and means, test of $\sigma$, correlations
+- Bootstrap and nonparametric tests
 :::
 
 [^tests-lr]: This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.
+
+
+
+::: {.callout-note}
+## A detour on the philosophy of science
+
+- Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
+- Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y)
+- "The null is always false"
+:::
+
+
 
 ## Frequentism vs Likelihood vs Bayes
 
@@ -175,11 +190,7 @@ Frequentism vs Likelihood vs Bayes | philosophical roots, agreements, weaknesses
 
 Bootstrap and Nonparametrics | resampling, ECDF |  Kolmogorov-Smirnov |
 
-- Popper and philosophy of science, falsification, theory construction
-
 When discussing hypothesis testing and experiment design, we can't avoid an overview of frequentist methods (path of action) and a discussion of the philosophy of science.
-
-The null is always false
 
 Path of action vs path of devotion vs path of belief
 
