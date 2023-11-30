@@ -103,11 +103,11 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../01_fundamentals/1_applications.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../01_fundamentals/0_study_guide.html" rel="" target="" aria-current="page">
  <span class="menu-text">| 1. Business |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../01_fundamentals/stat_foundations.html" rel="" target="">
+    <a class="nav-link" href="../01_fundamentals/prob_study_guide.html" rel="" target="">
  <span class="menu-text">| 2. Stats |</span></a>
   </li>  
   <li class="nav-item">
@@ -298,7 +298,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <li><a href="#decision-making-under-uncertainty-at-scale" id="toc-decision-making-under-uncertainty-at-scale" class="nav-link" data-scroll-target="#decision-making-under-uncertainty-at-scale">Decision-Making Under Uncertainty at Scale</a></li>
   <li><a href="#newsvendor-problem-and-demand-planning" id="toc-newsvendor-problem-and-demand-planning" class="nav-link" data-scroll-target="#newsvendor-problem-and-demand-planning">Newsvendor Problem and Demand Planning</a></li>
   <li><a href="#learning-intuition-and-bias.-what-is-ml" id="toc-learning-intuition-and-bias.-what-is-ml" class="nav-link" data-scroll-target="#learning-intuition-and-bias.-what-is-ml">Learning, Intuition, and Bias. What is ML?</a></li>
-  <li><a href="#steps-of-ml" id="toc-steps-of-ml" class="nav-link" data-scroll-target="#steps-of-ml">12 Steps of ML</a></li>
+  <li><a href="#steps-of-machine-learning" id="toc-steps-of-machine-learning" class="nav-link" data-scroll-target="#steps-of-machine-learning">12 Steps of Machine Learning</a></li>
   <li><a href="#price-optimization-under-limited-capacity" id="toc-price-optimization-under-limited-capacity" class="nav-link" data-scroll-target="#price-optimization-under-limited-capacity">Price optimization under limited capacity</a></li>
   <li><a href="#steps-of-statistics.-ab-testing-scheme" id="toc-steps-of-statistics.-ab-testing-scheme" class="nav-link" data-scroll-target="#steps-of-statistics.-ab-testing-scheme">12 Steps of Statistics. A/B Testing Scheme</a></li>
   <li><a href="#bi-analytics.-open-datasets-overview" id="toc-bi-analytics.-open-datasets-overview" class="nav-link" data-scroll-target="#bi-analytics.-open-datasets-overview">BI &amp; Analytics. Open datasets overview</a></li>
@@ -410,7 +410,7 @@ Case-Study: Uber and Dynamic Pricing
 <section id="newsvendor-problem-and-demand-planning" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="newsvendor-problem-and-demand-planning">Newsvendor Problem and Demand Planning</h2>
 <p>Demand planning, especially demand forecasting and inventory optimization is an obvious and widespread application of the models and methods from the course. The newsvendor problem is a good way to get started in this area of businesses.</p>
-<div class="page-columns page-full"><p>In the economics’ courses you might’ve solved this problem analytically, under strong assumptions, but we have a huge problem of trying to quantify and take into account the uncertainty. Therefore, we rely on simulation, motivate the need for statistical inference and optimization algorithms. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in <a href="https://www.persuasivepython.com/2-decisionanalysis">Chapter 3</a> and <a href="https://www.persuasivepython.com/4-multidimarrays">Chapter 5</a> of “Persuasive Python”. <a href="https://www.causact.com/intro#intro">Chapter 20</a> of his Business Analytics book contains another classic economic problem interpreted in modern way.</p></li></div></div>
+<div class="page-columns page-full"><p>In the economics’ courses you might’ve solved this problem analytically, under strong assumptions, but we have a huge problem of trying to quantify and take into account the uncertainty. Therefore, we rely on simulation, motivate the need for statistical inference and optimization algorithms. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in <a href="https://www.persuasivepython.com/2-decisionanalysis">Chapter 3</a> and <a href="https://www.persuasivepython.com/4-multidimarrays">Chapter 5</a> of “Persuasive Python”. <a href="https://www.causact.com/intro#intro">Chapter 20</a> of his Business Analytics book contains another classic economic problem interpreted in modern way. If you prefer, there is a <a href="https://www.youtube.com/watch?v=QLsSPnwWS_M">video lecture</a> on the newsvendor.</p></li></div></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -439,40 +439,113 @@ Case-Study: Restaurant Data and Project Ideas
 </div>
 <p>For an academic paper with a meta-analysis of data-driven approaches to the newswendor problem, check out <a href="https://ml-eval.github.io/assets/pdf/ICLR22_Workshop_ML_Eval_DDNV.pdf">S. Buttler, A. Philippi</a>.</p>
 </section>
-<section id="learning-intuition-and-bias.-what-is-ml" class="level2">
+<section id="learning-intuition-and-bias.-what-is-ml" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="learning-intuition-and-bias.-what-is-ml">Learning, Intuition, and Bias. What is ML?</h2>
+<p>At this point you will have a better grasp of the business environment, the processes involved in decision-making and had exposure to multiple contexts via case-studies. The newsvendor problem exposed the fact that we need additional skills and understanding of statistical modeling, machine learning and analytics. Read <a href="../01_fundamentals/learning.html">chapter five</a>.</p>
+<div class="page-columns page-full"><p>I start the introduction to machine learning in an unorthodox way, from a <strong>cognitive science perspective</strong>. The reason is: because we gain additional insights into decision-making. But don’t worry, top courses like Shai Ben-David’s “Understanding Machine Learning” <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> and Yaser Abu-Mostafa’s “Learning from data” <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> start with similar motivations.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a>. Read chapter 1 and 2 for the intuition. The following ones are difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML.</p></li><li id="fn7"><p><sup>7</sup>&nbsp;<a href="https://work.caltech.edu/telecourse">Learning from data</a> is still a great foundational course a decade later. The teaching in the recorded lectures is exceptional</p></li></div></div>
 <ul>
-<li>intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff</li>
-<li>credit defaults, recommender systems, demand forecasting |</li>
+<li>Implicit learning, intuition, and bias. Bait shyness and pigeon superstition</li>
+<li>The double edged sword of our intelligence. Bounded rationality</li>
+<li>Calling bullshit in the age of Big Data. Small data problems in Big Data</li>
+<li>Intelligence, Rationality, Wisdom, and Foolishness</li>
+<li>The learning problem and empirical risk minimization</li>
+<li>The surprising consequences of Bias-Variance tradeoff</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: ML workflow Demonstration
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can pick a (seemingly) simpler use-case like housing prices prediction, credit default risk assessment, churn prediction, demand forecasting, or recommender systems – and show how training and prediction look like in code.</p>
+<p>I will show that there is much more nuance behind the scenes than what kaggle datasets show, and that often the problem framing makes ML look deceptively simple.</p>
+</div>
+</div>
 </section>
-<section id="steps-of-ml" class="level2">
-<h2 class="anchored" data-anchor-id="steps-of-ml">12 Steps of ML</h2>
+<section id="steps-of-machine-learning" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="steps-of-machine-learning">12 Steps of Machine Learning</h2>
+<div class="page-columns page-full"><p>By now, I introduced the bare minimum of motivation, formalism, and practices of Machine Learning for you to get by. However, we need a structured approach to tackle real-world problems with ML models. The methodology I like most is articulated by Cassie Kozyrkov, (ex) Chief Decision Scientist at Google. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Cassie Kozyrkov - Making friends with machine learning, <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">full course</a>. It is 6 hours which will serve you during the entire carreer</p></li></div></div>
 <ul>
-<li>CRISP-DM, Feasibility, Validation</li>
-<li>case-study: Mercari challenge</li>
+<li>Present the 12 steps with representative examples of classification and regression</li>
+<li>Is the ML project feasible? If yes, is it a good idea?</li>
+<li>Split your damn data. Cross-Validation and hyperparameters. Pitfalls</li>
+<li>Similarities with CRISP-DM and tidy modeling</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: Mercari pricing challenge
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I like this Kaggle challenge and dataset, because of how realistic and open-ended it is. You can keep it simple, with out-of-the-box models, or build some highly customized ML pipelines.</p>
+<p>It also has data which requires a combination of different approaches to feature engineering. It is messy enough that we have to justify how we deal with those missingness patterns and weird data points. Those modeling decisions will have an impact on model performance.</p>
+</div>
+</div>
 </section>
 <section id="price-optimization-under-limited-capacity" class="level2">
 <h2 class="anchored" data-anchor-id="price-optimization-under-limited-capacity">Price optimization under limited capacity</h2>
 <ul>
 <li>demand elasticity, dynamic pricing, regression, pricing strategy &amp; revenue management</li>
-<li>case-studies: concerts, airlines, taxis/rides |</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: Concerts, Events, and Airlines
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
 <section id="steps-of-statistics.-ab-testing-scheme" class="level2">
 <h2 class="anchored" data-anchor-id="steps-of-statistics.-ab-testing-scheme">12 Steps of Statistics. A/B Testing Scheme</h2>
 <ul>
 <li><a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">default action</a>, hypotheses, confidence intervals, relevance, effect sizes, power</li>
-<li>case-study: conversion rate optimization and marketing</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: Conversion Rate Optimization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
 <section id="bi-analytics.-open-datasets-overview" class="level2">
 <h2 class="anchored" data-anchor-id="bi-analytics.-open-datasets-overview">BI &amp; Analytics. Open datasets overview</h2>
 <ul>
 <li>Tuckey’s EDA, Data Wrangling, Databases, Data Visualization</li>
-<li>kaggle e-commerce relational database, duckDB</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: DuckDB and e-commerce database
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>kaggle e-commerce relational database, duckDB</p>
+</div>
+</div>
 
 
 </section>
