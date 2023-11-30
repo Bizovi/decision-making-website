@@ -151,12 +151,23 @@ It also has data which requires a combination of different approaches to feature
 
 ##  Price optimization under limited capacity 
 
--  demand elasticity, dynamic pricing, regression, pricing strategy & revenue management
+In contrast with the newsvendor problem (where prices were fixed), it's time we focus on pricing decisions. The limited capacity of airplane seats, concert tickets, hotel rooms, on the one hand simplifies the problem formulation, but introduces many complexities in practice.
+
+This seemingly simple problem motivates why the young field of revenue management was created. When forecasting the demand, we need to think about how to model it well [^modeling] and take into account most relevant factors influencing it. This is where we have to be careful, or at least aware of what economic theory has to say about demand elasticity, competition, and price discrimination.
+
+On the optimization side, we will keep things simple, as in the newsvendor problem. We will not go into the complexities of dynamic programming.
+
 
 ::: {.callout-note}
 ## Case-Study: Concerts, Events, and Airlines
 
+We can use the Kaggle simulator for dynamic pricing in the airline industry, get creative with the Mercari Challenge or other open datasets. There isn't a firm which will make such kind of data public, so we need to get creative in how we simulate, estimate, or collect the data from what is available.
+
+Adam Fleischhacker has an excellent [tutorial](https://www.youtube.com/watch?v=RScjq1mkDc0) (Chapter 24: Compelling Decisions and Actions Under Uncertainty) which is a good starting point.
+
 :::
+
+[^modeling]: This is where what we learn in [Module 3](../references.qmd): Applied Bayesian Statistics, especially the hierarchical models help a lot.
 
 
 
@@ -178,4 +189,10 @@ It also has data which requires a combination of different approaches to feature
 ## Case-Study: DuckDB and e-commerce database
 
 kaggle e-commerce relational database, duckDB 
+:::
+
+::: {.callout-note}
+## Case-Study: Customer Lifetime Value
+
+BTYD Models
 :::
