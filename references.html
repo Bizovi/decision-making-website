@@ -222,13 +222,19 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+            <a href="./01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Business School for Data Scientists</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus &amp; Study Guide</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_fundamentals/1_applications.html" class="sidebar-item-text sidebar-link">
@@ -264,13 +270,19 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+            <a href="./01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus &amp; Study Guide</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
@@ -304,7 +316,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">1. Study Guide</span></a>
+ <span class="menu-text">Syllabus &amp; Study Guide</span></a>
   </div>
 </li>
       </ul>
@@ -315,7 +327,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#groups-and-partial-pooling" id="toc-groups-and-partial-pooling" class="nav-link active" data-scroll-target="#groups-and-partial-pooling">Groups and Partial Pooling</a></li>
+  <li><a href="#module-iii-applied-bayesian-statistics" id="toc-module-iii-applied-bayesian-statistics" class="nav-link active" data-scroll-target="#module-iii-applied-bayesian-statistics">Module III: Applied Bayesian Statistics</a></li>
+  <li><a href="#groups-and-partial-pooling" id="toc-groups-and-partial-pooling" class="nav-link" data-scroll-target="#groups-and-partial-pooling">Groups and Partial Pooling</a></li>
   <li><a href="#gaussian-linear-regression" id="toc-gaussian-linear-regression" class="nav-link" data-scroll-target="#gaussian-linear-regression">Gaussian Linear Regression</a></li>
   <li><a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link" data-scroll-target="#generalized-linear-models">Generalized Linear Models</a></li>
   <li><a href="#hierarchical-glms" id="toc-hierarchical-glms" class="nav-link" data-scroll-target="#hierarchical-glms">Hierarchical GLMs</a></li>
@@ -353,6 +366,93 @@ Right level of granularity
 </div>
 </div>
 <p>I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner – I can just do my best to make your journey less frustrating and more efficient.</p>
+<section id="module-iii-applied-bayesian-statistics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="module-iii-applied-bayesian-statistics">Module III: Applied Bayesian Statistics</h2>
+<p>After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>We are not wasting time by switching to Bayes (7 lectures to get to GLMs), because we treat all models under the same framework.</p>
+</div></div><p>Instead of taking regression as the starting point, then going into advanced econometrics – I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good starting point.</p>
+<div class="column-page-inset-right">
+<table class="table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 31%">
+<col style="width: 28%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Lecture Agenda</th>
+<th>Keywords</th>
+<th>Case Studies / Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Introduction to Bayesian Statistics. Simple Models and Conjugate priors</td>
+<td>Beta-Binomial, Gamma-Poisson, Mixtures, Link functions, IG-Normal</td>
+<td>Elections, Football Goals, Coal Mining disaseetrs, Golf accuracy, Speed of Light</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Multiple Groups and Hierarchical Models</td>
+<td>Complete, No, Partial pooling</td>
+<td>A/B testing, baseball, review ranking, Radon, Starbucks wait times, Customer LTV</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Regression and Bayesian Workflow</td>
+<td>Categorical variables, Results summarization, Modeling assumptions</td>
+<td>OCEAN, Education, height, waffles</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Regression and Model Critique</td>
+<td>Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting</td>
+<td>Golf example continued, Flight Delays</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Regression and Model Selection</td>
+<td>Variable selection</td>
+<td>McElreath example: height, waffles</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Regression and nonlinearities</td>
+<td>Regularization, Variable selection, Splines, Robustness</td>
+<td>Applying the concepts on same examples as before. Missing Data</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Generalized Linear Models</td>
+<td>Logistic regression, Poisson and variance inflation</td>
+<td>Income, Voting, Campus Crime, Student absence</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Introduction to Hierarchical Models</td>
+<td>Hierarchical GLMs. Priors informed by prior knowledge</td>
+<td>Radon continued, Stage Anxiety, Plumonary Fibrosis</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Hierarchical Models and Longitudinal Data</td>
+<td>Stochastic processes. Challenges of Hierarchical time series</td>
+<td>Teenage drinking, sleep study, charter schools, Graduate Admissions</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Hierarchical Models case studies. BART</td>
+<td>Basketball Fouls, AirBnb reviews, Seat Belts</td>
+<td>Bike Shares, Agriculture and Seed Germination</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="column-page-inset-right">
 <div class="cell" data-fig-width="9">
 <div class="cell-output-display">
@@ -515,6 +615,7 @@ InverseGamma-Normal
 <p>TODO: more examples from science, business, and human behavior</p>
 </div>
 </div>
+</section>
 <section id="groups-and-partial-pooling" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="groups-and-partial-pooling">Groups and Partial Pooling</h2>
 <p>We already worked with groups in the case of difference in means (proportions and continuous variables) and making inferences for three and more groups, treating them as separate. We will see that such an approach is called “no pooling”.</p>
