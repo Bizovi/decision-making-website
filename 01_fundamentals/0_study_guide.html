@@ -301,7 +301,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <li><a href="#steps-of-machine-learning" id="toc-steps-of-machine-learning" class="nav-link" data-scroll-target="#steps-of-machine-learning">12 Steps of Machine Learning</a></li>
   <li><a href="#price-optimization-under-limited-capacity" id="toc-price-optimization-under-limited-capacity" class="nav-link" data-scroll-target="#price-optimization-under-limited-capacity">Price optimization under limited capacity</a></li>
   <li><a href="#steps-of-statistics.-ab-testing-scheme" id="toc-steps-of-statistics.-ab-testing-scheme" class="nav-link" data-scroll-target="#steps-of-statistics.-ab-testing-scheme">12 Steps of Statistics. A/B Testing Scheme</a></li>
-  <li><a href="#bi-analytics.-open-datasets-overview" id="toc-bi-analytics.-open-datasets-overview" class="nav-link" data-scroll-target="#bi-analytics.-open-datasets-overview">BI &amp; Analytics. Open datasets overview</a></li>
+  <li><a href="#churn-and-lifetime-value.-open-datasets" id="toc-churn-and-lifetime-value.-open-datasets" class="nav-link" data-scroll-target="#churn-and-lifetime-value.-open-datasets">Churn and Lifetime Value. Open datasets</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -343,6 +343,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <li>What is strategy? What makes good or bad strategy? <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
 <li>Business Analyst’s Workflow</li>
 <li>What is a Value Chain? Data Science Strategy Safari <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li>Overview of <strong>open datasets</strong>, especially for BI &amp; Analytics</li>
 </ul>
 <div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Read Kim Warren’s article on “The Dynamics of Strategy” <a href="https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf">here</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Read the article published in McKinsey by Richard Rumelt <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy">“The perils of bad strategy”</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Read about the framework of aligning business objectives to data science use-cases. Data Science Strategy Safari at <a href="https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/">bayesianquest</a></p></li></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -473,7 +474,7 @@ Case-Study: ML workflow Demonstration
 <li>Present the 12 steps with representative examples of classification and regression</li>
 <li>Is the ML project feasible? If yes, is it a good idea?</li>
 <li>Split your damn data. Cross-Validation and hyperparameters. Pitfalls</li>
-<li>Similarities with CRISP-DM and tidy modeling</li>
+<li>Similarities with CRISP-DM, tuckey’s EDA, and tidy modeling</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -512,8 +513,12 @@ Case-Study: Concerts, Events, and Airlines
 </section>
 <section id="steps-of-statistics.-ab-testing-scheme" class="level2">
 <h2 class="anchored" data-anchor-id="steps-of-statistics.-ab-testing-scheme">12 Steps of Statistics. A/B Testing Scheme</h2>
+<p>I assume you have been working on Module 2 (Fundamentals of Statistics and Probability) in parallel, so that we can get to a point where we discuss the practical and methodological aspects of A/B testing and randomized experiments.</p>
+<p>In this lecture I bridge the gap between the theory/fundamentals and practice. We will see how an end-to-end process of experiment design looks like. In the end, you will learn how to make justified choices in how you set-up and run an experiment.</p>
 <ul>
-<li><a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">default action</a>, hypotheses, confidence intervals, relevance, effect sizes, power</li>
+<li>Path of action and the importance of defining a <a href="(https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF)">default action</a></li>
+<li>What is a statistical hypothesis anyways? How does it relate to the original question?</li>
+<li>Relevance, significance, effect sizes, power, and sample size</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -525,15 +530,30 @@ Case-Study: Conversion Rate Optimization
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>Marketing is one area of online businesses which heavily relies on randomized experiments and A/B tests. Firms try to make the most out of their <strong>advertisement spending</strong> (customer acquisition), by testing <strong>changes in user experience</strong>, promotion, merchandising, to convince a larger proportion of them to buy the product or subscribe (conversion rate).</p>
 </div>
 </div>
 </section>
-<section id="bi-analytics.-open-datasets-overview" class="level2">
-<h2 class="anchored" data-anchor-id="bi-analytics.-open-datasets-overview">BI &amp; Analytics. Open datasets overview</h2>
-<ul>
-<li>Tuckey’s EDA, Data Wrangling, Databases, Data Visualization</li>
-</ul>
+<section id="churn-and-lifetime-value.-open-datasets" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="churn-and-lifetime-value.-open-datasets">Churn and Lifetime Value. Open datasets</h2>
+<p>Customer retention and repurchase is what makes or breaks businesses, especially in the past few years, with so many subscription and SAAS business models. Therefore, this topic deserves a full lecture – to cover the contractual and PAYG/non-contractual settings.</p>
+<div class="page-columns page-full"><p>I show that predicting churn and remaining customer lifetime value is not just a simple classification / regression problem. First, we need some tools from survival analysis and second – what we really want to know is who can be convinced to remain by an intervention, like promotions or loyalty programs. <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;This is a good opportunity to introduce the idea of Uplift and Calibration of classification scores returned by a ML model.</p></li></div></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: BTYD models (Buy till you die)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a body of work spanning two decades by Bruce Hardie and Peter Fader, who developed statistical models that estimate the remaining LTV (Lifetime Value) of customers, which depends on their survival/activity and repurchase patterns.</p>
+<p>We will implement a model for contractual and non-contractual settings on the limited data available on the web. Luckily, that would be sufficient to apply them for your own use-cases.</p>
+</div>
+</div>
+<p>Last, but not least, I present an overview of curated open datasets from various sources, organized by industry – which should serve as an inspiration for future practice and your project. There is a shortlist of the ones I found most intriguing and representative, then a long tail of alternatives and fun stuff.</p>
+<p>In previous courses you probably did a lot of exploratory data analysis. It is a skill which demands lots of practice and experience in order to do it well (finding inspiration and interesting patterns in data). Having a methodology for EDA helps, however, in practice we have to work with databases.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -544,20 +564,8 @@ Case-Study: DuckDB and e-commerce database
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>kaggle e-commerce relational database, duckDB</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Case-Study: Customer Lifetime Value
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>BTYD Models</p>
+<p>I use a relational dataset from a real e-commerce which was made public in Kaggle, in order to showcase how to interact with databases and highlight the importance of knowing SQL.</p>
+<p>We use a recent innovation in databases, duckDB, which allows us to have an analytic, in-process database, with almost zero setup or dependencies. Once the e-commerce data is loaded and modeled inside the DB, we can start cleaning it, putting it all together, and extracting insights from it. This particular dataset is very rich in information and lends itself well to open-ended investigations.</p>
 </div>
 </div>
 
