@@ -120,7 +120,7 @@ I start the introduction to machine learning in an unorthodox way, from a **cogn
 ::: {.callout-note}
 ## Case-Study: ML workflow Demonstration
 
-We can pick a (seemingly) simpler use-case like housing prices prediction, credit default, churn, demand forecasting, or recommender systems -- and show how training and prediction look like in code.
+We can pick a (seemingly) simpler use-case like housing prices prediction, credit default risk assessment, churn prediction, demand forecasting, or recommender systems -- and show how training and prediction look like in code.
 
 I will show that there is much more nuance behind the scenes than what kaggle datasets show, and that often the problem framing makes ML look deceptively simple.
 
@@ -128,25 +128,54 @@ I will show that there is much more nuance behind the scenes than what kaggle da
 
 
 
-## 12 Steps of ML
+## 12 Steps of Machine Learning
 
--  CRISP-DM, Feasibility, Validation
-- case-study: Mercari challenge 
+By now, I introduced the bare minimum of motivation, formalism, and practices of Machine Learning for you to get by. However, we need a structured approach to tackle real-world problems with ML models. The methodology I like most is articulated by Cassie Kozyrkov, (ex) Chief Decision Scientist at Google. [^cassie]
+
+- Present the 12 steps with representative examples of classification and regression
+- Is the ML project feasible? If yes, is it a good idea?
+- Split your damn data. Cross-Validation and hyperparameters. Pitfalls
+- Similarities with CRISP-DM and tidy modeling
+
+::: {.callout-note}
+## Case-Study: Mercari pricing challenge
+
+I like this Kaggle challenge and dataset, because of how realistic and open-ended it is. You can keep it simple, with out-of-the-box models, or build some highly customized ML pipelines. 
+
+It also has data which requires a combination of different approaches to feature engineering. It is messy enough that we have to justify how we deal with those missingness patterns and weird data points. Those modeling decisions will have an impact on model performance.
+
+:::
+
+[^cassie]: Cassie Kozyrkov - Making friends with machine learning, [full course](https://www.youtube.com/watch?v=1vkb7BCMQd0). It is 6 hours which will serve you during the entire carreer
 
 
 ##  Price optimization under limited capacity 
 
 -  demand elasticity, dynamic pricing, regression, pricing strategy & revenue management
-- case-studies: concerts, airlines, taxis/rides |
+
+::: {.callout-note}
+## Case-Study: Concerts, Events, and Airlines
+
+:::
+
 
 
 ## 12 Steps of Statistics. A/B Testing Scheme 
 
 - [default action](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF), hypotheses, confidence intervals, relevance, effect sizes, power 
-- case-study: conversion rate optimization and marketing
+
+::: {.callout-note}
+## Case-Study: Conversion Rate Optimization
+
+:::
 
 
 ## BI & Analytics. Open datasets overview 
 
 - Tuckey's EDA, Data Wrangling, Databases, Data Visualization 
-- kaggle e-commerce relational database, duckDB 
+
+::: {.callout-note}
+## Case-Study: DuckDB and e-commerce database
+
+kaggle e-commerce relational database, duckDB 
+:::
