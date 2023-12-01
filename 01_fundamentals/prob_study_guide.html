@@ -580,23 +580,24 @@ Bootstraping for Confidence Intervals
 </section>
 <section id="hypothesis-testing.-neyman-pearson" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</h2>
-<p>In order to make sense of frequentist hypothesis testing, I strongly recommend you read about the original idea of Neyman and Pearson (error control – don’t make a fool of yourself too often in the long run).</p>
-<p>We will start from the first principles and will let go of mechanical application of procedures and conventions (p-values, <span class="math inline">\(\alpha, \beta\)</span>, test choice). You should to be able to justify all the choices you make during the phase of experiment design, i.e.&nbsp;before running the experiment. This is certainly the most difficult lecture of the module.</p>
+<p>In order to make sense of frequentist hypothesis testing, I strongly recommend you read about the original idea of Neyman and Pearson (error control – don’t make a fool of yourself too often in the long run). It is a “path of action” perspective of statistics.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">This is certainly the most difficult lecture of the module, combining the math, programming, and even philosophy.</span></div></div>
+<p>I start from the first principles and will let go of mechanical application of procedures and conventions (p-values, <span class="math inline">\(\alpha, \beta\)</span>, test choice). You should to be able to justify all the choices you make during the phase of experiment design.</p>
 <ul>
-<li>Picking a default action. Type I, II errors. How costly is each type of mistakes?</li>
+<li>Picking a default action. <a href="https://openintro-ims.netlify.app/decerr.html">Type I, II errors</a>. How costly is each type of mistakes?</li>
 <li>Minimal <strong>effect size</strong> of interest, <a href="https://rpsychologist.com/cohend/">Cohen’s</a> <span class="math inline">\(d\)</span></li>
 <li><a href="https://rpsychologist.com/d3/nhst/">Power Analysis</a> and Sample Size justification. How surprising are significant findings under each hypothesis? Positive Predictive Value</li>
 <li>p-values <a href="https://rpsychologist.com/pvalue/">simulation</a>, <a href="https://rpsychologist.com/d3/pdist/">p-curve</a> under <span class="math inline">\(H_0, H_A\)</span>.</li>
-<li>Confidence Intervals - first check out this <a href="https://rpsychologist.com/d3/ci/">simulation</a>. Also <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">chapter 12</a>, uses bootstrap to estimate those. Capture percent</li>
+<li>Confidence Intervals - first check out this <a href="https://rpsychologist.com/d3/ci/">simulation</a>. Also <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">chapter 12</a>, uses bootstrap to estimate those. The tricky idea of “capture percent”</li>
 </ul>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>In order to put everything together, there are four resources I can recommend:</p>
 <ul>
-<li><a href="https://mathstat.slu.edu/~speegle/_book/HTCI.html">T-test end to end</a></li>
-<li><a href="https://www.huber.embl.de/msmb/06-chap.html">here</a></li>
-<li><a href="https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html">here</a></li>
-<li>improving your statistical inferences</li>
+<li>Speegle’s <a href="https://mathstat.slu.edu/~speegle/_book/HTCI.html">book</a> on data+probability+R</li>
+<li>Huber’s <a href="https://www.huber.embl.de/msmb/06-chap.html">Chapter 6</a> of Modern Statistics</li>
+<li><a href="https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html">Statistical thinking for 21st century</a></li>
+<li><a href="https://www.coursera.org/learn/statistical-inferences/">Improving your statistical inferences</a></li>
 </ul>
 </div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -608,35 +609,17 @@ Asking better questions
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>The most complicated part of hypothesis testing is asking better questions. I mean that in a highly technical sense, and whole-heartedly recommend you the following course from a TU Eindhoven professor, named <a href="https://www.coursera.org/learn/improving-statistical-questions/">“Improving your statistical questions”</a>.</p>
 <ul>
-<li>Make riskier predictions: Non-Inferiority testing - <a href="https://rpsychologist.com/d3/equivalence/">This visualization</a>, Equivalence Testing, Range predictions</li>
+<li>Make riskier predictions: <a href="https://rpsychologist.com/d3/equivalence/">Non-Inferiority testing</a>, Equivalence Testing, Range predictions</li>
 <li>Publication bias, open science, pre-registrations</li>
-<li>Telescope method and resource-based</li>
-<li>Type 3 errors (solving the wrong problem), <a href="https://openintro-ims.netlify.app/decerr.html">chapter14</a></li>
-<li>Read Werner Stahel’s <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">Relevance</a> paper and Gelman’s Sign and Magnitude errors</li>
+<li>Minimal Effect Size of interest: telescope method and resource-based</li>
+<li>Type 3 errors (solving the wrong problem)</li>
+<li>Read Werner Stahel’s <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">“Relevance”</a> paper and Gelman’s “Sign and Magnitude” <a href="https://stat.columbia.edu/~gelman/research/published/retropower_final.pdf">paper</a></li>
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Choosing a model. Common statistical tests are linear models
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
-<ul>
-<li><a href="https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html">pymc</a> - Krutsche fake data drug trial, t-test, <a href="https://bambinos.github.io/bambi/notebooks/t-test.html">bambi</a>.</li>
-<li><a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and the <a href="https://www.georgeho.org/tests-as-linear/">python port</a></li>
-<li>Choosing a statistical test: difference in proportions and means, test of <span class="math inline">\(\sigma\)</span>, correlations</li>
-<li>Bootstrap and nonparametric tests</li>
-</ul>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -648,8 +631,26 @@ A detour on the philosophy of science
 <div class="callout-body-container callout-body">
 <ul>
 <li>Understanding the philosophy of falsification and how it applies to hypothesis testing. <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory">Week2 of this course</a> has a great 20 minute explanation.</li>
-<li>Philosophy of science: Popper and Latakos, in this <a href="https://www.youtube.com/watch?v=cgvKG_3Ck7Y">lecture</a></li>
-<li>“The null is always false”</li>
+<li>Philosophy of science: Popper and Latakos, in this <a href="https://www.youtube.com/watch?v=cgvKG_3Ck7Y">lecture</a>. “The null is always false”</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common statistical tests are linear models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a zoo of different statistical tests and procedures, which might be very confusing – especially trying to remember their particularities. It’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models.</p>
+<ul>
+<li><a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and the <a href="https://www.georgeho.org/tests-as-linear/">python port</a></li>
+<li>Choosing a statistical test: difference in proportions and means, test of <span class="math inline">\(\sigma\)</span>, correlations</li>
+<li>For a bayesian alternative to t-tests, see <a href="https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html">Krutsche’s example</a></li>
+<li>If you’re not clear if your distributional assumptions hold, use a nonparametric test</li>
 </ul>
 </div>
 </div>
