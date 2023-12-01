@@ -417,7 +417,7 @@ Right level of granularity
 <tr class="odd">
 <td>7</td>
 <td>Generalized Linear Models</td>
-<td>Logistic regression, Poisson and variance inflation</td>
+<td>Logistic regression, Poisson and overdispersion</td>
 <td>Income, Voting, Campus Crime, Student absence</td>
 </tr>
 <tr class="even">
@@ -441,6 +441,9 @@ Right level of granularity
 </tbody>
 </table>
 </div>
+<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
+<p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
+<p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
 <div class="column-page-inset-right">
 <div class="cell" data-fig-width="9">
 <div class="cell-output-display">
@@ -1138,6 +1141,7 @@ Gaussian Processes
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -388,49 +388,131 @@ Hypotheses, Process models, Statistical models
 </div>
 </div>
 </section>
-<section id="stories-behind-distributions" class="level2">
+<section id="stories-behind-distributions" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
-<p><strong>Binomial, Poisson</strong>, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, <span class="math inline">\(\chi^2_k\)</span>, mixtures, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N\)</span>, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |</p>
+<div class="page-columns page-full"><p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> behind most of them, since the goal will be to build custom models for each application.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></li></div></div>
 <ul>
-<li>Stories behnid distributions: <span class="math inline">\(Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k\)</span>. What about <span class="math inline">\(Beta(a, b)\)</span>, <span class="math inline">\(Gamma(k, \theta)\)</span>, and <span class="math inline">\(Dirichlet(\bar{\theta})\)</span> – what are they good for?
-<ul>
-<li>Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories / applications with more math</a> from Joe Blitzstein.</li>
-</ul></li>
+<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+<li>Poisson. Limiting and Conditioning. Overdispersion</li>
+<li>Beta, Gamma, Exponential. Exponential Family and Information Theory</li>
+<li>Statistical superstars: <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(F(d_1, d_2)\)</span></li>
+<li>Weirdos: Mixtures, Dirichlet, Multinomial, Weibull, heavy tails</li>
+<li>Remember the differences between PMF, PDF, CDF, MGF, <span class="math inline">\(\mathbb{E}\)</span>, <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{E}g(x)\)</span></li>
 </ul>
-</section>
-<section id="conditioning-and-bayes-rule" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="conditioning-and-bayes-rule">Conditioning and Bayes Rule</h2>
-<p>Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons’ Paradox, Football Spreads, Medical testing |</p>
-<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
-<p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></li></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Couples showing up to a safari
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will analyze and simulate a simple, but tricky example to find out what is the probability of a given number of people who signed up to actually go for the safari.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Bayes Rule. Update your beliefs, often!
+The hot hand strikes again
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p>
+<p>We model streaks of successful shots in basketball and ask whether streaks of <span class="math inline">\(k\)</span> are surprising. I review the original paper by Kahneman and Tversky, what they did very well, but also potential problems with the statistical model</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Poisson and the Prussian army
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Originally, Poisson distribution was used to estimate deaths by horses in the Prussian Army. Here is the <a href="https://rpubs.com/SmilodonCub/567089">historical data</a> and a <a href="https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f">blog post</a> telling the story.</p>
+</div>
+</div>
+<p>I limit the number of hands-on applications for this chapter/lecture, not only because of time constraints, but also because most use-cases come in Module 3, in the context of more realistic problems. I hope, however, that I sparked an interest about how to approach Probability, especially when we draw DAGs to tell stories.</p>
+</section>
+<section id="conditioning-and-bayes-rule" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="conditioning-and-bayes-rule">Conditioning and Bayes Rule</h2>
+<p>There is a quote I like a lot: “Conditioning is the soul of statistics”. The Bayes rule, which follows directly from the axioms of probability, is an essential in decision-making and the most important tool in this course – both conceptually and technically. Any introduction to the subject will work out:</p>
 <ul>
-<li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
+<li>A few excellent resources are Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, or Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, or Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>. They will teach you about:
+<ul>
+<li>Conditioning, Marginalization, Priors, and Updating</li>
+</ul></li>
+<li>If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or the explanation <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</li>
+<li>I introduce the idea of Likelihood, which would serve us in future use-cases. It is another important perspective over statistical modeling to consider</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Medical testing for rare diseases
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Medical testing</strong> for rare diseases, hypothetical example with code in my <a href="https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb">course repository</a>. We use the same idea to reason about how confident are we our code has no bugs.</p>
+<p>If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could’ve applied the same idea!</p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</p>
+</div></div><p>For the simplest models, one approach of comparing different hypotheses is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look it up in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Football spreads and betting experts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?</p>
 <ul>
 <li>If you’re into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?</li>
 <li>For brevity, I won’t elaborate much from now on, how to take an use-case and example to its limit. <strong>If you’re passionate about a particular topic – go for it!</strong></li>
-</ul></li>
-<li>(BDA3, Ch1): <strong>Spelling correction</strong>, based on <a href="http://norvig.com/ngrams/">empirical frequencies</a> provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself – it is good for a warm-up, but challenging enough to keep you occupied.</li>
-<li>(<a href="https://projects.iq.harvard.edu/stat110/home">Probability 110</a>): <strong>Medical testing</strong> for rare diseases, hypothetical example with code in my <a href="https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb">course repository</a>. We use the same idea to reason about how confident are we our code has no bugs.
-<ul>
-<li>If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could’ve applied the same idea!</li>
-</ul></li>
 </ul>
-<p>For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
-<p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Spelling Correction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>(BDA3, Ch1): <strong>Spelling correction</strong>, based on <a href="http://norvig.com/ngrams/">empirical frequencies</a> provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself – it is good for a warm-up, but challenging enough to keep you occupied.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Monty Hall. Simpson’s Paradox and DAGs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Simpson’s paradox is usually introduced to highlight the importance of conditioning. However, the only resource I found which gets to the core of the problem is Bradley Neal’s <a href="https://www.bradyneal.com/causal-inference-course">first lecture</a> on causal inference.</p>
+<p>The “paradox” part of it is resolved (or at least not puzzling), when we think about the causal structure of the problem (or the DAG of influences).</p>
+</div>
+</div>
 </section>
 <section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
