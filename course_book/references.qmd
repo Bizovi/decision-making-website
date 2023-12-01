@@ -44,7 +44,7 @@ Instead of taking regression as the starting point, then going into advanced eco
 | 4 | Regression and Model Critique | Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting | Golf example continued, Flight Delays |
 | 5 | Regression and Model Selection | Variable selection | McElreath example: height, waffles |
 | 6 | Regression and nonlinearities | Regularization, Variable selection, Splines, Robustness | Applying the concepts on same examples as before. Missing Data |
-| 7 | Generalized Linear Models | Logistic regression, Poisson and variance inflation | Income, Voting, Campus Crime, Student absence |
+| 7 | Generalized Linear Models | Logistic regression, Poisson and overdispersion | Income, Voting, Campus Crime, Student absence |
 | 8 | Introduction to Hierarchical Models | Hierarchical GLMs. Priors informed by prior knowledge | Radon continued, Stage Anxiety, Plumonary Fibrosis |
 | 9 | Hierarchical Models and Longitudinal Data | Stochastic processes. Challenges of Hierarchical time series | Teenage drinking, sleep study, charter schools, Graduate Admissions |
 | 10 | Hierarchical Models case studies. BART | Basketball Fouls, AirBnb reviews, Seat Belts | Bike Shares, Agriculture and Seed Germination |

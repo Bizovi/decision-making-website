@@ -74,10 +74,34 @@ I highly recommend this first [lecture](https://www.youtube.com/watch?v=FdnMWdIC
 :::
 
 ## Stories behind distributions
-**Binomial, Poisson**, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, $\chi^2_k$, mixtures, $t_k$, $N$, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |
 
-- Stories behnid distributions: $Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k$. What about $Beta(a, b)$, $Gamma(k, \theta)$, and $Dirichlet(\bar{\theta})$ -- what are they good for?
-  - Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) from Joe Blitzstein.
+You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few -- especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories[^stories] behind most of them, since the goal will be to build custom models for each application. 
+
+[^stories]: There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters
+
+- Bernoulli, Binomial, Hypergeometric, Negative Binomial [^prob-simulations]
+- Poisson. Limiting and Conditioning. Overdispersion
+- Beta, Gamma, Exponential. Exponential Family and Information Theory
+- Statistical superstars: $\chi^2_k$,  $t_k$, $N(\mu, \sigma)$, $F(d_1, d_2)$
+- Weirdos: Mixtures, Dirichlet, Multinomial, Weibull, heavy tails
+- Remember the differences between PMF, PDF, CDF, MGF, $\mathbb{E}$, $\mathbb{V}$, $\mathbb{E}g(x)$
+
+
+[^prob-simulations]: Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) / applications with more math from Joe Blitzstein.
+
+
+::: {.callout-note}
+## Couples showing up to a safari
+
+We will analyze and simulate a simple, but tricky example to find out what is the probability of a given number of people who signed up to actually go for the safari.
+:::
+
+::: {.callout-note}
+## The hot hand strikes again
+
+We model streaks of successful shots in basketball and ask whether streaks of $k$ are surprising. I review the original paper by Kahneman and Tversky, what they did very well, but also potential problems with the statistical model
+:::
+
 
 
 ## Conditioning and Bayes Rule
