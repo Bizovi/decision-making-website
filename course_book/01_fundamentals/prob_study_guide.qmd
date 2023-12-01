@@ -213,60 +213,61 @@ Bias-variance can be made more relatable in code, simulations, and visualization
 
 ## Hypothesis testing. Neyman-Pearson
 
-In order to make sense of frequentist hypothesis testing, I strongly recommend you read about the original idea of Neyman and Pearson (error control -- don't make a fool of yourself too often in the long run).
+In order to make sense of frequentist hypothesis testing, I strongly recommend you read about the original idea of Neyman and Pearson (error control -- don't make a fool of yourself too often in the long run). It is a "path of action" perspective of statistics.
 
-We will start from the first principles and will let go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, test choice). You should to be able to justify all the choices you make during the phase of experiment design, i.e. before running the experiment. This is certainly the most difficult lecture of the module.
+[This is certainly the most difficult lecture of the module, combining the math, programming, and even philosophy.]{.aside}
 
-- Picking a default action. Type I, II errors. How costly is each type of mistakes?
+I start from the first principles and will let go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, test choice). You should to be able to justify all the choices you make during the phase of experiment design. 
+
+
+- Picking a default action. [Type I, II errors](https://openintro-ims.netlify.app/decerr.html). How costly is each type of mistakes?
 - Minimal **effect size** of interest, [Cohen's](https://rpsychologist.com/cohend/) $d$
 - [Power Analysis](https://rpsychologist.com/d3/nhst/) and Sample Size justification. How surprising are significant findings under each hypothesis? Positive Predictive Value
 - p-values [simulation](https://rpsychologist.com/pvalue/), [p-curve](https://rpsychologist.com/d3/pdist/) under $H_0, H_A$. 
-- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those. Capture percent
+- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those. The tricky idea of "capture percent"
 
 
 ::: {.column-margin}
 In order to put everything together, there are four resources I can recommend:
 
-- [T-test end to end](https://mathstat.slu.edu/~speegle/_book/HTCI.html)
-- [here](https://www.huber.embl.de/msmb/06-chap.html)
-- [here](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html)
-- improving your statistical inferences
+- Speegle's [book](https://mathstat.slu.edu/~speegle/_book/HTCI.html) on data+probability+R
+- Huber's [Chapter 6](https://www.huber.embl.de/msmb/06-chap.html) of Modern Statistics 
+- [Statistical thinking for 21st century](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html)
+- [Improving your statistical inferences](https://www.coursera.org/learn/statistical-inferences/)
 :::
 
 ::: {.callout-note}
 ## Asking better questions
 
-- Make riskier predictions: Non-Inferiority testing - [This visualization](https://rpsychologist.com/d3/equivalence/), Equivalence Testing, Range predictions
+The most complicated part of hypothesis testing is asking better questions. I mean that in a highly technical sense, and whole-heartedly recommend you the following course from a TU Eindhoven professor, named ["Improving your statistical questions"](https://www.coursera.org/learn/improving-statistical-questions/).
+
+- Make riskier predictions: [Non-Inferiority testing](https://rpsychologist.com/d3/equivalence/), Equivalence Testing, Range predictions
 - Publication bias, open science, pre-registrations
-- Telescope method and resource-based
-- Type 3 errors (solving the wrong problem), [chapter14](https://openintro-ims.netlify.app/decerr.html)
-- Read Werner Stahel's [Relevance](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) paper and Gelman's Sign and Magnitude errors
+- Minimal Effect Size of interest: telescope method and resource-based
+- Type 3 errors (solving the wrong problem)
+- Read Werner Stahel's ["Relevance"](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) paper and Gelman's "Sign and Magnitude" [paper](https://stat.columbia.edu/~gelman/research/published/retropower_final.pdf)
 
 :::
-
-::: {.callout-tip}
-## Choosing a model. Common statistical tests are linear models
-
-Now, once you got the absolute basics of regression, it's important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models[^tests-lr].
-
-- [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html) - Krutsche fake data drug trial, t-test, [bambi](https://bambinos.github.io/bambi/notebooks/t-test.html). 
-- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests) and the [python port](https://www.georgeho.org/tests-as-linear/) 
-- Choosing a statistical test: difference in proportions and means, test of $\sigma$, correlations
-- Bootstrap and nonparametric tests
-:::
-
-[^tests-lr]: This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.
-
 
 
 ::: {.callout-note}
 ## A detour on the philosophy of science
 
 - Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
-- Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y)
-- "The null is always false"
+- Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y). "The null is always false"
 :::
 
+
+::: {.callout-tip}
+## Common statistical tests are linear models
+
+There is a zoo of different statistical tests and procedures, which might be very confusing -- especially trying to remember their particularities. It's important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models.
+
+- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests) and the [python port](https://www.georgeho.org/tests-as-linear/) 
+- Choosing a statistical test: difference in proportions and means, test of $\sigma$, correlations
+- For a bayesian alternative to t-tests, see [Krutsche's example](https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html)
+- If you're not clear if your distributional assumptions hold, use a nonparametric test
+:::
 
 
 ## Frequentism vs Likelihood vs Bayes

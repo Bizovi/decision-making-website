@@ -115,7 +115,7 @@ So, you have the cold start problem, data missing not at random, censoring/survi
 
 Even in ML when there is a big, clean and rich dataset, we can't escape theory (which is our understanding of the world), in one way or anover. For example, in demand forecasting, we need to provide the model relevant data, factors which are related, plausibly influencing that demand: like weather, holidays, promotions, competition, and so on. 
 
-We can't just pour all this data into a ML model and expect the best. It isn't clear that feeding irrelevant data doesn't break or bias our model, such that it picks up on noise and **spurious correlation**, especially in very powerful DL models. That definitely doesn't help with better decisions.
+We can't just pour all this data into a ML model and expect the best. It isn't clear that feeding irrelevant data doesn't break or bias our model, such that it picks up on noise and **spurious correlation**, especially in very powerful DL models. That definitely doesn't help with better decisions. From an engineering standpoint, I recommend you watch this talk ["Big Data is Dead"](https://www.youtube.com/watch?v=lisIQ9ohU8g) by the creator of DuckDB.
 :::
 
 
