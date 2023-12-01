@@ -102,41 +102,66 @@ We will analyze and simulate a simple, but tricky example to find out what is th
 We model streaks of successful shots in basketball and ask whether streaks of $k$ are surprising. I review the original paper by Kahneman and Tversky, what they did very well, but also potential problems with the statistical model
 :::
 
+::: {.callout-note}
+## Poisson and the Prussian army
+
+Originally, Poisson distribution was used to estimate deaths by horses in the Prussian Army. Here is the [historical data](https://rpubs.com/SmilodonCub/567089) and a [blog post](https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f) telling the story.
+:::
+
+I limit the number of hands-on applications for this chapter/lecture, not only because of time constraints, but also because most use-cases come in Module 3, in the context of more realistic problems. I hope, however, that I sparked an interest about how to approach Probability, especially when we draw DAGs to tell stories.
 
 
 ## Conditioning and Bayes Rule
 
-Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
+There is a quote I like a lot: "Conditioning is the soul of statistics". The Bayes rule, which follows directly from the axioms of probability, is an essential in decision-making and the most important tool in this course -- both conceptually and technically. Any introduction to the subject will work out:
 
-
-
-We start simple, by modeling a single random variable $Y$, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations  -- then sampling from the posterior with `pymc`, `numpyro`, and `bambi`.[^1]
-
-[^1]: The R equivalents would be `stan` and `brms`, `rstanarm`. `bambi` and `brms` are a high-level API for most common models.
-
-Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.
+- A few excellent resources are Chapter 1/2 of [BDA3](http://www.stat.columbia.edu/~gelman/book/), or Chapter 1/2 of [Bayes Rules](https://www.bayesrulesbook.com/chapter-2.html), or Chapter 1/2 of [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/). They will teach you about:
+    - Conditioning, Marginalization, Priors, and Updating
+- If you prefer videos, enjoy the 3Blue1Brown [visual masterpiece](https://www.youtube.com/watch?v=HZGCoVF3YvM) on how to think like a Bayesian or the explanation [here](https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking).
+- I introduce the idea of Likelihood, which would serve us in future use-cases. It is another important perspective over statistical modeling to consider
 
 ::: {.callout-note}
-## Bayes Rule. Update your beliefs, often!
+## Medical testing for rare diseases
+**Medical testing** for rare diseases, hypothetical example with code in my [course repository](https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb). We use the same idea to reason about how confident are we our code has no bugs.
 
-Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of [BDA3](http://www.stat.columbia.edu/~gelman/book/), Chapter 1/2 of [Bayes Rules](https://www.bayesrulesbook.com/chapter-2.html), and Chapter 1/2 of [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/).[^2] If you prefer videos, enjoy the 3Blue1Brown [visual masterpiece](https://www.youtube.com/watch?v=HZGCoVF3YvM) on how to think like a Bayesian or [here](https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking).
+If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could've applied the same idea!
 
-
-- (BDA3, Ch1): **Football spreads**, that can be estimated from [data about matches](http://www.stat.columbia.edu/~gelman/book/data/football.asc). What is the probability that a team wins? Are experts right, on average?
-  - If you're into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?
-  - For brevity, I won't elaborate much from now on, how to take an use-case and example to its limit. **If you're passionate about a particular topic -- go for it!**
-- (BDA3, Ch1): **Spelling correction**, based on [empirical frequencies](http://norvig.com/ngrams/) provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself -- it is good for a warm-up, but challenging enough to keep you occupied.
-- ([Probability 110](https://projects.iq.harvard.edu/stat110/home)): **Medical testing** for rare diseases, hypothetical example with code in my [course repository](https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb). We use the same idea to reason about how confident are we our code has no bugs.
-  - If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could've applied the same idea!
-
-For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses [here](https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics) and [here](https://www.coursera.org/learn/bayesian/home/week/3) for the theory and examples.
 :::
 
-[^2]: You will notice in the callouts that I point out where to read the theory -- for a conceptual understanding and to figure out the mathematical details
+::: {.column-margin}
+Or maybe you're passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence
+:::
 
-[Or maybe you're passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence]{.aside}
+For the simplest models, one approach of comparing different hypotheses is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look it up in the following courses [here](https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics) and [here](https://www.coursera.org/learn/bayesian/home/week/3) for the theory and examples.
 
-We applied Bayes rule and got some insightful results in three totally different domains. However, we weren't doing neither statistics, nor inference -- but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it's time for full-luxury Bayes and the simplest cases of inference.
+::: {.callout-note}
+## Football spreads and betting experts
+
+(BDA3, Ch1): **Football spreads**, that can be estimated from [data about matches](http://www.stat.columbia.edu/~gelman/book/data/football.asc). What is the probability that a team wins? Are experts right, on average?
+
+- If you're into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?
+- For brevity, I won't elaborate much from now on, how to take an use-case and example to its limit. **If you're passionate about a particular topic -- go for it!**
+
+:::
+
+::: {.callout-note}
+## Spelling Correction
+
+(BDA3, Ch1): **Spelling correction**, based on [empirical frequencies](http://norvig.com/ngrams/) provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself -- it is good for a warm-up, but challenging enough to keep you occupied.
+
+:::
+
+
+
+::: {.callout-note}
+## Monty Hall. Simpson's Paradox and DAGs
+
+The Simpson's paradox is usually introduced to highlight the importance of conditioning. However, the only resource I found which gets to the core of the problem is Bradley Neal's [first lecture](https://www.bradyneal.com/causal-inference-course) on causal inference. 
+
+The "paradox" part of it is resolved (or at least not puzzling), when we think about the causal structure of the problem (or the DAG of influences).
+:::
+
+
 
 
 ## LLNs, CLTs. Estimator properties

@@ -53,6 +53,13 @@ Instead of taking regression as the starting point, then going into advanced eco
 
 :::
 
+We start simple, by modeling a single random variable $Y$, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations  -- then sampling from the posterior with `pymc`, `numpyro`, and `bambi`.[^1]
+
+[^1]: The R equivalents would be `stan` and `brms`, `rstanarm`. `bambi` and `brms` are a high-level API for most common models.
+
+Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.
+
+We applied Bayes rule and got some insightful results in three totally different domains. However, we weren't doing neither statistics, nor inference -- but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it's time for full-luxury Bayes and the simplest cases of inference.
 
 
 ::: {.column-page-inset-right}
