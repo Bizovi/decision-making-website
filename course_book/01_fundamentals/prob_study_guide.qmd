@@ -290,15 +290,22 @@ We can pick a simple example of inferring a proportion, which has many practical
 
 ## Dead Salmon Experiment. Replication Crisis 
 
-multiple testing, harking, snooping, publishing bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science  |
+Lastly, we can't avoid a conversation about the replication crisis happening in multiple disciplines, but especially in social sciences. What scientific literature can we trust? This is relevant not just for research and science, but will help you avoid many pitfalls in the business practice -- therefore, you will be less likely to be fooled by randomness.
 
-Bootstrap, Multiple Testing | FDR, Bonferoni | Computer-age statistical inference |
+- Multiple testing, p-hacking, HARKING, snooping. Ethics and Integrity
+- Underpowered studies and vague questions
+- Publication Bias, Open Science, Pre-registration and simulation
+- False-discovery rate, Bonferoni correction
+- Confounding, Mediation and all that causal jazz
+- Computational Reproducibility vs Replication. Meta-Analysis
 
-Reproducibility vs Replication, Meta-Analysis
 
-Ethics and Integrity
+::: {.callout-note}
+## Dead salmon experiment
 
-Simulation, 
+An examination of a famous experiment in neuroscience, putting into question standard/current statistical practices, leads to a conversation of controversies in medicine, psychology, and social science. 
 
-Bootstrap and Nonparametrics | resampling, ECDF |  Kolmogorov-Smirnov |
+Just think about how important this experiment was for the field of medicine -- it won the [nobel prize](https://blogs.scientificamerican.com/scicurious-brain/ignobel-prize-in-neuroscience-the-dead-salmon-study/)!
+:::
+
 
