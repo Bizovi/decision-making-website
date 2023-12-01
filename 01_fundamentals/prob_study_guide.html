@@ -516,8 +516,16 @@ Monty Hall. Simpson’s Paradox and DAGs
 </section>
 <section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
-<div class="page-columns page-full"><p><strong>CLT</strong> and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo | <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></li></div></div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="page-columns page-full"><p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></li></div></div>
+<ul>
+<li>We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">here</a>.</li>
+<li>If you’re interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure</li>
+<li>What does a statistician want? Review important properties of estimators.
+<ul>
+<li>For an accessible explanation of Bias, Consistency, Efficiency – showcased with the corresponding R code, see <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -527,19 +535,48 @@ The most dangerous equation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>I think that <a href="http://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> is a must read for anyone, not just practicing scientists and statisticians. You can see below two resources for the mathematical background of LLT, CLT, and some key properties of estimators.</p>
-<ul>
-<li>Central Limit Theorem (Kolmogorov), deMoivre - the most dangerous equation. Asymptotics. <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">the theorem and simulations here</a></li>
-<li>Estimator properties: Bias, Consistency, Efficiency - you can find an accessible explanation with R code in <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
-</ul>
+<p>I think that <a href="http://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> is a must read for anyone, not just practicing scientists and statisticians. The example I usually do a demonstration on is about the dubious U.S. policy of splitting the bigger schools.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Calling Bullshit: Best Barbecue
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Continuing on the reddit examples, there are some amazing case-studies in the “Calling Bullshit” website and book. One of them is exactly such a ranking problem: <a href="https://www.callingbullshit.org/case_studies/case_study_barbecue.html">best barbecue in the states</a>. I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill – to call out the bullshit.</p>
+<p>Online platforms which have to rank posts and comments, face the challenges of how to take the sample size into account. It depends, but for inspiration, see the hackernoon ranking algorithm.</p>
 </div>
 </div>
 </section>
-<section id="bias-variance.-fisher-information" class="level2">
+<section id="bias-variance.-fisher-information" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="bias-variance.-fisher-information">Bias-Variance. Fisher Information</h2>
-<p><strong>Bias-Variance</strong>, Fisher Information, Rao-Cramer | Efficiency, Bias, James-Stein, curse of dimensionality | Bootstrap, simulations and visualizations |</p>
-<p>Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relevance for ML, Deep Learning |</p>
+<p>I spend another lecture to deep-dive into estimators, because the concepts of bias-variance tradeoff and Fisher information have far-reaching consequences in a myriad of tools, applications and fields – especially machine learning. It is also an appropriate point in time to introduce a technique which was revolutionary at its time: bootstrap.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This lecture is highly mathematical, but we will get some powerful intuitions about some fundamental tradeoffs we make in statistics, when selecting a model or estimator.</p>
+</div></div><ul>
+<li>Bias-Variance decomposition and the curse of dimensionality</li>
+<li>Fisher Information and Rao-Cramer lower bound</li>
+<li>The Bootstrap scheme: motivation, applications, and limitations</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bootstraping for Confidence Intervals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bias-variance can be made more relatable in code, simulations, and visualization. However, I will not leave you hanging without introducing a technique you can use for solving practical and concrete problems, namely – bootstrap.</p>
+</div>
+</div>
 </section>
 <section id="hypothesis-testing.-neyman-pearson" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</h2>
