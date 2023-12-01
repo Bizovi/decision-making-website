@@ -337,14 +337,14 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<section id="combinatorics.-sampling.-urn-models" class="level2">
+<section id="combinatorics.-sampling.-urn-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="combinatorics.-sampling.-urn-models">Combinatorics. Sampling. Urn Models</h2>
-<p>There are several excellent courses which start from counting, and I think there are some extremely useful and practical things which you missed about combinatorics. Also, there is a way to learn you never have to remember stuff by heart.</p>
+<div class="page-columns page-full"><p>There are several excellent courses which start from counting, and I think there are some useful and practical things ideas you missed about combinatorics. There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;There are three resources I recommend: Joe Blitzstein’s <a href="https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&amp;si=t-fvklHEnNNPY_mX">Lecture 1/2</a> of Probability 110, Santosh Venkatesh’s Probability Lectures, <a href="https://www.santoshvenkatesh.com/video-lectures">Tableau 2</a>, and Richard McElreath’s <a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">“Bayesian inference is just counting”</a>.</p></li></div></div>
 <ul>
-<li>Multiplication rule</li>
+<li>Multiplication rule and the “garden of forking paths”</li>
 <li>Sampling with and without replacement. Ordered vs unordered</li>
-<li>Naive Probability</li>
-<li>A result about Bootsrap</li>
+<li>Naive Probability and motivation for Kolmogorov’s breakthrough</li>
+<li>Read this <a href="https://johnkerl.org/doc/prbstat/prbstat.html">short article</a> about the difference between probability and statistics</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -356,32 +356,52 @@ Birthday Paradox. Pigenhole Principle. Collision Problems
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>One of the reasons we’re not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. The birthday problem is one of such examples and we’ll do simulations and derive the analytical solution – suggesting unexpected applications in computer science and engineering.</p>
 </div>
 </div>
 </section>
 <section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
-<p>| experiment, sample space, measure, population, estimand, estimators, golemns | <a href="https://johnkerl.org/doc/prbstat/prbstat.html">Probability vs Statistics</a>, Kolmogorov, Garden Forking Paths |</p>
-<p>If you understand and can explain the following ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky, here are some readings:</p>
+<div class="page-columns page-full"><p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, here are some readings:</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></li></div></div>
 <ul>
-<li><strong>Probability Triple</strong> and <strong>Random Variables</strong> - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
-<li><strong>Collectivity</strong> (“physical” structure), <strong>Statistical Population</strong>, <strong>Sample</strong> - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a>.</li>
-<li><strong>Parameter</strong> (Estimand), <strong>Estimator</strong>, <strong>Estimation/Statistic</strong> - same resources as above <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Probability Triple and Random Variables - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
+<li>Collectivity (“physical” structure), Statistical Population, Sample. We need to be a bit more precise in what we mean by a statistical model and a DGP.
+<ul>
+<li>Defining the population and sampling process is a critical step in statistics.</li>
+<li>The population is the “contract” we’re bound to when talking about inferences</li>
+<li>It is a much more nuanced topic than it looks, explained well <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a>.</li>
+</ul></li>
+<li>Parameter (Estimand), Estimator, Estimation/Statistic. Never confuse those!</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hypotheses, Process models, Statistical models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some of the biggest debates in science, spanning across decades and causing much confusion and controversy could’ve been resolved much quicker by having this explicit distinction about Scientific Hypotheses, Process Models, and Statistical Models or procedures.</p>
+<p>I highly recommend this first <a href="https://www.youtube.com/watch?v=FdnMWdICdRs">lecture</a> by Richard McElreath, showing how tricky could it be to map the correspondences between these three.</p>
+</div>
+</div>
+</section>
+<section id="stories-behind-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
+<p><strong>Binomial, Poisson</strong>, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, <span class="math inline">\(\chi^2_k\)</span>, mixtures, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N\)</span>, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |</p>
+<ul>
 <li>Stories behnid distributions: <span class="math inline">\(Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k\)</span>. What about <span class="math inline">\(Beta(a, b)\)</span>, <span class="math inline">\(Gamma(k, \theta)\)</span>, and <span class="math inline">\(Dirichlet(\bar{\theta})\)</span> – what are they good for?
 <ul>
 <li>Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories / applications with more math</a> from Joe Blitzstein.</li>
 </ul></li>
 </ul>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian “frequentism”.</p></li></div></section>
-<section id="stories-behind-distributions" class="level2">
-<h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
-<p><strong>Binomial, Poisson</strong>, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, <span class="math inline">\(\chi^2_k\)</span>, mixtures, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N\)</span>, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |</p>
 </section>
 <section id="conditioning-and-bayes-rule" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="conditioning-and-bayes-rule">Conditioning and Bayes Rule</h2>
 <p>Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons’ Paradox, Football Spreads, Medical testing |</p>
-<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
+<div class="page-columns page-full"><p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, and <code>bambi</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. <code>bambi</code> and <code>brms</code> are a high-level API for most common models.</p></li></div></div>
 <p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -393,7 +413,7 @@ Bayes Rule. Update your beliefs, often!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p>
+<p>Any introduction to the subject will work out, a few excellent ones being Chapter 1/2 of <a href="http://www.stat.columbia.edu/~gelman/book/">BDA3</a>, Chapter 1/2 of <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules</a>, and Chapter 1/2 of <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> If you prefer videos, enjoy the 3Blue1Brown <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual masterpiece</a> on how to think like a Bayesian or <a href="https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking">here</a>.</p>
 <ul>
 <li>(BDA3, Ch1): <strong>Football spreads</strong>, that can be estimated from <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a>. What is the probability that a team wins? Are experts right, on average?
 <ul>
@@ -409,12 +429,12 @@ Bayes Rule. Update your beliefs, often!
 <p>For the simplest models, one approach of comparing different hypotheses, is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look in the following courses <a href="https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics">here</a> and <a href="https://www.coursera.org/learn/bayesian/home/week/3">here</a> for the theory and examples.</p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;You will notice in the callouts that I point out where to read the theory – for a conceptual understanding and to figure out the mathematical details</p></li></div><div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence</span></div></div>
 <p>We applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it’s time for full-luxury Bayes and the simplest cases of inference.</p>
 </section>
-<section id="llns-clts.-estimator-properties" class="level2">
+<section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
-<p><strong>CLT</strong> and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo |</p>
+<div class="page-columns page-full"><p><strong>CLT</strong> and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo | <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></li></div></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -488,7 +508,7 @@ Choosing a model. Common statistical tests are linear models
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>Now, once you got the absolute basics of regression, it’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
 <ul>
 <li><a href="https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html">pymc</a> - Krutsche fake data drug trial, t-test, <a href="https://bambinos.github.io/bambi/notebooks/t-test.html">bambi</a>.</li>
 <li><a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and the <a href="https://www.georgeho.org/tests-as-linear/">python port</a></li>
@@ -497,7 +517,7 @@ Choosing a model. Common statistical tests are linear models
 </ul>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;This will instantly systematize the zoo of tests, when to use them and what they do. DO NOT TRY TO MEMORIZE THEM! Instead, think very carefully about your use-case.</p></li></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
