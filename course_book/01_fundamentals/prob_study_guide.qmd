@@ -34,35 +34,50 @@ flowchart TD
 
 ## Combinatorics. Sampling. Urn Models
 
-There are several excellent courses which start from counting, and I think there are some extremely useful and practical things which you missed about combinatorics. Also, there is a way to learn you never have to remember stuff by heart.
+There are several excellent courses which start from counting, and I think there are some useful and practical things ideas you missed about combinatorics. There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. [^combinat-refs]
 
-- Multiplication rule
+- Multiplication rule and the "garden of forking paths"
 - Sampling with and without replacement. Ordered vs unordered
-- Naive Probability
-- A result about Bootsrap
+- Naive Probability and motivation for Kolmogorov's breakthrough
+- Read this [short article](https://johnkerl.org/doc/prbstat/prbstat.html) about the difference between probability and statistics
 
 ::: {.callout-note}
 ## Birthday Paradox. Pigenhole Principle. Collision Problems
 
+One of the reasons we're not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. The birthday problem is one of such examples and we'll do simulations and derive the analytical solution -- suggesting unexpected applications in computer science and engineering.
 :::
+
+[^combinat-refs]: There are three resources I recommend: Joe Blitzstein's [Lecture 1/2](https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&si=t-fvklHEnNNPY_mX) of Probability 110, Santosh Venkatesh's Probability Lectures, [Tableau 2](https://www.santoshvenkatesh.com/video-lectures), and Richard McElreath's ["Bayesian inference is just counting"](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting).
 
 ## Probability Triple. Random Variables. Models
 
- | experiment, sample space, measure, population, estimand, estimators, golemns  | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), Kolmogorov, Garden Forking Paths |
+If you understand and can explain the above ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky[^shaky], here are some readings:
+
+- Probability Triple and Random Variables - a quasi formal introduction is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of the course website. From my experience, not many students have this understanding after their probability theory classes.
+- Collectivity ("physical" structure), Statistical Population, Sample. We need to be a bit more precise in what we mean by a statistical model and a DGP. 
+    - Defining the population and sampling process is a critical step in statistics. 
+    - The population is the "contract" we're bound to when talking about inferences
+    - It is a much more nuanced topic than it looks, explained well [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
+- Parameter (Estimand), Estimator, Estimation/Statistic. Never confuse those! 
 
 
-If you understand and can explain the following ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky, here are some readings:
+[^shaky]: Some of you might find reviewing this insulting because it's "trivial", or useless theory, or a frustrating reminder of probability classes. Please, bear with me -- because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.
 
-- **Probability Triple** and **Random Variables** - a quasi formal introduction is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of the course website. From my experience, not many students have this understanding after their probability theory classes.
-- **Collectivity** ("physical" structure), **Statistical Population**, **Sample** - where defining the population is the contract for our experiment, and the sampling process is critical. It is a much more nuanced topic than it looks, explained well and in great detail [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
-- **Parameter** (Estimand), **Estimator**, **Estimation/Statistic** - same resources as above [^4]
-- Stories behnid distributions: $Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k$. What about $Beta(a, b)$, $Gamma(k, \theta)$, and $Dirichlet(\bar{\theta})$ -- what are they good for?
-  - Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) from Joe Blitzstein.
 
-[^4]: Although the perspective I take is Bayesian, I will take some time to cover and re-contextualize the Neyman-Pearson and Fisherian "frequentism".
+::: {.callout-important}
+## Hypotheses, Process models, Statistical models
+
+Some of the biggest debates in science, spanning across decades and causing much confusion and controversy could've been resolved much quicker by having this explicit distinction about Scientific Hypotheses, Process Models, and Statistical Models or procedures. 
+
+I highly recommend this first [lecture](https://www.youtube.com/watch?v=FdnMWdICdRs) by Richard McElreath, showing how tricky could it be to map the correspondences between these three.
+
+:::
 
 ## Stories behind distributions
 **Binomial, Poisson**, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, $\chi^2_k$, mixtures, $t_k$, $N$, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |
+
+- Stories behnid distributions: $Bin(n, \theta), Pois(\lambda), Exp(\lambda), N(\mu, \sigma^2), \chi^2_k, t_k$. What about $Beta(a, b)$, $Gamma(k, \theta)$, and $Dirichlet(\bar{\theta})$ -- what are they good for?
+  - Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories / applications with more math](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) from Joe Blitzstein.
 
 
 ## Conditioning and Bayes Rule
@@ -102,7 +117,9 @@ We applied Bayes rule and got some insightful results in three totally different
 
 ## LLNs, CLTs. Estimator properties
 
-**CLT** and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo |
+**CLT** and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo | [^4]
+
+[^4]: Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism
 
 
 ::: {.callout-tip}
