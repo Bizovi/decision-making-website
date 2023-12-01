@@ -191,9 +191,24 @@ Online platforms which have to rank posts and comments, face the challenges of h
 
 ## Bias-Variance. Fisher Information
 
-**Bias-Variance**, Fisher Information, Rao-Cramer | Efficiency, Bias, James-Stein, curse of dimensionality | Bootstrap, simulations and visualizations |
+I spend another lecture to deep-dive into estimators, because the concepts of bias-variance tradeoff and Fisher information have far-reaching consequences in a myriad of tools, applications and fields -- especially machine learning. It is also an appropriate point in time to introduce a technique which was revolutionary at its time: bootstrap.
 
-Properties of Estimators | Bias-Variance, Fisher Information, Rao-Cramer | Relevance for ML, Deep Learning |
+::: {.column-margin}
+
+This lecture is highly mathematical, but we will get some powerful intuitions about some fundamental tradeoffs we make in statistics, when selecting a model or estimator.
+
+:::
+
+- Bias-Variance decomposition and the curse of dimensionality
+- Fisher Information and Rao-Cramer lower bound
+- The Bootstrap scheme: motivation, applications, and limitations
+
+::: {.callout-note}
+## Bootstraping for Confidence Intervals
+
+Bias-variance can be made more relatable in code, simulations, and visualization. However, I will not leave you hanging without introducing a technique you can use for solving practical and concrete problems, namely -- bootstrap.
+
+:::
 
 
 ## Hypothesis testing. Neyman-Pearson
