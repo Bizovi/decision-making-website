@@ -62,18 +62,16 @@ We are not wasting time by switching to Bayes (7 lectures to get to GLMs), becau
 
 :::
 
-Instead of taking regression as the starting point, then going into advanced econometrics -- I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good starting point. 
-
-Simple Models and Conjugate priors  | Beta-Binomial, Gamma-Poisson, Mixtures, Link functions, IG-Normal | Elections, Football Goals, Coal Mining disaseetrs, Golf accuracy, Speed of Light |
+Instead of taking regression as the starting point, then going into advanced econometrics -- I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good first attempt. 
 
 
-We start simple, by modeling a single random variable $Y$, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations  -- then sampling from the posterior with `pymc`, `numpyro`, and `bambi`.[^1]
+We start simple, by modeling a single random variable $Y$, choosing the appropriate distribution for each phenomenon, a conjugate prior for the parameters, doing simulations -- then sampling from the posterior with `pymc`, `numpyro`, or `bambi`.[^1]
 
-[^1]: The R equivalents would be `stan` and `brms`, `rstanarm`. `bambi` and `brms` are a high-level API for most common models.
+[^1]: The R equivalents would be `stan` and `brms`, `rstanarm`. The latter two are a high-level API for most common models.
 
-Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling the data generating process, which will serve as building blocks in more complicated and realistic models.
+Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling of the data generating process, which will serve as building blocks in more complicated and realistic models.
 
-We applied Bayes rule and got some insightful results in three totally different domains. However, we weren't doing neither statistics, nor inference -- but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it's time for full-luxury Bayes and the simplest cases of inference.
+In the second module, we applied Bayes rule and got some insightful results in three totally different domains. However, we weren't doing neither statistics, nor inference -- but got into the right mindset. Now it's time for full-luxury Bayes!
 
 
 
@@ -99,7 +97,7 @@ There are many more applications, but the ones below require more research and w
 
 The next step is learning how to model count data, which will open up to us applications of a different flavor. It is not a coincidence that when learning linear regression, we will extend it to poisson and logistic regression.
 
-[You can notice how the issues of sample size creep in, as well as how to properly model variation within and between groups. I recommend you look up again the CLT, in the next section]{.aside}
+[You can notice how the issues of sample size creep in, as well as how to properly model variation within and between groups. I recommend you look up again the CLT]{.aside}
 
 Note that **prior choice** and justification is an art and science: you will have to learn and practice how to articulate assumptions and encode your domain knowledge into the priors. There is no universal recipe, but there are some guiding principles.
 
@@ -133,26 +131,8 @@ Estimating rates, modeling a structural shift/change is a relevant, challenging,
 - [U.S. School Shootings](https://sidravi1.github.io/blog/2018/05/22/what-happened-in-2006), is there an increase in attempts and occurences?
 :::
 
-By now, you encountered many simple Bayesian models, so it's useful to contrast it with the Fisherian and Neyman-Pearson (frequentist) approaches. The motivation is simple: the likelihood approach is widely used in Machine Learning (and Statistical Learning) teaching and practice. A nuanced understanding of frequentist methods will improve the way you ask statistical questions, perform and design experiments.
 
-[In the courses I teach, I dedicate quite a lot of time on how not to fall into the most common pitfalls when applying frequentist methods. It's an useful skill when critically reading the literature.]{.aside}
-
-When we get to the topic of A/B testing and experiment design, we will unavoidably stumble upon a few fascinating philosophical questions in relation to the nature of evidence. A quick overview of the below resources will give you most background you need to understand the heck those philosophical positions are about.
-
-::: {.callout-note}
-## Bayesian vs Frequentist vs Fisherian Inference
-
-- I like very much the following metaphor, explained [here](https://www.coursera.org/learn/statistical-inferences/lecture/qC3A1/frequentism-likelihoods-bayesian-statistics), of looking at these 3 approaches as a: Path of Action, Path of Devotion, Path of Knowledge.
-- Watch this [lecture](https://www.youtube.com/watch?v=LYcu3LoGqKc) by Zoltan Dienes to get a sense of the orthodox, Neyman-Pearson approach: its power and limitations.
-- Likelihood - either from previous books or [this interactive visualization](https://rpsychologist.com/likelihood/). You can use the [lecture and lab](https://www.coursera.org/learn/statistical-inferences/lecture/8yZDk/likelihoods) from TU Eindhoven courses mentioned below.
-- Bayesian vs Frequentist inference - [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf) in Computer Age Statistical Inference. This [lecture](https://www.youtube.com/watch?v=NHFfJEvzPIo) by Zoltan Dienes contrasts Bayes Factors vs classical methods in t-test situations.
-- The best teaching of (mostly) frequentist statistics I know of is in these two courses by TU Eindhoven and it is well worth your time:
-  - Improving your statistical questions, [coursera](https://www.coursera.org/learn/improving-statistical-questions)
-  - Improving your statistical inferences, [coursera](https://www.coursera.org/learn/statistical-inferences)
-:::
-
-
-We already worked with multiple parameters, even touching upon the relationship between two variables: counts and time $Y_t$, but not really -- it's more helpful to think about that in terms of stochastic processes. Therefore, we need a new tool, which is a link function, a nonlinear transformation $g(x)$ which maps $X$ to the correct support of $Y$. I recommend to introduce this before jumping into linear regression (LR), in order not to have the (flawed) impression that the LR is the only game in the town.
+We already worked with multiple parameters, even touching upon the relationship between two variables: counts and time $Y_t$, but not really -- it's more helpful to think about that in terms of stochastic processes. Therefore, we need a new tool, which is a link function, a nonlinear transformation $g(x)$ which maps $X$ to the correct support of $Y$. I recommend to introduce this before jumping into gaussian linear regression (LR), in order not to have the (flawed) impression that the LR is the only game in the town.
 
 ::: {.callout-tip}
 ## Link functions. Golf case-study
@@ -173,7 +153,6 @@ Of course, we cannot forget about the Normal/Gaussian distribution, which is so 
 - Speed of light experiment (BDA3, Ch3), [data](http://www.stat.columbia.edu/~gelman/book/data/). You will find here and in any statistics textbook the cases of known and unknown variance, and how the $t_k$ test is derived from the first principles.
 - As in the case of proportions, we can use the model above to model the difference between the means of two independent groups.
 
-TODO: more examples from science, business, and human behavior
 :::
 
 
@@ -571,52 +550,3 @@ As a bouns, I'm adding two extremely flexible, general-purpose models, which you
 - Gelman: [Birthdays](https://omarfsosa.github.io/speedy_gaussian_processes), hilbert space approximation [repo](https://github.com/omarfsosa/hsgp), also in [stan](https://avehtari.github.io/casestudies/Birthdays/birthdays.html)
 
 :::
-
-
-
-## Bibliography
-
-```yml
-- title : Bayesian Data Analysis
-  title_short: bda3
-  type: book
-  edition: 3
-  author: Andrew Gelman
-  year: 2013
-  link: http://www.stat.columbia.edu/~gelman/book/
-  lectures: https://avehtari.github.io/BDA_course_Aalto/Aalto2022.html
-
-- title: Bayesian Methods for Hackers
-  title_short: bmh
-  type: book
-  edition: 1
-  author: Cameron Davidson
-  year: 2015
-  link: https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/
-  github: https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
-
-- title: Statistical Rethinking
-  title_short: rethinking
-  type: book
-  edition: 2
-  author: Richard McElreath
-  year: 2021
-  link: https://xcelab.net/rm/statistical-rethinking/
-  lectures: https://github.com/rmcelreath/stat_rethinking_2023
-
-- title: The Most Dangerous Equation
-  title_short: danger-eqn
-  type: article
-  author: Howard Wainer
-  year: 2009
-  link: http://assets.press.princeton.edu/chapters/s8863.pdf
-
-- title : Introduction to Probability
-  title_short: probability-blitzstein
-  type: book
-  edition: 2
-  author: Joe Blitzstein
-  year: 2019
-  link: https://projects.iq.harvard.edu/stat110/home
-  lectures: https://projects.iq.harvard.edu/stat110/youtube
-```
