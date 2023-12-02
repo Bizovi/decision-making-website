@@ -159,8 +159,6 @@ Of course, we cannot forget about the Normal/Gaussian distribution, which is so 
 
 ## Multiple Groups and Hierarchical Models
 
-Complete, No, Partial pooling | A/B testing, baseball, review ranking, Radon, Starbucks wait times, Customer LTV | Groups and Partial pooling
-
 
 We already worked with groups in the case of difference in means (proportions and continuous variables) and making inferences for three and more groups, treating them as separate. We will see that such an approach is called "no pooling".
 
@@ -170,7 +168,7 @@ In the traditional teaching of statistics, the above would be covered by t-test,
 One more reason for this is that groups and categorical variables do not receive the deserved, nuanced exposition in linear regression. Also, comparing groups is so widespread, that having a tool to deal with the challenges which it poses is immediately useful in your practice inside any firm.
 :::
 
-In this section, the goal is to show the idea of hierarchical models and **partial pooling**. I agree with BDA3 approach to teach it before regression, as the latter needs a lot of nuance and a long time to learn to apply properly.
+In this section, the goal is to show the idea of hierarchical models and **partial pooling**. I agree with BDA3 (Bayesian Data Analysis 3ed) approach to teach it before regression, as the latter needs a lot of nuance and a long time to learn to apply properly.
 
 ::: {.callout-note}
 ## Beta-Binomial for groups. Normal Approximation
@@ -183,7 +181,7 @@ However, it is a good chance for a frequentist detour, to the Agresti-Coull conf
 - I think the authoritative resource on Bayesian versions of the distribution-free methods for hypothesis testing is "Bayesian Statistics for Experimental Scientists", found [here](https://mitpress.mit.edu/9780262044585/bayesian-statistics-for-experimental-scientists/). Unfortunately, it is expensive, so I suggest you look at the table of contents and search for the implementations elsewhere.
 :::
 
-Foreshadowing the module 2b on A/B testing is the topic of Multi-Armed Bandits. There are cases in which we are testing multiple groups, e.g. which images to show on the website, and we do it at scale. Moreover, we want to experiment countinuously and automatically, trading off between exploration and exploitation to maximize the payoff or minimize regret. 
+I build upon the module 2 on A/B testing by introducing Multi-Armed Bandits. There are cases in which we are testing multiple groups, e.g. which images to show on the website, and we do it at scale. Moreover, we want to experiment countinuously and automatically, trading off between exploration and exploitation to maximize the payoff.
 
 [MABs are a big topic in itself, and a very narrow, particular example of reinforcement learning. It can be very powerful when carefully designed and applied appropriately.]{.aside}
 
@@ -193,9 +191,9 @@ Foreshadowing the module 2b on A/B testing is the topic of Multi-Armed Bandits. 
 I suggest you start from the didactic examples in Bayesian Methods for Hackers, [Chapter 6](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter6_Priorities/Ch6_Priors_PyMC_current.ipynb). If you have an use-case in which this fits perfectly, you can check out the theory and more variants to implement it in more specialized resources.
 :::
 
-We encountered the problem of sample size when ranking reddit posts, but it deserves a few lectures in itself. Once you master a few methods of reasoning about $n$, you can cut through so much bullshit in media, research, and literature. 
+We encountered the problem of sample size when ranking barbecue diners and reddit posts, but it deserves a few lectures in itself. Once you master a few methods of reasoning about $n$, you can cut through so much bullshit in media, research, and literature. 
 
-For the continuity with the previous "Building Blocks" section, here are a few example for groups, where the dependent variable is following the Poisson distribution. In this case, the novelty is choosing a gamma prior based on the sample size information of each group. If you think we can do better than this trick -- you're totally right.
+For continuity with the previous "Building Blocks" section, here are a few examples for groups, where the dependent variable is following the Poisson distribution. In this case, the novelty is choosing a gamma prior based on the sample size information of each group. If you think we can do better than this trick -- you're totally right.
 
 ::: {.callout-note}
 ## Gamma-Poisson for groups
@@ -207,7 +205,7 @@ The models become more complicated as we attempt to estimate parameters for **ea
 :::
 
 ::: {.column-margin}
-Just as a remark, **complete pooling** is when we ignore the fact that we have groups, and make one, global estimate. Of course, it would fall in the category of underfitting or model mis-specification, if the categories or groups are relevant.
+**Complete pooling** is when we ignore the fact that we have groups, and make one, global estimate. Of course, it would fall in the category of underfitting or model mis-specification, if the categories or groups are relevant.
 :::
 
 Finally, we're ready to see how partial pooling and hierarchical (multilevel) models are such an important and powerful innovation, to the point where some practitioners argue (and I agree), that it should be the default way of (regression) modeling. Meaning, a strong justification is needed why your model doesn't need that structure or modeling of heterogeneity. Keep in mind this advice, but always start with the most simple models when iterating towards the final one.
@@ -215,7 +213,7 @@ Finally, we're ready to see how partial pooling and hierarchical (multilevel) mo
 ::: {.callout-note}
 ## Hierarchical Models for Groups
  
-**Gaussian**. The main example is a classic: modeling the level of radon in houses on the first floor and basement, where the groups are counties (BDA3). We will see this example again in the Hierarchical GLMs section, where predictors at house-level and county-level are added.
+The main example is a classic (**gaussian**): modeling the level of radon in houses on the first floor and basement, where the groups are counties (BDA3). We will see this example again in the Hierarchical GLMs section, where predictors at house-level and county-level are added.
 
 - [Omar Sosa - Practical introduction to Bayesian hierarchical modeling](https://github.com/omarfsosa/tech-talk-hierarchical-models) with numpyro, focuses on exactly the idea we need.
 - Primary code reference: [pymc](https://www.pymc.io/projects/examples/en/latest/case_studies/multilevel_modeling.html) - A Primer on Bayesian Methods for Multilevel Modeling
