@@ -279,9 +279,6 @@ By introducing splines and nonlinear transformations, we can easily increase the
 
 ## Regression and Model Critique 
 
-| Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting | Golf example continued, Flight Delays |
-
-
 Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors). 
 
 However, things go wrong in practice all the time: poorly specified and parametrized models lead to computational problems. It is important to be able to diagnose the chains, and even more, actively critique and interogate your models. At some point, you have to get an understanding of what MCMC, HMC does under the hood -- and when you would trade off the accuracy for faster, approximate inference.
@@ -307,10 +304,6 @@ The frequentists and statistical learning approach have well-established tools f
 
 ## Regression and Model Selection 
 
-| Variable selection | McElreath example: height, waffles |
-
-
-
 Once we are able to critique and evaluate a single model, it makes perfect sense to compare models of increasing complexity and with alternative assumptions. The following uses the same tools as before, but in a iterative workflow.
 
 ::: {.callout-note}
@@ -318,50 +311,49 @@ Once we are able to critique and evaluate a single model, it makes perfect sense
 
 - [pymc](https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/GLM-model-selection.html). - Model selection with fake data and polynomials
 - Chapter 3 and 4 of BCP are beautiful, where linear and logistic regression are introduced, along with questions of interactions, nonlinear transformations, hierarchical models and [model choice](https://bayesiancomputationbook.com/markdown/chp_04.html). 
-- Bias-Variance tradeoff - For an intuitive explanation, watch [lecture 8, slides](https://work.caltech.edu/lectures.html). See how this [tradeoff needs an update](https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update) for the modern machine learning. 
 
 :::
 
-There are cases when the problem is in sampling and one common cause, besides mis-specification, are models with bad posterior geometry (from the perspective of samplers). As a rule of thumb "round and smooth" is good. A prevalent solution in literature is to use better parametrizations, but in order to fix your problem, you first have to be aware that it might be the case.
+There are cases when the problem is in sampling and one common cause, besides mis-specification, are models with bad posterior geometry (from the perspective of samplers). As a rule of thumb -- "round and smooth" is good. A prevalent solution in literature is to use better parametrizations, but in order to fix your problem, you first have to be aware that it might be the case.
 
-[These examples in 2D are intuitive, however things become much more complicated and counterintuitive in multidimensional parameter spaces. The long story short, in practice, is to use heavier regularization (via stronger priors) in those cases.]{.aside}
 
 ::: {.callout-warning}
 ## Bad posterior geometry. Reparametrization
 
 - Technical: (mu, sigma) - Neal's Funnel [numpyro](https://num.pyro.ai/en/stable/examples/funnel.html), there is equivalent pymc
 - More solutions in numpyro for bad [posterior geometry](https://num.pyro.ai/en/stable/tutorials/bad_posterior_geometry.html)
+
+These examples in 2D are intuitive, however things become much more complicated and counterintuitive in multidimensional parameter spaces. The long story short, in practice, is to use heavier regularization (via stronger priors) in those cases.
+
 :::
 
 ::: {.callout-note}
 ## Regularization and Variable Selection
 
-A big topic in ML is regularization and encouraging sparse solutions (models). The point is that in highly-dimensional spaces, only a small subset of variables is relevant. Bayesians have sneaky methods of constructing prior which act as a mechanism for variable selection.
+A big topic in ML is regularization and encouraging sparse solutions (models). The point is that in highly-dimensional spaces, only a small subset of variables is relevant. Bayesians have sneaky methods of constructing priors which act as a mechanism for variable selection.
 
 There is an additional topic of robuts methods (to outliers). Some machine learning models are robust(ish) out of the box: quantile regression, gradient boosted trees. Bayesians use heavier-tailed distribution to achieve a similar effect.
 
-- [Spike and Slab kaggle](https://www.kaggle.com/code/melondonkey/bayesian-spike-and-slab-in-pymc3/notebook)
-- [Horseshoe prior](https://austinrochford.com/posts/2021-05-29-horseshoe-pymc3.html) pymc3
-- [Robust LR](https://bambinos.github.io/bambi/notebooks/t_regression.html), bambi, simulated data, also is in pymc
+- Spike and Slab example on [Kaggle](https://www.kaggle.com/code/melondonkey/bayesian-spike-and-slab-in-pymc3/notebook)
+- [Horseshoe prior](https://austinrochford.com/posts/2021-05-29-horseshoe-pymc3.html) implemented in pymc3
+- Robust linear regression on simulated data, implemented [here](https://bambinos.github.io/bambi/notebooks/t_regression.html), in pymc/bambi.
 :::
 
 
 
-## Regression and nonlinearities 
+## Regression and Nonlinearities 
 
-| Regularization, Variable selection, Splines, Robustness | Applying the concepts on same examples as before. Missing Data |
-
-I can't resist to suggest a case-study from finance, the good old portfolio returns optimization. The methods used in practice are much more sophisticated than the below, but it's useful to be aware of the fundamentals. The Wishart distribution, used as a prior for positive semi-definite matrices (covariation), can be an useful building block in more complicated models to capture the covariation structure, let's say, from different time series. 
+I can't resist to suggest a case-study from finance: the good old portfolio returns optimization. The methods used in practice are much more sophisticated than the below, but it's useful to be aware of the fundamentals. The Wishart distribution, used as a prior for positive semi-definite matrices (covariation) can be an useful building block in more complicated models to capture the covariation structure, e.g of different time series. 
 
 [As a very advanced aside, I am fascinated by Michael I. Jordan's approach to multidimensional time series modeling, where the covariation structure is evolving in time.]{.aside}
 
 ::: {.callout-tip}
 ## Portfolio optimization a la Markowitz
 
-- Technical: Wishart and Portfolios from [BMH](https://nbviewer.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter6_Priorities/Ch6_Priors_PyMC3.ipynb) -- can also do optimization ala markowitz, but with uncertainty from posteriors
+See the example with Wishart prior and portfolios from [BMH](https://nbviewer.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter6_Priorities/Ch6_Priors_PyMC3.ipynb). We could do an optimization on point estimates, but this aprroach is more general, capturing the uncertainty in estimates.
 :::
 
-If you got to this last topic, probably months have passed. There are a reason universities dedicate entire semesters for regression -- there are so many nuances to get right, from both practical and theoretical perspective. One of these complexities is how to handle missing data, which deserves a course on its own.
+If you got to this last topic on linear regression, months probably have passed. There is a good reason universities dedicate entire semesters for regression -- there are so many nuances to get right: from both practical and theoretical perspective. One of these complexities is how to handle missing data, which deserves a course on its own.
 
 ::: {.callout-warning}
 ## Modeling how Data goes Missing
@@ -378,7 +370,6 @@ In Bayesian Statistics, we also have to be very explicit and declare our assumpt
 
 ## Generalized Linear Models
 
- | Logistic regression, Poisson and overdispersion | Income, Voting, Campus Crime, Student absence |
 
 Not every phenomena we model is continuous or appropriate for gaussian linear regression, but we can easily extend it with the building blocks we learned at the beginning. It's all about those link functions and relaxing some of the assumptions of the linear regression. I want to point out how the following mirrors the simple, single-variable models we first practiced on.
 
@@ -389,14 +380,14 @@ As a theoretical background of what connects these models into one single family
 ::: {.callout-note}
 ## Logistic Regression
 
-As a fun aside about ML, logistic regression is the only model which is calibrated out-of-the-box, meaning the scores for the classification can be interpreted as probabilities, due to its specific loss function. 
+As a fun aside about machine learning, logistic regression is the only model which is calibrated out-of-the-box, meaning the scores for the classification can be interpreted as probabilities, due to its specific loss function. 
 
-For the rest of the cases, you would need to calibrate via an isotonic or piecewise-linear regression, on a separate, validation dataset. So, going back to the practice, here are some examples using the logistic regression:
+For the rest of the models (e.g. random forests), you would need to calibrate via an isotonic or piecewise-linear regression, on a separate, validation dataset. So, going back to the practice, here are some examples using the logistic regression:
 
 - Beetles survival by concentration of chemical, via [bambi](https://bambinos.github.io/bambi/notebooks/alternative_links_binary.html) -- tries out different link functions and is a simple example to get started with.
 - Vote intention by age in the U.S., via [bambi](https://bambinos.github.io/bambi/notebooks/logistic_regression.html), 2016 ANES data, 1200 samples.
 - Socio-economic influences on income bracket ($\ge \$50k$), also does model comparison, implementation in [bambi](https://bambinos.github.io/bambi/notebooks/model_comparison.html)
-- Multinomial regression [iris](https://bambinos.github.io/bambi/notebooks/categorical_regression.html), via bambi, with the most boring dataset, but you'll see that you have a solution for the multiclass classification without the multiple comparisons.
+- Multinomial regression on the [iris](https://bambinos.github.io/bambi/notebooks/categorical_regression.html), the most boring dataset, but you'll see that you have a solution for the multiclass classification without the multiple comparisons.
 :::
 
 When you have a numeric target variable, think twice if it is appropriate for the gaussian distribution. Sometimes, what we model is really, counts, or non-negative, or monotonically increasing with respect to a $X_i$ (that alone deserves its own case-study). Sometimes, even poisson doesn't work out due to overdispersion or zero-inflation, and it is not a rare exception, especially when modeling aspects of customer behavior.
@@ -435,13 +426,10 @@ In the [probability fundamentals](01_fundamentals/stat_foundations.qmd) section,
 
 ## Introduction to Hierarchical Models 
 
-| Hierarchical GLMs. Priors informed by prior knowledge | Radon continued, Stage Anxiety, Plumonary Fibrosis |
 
+We finally reached the most exciting point in our journey so far, where we can properly model and explain sources of variation at multiple levels (of analysis). This is where we relax the assumption of $i.i.d.$, replacing it with one of exchangeability. 
 
-
-We finally reached to the most exciting point in our journey so far, where we can properly model and explain sources of variation at multiple levels (of analysis). This is where we relax the assumption of iid, replacing it with one of exchangeability. 
-
-The point is that correlated data causes problems in modeling, when we don't account properly for it: be it groups, clusters, categorical variables, time series, geography, etc. BeyondMLR has a very well thought, [practical motivation](https://bookdown.org/roback/bookdown-BeyondMLR/ch-corrdata.html) for multilevel models.
+The point is that correlated data causes problems in modeling when we don't account properly for it: be it groups, clusters, categorical variables, time series, geography, etc. BeyondMLR has a very well thought, [practical motivation](https://bookdown.org/roback/bookdown-BeyondMLR/ch-corrdata.html) for multilevel models.
 
 
 ::: {.callout-note}
@@ -457,21 +445,9 @@ We come back to the radon example, by adding one covariate at each level: house 
 - A repeated analysis of Stack's facial feedback hypothesis, in the context of replication crisis, via [bambi](https://bambinos.github.io/bambi/notebooks/Strack_RRR_re_analysis.html) -- full workflow.
 :::
 
-
-
 ## Hierarchical Models and Longitudinal Data 
 
-| Stochastic processes. Challenges of Hierarchical time series | Teenage drinking, sleep study, charter schools, Graduate Admissions |
-
-
-
-Longitudinal data is a special case of multilevel models, but has the distinct feature, that at the group level, the data isn't iid, but comes as a realization of the stochastic process.
-
-
-[Often called Panel Data in economics and social sciences. You will see a different terminology in that literature: of mixed models.]{.aside}
-
-
-
+Longitudinal data is a special case of multilevel models, but has the distinct feature, that at the group level, the data isn't iid, but comes as a realization of the stochastic process. Often called Panel Data in economics and social sciences. You will see a different terminology in that literature: of mixed or multilevel models.
 
 ::: {.callout-note}
 ## Longitudinal Data and Studies
@@ -490,7 +466,7 @@ Another aspect of this, is that most mixed models packages will make certain dec
 
 ## Hierarchical Models case-studies
 
-| Basketball Fouls, AirBnb reviews, Seat Belts | Bike Shares, Agriculture and Seed Germination |
+This is the end of the Module 3 (Applied Bayesian Statistics). These tools are so general and powerful, that they will last you a lifetime. However, there is so much more to learn and so many more challenges to tackle -- that there is no end to the mastery of Multilevel GLMs.
 
 
 ::: {.callout-note}
@@ -518,13 +494,12 @@ At last, it is useful to see an example where we have an even more complicated m
 - Beyond MLR [3-level seed germination](https://bookdown.org/roback/bookdown-BeyondMLR/ch-3level.html#cs:seeds)
 :::
 
-This is really, the end of the Module 2a. Applied Bayesian Statistics. These tools are so general and powerful, that they will last you a lifetime. However, there is so much more to learn and so many more challenges to tackle -- that there is no end to the mastery of Multilevel GLMs.
 
 Even after you learned all the technical intricacies, we're hit again with the reality that association doesn't imply causation. So, after being competent with this amazing tool -- we have to go back to ideas from causal inference, if we want to get a more than associative insight about our theory and understanding of phenomena.
 
 ## Bayesian Machine Learning and BART
 
-As a bouns, I'm adding two extremely flexible, general-purpose models, which you can treat as in the Machine Learning practices, but are Bayesian to the core. These are extremely useful if we care more about predictive accuracy, either for decision-making, or as a part of causal inference process, where a certain complicated relationship details aren't important to us, just the conditional average treatment effects.
+As a bouns, I'm adding two flexible, general-purpose models, which you can treat as in the Machine Learning practices, but are Bayesian to the core. These are extremely useful if we care more about predictive accuracy, either for decision-making, or as a part of causal inference process, where a certain complicated relationship details aren't important to us, but just the conditional average treatment effects.
 
 ::: {.callout-note}
 ## Bayesian Additive Regression Trees

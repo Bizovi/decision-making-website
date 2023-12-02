@@ -199,7 +199,8 @@ Online platforms which have to rank posts and comments, face the challenges of h
 
 I spend another lecture to deep-dive into estimators, because the concepts of bias-variance tradeoff and Fisher information have far-reaching consequences in a myriad of tools, applications and fields -- especially machine learning. It is also an appropriate point in time to introduce a technique which was revolutionary at its time: bootstrap.
 
-There are objections to the Bias-Variance decomposition when seen as a tradeoff, in the context of Deep Learning -- however, in the most general sense, it is a universal problem not only in statistics, but also for human cognition.
+There are objections to the Bias-Variance decomposition when seen as a tradeoff, in the context of Deep Learning -- however, in the most general sense, it is a universal problem not only in statistics, but also for human cognition. For an intuitive explanation, watch [lecture 8, slides](https://work.caltech.edu/lectures.html). See how this [tradeoff needs an update](https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update) for the modern deep learning. 
+
 
 ::: {.column-margin}
 
