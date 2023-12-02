@@ -243,11 +243,7 @@ Model: Combining Gamma-Poisson and Beta-Binomial, with parameters at customer le
 
 ## Regression and Bayesian Workflow 
 
-| Categorical variables, Results summarization, Modeling assumptions | OCEAN, Education, height, waffles |
-
-Gaussian Linear Regression
-
-There is a converging consensus that Linear Regression is the most important thing to master in statistics. I mean it in the most general sense -- not only knowing model details, assumptions, extensions and limitations, but how to use it effectively in practice in an end-to-end workflow.
+I think most practitioners and educators will agree that Linear Regression is the most important tool to master in statistics. I mean it in the most general sense -- not only knowing model details, assumptions, extensions and limitations, but how to use it effectively in practice in an end-to-end workflow.
 
 [To avoid naming confusions in the context of GLMs we're going to study, and the fact that Regression can be done by many classes of models, I call the good old Linear Regression -- "Gaussian Linear Regression"]{.aside} 
 
@@ -268,11 +264,6 @@ Also, the second resource, which I would say is even beter, takes on the perspec
 I have a third favorite book, which is freely available, called "Beyond Multiple Linear Regression". It covers all that we discuss here, but from a frequentist perspective. Despite that, the examples are amazing and it has enough of theory to make it a self-contained resource -- therefore, makes a perfect candidate for a port in pymc/numpyro. For a review of linear regression, take a look at the [Kentucky derby horse race](https://bookdown.org/roback/bookdown-BeyondMLR/ch-MLRreview.html).
 
 
-Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors). 
-
-However, things go wrong in practice all the time: poorly specified and parametrized models lead to computational problems. It is important to be able to diagnose the chains, and even more, actively critique and interogate your models. At some point, you have to get an understanding of what MCMC, HMC does under the hood -- and when you would trade off the accuracy for faster, approximate inference.
-
-
 ::: {.callout-tip}
 ## Splines and Nonlinear Transformations
 
@@ -283,7 +274,6 @@ The linearity assumption in linear regression is often under-emphasized, as poin
 - Be careful and recognize when you should be using a log-log model, expecially since power laws are so widespread in nature and human behavior.
 :::
 
-[There are objections to the Bias-Variance decomposition when seen as a tradeoff, in the context of Deep Learning -- however, in the most general sense, it is a universal problem not only in statistics, but also for human cognition.]{.aside}
 
 By introducing splines and nonlinear transformations, we can easily increase the dimensionality of $X$, with respect to $n$ -- which causes massive problems for inference. This is the appropriate moment to introduce a fundamental tradeoff between model complexity and out-of-sample predictive performance. 
 
@@ -291,6 +281,10 @@ By introducing splines and nonlinear transformations, we can easily increase the
 
 | Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting | Golf example continued, Flight Delays |
 
+
+Up until this point we took the sampling from the posterior provided by the probabilistic programming languages for granted, as magically converging to the true distribution. We also used very rudimentary methods of comparing models (via Bayes Factors). 
+
+However, things go wrong in practice all the time: poorly specified and parametrized models lead to computational problems. It is important to be able to diagnose the chains, and even more, actively critique and interogate your models. At some point, you have to get an understanding of what MCMC, HMC does under the hood -- and when you would trade off the accuracy for faster, approximate inference.
 
 
 ::: {.callout-important}
