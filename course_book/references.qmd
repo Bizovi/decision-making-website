@@ -1,6 +1,13 @@
+---
+format:
+  html:
+    toc-location: left
+---
 
 
-There are too many courses, tutorials, and datasets for practicing ML/Stats on the web: from didactic toy examples to industrial-scale machine learning. Since it is so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic -- you fill find here a list of **carefully curated resources**. Most of them have have **code**, **data**, and explained **theory** or methodology in a freely available e-book.
+# Bayesian Statistics: Study Guide
+
+The study guide for the third module was incredibly hard to put together, since there is so much content on the web and it's so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic. The most important criteria was for the case-study or resource to have **code**, **data**, and explained **theory** or methodology in a **freely** available e-book.
 
 ::: {.column-margin}
 Often, you will have to combine various aspects of an use-case, model, method -- from different sources, taking the best from each author.
@@ -13,16 +20,39 @@ There is little point in replicating well-executed examples from other authors, 
 ::: {.callout-tip}
 ## Right level of granularity
 
-Instead of recommending whole books, which in this field are huge: 500-900p of dense material -- in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks. 
-
-They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. **Think of them as lego pieces.**
+Instead of recommending whole books, which in this field are huge: 500-900p of dense material -- in the listings below, you have them grouped by tool, use-case, in manageable-sized chunks. They are ordered and organized in a way which facilitates a more linear, gradual, composable development of skills and understanding. **Think of them as lego pieces.**
 :::
 
-I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or watched during the lectures. However, the responsibility to practice falls entirely on the learner -- I can just do my best to make your journey less frustrating and more efficient.
+I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or saw during the lectures. However, the responsibility to practice falls entirely on the learner -- I can just do my best to make your journey less frustrating.
 
 
+```{mermaid}
+%%| label: fig-mermaid
+%%| fig-width: 9
+%%| fig-cap: |
+%%|   We develop a composable toolbox, capable to tackle the challenges of nonlinearity, heterogeneity, low level of aggregation, discreteness, missing data and heteroskedasticity. By putting together the right pieces in a right way, we can improve predictions and decisions in most aspects of a business. 
 
-## Module III: Applied Bayesian Statistics
+flowchart TD
+  DM[/ Probability & Stats /]
+  DM --> CJ[1. Conjugate Priors] 
+  DM --> LR1[3. Regression Workflow] --> LR2[4. Model Critique] --> LR3[5. Model Selection. LOO-PIT] --> LR4[6. Nonlinearities] --> GLM[7. GLMs] 
+  DM --> G[2. Groups & Pooling] --> MCMC(MCMC & HMC) --> HM1[8. Hierarchial Models] --> HM2[9. Longitudinal Data] --> HM3[10. Hierarchical GLMs]
+
+  GLM --> HM1 
+  CJ --> BB(Beta-Binomial) --> GP(Gamma-Poisson) --> NG(Normal-IG. Link fn)
+  NG --> GLM
+  HM3 --> BART(ML & BART)
+
+  style DM fill:#ffb6c1
+  style BB fill:#f7f5bc
+  style GP fill:#f7f5bc
+  style NG fill:#f7f5bc
+  style BART fill:#f7f5bc
+  style MCMC fill:#f7f5bc
+```
+
+
+## Introduction to Bayesian Statistics 
 
 After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool.
 
@@ -34,24 +64,8 @@ We are not wasting time by switching to Bayes (7 lectures to get to GLMs), becau
 
 Instead of taking regression as the starting point, then going into advanced econometrics -- I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good starting point. 
 
-::: {.column-page-inset-right}
+Simple Models and Conjugate priors  | Beta-Binomial, Gamma-Poisson, Mixtures, Link functions, IG-Normal | Elections, Football Goals, Coal Mining disaseetrs, Golf accuracy, Speed of Light |
 
-|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
-|-|------------|-----------|--------------|
-| 1 | Introduction to Bayesian Statistics. Simple Models and Conjugate priors  | Beta-Binomial, Gamma-Poisson, Mixtures, Link functions, IG-Normal | Elections, Football Goals, Coal Mining disaseetrs, Golf accuracy, Speed of Light |
-| 2 | Multiple Groups and Hierarchical Models | Complete, No, Partial pooling | A/B testing, baseball, review ranking, Radon, Starbucks wait times, Customer LTV |
-| 3 | Regression and Bayesian Workflow | Categorical variables, Results summarization, Modeling assumptions | OCEAN, Education, height, waffles |
-| 4 | Regression and Model Critique | Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting | Golf example continued, Flight Delays |
-| 5 | Regression and Model Selection | Variable selection | McElreath example: height, waffles |
-| 6 | Regression and nonlinearities | Regularization, Variable selection, Splines, Robustness | Applying the concepts on same examples as before. Missing Data |
-| 7 | Generalized Linear Models | Logistic regression, Poisson and overdispersion | Income, Voting, Campus Crime, Student absence |
-| 8 | Introduction to Hierarchical Models | Hierarchical GLMs. Priors informed by prior knowledge | Radon continued, Stage Anxiety, Plumonary Fibrosis |
-| 9 | Hierarchical Models and Longitudinal Data | Stochastic processes. Challenges of Hierarchical time series | Teenage drinking, sleep study, charter schools, Graduate Admissions |
-| 10 | Hierarchical Models case studies. BART | Basketball Fouls, AirBnb reviews, Seat Belts | Bike Shares, Agriculture and Seed Germination |
-
-
-
-:::
 
 We start simple, by modeling a single random variable $Y$, choosing the appropriate distribution for each phenomenon, a prior for the parameters, doing simulations  -- then sampling from the posterior with `pymc`, `numpyro`, and `bambi`.[^1]
 
@@ -62,31 +76,6 @@ Limiting? Yes, as in reality we care about the relationship between random varia
 We applied Bayes rule and got some insightful results in three totally different domains. However, we weren't doing neither statistics, nor inference -- but got into the right mindset. It is a good opportunity to brush off the shelves some computational and mathematical tools. Now it's time for full-luxury Bayes and the simplest cases of inference.
 
 
-::: {.column-page-inset-right}
-
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|   We develop a composable toolbox, capable to tackle the challenges of nonlinearity, heterogeneity, low level of aggregation, discreteness, missing data and heteroskedasticity. By putting together the right pieces in a right way, we can improve predictions and decisions in most aspects of a business. 
-
-flowchart TD
-  DM(Probability & Stats)
-  DM --> BB(Beta-Bin*) --> GPo(Gamma-Pois*) --> NIG(IG-Norm) --> G(Groups)
-  BB --> LR(Logistic Regr.)
-  DM --> LM(Linear Regr.) --> GLM(GLMs)  --> Caus(Hierarchical Models) --> Misc[/Time Series/]
-  LR --> GLM
-  GPo --> GLM
-  G <--> Caus
-
-  LM --> P(Prior Choice) --> Reg(Regularization) --> VS(Variable Selection)
-  LM --> MS(Model Selection) --> LOO(LOO-PIT)
-  LM --> Rb(Robustness) --> NA(Missing Data) --> Surv(Survival and Censoring)
-  LM -- nonlinear --> NL(Splines) --> BART(BART) --> GP(Gaussian Proc.)
-
-```
-
-:::
 
 
 ::: {.callout-note}
@@ -189,7 +178,10 @@ TODO: more examples from science, business, and human behavior
 
 
 
-## Groups and Partial Pooling
+## Multiple Groups and Hierarchical Models
+
+Complete, No, Partial pooling | A/B testing, baseball, review ranking, Radon, Starbucks wait times, Customer LTV | Groups and Partial pooling
+
 
 We already worked with groups in the case of difference in means (proportions and continuous variables) and making inferences for three and more groups, treating them as separate. We will see that such an approach is called "no pooling".
 
@@ -272,8 +264,11 @@ The below is by far not the only model: there are versions for contractual and n
 Model: Combining Gamma-Poisson and Beta-Binomial, with parameters at customer level. The math and code in pymc3 can be found [here](https://sidravi1.github.io/blog/2018/07/08/fader-hardie-clv).
 :::
 
+## Regression and Bayesian Workflow 
 
-## Gaussian Linear Regression
+| Categorical variables, Results summarization, Modeling assumptions | OCEAN, Education, height, waffles |
+
+Gaussian Linear Regression
 
 There is a converging consensus that Linear Regression is the most important thing to master in statistics. I mean it in the most general sense -- not only knowing model details, assumptions, extensions and limitations, but how to use it effectively in practice in an end-to-end workflow.
 
@@ -315,6 +310,10 @@ The linearity assumption in linear regression is often under-emphasized, as poin
 
 By introducing splines and nonlinear transformations, we can easily increase the dimensionality of $X$, with respect to $n$ -- which causes massive problems for inference. This is the appropriate moment to introduce a fundamental tradeoff between model complexity and out-of-sample predictive performance. 
 
+## Regression and Model Critique 
+
+| Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting | Golf example continued, Flight Delays |
+
 
 
 ::: {.callout-important}
@@ -333,6 +332,13 @@ The frequentists and statistical learning approach have well-established tools f
 - [Here](https://bayesiancomputationbook.com/markdown/chp_11.html#loo-in-depth) are the technical details of LOO-PIT, in the context of model comparison.
 
 :::
+
+
+## Regression and Model Selection 
+
+| Variable selection | McElreath example: height, waffles |
+
+
 
 Once we are able to critique and evaluate a single model, it makes perfect sense to compare models of increasing complexity and with alternative assumptions. The following uses the same tools as before, but in a iterative workflow.
 
@@ -369,6 +375,11 @@ There is an additional topic of robuts methods (to outliers). Some machine learn
 :::
 
 
+
+## Regression and nonlinearities 
+
+| Regularization, Variable selection, Splines, Robustness | Applying the concepts on same examples as before. Missing Data |
+
 I can't resist to suggest a case-study from finance, the good old portfolio returns optimization. The methods used in practice are much more sophisticated than the below, but it's useful to be aware of the fundamentals. The Wishart distribution, used as a prior for positive semi-definite matrices (covariation), can be an useful building block in more complicated models to capture the covariation structure, let's say, from different time series. 
 
 [As a very advanced aside, I am fascinated by Michael I. Jordan's approach to multidimensional time series modeling, where the covariation structure is evolving in time.]{.aside}
@@ -395,6 +406,8 @@ In Bayesian Statistics, we also have to be very explicit and declare our assumpt
 
 
 ## Generalized Linear Models
+
+ | Logistic regression, Poisson and overdispersion | Income, Voting, Campus Crime, Student absence |
 
 Not every phenomena we model is continuous or appropriate for gaussian linear regression, but we can easily extend it with the building blocks we learned at the beginning. It's all about those link functions and relaxing some of the assumptions of the linear regression. I want to point out how the following mirrors the simple, single-variable models we first practiced on.
 
@@ -449,9 +462,11 @@ In the [probability fundamentals](01_fundamentals/stat_foundations.qmd) section,
 :::
 
 
+## Introduction to Hierarchical Models 
+
+| Hierarchical GLMs. Priors informed by prior knowledge | Radon continued, Stage Anxiety, Plumonary Fibrosis |
 
 
-## Hierarchical GLMs
 
 We finally reached to the most exciting point in our journey so far, where we can properly model and explain sources of variation at multiple levels (of analysis). This is where we relax the assumption of iid, replacing it with one of exchangeability. 
 
@@ -471,10 +486,20 @@ We come back to the radon example, by adding one covariate at each level: house 
 - A repeated analysis of Stack's facial feedback hypothesis, in the context of replication crisis, via [bambi](https://bambinos.github.io/bambi/notebooks/Strack_RRR_re_analysis.html) -- full workflow.
 :::
 
+
+
+## Hierarchical Models and Longitudinal Data 
+
+| Stochastic processes. Challenges of Hierarchical time series | Teenage drinking, sleep study, charter schools, Graduate Admissions |
+
+
+
 Longitudinal data is a special case of multilevel models, but has the distinct feature, that at the group level, the data isn't iid, but comes as a realization of the stochastic process.
 
 
 [Often called Panel Data in economics and social sciences. You will see a different terminology in that literature: of mixed models.]{.aside}
+
+
 
 
 ::: {.callout-note}
@@ -490,6 +515,12 @@ These examples model the trend with a covariate, as a function of time -- which 
 If in the previous sections, I didn't have a strong preference for the Bayesian Approach, in the case of multilevel models, I strongly believe Bayesian Inference to be superior and less prone to overfitting and numerical instability.
 
 Another aspect of this, is that most mixed models packages will make certain decisions for us, without our consent, which could influence our results and conclusions. As you'll see in these tutorials, we are forced to construct the model and declare, justify every choice of prior and model structure.
+
+
+## Hierarchical Models case-studies
+
+| Basketball Fouls, AirBnb reviews, Seat Belts | Bike Shares, Agriculture and Seed Germination |
+
 
 ::: {.callout-note}
 ## Hierarchical Logistic Regression
@@ -520,7 +551,7 @@ This is really, the end of the Module 2a. Applied Bayesian Statistics. These too
 
 Even after you learned all the technical intricacies, we're hit again with the reality that association doesn't imply causation. So, after being competent with this amazing tool -- we have to go back to ideas from causal inference, if we want to get a more than associative insight about our theory and understanding of phenomena.
 
-## Bayesian Machine Learning
+## Bayesian Machine Learning and BART
 
 As a bouns, I'm adding two extremely flexible, general-purpose models, which you can treat as in the Machine Learning practices, but are Bayesian to the core. These are extremely useful if we care more about predictive accuracy, either for decision-making, or as a part of causal inference process, where a certain complicated relationship details aren't important to us, just the conditional average treatment effects.
 

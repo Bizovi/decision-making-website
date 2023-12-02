@@ -1,3 +1,9 @@
+---
+format:
+  html:
+    toc-location: left
+---
+
 
 # Probability and Statistics: Study Guide
 
