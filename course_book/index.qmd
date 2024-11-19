@@ -10,7 +10,7 @@ lang: en
 This website emerges out of teaching **data science** to students of various backgrounds and my practice in the industry as an engineer and leader.
 
 ::: {.column-margin}
-**Mihai Bizovi** | Head of Data Science \@AdoreMe. As the author of the course (a.k.a book) -- all views and mistakes are entirely my own and do not represent any organization. 
+**Mihai Bizovi** | VP of Decision Science \@AdoreMe. As the author of the course (a.k.a book) -- all views and mistakes are entirely my own and do not represent any organization. 
 :::
 
 

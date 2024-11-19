@@ -22,7 +22,7 @@ website:
       - href: about_me.qmd
         text: "About Me"
       - icon: bi-journal-bookmark
-        href: https://blog.economic-cybernetics.com/
+        href: https://mihaibizovi.com/
         text: "Blog"
       - icon: github
         href: https://github.com/bizovi/decision-making

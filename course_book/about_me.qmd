@@ -4,28 +4,20 @@ format:
     toc-location: left
 ---
 
-
-
-
-
-
-
 ## ~whoami: as engineer and leader
 
-**At my day job,** I'm a generalist -- navigating uncertainty and complexity to improve decision-making at scale.
+**At my day job,** I'm a generalist -- navigating uncertainty and complexity to improve decision-making at scale. I really believe in the idea of "skin in the game"
 
 ::: {.column-margin}
-![**Mihai Bizovi** | Head of Data Science \@AdoreMe (acquired by Victoria's Secret)](01_fundamentals/img/bizovi-pic-website.jpeg "Portrait"){width="60%"}
+![**Mihai Bizovi** | VP of Decision Science \@AdoreMe (acquired by Victoria's Secret)](img/bizovi-portrait.jpg "Portrait"){width="60%"}
 :::
 
-- Responsible for AI Strategy, Decision Science, ML Systems Design
-- Historically had many hats -- Statistics, ML & Data engineering, AI PM
+- Responsible for AI strategy, decision science, generative AI governance, and systems design. Enabling teams to be more effective and efficient
+- Historically had many hats -- statistics, ML and data engineering, AI product management, developing data apps, teaching / mentoring
 - Critical applications along the value chain: 
-  - demand forecasting & inventory optimization systems
-  - recommender systems, NLP for try-at-home
-  - marketing: acquisition, CRO experiment design, CRM
-- I really believe in the idea of Skin in the Game
-
+  - demand forecasting and inventory optimization systems
+  - recommender systems and NLP/LLMs for try-at-home businesses
+  - marketing, acquisition, CRO experiment design, pricing, CRM
 
 
 ## ~whoami: as teacher and researcher
@@ -39,29 +31,33 @@ format:
 
 :::
 
-- Maven *(yid: meyvn)* -- someone experienced to help you find a path 
-- Graduate of Cybernetics and Quantitative Economics
+Think of me as a **maven** *(yid: meyvn)*, i.e. someone experienced, who has been there before and will help you find a good path.
+
+- Graduate of Cybernetics (BSc) and Quantitative Economics (MSc)
   - Thesis & Dissertation on Bayesian Microeconometrics
   - Research in Probabilistic Methods for Time Series
   - Started in Systems' Dynamics and Economic Complexity
-- Speaking at conferences
-- Teaching since 2021 (ASE, Google Atelier) -- 4th iteration
+- Speaking at conferences, meetups, and panels since 2018: 
+  - BDW, DevFest, Google Cloud, CNCF, Romanian AI Days, DigitalShift
+- Teaching at ASE's business analytics masters since 2021
 
 
 ## ~whoami: as a person
 
-**As a person,** I aspire to a life of wisdom and meaning. Learning how to be present and deeply understanding what is the good, true, beautiful, love, and friendship.
+**As a person,** I aspire to a life of wisdom and meaning, towards the good, true, and beautiful. Learning how to be present and deeply understanding reality.
+
+
+- Cultivating wisdom -- commitment to philosophy as a way of life
+- Painting as a craft, creative expression, and therapy. Learning about art history and art appreciation in multiple media (music, film, painting)
+- Reading about cognitive science, evolution, history, and economics
+- Hiking, hipster coffee, 14 years of pro-ish chess
+
+
+## How does it fit together?
 
 ::: {.column-margin}
 ![synoptic is to take the best of multiple perspectives, reduce conflict and contradiction -- then see where the evidence converges](img/phil_life.png "Philosophy"){width="90%"}
 :::
-
-- Cultivating wisdom -- philosophy as a way of life
-- Participating in meaningful friendships
-- Painting, hiking, coffee, 14 years of pro-ish chess
-- Art appreciation: blues, jazz, indie, opera, cinema
-- Reading: Cognitive Science, Evolution, Economics
-- How it fits together: synoptic integration
 
 
 On another note, my interests in AI, art, cognitive science, and philosophy have an aspect of science, craft, worldview, and deep participation, engagement. Moreover, they are deeply interconnected and I would even say, **synoptically integrated**. It is important to me that these conceptual frames fit into a coherent whole and contribute in a practical way towards a good life.
