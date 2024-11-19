@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Decision Science Course – background</title>
+<title>background – Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,19 +38,25 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d5a2d58599beb33ca06a0ee848de3e43.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d5a2d58599beb33ca06a0ee848de3e43.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a5c78d07eefccdbc98157339462acdc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ff0192b0d945743089706b6580115b90.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -59,6 +65,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -79,88 +86,124 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Decision Science Course">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Pragmatic Data Science">
+<meta property="og:locale" content="es_ES">
 </head>
 
 <body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Decision Science Course</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../01_fundamentals/0_study_guide.html" rel="" target="" aria-current="page">
- <span class="menu-text">| 1. Business |</span></a>
+    <a class="nav-link active" href="../01_fundamentals/0_study_guide.html" aria-current="page"> 
+<span class="menu-text">| 1. Business |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../01_fundamentals/prob_study_guide.html" rel="" target="">
- <span class="menu-text">| 2. Stats |</span></a>
+    <a class="nav-link" href="../01_fundamentals/prob_study_guide.html"> 
+<span class="menu-text">| 2. Stats |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../references.html" rel="" target="">
- <span class="menu-text">| 3. Bayes |</span></a>
+    <a class="nav-link" href="../references.html"> 
+<span class="menu-text">| 3. Bayes |</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about_me.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="../about_me.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://blog.economic-cybernetics.com/" rel="" target=""><i class="bi bi-journal-bookmark" role="img">
+    <a class="nav-link" href="https://mihaibizovi.com/"> <i class="bi bi-journal-bookmark" role="img">
 </i> 
- <span class="menu-text">Blog</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School for Data Scientists</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">3. What is AI and Cybernetics?</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School for Data Scientists</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">3. What is AI and Cybernetics?</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -192,7 +235,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Business School for Data Scientists</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -240,7 +283,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -264,7 +307,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. Applied Bayesian Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -291,19 +334,20 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School for Data Scientists</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">3. What is AI and Cybernetics?</a></li></ol></nav></header>
+
 
 
 
 <section id="what-is-ai-data-science-cybernetics" class="level1 page-columns page-full">
 <h1>What is AI, Data Science, Cybernetics?</h1>
-<div class="page-columns page-full"><p>It’s undeniable that there is a lot of excitement when it comes to AI, ML, and data science – to the point of calling it the sexiest job of 21st century. Data science is an umbrella term, with interdisciplinary at its core, drawing inspiration from multiple fields, sets of tools, practices, methods and it continuously evolves. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It is designed to help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;There are many questions still unanswered: How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?</p></li></div></div>
-<p>You will often see a Venn diagram where data science sits at the intersection of mathematics – statistics, computer science – software engineering, and domain knowledge. I think this is not sufficient to characterise data science, therefore, will try to elaborate <strong>what</strong> it does, and <strong>how</strong> (which is as important).</p>
+<p>It’s undeniable that there is a lot of excitement when it comes to AI, ML, and data science – to the point of calling it the sexiest job of 21st century. Data science is an umbrella term, with interdisciplinary at its core, drawing inspiration from multiple fields, sets of tools, practices, methods and it continuously evolves. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It is designed to help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;There are many questions still unanswered: How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?</p></div></div><p>You will often see a Venn diagram where data science sits at the intersection of mathematics – statistics, computer science – software engineering, and domain knowledge. I think this is not sufficient to characterise data science, therefore, will try to elaborate <strong>what</strong> it does, and <strong>how</strong> (which is as important).</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -319,7 +363,7 @@ AI in a Nutshell
 <p>On the other hand, <code>scale</code> is the reason ML and Deep Learning is so powerful, because you can take lots of small decisions in an automated way, with little curation or guidance from humans. This is why many traditionally “paperwork” industries like legal and accounting embrace digitalisation and automation now.</p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;C. Kozyrkov - <a href="https://www.youtube.com/watch?v=bCjMhZZYlP4">AI is decision-making at scale</a></p></li></div><p>Ultimately, why would I build a system which predicts demand for products in a direct-to-consumer ecommerce like Allbirds, Macy’s, or AdoreMe? Either in a marketplace like Emag or Amazon? Why would I try to find out the factors which contribute to a successful advertisement?</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;C. Kozyrkov - <a href="https://www.youtube.com/watch?v=bCjMhZZYlP4">AI is decision-making at scale</a></p></div></div><p>Ultimately, why would I build a system which predicts demand for products in a direct-to-consumer ecommerce like Allbirds, Macy’s, or AdoreMe? Either in a marketplace like Emag or Amazon? Why would I try to find out the factors which contribute to a successful advertisement?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -337,10 +381,10 @@ Here are some answers from students
 </ul>
 </div>
 </div>
-<div class="page-columns page-full"><p>When we talk about uncertainty, it’s important to recognize its sources: <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> one coming from incomplete information, that we always work with samples in one way or another. For example, even if at a certain point in time we might have real-time data, everything evolves and quickly becomes outdated. Everything is in a state of flux and change. Even in the current state, we don’t know for sure where we stand – sometimes, in economics, this problem is called <code>nowcasting</code>. When talking about the future, making a good prediction is one of the most difficult things.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;We will talk more formally about sources of uncertainty in the next lecture, while reviewing the <a href="../01_fundamentals/stat_foundations.html#sources-of-uncertainty">fundamentals of statistics</a>.</p></li></div></div>
-<p>For example, who would’ve predicted the pandemic and all its implications on the supply chain and society? It’s important to note the difference between this kind of <strong>black swan events</strong> and the irreducible, fundamental uncertainty, which can’t be captured by any explanatory factors.</p>
-<div class="page-columns page-full"><p>In a happy case, we can quantify and reduce it by conditioning the model, that is, joint distribution of random variables with a given structure, on data. That would result in inferences and evidence with respect to our hypothesis and model of the world.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> At the very least we can try to quantify how uncertain are we.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;We want to say something intelligent about the population, technically, to generalize. However, there is ambiguity, as objectives and the meaning/semantics of data fields are not always mathematically clear or without conflict.</p></li></div></div>
-<p>So, we still have to make decisions. Those have to have a level of <strong>robustness</strong> and resilience to shocks, in the face of uncertainty. I would go even further, to suggest that we should <strong>aim for antifragility</strong>, meaning, the system improves after a shock or negative event, but that is very hard to implement and operationalize, therefore, it falls outside the scope of this course – to the realm of systems’ design.</p>
+<p>When we talk about uncertainty, it’s important to recognize its sources: <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> one coming from incomplete information, that we always work with samples in one way or another. For example, even if at a certain point in time we might have real-time data, everything evolves and quickly becomes outdated. Everything is in a state of flux and change. Even in the current state, we don’t know for sure where we stand – sometimes, in economics, this problem is called <code>nowcasting</code>. When talking about the future, making a good prediction is one of the most difficult things.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;We will talk more formally about sources of uncertainty in the next lecture, while reviewing the <a href="../01_fundamentals/stat_foundations.html#sources-of-uncertainty">fundamentals of statistics</a>.</p></div></div><p>For example, who would’ve predicted the pandemic and all its implications on the supply chain and society? It’s important to note the difference between this kind of <strong>black swan events</strong> and the irreducible, fundamental uncertainty, which can’t be captured by any explanatory factors.</p>
+<p>In a happy case, we can quantify and reduce it by conditioning the model, that is, joint distribution of random variables with a given structure, on data. That would result in inferences and evidence with respect to our hypothesis and model of the world.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> At the very least we can try to quantify how uncertain are we.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;We want to say something intelligent about the population, technically, to generalize. However, there is ambiguity, as objectives and the meaning/semantics of data fields are not always mathematically clear or without conflict.</p></div></div><p>So, we still have to make decisions. Those have to have a level of <strong>robustness</strong> and resilience to shocks, in the face of uncertainty. I would go even further, to suggest that we should <strong>aim for antifragility</strong>, meaning, the system improves after a shock or negative event, but that is very hard to implement and operationalize, therefore, it falls outside the scope of this course – to the realm of systems’ design.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -446,23 +490,27 @@ The meaning of AI changed in the meanwhile
 </ul>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;M. Jordan - <a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a>: The Revolution Hasn’t Happened Yet</p></li></div><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;K. Pretz - <a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says</p></li></div><p>In practice, if you’re a data/business analyst, ML/data engineer, data scientist, statistician, product manager – Cybernetics is a way of thinking in systems and formulate problems well. When it comes to implementation, we mostly use data and the tools, models, methods discussed in this course.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;M. Jordan - <a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a>: The Revolution Hasn’t Happened Yet</p></div></div><div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;K. Pretz - <a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says</p></div></div><p>In practice, if you’re a data/business analyst, ML/data engineer, data scientist, statistician, product manager – Cybernetics is a way of thinking in systems and formulate problems well. When it comes to implementation, we mostly use data and the tools, models, methods discussed in this course.</p>
 </section>
 <section id="sources-of-uncertainty" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="sources-of-uncertainty">Sources of Uncertainty</h2>
 <p>We already raised the issue of <a href="../01_fundamentals/background.html#what-is-ai-data-science-cybernetics-">where does uncertainty come from</a>, mentioning that this question deserves further investigation. In order to do that, we will take an AI, Decision-Making, or Reinforcement Learning perspective, rather than a statistical or econometric one, which will be also very clear later.</p>
-<div class="page-columns page-full"><p>Think of <strong>agents</strong> who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations <span class="math inline">\((x_1, x_2, ..., x_t)\)</span> and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;This paragraph is taken from the brilliant, open book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a> by M. Kochenderfer, T. Wheeler, and K. Wray</p></li></div></div>
-<div class="cell">
+<p>Think of <strong>agents</strong> who act and interact with their environment and have particular objectives or payoffs. Hopefully, they act in an intelligent way to achieve their goals in time. Given a past sequence of observations <span class="math inline">\((x_1, x_2, ..., x_t)\)</span> and knowledge about the environment, the agent has to choose an action that best achieves its objectives in the presence of various sources of uncertainty. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;This paragraph is taken from the brilliant, open book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a> by M. Kochenderfer, T. Wheeler, and K. Wray</p></div></div><div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-mermaid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart LR
     Env(Environment) -- observation --&gt; A(Agent)
     A -- action --&gt; Env
 </pre>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;1: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: This diagram captures the story from the previous chapter in a way which allows itself to a more formal treatment, a kind of joint learning, representation, and dynamic optimization.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -525,6 +573,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -593,13 +668,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -634,18 +711,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -677,11 +743,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -691,8 +796,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -704,7 +818,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -748,6 +985,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -773,6 +1011,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -834,12 +1098,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/2_performance_strategy.html" class="pagination-link">
+      <a href="../01_fundamentals/2_performance_strategy.html" class="pagination-link" aria-label="2. Performance and Strategy">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Performance and Strategy</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../01_fundamentals/4_ml_stats.html" class="pagination-link">
+      <a href="../01_fundamentals/4_ml_stats.html" class="pagination-link" aria-label="4. Analytics, ML, Stats">
         <span class="nav-page-text">4. Analytics, ML, Stats</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -847,7 +1111,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">The course I wish I had. Built with ❤️ by Mihai Bizovi</div>   
+    <div class="nav-footer-left">
+<p>The course I wish I had. Built with ❤️ by Mihai Bizovi</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -856,6 +1122,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Decision Science Course – study_guide</title>
+<title>study_guide – Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,19 +37,25 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d5a2d58599beb33ca06a0ee848de3e43.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d5a2d58599beb33ca06a0ee848de3e43.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a5c78d07eefccdbc98157339462acdc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ff0192b0d945743089706b6580115b90.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -78,88 +85,124 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Decision Science Course">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Pragmatic Data Science">
+<meta property="og:locale" content="es_ES">
 </head>
 
 <body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Decision Science Course</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../01_fundamentals/0_study_guide.html" rel="" target="" aria-current="page">
- <span class="menu-text">| 1. Business |</span></a>
+    <a class="nav-link active" href="../01_fundamentals/0_study_guide.html" aria-current="page"> 
+<span class="menu-text">| 1. Business |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../01_fundamentals/prob_study_guide.html" rel="" target="">
- <span class="menu-text">| 2. Stats |</span></a>
+    <a class="nav-link" href="../01_fundamentals/prob_study_guide.html"> 
+<span class="menu-text">| 2. Stats |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../references.html" rel="" target="">
- <span class="menu-text">| 3. Bayes |</span></a>
+    <a class="nav-link" href="../references.html"> 
+<span class="menu-text">| 3. Bayes |</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about_me.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="../about_me.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://blog.economic-cybernetics.com/" rel="" target=""><i class="bi bi-journal-bookmark" role="img">
+    <a class="nav-link" href="https://mihaibizovi.com/"> <i class="bi bi-journal-bookmark" role="img">
 </i> 
- <span class="menu-text">Blog</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School for Data Scientists</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School for Data Scientists</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -191,7 +234,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">1. Business School for Data Scientists</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -239,7 +282,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -263,7 +306,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. Applied Bayesian Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -297,12 +340,13 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
 
 
 
@@ -318,10 +362,11 @@ You might've noticed that every lecture starts with a brief motivation, and then
 [^thread]: This is a course in which we look at the widest possible range of methods and models, without going into excruciating detail, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job.  -->
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Some lectures are conceptual and you might go into more depth by reading. Some are highly technical and you want to go through the math and practice/code on suggested case-studies.</p>
-</div></div><div class="cell" data-fig-width="9">
+</div></div><div class="cell" data-fig-width="9" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-mermaid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
 
@@ -337,7 +382,10 @@ You might've noticed that every lecture starts with a brief motivation, and then
     style Churn fill:#f7f5bc
 </pre>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;1: A mind map of lectures grouped by theme so you can navigate the study guide easier. See below all the topics, case-studies, references, and readings for each chapter or lecture.</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A mind map of lectures grouped by theme so you can navigate the study guide easier. See below all the topics, case-studies, references, and readings for each chapter or lecture.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -367,7 +415,7 @@ You might've noticed that every lecture starts with a brief motivation, and then
 <li>What is a Value Chain? Data Science Strategy Safari <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
 <li>Overview of <strong>open datasets</strong>, especially for BI &amp; Analytics</li>
 </ul>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Read Kim Warren’s article on “The Dynamics of Strategy” <a href="https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf">here</a></p></li><li id="fn2"><p><sup>2</sup>&nbsp;Read the article published in McKinsey by Richard Rumelt <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy">“The perils of bad strategy”</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Read about the framework of aligning business objectives to data science use-cases. Data Science Strategy Safari at <a href="https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/">bayesianquest</a></p></li></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Read Kim Warren’s article on “The Dynamics of Strategy” <a href="https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf">here</a></p></div><div id="fn2"><p><sup>2</sup>&nbsp;Read the article published in McKinsey by Richard Rumelt <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy">“The perils of bad strategy”</a></p></div><div id="fn3"><p><sup>3</sup>&nbsp;Read about the framework of aligning business objectives to data science use-cases. Data Science Strategy Safari at <a href="https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/">bayesianquest</a></p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -403,7 +451,7 @@ Case-Study: Food Stamps and Fermi Estimation
 <li>A note on interdisciplinarity and thinking in buckets</li>
 <li>Agents and Environments. Sources of Uncertainty</li>
 </ul>
-<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;K. Pretz, “<a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says”; M. Jordan, “<a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a> - The Revolution Hasn’t Happened Yet”</p></li></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;K. Pretz, “<a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says”; M. Jordan, “<a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a> - The Revolution Hasn’t Happened Yet”</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -433,8 +481,8 @@ Case-Study: Uber and Dynamic Pricing
 <section id="newsvendor-problem-and-demand-planning" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="newsvendor-problem-and-demand-planning">Newsvendor Problem and Demand Planning</h2>
 <p>Demand planning, especially demand forecasting and inventory optimization is an obvious and widespread application of the models and methods from the course. The newsvendor problem is a good way to get started in this area of businesses.</p>
-<div class="page-columns page-full"><p>In the economics’ courses you might’ve solved this problem analytically, under strong assumptions, but we have a huge problem of trying to quantify and take into account the uncertainty. Therefore, we rely on simulation, motivate the need for statistical inference and optimization algorithms. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in <a href="https://www.persuasivepython.com/2-decisionanalysis">Chapter 3</a> and <a href="https://www.persuasivepython.com/4-multidimarrays">Chapter 5</a> of “Persuasive Python”. <a href="https://www.causact.com/intro#intro">Chapter 20</a> of his Business Analytics book contains another classic economic problem interpreted in modern way. If you prefer, there is a <a href="https://www.youtube.com/watch?v=QLsSPnwWS_M">video lecture</a> on the newsvendor.</p></li></div></div>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>In the economics’ courses you might’ve solved this problem analytically, under strong assumptions, but we have a huge problem of trying to quantify and take into account the uncertainty. Therefore, we rely on simulation, motivate the need for statistical inference and optimization algorithms. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in <a href="https://www.persuasivepython.com/2-decisionanalysis">Chapter 3</a> and <a href="https://www.persuasivepython.com/4-multidimarrays">Chapter 5</a> of “Persuasive Python”. <a href="https://www.causact.com/intro#intro">Chapter 20</a> of his Business Analytics book contains another classic economic problem interpreted in modern way. If you prefer, there is a <a href="https://www.youtube.com/watch?v=QLsSPnwWS_M">video lecture</a> on the newsvendor.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -465,8 +513,8 @@ Case-Study: Restaurant Data and Project Ideas
 <section id="learning-intuition-and-bias.-what-is-ml" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="learning-intuition-and-bias.-what-is-ml">Learning, Intuition, and Bias. What is ML?</h2>
 <p>At this point you will have a better grasp of the business environment, the processes involved in decision-making and had exposure to multiple contexts via case-studies. The newsvendor problem exposed the fact that we need additional skills and understanding of statistical modeling, machine learning and analytics. Read <a href="../01_fundamentals/learning.html">chapter five</a>.</p>
-<div class="page-columns page-full"><p>I start the introduction to machine learning in an unorthodox way, from a <strong>cognitive science perspective</strong>. The reason is: because we gain additional insights into decision-making. But don’t worry, top courses like Shai Ben-David’s “Understanding Machine Learning” <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> and Yaser Abu-Mostafa’s “Learning from data” <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> start with similar motivations.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a>. Read chapter 1 and 2 for the intuition. The following ones are difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML.</p></li><li id="fn7"><p><sup>7</sup>&nbsp;<a href="https://work.caltech.edu/telecourse">Learning from data</a> is still a great foundational course a decade later. The teaching in the recorded lectures is exceptional</p></li></div></div>
-<ul>
+<p>I start the introduction to machine learning in an unorthodox way, from a <strong>cognitive science perspective</strong>. The reason is: because we gain additional insights into decision-making. But don’t worry, top courses like Shai Ben-David’s “Understanding Machine Learning” <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> and Yaser Abu-Mostafa’s “Learning from data” <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> start with similar motivations.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a>. Read chapter 1 and 2 for the intuition. The following ones are difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML.</p></div><div id="fn7"><p><sup>7</sup>&nbsp;<a href="https://work.caltech.edu/telecourse">Learning from data</a> is still a great foundational course a decade later. The teaching in the recorded lectures is exceptional</p></div></div><ul>
 <li>Implicit learning, intuition, and bias. Bait shyness and pigeon superstition</li>
 <li>The double edged sword of our intelligence. Bounded rationality</li>
 <li>Calling bullshit in the age of Big Data. Small data problems in Big Data</li>
@@ -491,8 +539,8 @@ Case-Study: ML workflow Demonstration
 </section>
 <section id="steps-of-machine-learning" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="steps-of-machine-learning">12 Steps of Machine Learning</h2>
-<div class="page-columns page-full"><p>By now, I introduced the bare minimum of motivation, formalism, and practices of Machine Learning for you to get by. However, we need a structured approach to tackle real-world problems with ML models. The methodology I like most is articulated by Cassie Kozyrkov, (ex) Chief Decision Scientist at Google. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;Cassie Kozyrkov - Making friends with machine learning, <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">full course</a>. It is 6 hours which will serve you during the entire carreer</p></li></div></div>
-<ul>
+<p>By now, I introduced the bare minimum of motivation, formalism, and practices of Machine Learning for you to get by. However, we need a structured approach to tackle real-world problems with ML models. The methodology I like most is articulated by Cassie Kozyrkov, (ex) Chief Decision Scientist at Google. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Cassie Kozyrkov - Making friends with machine learning, <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">full course</a>. It is 6 hours which will serve you during the entire carreer</p></div></div><ul>
 <li>Present the 12 steps with representative examples of classification and regression</li>
 <li>Is the ML project feasible? If yes, is it a good idea?</li>
 <li>Split your damn data. Cross-Validation and hyperparameters. Pitfalls</li>
@@ -516,8 +564,8 @@ Case-Study: Mercari pricing challenge
 <section id="price-optimization-under-limited-capacity" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="price-optimization-under-limited-capacity">Price optimization under limited capacity</h2>
 <p>In contrast with the newsvendor problem (where prices were fixed), it’s time we focus on pricing decisions. The limited capacity of airplane seats, concert tickets, hotel rooms, on the one hand simplifies the problem formulation, but introduces many complexities in practice.</p>
-<div class="page-columns page-full"><p>This seemingly simple problem motivates why the young field of revenue management was created. When forecasting the demand, we need to think about how to model it well <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and take into account most relevant factors influencing it. This is where we have to be careful, or at least aware of what economic theory has to say about demand elasticity, competition, and price discrimination.</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;This is where what we learn in <a href="../references.html">Module 3</a>: Applied Bayesian Statistics, especially the hierarchical models help a lot.</p></li></div></div>
-<p>On the optimization side, we will keep things simple, as in the newsvendor problem. We will not go into the complexities of dynamic programming.</p>
+<p>This seemingly simple problem motivates why the young field of revenue management was created. When forecasting the demand, we need to think about how to model it well <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and take into account most relevant factors influencing it. This is where we have to be careful, or at least aware of what economic theory has to say about demand elasticity, competition, and price discrimination.</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;This is where what we learn in <a href="../references.html">Module 3</a>: Applied Bayesian Statistics, especially the hierarchical models help a lot.</p></div></div><p>On the optimization side, we will keep things simple, as in the newsvendor problem. We will not go into the complexities of dynamic programming.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -562,12 +610,12 @@ Case-Study: Conversion Rate Optimization
 <li>Watch the <a href="https://youtu.be/R4ckbZCgmxQ?si=pkxQD3lG3CIo4NKf">12 steps to statistics</a> by Cassie Kozyrkov for a methodology of how to perform experiments in business settings. For a more traditional exposition, check out Poldrack’s <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">Chapter 9</a>.</li>
 <li>One of the most difficult aspects in practice is metric design, since we deal with tradeoffs so often. An useful way to think about properties of good metrics is described in <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">this paper, STEDII</a>. Also see <a href="https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">this example</a> discussing sensitivity, stability, and directedness.</li>
 </ul>
-<div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Read Cassie Kozyrkov’s article to recognize when <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">“not to waste your time with statistics”</a>. You can also watch <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">this video</a>. You can also see her <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">full, short lecture</a> for Google employees.</p></li></div></section>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Read Cassie Kozyrkov’s article to recognize when <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">“not to waste your time with statistics”</a>. You can also watch <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">this video</a>. You can also see her <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">full, short lecture</a> for Google employees.</p></div></div></section>
 <section id="churn-and-lifetime-value.-open-datasets" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="churn-and-lifetime-value.-open-datasets">Churn and Lifetime Value. Open datasets</h2>
 <p>Customer retention and repurchase is what makes or breaks businesses, especially in the past few years, with so many subscription and SAAS business models. Therefore, this topic deserves a full lecture – to cover the contractual and PAYG/non-contractual settings.</p>
-<div class="page-columns page-full"><p>I show that predicting churn and remaining customer lifetime value is not just a simple classification / regression problem. First, we need some tools from survival analysis and second – what we really want to know is who can be convinced to remain by an intervention, like promotions or loyalty programs. <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn11"><p><sup>11</sup>&nbsp;This is a good opportunity to introduce the idea of Uplift and Calibration of classification scores returned by a ML model.</p></li></div></div>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>I show that predicting churn and remaining customer lifetime value is not just a simple classification / regression problem. First, we need some tools from survival analysis and second – what we really want to know is who can be convinced to remain by an intervention, like promotions or loyalty programs. <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;This is a good opportunity to introduce the idea of Uplift and Calibration of classification scores returned by a ML model.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -647,6 +695,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -713,13 +788,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -754,18 +831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -797,11 +863,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -811,8 +916,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -824,7 +938,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -868,6 +1105,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -893,6 +1131,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -956,7 +1220,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../01_fundamentals/1_applications.html" class="pagination-link">
+      <a href="../01_fundamentals/1_applications.html" class="pagination-link" aria-label="1. Application Domains &amp; Use-Cases">
         <span class="nav-page-text">1. Application Domains &amp; Use-Cases</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -964,7 +1228,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">The course I wish I had. Built with ❤️ by Mihai Bizovi</div>   
+    <div class="nav-footer-left">
+<p>The course I wish I had. Built with ❤️ by Mihai Bizovi</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -973,6 +1239,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
