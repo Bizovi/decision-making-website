@@ -1,0 +1,366 @@
+---
+title: "Decision Science"
+title-slide-attributes:
+  data-background-image: img/logo.jpeg
+  data-background-size: "30%"
+  data-background-position: "bottom left"
+  data-background-opacity: "0.3"
+
+subtitle: "1. Introduction and Course Overview"
+author: "Mihai Bizovi"
+institute: "VP of Decision Science \\@AdoreMe"
+date: "13 Dec, 2024"
+format:
+  revealjs:
+    incremental: false   
+    slide-number: true
+bibliography: references.bib
+footnotes-hover: true
+reference-location: document
+---
+
+## What is the purpose of a business?
+
+
+::: {.callout-note}
+## Understanding and operating modern businesses is complicated 
+
+Most startups fail. ^[How many do you think survive in the first 5 years in the US?] One has to make many **good decisions** over a long period of time to have a chance at success in a competitive environment.
+:::
+
+- Maximize profits? Compete, grow, and gain market share?
+- Maximize shareholder value? ^[@dumbestidea] ^[@evonomics]
+- Bring added value to customers by solving a problem?
+- Contribute to economy and society (tax, employment)?
+- Create new markets to allocate resources efficiently?
+
+::: {.aside}
+Discussion: score from 1 to 5 on how important each reason is for you ^[Then ask yourself, are you open to founding a startup in the next 5 years?]
+:::
+
+
+## Model = simplified representation
+
+Why do we build models? Mental, mathematical, statistical? ^[For example, the coin flip is a wonderful abstraction, especially when the flips or events are independent]
+
+- We need to [understand]{.underline} ^[In a causal sense, that is if we intervene, this is what is going to happen. Or in the predictive sense] a system to make decisions
+- Reality is overwhelming and [combinatorially explosive]{.underline} ^[Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc]
+- We want to capture the essential aspects of phenomena
+- While minimizing our biases and foolishness ^[This is not to minimize what intuition resulting from deep knowledge and experience can bring to the table]
+
+All models have assumptions, pressupositions, and limitations:
+
+- Models are golemns of Prague -- Richard McElreath
+- All models are wrong, but some are useful -- George Box
+
+## What will we study?
+
+::: {.callout-important}
+## Fundamentals of business economics and statistical modeling:
+
+$$ Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome $$
+
+:::
+
+- Understand problem space to ask the right questions
+- So that we can build custom statistical models 
+- Which bring insight into consequences of actions
+- So that we're informed which actions that should be taken
+- Such that a firm can achieve its ST/LT objectives
+
+
+
+## Data science is an umbrella term
+
+We have to understand clearly what we mean by AI, ML, and Analytics. Then, pick the right tool for each problem
+
+
+- **AI** | Decision making under uncertainty at scale
+- **Cybernetics** | The science of general regularities of **Information Processing** and **Control** in CAS ^[@jordanAI]
+- **ML** | Expertise from Experience in an automated way ^[@cassieMFML]
+- **Analytics** | Exploratory analyses to formulate hypotheses 
+- **Statistics** | Changing your mind given new evidence
+
+::: {.aside}
+Discussion: what is a problem (AI, CogSci) and why framing is key
+:::
+
+## Why do we need these tools?
+
+> VUCA: Volatile | Uncertain | Complex | Ambiguous
+
+- A problem well formulated is halfway solved
+- Limited resources, conflicting objectives
+  - therefore, have to make tradeoffs
+- Decisions informed by robust predictions and evidence
+- Do you have what it takes to navigate this environment?
+  - the tools, understanding and skills
+  - attitude: learning and growth mindset
+
+
+
+
+## To make better decisions!
+
+> Think of youself as a business person with superpowers
+
+
+::::: {.columns}
+:::: {.column}
+::: {.callout-warning}
+## Engineering in the trenches
+- Develp skills -- *a hard, but rewarding path from novice to expert* ^[@hunt2008pragmatic]
+- Pragmatic data-driven software
+- Modeling workflow and pipelines 
+- Simulations as a safe playground
+- This course is NOT a bootcamp
+:::
+::::
+
+:::: {.column}
+::: {.callout-tip}
+
+## Contemplating in the library
+- Cultivating understanding and insight into *fundamental theoretical ideas*
+- Understanding your domain & clients
+- Apply the right model for the job
+- Awareness of pitfalls and mistakes
+- Rigorous, but NOT detail-oriented
+:::
+::::
+:::::
+
+::: {.aside}
+This is the course I wish I had when getting started in the field.
+:::
+
+
+## Why did you learn all of that?
+- **Linear Algebra** - language and geometry of data
+- **Mathematical Analysis** - formalism of change
+- **Probability** - logic of uncertainty
+- **Statistics** - changing your mind and action under evidence
+  - inference = data + assumptions
+- **Econometrics** - does $X \longrightarrow Y$? Causes or associations?
+- **Operations Research** - optimization with constraints
+
+::: {.aside}
+Discussion on fundamentals: why we end up not using these tools in practice?
+::: 
+
+
+## ~whoami: as engineer and leader
+
+- Skin in the game: VP of Decision Science \@AdoreMe (VS)
+- AI strategy, decision-making, ML systems design
+- Statistics, ML/data engineering, Full stack data apps
+- Critical applications along the value chain: 
+  - demand forecasting & inventory optimization systems
+  - recommender systems, NLP/LLMs for try-at-home
+  - marketing: acquisition, CRO experiment design, CRM
+
+::: {.aside}
+Discussion: Target's disaster launch in Canada, resulting in billion-scale losses
+:::
+
+## ~whoami: as teacher and researcher
+- Maven *(yid: meyvn)* -- experience to help you find your path 
+  - help you develop skills and understanding
+- Graduate of Cybernetics and Quantitative Economics
+  - Thesis & Dissertation on Bayesian Microeconometrics
+  - Research in Probabilistic Methods for Time Series
+  - Started in systems' dynamics and economic complexity
+- Speaking at conferences, meetups, and panels
+
+::: {.aside}
+Discussion: study with a book, paper, and code editor -- responsibility for self-study
+:::
+
+
+## ~whoami: as a person
+
+- Cultivating wisdom -- philosophy as a way of life
+- Reading: art history, cognitive science, evolution
+- Painting in oils and watercolor
+- Hiking, hipster coffee, 14 years of pro-ish chess
+- Concerts: opera, metal, jazz, indie, cinema
+
+::: {.aside}
+Discussion: leverage your hobbies in studies
+:::
+
+
+## Course roadmap
+
+1. Business school from data science perspective
+2. Probability theory: review with lots of simulation
+3. Mathematical statistics: the useful parts of theory
+4. Experiment Design and A/B testing
+5. Bayesian statistics and hierarchical models
+6. R and Python for data science (project)
+
+:::{.aside}
+The depth we go into each of the topics will heavily depend on your interests and challenges you'll encounter along the way
+:::
+
+## Simplification and Relations
+
+::: {layout="[29, -5, 40]"}
+![We see a **messy reality**, which is the data. We want to get to the **essence**, underlying structure](img/logo.jpeg "Reality"){width="90%"}
+
+![This is a **big picture** course: see how it all fits together and how to apply the tools in practice to be useful for firms](img/elephant-blind.jpeg "Big Picture"){width="90%"}
+:::
+
+
+## Too much content. Where to start?
+
+Moreover, how do you keep up with latest developments?
+
+- Master the fundamentals: understanding and skill
+- Curated selection of excellent resources
+  - Still, years' worth of study
+- Roadmap and conceptual frame to navigate by yourself
+  - Choose what is relevant for your problem
+  - Come back to a topic with greater understanding later
+- No shortcuts that work, patience needed
+
+
+## Admin and grading
+
+- Lectures and labs are in-person only
+- Changes in schedule coordinated with representative
+- Final exam on [10th Feb]{.underline}: 5p
+- Coursework 5p, out of which:
+  - Attendance and participation 1p
+  - Project in phases* 4p. Final submission on [9 Feb]{.underline}
+  - Survey completion: bonus 0.25p
+- Passing grade: round(course+exam) at least 5p
+
+
+## Project report or paper
+
+At most 5 pages + appendix + code attachement
+
+- What is your domain and problem / research question / hypothesis? What are your objectives?
+- Why is it interesting, unsolved, or important (for you)?
+- What have other people tried or written before?
+- What is your approach and idea to solve the problem?
+- What results did your approach yield? Did it work?
+- Conclusions and future work
+
+::: {.aside}
+If the project you choose can help you with dissertation, even better
+:::
+
+## Different project flavors
+
+For engineers, if you like programming:
+
+  - Interactive, data-driven application to support decisions
+  - Should follow the same thinking outlined before
+
+For analysts, statisticians, and data scientists:
+
+  - Answer an interesting question with data and modeling
+  - If you solve a problem - focus on decisions and outcomes
+  - If you like exploring data - extract insights and hypotheses
+  - Automate and render the report with Quarto (pdf, html)
+
+## Not allowed in the project
+
+ML approaches are allowed, however the below aren't:
+
+- PCA, CA, FA, clustering, single decision trees, kNN
+- ARIMA, GARCH, VAR and other time-series methods
+- Macroeconomic models and methods
+
+Also not allowed:
+
+- Reuse of projects from other courses
+- Dashboards built via a BI tool like Qlik
+- Plagiarism and lack of citations / credits
+
+## Project phases
+
+- Form a team of 2-3 people, pick a preliminary subject
+  - register the team and topic on the spreadsheet
+- Submit a 1-2 page document which answers the key questions from project structure
+  - Pick the dataset(s) you will be working on
+  - No need to provide the results / conclusions
+  - Get feedback and make the necessary corrections
+- Implement your solution / analysis and render project
+  - Submit the final project before Feb 9th, 2025
+
+
+## Conversation: fields & use-cases
+
+- What are the **fields** in which data science methods are extensively used? e.g. finance, genomics, psychology, ...
+- What are some **products** that use AI, data science, data-driven systems? What are their **use-cases**? e.g. uber ...
+
+::: {.callout-tip}
+## Think in terms of reverse engineering
+
+When using those products, how do you think those systems were designed? 
+
+- What were the goals and user/client needs? What were the firm's objective?
+- What constraints did they hit? Why is it a difficult problem?
+- What are some potential approaches they settled on? What is a naive solution?
+:::
+
+
+## The easiest and most difficult course
+
+ > “It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of light, it was the season of darkness, it was the spring of hope, it was the winter of despair.” ― A Tale of Two Cities, [@dickens], 
+
+
+- No memorization, proofs or solving on paper
+- You have to really understand, justify choices, write code
+- No single, unique solution, but many tradeoffs
+
+
+
+## A long and rewarding journey
+
+:::: {.columns}
+
+::: {.column width="60%"}
+::: {.callout-tip}
+## Why should you stick with the course?
+
+- Effective problem solving & **decision-making**
+- Bridge the gap between **theory** and **practice**
+  - between math world and real world
+- **Reframe** what you already studied to make it useful -- e.g. hypothesis testing, regression
+- Lots of new methods for your **toolbox**
+- Clear **understanding** and **precision** in:
+  - data science terms and concepts
+  - communication with clients, decision-makers, and stakeholders 
+:::
+:::
+
+::: {.column width="40%"}
+
+
+
+![Navigate the complexities of the field and choose your path. *(Source: Generated with DALL-E)*](img/dalle_garden_forking_paths.png) 
+
+:::
+::::
+
+## Homework
+
+Reading from course materials and external resources:
+
+- Course introduction, philosophy, and study guide
+- Prerequisites: why study all of that?
+- Application domains and use-cases
+- Video about Target's disaster in Canada
+- Critique of the idea of shareholder value
+
+> Fill in the survey about your interests and prerequisites
+
+
+## References
+
+::: {#refs}
+:::

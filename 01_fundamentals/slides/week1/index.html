@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../../img/favicon.jpeg" rel="icon" type="image/jpeg">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-d5a2d58599beb33ca06a0ee848de3e43.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.33">
+
+  <meta name="author" content="Mihai Bizovi">
+  <meta name="dcterms.date" content="2024-12-13">
+  <title>Decision Science Course – Decision Science</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-5386c7cd31dc6538882ddfdd98ba5a1e.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
+
+  <script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
+  </script>
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <script type="application/json" class="js-hypothesis-config">
+  {
+    "theme": "clean"
+  }
+  </script>
+  <script async="" src="https://hypothes.is/embed.js"></script>
+  <script>
+    window.document.addEventListener("DOMContentLoaded", function (_event) {
+      document.body.classList.add('hypothesis-enabled');
+    });
+  </script>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+<meta property="og:title" content="Decision Science – Decision Science Course">
+<meta property="og:description" content="1. Introduction and Course Overview">
+<meta property="og:site_name" content="Pragmatic Data Science">
+<meta property="og:locale" content="es_ES">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="img/logo.jpeg" data-background-opacity="0.3" data-background-position="bottom left" data-background-size="30%" class="quarto-title-block center">
+  <h1 class="title">Decision Science</h1>
+  <p class="subtitle">1. Introduction and Course Overview</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Mihai Bizovi 
+</div>
+        <p class="quarto-title-affiliation">
+            VP of Decision Science @AdoreMe
+          </p>
+    </div>
+</div>
+
+  <p class="date">2024-12-13</p>
+</section>
+<section id="what-is-the-purpose-of-a-business" class="slide level2">
+<h2>What is the purpose of a business?</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Understanding and operating modern businesses is complicated</strong></p>
+</div>
+<div class="callout-content">
+<p>Most startups fail. <a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a> One has to make many <strong>good decisions</strong> over a long period of time to have a chance at success in a competitive environment.</p>
+</div>
+</div>
+</div>
+<ul>
+<li>Maximize profits? Compete, grow, and gain market share?</li>
+<li>Maximize shareholder value? <a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></li>
+<li>Bring added value to customers by solving a problem?</li>
+<li>Contribute to economy and society (tax, employment)?</li>
+<li>Create new markets to allocate resources efficiently?</li>
+</ul>
+
+<aside><div>
+<p>Discussion: score from 1 to 5 on how important each reason is for you <a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a></p>
+</div></aside></section>
+<section id="model-simplified-representation" class="slide level2">
+<h2>Model = simplified representation</h2>
+<p>Why do we build models? Mental, mathematical, statistical? <a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></p>
+<ul>
+<li>We need to <u>understand</u> <a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> a system to make decisions</li>
+<li>Reality is overwhelming and <u>combinatorially explosive</u> <a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a></li>
+<li>We want to capture the essential aspects of phenomena</li>
+<li>While minimizing our biases and foolishness <a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a></li>
+</ul>
+<p>All models have assumptions, pressupositions, and limitations:</p>
+<ul>
+<li>Models are golemns of Prague – Richard McElreath</li>
+<li>All models are wrong, but some are useful – George Box</li>
+</ul>
+<aside></aside></section>
+<section id="what-will-we-study" class="slide level2">
+<h2>What will we study?</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Fundamentals of business economics and statistical modeling:</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[ Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome \]</span></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Understand problem space to ask the right questions</li>
+<li>So that we can build custom statistical models</li>
+<li>Which bring insight into consequences of actions</li>
+<li>So that we’re informed which actions that should be taken</li>
+<li>Such that a firm can achieve its ST/LT objectives</li>
+</ul>
+</section>
+<section id="data-science-is-an-umbrella-term" class="slide level2">
+<h2>Data science is an umbrella term</h2>
+<p>We have to understand clearly what we mean by AI, ML, and Analytics. Then, pick the right tool for each problem</p>
+<ul>
+<li><strong>AI</strong> | Decision making under uncertainty at scale</li>
+<li><strong>Cybernetics</strong> | The science of general regularities of <strong>Information Processing</strong> and <strong>Control</strong> in CAS <a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a></li>
+<li><strong>ML</strong> | Expertise from Experience in an automated way <a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></li>
+<li><strong>Analytics</strong> | Exploratory analyses to formulate hypotheses</li>
+<li><strong>Statistics</strong> | Changing your mind given new evidence</li>
+</ul>
+
+<aside><div>
+<p>Discussion: what is a problem (AI, CogSci) and why framing is key</p>
+</div></aside></section>
+<section id="why-do-we-need-these-tools" class="slide level2">
+<h2>Why do we need these tools?</h2>
+<blockquote>
+<p>VUCA: Volatile | Uncertain | Complex | Ambiguous</p>
+</blockquote>
+<ul>
+<li>A problem well formulated is halfway solved</li>
+<li>Limited resources, conflicting objectives
+<ul>
+<li>therefore, have to make tradeoffs</li>
+</ul></li>
+<li>Decisions informed by robust predictions and evidence</li>
+<li>Do you have what it takes to navigate this environment?
+<ul>
+<li>the tools, understanding and skills</li>
+<li>attitude: learning and growth mindset</li>
+</ul></li>
+</ul>
+</section>
+<section id="to-make-better-decisions" class="slide level2">
+<h2>To make better decisions!</h2>
+<blockquote>
+<p>Think of youself as a business person with superpowers</p>
+</blockquote>
+<div class="columns">
+<div class="column">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Engineering in the trenches</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Develp skills – <em>a hard, but rewarding path from novice to expert</em> <a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a></li>
+<li>Pragmatic data-driven software</li>
+<li>Modeling workflow and pipelines</li>
+<li>Simulations as a safe playground</li>
+<li>This course is NOT a bootcamp</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Contemplating in the library</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Cultivating understanding and insight into <em>fundamental theoretical ideas</em></li>
+<li>Understanding your domain &amp; clients</li>
+<li>Apply the right model for the job</li>
+<li>Awareness of pitfalls and mistakes</li>
+<li>Rigorous, but NOT detail-oriented</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+
+<aside><div>
+<p>This is the course I wish I had when getting started in the field.</p>
+</div></aside></section>
+<section id="why-did-you-learn-all-of-that" class="slide level2">
+<h2>Why did you learn all of that?</h2>
+<ul>
+<li><strong>Linear Algebra</strong> - language and geometry of data</li>
+<li><strong>Mathematical Analysis</strong> - formalism of change</li>
+<li><strong>Probability</strong> - logic of uncertainty</li>
+<li><strong>Statistics</strong> - changing your mind and action under evidence
+<ul>
+<li>inference = data + assumptions</li>
+</ul></li>
+<li><strong>Econometrics</strong> - does <span class="math inline">\(X \longrightarrow Y\)</span>? Causes or associations?</li>
+<li><strong>Operations Research</strong> - optimization with constraints</li>
+</ul>
+
+<aside><div>
+<p>Discussion on fundamentals: why we end up not using these tools in practice?</p>
+</div></aside></section>
+<section id="whoami-as-engineer-and-leader" class="slide level2">
+<h2>~whoami: as engineer and leader</h2>
+<ul>
+<li>Skin in the game: VP of Decision Science @AdoreMe (VS)</li>
+<li>AI strategy, decision-making, ML systems design</li>
+<li>Statistics, ML/data engineering, Full stack data apps</li>
+<li>Critical applications along the value chain:
+<ul>
+<li>demand forecasting &amp; inventory optimization systems</li>
+<li>recommender systems, NLP/LLMs for try-at-home</li>
+<li>marketing: acquisition, CRO experiment design, CRM</li>
+</ul></li>
+</ul>
+
+<aside><div>
+<p>Discussion: Target’s disaster launch in Canada, resulting in billion-scale losses</p>
+</div></aside></section>
+<section id="whoami-as-teacher-and-researcher" class="slide level2">
+<h2>~whoami: as teacher and researcher</h2>
+<ul>
+<li>Maven <em>(yid: meyvn)</em> – experience to help you find your path
+<ul>
+<li>help you develop skills and understanding</li>
+</ul></li>
+<li>Graduate of Cybernetics and Quantitative Economics
+<ul>
+<li>Thesis &amp; Dissertation on Bayesian Microeconometrics</li>
+<li>Research in Probabilistic Methods for Time Series</li>
+<li>Started in systems’ dynamics and economic complexity</li>
+</ul></li>
+<li>Speaking at conferences, meetups, and panels</li>
+</ul>
+
+<aside><div>
+<p>Discussion: study with a book, paper, and code editor – responsibility for self-study</p>
+</div></aside></section>
+<section id="whoami-as-a-person" class="slide level2">
+<h2>~whoami: as a person</h2>
+<ul>
+<li>Cultivating wisdom – philosophy as a way of life</li>
+<li>Reading: art history, cognitive science, evolution</li>
+<li>Painting in oils and watercolor</li>
+<li>Hiking, hipster coffee, 14 years of pro-ish chess</li>
+<li>Concerts: opera, metal, jazz, indie, cinema</li>
+</ul>
+
+<aside><div>
+<p>Discussion: leverage your hobbies in studies</p>
+</div></aside></section>
+<section id="course-roadmap" class="slide level2">
+<h2>Course roadmap</h2>
+<ol type="1">
+<li>Business school from data science perspective</li>
+<li>Probability theory: review with lots of simulation</li>
+<li>Mathematical statistics: the useful parts of theory</li>
+<li>Experiment Design and A/B testing</li>
+<li>Bayesian statistics and hierarchical models</li>
+<li>R and Python for data science (project)</li>
+</ol>
+
+<aside><div>
+<p>The depth we go into each of the topics will heavily depend on your interests and challenges you’ll encounter along the way</p>
+</div></aside></section>
+<section id="simplification-and-relations" class="slide level2">
+<h2>Simplification and Relations</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[29, -5, 40]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 39.2%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/logo.jpeg" title="Reality" style="width:90.0%"></p>
+<figcaption>We see a <strong>messy reality</strong>, which is the data. We want to get to the <strong>essence</strong>, underlying structure</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 6.8%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 54.1%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/elephant-blind.jpeg" title="Big Picture" style="width:90.0%"></p>
+<figcaption>This is a <strong>big picture</strong> course: see how it all fits together and how to apply the tools in practice to be useful for firms</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="too-much-content.-where-to-start" class="slide level2">
+<h2>Too much content. Where to start?</h2>
+<p>Moreover, how do you keep up with latest developments?</p>
+<ul>
+<li>Master the fundamentals: understanding and skill</li>
+<li>Curated selection of excellent resources
+<ul>
+<li>Still, years’ worth of study</li>
+</ul></li>
+<li>Roadmap and conceptual frame to navigate by yourself
+<ul>
+<li>Choose what is relevant for your problem</li>
+<li>Come back to a topic with greater understanding later</li>
+</ul></li>
+<li>No shortcuts that work, patience needed</li>
+</ul>
+</section>
+<section id="admin-and-grading" class="slide level2">
+<h2>Admin and grading</h2>
+<ul>
+<li>Lectures and labs are in-person only</li>
+<li>Changes in schedule coordinated with representative</li>
+<li>Final exam on <u>10th Feb</u>: 5p</li>
+<li>Coursework 5p, out of which:
+<ul>
+<li>Attendance and participation 1p</li>
+<li>Project in phases* 4p. Final submission on <u>9 Feb</u></li>
+<li>Survey completion: bonus 0.25p</li>
+</ul></li>
+<li>Passing grade: round(course+exam) at least 5p</li>
+</ul>
+</section>
+<section id="project-report-or-paper" class="slide level2">
+<h2>Project report or paper</h2>
+<p>At most 5 pages + appendix + code attachement</p>
+<ul>
+<li>What is your domain and problem / research question / hypothesis? What are your objectives?</li>
+<li>Why is it interesting, unsolved, or important (for you)?</li>
+<li>What have other people tried or written before?</li>
+<li>What is your approach and idea to solve the problem?</li>
+<li>What results did your approach yield? Did it work?</li>
+<li>Conclusions and future work</li>
+</ul>
+
+<aside><div>
+<p>If the project you choose can help you with dissertation, even better</p>
+</div></aside></section>
+<section id="different-project-flavors" class="slide level2">
+<h2>Different project flavors</h2>
+<p>For engineers, if you like programming:</p>
+<ul>
+<li>Interactive, data-driven application to support decisions</li>
+<li>Should follow the same thinking outlined before</li>
+</ul>
+<p>For analysts, statisticians, and data scientists:</p>
+<ul>
+<li>Answer an interesting question with data and modeling</li>
+<li>If you solve a problem - focus on decisions and outcomes</li>
+<li>If you like exploring data - extract insights and hypotheses</li>
+<li>Automate and render the report with Quarto (pdf, html)</li>
+</ul>
+</section>
+<section id="not-allowed-in-the-project" class="slide level2">
+<h2>Not allowed in the project</h2>
+<p>ML approaches are allowed, however the below aren’t:</p>
+<ul>
+<li>PCA, CA, FA, clustering, single decision trees, kNN</li>
+<li>ARIMA, GARCH, VAR and other time-series methods</li>
+<li>Macroeconomic models and methods</li>
+</ul>
+<p>Also not allowed:</p>
+<ul>
+<li>Reuse of projects from other courses</li>
+<li>Dashboards built via a BI tool like Qlik</li>
+<li>Plagiarism and lack of citations / credits</li>
+</ul>
+</section>
+<section id="project-phases" class="slide level2">
+<h2>Project phases</h2>
+<ul>
+<li>Form a team of 2-3 people, pick a preliminary subject
+<ul>
+<li>register the team and topic on the spreadsheet</li>
+</ul></li>
+<li>Submit a 1-2 page document which answers the key questions from project structure
+<ul>
+<li>Pick the dataset(s) you will be working on</li>
+<li>No need to provide the results / conclusions</li>
+<li>Get feedback and make the necessary corrections</li>
+</ul></li>
+<li>Implement your solution / analysis and render project
+<ul>
+<li>Submit the final project before Feb 9th, 2025</li>
+</ul></li>
+</ul>
+</section>
+<section id="conversation-fields-use-cases" class="slide level2">
+<h2>Conversation: fields &amp; use-cases</h2>
+<ul>
+<li>What are the <strong>fields</strong> in which data science methods are extensively used? e.g.&nbsp;finance, genomics, psychology, …</li>
+<li>What are some <strong>products</strong> that use AI, data science, data-driven systems? What are their <strong>use-cases</strong>? e.g.&nbsp;uber …</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Think in terms of reverse engineering</strong></p>
+</div>
+<div class="callout-content">
+<p>When using those products, how do you think those systems were designed?</p>
+<ul>
+<li>What were the goals and user/client needs? What were the firm’s objective?</li>
+<li>What constraints did they hit? Why is it a difficult problem?</li>
+<li>What are some potential approaches they settled on? What is a naive solution?</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-easiest-and-most-difficult-course" class="slide level2">
+<h2>The easiest and most difficult course</h2>
+<blockquote>
+<p>“It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of light, it was the season of darkness, it was the spring of hope, it was the winter of despair.” ― A Tale of Two Cities, <span class="citation" data-cites="dickens">(<a href="#/references" role="doc-biblioref" onclick="">Dickens 1859</a>)</span>,</p>
+</blockquote>
+<ul>
+<li>No memorization, proofs or solving on paper</li>
+<li>You have to really understand, justify choices, write code</li>
+<li>No single, unique solution, but many tradeoffs</li>
+</ul>
+</section>
+<section id="a-long-and-rewarding-journey" class="slide level2">
+<h2>A long and rewarding journey</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Why should you stick with the course?</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Effective problem solving &amp; <strong>decision-making</strong></li>
+<li>Bridge the gap between <strong>theory</strong> and <strong>practice</strong>
+<ul>
+<li>between math world and real world</li>
+</ul></li>
+<li><strong>Reframe</strong> what you already studied to make it useful – e.g.&nbsp;hypothesis testing, regression</li>
+<li>Lots of new methods for your <strong>toolbox</strong></li>
+<li>Clear <strong>understanding</strong> and <strong>precision</strong> in:
+<ul>
+<li>data science terms and concepts</li>
+<li>communication with clients, decision-makers, and stakeholders</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/dalle_garden_forking_paths.png"></p>
+<figcaption>Navigate the complexities of the field and choose your path. <em>(Source: Generated with DALL-E)</em></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="homework" class="slide level2">
+<h2>Homework</h2>
+<p>Reading from course materials and external resources:</p>
+<ul>
+<li>Course introduction, philosophy, and study guide</li>
+<li>Prerequisites: why study all of that?</li>
+<li>Application domains and use-cases</li>
+<li>Video about Target’s disaster in Canada</li>
+<li>Critique of the idea of shareholder value</li>
+</ul>
+<blockquote>
+<p>Fill in the survey about your interests and prerequisites</p>
+</blockquote>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-dickens" class="csl-entry" role="listitem">
+Dickens, Charles. 1859. <em>A Tale of Two Cities</em>. New York: Chelsea House Publishers.
+</div>
+<div id="ref-hunt2008pragmatic" class="csl-entry" role="listitem">
+Hunt, A. 2008. <em>Pragmatic Thinking and Learning: Refactor Your "Wetware"</em>. Pragmatic Bookshelf Series. Pragmatic Bookshelf. <a href="https://books.google.ro/books?id=Pq3_PAAACAAJ">https://books.google.ro/books?id=Pq3_PAAACAAJ</a>.
+</div>
+<div id="ref-jordanAI" class="csl-entry" role="listitem">
+Jordan, Michael. 2016. <span>“Stop Calling Everything AI, Machine-Learning Pioneer Says.”</span> <a href="https://spectrum.ieee.org/stop-calling-everything-ai-machinelearning-pioneer-says">https://spectrum.ieee.org/stop-calling-everything-ai-machinelearning-pioneer-says</a>.
+</div>
+<div id="ref-cassieMFML" class="csl-entry" role="listitem">
+Kozyrkov, Cassie. 2021. <span>“Making Friends with Machine Learning.”</span> Google. <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">https://www.youtube.com/watch?v=1vkb7BCMQd0</a>.
+</div>
+<div id="ref-dumbestidea" class="csl-entry" role="listitem">
+Montier, James. 2014. <span>“The World’s Dumbest Idea.”</span> <a href="https://www.gmo.com/globalassets/articles/white-paper/2014/jm_the-worlds-dumbest-idea_12-14.pdf">https://www.gmo.com/globalassets/articles/white-paper/2014/jm_the-worlds-dumbest-idea_12-14.pdf</a>.
+</div>
+<div id="ref-evonomics" class="csl-entry" role="listitem">
+Stout, Lynn. 2016. <span>“The Myth of Maximizing Shareholder Value.”</span> <a href="https://evonomics.com/maximizing-shareholder-value-dumbest-idea/">https://evonomics.com/maximizing-shareholder-value-dumbest-idea/</a>.
+</div>
+</div>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>How many do you think survive in the first 5 years in the US?</p></li>
+<li id="fn2"><p><span class="citation" data-cites="dumbestidea">Montier (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span></p></li>
+<li id="fn3"><p><span class="citation" data-cites="evonomics">Stout (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p></li>
+<li id="fn4"><p>Then ask yourself, are you open to founding a startup in the next 5 years?</p></li>
+<li id="fn5"><p>For example, the coin flip is a wonderful abstraction, especially when the flips or events are independent</p></li>
+<li id="fn6"><p>In a causal sense, that is if we intervene, this is what is going to happen. Or in the predictive sense</p></li>
+<li id="fn7"><p>Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc</p></li>
+<li id="fn8"><p>This is not to minimize what intuition resulting from deep knowledge and experience can bring to the table</p></li>
+<li id="fn9"><p><span class="citation" data-cites="jordanAI">Jordan (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p></li>
+<li id="fn10"><p><span class="citation" data-cites="cassieMFML">Kozyrkov (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></p></li>
+<li id="fn11"><p><span class="citation" data-cites="hunt2008pragmatic">Hunt (<a href="#/references" role="doc-biblioref" onclick="">2008</a>)</span></p></li>
+</ol>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
