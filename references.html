@@ -378,11 +378,12 @@ Right level of granularity
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">
+flowchart TD
   DM[/ Probability &amp; Stats /]
-  DM --&gt; CJ[1. Conjugate Priors] 
-  DM --&gt; LR1[3. Regression Workflow] --&gt; LR2[4. Model Critique] --&gt; LR3[5. Model Selection. LOO-PIT] --&gt; LR4[6. Nonlinearities] --&gt; GLM[7. GLMs] 
-  DM --&gt; G[2. Groups &amp; Pooling] --&gt; MCMC(MCMC &amp; HMC) --&gt; HM1[8. Hierarchial Models] --&gt; HM2[9. Longitudinal Data] --&gt; HM3[10. Hierarchical GLMs]
+  DM --&gt; CJ[Conjugate Priors] 
+  DM --&gt; LR1[Regression Workflow] --&gt; LR2[Model Critique] --&gt; LR3[Model Selection. LOO-PIT] --&gt; LR4[Nonlinearities] --&gt; GLM[GLMs] 
+  DM --&gt; G[Groups &amp; Pooling] --&gt; MCMC(MCMC &amp; HMC) --&gt; HM1[Hierarchial Models] --&gt; HM2[ Longitudinal Data] --&gt; HM3[Hierarchical GLMs]
 
   GLM --&gt; HM1 
   CJ --&gt; BB(Beta-Binomial) --&gt; GP(Gamma-Poisson) --&gt; NG(Normal-IG. Link fn)
@@ -395,6 +396,7 @@ Right level of granularity
   style NG fill:#f7f5bc
   style BART fill:#f7f5bc
   style MCMC fill:#f7f5bc
+
 </pre>
 </div>
 </div>
