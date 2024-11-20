@@ -22,10 +22,10 @@ I believe that improving **decision-making** is the reason why we practice AI, b
 
 ## Decision-Making for the Brave and True {.unnumbered}
 
-This is an introductory **graduate-level**, free and open-source course which bridges the gap between theory and practice, **cultivating the skills and understanding** necessary to bring value to organisations by **improving decision-making**. It is an attempt to find a golden mean of both worlds:
+This is an introductory, free and open-source course which bridges the gap between theory and practice, cultivating the skills and understanding necessary to bring value to organisations by **improving decision-making**. It is an attempt to find a golden mean of both worlds:
 
 ::: {.column-margin}
-![There is a similar gap between the "math world" and "real world" *(Source: Generated with DALL-E)*](img/gap_theory_practice.png){width="80%"}
+There is a similar gap between the "math world" and "real world"
 :::
 
 -   Illuminating theoretical ideas (contemplating in the library)
@@ -142,7 +142,7 @@ My attempt in organizing the teaching is to split the course into self-contained
 
 
 ::: {.callout-tip}
-## Go to "Resources" page for practice!
+## Go to "Study Guide" pages for practice!
 
 Conceptual understanding by itself is not enough. So, I curated a [list of resources](references.qmd) to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
 
