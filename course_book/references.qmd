@@ -32,11 +32,12 @@ I made sure to include interesting examples and archetypal applications for each
 %%| fig-cap: |
 %%|   We develop a composable toolbox, capable to tackle the challenges of nonlinearity, heterogeneity, low level of aggregation, discreteness, missing data and heteroskedasticity. By putting together the right pieces in a right way, we can improve predictions and decisions in most aspects of a business. 
 
+
 flowchart TD
   DM[/ Probability & Stats /]
-  DM --> CJ[1. Conjugate Priors] 
-  DM --> LR1[3. Regression Workflow] --> LR2[4. Model Critique] --> LR3[5. Model Selection. LOO-PIT] --> LR4[6. Nonlinearities] --> GLM[7. GLMs] 
-  DM --> G[2. Groups & Pooling] --> MCMC(MCMC & HMC) --> HM1[8. Hierarchial Models] --> HM2[9. Longitudinal Data] --> HM3[10. Hierarchical GLMs]
+  DM --> CJ[Conjugate Priors] 
+  DM --> LR1[Regression Workflow] --> LR2[Model Critique] --> LR3[Model Selection. LOO-PIT] --> LR4[Nonlinearities] --> GLM[GLMs] 
+  DM --> G[Groups & Pooling] --> MCMC(MCMC & HMC) --> HM1[Hierarchial Models] --> HM2[ Longitudinal Data] --> HM3[Hierarchical GLMs]
 
   GLM --> HM1 
   CJ --> BB(Beta-Binomial) --> GP(Gamma-Poisson) --> NG(Normal-IG. Link fn)
@@ -49,6 +50,7 @@ flowchart TD
   style NG fill:#f7f5bc
   style BART fill:#f7f5bc
   style MCMC fill:#f7f5bc
+
 ```
 
 

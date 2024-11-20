@@ -23,11 +23,11 @@ In contrast with the previous module, the lectures here are generally more mathe
 
 flowchart TD
 
-    U[Uncertainty] -- P. construction --> Comb[1. Combinatorics] --> PTr[2. Prob Triple, r.v.] --> RV[3. Distribution stories] --> B[4. Bayes & Conditioning]
+    U[Uncertainty] -- P. construction --> Comb[Combinatorics] --> PTr[Prob Triple, r.v.] --> RV[Distribution stories] --> B[Bayes & Conditioning]
 
-    U -- estimator properties --> E[5. LLN, CLT, Properties] --> BV[6. Bias-Variance]
+    U -- estimator properties --> E[LLN, CLT, Properties] --> BV[Bias-Variance]
 
-    U -- hypothesis testing --> NP[7. Neyman-Pearson] --> M1[/Module 1: A/B Testing/] --> Persp[8. Freq, Lik, Bayes] --> RC[9. Replication Crisis]
+    U -- hypothesis testing --> NP[Neyman-Pearson] --> M1[/Module 1: A/B Testing/] --> Persp[Freq, Lik, Bayes] --> RC[Replication Crisis]
 
     style RV fill:#f7f5bc
     style B fill:#f7f5bc
