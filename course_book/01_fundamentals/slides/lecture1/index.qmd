@@ -69,6 +69,9 @@ $$ Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Act
 - Such that a firm can achieve its ST/LT objectives
 
 
+::: {.aside}
+Notice the language of problem space and solution space, as you will encounter it
+:::
 
 ## Data science is an umbrella term
 
@@ -84,6 +87,68 @@ We have to understand clearly what we mean by AI, ML, and Analytics. Then, pick 
 ::: {.aside}
 Discussion: what is a problem (AI, CogSci) and why framing is key
 :::
+
+
+## Weak or specialized AI
+
+::: {style="font-size:80px"}
+Decision-Making Under Uncertainty at Scale
+:::
+
+- domain-specific (medicine vs finance vs automotive ...)
+- data-driven (key idea of learning from data)
+- limited degrees of autonomy and notions of agency
+- sometimes concerned with networks of agents
+
+::: {.aside}
+AGI (Artificial General Intelligence). Michael Jordan - Stop calling everything AI
+:::
+
+
+## Unpacking Cybernetics
+
+- **Control** $\implies$ **goal-directedness**. Action to steer to a trajectory or autopoesis (perserve $(S-f)_{org}$)
+- **Information Processing** $\implies$ pattern recoginition, perception, modeling & inference
+- **General regularities** $\implies$ plausible of control and information processing across fields and CAS
+- Animal refers to applications in biology, machine -- in engineering, and human -- in our society and behavior.
+
+
+::: {.aside}
+In economic cybernetics, we're concerned with economics, society and human behavior, rather than engineering, biology, or natural science applications.
+:::
+
+
+
+## Analytics vs ML vs Stats
+
+![*Source: xkcd;* Instead of Stats, I would say we want Causal Inference](img/ds-adventure.png "Analysis"){width="70%"}
+
+
+::: {.aside}
+Analytics is for inspiration. Formulating a hypothesis is a science and art.
+Think of a good analyst as a detective. One can also model, but still do analytics
+:::
+
+## Isn't causal inference just stats?
+
+::: {.callout-note}
+## The hardest problem, worthy of a Nobel prize in econometrics
+
+How many times have you heard that correlation doesn't imply causation?
+:::
+
+
+- Theory $\longrightarrow$ Causal Model + Data $\longrightarrow$ New insight
+- You can't derive a theory using data alone
+- Causal Inference is harder than ML and "curve fitting"
+- You want to know the consequences of your intervention
+- Advanced topic which we won't cover in the course
+
+::: {.aside}
+Causal inference can also be seen as a problem of inferring/predicting missing data
+:::
+
+
 
 ## Why do we need these tools?
 

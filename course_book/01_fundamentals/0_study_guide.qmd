@@ -3,25 +3,16 @@ format:
   html:
     toc-location: left
 slide-format: revealjs
+title: "Business school study guide"
 ---
 
-# Business School: Study Guide
 
-In the study guide we go into more details and granularity -- with references, readings, and practices for particular topics within each lecture. Keep in mind the [course philosophy](../philosophy.qmd), which will help you in how to approach the study of a complicated subject and refer to ["Why did you study all of that?"](prerequisites.qmd) if I invoke a certain prerequisite and you feel rusty.
+In the study guide we go into more details and granularity -- with references, readings, and practices for particular topics within each lecture. I suggest to read about the [course philosophy](../philosophy.qmd), which motivates why it is structured in this way. If you're unsure about the prerequisites and background knowledge, refer to ["Why did you study all of that?"](prerequisites.qmd).
 
 ::: {.column-margin}
 
 Some lectures are conceptual and you might go into more depth by reading. Some are highly technical and you want to go through the math and practice/code on suggested case-studies.
 :::
-
-
-<!-- ## How to navigate a lecture
-
-You might've noticed that every lecture starts with a brief motivation, and then will have this kind of flowchart of arguments and ideas. It is supposed to be your guide and a roadmap, so that you don't get lost in various detours taken and keep the big picture in mind.  -->
-
-<!-- My recommendation is that you go back to this diagram at the end of the reading or lecture, try to remember individual arguments and think for yourself how are they related, what is the golden thread connecting them. [^thread]
-
-[^thread]: This is a course in which we look at the widest possible range of methods and models, without going into excruciating detail, as I don't know which ones will be useful for your particular applications and problems. The idea is to find the optimal tool for the job.  -->
 
 
 ```{mermaid}
@@ -47,18 +38,25 @@ flowchart TD
     style Churn fill:#f7f5bc
 ```
 
-<!-- We start with real-world applications of data science, define what AI, Cybernetics, Big Data, Analytics, Machine Learning mean. Then, we figure out why did we study all those mathy and computer science subjects during the Bachelor's degree. Next, we discuss what can go wrong while drawing conclusions from data -- culminating in a discussion of a problem of choice you're passionate about. -->
 
-## Introduction and Course Philosophy
+## Introduction and course overview
 
-First, make sure you read the [introduction](../index.qmd#module-1-business-school-for-data-scientists) for a motivation and brief summary of what are we going to study, then review the [schedule and syllabus](roadmap.qmd#module-i-business-school-for-data-scientists) in order to understand how the course can be structured in particular lectures. 
+First, make sure you read the [introduction](../index.qmd#module-1-business-school-for-data-scientists) for a motivation and brief summary of what are we going to study, then review the [schedule and syllabus](roadmap.qmd#module-i-business-school-for-data-scientists) in order to understand how the course is structured in particular lectures.
 
-- Understand the particularities of decision-making in the business environment
+::: {.column-margin}
+If you're a student, please, don't skip the readings in the first two lectures. These are perhaps the most important learnings from 10 years of practice and will serve you well.
+:::
+
+- Understand the particularities of decision-making in businesses
 - Why I prefer "decision science" over "data science"
-- Necessary admin stuff and [project requirements](../index.qmd#full-stack-data-apps). Think about your goals, aspirations, interests and hobbies, so that you can pick a fun use-case
-- For a survey of applications and **use-cases in various domains**, [read here](1_applications.qmd).
+- Necessary admin stuff and project requirements. Think about your goals, aspirations, interests and hobbies, so that you can pick a fun use-case
+- Go through the slides again after the readings and lectures
 
+::: {.callout-note}
+## Survey of use-cases in various domains 
 
+As a first activity, think about as many domains and use-cases as possible in which AI and data science plays an important role. Then see what resonates with you [here](1_applications.qmd)
+:::
 
 ```{=html}
 <iframe class="slide-deck" src="slides/lecture1" width="100%" height="500"></iframe>
@@ -66,17 +64,16 @@ First, make sure you read the [introduction](../index.qmd#module-1-business-scho
 
 
 
-## Decisions and Strategy in Business Context
+## Business context, decisions, and strategy
 
 I build upon the previous lecture to develop the story of decisions in a business environment. We need additional terminology, concepts, and models in order to structure the problem space. What is key here, is to get immersed and **put yourself in the shoes** of decision-makers. Read the [second chapter](2_performance_strategy.qmd).
 
 - Evolution of firm's performance in time. Why, Where, How? [^strat-dyn]
     - Status quo, desired, and feared trajectories. 
     - Tradeoffs and limited resources, SWOT Analysis
+- A deep-dive into Business Analyst's Workflow
 - What is strategy? What makes good or bad strategy? [^perils-strat]
-- Business Analyst's Workflow
 - What is a Value Chain? Data Science Strategy Safari [^strat-safari]
-- Overview of **open datasets**, especially for BI & Analytics
 
 [^strat-dyn]: Read Kim Warren's article on "The Dynamics of Strategy" [here](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf)
 
@@ -87,14 +84,18 @@ I build upon the previous lecture to develop the story of decisions in a busines
 ::: {.callout-note}
 ## Case-Study: LRB Subscriptions
 
-Take a subscription-based publication like [London Review of Books](https://www.lrb.co.uk/), and analyze it using the tools and frameworks you learned in the course. Think about acquisition, churn, printing, transportation, and market share. How can it grow? What would make it profitable?
+Take a subscription-based publication like [London Review of Books](https://www.lrb.co.uk/) and analyze it using the tools and frameworks you learned.
+
+Think about acquisition, churn, printing, transportation, and market share. How can it grow? What would make it profitable? What are the key decisions to be made?
 :::
 
 
 ::: {.callout-note}
 ## Case-Study: Food Stamps and Fermi Estimation
 
-There is a good reason why management consultants practice Fermi Estimation (sanity, order-of-magnitude checks) and it is asked in many interviews. Take a look at the case study on [Food Stamp Fraud](https://callingbullshit.org/case_studies/case_study_foodstamp_fraud.html) by Carl Bergstrom and Jevin West in Calling Bullshit.
+There is a good reason why management consultants practice Fermi Estimation (sanity, order-of-magnitude checks) and it is asked in many interviews. 
+
+Take a look at the case study on [Food Stamp Fraud](https://callingbullshit.org/case_studies/case_study_foodstamp_fraud.html) by Carl Bergstrom and Jevin West in Calling Bullshit. Practice on other classical Fermi estimtion examples.
 :::
 
 ```{=html}
@@ -104,14 +105,14 @@ There is a good reason why management consultants practice Fermi Estimation (san
 
 
 
-## Decision-Making Under Uncertainty at Scale
+## Decision-making under uncertainty at scale
 
-In the previous lecture we learned how to better structure business problems and now it's time to bridge it with the subject matter of this course. Read the [third chapter](4_ml_stats.qmd).
+In the previous lecture we learned how data science fits into the larger context of a business. The ideas of value chain and business analyst's workflow are immediately applicable in practice. Now, read the [third chapter](4_ml_stats.qmd).
 
 - Clarify what I mean by AI and Cybernetics and the historical confusion [^jordan]
 - When do we need Analytics vs Statistics vs Machine Learning?
 - A note on interdisciplinarity and thinking in buckets
-- Agents and Environments. Sources of Uncertainty 
+- Agents, environments, and sources of uncertainty 
 
 
 [^jordan]: K. Pretz, "[Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says"; M. Jordan, "[Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9) - The Revolution Hasn’t Happened Yet"
@@ -129,7 +130,11 @@ In the case of Uber, Bolt (ride sharing platforms), we're very much interested i
 
 :::
 
+::: {.callout-note}
+## Overview of **open datasets**
 
+It is very hard to find good, realistic datasets which map well on representative use-cases from this course. This is why I curated a list of public datasets in a variety of domains. These should help if you don't know where to start your project, that is don't have particular problems, hypotheses, or research questions in mind.
+:::
 
 ## Newsvendor Problem and Demand Planning
 
@@ -151,7 +156,7 @@ In the paper ["Newsvendors Tackle the Newsvendor Problem"](https://www.jstor.org
 Besides Persuasive Python, you can find an alternative case-study on ["Yaz" restaurant data](https://opimwue.github.io/ddop/tutorial_modules/tutorial.html), which makes playing around with the newsvendor problem easy, due to its Python package. 
 :::
 
-For an academic paper with a meta-analysis of data-driven approaches to the newswendor problem, check out [S. Buttler, A. Philippi](https://ml-eval.github.io/assets/pdf/ICLR22_Workshop_ML_Eval_DDNV.pdf).
+For an academic paper with a meta-analysis of data-driven approaches to the newswendor problem, check out [S. Buttler, A. Philippi](https://ml-eval.github.io/assets/pdf/ICLR22_Workshop_ML_Eval_DDNV.pdf). If you have a demand planning use-case at work, the best resources are written by N. Vandeput and I. Svetunkov's CMAF seminars.
 
 
 ## Learning, Intuition, and Bias. What is ML? 

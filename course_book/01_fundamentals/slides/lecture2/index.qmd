@@ -1,6 +1,6 @@
 ---
 title: "Decision Science"
-subtitle: "2. Business context and strategy"
+subtitle: "2. Business context, decisions, and strategy"
 author: "Mihai Bizovi"
 institute: "VP of Decision Science \\@AdoreMe"
 date: "13 Dec, 2024"
@@ -13,6 +13,8 @@ title-slide-attributes:
   data-background-size: "30%"
   data-background-position: "bottom left"
   data-background-opacity: "0.3"
+footnotes-hover: true
+reference-location: document
 ---
 
 
@@ -22,11 +24,11 @@ title-slide-attributes:
 :::: {.columns}
 
 ::: {.column width="50%"}
-![*Source: [Kim Warren](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf), Strategic Management Dynamics * -- Status Quo, Desired and Feared Trajectories](img/trajectories.png){width="90%"}
+![Status Quo, Desired and Feared Trajectories in systems' dynamics. *Source:* [Kim Warren](https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf)](img/trajectories.png){width="90%"}
 :::
 
 ::: {.column width="50%"}
-- **What** happened (data / facts) and **Why** (inference)
+- **What** happened (data / facts) and **Why** (inference)?
 - **Where** are we likely going if we do things as before?
     - Is it a feared scenario?
     - What contributes to it?
@@ -36,19 +38,15 @@ title-slide-attributes:
 ::::
 
 ::: {.aside}
-Remember VUCA? Complex Systems?
+The topic of how to measure performance is complicated and deserves a deep-dive.
 :::
 
+## Trajectories and SWOT diagnosis
 
+:::: {.callout-note}
+## What would an apparel e-commerce want?
 
-
-## Trajectories and good ol' SWOT
-
-:::: {.callout-tip}
-
-## Ecommerce selling apparel. What do they want? What should they do?
-
-$\max$ **Top line** (revenue) | **bottom line** (EBITDA) | customer **satisfaction**.
+($\max$) **Top line** (revenue) | **bottom line** (EBITDA) | customer **satisfaction** | LTV ^[some industries have specific metrics like daily users, revenue per mile per sq.m]
 
 - Status Quo: what is most likely trajectory? What contributes to it?
     - looks good $\implies$ strengths 
@@ -60,7 +58,11 @@ $\max$ **Top line** (revenue) | **bottom line** (EBITDA) | customer **satisfacti
 
 ::::
 
-## Tradeoffs: it depends
+::: {.aside}
+Discussion: There are better tools than SWOT, coming from management consulting.
+:::
+
+## We can't avoid tradeoffs
 
 - What if it's a startup that received big funding?
 - What if it wants to capture market share?
@@ -70,39 +72,8 @@ $\max$ **Top line** (revenue) | **bottom line** (EBITDA) | customer **satisfacti
 > The question we asked is too generic. We need a **strategy** and possible decisions, constraints in their **value chain**
 
 ::: {.aside}
-What is the optimal tradeoff between objectives? In which part of value chain should they take action? What is the firm's strategy?
+What is the optimal tradeoff between objectives? In which part of value chain should they take action?
 :::
-<!-- 
-## Principle nr. 8
-
-:::: {.columns}
-
-::: {.column width="60%"}
-::: {style="font-size:60px"}
-What is true and how should I act?
-:::
-:::
-
-::: {.column width="40%"}
-![You should have those questions in mind not just at the job](img/making_choices.png){width="90%"}
-:::
-::::
-
-::: {.aside}
-More nuanced: likely, plausible, with convergent evidence. "Seeing clearly"
-::: -->
-
-<!-- 
-## Principle nr. 9
-
-::: {style="font-size:80px"}
-Know your firm's strategy. Call out bad strategy.
-:::
-
-::: {.aside}
-First ask, understand, contribute. Challenge if situation allows.
-::: -->
-
 
 ## Business Analysts' Workflow
 
@@ -119,6 +90,9 @@ First ask, understand, contribute. Challenge if situation allows.
     - Correctness, reproducibility and maintainability
     - Accesible: idealy in an app which users explore
 
+::: {.aside}
+Data scientists often forget about outcomes and actionability. Students get stuck in EDA
+:::
 
 ## What is a strategy anyways?
 
@@ -127,169 +101,36 @@ NOT just **aspiration** towards goal or a **vision** or a **target**.
 | Step | Outcome | Characteristics
 |------|-------|------|
 | Honest diagnosis | Identify obstacles |     Few critical, relevant aspects
-| Guiding policy |  General approach to overcome | Focused on key aspects
+| Guiding policy |  General approach to overcome obstacles | Focus on most promising
 | Coherent actions | Support policy with action plan   |  Coordinated and focused
 
 ::: {.aside}
 When it comes to setting good goals, you might've heard of SMART
 :::
 
-<!-- 
-## Principle nr. 10
 
-:::: {.columns}
+## Other methodologies to be aware of
 
-::: {.column width="60%"}
-::: {style="font-size:60px"}
-Don't get too enamored with exploratory data analysis
-:::
-:::
-
-::: {.column width="40%"}
-![EDA is essential, but do it mindfully -- don't jump to conclusions](img/inspiration.png){width="90%"}
-:::
-::::
-::: {.aside}
-Data Scientists often forget about outcomes and actions / interventions
-::: -->
-
-## Other processes to be aware of
-
-- Scientific process (it's not "the science says ...")
-    - Statistics and experiment design (12 steps)
-    - Causal inference
+- Statistics and experiment design (12 steps)
+    - The scientific process is much larger than this
+- CRISP-DM, Tuckey's Exploratory Data Analysis
 - Machine Learning (12 steps)
-- CRISP-DM, Tuckey's EDA
-- Software Development, Product Management
-    - Algorithmic/computational problem-solving
+- Causal inference and probabilistic graphs
+- Software Development: Agile, DDD, TDD, XP
+- AI Products: People+AI, AI Governance
+
+::: {.aside}
+Methodologies are NOT recipes, NOR bureaucracy.
+:::
 
 
 ## Value Chain meets Decision Science
 
-![*Source: [bayesianquest](https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/) -- Data Science Strategy Safari*. This framework was useful in my role as the Head of Data Science](img/ds_strategic_alliance.webp){width="80%"}
-
-<!-- 
-## Principle nr. 11
-
-::: {style="font-size:80px"}
-Understand what thy buzzwords mean
-:::
-
-::: {.aside}
-AI, Analytics, Big Data, Generative AI, Deep Learning, Machine Learning, Cybernetics
-::: -->
-
-## Weak AI
-
-::: {style="font-size:80px"}
-Decision-Making Under Uncertainty at Scale
-:::
-
-- domain-specific (medicine vs finance vs automotive ...)
-- data-driven (key idea of learning from data)
-- varying, limited degrees of autonomy
-- sometimes concerned with networks of agents
-
-::: {.aside}
-AGI (Artificial General Intelligence). Michael Jordan - Stop calling everything AI
-:::
-
-## Cybernetics is the OG AI
-
-::: {style="font-size:80px"}
-The science of *general regularities* of *control* and *information processing* in animal, machine and human
-:::
-
-::: {.aside}
-What? Let's unpack this
-:::
-
-
-## Unpacking Cybernetics
-
-- **Control** $\implies$ **goal-directedness**. Action to steer to a trajectory or autopoesis (perserve $(S-f)_{org}$)
-- **Information Processing** $\implies$ pattern recoginition, perception, modeling & inference
-- **General regularities** $\implies$ plausible of control and information processing across fields and CAS
-- Animal refers to applications in biology, machine -- in engineering, and human -- in our society and behavior.
-
-
-::: {.aside}
-In economic cybernetics, we're concerned with economics, society and human behavior, rather than engineering, biology, or natural science applications.
-:::
+![*Source: [bayesianquest](https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/) -- Data Science Strategy Safari*.](img/ds_strategic_alliance.webp){width="80%"}
 
 
 
-
-## Analytics vs ML vs Stats
-
-
-![*Source: xkcd;* Instead of Stats, I would say we want Causal Inference](img/ds-adventure.png "Analysis"){width="80%"}
-
-<!-- 
-## Principle nr. 12
-
-::: {style="font-size:80px"}
-Analytics is for inspiration. Formulating a hypothesis is a science and art
-:::
-
-::: {.aside}
-Think of a good analyst, as a detective. One can also model, but still do analytics
-:::
-
-## Principle nr. 13
-
-::: {style="font-size:80px"}
-When doing ML, split your damn data
-:::
-
-- is there a pattern to be found?
-- do we have relevant data?
-- $\implies$ we're in business of ML!
-
-::: {.aside}
-Many ML and Statistical models are like a geocentic model -- good at prediction, but the underlying mechanism is wrong
-:::
-
-## Principle nr. 14
-
-::: {style="font-size:80px"}
-Often in ML, you use predictions for optimization
-:::
-
-- make sure loss function is aligned with the business cost
-- make sure you're not over/under-fitting
-
-::: {.aside}
-In business applications, it's not enough just to predict. What do you do about it?
-:::
-
-## Principle nr. 15
-
-::: {style="font-size:80px"}
-You can't derive a theory using data alone
-:::
-
-- Causal Inference is harder than ML
-- You want to know the consequences of your intervention
-- Theory $\longrightarrow ...$ Causal Model + Data $\longrightarrow$ New insight
-
-::: {.aside}
-Causal inference can also be seen as a problem of inferring/predicting missing data
-:::
-
-
-## Principle nr. 16
-
-::: {style="font-size:80px"}
-Statistics is about changing your action and mind under evidence
-:::
-
-- Under what circumstances would I change my default action?
-    - Does the evidence make my $H_0$ ridiculous?
-    - Is it due to chance? -->
-
-
-## Roles in firms: Stuff data people do
+## Roles in firms: stuff data people do
 
 - Data Engineering -- pipelines and infrastructure
 - Data Analysts -- detectives, decision support
@@ -305,42 +146,9 @@ Everyone deals with data, even BE, FE, Decision-Makers, QA, DevOPS, domain exper
 
 
 
-<!-- 
-## Implicit Learning, Intuition, Bias
+## Remark on course philosophy
 
-- Implicit learning, intuition, bias -- note on what is ml; on foolishness
-- Calling bullshit
-
-- Implicit learning, intuition, bias
-	- What is ML
-- Calling BS in the age of big data
-- DeMoivre - the most dangerous equation
-
-> Lotka-Volterra with data assimilation -->
-<!-- 
-## Sources of Uncertainty
-- Sources of uncertainty
-- [x] Sources of Uncertainty and why it makes decisions hard
-	- [x] Probability as the logic of reasoning under uncertainty
-	- [x] Statistics as changing our actions / minds in the face of evidence
-	- [x] example of the large hadron collider -- data vs underlying mechanism, which we want to test and we have a theory 
-	- [x] example of the quality control -- there is a source for randomness -->
-
-## At some point, we'll discuss
-
-- AI product management:
-    - PAIR: People+AI research (Google)
-    - Event Storming
-    - Ethics and controversies of AI
-- Full Stack data apps
-    - ML Systems and technical debt
-    - Computational Reproducibility
-- Replication crisis
-    - Media and Bullshit
-
-## More on course philosophy
-
-- Motivation for why is something important (method, idea, model, process, ...)
+- Why is something important (method, idea, model ...)
 - Develop conceptual understanding and intuition
     - Theoretical rigor only where necessary
 - Use simulations as a safe playground
@@ -349,22 +157,9 @@ Everyone deals with data, even BE, FE, Decision-Makers, QA, DevOPS, domain exper
     - start with simplest models
     - deal with messy data and introduce more realism
 
-## Learning is never linear
-
-
-:::: {.columns}
-
-::: {.column width="60%"}
-::: {style="font-size:60px"}
-We circle and come back to an idea until it really makes sense
+::: {.aside}
+There is no shame in going back to the fundamentals to master them
 :::
-:::
-
-::: {.column width="40%"}
-![There is no shame in going back to basics -- there is so much to appreciate](img/learning_to_learn.png)
-:::
-::::
-
 
 
 ## The danger of thinking in buckets
@@ -389,25 +184,3 @@ Here is R. Sapolsky's argument about studying different aspects of human behavio
 - **Computer Science**: how to make the stuff usable
 - **Philosophy**: ethics, epistemiology, phil. science
 - **Mathematics**: elegant abstractions and tools
-
-## And take short trips and detours
-
-:::: {.columns}
-
-::: {.column width="40%"}
-::: {style="font-size:50px"}
-- Pedagogical
-- Industrial
-- Always come back home to problem-solving
-:::
-:::
-
-::: {.column width="60%"}
-![](img/map_dsc.png)
-:::
-::::
-
-
-<!-- 
-## Newsvendor Problem
-- Newsvendor problem as motivation -->
