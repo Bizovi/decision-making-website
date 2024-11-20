@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.6.33">
 
   <meta name="author" content="Mihai Bizovi">
-  <meta name="dcterms.date" content="2024-12-13">
+  <meta name="dcterms.date" content="2024-12-19">
   <title>Decision Science Course – Decision Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -144,7 +144,7 @@
     }
   </style>
 <meta property="og:title" content="Decision Science – Decision Science Course">
-<meta property="og:description" content="2. Business context, decisions, and strategy">
+<meta property="og:description" content="3. Decision-making under uncertainty at scale">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -154,7 +154,7 @@
 
 <section id="title-slide" data-background-image="img/logo.jpeg" data-background-opacity="0.3" data-background-position="bottom left" data-background-size="30%" class="quarto-title-block center">
   <h1 class="title">Decision Science</h1>
-  <p class="subtitle">2. Business context, decisions, and strategy</p>
+  <p class="subtitle">3. Decision-making under uncertainty at scale</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -167,234 +167,12 @@ Mihai Bizovi
     </div>
 </div>
 
-  <p class="date">2024-12-13</p>
+  <p class="date">2024-12-19</p>
 </section>
-<section id="three-critical-questions" class="slide level2">
-<h2>Three critical questions</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/trajectories.png" style="width:90.0%"></p>
-<figcaption>Status Quo, Desired and Feared Trajectories in systems’ dynamics. <em>Source:</em> <a href="https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf">Kim Warren</a></figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<ul>
-<li><strong>What</strong> happened (data / facts) and <strong>Why</strong> (inference)?</li>
-<li><strong>Where</strong> are we likely going if we do things as before?
-<ul>
-<li>Is it a feared scenario?</li>
-<li>What contributes to it?</li>
-</ul></li>
-<li><strong>How</strong> to achieve the desired trajectory? Is it realistic?</li>
-</ul>
-</div></div>
-
-<aside><div>
-<p>The topic of how to measure performance is complicated and deserves a deep-dive.</p>
-</div></aside></section>
-<section id="trajectories-and-swot-diagnosis" class="slide level2">
-<h2>Trajectories and SWOT diagnosis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>What would an apparel e-commerce want?</strong></p>
-</div>
-<div class="callout-content">
-<p>(<span class="math inline">\(\max\)</span>) <strong>Top line</strong> (revenue) | <strong>bottom line</strong> (EBITDA) | customer <strong>satisfaction</strong> | LTV <a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></p>
-<ul>
-<li>Status Quo: what is most likely trajectory? What contributes to it?
-<ul>
-<li>looks good <span class="math inline">\(\implies\)</span> strengths</li>
-<li>looks bad or unsatisfactory <span class="math inline">\(\implies\)</span> weaknesses</li>
-</ul></li>
-<li>Feared trajectory (shocks, risks, macro environment, competition):
-<ul>
-<li>scenario looks bad <span class="math inline">\(\implies\)</span> threats</li>
-</ul></li>
-<li>Desired trajectory. Is it reasonable and realistically achievable?
-<ul>
-<li>if yes <span class="math inline">\(\implies\)</span> opportunities</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-
-<aside><div>
-<p>Discussion: There are better tools than SWOT, coming from management consulting.</p>
-</div></aside></section>
-<section id="we-cant-avoid-tradeoffs" class="slide level2">
-<h2>We can’t avoid tradeoffs</h2>
-<ul>
-<li>What if it’s a startup that received big funding?</li>
-<li>What if it wants to capture market share?</li>
-<li>What if the goal is to have sustainable profitability?</li>
-<li>What if they position themselves as luxury?</li>
-</ul>
-<blockquote>
-<p>The question we asked is too generic. We need a <strong>strategy</strong> and possible decisions, constraints in their <strong>value chain</strong></p>
-</blockquote>
-
-<aside><div>
-<p>What is the optimal tradeoff between objectives? In which part of value chain should they take action?</p>
-</div></aside></section>
-<section id="business-analysts-workflow" class="slide level2">
-<h2>Business Analysts’ Workflow</h2>
-
-<img data-src="img/analyst-workflow.png" title="Analysis" style="width:90.0%" class="r-stretch quarto-figure-center"><p class="caption"><em>Source: <a href="https://causact.com">Adam Fleischhacker</a></em>; This process is highly iterative and depends on having good feedback and collaboration</p></section>
-<section id="characteristics-of-this-process" class="slide level2">
-<h2>Characteristics of this process</h2>
-<ul>
-<li><strong>Outcome-focused</strong>: What’s the point otherwise?</li>
-<li><strong>Strategically-aligned</strong>: Not all outcomes are equal!</li>
-<li><strong>Action-oriented</strong>: Biggest pitfall of any AI/ML initiative – when it’s not actionable!
-<ul>
-<li>Needs clear and persuasive communication</li>
-</ul></li>
-<li><strong>Computationally rigorous</strong>:
-<ul>
-<li>Correctness, reproducibility and maintainability</li>
-<li>Accesible: idealy in an app which users explore</li>
-</ul></li>
-</ul>
-
-<aside><div>
-<p>Data scientists often forget about outcomes and actionability. Students get stuck in EDA</p>
-</div></aside></section>
-<section id="what-is-a-strategy-anyways" class="slide level2">
-<h2>What is a strategy anyways?</h2>
-<p>NOT just <strong>aspiration</strong> towards goal or a <strong>vision</strong> or a <strong>target</strong>.</p>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 36%">
-<col style="width: 31%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Step</th>
-<th>Outcome</th>
-<th>Characteristics</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Honest diagnosis</td>
-<td>Identify obstacles</td>
-<td>Few critical, relevant aspects</td>
-</tr>
-<tr class="even">
-<td>Guiding policy</td>
-<td>General approach to overcome obstacles</td>
-<td>Focus on most promising</td>
-</tr>
-<tr class="odd">
-<td>Coherent actions</td>
-<td>Support policy with action plan</td>
-<td>Coordinated and focused</td>
-</tr>
-</tbody>
-</table>
-
-<aside><div>
-<p>When it comes to setting good goals, you might’ve heard of SMART</p>
-</div></aside></section>
-<section id="other-methodologies-to-be-aware-of" class="slide level2">
-<h2>Other methodologies to be aware of</h2>
-<ul>
-<li>Statistics and experiment design (12 steps)
-<ul>
-<li>The scientific process is much larger than this</li>
-</ul></li>
-<li>CRISP-DM, Tuckey’s Exploratory Data Analysis</li>
-<li>Machine Learning (12 steps)</li>
-<li>Causal inference and probabilistic graphs</li>
-<li>Software Development: Agile, DDD, TDD, XP</li>
-<li>AI Products: People+AI, AI Governance</li>
-</ul>
-
-<aside><div>
-<p>Methodologies are NOT recipes, NOR bureaucracy.</p>
-</div></aside></section>
-<section id="value-chain-meets-decision-science" class="slide level2">
-<h2>Value Chain meets Decision Science</h2>
-
-<img data-src="img/ds_strategic_alliance.webp" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption"><em>Source: <a href="https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/">bayesianquest</a> – Data Science Strategy Safari</em>.</p></section>
-<section id="roles-in-firms-stuff-data-people-do" class="slide level2">
-<h2>Roles in firms: stuff data people do</h2>
-<ul>
-<li>Data Engineering – pipelines and infrastructure</li>
-<li>Data Analysts – detectives, decision support</li>
-<li>BI – infrastructure for reporting, clean, modeled data</li>
-<li>ML Engineer – builds ML models and deploys them</li>
-<li>Data Scientist – jack of all trades, often lots of stats</li>
-<li>Product Analyst – cares about experiments</li>
-<li>Decision Makers &amp; Domain Experts are usually the clients</li>
-</ul>
-
-<aside><div>
-<p>Everyone deals with data, even BE, FE, Decision-Makers, QA, DevOPS, domain experts</p>
-</div></aside></section>
-<section id="remark-on-course-philosophy" class="slide level2">
-<h2>Remark on course philosophy</h2>
-<ul>
-<li>Why is something important (method, idea, model …)</li>
-<li>Develop conceptual understanding and intuition
-<ul>
-<li>Theoretical rigor only where necessary</li>
-</ul></li>
-<li>Use simulations as a safe playground</li>
-<li>Practical and realistic applications
-<ul>
-<li>problem formulation: focus on decision-making</li>
-<li>start with simplest models</li>
-<li>deal with messy data and introduce more realism</li>
-</ul></li>
-</ul>
-
-<aside><div>
-<p>There is no shame in going back to the fundamentals to master them</p>
-</div></aside></section>
-<section id="the-danger-of-thinking-in-buckets" class="slide level2">
-<h2>The danger of thinking in buckets</h2>
-<p>Here is R. Sapolsky’s argument about studying different aspects of human behavior:</p>
-<ul>
-<li>Our brains think about stuff in buckets / boundaries</li>
-<li>These buckets influence our memory, language, behavior</li>
-<li>We stop seeing the big picture:
-<ul>
-<li>Bad at differentiating facts within buckets</li>
-<li>Exagerrate differences between buckets</li>
-</ul></li>
-<li>Tempting to claim that a bucket is the only, true explanation</li>
-<li>Some of the most influential scientists fell into this trap</li>
-</ul>
-</section>
-<section id="well-walk-across-many-buckets" class="slide level2">
-<h2>We’ll walk across many buckets</h2>
-<ul>
-<li><strong>Problem space</strong>: the CAS of a firm, but not only</li>
-<li><strong>Cognitive science</strong>: intelligence, rationality, foolishness</li>
-<li><strong>Probability Theory</strong>: Reason under uncertainty, DAGs, DGPs</li>
-<li><strong>Statistics</strong>: formulating hypotheses, experiment design</li>
-<li><strong>Machine Learning</strong>: next year we focus on predictions</li>
-<li><strong>Computer Science</strong>: how to make the stuff usable</li>
-<li><strong>Philosophy</strong>: ethics, epistemiology, phil. science</li>
-<li><strong>Mathematics</strong>: elegant abstractions and tools</li>
-</ul>
+<section class="slide level2">
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Footnotes</h2>
 
-<ol>
-<li id="fn1"><p>some industries have specific metrics like daily users, revenue per mile per sq.m</p></li>
-</ol>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -700,7 +478,7 @@ Mihai Bizovi
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
