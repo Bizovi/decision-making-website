@@ -814,6 +814,13 @@
     "text": "Data science is an umbrella term\nWe have to understand clearly what we mean by AI, ML, and Analytics. Then, pick the right tool for each problem\n\nAI | Decision making under uncertainty at scale\nCybernetics | The science of general regularities of Information Processing and Control in CAS 9\nML | Expertise from Experience in an automated way 10\nAnalytics | Exploratory analyses to formulate hypotheses\nStatistics | Changing your mind given new evidence\n\n\n\nDiscussion: what is a problem (AI, CogSci) and why framing is key"
   },
   {
+    "objectID": "01_fundamentals/slides/lecture1/index.html#what-are-some-typical-applications",
+    "href": "01_fundamentals/slides/lecture1/index.html#what-are-some-typical-applications",
+    "title": "Decision Science",
+    "section": "What are some typical applications?",
+    "text": "What are some typical applications?\n\nDemand planning, inventory optimization, and production\nRevenue management, pricing, and promotion\nAdvertisement and conversion optimization\nCustomer behavior and preferences:\n\nChurn, repurchase, engagement, LTV, WTP\nFraud, credit default, insurance risk\nChoice modeling, recommender systems, uplift\n\nImproving products, assortment, merch, processes"
+  },
+  {
     "objectID": "01_fundamentals/slides/lecture1/index.html#weak-or-specialized-ai",
     "href": "01_fundamentals/slides/lecture1/index.html#weak-or-specialized-ai",
     "title": "Decision Science",
