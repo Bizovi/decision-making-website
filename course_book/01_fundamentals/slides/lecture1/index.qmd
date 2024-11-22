@@ -88,6 +88,16 @@ We have to understand clearly what we mean by AI, ML, and Analytics. Then, pick 
 Discussion: what is a problem (AI, CogSci) and why framing is key
 :::
 
+## What are some typical applications?
+
+- Demand planning, inventory optimization, and production
+- Revenue management, pricing, and promotion
+- Advertisement and conversion optimization
+- Customer behavior and preferences:
+  - Churn, repurchase, engagement, LTV, WTP 
+  - Fraud, credit default, insurance risk
+  - Choice modeling, recommender systems, uplift
+- Improving products, assortment, merch, processes
 
 ## Weak or specialized AI
 
