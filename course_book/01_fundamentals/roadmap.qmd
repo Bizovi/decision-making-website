@@ -10,22 +10,22 @@ format:
 The "business school" emphasizes again and again the idea of **Decision-Making Under Uncertainty at Scale**, across many industries and use-cases. We walk through three perspectives: Analytics, Machine Learning, and Statistics -- then develop methodologies for each one. There are two representative case-studies in which we go in-depth: the Newsvendor Problem and Price Optimization.
 
 ::: {.column-margin}
-By convention, lectures whith mathematical inclination are marked by (*) and **programming** in bold and (**). Often we do both.
+Lectures with more maths are marked by (*) and **programming** in bold.
 :::
 
 ::: {.column-page-inset-right}
 
-|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
+|   | Lecture                       | Keywords  | Case Studies / Activities |
 |-|-------------------------------------|-----------|---------------------------|
-| 1 | [Introduction](../index.qmd) & [Course Philosophy](../philosophy.qmd).  Roadmap | Decisions, VUCA, Modeling, [prerequisites](prerequisites.qmd), project requirements  | survey of applications in various domains, admin stuff |
-| 2 | [Data Science in Business Context](background.qmd). Strategy | SWOT, Tradeoffs, Strategy, Business Analyst's Workflow, Value Chain, Fermi Estimation  | case-studies: LRB subscriptions, DTC fashion e-commerce |
-| 3 | [Decision-Making Under Uncertainty at Scale](background.qmd#cybernetics-is-what-we-call-ai) | AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty  | data roles in firms, Uber and dynamic pricing, open datasets overview |
-| 4* | [**Newsvendor Problem**](https://youtu.be/QLsSPnwWS_M) and Demand Planning  | DAGs, model choice, inference and optimization, constraints. The general demand planning problem | TIME INC. printing quantity decisions. Simulations and restaurant data (ddop) |
+| 1 | [Introduction](../index.qmd) & Course Overview | Decisions, Modeling, VUCA, [Prerequisites](prerequisites.qmd), Project requirements, Course philosophy  | survey of applications and domains, purpose of a business |
+| 2 | [Decision-Making Under Uncertainty at Scale](background.qmd) | AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty  | data roles, Uber and dynamic pricing, danger of buckets |
+| 3 | [Data Science in Business Context](2_performance_strategy.qmd) | Diagnosis, Strategy, Business Analyst's Workflow, Value Chain, Fermi Estimation  | case-studies: LRB subscriptions, DTC fashion e-commerce |
+| 4* | **Newsvendor Problem** and Demand Planning  | Probability DAGs, model choice, inference, optimization with constraints | TIME INC. printing, simulations, restaurant data (ddop) |
 | 5* | [Learning, Intuition, and Bias](learning.qmd). What is ML? | intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff | credit defaults, recommender systems, demand forecasting |
-| 6** | [**12 Steps of ML**](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3) | CRISP-DM, Feasibility, Validation | case-study: Mercari challenge |
-| 7* | [**Price optimization**](https://youtu.be/RScjq1mkDc0) under limited capacity | demand elasticity, dynamic pricing, regression, pricing strategy & revenue management | case-studies: concerts, airlines, taxis/rides |
-| 8* | [12 Steps of Statistics](https://youtu.be/R4ckbZCgmxQ). A/B Testing Scheme | [default action](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF), hypotheses, confidence intervals, relevance, effect sizes, power | case-study: conversion rate optimization and marketing |
-| 9** | Churn and Lifetime Value. Open datasets | BTYD, Contractual & PAYG, Survival Models, EDA & Data Mining. BI & Analytics | kaggle e-commerce relational database, duckDB and SQL |
+| 6* | **12 Steps of ML** | CRISP-DM, Feasibility, Validation | case-study: Mercari challenge |
+| 7* | **Price optimization** under limited capacity | demand elasticity, dynamic pricing, regression, pricing strategy & revenue management | case-studies: concerts, airlines, taxis/rides |
+| 8* | 12 Steps of Statistics. A/B Testing Scheme | default action, hypotheses, confidence intervals, relevance, effect sizes, power | case-study: conversion rate optimization and marketing |
+| 9* | Churn and Lifetime Value. Open datasets | BTYD, Contractual & PAYG, Survival Models, EDA & Data Mining. BI & Analytics | kaggle e-commerce relational database, duckDB and SQL |
 
 :::
 
@@ -36,7 +36,7 @@ There are so many pitfalls in statistics and many of them come from a misunderst
 
 ::: {.column-margin}
 
-I prefer to fill in the gaps with **stories** and **simulations**, however, in some cases the mathematical formalism and abstractions can't be avoided and actually help understanding
+I prefer to fill in the gaps with **stories** and **simulations**, however, in some cases the mathematical formalism and abstractions can't be avoided and actually helps understanding
 
 :::
 
