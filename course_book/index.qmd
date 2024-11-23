@@ -7,26 +7,28 @@ lang: en
 
 ## Are you ready for an adventure?
 
-This website emerges out of teaching **data science** to students of various backgrounds and my practice in the industry as an engineer and leader.
+There is one question I lose sleep over: "How should data science be taught?". The vision and roadmap outlined on this website emerges out of:
 
 ::: {.column-margin}
 **Mihai Bizovi** | VP of Decision Science \@AdoreMe. As the author of the course (a.k.a book) -- all views and mistakes are entirely my own and do not represent any organization. 
 :::
 
 
-I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop **valuable skills**, and become more **effective at problem-solving**. To achieve this, we need to master "the fundamentals."
+- my industry experience as a statistician, ML engineer, then leader 
+- teaching to creative, motivated, but confused students
+- my frustrations about the shortcomings of statistical education
 
-I believe that improving **decision-making** is the reason why we practice AI, but courses often don't emphasize that. We're also getting increasingly specialized -- which makes us miss the interdisciplinary, big picture.
+I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop **valuable skills**, and become more **effective at problem-solving**. To achieve this, we need to master "[the fundamentals]{.underline}."
 
+I believe that improving **decision-making** is the reason why we practice "AI".^[Don't worry, we will clarify all the loaded terms, like AI, Cybernetics, Data Science, Analytics, ML, Data Mining] The danger when a program lacks unified vision / coordinated roadmap, is that we miss the interdisciplinary, big picture. Local optimization, global valley. We forget [the why]{.underline}.
+
+The commitment needed to get started in the field is so high, that a student is guaranteed to get lost in details, get overwhelmed by all those 800 page hardcore textbooks. On the other hand, seemingly pragmatic, cookbook and bootcamp-style approaches miss depth, nuance, key theoretical ideas, and methodological aspects. 
 
 
 ## Decision-Making for the Brave and True {.unnumbered}
 
-This is an introductory, free and open-source course which bridges the gap between theory and practice, cultivating the skills and understanding necessary to bring value to organisations by **improving decision-making**. It is an attempt to find a golden mean of both worlds:
-
-::: {.column-margin}
-There is a similar gap between the "math world" and "real world"
-:::
+This is an introductory, free, and open-source course which bridges the gap between theory and practice, ^[There is a similar gap between the "math world" of elegant models / abstractions and messy "real world" of decisions in businesses
+] cultivating the skills and understanding necessary to bring value to organisations by **improving decision-making**. It is an attempt to find a golden mean of both worlds so that you can choose your own path:
 
 -   Illuminating theoretical ideas (contemplating in the library)
 -   Practicing battle-tested technologies (engineering in the trenches).
@@ -111,10 +113,10 @@ I want you to take away ONE thing, that is "AI" and Data Science in Businesses b
 
 [^index-3]: Due to my philosophical readings, you will see many more such metaphors. There are certain ideas I found tremenously useful in day-to-day life.
 
-::: {layout="[29, -10, 40]"}
-![We see Pollock's **messy reality**, which is the data and observations. We want to get to Picasso's bare bones **essence**, for clarity and better decision-making](01_fundamentals/img/logo.jpeg "Reality"){.preview-image width="40%"}
+::: {layout="[45, -2, 55]"}
+![We see Pollock's **messy reality**, which is the data and observations. We want to get to Picasso's bare bones **essence**, for clarity and better decision-making](01_fundamentals/img/logo.jpeg "Reality"){.preview-image width="90%"}
 
-![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it fits together or how can it be implemented in practice to bring value to organisations, that is: be useful](01_fundamentals/img/elephant-blind.jpeg){width="40%"}
+![This is a **big picture** course, which re-contextualizes everything you have learned before, but didn't see how it fits together or how can it be implemented in practice to bring value to organisations, that is: be useful](01_fundamentals/img/elephant-blind.jpeg){width="90%"}
 :::
 
 

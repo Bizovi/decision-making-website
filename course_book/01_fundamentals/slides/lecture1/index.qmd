@@ -278,6 +278,20 @@ Discussion: leverage your hobbies in studies
 The depth we go into each of the topics will heavily depend on your interests and challenges you'll encounter along the way
 :::
 
+## Covered in year two course
+
+::: {.aside}
+By building a solid foundation this year, we can focus on more advanced models
+:::
+
+- Applied Machine Learning:
+  - Classification, regression, probabilities
+  - Clustering and dimensionality reduction 
+- Special topics like:
+  - Propensity score matching, choice, and conjoint models
+  - NLP / recommender systems / ML for time series
+- Operationalizing ML pipelines, data-driven applications
+
 ## Simplification and Relations
 
 ::: {layout="[29, -5, 40]"}
