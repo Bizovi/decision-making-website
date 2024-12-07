@@ -59,7 +59,7 @@ The topic of how to measure performance is complicated and deserves a deep-dive.
 ::::
 
 ::: {.aside}
-Discussion: There are better tools than SWOT, coming from management consulting.
+Discussion: There are better tools than SWOT, coming from management consulting. ^[e.g. McKinsey MECE + hypotheses, root cause analysis, modeling processes to find bottlenecks, impact analysis, design thinking, event storming, etc]
 :::
 
 ## We can't avoid tradeoffs
@@ -72,7 +72,7 @@ Discussion: There are better tools than SWOT, coming from management consulting.
 > The question we asked is too generic. We need a **strategy** and possible decisions, constraints in their **value chain**
 
 ::: {.aside}
-What is the optimal tradeoff between objectives? In which part of value chain should they take action?
+What is the optimal tradeoff between objectives? In which part of value chain should they take action? How to make the most out of limited resources it has?
 :::
 
 ## Business Analysts' Workflow
@@ -105,22 +105,22 @@ NOT just **aspiration** towards goal or a **vision** or a **target**.
 | Coherent actions | Support policy with action plan   |  Coordinated and focused
 
 ::: {.aside}
-When it comes to setting good goals, you might've heard of SMART
+When it comes to setting good goals, you might've heard of SMART criteria
 :::
 
 
 ## Other methodologies to be aware of
 
-- Statistics and experiment design (12 steps)
+- Statistics and experiment design (12 steps) ^[We will discuss research methods and experiment design in the following lectures]
     - The scientific process is much larger than this
-- CRISP-DM, Tuckey's Exploratory Data Analysis
-- Machine Learning (12 steps)
-- Causal inference and probabilistic graphs
-- Software Development: Agile, DDD, TDD, XP
-- AI Products: People+AI, AI Governance
+- Causal inference and probabilistic graphs ^[We sketched out the process in the previous lecture]
+- CRISP-DM, Tuckey's Exploratory Data Analysis ^[You might be familiar with this]
+- Machine Learning (12 steps) ^[We will dedicate two lectures on this, since you will need it until year two.]
+- Software Development: Agile, DDD, TDD, XP, Design Thinking
+- AI Products: People+AI, AI Governance, Event Storming
 
 ::: {.aside}
-Methodologies are NOT recipes, NOR bureaucracy.
+Methodologies are NOT recipes, NOT step-by-step instructions, NOR bureaucracy. Ways of thinking which help you avoid pitfalls, be systematic and effective in problem-solving.
 :::
 
 
@@ -144,6 +144,21 @@ Methodologies are NOT recipes, NOR bureaucracy.
 Everyone deals with data, even BE, FE, Decision-Makers, QA, DevOPS, domain experts
 :::
 
+
+## Conversation: fields & use-cases
+
+- What are the **fields** in which data science methods are extensively used? e.g. finance, genomics, psychology, ...
+- What are some **products** that use AI, data science, data-driven systems? What are their **use-cases**? e.g. uber ...
+
+::: {.callout-tip}
+## Think in terms of reverse engineering
+
+When using those products, how do you think those systems were designed? 
+
+- What were the goals and user/client needs? What were the firm's objective?
+- What constraints did they hit? Why is it a difficult problem?
+- What are some potential approaches they settled on? What is a naive solution?
+:::
 
 
 ## Remark on course philosophy

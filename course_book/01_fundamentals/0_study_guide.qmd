@@ -52,11 +52,27 @@ If you're a student, please, don't skip the readings in the first two lectures. 
 - Necessary admin stuff and project requirements. Think about your goals, aspirations, interests and hobbies, so that you can pick a fun use-case
 - Go through the slides again after the readings and lectures
 
-::: {.callout-note}
-## Survey of use-cases in various domains 
+::: {.callout-tip}
+## Activity: What is the purpose of the business?
 
-As a first activity, think about as many domains and use-cases as possible in which AI and data science plays an important role. Then see what resonates with you [here](1_applications.qmd)
+On the card you received in the class, answer the following questions:
+
+- Answer from 1 (strongly disagree) to 5 (strongly agree) to each to the possible purposes (raison d'etre) of a busines.
+- Are you considering to start a business in the next 5 years?
+
+Now, imagine you're in charge of public policy, or take part of an entreprenorial think-tank or NGO for youths. Formulate a research question that a further study would try to answer. It doesn't have to relate to the particular questions you answered before.
 :::
+
+::: {.column-margin}
+If you're serious about data science and statistical fundamentals, I highly recommend the following two books by A. Gelman for self study: [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html) and [Active Statistics](https://avehtari.github.io/ActiveStatistics/index.html)
+:::
+
+::: {.callout-note}
+## Wikipedia donations experiment
+
+This story can be found in "Active Statistics" and "Regression and Other Stories" by A. Gelman.
+:::
+
 
 ```{=html}
 <iframe class="slide-deck" src="slides/lecture1" width="100%" height="500"></iframe>
@@ -81,6 +97,13 @@ I build upon the previous lecture to develop the story of decisions in a busines
 
 [^strat-safari]: Read about the framework of aligning business objectives to data science use-cases. Data Science Strategy Safari at [bayesianquest](https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/)
 
+
+::: {.callout-note}
+## Survey of use-cases in various domains 
+
+As a second activity, think about as many domains and use-cases as possible in which AI and data science plays an important role. Put yourself in the shoes of the firm: how would you reverse-engineer the product? Then, see what resonates with you [here](1_applications.qmd)
+:::
+
 ::: {.callout-note}
 ## Case-Study: LRB Subscriptions
 
@@ -101,9 +124,6 @@ Take a look at the case study on [Food Stamp Fraud](https://callingbullshit.org/
 ```{=html}
 <iframe class="slide-deck" src="slides/lecture2" width="100%" height="500"></iframe>
 ```
-
-
-
 
 ## Decision-making under uncertainty at scale
 
