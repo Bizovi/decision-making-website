@@ -55,14 +55,14 @@ All models have assumptions, pressupositions, and limitations:
 
 ## What will we study?
 
-::: {.callout-important}
+::: {.callout-tip}
 ## Fundamentals of business economics and statistical modeling:
 
 $$ Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome $$
 
 :::
 
-- Understand problem space to ask the right questions
+- Understand problem space to ask the right questions ^[This is what you basically study in Business Analytics classes: ways to think about diagnosis, strategy, business processes, stakeholders, etc]
 - So that we can build custom statistical models 
 - Which bring insight into consequences of actions
 - So that we're informed which actions that should be taken
@@ -90,12 +90,12 @@ Discussion: what is a problem (AI, CogSci) and why framing is key
 
 ## What are some typical applications?
 
-- Demand planning, inventory optimization, and production
+- Demand planning, inventory optimization, production ^[Deep dive in Logistics class. My strong recommendation is to apply it in practice and read N. Vandeput]
 - Revenue management, pricing, and promotion
 - Advertisement and conversion optimization
-- Customer behavior and preferences:
+- Customer behavior and preferences: ^[You will deep dive into customer psychology and decisions under uncertainty in the behavioral economics class]
   - Churn, repurchase, engagement, LTV, WTP 
-  - Fraud, credit default, insurance risk
+  - Fraud, credit default, insurance risk ^[These models are the way you operationalize a risk management strategy at scale ("minimize bleeding")]
   - Choice modeling, recommender systems, uplift
 - Improving products, assortment, merch, processes
 
@@ -139,20 +139,38 @@ Analytics is for inspiration. Formulating a hypothesis is a science and art.
 Think of a good analyst as a detective. One can also model, but still do analytics
 :::
 
-## Isn't causal inference just stats?
+## Three challenges in statistics
 
-::: {.callout-note}
-## The hardest problem, worthy of a Nobel prize in econometrics
+First and foremost, you have to start with a research topic, question and [design your study]{.underline} or experiment. It's hard!
 
-How many times have you heard that correlation doesn't imply causation?
+::: {.callout-tip}
+## You might've heard of internal and external validity
+
+A. Gelman clarifies very well three different aspects of statistical inference. Always remember this when we discuss stats! We want to generalize in terms of:
+
+$$Sample \longrightarrow Population$$
+
+$$Treatment \longrightarrow Control$$
+
+$$Measurement \longrightarrow Construct$$
+
+The holy grail is to build statistical models based on the [causal processes]{.underline} informed by theories / hypotheses. Then model how we [measured]{.underline},^[We'll dedicate one lecture on it, but you have whole specialized classes on business metrics] and [collected data]{.underline}.^[Again, we treat it in the most general sense, but you have BI classes which show you how data is collected and structured in most businesses]
 :::
 
 
-- Theory $\longrightarrow$ Causal Model + Data $\longrightarrow$ New insight
-- You can't derive a theory using data alone
-- Causal Inference is harder than ML and "curve fitting"
-- You want to know the consequences of your intervention
-- Advanced topic which we won't cover in the course
+## Isn't causal inference just stats?
+
+::: {.callout-important}
+## The hardest problem, worthy of a Nobel prize in econometrics
+
+How many times have you heard that correlation doesn't imply causation? Yet, ALL the methods you studied so far are not sufficient to fully justify causality, even Granger!
+:::
+
+1. Theoretical estimand (quantity or effect of interest)
+2. Scientific (causal) models - DAGs of influence
+3. Use (1) and (2) to build a Statistical Model
+4. Simulate from (2) to prove (3) $\implies$ (1)
+5. Analyze and make inferences with real data
 
 ::: {.aside}
 Causal inference can also be seen as a problem of inferring/predicting missing data
