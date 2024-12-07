@@ -804,21 +804,21 @@
     "href": "01_fundamentals/slides/lecture1/index.html#what-will-we-study",
     "title": "Decision Science",
     "section": "What will we study?",
-    "text": "What will we study?\n\n\n\n\n\n\nFundamentals of business economics and statistical modeling:\n\n\n\\[ Question \\longrightarrow Modeling \\longrightarrow Insight \\longrightarrow Action \\longrightarrow Outcome \\]\n\n\n\n\nUnderstand problem space to ask the right questions\nSo that we can build custom statistical models\nWhich bring insight into consequences of actions\nSo that we’re informed which actions that should be taken\nSuch that a firm can achieve its ST/LT objectives\n\n\n\nNotice the language of problem space and solution space, as you will encounter it"
+    "text": "What will we study?\n\n\n\n\n\n\nFundamentals of business economics and statistical modeling:\n\n\n\\[ Question \\longrightarrow Modeling \\longrightarrow Insight \\longrightarrow Action \\longrightarrow Outcome \\]\n\n\n\n\nUnderstand problem space to ask the right questions 9\nSo that we can build custom statistical models\nWhich bring insight into consequences of actions\nSo that we’re informed which actions that should be taken\nSuch that a firm can achieve its ST/LT objectives\n\n\n\nNotice the language of problem space and solution space, as you will encounter it"
   },
   {
     "objectID": "01_fundamentals/slides/lecture1/index.html#data-science-is-an-umbrella-term",
     "href": "01_fundamentals/slides/lecture1/index.html#data-science-is-an-umbrella-term",
     "title": "Decision Science",
     "section": "Data science is an umbrella term",
-    "text": "Data science is an umbrella term\nWe have to understand clearly what we mean by AI, ML, and Analytics. Then, pick the right tool for each problem\n\nAI | Decision making under uncertainty at scale\nCybernetics | The science of general regularities of Information Processing and Control in CAS 9\nML | Expertise from Experience in an automated way 10\nAnalytics | Exploratory analyses to formulate hypotheses\nStatistics | Changing your mind given new evidence\n\n\n\nDiscussion: what is a problem (AI, CogSci) and why framing is key"
+    "text": "Data science is an umbrella term\nWe have to understand clearly what we mean by AI, ML, and Analytics. Then, pick the right tool for each problem\n\nAI | Decision making under uncertainty at scale\nCybernetics | The science of general regularities of Information Processing and Control in CAS 10\nML | Expertise from Experience in an automated way 11\nAnalytics | Exploratory analyses to formulate hypotheses\nStatistics | Changing your mind given new evidence\n\n\n\nDiscussion: what is a problem (AI, CogSci) and why framing is key"
   },
   {
     "objectID": "01_fundamentals/slides/lecture1/index.html#what-are-some-typical-applications",
     "href": "01_fundamentals/slides/lecture1/index.html#what-are-some-typical-applications",
     "title": "Decision Science",
     "section": "What are some typical applications?",
-    "text": "What are some typical applications?\n\nDemand planning, inventory optimization, and production\nRevenue management, pricing, and promotion\nAdvertisement and conversion optimization\nCustomer behavior and preferences:\n\nChurn, repurchase, engagement, LTV, WTP\nFraud, credit default, insurance risk\nChoice modeling, recommender systems, uplift\n\nImproving products, assortment, merch, processes"
+    "text": "What are some typical applications?\n\nDemand planning, inventory optimization, production 12\nRevenue management, pricing, and promotion\nAdvertisement and conversion optimization\nCustomer behavior and preferences: 13\n\nChurn, repurchase, engagement, LTV, WTP\nFraud, credit default, insurance risk 14\nChoice modeling, recommender systems, uplift\n\nImproving products, assortment, merch, processes"
   },
   {
     "objectID": "01_fundamentals/slides/lecture1/index.html#weak-or-specialized-ai",
@@ -842,11 +842,18 @@
     "text": "Analytics vs ML vs Stats\n\n\n\nSource: xkcd; Instead of Stats, I would say we want Causal Inference\n\n\n\n\nAnalytics is for inspiration. Formulating a hypothesis is a science and art. Think of a good analyst as a detective. One can also model, but still do analytics"
   },
   {
+    "objectID": "01_fundamentals/slides/lecture1/index.html#three-challenges-in-statistics",
+    "href": "01_fundamentals/slides/lecture1/index.html#three-challenges-in-statistics",
+    "title": "Decision Science",
+    "section": "Three challenges in statistics",
+    "text": "Three challenges in statistics\nFirst and foremost, you have to start with a research topic, question and design your study or experiment. It’s hard!\n\n\n\n\n\n\nYou might’ve heard of internal and external validity\n\n\nA. Gelman clarifies very well three different aspects of statistical inference. Always remember this when we discuss stats! We want to generalize in terms of:\n\\[Sample \\longrightarrow Population\\]\n\\[Treatment \\longrightarrow Control\\]\n\\[Measurement \\longrightarrow Construct\\]\nThe holy grail is to build statistical models based on the causal processes informed by theories / hypotheses. Then model how we measured,15 and collected data.16"
+  },
+  {
     "objectID": "01_fundamentals/slides/lecture1/index.html#isnt-causal-inference-just-stats",
     "href": "01_fundamentals/slides/lecture1/index.html#isnt-causal-inference-just-stats",
     "title": "Decision Science",
     "section": "Isn’t causal inference just stats?",
-    "text": "Isn’t causal inference just stats?\n\n\n\n\n\n\nThe hardest problem, worthy of a Nobel prize in econometrics\n\n\nHow many times have you heard that correlation doesn’t imply causation?\n\n\n\n\nTheory \\(\\longrightarrow\\) Causal Model + Data \\(\\longrightarrow\\) New insight\nYou can’t derive a theory using data alone\nCausal Inference is harder than ML and “curve fitting”\nYou want to know the consequences of your intervention\nAdvanced topic which we won’t cover in the course\n\n\n\nCausal inference can also be seen as a problem of inferring/predicting missing data"
+    "text": "Isn’t causal inference just stats?\n\n\n\n\n\n\nThe hardest problem, worthy of a Nobel prize in econometrics\n\n\nHow many times have you heard that correlation doesn’t imply causation? Yet, ALL the methods you studied so far are not sufficient to fully justify causality, even Granger!\n\n\n\n\nTheoretical estimand (quantity or effect of interest)\nScientific (causal) models - DAGs of influence\nUse (1) and (2) to build a Statistical Model\nSimulate from (2) to prove (3) \\(\\implies\\) (1)\nAnalyze and make inferences with real data\n\n\n\nCausal inference can also be seen as a problem of inferring/predicting missing data"
   },
   {
     "objectID": "01_fundamentals/slides/lecture1/index.html#why-do-we-need-these-tools",
@@ -860,7 +867,7 @@
     "href": "01_fundamentals/slides/lecture1/index.html#to-make-better-decisions",
     "title": "Decision Science",
     "section": "To make better decisions!",
-    "text": "To make better decisions!\n\nThink of youself as a business person with superpowers\n\n\n\n\n\n\n\n\n\nEngineering in the trenches\n\n\n\nDevelp skills – a hard, but rewarding path from novice to expert 11\nPragmatic data-driven software\nModeling workflow and pipelines\nSimulations as a safe playground\nThis course is NOT a bootcamp\n\n\n\n\n\n\n\n\n\n\n\nContemplating in the library\n\n\n\nCultivating understanding and insight into fundamental theoretical ideas\nUnderstanding your domain & clients\nApply the right model for the job\nAwareness of pitfalls and mistakes\nRigorous, but NOT detail-oriented\n\n\n\n\n\n\n\nThis is the course I wish I had when getting started in the field."
+    "text": "To make better decisions!\n\nThink of youself as a business person with superpowers\n\n\n\n\n\n\n\n\n\nEngineering in the trenches\n\n\n\nDevelp skills – a hard, but rewarding path from novice to expert 17\nPragmatic data-driven software\nModeling workflow and pipelines\nSimulations as a safe playground\nThis course is NOT a bootcamp\n\n\n\n\n\n\n\n\n\n\n\nContemplating in the library\n\n\n\nCultivating understanding and insight into fundamental theoretical ideas\nUnderstanding your domain & clients\nApply the right model for the job\nAwareness of pitfalls and mistakes\nRigorous, but NOT detail-oriented\n\n\n\n\n\n\n\nThis is the course I wish I had when getting started in the field."
   },
   {
     "objectID": "01_fundamentals/slides/lecture1/index.html#why-did-you-learn-all-of-that",
@@ -993,7 +1000,7 @@
     "href": "01_fundamentals/slides/lecture1/index.html#footnotes",
     "title": "Decision Science",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nHow many do you think survive in the first 5 years in the US?\nMontier (2014)\nStout (2016)\nThen ask yourself, are you open to founding a startup in the next 5 years?\nFor example, the coin flip is a wonderful abstraction, especially when the flips or events are independent\nIn a causal sense, that is if we intervene, this is what is going to happen. Or in the predictive sense\nImagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc\nThis is not to minimize what intuition resulting from deep knowledge and experience can bring to the table\nJordan (2016)\nKozyrkov (2021)\nHunt (2008)"
+    "text": "Footnotes\n\n\nHow many do you think survive in the first 5 years in the US?\nMontier (2014)\nStout (2016)\nThen ask yourself, are you open to founding a startup in the next 5 years?\nFor example, the coin flip is a wonderful abstraction, especially when the flips or events are independent\nIn a causal sense, that is if we intervene, this is what is going to happen. Or in the predictive sense\nImagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc\nThis is not to minimize what intuition resulting from deep knowledge and experience can bring to the table\nThis is what you basically study in Business Analytics classes: ways to think about diagnosis, strategy, business processes, stakeholders, etc\nJordan (2016)\nKozyrkov (2021)\nDeep dive in Logistics class. My strong recommendation is to apply it in practice and read N. Vandeput\nYou will deep dive into customer psychology and decisions under uncertainty in the behavioral economics class\nThese models are the way you operationalize a risk management strategy at scale (“minimize bleeding”)\nWe’ll dedicate one lecture on it, but you have whole specialized classes on business metrics\nAgain, we treat it in the most general sense, but you have BI classes which show you how data is collected and structured in most businesses\nHunt (2008)"
   },
   {
     "objectID": "01_fundamentals/prob_study_guide.html",

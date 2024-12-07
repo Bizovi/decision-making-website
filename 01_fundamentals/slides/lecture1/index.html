@@ -232,7 +232,7 @@ Mihai Bizovi
 <aside></aside></section>
 <section id="what-will-we-study" class="slide level2">
 <h2>What will we study?</h2>
-<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
@@ -246,7 +246,7 @@ Mihai Bizovi
 </div>
 </div>
 <ul>
-<li>Understand problem space to ask the right questions</li>
+<li>Understand problem space to ask the right questions <a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a></li>
 <li>So that we can build custom statistical models</li>
 <li>Which bring insight into consequences of actions</li>
 <li>So that we’re informed which actions that should be taken</li>
@@ -261,8 +261,8 @@ Mihai Bizovi
 <p>We have to understand clearly what we mean by AI, ML, and Analytics. Then, pick the right tool for each problem</p>
 <ul>
 <li><strong>AI</strong> | Decision making under uncertainty at scale</li>
-<li><strong>Cybernetics</strong> | The science of general regularities of <strong>Information Processing</strong> and <strong>Control</strong> in CAS <a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a></li>
-<li><strong>ML</strong> | Expertise from Experience in an automated way <a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></li>
+<li><strong>Cybernetics</strong> | The science of general regularities of <strong>Information Processing</strong> and <strong>Control</strong> in CAS <a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></li>
+<li><strong>ML</strong> | Expertise from Experience in an automated way <a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a></li>
 <li><strong>Analytics</strong> | Exploratory analyses to formulate hypotheses</li>
 <li><strong>Statistics</strong> | Changing your mind given new evidence</li>
 </ul>
@@ -273,18 +273,18 @@ Mihai Bizovi
 <section id="what-are-some-typical-applications" class="slide level2">
 <h2>What are some typical applications?</h2>
 <ul>
-<li>Demand planning, inventory optimization, and production</li>
+<li>Demand planning, inventory optimization, production <a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
 <li>Revenue management, pricing, and promotion</li>
 <li>Advertisement and conversion optimization</li>
-<li>Customer behavior and preferences:
+<li>Customer behavior and preferences: <a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a>
 <ul>
 <li>Churn, repurchase, engagement, LTV, WTP</li>
-<li>Fraud, credit default, insurance risk</li>
+<li>Fraud, credit default, insurance risk <a href="#/footnotes" class="footnote-ref" id="fnref14" role="doc-noteref" data-footnote-href="#/fn14" onclick=""><sup>14</sup></a></li>
 <li>Choice modeling, recommender systems, uplift</li>
 </ul></li>
 <li>Improving products, assortment, merch, processes</li>
 </ul>
-</section>
+<aside></aside></section>
 <section id="weak-or-specialized-ai" class="slide level2">
 <h2>Weak or specialized AI</h2>
 <div style="font-size:80px">
@@ -324,9 +324,30 @@ Mihai Bizovi
 <aside><div>
 <p>Analytics is for inspiration. Formulating a hypothesis is a science and art. Think of a good analyst as a detective. One can also model, but still do analytics</p>
 </div></aside></section>
+<section id="three-challenges-in-statistics" class="slide level2">
+<h2>Three challenges in statistics</h2>
+<p>First and foremost, you have to start with a research topic, question and <u>design your study</u> or experiment. It’s hard!</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>You might’ve heard of internal and external validity</strong></p>
+</div>
+<div class="callout-content">
+<p>A. Gelman clarifies very well three different aspects of statistical inference. Always remember this when we discuss stats! We want to generalize in terms of:</p>
+<p><span class="math display">\[Sample \longrightarrow Population\]</span></p>
+<p><span class="math display">\[Treatment \longrightarrow Control\]</span></p>
+<p><span class="math display">\[Measurement \longrightarrow Construct\]</span></p>
+<p>The holy grail is to build statistical models based on the <u>causal processes</u> informed by theories / hypotheses. Then model how we <u>measured</u>,<a href="#/footnotes" class="footnote-ref" id="fnref15" role="doc-noteref" data-footnote-href="#/fn15" onclick=""><sup>15</sup></a> and <u>collected data</u>.<a href="#/footnotes" class="footnote-ref" id="fnref16" role="doc-noteref" data-footnote-href="#/fn16" onclick=""><sup>16</sup></a></p>
+</div>
+</div>
+</div>
+<aside></aside></section>
 <section id="isnt-causal-inference-just-stats" class="slide level2">
 <h2>Isn’t causal inference just stats?</h2>
-<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
@@ -335,17 +356,17 @@ Mihai Bizovi
 <p><strong>The hardest problem, worthy of a Nobel prize in econometrics</strong></p>
 </div>
 <div class="callout-content">
-<p>How many times have you heard that correlation doesn’t imply causation?</p>
+<p>How many times have you heard that correlation doesn’t imply causation? Yet, ALL the methods you studied so far are not sufficient to fully justify causality, even Granger!</p>
 </div>
 </div>
 </div>
-<ul>
-<li>Theory <span class="math inline">\(\longrightarrow\)</span> Causal Model + Data <span class="math inline">\(\longrightarrow\)</span> New insight</li>
-<li>You can’t derive a theory using data alone</li>
-<li>Causal Inference is harder than ML and “curve fitting”</li>
-<li>You want to know the consequences of your intervention</li>
-<li>Advanced topic which we won’t cover in the course</li>
-</ul>
+<ol type="1">
+<li>Theoretical estimand (quantity or effect of interest)</li>
+<li>Scientific (causal) models - DAGs of influence</li>
+<li>Use (1) and (2) to build a Statistical Model</li>
+<li>Simulate from (2) to prove (3) <span class="math inline">\(\implies\)</span> (1)</li>
+<li>Analyze and make inferences with real data</li>
+</ol>
 
 <aside><div>
 <p>Causal inference can also be seen as a problem of inferring/predicting missing data</p>
@@ -386,7 +407,7 @@ Mihai Bizovi
 </div>
 <div class="callout-content">
 <ul>
-<li>Develp skills – <em>a hard, but rewarding path from novice to expert</em> <a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a></li>
+<li>Develp skills – <em>a hard, but rewarding path from novice to expert</em> <a href="#/footnotes" class="footnote-ref" id="fnref17" role="doc-noteref" data-footnote-href="#/fn17" onclick=""><sup>17</sup></a></li>
 <li>Pragmatic data-driven software</li>
 <li>Modeling workflow and pipelines</li>
 <li>Simulations as a safe playground</li>
@@ -769,9 +790,15 @@ Stout, Lynn. 2016. <span>“The Myth of Maximizing Shareholder Value.”</span> 
 <li id="fn6"><p>In a causal sense, that is if we intervene, this is what is going to happen. Or in the predictive sense</p></li>
 <li id="fn7"><p>Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc</p></li>
 <li id="fn8"><p>This is not to minimize what intuition resulting from deep knowledge and experience can bring to the table</p></li>
-<li id="fn9"><p><span class="citation" data-cites="jordanAI">Jordan (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p></li>
-<li id="fn10"><p><span class="citation" data-cites="cassieMFML">Kozyrkov (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></p></li>
-<li id="fn11"><p><span class="citation" data-cites="hunt2008pragmatic">Hunt (<a href="#/references" role="doc-biblioref" onclick="">2008</a>)</span></p></li>
+<li id="fn9"><p>This is what you basically study in Business Analytics classes: ways to think about diagnosis, strategy, business processes, stakeholders, etc</p></li>
+<li id="fn10"><p><span class="citation" data-cites="jordanAI">Jordan (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p></li>
+<li id="fn11"><p><span class="citation" data-cites="cassieMFML">Kozyrkov (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></p></li>
+<li id="fn12"><p>Deep dive in Logistics class. My strong recommendation is to apply it in practice and read N. Vandeput</p></li>
+<li id="fn13"><p>You will deep dive into customer psychology and decisions under uncertainty in the behavioral economics class</p></li>
+<li id="fn14"><p>These models are the way you operationalize a risk management strategy at scale (“minimize bleeding”)</p></li>
+<li id="fn15"><p>We’ll dedicate one lecture on it, but you have whole specialized classes on business metrics</p></li>
+<li id="fn16"><p>Again, we treat it in the most general sense, but you have BI classes which show you how data is collected and structured in most businesses</p></li>
+<li id="fn17"><p><span class="citation" data-cites="hunt2008pragmatic">Hunt (<a href="#/references" role="doc-biblioref" onclick="">2008</a>)</span></p></li>
 </ol>
 </section>
     </div>
