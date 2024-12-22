@@ -7,7 +7,7 @@ format:
 
 ## Module I: Business School for Data Scientists
 
-The "business school" emphasizes again and again the idea of **Decision-Making Under Uncertainty at Scale**, across many industries and use-cases. We walk through three perspectives: Analytics, Machine Learning, and Statistics -- then develop methodologies for each one. There are two representative case-studies in which we go in-depth: the Newsvendor Problem and Price Optimization.
+The "business school" emphasizes again and again the idea of **Decision-Making Under Uncertainty at Scale**, across many industries and use-cases. We walk through three perspectives: Analytics, Machine Learning, and Statistics -- then develop processes for each one. This module is heavy on methodology, since I want to [bring back science into "data science"]{.underline}, but don't worry, there will be enough case-studies.
 
 ::: {.column-margin}
 Lectures with more maths are marked by (*) and **programming** in bold.
@@ -15,28 +15,33 @@ Lectures with more maths are marked by (*) and **programming** in bold.
 
 ::: {.column-page-inset-right}
 
-|   | Lecture                       | Keywords  | Case Studies / Activities |
-|-|-------------------------------------|-----------|---------------------------|
-| 1 | [Introduction](../index.qmd) & Course Overview | Decisions, Modeling, VUCA, [Prerequisites](prerequisites.qmd), Project requirements, Course philosophy  | survey of applications and domains, purpose of a business |
-| 2 | [Decision-Making Under Uncertainty at Scale](background.qmd) | AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty  | data roles, Uber and dynamic pricing, danger of buckets |
-| 3 | [Data Science in Business Context](2_performance_strategy.qmd) | Diagnosis, Strategy, Business Analyst's Workflow, Value Chain, Fermi Estimation  | case-studies: LRB subscriptions, DTC fashion e-commerce |
-| 4* | **Newsvendor Problem** and Demand Planning  | Probability DAGs, model choice, inference, optimization with constraints | TIME INC. printing, simulations, restaurant data (ddop) |
-| 5* | [Learning, Intuition, and Bias](learning.qmd). What is ML? | intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff | credit defaults, recommender systems, demand forecasting |
-| 6* | **12 Steps of ML** | CRISP-DM, Feasibility, Validation | case-study: Mercari challenge |
-| 7* | **Price optimization** under limited capacity | demand elasticity, dynamic pricing, regression, pricing strategy & revenue management | case-studies: concerts, airlines, taxis/rides |
-| 8* | 12 Steps of Statistics. A/B Testing Scheme | default action, hypotheses, confidence intervals, relevance, effect sizes, power | case-study: conversion rate optimization and marketing |
-| 9* | Churn and Lifetime Value. Open datasets | BTYD, Contractual & PAYG, Survival Models, EDA & Data Mining. BI & Analytics | kaggle e-commerce relational database, duckDB and SQL |
+|   | Lecture                       | Key ideas  | Case Studies / Activities |
+|---|------------------|----------------------------------|---------------------------|
+| 1 | Introduction & Course Overview | Question $\rightarrow$ Outcomes, Modeling, 3 challenges of statistics, Prerequisites, Project requirements. Inferential vs Causal | purpose of a business, survey of applications and domains |
+| 2 | Decision-Making Under Uncertainty at Scale | Weak AI and Cybernetics. Analytics vs Stats vs ML. [Scientific process is all you need]{.underline} -- why methodology is important  | Fermi estimation, demystify buzzwords, Wikipedia A/B test  |
+| 3 | Data Science in Business Context | Performance trajectories, Strategy, VUCA, Business Analyst's Workflow, Value Chain meets DS use-cases  | Fermi estimation process, overview of realistic datasets |
+| 4* | **Newsvendor Problem** and Demand Planning  | Objectives, decisions, uncertainty. Tradeoffs. Stories behind distributions: traffic, slow-moving, intermittent, luxury | TIME INC. printing, simulations, Yaz restaurant data |
+| ~ | Study Design | Question-first vs data-first. Estimands. Sampling, measurement, validity and reliability. Biases, artifacts, and confounds  | FINER, PICOT. Confounds, mediators, colliders, and chains  |
+| ~ | Scientific writing | Writing as thinking and communication. Structure of a paper  | Good titles, abstracts  |
+| 5* | What is ML? [Learning, Intuition, and Bias](learning.qmd).  | Patterns, learning problem, bias-variance tradeoff. Experience and expertise. Model, algorithm, data. Generalization | overview of learning paradigms, models, and use-cases |
+| 6* | **12 Steps of ML** | Feasibility, objectives, splitting data, training/tuning, validation, testing, deployment and launch | E2E example of the Mercari pricing challenge |
+| 8* | 12 Steps of Statistics. A/B Testing Scheme | default action, hypotheses, data collection strategies, simulation, confidence intervals, relevance, effect sizes, power | conversion rate optimization and marketing |
+| 9* | Churn and Lifetime Value | Churn, repurchase, contractual and non-contractual settings | BTYD and survival models |
+| 7* | Price optimization and revenue management | positioning, limited supply, demand elasticity, dynamic pricing, promotion, willingness to pay | stories of concerts, airlines, taxis/rides |
+| ~ | Stories from the trenches | Personal exposition of challenges in marketing, demand planning, CRM, and recommender systems  | building a thriving data ecosystem and growing competence  |
+
 
 :::
 
 
 ## Module II: Probability and Statistics
 
-There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals.
+There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals. I prefer to fill in the gaps with **stories** and **simulations**, however, in some cases the mathematical formalism and abstractions can't be avoided and actually helps understanding
+
 
 ::: {.column-margin}
 
-I prefer to fill in the gaps with **stories** and **simulations**, however, in some cases the mathematical formalism and abstractions can't be avoided and actually helps understanding
+I think that the best way to start understanding inferential statistics is Daniel Lakens' book on "Improving your statistical inferences", combined with another resource like Speegle's "Probability, Statistics, and Data" for a deep-dive on technicalities.
 
 :::
 
@@ -45,47 +50,50 @@ Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most course
 
 ::: {.column-page-inset-right}
 
-|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
-|---|-------------------------------------|-----------|---------------------------|
-| 1* | Combinatorics. Sampling & Urn Models | replacement, multiplication rule, naive $\mathbb{P}$ | Birthday Paradox, Bootstrap |
-| 2* | Probability Triple. Random Variables. What is a model? | experiment, sample space, measure, population, estimand, estimators, golemns  | [Probability vs Statistics](https://johnkerl.org/doc/prbstat/prbstat.html), Kolmogorov, Garden Forking Paths |
-| 3** | **Binomial, Poisson**, Beta, Gamma. Stories behind distributions | PMF, PDF, CDF, Hypergeometric, Negative Binomial, $\chi^2_k$, mixtures, $t_k$, $N$, Weibull | couples showing up to safari, arrival times, basketball shots, hot hand |
-| 4* | **Conditioning and Bayes Rule**. Likelihood Ratios | DAGs, Conditioning, Marginalization, Priors, Updating | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
-| 5* | **CLT** and LLNs. Convergence types. Estimator properties | sample size, convergence in probability, distribution, almost-sure | The most dangerous equation, hackernoon ranking algo |
-| 6* | **Bias-Variance**, Fisher Information, Rao-Cramer | Efficiency, Bias, James-Stein, curse of dimensionality | Bootstrap, simulations and visualizations |
-| 7* | Neyman-Pearson frequentism. Popper and falsification | Type I, II errors, confint, p-value, PPV, effect sizes, **power analysis, range predictions**, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance  |
-| 8 | Frequentism vs Likelihood vs Bayes | philosophical roots, agreements, weaknesses | The path of action vs devotion vs belief  |
-| 9 | Dead Salmon Experiment. Replication Crisis | multiple testing, harking, snooping, publishing bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science  |
+|   | Lecture Agenda  | Key Ideas  | Case Studies / Activities |
+|---|------------------|----------------------------------|---------------------------|
+| 1* | Combinatorics. Sampling & Urn Models | Sampling with and without replacement, multiplication rule, naive $\mathbb{P}$, probability trees | Birthday Paradox simulation, Why bootstrap works |
+| 2 | Probability Triple. Random Variables. What is a model? | collectivity, population, sample; estimand, estimator, estimation; $(\Omega, \mathcal{F}, \mathbb{P})$, $X$ r.v., $H(y | F(u), \phi(y, u))$| Probability vs Statistics. $\mathcal{H}$, Process models, Statistical models, Inference |
+| 3 | **Stories behind distributions** | Binomial, Poisson, Mixtures, $N(\mu, \sigma)$, $\chi^2_k$, $t_k$, F, Beta, Gamma, Exponential, NBin, HGeom | couples showing up to safari, arrival times, basketball shots, hot hand |
+| 4* | Conditioning and Bayes Rule. Likelihood Ratios | Updating prior beliefs, Bayesian vs frequentist interpretation of probability. Graphical models | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
+| 5* | **CLT** and LLNs. Convergence types. Estimator properties | Never forget about sample size. Why simulation works? Limitation: rare events, fat tails, mixtures, non-iid | The most dangerous equation: US schools, gold coins. Simulation |
+| 6* | Fisher Information. **Bias-Variance** tradeoff | Efficiency, bias, James-Stein paradox and the curse of dimensionality. Rao-Cramer. Likelihood approach | Overfitting, underfitting, and mis-specification. Bootstrap, simulations |
+| 7* | Neyman-Pearson frequentism. Long-run action | Type I, II errors, confint, p-value, PPV, effect sizes, **power analysis, range predictions**, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance, Interval $\mathcal{H}$ testing. Default action  |
+| 8 | Frequentist vs Likelihood vs Bayesian inference | Popperian philosophical roots, practical agreements, strengths and weaknesses | Discussion on practical interpretation: path of action vs devotion vs belief  |
+| 9 | Dead Salmon Experiment. Replication Crisis | multiple testing, harking, snooping, publication bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science  |
 
 :::
 
 
 ## Module III: Applied Bayesian Statistics
 
-After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool.
+After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool. Even when we design experiments or surveys, we still need to model non-response, correct for biases, and account for confounds -- meaning, engage in modeling.
 
 ::: {.column-margin}
 
-We are not wasting time by switching to Bayes (7 lectures to get to GLMs), because we treat all models under the same framework.
+In my opinion, among many excellent resources, Richard McElreath's 2023 lectures on statistical rethinking is the best way to learn the kind of modeling which fits our course and problem space. 
 
 :::
 
-Instead of taking regression as the starting point, then going into advanced econometrics -- I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good starting point. 
+I think that the best way to study regression and generalized linear models is to think very carefully about the causal processes underlying the phenomenon we're studying. The big advantage of switching to a Bayesian perspective and GLMs, is that we treat all models under an unified framework. This means, we can focus on science and much less on the mathematical intricacies of advanced econometrics.
+
 
 ::: {.column-page-inset-right}
 
-|   | Lecture Agenda                      | Keywords  | Case Studies / Activities |
-|-|------------|-----------|--------------|
-| 1 | Introduction to Bayesian Statistics. Simple Models and Conjugate priors  | Beta-Binomial, Gamma-Poisson, Mixtures, Link functions, IG-Normal | Elections, Football Goals, Coal Mining disaseetrs, Golf accuracy, Speed of Light |
-| 2 | Multiple Groups and Hierarchical Models | Complete, No, Partial pooling | A/B testing, baseball, review ranking, Radon, Starbucks wait times, Customer LTV |
-| 3 | Regression and Bayesian Workflow | Categorical variables, Results summarization, Modeling assumptions | OCEAN, Education, height, waffles |
-| 4 | Regression and Model Critique | Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting | Golf example continued, Flight Delays |
-| 5 | Regression and Model Selection | Variable selection | McElreath example: height, waffles |
-| 6 | Regression and nonlinearities | Regularization, Variable selection, Splines, Robustness | Applying the concepts on same examples as before. Missing Data |
-| 7 | Generalized Linear Models | Logistic regression, Poisson and overdispersion | Income, Voting, Campus Crime, Student absence |
-| 8 | Introduction to Hierarchical Models | Hierarchical GLMs. Priors informed by prior knowledge | Radon continued, Stage Anxiety, Plumonary Fibrosis |
-| 9 | Hierarchical Models and Longitudinal Data | Stochastic processes. Challenges of Hierarchical time series | Teenage drinking, sleep study, charter schools, Graduate Admissions |
-| 10 | Hierarchical Models case studies. BART | Basketball Fouls, AirBnb reviews, Seat Belts | Bike Shares, Agriculture and Seed Germination |
+|   | Lecture Agenda      | Keywords  | Case Studies / Activities |
+|---|------------------|----------------------------------|---------------------------|
+| 1 | Introduction to Bayesian Statistics | Estimating proportions with Beta-Binomial, counts with Gamma-Poisson, defining priors | Elections, Football Goals, Speed of Light |
+| 2 | Regression and the Bayesian Workflow | DAGs of influence, categorical variables, assumptions, nonlinearities, splines, simulation | E2E example on Howell's study on height and weight. Summarizing estimands |
+| 3 | Confounds. Good and Bad controls | Deep-dive on translating DAGs into statistical models. Adjustment set, backdoor criterion | E2E example of Waffle houses and divorce rates. Spurious correlations |
+| ~ | Overfitting and Validation | Prior and posterior checks, LOO-CV, LOO-PIT, regularization, robust regression, simulation-based calibration | TBD |
+| 4 | Multiple Groups and Hierarchical Models | Complete pooling, No pooling, Partial pooling. Post-stratification and non-representative samples | Radon concentration, Starbucks wait times, Customer LTV, Elections polls |
+| 5 | Binomial GLMs | Link functions, Simpson's paradox | 1973 Berkeley admissions|
+| 6 | Poisson GLMs | Overdispersion, zero-inflated, Negative Binomial | Campus Crime, Student absence |
+| 7 | Hierarchical GLMs | Deep-dive into model formulation. Studies on stage anxiety and plumonary fibrosis. | Basketball Fouls, AirBnb reviews, Seat Belts |
+| 8 | Longitudinal Data | Challenges of multilevel time series | Teenage drinking, sleep study |
+| ~ | Special topics | BART and Gaussian Processes  | TBD  |
+| ~ | Special topics | Missing data and measurement error | TBD |
+
 
 
 
@@ -106,7 +114,7 @@ A second aspect that we need for the programming part not to slow us down and st
 For Windows 11+ users, I strongly recommend you use WSLII -- and get familiar with the command line & linux. Between R and Python, I choose technologies which make it easy to draw parallels and transition from one to another.
 
 ::: {.callout-tip}
-## For R (v4.3.1)
+## For R (v4.4.2)
 
 - RStudio as our main IDE
 - Quarto for literate programming
@@ -127,7 +135,7 @@ R has many gotchas, which is the main reason that makes the language hard. There
 - VScode as our main IDE
 - Jupyter Notebooks or Quarto for literate programming
 - git & github
-- conda and poetry for managing environments
+- uv (recommended) or conda for managing environments
 - database: duckdb (analytical, in-process), sqlite (transactional, in-process)
 - data wrangling: pandas 2.0, pypolars (bigger data), arrow
 - interactive applications: streamlit, shiny, or dash
