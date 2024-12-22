@@ -342,7 +342,7 @@ window.Quarto = {
 
 <section id="module-i-business-school-for-data-scientists" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="module-i-business-school-for-data-scientists">Module I: Business School for Data Scientists</h2>
-<p>The “business school” emphasizes again and again the idea of <strong>Decision-Making Under Uncertainty at Scale</strong>, across many industries and use-cases. We walk through three perspectives: Analytics, Machine Learning, and Statistics – then develop methodologies for each one. There are two representative case-studies in which we go in-depth: the Newsvendor Problem and Price Optimization.</p>
+<p>The “business school” emphasizes again and again the idea of <strong>Decision-Making Under Uncertainty at Scale</strong>, across many industries and use-cases. We walk through three perspectives: Analytics, Machine Learning, and Statistics – then develop processes for each one. This module is heavy on methodology, since I want to <u>bring back science into “data science”</u>, but don’t worry, there will be enough case-studies.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Lectures with more maths are marked by (*) and <strong>programming</strong> in bold.</p>
@@ -352,64 +352,82 @@ window.Quarto = {
 <tr class="header">
 <th></th>
 <th>Lecture</th>
-<th>Keywords</th>
+<th>Key ideas</th>
 <th>Case Studies / Activities</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td><a href="../index.html">Introduction</a> &amp; Course Overview</td>
-<td>Decisions, Modeling, VUCA, <a href="../01_fundamentals/prerequisites.html">Prerequisites</a>, Project requirements, Course philosophy</td>
-<td>survey of applications and domains, purpose of a business</td>
+<td>Introduction &amp; Course Overview</td>
+<td>Question <span class="math inline">\(\rightarrow\)</span> Outcomes, Modeling, 3 challenges of statistics, Prerequisites, Project requirements. Inferential vs Causal</td>
+<td>purpose of a business, survey of applications and domains</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td><a href="../01_fundamentals/background.html">Decision-Making Under Uncertainty at Scale</a></td>
-<td>AI, Cybernetics, Analytics vs Stats vs ML, Interdisciplinarity, Uncertainty</td>
-<td>data roles, Uber and dynamic pricing, danger of buckets</td>
+<td>Decision-Making Under Uncertainty at Scale</td>
+<td>Weak AI and Cybernetics. Analytics vs Stats vs ML. <u>Scientific process is all you need</u> – why methodology is important</td>
+<td>Fermi estimation, demystify buzzwords, Wikipedia A/B test</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td><a href="../01_fundamentals/2_performance_strategy.html">Data Science in Business Context</a></td>
-<td>Diagnosis, Strategy, Business Analyst’s Workflow, Value Chain, Fermi Estimation</td>
-<td>case-studies: LRB subscriptions, DTC fashion e-commerce</td>
+<td>Data Science in Business Context</td>
+<td>Performance trajectories, Strategy, VUCA, Business Analyst’s Workflow, Value Chain meets DS use-cases</td>
+<td>Fermi estimation process, overview of realistic datasets</td>
 </tr>
 <tr class="even">
 <td>4*</td>
 <td><strong>Newsvendor Problem</strong> and Demand Planning</td>
-<td>Probability DAGs, model choice, inference, optimization with constraints</td>
-<td>TIME INC. printing, simulations, restaurant data (ddop)</td>
+<td>Objectives, decisions, uncertainty. Tradeoffs. Stories behind distributions: traffic, slow-moving, intermittent, luxury</td>
+<td>TIME INC. printing, simulations, Yaz restaurant data</td>
+</tr>
+<tr class="odd">
+<td>~</td>
+<td>Study Design</td>
+<td>Question-first vs data-first. Estimands. Sampling, measurement, validity and reliability. Biases, artifacts, and confounds</td>
+<td>FINER, PICOT. Confounds, mediators, colliders, and chains</td>
+</tr>
+<tr class="even">
+<td>~</td>
+<td>Scientific writing</td>
+<td>Writing as thinking and communication. Structure of a paper</td>
+<td>Good titles, abstracts</td>
 </tr>
 <tr class="odd">
 <td>5*</td>
-<td><a href="../01_fundamentals/learning.html">Learning, Intuition, and Bias</a>. What is ML?</td>
-<td>intelligence, bias, learning problem, on bullshit, ERM, bias-variance tradeoff</td>
-<td>credit defaults, recommender systems, demand forecasting</td>
+<td>What is ML? <a href="../01_fundamentals/learning.html">Learning, Intuition, and Bias</a>.</td>
+<td>Patterns, learning problem, bias-variance tradeoff. Experience and expertise. Model, algorithm, data. Generalization</td>
+<td>overview of learning paradigms, models, and use-cases</td>
 </tr>
 <tr class="even">
 <td>6*</td>
 <td><strong>12 Steps of ML</strong></td>
-<td>CRISP-DM, Feasibility, Validation</td>
-<td>case-study: Mercari challenge</td>
+<td>Feasibility, objectives, splitting data, training/tuning, validation, testing, deployment and launch</td>
+<td>E2E example of the Mercari pricing challenge</td>
+</tr>
+<tr class="odd">
+<td>8*</td>
+<td>12 Steps of Statistics. A/B Testing Scheme</td>
+<td>default action, hypotheses, data collection strategies, simulation, confidence intervals, relevance, effect sizes, power</td>
+<td>conversion rate optimization and marketing</td>
+</tr>
+<tr class="even">
+<td>9*</td>
+<td>Churn and Lifetime Value</td>
+<td>Churn, repurchase, contractual and non-contractual settings</td>
+<td>BTYD and survival models</td>
 </tr>
 <tr class="odd">
 <td>7*</td>
-<td><strong>Price optimization</strong> under limited capacity</td>
-<td>demand elasticity, dynamic pricing, regression, pricing strategy &amp; revenue management</td>
-<td>case-studies: concerts, airlines, taxis/rides</td>
+<td>Price optimization and revenue management</td>
+<td>positioning, limited supply, demand elasticity, dynamic pricing, promotion, willingness to pay</td>
+<td>stories of concerts, airlines, taxis/rides</td>
 </tr>
 <tr class="even">
-<td>8*</td>
-<td>12 Steps of Statistics. A/B Testing Scheme</td>
-<td>default action, hypotheses, confidence intervals, relevance, effect sizes, power</td>
-<td>case-study: conversion rate optimization and marketing</td>
-</tr>
-<tr class="odd">
-<td>9*</td>
-<td>Churn and Lifetime Value. Open datasets</td>
-<td>BTYD, Contractual &amp; PAYG, Survival Models, EDA &amp; Data Mining. BI &amp; Analytics</td>
-<td>kaggle e-commerce relational database, duckDB and SQL</td>
+<td>~</td>
+<td>Stories from the trenches</td>
+<td>Personal exposition of challenges in marketing, demand planning, CRM, and recommender systems</td>
+<td>building a thriving data ecosystem and growing competence</td>
 </tr>
 </tbody>
 </table>
@@ -417,18 +435,24 @@ window.Quarto = {
 </section>
 <section id="module-ii-probability-and-statistics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="module-ii-probability-and-statistics">Module II: Probability and Statistics</h2>
-<p>There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals.</p>
+<p>There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals. I prefer to fill in the gaps with <strong>stories</strong> and <strong>simulations</strong>, however, in some cases the mathematical formalism and abstractions can’t be avoided and actually helps understanding</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>I prefer to fill in the gaps with <strong>stories</strong> and <strong>simulations</strong>, however, in some cases the mathematical formalism and abstractions can’t be avoided and actually helps understanding</p>
+<p>I think that the best way to start understanding inferential statistics is Daniel Lakens’ book on “Improving your statistical inferences”, combined with another resource like Speegle’s “Probability, Statistics, and Data” for a deep-dive on technicalities.</p>
 </div></div><p>Therefore, fundamental – doesn’t mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.</p>
 <div class="column-page-inset-right">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 21%">
+<col style="width: 41%">
+<col style="width: 32%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
 <th>Lecture Agenda</th>
-<th>Keywords</th>
+<th>Key Ideas</th>
 <th>Case Studies / Activities</th>
 </tr>
 </thead>
@@ -436,55 +460,55 @@ window.Quarto = {
 <tr class="odd">
 <td>1*</td>
 <td>Combinatorics. Sampling &amp; Urn Models</td>
-<td>replacement, multiplication rule, naive <span class="math inline">\(\mathbb{P}\)</span></td>
-<td>Birthday Paradox, Bootstrap</td>
+<td>Sampling with and without replacement, multiplication rule, naive <span class="math inline">\(\mathbb{P}\)</span>, probability trees</td>
+<td>Birthday Paradox simulation, Why bootstrap works</td>
 </tr>
 <tr class="even">
-<td>2*</td>
+<td>2</td>
 <td>Probability Triple. Random Variables. What is a model?</td>
-<td>experiment, sample space, measure, population, estimand, estimators, golemns</td>
-<td><a href="https://johnkerl.org/doc/prbstat/prbstat.html">Probability vs Statistics</a>, Kolmogorov, Garden Forking Paths</td>
+<td>collectivity, population, sample; estimand, estimator, estimation; <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>, <span class="math inline">\(X\)</span> r.v., <span class="math inline">\(H(y | F(u), \phi(y, u))\)</span></td>
+<td>Probability vs Statistics. <span class="math inline">\(\mathcal{H}\)</span>, Process models, Statistical models, Inference</td>
 </tr>
 <tr class="odd">
-<td>3**</td>
-<td><strong>Binomial, Poisson</strong>, Beta, Gamma. Stories behind distributions</td>
-<td>PMF, PDF, CDF, Hypergeometric, Negative Binomial, <span class="math inline">\(\chi^2_k\)</span>, mixtures, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N\)</span>, Weibull</td>
+<td>3</td>
+<td><strong>Stories behind distributions</strong></td>
+<td>Binomial, Poisson, Mixtures, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, F, Beta, Gamma, Exponential, NBin, HGeom</td>
 <td>couples showing up to safari, arrival times, basketball shots, hot hand</td>
 </tr>
 <tr class="even">
 <td>4*</td>
-<td><strong>Conditioning and Bayes Rule</strong>. Likelihood Ratios</td>
-<td>DAGs, Conditioning, Marginalization, Priors, Updating</td>
+<td>Conditioning and Bayes Rule. Likelihood Ratios</td>
+<td>Updating prior beliefs, Bayesian vs frequentist interpretation of probability. Graphical models</td>
 <td>Monty Hall, Simpsons’ Paradox, Football Spreads, Medical testing</td>
 </tr>
 <tr class="odd">
 <td>5*</td>
 <td><strong>CLT</strong> and LLNs. Convergence types. Estimator properties</td>
-<td>sample size, convergence in probability, distribution, almost-sure</td>
-<td>The most dangerous equation, hackernoon ranking algo</td>
+<td>Never forget about sample size. Why simulation works? Limitation: rare events, fat tails, mixtures, non-iid</td>
+<td>The most dangerous equation: US schools, gold coins. Simulation</td>
 </tr>
 <tr class="even">
 <td>6*</td>
-<td><strong>Bias-Variance</strong>, Fisher Information, Rao-Cramer</td>
-<td>Efficiency, Bias, James-Stein, curse of dimensionality</td>
-<td>Bootstrap, simulations and visualizations</td>
+<td>Fisher Information. <strong>Bias-Variance</strong> tradeoff</td>
+<td>Efficiency, bias, James-Stein paradox and the curse of dimensionality. Rao-Cramer. Likelihood approach</td>
+<td>Overfitting, underfitting, and mis-specification. Bootstrap, simulations</td>
 </tr>
 <tr class="odd">
 <td>7*</td>
-<td>Neyman-Pearson frequentism. Popper and falsification</td>
+<td>Neyman-Pearson frequentism. Long-run action</td>
 <td>Type I, II errors, confint, p-value, PPV, effect sizes, <strong>power analysis, range predictions</strong>, <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_A\)</span></td>
-<td>How to ask better questions. Stahel’s relevance</td>
+<td>How to ask better questions. Stahel’s relevance, Interval <span class="math inline">\(\mathcal{H}\)</span> testing. Default action</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>Frequentism vs Likelihood vs Bayes</td>
-<td>philosophical roots, agreements, weaknesses</td>
-<td>The path of action vs devotion vs belief</td>
+<td>Frequentist vs Likelihood vs Bayesian inference</td>
+<td>Popperian philosophical roots, practical agreements, strengths and weaknesses</td>
+<td>Discussion on practical interpretation: path of action vs devotion vs belief</td>
 </tr>
 <tr class="odd">
 <td>9</td>
 <td>Dead Salmon Experiment. Replication Crisis</td>
-<td>multiple testing, harking, snooping, publishing bias, open science, underpowered studies</td>
+<td>multiple testing, harking, snooping, publication bias, open science, underpowered studies</td>
 <td>Examination of controversies in medicine, psychology, and social science</td>
 </tr>
 </tbody>
@@ -493,18 +517,18 @@ window.Quarto = {
 </section>
 <section id="module-iii-applied-bayesian-statistics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="module-iii-applied-bayesian-statistics">Module III: Applied Bayesian Statistics</h2>
-<p>After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool.</p>
+<p>After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool. Even when we design experiments or surveys, we still need to model non-response, correct for biases, and account for confounds – meaning, engage in modeling.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>We are not wasting time by switching to Bayes (7 lectures to get to GLMs), because we treat all models under the same framework.</p>
-</div></div><p>Instead of taking regression as the starting point, then going into advanced econometrics – I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good starting point.</p>
+<p>In my opinion, among many excellent resources, Richard McElreath’s 2023 lectures on statistical rethinking is the best way to learn the kind of modeling which fits our course and problem space.</p>
+</div></div><p>I think that the best way to study regression and generalized linear models is to think very carefully about the causal processes underlying the phenomenon we’re studying. The big advantage of switching to a Bayesian perspective and GLMs, is that we treat all models under an unified framework. This means, we can focus on science and much less on the mathematical intricacies of advanced econometrics.</p>
 <div class="column-page-inset-right">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 2%">
-<col style="width: 31%">
-<col style="width: 28%">
-<col style="width: 36%">
+<col style="width: 3%">
+<col style="width: 21%">
+<col style="width: 41%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -517,63 +541,69 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>Introduction to Bayesian Statistics. Simple Models and Conjugate priors</td>
-<td>Beta-Binomial, Gamma-Poisson, Mixtures, Link functions, IG-Normal</td>
-<td>Elections, Football Goals, Coal Mining disaseetrs, Golf accuracy, Speed of Light</td>
+<td>Introduction to Bayesian Statistics</td>
+<td>Estimating proportions with Beta-Binomial, counts with Gamma-Poisson, defining priors</td>
+<td>Elections, Football Goals, Speed of Light</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Multiple Groups and Hierarchical Models</td>
-<td>Complete, No, Partial pooling</td>
-<td>A/B testing, baseball, review ranking, Radon, Starbucks wait times, Customer LTV</td>
+<td>Regression and the Bayesian Workflow</td>
+<td>DAGs of influence, categorical variables, assumptions, nonlinearities, splines, simulation</td>
+<td>E2E example on Howell’s study on height and weight. Summarizing estimands</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Regression and Bayesian Workflow</td>
-<td>Categorical variables, Results summarization, Modeling assumptions</td>
-<td>OCEAN, Education, height, waffles</td>
+<td>Confounds. Good and Bad controls</td>
+<td>Deep-dive on translating DAGs into statistical models. Adjustment set, backdoor criterion</td>
+<td>E2E example of Waffle houses and divorce rates. Spurious correlations</td>
 </tr>
 <tr class="even">
+<td>~</td>
+<td>Overfitting and Validation</td>
+<td>Prior and posterior checks, LOO-CV, LOO-PIT, regularization, robust regression, simulation-based calibration</td>
+<td>TBD</td>
+</tr>
+<tr class="odd">
 <td>4</td>
-<td>Regression and Model Critique</td>
-<td>Validation, Prior and Posterior Checks, LOO-CV, LOO-PIT, overfitting</td>
-<td>Golf example continued, Flight Delays</td>
+<td>Multiple Groups and Hierarchical Models</td>
+<td>Complete pooling, No pooling, Partial pooling. Post-stratification and non-representative samples</td>
+<td>Radon concentration, Starbucks wait times, Customer LTV, Elections polls</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>5</td>
-<td>Regression and Model Selection</td>
-<td>Variable selection</td>
-<td>McElreath example: height, waffles</td>
+<td>Binomial GLMs</td>
+<td>Link functions, Simpson’s paradox</td>
+<td>1973 Berkeley admissions</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>6</td>
-<td>Regression and nonlinearities</td>
-<td>Regularization, Variable selection, Splines, Robustness</td>
-<td>Applying the concepts on same examples as before. Missing Data</td>
+<td>Poisson GLMs</td>
+<td>Overdispersion, zero-inflated, Negative Binomial</td>
+<td>Campus Crime, Student absence</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>7</td>
-<td>Generalized Linear Models</td>
-<td>Logistic regression, Poisson and overdispersion</td>
-<td>Income, Voting, Campus Crime, Student absence</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Introduction to Hierarchical Models</td>
-<td>Hierarchical GLMs. Priors informed by prior knowledge</td>
-<td>Radon continued, Stage Anxiety, Plumonary Fibrosis</td>
+<td>Hierarchical GLMs</td>
+<td>Deep-dive into model formulation. Studies on stage anxiety and plumonary fibrosis.</td>
+<td>Basketball Fouls, AirBnb reviews, Seat Belts</td>
 </tr>
 <tr class="odd">
-<td>9</td>
-<td>Hierarchical Models and Longitudinal Data</td>
-<td>Stochastic processes. Challenges of Hierarchical time series</td>
-<td>Teenage drinking, sleep study, charter schools, Graduate Admissions</td>
+<td>8</td>
+<td>Longitudinal Data</td>
+<td>Challenges of multilevel time series</td>
+<td>Teenage drinking, sleep study</td>
 </tr>
 <tr class="even">
-<td>10</td>
-<td>Hierarchical Models case studies. BART</td>
-<td>Basketball Fouls, AirBnb reviews, Seat Belts</td>
-<td>Bike Shares, Agriculture and Seed Germination</td>
+<td>~</td>
+<td>Special topics</td>
+<td>BART and Gaussian Processes</td>
+<td>TBD</td>
+</tr>
+<tr class="odd">
+<td>~</td>
+<td>Special topics</td>
+<td>Missing data and measurement error</td>
+<td>TBD</td>
 </tr>
 </tbody>
 </table>
@@ -593,7 +623,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-For R (v4.3.1)
+For R (v4.4.2)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -625,7 +655,7 @@ For Python (v3.10.x)
 <li>VScode as our main IDE</li>
 <li>Jupyter Notebooks or Quarto for literate programming</li>
 <li>git &amp; github</li>
-<li>conda and poetry for managing environments</li>
+<li>uv (recommended) or conda for managing environments</li>
 <li>database: duckdb (analytical, in-process), sqlite (transactional, in-process)</li>
 <li>data wrangling: pandas 2.0, pypolars (bigger data), arrow</li>
 <li>interactive applications: streamlit, shiny, or dash</li>
