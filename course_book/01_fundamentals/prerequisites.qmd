@@ -23,7 +23,7 @@ It was very frustrating for me, because it wasn't clear how they fit together, w
 
 An important question is what works well in practice and why. On the other hand, what is intellectually fascinating, but not at all straightforward to apply. What is a **minimal** or most powerful **set of the prerequisites** that you need? 
 
-Let's draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned form the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects -- the inspirations and tools are quite carefully picked. 
+Let's draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned from the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects -- the inspirations and tools are quite carefully picked. 
 :::
 
 
@@ -81,7 +81,7 @@ Note that this map is a "model", a simplification. It is overwhelming and imposs
 
 ## Fundamentals
 
-Note that all the subjects below can be studied in various levels of depth and mathematical rigor. Where do you stop heavily depends on what you want to do in your carreer.
+Note that all subjects below can be studied in various levels of depth and mathematical rigor. Where do you stop heavily depends on what you want to do in your carreer.
 
 
 - **Linear Algebra** is a language of `data`. The vast majority of models and training algorithms can be reduced to operations on matrices. Therefore, it's not a coincidence that LinAlg is almost the only tool we have in order to take these models and implement them in code, on a computer. 
@@ -114,11 +114,11 @@ Here is an explanation for why other subjects are needed -- which students from 
 
 
 - In this course and in practice, we care more about **business economics**. It's a very different beast from theoretical ideas in macroeconomics (ISLM, DSGE type of models) or microeconomic utilitarianism. 
-- By business economics, we mean marketing, management, corporate finance [^corpfin], decision theory, supply chain, and logistics. You might need to know how to "read" a financial statement, but you definitely need to know your subdomain! [^mehrling]
+- By business economics, we mean marketing, management, corporate finance [^corpfin], decision theory, supply chain, and logistics. You might not need to know how to "read" a financial statement, but you definitely need to know your subdomain! [^mehrling]
 - What you have to know about marketing, especially if you are skeptical like me, is that it became innovative, mathematical, rigorous and data-driven. Look at any marketing journal: how much econometrics and ML models are in there. [^business-econ]
 - Moreover, when you combine marketing with **behavioral economics** and psychology, it introduces another layer of nuance and understanding over decision-making.
 - When we make decisions, we like to think of ourselfs as objective, but we have lots of **biases** and blind spots which prevent us to see the reality clearly. 
-  - We often find patterns and regularities which are just noise, not causal. 
+  - We often find patterns and regularities which are just noise or not causal. 
   - So, the usefulness of this kind of domain knowledge from economics about human behavior helps us to be wiser (and practice active open-mindedness)
   - That is, to prevent self-deception and self-sabotage towards achieving the stated goals and objectives -- and even evaluate if the goals chosen well
 
