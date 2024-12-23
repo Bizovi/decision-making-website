@@ -1,10 +1,9 @@
 ---
+title: "Why did you study all of that"
 format:
   html:
     toc-location: left
 ---
-
-## Why did you study all of that?
 
 Why did we have to go through all those excruciating months and years doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics? What about computer science and low-level programming in C? What about more philosophically inclined subjects?
 

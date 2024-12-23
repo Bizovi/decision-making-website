@@ -45,6 +45,8 @@ website:
         text: "iii. Course Philosophy"
       - text: "iv. Why study all of that?"
         href: 01_fundamentals/prerequisites.qmd
+      - text: "v. On scientific process"
+        href: sci_process.qmd
       - text: "-----"
       - section: "1. Business School for Data Scientists"
         href: 01_fundamentals/0_study_guide.qmd

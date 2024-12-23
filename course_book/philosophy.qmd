@@ -1,11 +1,10 @@
 ---
+title: "Cybernetics done right"
 format:
   html:
     toc-location: left
 ---
 
-
-## Cybernetics done right
 
 The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in complex adaptive systems (CAS). It is what was originally meant by AI, before symbolic AI, expert systems, and deep learning. The way I think of data science -- is in the context of those CAS. This perspective is powerful, but rarely taught nowadays. Systems dynamics is an example of such a sub-field, which is very useful, for example, in strategic management.
 

@@ -1,11 +1,11 @@
 ---
+title: "Are you ready for an adventure?"
 format:
   html:
     toc-location: left
 lang: en
 ---
 
-## Are you ready for an adventure?
 
 There is one question I lose sleep over: "How should data science be taught?". The vision and roadmap outlined on this website emerges out of:
 
@@ -151,7 +151,7 @@ Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision
 :::
 
 
-### Prerequisites
+## Prerequisites and background
 
 
 I think this course will bring most value to masters' students, professionals, and students in their last year of BSc -- precisely because of presumed exposure or competence in the following subjects:
@@ -168,58 +168,86 @@ I think this course will bring most value to masters' students, professionals, a
   - ["R for Data Science"](https://r4ds.had.co.nz/) by Hadley Wickham 
   - ["Python for Data Analysis"](https://wesmckinney.com/book/) by Wes McKinney.
   - Of course, the more experience you have in one or both, the better
-- This is completely optional, but if you have to deal with financial statements at your job or have an interest in finance, I strongly suggest you check out A. Damodaran's [crash course](https://youtube.com/playlist?list=PLUkh9m2BorqmKaLrNBjKtFDhpdFdi8f7C&si=UjEkr1_smeILJ8ZF).
+- This is completely optional, but if you have to deal with financial statements at your job or have an interest in finance, I strongly suggest you check out A. Damodaran's [crash course](https://youtube.com/playlist?list=PLUkh9m2BorqmKaLrNBjKtFDhpdFdi8f7C&si=UjEkr1_smeILJ8ZF) on accounting and corporate finance.
 
-### Module 1: Business School for Data Scientists
+Besides the technical prerequisites, there is a list of concepts and ideas from research design, which can be helpful in practice, but are often not part of statistical curriculum. It is worth to invest a bit of time to get familiar with the following:
 
-I always start with an exploration of decisions that businesses face across many industries and use-cases. Then, I clarify what does AI[^dmuu] mean and where does it add value, what is the difference between Analytics, Statistics, and ML. 
+::: {.column-margin}
+Taken in isolation, topics like measurement and sampling are very abstract. Therefore, they have to be integrated into the case-studies whenever they bring added value. This is not easy, so .. work in progress
+:::
 
-[^dmuu]: Remember "Decision-Making Under Uncertainty at Scale"
+- **Measurement** is especially relevant and tricky in social science. Sometimes, we do not measure what we think we do (underlying construct). For measuring abstract things like happiness or personality, we need to dive into scales, instrumentation, operationalization, validity, and reliability. 
+- **Sampling** isn't limited to simple random samples, as these rarely occur in practice. We need to be aware what tools exist so that we can generalize to the population of interest. For example, weighting and post-stratification.
+- **Threats to validity**, including confounds, artifacts, and biases. On the one hand we use statistics as a guardrail against foolishness, on the other hand there a lot of the same problems that can compromise our study.
+- **Reproducible research** and literate programming has become a de-facto standard in the data science world. We have amazing tools right now, but it's still not easy to achieve end-to-end reproducibility and automation.
+- **Academic writing** is an important skill, even in businesses. Writing is both a way of thinking, problem-solving, and communication. In my opinion, the structure of a scientific paper is very helpful to crystalize your ideas.
 
-In this module we focus on understanding the business domain, the **problem space**, learn how to ask good statistical questions in context of firm's strategy. An essential aid in this pursuit are different **processes and methodologies** that get us from **question to insight**, action and outcomes. However, at this point we lack the actual modeling know-how, which is a good segway to the next module. 
+Last, but not least, there is value in understanding the **scientific process**, in its broad sense. In section v., I adapt it to the context of data science in businesses and show how most processes and workflows like CRISP-DM,  Tuckey's EDA are a part of it.
+
+
+
+## Module 1: Business School for Data Scientists
+
+Remember the advice "think of yourself as a business person with superpowers"? It means that as a data scientist, it's helpful to think question, action, and outcome first -- and only then about models. In other words, we have to deeply understand our client's business domain and **problem space**.  The best way to achieve that, is experience and collaboration on the job. Therefore, my role is to tell as many stories from the trenches, with deep-dives in our case-studies, so that you know what to expect in practice.
+
+::: {.column-margin}
+Often, there is a disconnect between business economics, analytics classes and ML / stats / data science. We can't expect them to be coherent by defaut, but we can carefully design those synergies
+:::
+
+A good starting point is thinking about the purpose of a business from different perspectives.  Then, identify key decisions that firms have to make across many industries and domains. This exercise will show us how widespread are data science applications and use-cases, even in places we don't suspect. 
+
+At this point it is important to clarify what we mean by AI, ML, analytics, data mining, statistics and when is it appropriate to choose one approach over another. You'll be surprised, but statistics is the hardest to define and often misunderstood, because of its inferential, experimental, and causal facets.
+
+Next, we'll learn a few frameworks for understanding a firm's performance evolution, value chain, strategy and tie them all together in an analyst's workflow. These tools will help us ask good (statistical) questions and increase the chances that our modeling efforts result in actionable insights.  
+
+::: {.column-margin} 
+In time, I'll add many more case-studies from advertisement, promotion, merchandising, engagement, CRM, conversion rate optimization, demand planning, supply chain, etc.
+:::
+
+An essential aid in this pursuit of improving decision-making at scale, are different processes and **methodologies** for machine learning, experiment design, causal inference, and exploratory data analysis. It is important to mention that methodology is not a recipe, but way of structuring our work, a set of guiding principles and constraints over the space of all the things that we could do in analysis. Don't think of these constraints as limiting your freedom, but as helpful allies in effective problem problem solving.
 
 > "What is methodology good for? Sounds like I could use that time to learn ML"
 
-These methodolgical fundamentals are not "just theory", it is what will make or break projects in practice. There are so many pitfalls in ML and statistics that we cannot afford to do it ad-hoc. In contrast, taking a systematic approach will dramatically increase our chances of succeess.
+These methodolgical fundamentals are not "just theory", it is what will make or break projects in practice. There are so many pitfalls in ML and statistics that we cannot afford to do it ad-hoc.
 
 ::: {.callout-note}
-## Newsvendor problem, Price Optimization, Learning Problem
+## Newsvendor problem, Demand planning, Price optimization
 
-If you worry that the business school is too conceptual -- don't despair, as we'll have three very **techical lectures**, involving math and programming. 
+If you worry that the business school is too conceptual -- don't despair, as we'll have a few hands-on, technical lectures -- involving math, modeling, and programming. 
 
 - I use the newsvendor problem as a starting point in modeling for demand planning
 - The pricing optimization as a starting point towards revenue management
-- The Learning Problem highlights and formalizes what is at the core of Machine Learning -- in what conditions can we learn from data, generalize
 :::
 
 
 
-### Module 2: Probability and Statistics
+## Module 2: Probability and Statistics
 
-If we view statistics as **changing our minds and actions in the face of evidence** -- the good ol' t-test will shine in a new light. It will become clear why those models and procedures were invented in the first place.
+I think that most students will benefit from re-framing the fundamentals of probability and statistics. A lot of mistakes in practice come from a fundamental misunderstanding of the nature of statistical inference. If we view statistics as **changing our minds and actions in the face of evidence** -- the good ol' t-test will shine in a new light. It will become clear why those models and procedures were invented in the first place.
 
 ::: {.column-margin}
-Some lectures are heavier in mathematics, especially when talking about estimators and their properties. We'll use stories and simulations as much as possible to boost our intuition.
-
+Another benefit of revising these fundamentals is that we can develop an appreciation for the stories and ideas behind these methods. Also, it can be fun.
 :::
 
-We will go far with simple, elegant models; appreciate the importance of asking the right questions, persuasive communication, and storytelling with data. That's why it's essential to take every tool and **apply** it in the context of an appropriate use-case/application -- meaning, **we'll code a lot**. You will not be puzzled anymore where those wild distributions (Poisson, Hypergeometric, Weibull, ...) come from (what are their stories) and where are they used.
+We start with combinatorics and urn models, probability trees, distributions, conditioning, laws of large numbers, central limit theorem, Bayes' rule. For each one of these topics, I present the story, use-case, and hands-on simulations to show that even very simple tools can be useful.
 
-The module culminates in practical aspects of **A/B testing**, sample size justification and **power analysis**, experiment design, and a conversation about the causes and remedies to the **replication crisis**. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, Causal Inference.
+Perhaps the most important lecture is also very abstract, where I formally define what is probability, a random variable, what is the key difference between probability and statistics. Understanding what is collectivity, statistical population, sample; estimands, estimators, estimates; and formally, what is a statistical model -- will give you the right terminology and set you on a good path towards more advanced models.
+
+The module culminates in practical aspects of experiment design and A/B testing, sample size justification, **power analysis**, and a conversation about the causes and remedies to the replication crisis. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, and Causal Inference.
 
 
 ::: {.callout-note}
 ## The art of formulating a hypothesis
 
-In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks -- especially when it comes to pricing and recommender systems. That's not your stats 101!
+In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks.
 :::
 
 
-**My preferred sequence** is to go in parallel with the "business school" and stats, since there is a great synergy. The prior focuses on the **process** (over content) of analytics, ML, statistics. The prior focuses on the **problem** and not so much on solutions.
+My preferred sequence is to go in parallel with the "business school" and stats, since there is a great synergy. The prior focuses on the **process** (over content) of analytics, ML, statistics. The prior focuses on the **problem** and not so much on solutions.
 
 
 
-### Module 3: Applied Bayesian Statistics
+## Module 3: Applied Bayesian Statistics
 
 Once we have a confident grasp of the fundamentals, we continue on the path of **Applied Bayesian Statistics**. It is an extremely flexible and "composable" approach to building explainable models of increasing complexity and realism. 
 
