@@ -1,5 +1,10 @@
 ---
 title: "Are you ready for an adventure?"
+author:
+  - name: Mihai Bizovi
+    id: mb
+    degrees: 
+    - "VP of Decision Science"
 format:
   html:
     toc-location: left
@@ -7,22 +12,22 @@ lang: en
 ---
 
 
-There is one question I lose sleep over: "How should data science be taught?". The vision and roadmap outlined on this website emerges out of:
+There is one question I lose sleep over: "How should data science be taught?" The vision and roadmap outlined on this website emerges out of:
 
 ::: {.column-margin}
-**Mihai Bizovi** | VP of Decision Science \@AdoreMe. As the author of the course (a.k.a book) -- all views and mistakes are entirely my own and do not represent any organization. 
+As the author of the course (book) -- all views and mistakes are entirely my own and do not represent any organization. 
 :::
 
 
-- my industry experience as a statistician, ML engineer, then leader 
+- my industry experience as a data scientist, ML engineer, then leader 
 - teaching to creative, motivated, but confused students
 - my frustrations about the shortcomings of statistical education
 
 I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop **valuable skills**, and become more **effective at problem-solving**. To achieve this, we need to master "[the fundamentals]{.underline}."
 
-I believe that improving **decision-making** is the reason why we practice "AI".^[Don't worry, we will clarify all the loaded terms, like AI, Cybernetics, Data Science, Analytics, ML, Data Mining] The danger when a program lacks unified vision / coordinated roadmap, is that we miss the interdisciplinary, big picture. Local optimization, global valley. We forget [the why]{.underline}.
+I believe that improving **decision-making** is the reason why we practice "AI".^[We will have to clarify all the loaded terms like AI, Cybernetics, Data Science, Analytics, ML, and Data Mining] The danger when a program lacks unified vision and a coordinated roadmap, is that we miss the interdisciplinary, big picture. Local optimization, global valley. We forget the why.
 
-The commitment needed to get started in the field is so high, that a student is guaranteed to get lost in details, get overwhelmed by all those 800 page hardcore textbooks. On the other hand, seemingly pragmatic, cookbook and bootcamp-style approaches miss depth, nuance, key theoretical ideas, and methodological aspects. 
+The commitment needed to get started in the field is so high, that a student is guaranteed to get lost in details, be overwhelmed by all those 800 page hardcore textbooks. On the other hand, seemingly pragmatic, cookbook and bootcamp-style approaches miss depth, nuance, key theoretical ideas, and methodological aspects. 
 
 
 ## Decision-Making for the Brave and True {.unnumbered}
@@ -55,25 +60,28 @@ In my opinion, junior data scientists and ML practitioners a few years into thei
 :::
 
 
-The course is challenging due to its breadth (across disciplines) and depth (starting from fundamentals).^[Of course, you can just listen/read and extract valuable insights, but the course ultimately fails without deep self-study.] In service of understanding, it becomes conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Keep in mind that:
+The course is challenging due to its breadth across disciplines and depth (starting from fundamentals).^[Of course, you can just listen, read and extract valuable insights, but the course ultimately fails without deep self-study.] In service of understanding, it becomes conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Keep in mind that:
 
 - It is NOT a theoretical course, nor a replacement for probability, mathematical statistics, and other prerequisites. There are two possibilities:
   - You already had those courses and will look at them with a fresh perspective 
-  - Otherwise, treat it as learning roadmap of the most relevant ideas. 
+  - Otherwise, treat it as learning roadmap of the most relevant ideas
 - At the same time, this is NOT a bootcamp, nor a replacement for learning programming in Python/R/SQL for data science
   - Therefore, it is not enough by itself to land you a job
   - For that, there are many wonderful resources for practice and study
 
-Think of it as a skeleton, a **conceptual frame**[^index-1] which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea years after, with greater wisdom and skill -- to unlock its real power.
+Think of it as a skeleton, a **conceptual frame** which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea years later, with greater wisdom and skill -- to unlock its real power. I think that we should embrace the fact that learning is not linear. 
 
-[^index-1]: This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/) when it comes to ML, and [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/) or [Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/) on Bayesian Statistics / Causal Inference.
+::: {.column-margin}
+This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/) when it comes to ML, and [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/) or [Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/) on Bayesian Statistics / Causal Inference.
+:::
+
 
 ::: {.callout-warning}
 ## Overwhelming amount of content. What is best for learning?
 
-Given the over-abundance of learning resources, it is too much to sift through a hundred pages of Coursera in the data science section, books, and tutorials to find optimal ones. Inevitably, there is so much bullshit and repetition.
+Given the over-abundance of learning resources, it is too much to sift through a hundred pages of Coursera in the data science section, books, and tutorials to find optimal ones. There is a lot of great content, but it can be hard to decide where to start and our time is very limited. Even worse, poor quality resources can do more damage than good. 
 
-The [roadmap provided here](01_fundamentals/roadmap.qmd) should help you navigate it and find the shortest path towards developing your skills and better decisions in your firm. Pick a module you're passionate about, for example, Bayesian Statistics and look in the [resources](references.qmd) page for a guide where to start reading and practicing.
+The roadmap provided here should help you navigate the landscape of data science and find the shortest path towards developing your skills and better decisions in your firm. Pick a topic you're passionate about, for example, generalized linear models and look in the study guide for tips on where to read and how to practice.
 :::
 
 ## Why should you care?
