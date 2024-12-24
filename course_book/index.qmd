@@ -84,6 +84,14 @@ Given the over-abundance of learning resources, it is too much to sift through a
 The roadmap provided here should help you navigate the landscape of data science and find the shortest path towards developing your skills and better decisions in your firm. Pick a topic you're passionate about, for example, generalized linear models and look in the study guide for tips on where to read and how to practice.
 :::
 
+I have to clarify what I mean by contemplating in the library and  engineering in the trenches. In contemplation, we try to see how fundamental theoretical ideas translate into real-world stories and solutions to practical problems. We also focus on understanding the problem space in various domains, our clients' needs and challenges -- which enables us to ask the right questions, formulate the problem correctly, then pick the right model and methodology for the task. Last, but not least, we'll gain insights into pitfalls and common mistakes to avoid.
+
+::: {.column-margin}
+During the course, I present stories and toy problems which motivate probability distributions, LLN/CLT, Bayes' rule, sampling, measurement, etc. This is a way to highlight the **practical relevance** of otherwise dry theoretical ideas
+:::
+
+On the other hand, engineering in the trenches is a skill. The only way to become better at modeling and data analysis is hands-on practice. It is not sufficient to know about the modeling workflow and methodology. In practice, we have to develop pragmatic solutions and test, implement our ideas in code. If we are to increase our chances of success, we'll also have to follow best practices of reproducible research, automation, and model operationalization.
+
 ## Why should you care?
 
 You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, Deep Reinforcement Learning models are beating people at Go, Dota, Chess, solving almost-impossible protein-folding problems. The world is awash in the newest ChatGPT and Midjourney frenzy, with new developments every month and week. 
