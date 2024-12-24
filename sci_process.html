@@ -431,6 +431,26 @@ Scientific process in the broad sense
 <div class="no-row-height column-margin column-container"><div class="">
 <p>This perspective is pretty standard in AI research. We’ll see later in the course how we could also use it to tease out different <strong>sources of uncertainty</strong>.</p>
 </div></div><p>I called this “element” in the bigger process an “agent-arena” relation, because we usually don’t consider the whole firm, but our framing depends on what point of view in the value chain we take. For example, the POW of a team responsible for conversion-rate optimization will have its own objectives, decisions, and data they care about <span class="math inline">\((\mathcal{S}, \mathcal{O}, \mathcal{A} | {POW} )\)</span>. Of course, there is a concern of alignment, of local optimization which results in suboptimal global outcomes – but this topic is outside the scope of our course.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sources of uncertainty
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In their book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a>, M. Kochenderfer, T. Wheeler, and K. Wray make a helpful classification of the sources of uncertainty, based on agent-environment interactions:</p>
+<ul>
+<li><strong>Outcome uncertainty</strong>, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can’t take everything into account when making a decision – it becomes combinatorialy explosive.</li>
+<li><strong>Model uncertainty</strong> suggests we can’t be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.</li>
+<li><strong>State uncertainty</strong> means that the true state of the environment is uncertain, everything changes and is in flux. This is why statisticians argue we always work with samples</li>
+<li><strong>Interaction uncertainty</strong>, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.</li>
+</ul>
+<p>We will focus very little the last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems, and graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
+</div>
+</div>
 </section>
 <section id="building-and-testing-ideas" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="building-and-testing-ideas">Building and testing ideas</h2>
