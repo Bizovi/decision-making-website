@@ -66,6 +66,23 @@ This perspective is pretty standard in AI research. We'll see later in the cours
 I called this "element" in the bigger process an "agent-arena" relation, because we usually don't consider the whole firm, but our framing depends on what point of view in the value chain we take. For example, the POW of a team responsible for conversion-rate optimization will have its own objectives, decisions, and data they care about $(\mathcal{S}, \mathcal{O}, \mathcal{A} | {POW} )$. Of course, there is a concern of alignment, of local optimization which results in suboptimal global outcomes -- but this topic is outside the scope of our course.
 
 
+::: {.callout-note}
+## Sources of uncertainty
+
+In their book [Algorithms for Decision Making, MIT Press - 2022](https://algorithmsbook.com/), M. Kochenderfer, T. Wheeler, and K. Wray make a helpful classification of the sources of uncertainty, based on agent-environment interactions:
+
+
+- **Outcome uncertainty**, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can't take everything into account when making a decision -- it becomes combinatorialy explosive.
+- **Model uncertainty** suggests we can't be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.
+- **State uncertainty** means that the true state of the environment is uncertain, everything changes and is in flux. This is why statisticians argue we always work with samples
+- **Interaction uncertainty**, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.
+
+We will focus very little the last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems, and graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.
+
+::: 
+
+
+
 ## Building and testing ideas
 
 At the core of scientific process is experimentation, data collection, and testing of ideas --  which results in evidence with respect to a hypothesis or theoretical prediction. For our purposes, we consider experimentation in its large sense, not just randomized control trials and highly-controlled experiments. By including statistical models, simulation, ML models; software systems, prototypes, and features -- we can benefit from this self-correcting feedback loop not just in science, but in decision-making. 
