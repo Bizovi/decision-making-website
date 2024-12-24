@@ -6,26 +6,15 @@ format:
 lang: en
 ---
 
-<!-- 
-::: {.column-margin} 
-The way many curricula are designed, produces three profiles of professionals in the industry: 
+People doing data mining, analytics, ML, and applied statistics recognize the importance of methodology. They design processes and workflows for their domain of expertise, which is indubitably helpful. However, it is confusing for a beginner to see so many of them -- as I show on the margin. Even worse, it is hard to decide which one to use.
 
-- the applied mathematician, from programs with a heavy focus on maths
-- the data-saavy computer scientist, from programs with a focus on ML/AI 
-- the business-saavy analyst, from programs with a focus on economics
-:::
-
-
-
-## A proliferation of processes for data science
-
-People doing data mining (analytics), ML, and applied statistics, all recognize the importance of following a process. They design processes and workflows for their domain of expertise, which is indubitably helpful. However, it is confusing for a beginner to see so many of them -- as I show on the margin.
+> I claim that an adaptation of the [scientific process]{.underline} can place each of these processes in its appropriate context, while including actions and outcomes
 
 ::: {.column-margin}
 - Data Mining, ML, and Analytics:
-    - CRISP-DM (cross-industry process for data mining)
-    - Tuckey's exploratory data Analysis
-    - Hadley's Wickham's tidyverse process
+    - CRISP-DM, KDD
+    - Tuckey's EDA
+    - Hadley's Wickham's tidyverse 
     - C. Kozyrkov's 12 steps of ML
     - Andrew Ng's error analysis
 - Experiment design and A/B testing, besides steps given in a stat101 class
@@ -38,6 +27,20 @@ People doing data mining (analytics), ML, and applied statistics, all recognize 
 - Scientific process in its standard formulation
 :::
 
+![The tweak to the scientific process consists in viewing the firm from the point of view of question / problem at hand as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. These tweaks shift the focus to actions and outcomes](img/sci-process.png) 
+
+
+<!-- 
+::: {.column-margin} 
+The way many curricula are designed, produces three profiles of professionals in the industry: 
+
+- the applied mathematician, from programs with a heavy focus on maths
+- the data-saavy computer scientist, from programs with a focus on ML/AI 
+- the business-saavy analyst, from programs with a focus on economics
+:::
+ -->
+
+
 For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I'm increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: "I decided to unify 10 existing standards -- now we have 11".
 
 ::: {.callout-tip}
@@ -47,20 +50,81 @@ A natural question to ask is: "What is the mechanism which could generate all th
 I don't think this is sufficient for us, nor that we can force other methodologies onto this template. We need a few adaptations to our field and a different structural-functional organization. The [diagram](https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/) from Berkeley's "Understanding Science 101" is a big step in the right direction.
 :::
 
-## Scientific process, reinterpreted
 
-Let's take the example of a firm and think of it as a complex adaptive system or much simpler, as an agent. Hopefully, the firm has formulated its mission, vision, has articulated a rough strategy and has set reasonable objectives and goals. People will try to make decisions and act in such a way to increase performance, generate good outcomes which are aligned with its strategy. Value added, IN - (Process) - OUT (products, services)
+## Action and Agent-Arena
 
-The firm gathers data about its current and past state, interacts with the environment, and its actions influence the environment. Also, the firms observes this environment. It also interacts with other agents in the network (be it customers, suppliers, manufacturers, government, etc). Let's call the first element an "Agent-Arena" relationship. Depending on the point of view, we can talk about different Agent-Arena relationsihps, for example, from a team or department or function in value chain perspective. We don't have to model the whole thing here -- just what is of interest to us.
+In order to make the diagram more specific, let's take the example of a firm and think of it as an agent. At this level of analysis, we don't need to consider the full implications of a complex adaptive system. Hopefully, the firm has formulated its mission, vision, has articulated a rough strategy to overcome obstacles and has set reasonable objectives. 
 
-At the core of scientific process is testing ideas. We will extend the notion of the experiment to include building prototypes, products, features, systems, including ML / predictive ones. Of course, we keep here the data collection (measurement, sampling), and building statistical models. But the essence stays the same: we test our expectations against the actual outcomes. This generalization means that our ML model prototype can be used inside the firm to make decisions. Also, the data comes from the agent-arena space (that is, our firm, the real world).
+Employees and leadership of the firm will try to make good decisions, develop capabilities in order to increase performance. In a happy and lucky case, these actions are coordinated, aligned with strategy and generate desired outcomes. Besides performance, we can also consider an increase in value added brought by improvements in its processes, products, and services.
 
-Another key part of the scientific process is discovering, explaining, developing theories. Any method will do, from observation to data mining, pattern recognition or just sheer experience in the domain / field. More rigorously, it's scientific theories, and causal models associated with them. Here we ask questions, formulate hypotheses, justify constructs. Much of the inspiration comes from the real life, problems, challenges and opportunities of the firm. These ideas, hypotheses are going to be tested and refined based on the outcomes of our experiments. Note that exploratory data analysis can also be model-driven.
+The firm gathers data about its current and past state $\{\mathcal{S}_t\}_{1:t}$, observes the environment $\mathbfcal{O}_t$, and its actions $\mathcal{A}_t$ influence the environment, and vice-versa. It also interacts with other agents in the network (be it customers, suppliers, manufacturers, government, the board, stakeholders, etc). 
 
-The last part is the collaboration and community: our colleagues, decision-makers, domain experts, stakeholders. They inform the firm's strategy, policies, interventions. The ideas which are tested have to be communicated. We also get feedback from them, guardrails, support, etc. Their experience is also a body of knowledge, an inspiration for the next idea and hypothesis.
+::: {.column-margin}
+This perspective is pretty standard in AI research. We'll see later in the course how we could also use it to tease out different **sources of uncertainty**.
+:::
 
-This graph can generate all the methodologies:
-- e.g. McElreath's causal inference - between estimands / construct, simulations, process models.
-- e.g. The scientific process formulated as you know it
-- crisp-dm
-- cassie's 12 steps to ML -->
+I called this "element" in the bigger process an "agent-arena" relation, because we usually don't consider the whole firm, but our framing depends on what point of view in the value chain we take. For example, the POW of a team responsible for conversion-rate optimization will have its own objectives, decisions, and data they care about $(\mathcal{S}, \mathcal{O}, \mathcal{A} | {POW} )$. Of course, there is a concern of alignment, of local optimization which results in suboptimal global outcomes -- but this topic is outside the scope of our course.
+
+
+## Building and testing ideas
+
+At the core of scientific process is experimentation, data collection, and testing of ideas --  which results in evidence with respect to a hypothesis or theoretical prediction. For our purposes, we consider experimentation in its large sense, not just randomized control trials and highly-controlled experiments. By including statistical models, simulation, ML models; software systems, prototypes, and features -- we can benefit from this self-correcting feedback loop not just in science, but in decision-making. 
+
+::: {.column-margin}
+Let's consider Agile principles and Shape-Up methodology for software development. I think that they fit well into our framework when we'll sketch out the two remaining pieces
+:::
+
+This means that inferential and causal statistical models are equally as important ways to test ideas. Moreover, the ultimate test is whether the recommended decisions based on modeling insights work well in practice. Meaning, we get better outcomes in the agent-arena, our problem space. Let's see how testing of ideas interacts with other elements of our diagram:
+
+- Agent-Arena
+    - our insights and recommendations can help inform actions
+    - after operationalization, we get feedback on how well it worked
+- Collaborators
+    - we have to communicate our insights clearly and persuasively
+    - other people give feedback about the analysis / results and best-practices about how should we test our ideas
+- Discovery and Explanation
+    - ideally, we don't test a vague hypothesis, but a well-thought causal model
+    - our test results in stronger or weaker evidence for/against the explanation
+    - we can use simulation to validate that our statistical models work in principle, meaning we recover the estimand (unobservable quantity of interest)
+
+Since the data comes from the real world, we will have to consider very carefully how it was collected and measured. This means that when we build models, we might need to learn new tools to correct for biased samples, non-response, missing data, measurement error, etc. 
+
+::: {.column-margin}
+For some research questions, measurement and sampling is a complicated problem. This is why I'm trying to integrate them in this course. 
+:::
+
+## Thinking, discovery and explainations
+
+One can make a case that wisdom starts in wonder, and science with curiosity. For a long time, statistics classes were taking hypotheses and theories as given. Our field has caught up to scientists, in the sense of openness in how we gather inspiration. 
+
+::: {.column-margin}
+Many books have been written about how theories are being developed, the role of curiosity, inspiration, observation, previous theories, evidence, etc.
+:::
+
+Model-driven exploratory data analysis an pattern recognition have become acceptable ways to find inspiration and formulate hypotheses. I would argue that for most problems I encountered, this process was essential and this is the way in which a good analyst is extremely valuable. Note that with this power comes a lot of responsibility to not fool ourselfs, hence we'll need discipline and guardrails.
+
+You will probably agree that asking a good question and formulating, framing a problem well gets us "halfway" towards a solution. We can approach a research design data-first or question-first, but in practice it's almost always a mix.  
+
+Speaking about business decisions, what I mean by theory is our current knowledge and understanding of the problem and domain. Thus, don't get fooled by claims of "theory-free" AI and ML. The mere fact of selecting what to measure and what features to include in the model, involves human understanding and a judgement of relevance.
+
+In the course we will try our best to ensure that statistical models are answering the right quantitative question, which we call an estimand. It might not be obvious why we worry about the underlying, unobservable, theoretical constructs and ways we could measure them. After all, we're not doing quantitative psychology. 
+
+In my experience, sometimes it comes up explicitly and thinking this way is very helpful, for example: willingness to pay, customer satisfaction, engagement, brand loyalty and awareness, who can be convinced to buy via promotions, email fatigure, etc.  
+
+
+## Steering and collaboration 
+
+Modern science, and science in general doesn't happen in isolation. The same is true in firms and almost any other domain. I will not spill much ink in trying to convince you of the power of collaboration, since almost any problem which is complex enough can't be tackled by a single individual.
+
+In the context of this course, we're thinking of collaboration with clients, stakeholders, experts, engineers, and decision-makers. A few outcomes of this collaboration are the strategy we mentioned at the beginning, policies, interventions, best-practices, feedback, and review. Collaboration informs what should we do, prioritize, build and test, and hypothesise / think about.
+
+::: {.callout-tip}
+## Experiment design, causal inference, and machine learning
+
+In the course you will see processes and workflows for experiment design (C. Kozyrkov's 12 steps of statistics), causal inference (R. McElreath's owls and DAGs), and machine learning (C. Kozyrkov's 12 steps of ML, Google's People+AI).
+
+Don't try to memorize them, but go back to this diagram of the scientific process and locate different steps of the workflow. For example, leaving aside a test dataset in machine learning is a way to assess and approximate how well a trained and chosen model generalizes beyond training data. 
+
+Simulating synthetic data from a causal process model in order to validate if a statistical model can draw correct inferences about the estimand can be considered an experiment, although, one which lives in pure theory, until we apply it to real data. This iterative process lives at the intersection of asking questions, building theories and testing ideas.
+
+:::
