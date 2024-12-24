@@ -91,14 +91,47 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Scientific process is all you need – Decision Science Course">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://course.economic-cybernetics.com/img/sci-process.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
+<meta property="og:image:height" content="1283">
+<meta property="og:image:width" content="1768">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -294,14 +327,23 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#action-and-agent-arena" id="toc-action-and-agent-arena" class="nav-link active" data-scroll-target="#action-and-agent-arena">Action and Agent-Arena</a></li>
+  <li><a href="#building-and-testing-ideas" id="toc-building-and-testing-ideas" class="nav-link" data-scroll-target="#building-and-testing-ideas">Building and testing ideas</a></li>
+  <li><a href="#thinking-discovery-and-explainations" id="toc-thinking-discovery-and-explainations" class="nav-link" data-scroll-target="#thinking-discovery-and-explainations">Thinking, discovery and explainations</a></li>
+  <li><a href="#steering-and-collaboration" id="toc-steering-and-collaboration" class="nav-link" data-scroll-target="#steering-and-collaboration">Steering and collaboration</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -310,7 +352,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -322,6 +364,40 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </header>
 
 
+<p>People doing data mining, analytics, ML, and applied statistics recognize the importance of methodology. They design processes and workflows for their domain of expertise, which is indubitably helpful. However, it is confusing for a beginner to see so many of them – as I show on the margin. Even worse, it is hard to decide which one to use.</p>
+<blockquote class="blockquote">
+<p>I claim that an adaptation of the <u>scientific process</u> can place each of these processes in its appropriate context, while including actions and outcomes</p>
+</blockquote>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<ul>
+<li>Data Mining, ML, and Analytics:
+<ul>
+<li>CRISP-DM, KDD</li>
+<li>Tuckey’s EDA</li>
+<li>Hadley’s Wickham’s tidyverse</li>
+<li>C. Kozyrkov’s 12 steps of ML</li>
+<li>Andrew Ng’s error analysis</li>
+</ul></li>
+<li>Experiment design and A/B testing, besides steps given in a stat101 class
+<ul>
+<li>C. Kozyrkov’s 12 steps of statistics</li>
+<li>A. Gelman’s workflow, described in “Regression and other stories”</li>
+</ul></li>
+<li>Statistical modeling and bayesian approaches:
+<ul>
+<li>A. Fleischhacker’s business analyst’s workflow</li>
+<li>R. Alexander’s process for telling stories with data</li>
+<li>R. McElreath’s “drawing an owl”</li>
+</ul></li>
+<li>Scientific process in its standard formulation</li>
+</ul>
+</div></div><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sci-process.png" class="img-fluid figure-img"></p>
+<figcaption>The tweak to the scientific process consists in viewing the firm from the point of view of question / problem at hand as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. These tweaks shift the focus to actions and outcomes</figcaption>
+</figure>
+</div>
 <!-- 
 ::: {.column-margin} 
 The way many curricula are designed, produces three profiles of professionals in the industry: 
@@ -330,58 +406,96 @@ The way many curricula are designed, produces three profiles of professionals in
 - the data-saavy computer scientist, from programs with a focus on ML/AI 
 - the business-saavy analyst, from programs with a focus on economics
 :::
+ -->
+<p>For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I’m increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: “I decided to unify 10 existing standards – now we have 11”.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Scientific process in the broad sense
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A natural question to ask is: “What is the mechanism which could generate all these processes?” You’ve probably seen the scientific method roughly described as: Observations - Hypotheses - Experiment - Data collection - Hypothesis Testing - Conclusions.</p>
+<p>I don’t think this is sufficient for us, nor that we can force other methodologies onto this template. We need a few adaptations to our field and a different structural-functional organization. The <a href="https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/">diagram</a> from Berkeley’s “Understanding Science 101” is a big step in the right direction.</p>
+</div>
+</div>
+<section id="action-and-agent-arena" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="action-and-agent-arena">Action and Agent-Arena</h2>
+<p>In order to make the diagram more specific, let’s take the example of a firm and think of it as an agent. At this level of analysis, we don’t need to consider the full implications of a complex adaptive system. Hopefully, the firm has formulated its mission, vision, has articulated a rough strategy to overcome obstacles and has set reasonable objectives.</p>
+<p>Employees and leadership of the firm will try to make good decisions, develop capabilities in order to increase performance. In a happy and lucky case, these actions are coordinated, aligned with strategy and generate desired outcomes. Besides performance, we can also consider an increase in value added brought by improvements in its processes, products, and services.</p>
+<p>The firm gathers data about its current and past state <span class="math inline">\(\{\mathcal{S}_t\}_{1:t}\)</span>, observes the environment <span class="math inline">\(\mathbfcal{O}_t\)</span>, and its actions <span class="math inline">\(\mathcal{A}_t\)</span> influence the environment, and vice-versa. It also interacts with other agents in the network (be it customers, suppliers, manufacturers, government, the board, stakeholders, etc).</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This perspective is pretty standard in AI research. We’ll see later in the course how we could also use it to tease out different <strong>sources of uncertainty</strong>.</p>
+</div></div><p>I called this “element” in the bigger process an “agent-arena” relation, because we usually don’t consider the whole firm, but our framing depends on what point of view in the value chain we take. For example, the POW of a team responsible for conversion-rate optimization will have its own objectives, decisions, and data they care about <span class="math inline">\((\mathcal{S}, \mathcal{O}, \mathcal{A} | {POW} )\)</span>. Of course, there is a concern of alignment, of local optimization which results in suboptimal global outcomes – but this topic is outside the scope of our course.</p>
+</section>
+<section id="building-and-testing-ideas" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="building-and-testing-ideas">Building and testing ideas</h2>
+<p>At the core of scientific process is experimentation, data collection, and testing of ideas – which results in evidence with respect to a hypothesis or theoretical prediction. For our purposes, we consider experimentation in its large sense, not just randomized control trials and highly-controlled experiments. By including statistical models, simulation, ML models; software systems, prototypes, and features – we can benefit from this self-correcting feedback loop not just in science, but in decision-making.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Let’s consider Agile principles and Shape-Up methodology for software development. I think that they fit well into our framework when we’ll sketch out the two remaining pieces</p>
+</div></div><p>This means that inferential and causal statistical models are equally as important ways to test ideas. Moreover, the ultimate test is whether the recommended decisions based on modeling insights work well in practice. Meaning, we get better outcomes in the agent-arena, our problem space. Let’s see how testing of ideas interacts with other elements of our diagram:</p>
+<ul>
+<li>Agent-Arena
+<ul>
+<li>our insights and recommendations can help inform actions</li>
+<li>after operationalization, we get feedback on how well it worked</li>
+</ul></li>
+<li>Collaborators
+<ul>
+<li>we have to communicate our insights clearly and persuasively</li>
+<li>other people give feedback about the analysis / results and best-practices about how should we test our ideas</li>
+</ul></li>
+<li>Discovery and Explanation
+<ul>
+<li>ideally, we don’t test a vague hypothesis, but a well-thought causal model</li>
+<li>our test results in stronger or weaker evidence for/against the explanation</li>
+<li>we can use simulation to validate that our statistical models work in principle, meaning we recover the estimand (unobservable quantity of interest)</li>
+</ul></li>
+</ul>
+<p>Since the data comes from the real world, we will have to consider very carefully how it was collected and measured. This means that when we build models, we might need to learn new tools to correct for biased samples, non-response, missing data, measurement error, etc.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>For some research questions, measurement and sampling is a complicated problem. This is why I’m trying to integrate them in this course.</p>
+</div></div></section>
+<section id="thinking-discovery-and-explainations" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="thinking-discovery-and-explainations">Thinking, discovery and explainations</h2>
+<p>One can make a case that wisdom starts in wonder, and science with curiosity. For a long time, statistics classes were taking hypotheses and theories as given. Our field has caught up to scientists, in the sense of openness in how we gather inspiration.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Many books have been written about how theories are being developed, the role of curiosity, inspiration, observation, previous theories, evidence, etc.</p>
+</div></div><p>Model-driven exploratory data analysis an pattern recognition have become acceptable ways to find inspiration and formulate hypotheses. I would argue that for most problems I encountered, this process was essential and this is the way in which a good analyst is extremely valuable. Note that with this power comes a lot of responsibility to not fool ourselfs, hence we’ll need discipline and guardrails.</p>
+<p>You will probably agree that asking a good question and formulating, framing a problem well gets us “halfway” towards a solution. We can approach a research design data-first or question-first, but in practice it’s almost always a mix.</p>
+<p>Speaking about business decisions, what I mean by theory is our current knowledge and understanding of the problem and domain. Thus, don’t get fooled by claims of “theory-free” AI and ML. The mere fact of selecting what to measure and what features to include in the model, involves human understanding and a judgement of relevance.</p>
+<p>In the course we will try our best to ensure that statistical models are answering the right quantitative question, which we call an estimand. It might not be obvious why we worry about the underlying, unobservable, theoretical constructs and ways we could measure them. After all, we’re not doing quantitative psychology.</p>
+<p>In my experience, sometimes it comes up explicitly and thinking this way is very helpful, for example: willingness to pay, customer satisfaction, engagement, brand loyalty and awareness, who can be convinced to buy via promotions, email fatigure, etc.</p>
+</section>
+<section id="steering-and-collaboration" class="level2">
+<h2 class="anchored" data-anchor-id="steering-and-collaboration">Steering and collaboration</h2>
+<p>Modern science, and science in general doesn’t happen in isolation. The same is true in firms and almost any other domain. I will not spill much ink in trying to convince you of the power of collaboration, since almost any problem which is complex enough can’t be tackled by a single individual.</p>
+<p>In the context of this course, we’re thinking of collaboration with clients, stakeholders, experts, engineers, and decision-makers. A few outcomes of this collaboration are the strategy we mentioned at the beginning, policies, interventions, best-practices, feedback, and review. Collaboration informs what should we do, prioritize, build and test, and hypothesise / think about.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Experiment design, causal inference, and machine learning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the course you will see processes and workflows for experiment design (C. Kozyrkov’s 12 steps of statistics), causal inference (R. McElreath’s owls and DAGs), and machine learning (C. Kozyrkov’s 12 steps of ML, Google’s People+AI).</p>
+<p>Don’t try to memorize them, but go back to this diagram of the scientific process and locate different steps of the workflow. For example, leaving aside a test dataset in machine learning is a way to assess and approximate how well a trained and chosen model generalizes beyond training data.</p>
+<p>Simulating synthetic data from a causal process model in order to validate if a statistical model can draw correct inferences about the estimand can be considered an experiment, although, one which lives in pure theory, until we apply it to real data. This iterative process lives at the intersection of asking questions, building theories and testing ideas.</p>
+</div>
+</div>
 
 
-
-## A proliferation of processes for data science
-
-People doing data mining (analytics), ML, and applied statistics, all recognize the importance of following a process. They design processes and workflows for their domain of expertise, which is indubitably helpful. However, it is confusing for a beginner to see so many of them -- as I show on the margin.
-
-::: {.column-margin}
-- Data Mining, ML, and Analytics:
-    - CRISP-DM (cross-industry process for data mining)
-    - Tuckey's exploratory data Analysis
-    - Hadley's Wickham's tidyverse process
-    - C. Kozyrkov's 12 steps of ML
-    - Andrew Ng's error analysis
-- Experiment design and A/B testing, besides steps given in a stat101 class
-    - C. Kozyrkov's 12 steps of statistics
-    - A. Gelman's workflow, described in "Regression and other stories"
-- Statistical modeling and bayesian approaches:
-    - A. Fleischhacker's business analyst's workflow
-    - R. Alexander's process for telling stories with data
-    - R. McElreath's "drawing an owl"
-- Scientific process in its standard formulation
-:::
-
-For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I'm increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: "I decided to unify 10 existing standards -- now we have 11".
-
-::: {.callout-tip}
-## Scientific process in the broad sense
-A natural question to ask is: "What is the mechanism which could generate all these processes?" You've probably seen the scientific method roughly described as: Observations - Hypotheses - Experiment - Data collection - Hypothesis Testing - Conclusions.
-
-I don't think this is sufficient for us, nor that we can force other methodologies onto this template. We need a few adaptations to our field and a different structural-functional organization. The [diagram](https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/) from Berkeley's "Understanding Science 101" is a big step in the right direction.
-:::
-
-## Scientific process, reinterpreted
-
-Let's take the example of a firm and think of it as a complex adaptive system or much simpler, as an agent. Hopefully, the firm has formulated its mission, vision, has articulated a rough strategy and has set reasonable objectives and goals. People will try to make decisions and act in such a way to increase performance, generate good outcomes which are aligned with its strategy. Value added, IN - (Process) - OUT (products, services)
-
-The firm gathers data about its current and past state, interacts with the environment, and its actions influence the environment. Also, the firms observes this environment. It also interacts with other agents in the network (be it customers, suppliers, manufacturers, government, etc). Let's call the first element an "Agent-Arena" relationship. Depending on the point of view, we can talk about different Agent-Arena relationsihps, for example, from a team or department or function in value chain perspective. We don't have to model the whole thing here -- just what is of interest to us.
-
-At the core of scientific process is testing ideas. We will extend the notion of the experiment to include building prototypes, products, features, systems, including ML / predictive ones. Of course, we keep here the data collection (measurement, sampling), and building statistical models. But the essence stays the same: we test our expectations against the actual outcomes. This generalization means that our ML model prototype can be used inside the firm to make decisions. Also, the data comes from the agent-arena space (that is, our firm, the real world).
-
-Another key part of the scientific process is discovering, explaining, developing theories. Any method will do, from observation to data mining, pattern recognition or just sheer experience in the domain / field. More rigorously, it's scientific theories, and causal models associated with them. Here we ask questions, formulate hypotheses, justify constructs. Much of the inspiration comes from the real life, problems, challenges and opportunities of the firm. These ideas, hypotheses are going to be tested and refined based on the outcomes of our experiments. Note that exploratory data analysis can also be model-driven.
-
-The last part is the collaboration and community: our colleagues, decision-makers, domain experts, stakeholders. They inform the firm's strategy, policies, interventions. The ideas which are tested have to be communicated. We also get feedback from them, guardrails, support, etc. Their experience is also a body of knowledge, an inspiration for the next idea and hypothesis.
-
-This graph can generate all the methodologies:
-- e.g. McElreath's causal inference - between estimands / construct, simulations, process models.
-- e.g. The scientific process formulated as you know it
-- crisp-dm
-- cassie's 12 steps to ML -->
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -948,7 +1062,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./01_fundamentals/prerequisites.html" class="pagination-link" aria-label="iv. Why study all of that?">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">iv. Why study all of that?</span>
