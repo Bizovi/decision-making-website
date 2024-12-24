@@ -333,6 +333,7 @@ window.Quarto = {
   <li><a href="#module-ii-probability-and-statistics" id="toc-module-ii-probability-and-statistics" class="nav-link" data-scroll-target="#module-ii-probability-and-statistics">Module II: Probability and Statistics</a></li>
   <li><a href="#module-iii-applied-bayesian-statistics" id="toc-module-iii-applied-bayesian-statistics" class="nav-link" data-scroll-target="#module-iii-applied-bayesian-statistics">Module III: Applied Bayesian Statistics</a></li>
   <li><a href="#pythonr-computational-toolbox" id="toc-pythonr-computational-toolbox" class="nav-link" data-scroll-target="#pythonr-computational-toolbox">Python/R Computational Toolbox</a></li>
+  <li><a href="#a-selection-of-realistic-datasets" id="toc-a-selection-of-realistic-datasets" class="nav-link" data-scroll-target="#a-selection-of-realistic-datasets">A selection of realistic datasets</a></li>
   </ul>
 </nav>
 </nav>
@@ -669,6 +670,163 @@ For Python (v3.10.x)
 </ul>
 </div>
 </div>
+</section>
+<section id="a-selection-of-realistic-datasets" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a-selection-of-realistic-datasets">A selection of realistic datasets</h2>
+<p>Deciding what topic, domain, and problem to choose for your project is a daunting task in itself. During the course, I present new tools to formulate good questions and how to design your research study. Unfortunately, in most cases, we will be limited by what open data is available. We encounter the same problem of “too much content”: there is so much data to work with, but most of it isn’t any good for our purposes.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>You can rely entirely on simulation, but the way you desing the underlying data-generating process has to be very well thought out, informed by the specificities of the problem and an expectation of what data we’ll encounter in practice.</p>
+</div></div><p>Finding good data about business challenges is incredibly hard, since few firms will be open to sharing it. Even when we get our hands on a good kaggle competition, the problem is that the data has been already framed, curated, and put together for us. This means that we don’t get the real experience of end-to-end problem solving that we would encounter in practice. Therefore, I collected a list of datasets which are realistic and diverse enough. You can consider them as an inspiration and starting point.</p>
+<div class="column-page-inset-right">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Dataset name</th>
+<th>Domain</th>
+<th>Problem / Area</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Yaz restaurant demand</td>
+<td>business</td>
+<td>Newsvendor problem</td>
+<td>A real dataset used for benchmarking inventory optimization algorithms from a restaurant in Stuttgart. Source: <a href="https://d3group.github.io/ddop/tutorial_modules/tutorial.html">ddop</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Mercari vintage clothes marketplace</td>
+<td>business</td>
+<td>Price suggestion</td>
+<td>An excellent dataset for GLMs and machine learning, where the text data is important. Source: <a href="(https://www.kaggle.com/competitions/mercari-price-suggestion-challenge)">kaggle</a> / Mercari</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Avocado prices and volumes from Hass board</td>
+<td>agriculture</td>
+<td>Market research</td>
+<td>This is a good opportunity to understand the dynamics of a whole industry. Source: <a href="https://www.kaggle.com/datasets/neuromusic/avocado-prices">kaggle</a> / hass</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Olist e-commerce</td>
+<td>business</td>
+<td>EDA, databases</td>
+<td>A very rare example of freely available data published as a relational database. Good for open-ended projects. Source: <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">kaggle</a></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Corporacion favorita</td>
+<td>business</td>
+<td>Demand planning</td>
+<td>One of the best datasets to practice demand forecasting for groceries. Source: <a href="https://www.kaggle.com/competitions/favorita-grocery-sales-forecasting/data">kaggle</a></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Tevec retail sales</td>
+<td>business</td>
+<td>Inventory management</td>
+<td>Good for short-term demand forecasting for the purposes of inventory optimization. Source: <a href="https://www.kaggle.com/datasets/tevecsystems/retail-sales-forecasting">kaggle</a></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Lending club loans</td>
+<td>finance</td>
+<td>Credit risk</td>
+<td>A large dataset of peer-to peer, graded loans, with data about clients, loan, and interest. Source: <a href="https://www.kaggle.com/datasets/wordsforthewise/lending-club">kaggle</a></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>DataCo orders</td>
+<td>business</td>
+<td>Logistics and fulfillment</td>
+<td>One of very few datasets for you to get a better grasp over outbound and inbound logistics. Source: <a href="https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis">kaggle</a></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Criteo Campaign</td>
+<td>business</td>
+<td>Marketing</td>
+<td>The biggest dataset of randomized control trial marketing campaign for Uplift modeling. Source: <a href="https://www.kaggle.com/datasets/arashnic/uplift-modeling">kaggle</a></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Ease my trip</td>
+<td>airlines</td>
+<td>Price prediction</td>
+<td>This dataset has a few gotchas related to how the flights were selected and unavailability of seats remaining. Source: <a href="(https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction)">kaggle</a></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Amazon reviews for beauty products</td>
+<td>business</td>
+<td>NLP, Customer analytics</td>
+<td>Analyzing customer reviews and feedback is a widespread use-case in businesses. Lots of data is available. Source: <a href="https://nijianmo.github.io/amazon/index.html">nijianmo</a></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Expresso churn prediction</td>
+<td>telekom</td>
+<td>Churn</td>
+<td>We will discuss the challenges around modeling customer churn, especially survival models and interventions. Source: <a href="https://www.kaggle.com/datasets/hamzaghanmi/expresso-churn-prediction-challenge">kaggle</a></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Santader customer satisfaction</td>
+<td>banking</td>
+<td>Churn</td>
+<td>Since the data is anonymized and mostly numeric, we would have to take a ML approach. Source: <a href="[here](https://www.kaggle.com/datasets/hamzaghanmi/expresso-churn-prediction-challenge)">kaggle</a></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Supply chain allocation</td>
+<td>business</td>
+<td>Logistics and shipments</td>
+<td>Another rare dataset on logistics, in which you assign routes to purchase orders from manufacturers. Source: <a href="https://www.kaggle.com/datasets/hamzaghanmi/expresso-churn-prediction-challenge">kaggle</a></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Hospital customer satisfaction</td>
+<td>healthcare</td>
+<td>Customer analytics</td>
+<td>A pretty large-scale, general-purpose survey on client satisfaction. A lot of EDA and data cleaning is needed. Source: <a href="https://www.kaggle.com/datasets/abrambeyer/us-hospital-customer-satisfaction-20162020">kaggle</a></td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>Bike sharing demand</td>
+<td>transportation</td>
+<td>Demand planning</td>
+<td>Several datasets from different cities and ride sharing firms: <a href="transportation">Washington</a>, <a href="https://www.kaggle.com/datasets/jackdaoud/bluebikes-in-boston">Boston</a>, <a href="https://www.kaggle.com/datasets/hmavrodiev/london-bike-sharing-dataset">London</a></td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>NYC subway rides</td>
+<td>transportation</td>
+<td>Demand planning</td>
+<td>Another aspect of demand planning is load prediction and minimizing delays: <a href="https://www.kaggle.com/datasets/eddeng/nyc-subway-traffic-data-20172021">NYC traffic</a>, <a href="https://www.kaggle.com/datasets/jsun13/toronto-subway-delay-data">Toronto subway</a> delays, <a href="https://www.kaggle.com/datasets/kalilurrahman/newyork-subway-entry-exit-dataset-for-dataviz">NYC entry and exits</a></td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>Taxi trips</td>
+<td>transportation</td>
+<td>Demand planning, pricing</td>
+<td>Multiple datasets from different firms and cities: <a href="https://www.kaggle.com/datasets/chicago/chicago-taxi-trips-bq">Chicago</a>, <a href="https://www.kaggle.com/datasets/microize/newyork-yellow-taxi-trip-data-2020-2019">NYC taxis</a>, <a href="https://www.kaggle.com/datasets/fivethirtyeight/uber-pickups-in-new-york-city">NYC uber</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p>The curated list of datasets doesn’t appear in most books and resources that I recommend. The challenges they present are not easy and require quite a lot of work. Some of them will also teach you how to work with larger amounts of data. That said, there is still a lot of value in the didactic examples, so here are a few more directions I recommend to look into:</p>
+<ul>
+<li>P. Fader, B. Hardie, and E. Ascarza research on BTYD (buy till you die) models of customer repurchase behavior, churn, and LTV</li>
+<li>This <a href="https://www.bnlearn.com/research/">website</a> on Bayesian networks has a few amazing case-studies on self-worth and depression, which are perfect for practicing causal thinking</li>
+<li>Facebook has synthesised the recent research in Marketing Mix Modeling into their open-source project called Robyn.</li>
+<li>Rohan Alexander has a good example of multilevel modeling with post-stratification on US 2020 <a href="https://tellingstorieswithdata.com/15-mrp.html">elections</a>. Andrew Gelman in “Regression and other stories” has lots of great examples from political and social science.</li>
+</ul>
 
 
 </section>
