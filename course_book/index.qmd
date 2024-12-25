@@ -94,7 +94,7 @@ On the other hand, engineering in the trenches is a skill. The only way to becom
 
 ## Why should you care?
 
-You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, Deep Reinforcement Learning models are beating people at Go, Dota, Chess, solving almost-impossible protein-folding problems. The world is awash in the newest ChatGPT and Midjourney frenzy, with new developments every month and week. 
+You might've heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, deep reinforcement learning models are beating people at go, Dota, chess, solving almost-impossible protein-folding problems. The world is awash in the newest ChatGPT and Midjourney frenzy, with new developments every month and week. There are so many cool applications of AI and modeling.
 
 ::: {.column-margin}
 ![](img/dont.jpg){width="80%"}
@@ -108,7 +108,25 @@ You don't, at least if you want to have a balanced life. That's why I choose to 
 You will be surprised **how far can you go with simple, even linear models**. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.
 :::
 
-But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses? It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. 
+What does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses? Data science and AI can have a function of decision-making support or be an essential part of the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. 
+
+To get a better sense of what I mean by decision-making support, here is a list of challenges many data scientists are working on. Notice the common thread of optimization at a large scale, that many of these applications are related to important decisions in the value chain of a firm. These problems also can't be solved in an optimal way by simple rule-based business logic or exploratory data analysis.
+
+- Demand forecasting, inventory optimization, production planning
+- Revenue management, pricing, and promotion optimization
+- Advertisement, marketing mix, and conversion optimization
+- Customer behavior and preferences:
+  - Churn, repurchase, engagement, LTV, willingness to pay
+  - Fraud, credit default, insurance risk
+  - Choice modeling, recommender systems, targeting and uplift models
+- Improving products, assortment, merchandising
+
+::: {.column-margin}
+Speaking from experience, every problem listed here is challenging. The good news is that by having a good grasp of fundamentals, we can tackle any one of them. What I can't give you though, are universal recipes -- they do not exist!
+:::
+
+> I want you to take away ONE thing, that is "AI" and Data Science in Businesses boils down to: **Decision-Making under Uncertainty at Scale**
+
 
 Even if you are not a data scientist, you will work with them in one form or another *(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)*. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.
 
@@ -117,15 +135,16 @@ In university years, you've probably been tortured by (or enjoyed) linear algebr
 ::: {.callout-tip}
 ## Why study all of this?
 
-We live in a volatile, uncertain, complex and ambiguous world,[^index-2] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more in-depth explanation of the essence of each subject/domain, read [here](01_fundamentals/prerequisites.qmd).
+We live in a volatile, uncertain, complex and ambiguous world,[^index-2] but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. 
 
-I want you to take away ONE thing, that is "AI" and Data Science in Businesses boils down to: **Decision-Making under Uncertainty at Scale**
+We studied all of those prerequisites precisely in order to be well equipped for such challenges. For a more in-depth explanation of the essence of each subject and its relevance for decision science, read [section iv.](01_fundamentals/prerequisites.qmd)
+
 :::
 
 [^index-2]: [VUCA: a mental model to better understand the world](https://www.vuca-world.org/where-does-the-term-vuca-come-from/)
 
 
-> When somebody asks what have you learned in this book and course, I suggest two metaphors: one of simplification and another of seeing relations
+When somebody asks what have you learned in this book and course, I suggest two metaphors: one of simplification and another of seeing relations
 
 
 ::: {layout="[45, -2, 55]"}
@@ -137,14 +156,14 @@ I want you to take away ONE thing, that is "AI" and Data Science in Businesses b
 
 ## What will you learn?
 
-I am tempted to say "act rationally" to improve business outcomes *(top line, bottom line, customer satisfaction, efficiency)*. However, what you will learn is much more nuanced than that -- hence, the short answer below which will take a while to unpack.
+I am tempted to say "act rationally" to improve business outcomes like top line, bottom line, customer satisfaction, and efficiency. However, what you will learn is much more nuanced than that -- hence, the short answer below which will take a while to unpack.
 
 ::: {.callout-important}
 ## Short version
 
 $$Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome $$
 
-Necessary, but insufficient fundamentals in **business economics** and **statistical modeling**:
+Necessary, but insufficient ^[The insufficiency comes from the fact that this course involves a lot of self-study and I can't ever claim an exhaustive coverage of such a complex field] fundamentals of **business economics** and **statistical modeling**:
 
 - in order to ask the right questions
 - so that we can build custom statistical models 
@@ -155,15 +174,33 @@ Necessary, but insufficient fundamentals in **business economics** and **statist
 :::
 
 
+At this point you've heard the word "model" a lot of times. In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. Reality is overwhelming and combinatorially explosive in its possibilities. ^[Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc] We build models, because we want to understand a system and capture the essential aspects of the phenomena of interest, in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen.
+
+We collect data, perform experiments, and build models in order to minimize the effect of biases and our foolishness. It's also important to remember that all models have assumptions, pressupositions, and limitations. They are little machines, golemns of prague which follow instructions precisely, and can backfire if used outside their range of validity. Remember that all models are wrong, but some are useful.
+
+::: {.callout-tip}
+## Three challenges in statisical modeling
+
+A. Gelman highlights three different aspects of statistical inference. Always remember this when designing your study or learning about a new statistical tool! We want to generalize from sample to the population of interest, from treatment to control group, and from measurement to the underlying theoretical construct.
+
+$$Sample \longrightarrow Population$$
+
+$$Treatment \longrightarrow Control$$
+
+$$Measurement \longrightarrow Construct$$
+
+The holy grail is to build statistical models based on the [causal processes]{.underline} informed by theories and hypotheses. If we take into account how we [measured]{.underline},^[We'll dedicate one lecture on measurement, but you might have whole specialized classes on this topic] and [collected data]{.underline}, we'll increase our chances to generalize our conclusions and will have stronger evidence.
+:::
+
 My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.
 
 
 ::: {.callout-tip}
 ## Go to "Study Guide" pages for practice!
 
-Conceptual understanding by itself is not enough. So, I curated a [list of resources](references.qmd) to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
+Conceptual understanding by itself is not enough. So, I curated a list of resources to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
 
-Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.
+Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do a lot of simulations, some exciting projects (full stack data apps) and investigate common challenges with a fresh perspective.
 :::
 
 
