@@ -207,16 +207,16 @@ Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision
 ## Prerequisites and background
 
 
-I think this course will bring most value to masters' students, professionals, and students in their last year of BSc -- precisely because of presumed exposure or competence in the following subjects:
+I think this course will bring the most value to masters' students, professionals, and students in their last year of BSc, because of presumed exposure and competence in the following subjects. For more resources and explanations, see [section iv.](01_fundamentals/prerequisites.qmd)
 
 ::: {.column-margin}
-![Decision-Making, ML, and Causal Inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!](01_fundamentals/img/karate-kid.webp "Practice"){width="90%"}
+![Decision-making, ML, and causal inference is hard. Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!](01_fundamentals/img/karate-kid.webp "Practice"){width="90%"}
 :::
 
 
-- For **Linear Algebra** and **Calculus** -- only exposure is needed, but competence and mathematical maturity will help a lot. If you need a refresher, a crash course will do (for example, Grant Sanderson's [*"Essence of LinAlg"*](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=3pvYphbdL56dnYVH))
-- For **Probability Theory** -- competence is needed, even though we start from the very beginning (review of combinatorics). I suggest you read along and practice with a more comprehensive resource, like Joe Blitzstein's ["Probability 110"](https://projects.iq.harvard.edu/stat110/home)
-- For **Mathematical Statistics** the story is the same as for Probability. You will need at least to be familiar with hypothesis testing and regression. This course can catalyze the process. My favorite resource so far is [Huber's "Modern Statistics for Modern Biology"](https://www.huber.embl.de/msmb/02-chap.html).
+- For **Linear Algebra** and **Calculus** -- only exposure is needed, but competence and mathematical maturity will help a lot. If you need a refresher, a crash course will do -- for example, Grant Sanderson's ["Essence of Linear Algebra"](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=3pvYphbdL56dnYVH)
+- For **Probability Theory** -- competence is needed, even though we start from the very beginning with a review of combinatorics. I suggest you read along and practice with a more comprehensive resource, like Joe Blitzstein's ["Probability 110"](https://projects.iq.harvard.edu/stat110/home)
+- For **Mathematical Statistics** the story is the same as for Probability. You will need at least to be familiar with estimators, sampling distributions, LLN/CLT, hypothesis testing and regression. This course can catalyze the process. 
 - **Python or R programming** for Data Science is **mandatory**, including data wrangling, visualization, scientific computing, databases. I recommend two free books:
   - ["R for Data Science"](https://r4ds.had.co.nz/) by Hadley Wickham 
   - ["Python for Data Analysis"](https://wesmckinney.com/book/) by Wes McKinney.
@@ -235,7 +235,7 @@ Taken in isolation, topics like measurement and sampling are very abstract. Ther
 - **Reproducible research** and literate programming has become a de-facto standard in the data science world. We have amazing tools right now, but it's still not easy to achieve end-to-end reproducibility and automation.
 - **Academic writing** is an important skill, even in businesses. Writing is both a way of thinking, problem-solving, and communication. In my opinion, the structure of a scientific paper is very helpful to crystalize your ideas.
 
-Last, but not least, there is value in understanding the **scientific process**, in its broad sense. In section v., I adapt it to the context of data science in businesses and show how most processes and workflows like CRISP-DM,  Tuckey's EDA are a part of it.
+Last, but not least, there is value in understanding the **scientific process**, in its broad sense. In [section v.](sci_process.qmd), I adapt it to the context of data science in businesses and show how most processes and workflows like CRISP-DM,  Tuckey's EDA are a part of it.
 
 
 
@@ -247,7 +247,7 @@ Remember the advice "think of yourself as a business person with superpowers"? I
 Often, there is a disconnect between business economics, analytics classes and ML / stats / data science. We can't expect them to be coherent by defaut, but we can carefully design those synergies
 :::
 
-A good starting point is thinking about the purpose of a business from different perspectives.  Then, identify key decisions that firms have to make across many industries and domains. This exercise will show us how widespread are data science applications and use-cases, even in places we don't suspect. 
+A good starting place is thinking about the purpose of a business from different perspectives.  Then, identify key decisions that firms have to make across many industries and domains. This exercise will show us how widespread are data science applications and use-cases, even in places we don't suspect. 
 
 At this point it is important to clarify what we mean by AI, ML, analytics, data mining, statistics and when is it appropriate to choose one approach over another. You'll be surprised, but statistics is the hardest to define and often misunderstood, because of its inferential, experimental, and causal facets.
 
@@ -288,6 +288,9 @@ Perhaps the most important lecture is also very abstract, where I formally defin
 
 The module culminates in practical aspects of experiment design and A/B testing, sample size justification, **power analysis**, and a conversation about the causes and remedies to the replication crisis. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, and Causal Inference.
 
+::: {.column-margin}
+When discussing hypothesis testing, it is very important that you recognize that most statistical tests can be framed as linear models.
+:::
 
 ::: {.callout-note}
 ## The art of formulating a hypothesis
@@ -296,41 +299,38 @@ In statistics' classes, the problem is usually completely framed and students fo
 :::
 
 
-My preferred sequence is to go in parallel with the "business school" and stats, since there is a great synergy. The prior focuses on the **process** (over content) of analytics, ML, statistics. The prior focuses on the **problem** and not so much on solutions.
+My preferred sequence is to go in parallel with the "business school" and statistics, since there is a great synergy. The prior focuses on the problem space and processes (over content) of analytics, ML, statistics. I also recommend in case of a very short and intensive course to study  bayesian generalized models before the experiment design topics. 
 
 
 
 ## Module 3: Applied Bayesian Statistics
 
-Once we have a confident grasp of the fundamentals, we continue on the path of **Applied Bayesian Statistics**. It is an extremely flexible and "composable" approach to building explainable models of increasing complexity and realism. 
+Once we have a confident grasp of the fundamentals, we continue on the path of applied Bayesian statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. 
 
 ::: {.column-margin}
 ![*(Source: [R. McElreath](https://youtu.be/KNPYUVmY3NM) -- Science before statistics)*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
 :::
 
-Instead of applying an out-of-the-box model, we will build custom ones for each individual application in an iterative way. Choosing appropriate probability distributions and modeling assumptions will be critical in this process, along with model critique and validation.
+Instead of applying an out-of-the-box model, we will build custom ones for each individual application in an iterative way. Choosing appropriate probability distributions and modeling assumptions will be critical in this process, along with model critique and validation. There are many ways to teach bayesian statistics and generalized linear models, but I think R. McElreath has the best approach, by giving a lot of importance to DAGs of influence, simulation, and ideas from causal inference.
 
 ::: {.callout-tip}
 ## Hierarchical Generalized Linear Models
 
-Many experts in the field argue that this should be the default way we do regression analysis and that we need a very strong justification to show that a linear regression is the appropriate model.
-
-
-To put it bluntly, this modeling approach will enable us to improve on most challenges in decision-making and inference that businesses face. 
+Many experts in the field argue that this should be the default way we do regression analysis and that we need a very strong justification to show that a linear regression is the appropriate model. To put it bluntly, this modeling approach will enable us to improve on most challenges in decision-making and inference that businesses face. 
 :::
 
 
 One notable difference between the Bayesian approach and the traditional way advanced econometrics is taught, is that we will focus on computation instead of proofs and heavy-duty mathematical statistics. We declare the model and the sampler does the job for us! If it explodes, we probably modeled it wrong.
 
 
-### Notes about Causal Inference and ML
+### Notes on Causal Inference and ML
 
-Did you get comfortable with building custom statistical models for inference and prediction? What about decisions with high stakes, where we sometimes want to do **randomized experiments**?
+Did you get comfortable with building custom statistical models for inference and prediction? What about decisions with high stakes, where we sometimes want to do randomized experiments?
 
 
-Often, A/B tests and randomised experiments are **unfeasible** or **unethical**. Also realize that we cannot reach a causal conclusion from observational data alone -- we can talk just about **associations**. We need a theory, which is our understanding of how the "world" works -- translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).
+Often, A/B tests and randomized controlled trials are **unfeasible** or **unethical**. Also realize that we cannot reach a causal conclusion from observational data alone -- we can talk just about **associations**. We need a theory, which is our understanding of how the "world" works -- translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).
 
-This motivates a deep-dive into the field of Causal Inference -- a link between the theoretical models and observational data, where we sometimes can take advantage of certain "natural experiments". Causal inference requires deep thinking and understanding, which is truly challenging -- an art and science, in contrast with the "auto-magic", unreasonably effective pattern recognition of ML. 
+This motivates a deep-dive into the field of causal inference. Think of it as a link between the theoretical models and observational data, where we sometimes can take advantage of certain "natural experiments". Causal inference requires deep thinking and understanding, which is truly challenging -- an art and science, in contrast with the "auto-magic", unreasonably effective pattern recognition of ML. 
 
 
 ::: {.callout-important}
@@ -338,7 +338,7 @@ This motivates a deep-dive into the field of Causal Inference -- a link between 
 
 Even if you're interested only in machine learning, most practitioners will emphasize the importance of mastering regression (often starting with generalized linear models) and doing A/B tests resulting in evidence that our new model brings an improvement (or not). 
 
-This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML -- the lines between these two fields are indeed very blurry.
+This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML -- the lines between these two fields are indeed a bit blurry. This is especially the case when considering flexible models like Gaussian Processes and Bayesian Additive Regression Trees.
 :::
 
 
@@ -348,7 +348,7 @@ This is how we jump through various buckets, highlighting the golden thread link
 
 :::
 
-Often, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+Other times, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
 
 The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
 
@@ -360,10 +360,12 @@ I mentioned before that a key prerequisite is competence in Python/R, SQL, data 
 ::: {.callout-tip}
 ## Project: 5-page applied research paper
 
-After finishing the first three modules, a good chance to put the knowledge in practice, is to write a 5-page research paper on a question / problem you're passionate about.^[In the labs, I give detailed instructions on how a good project should look like, starting from structure and ending in presentation] We will see how easy is it to publish your article / paper / report with quarto and github pages.
+After finishing the first three modules, a good chance to put the knowledge to practice, is to write a 5-page research paper on a question / problem you're passionate about.^[In the labs, I give detailed instructions on how a good project should look like, starting from structure and ending in presentation] This will test your study design, modeling, programming, and writing skills.
+
+We will see how easy is it to publish your article / paper / report with quarto and github pages.
 :::
 
-If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference modules. There is, however, one huge problem when it comes to bringing added value in businesses -- [operationalizing models]{.underline}. 
+If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference. There is, however, one huge problem when it comes to bringing added value in businesses -- [operationalizing models]{.underline}. 
 
 I have been speaking at conferences about this topic for 6 years: from data, MLOps, product management, and organizational perspectives -- and it's still very relevant. Of course, the way we operationalize a model and build a system depends on the use-case and many factors -- however, the most general case to me is via a "Full Stack Data-Driven App" (with user interface, backend, database; data, training, and serving pipelines).
 
@@ -372,8 +374,8 @@ I have been speaking at conferences about this topic for 6 years: from data, MLO
 ::: {.callout-tip}
 ## Build an impressive project for your portfolio
 
-A full-stack data-driven app is your final project (for year two course) and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools to make it easy for us. 
+A full-stack data-driven app is your final project (for year two course) and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools and frameworks to make it easy for us. This will force you to think about the user need and how your software product solves their problem.
 
-Don't worry about getting everything right, but focus on a problem and single area from the course you're passionate about: be it data visualization, ML, statistics or sheer engineering.
+Don't worry about getting everything perfect, but focus on a problem and single area from the course you're passionate about: it could be statistical modeling, ML pipelines, or even frontend development and data visualization. 
 
 :::
