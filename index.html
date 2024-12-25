@@ -456,10 +456,15 @@ Overwhelming amount of content. What is best for learning?
 <p>The roadmap provided here should help you navigate the landscape of data science and find the shortest path towards developing your skills and better decisions in your firm. Pick a topic you’re passionate about, for example, generalized linear models and look in the study guide for tips on where to read and how to practice.</p>
 </div>
 </div>
+<p>I have to clarify what I mean by contemplating in the library and engineering in the trenches. In contemplation, we try to see how fundamental theoretical ideas translate into real-world stories and solutions to practical problems. We also focus on understanding the problem space in various domains, our clients’ needs and challenges – which enables us to ask the right questions, formulate the problem correctly, then pick the right model and methodology for the task. Last, but not least, we’ll gain insights into pitfalls and common mistakes to avoid.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>During the course, I present stories and toy problems which motivate probability distributions, LLN/CLT, Bayes’ rule, sampling, measurement, etc. This is a way to highlight the <strong>practical relevance</strong> of otherwise dry theoretical ideas</p>
+</div></div><p>On the other hand, engineering in the trenches is a skill. The only way to become better at modeling and data analysis is hands-on practice. It is not sufficient to know about the modeling workflow and methodology. In practice, we have to develop pragmatic solutions and test, implement our ideas in code. If we are to increase our chances of success, we’ll also have to follow best practices of reproducible research, automation, and model operationalization.</p>
 </section>
 <section id="why-should-you-care" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="why-should-you-care">Why should you care?</h2>
-<p>You might’ve heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, Deep Reinforcement Learning models are beating people at Go, Dota, Chess, solving almost-impossible protein-folding problems. The world is awash in the newest ChatGPT and Midjourney frenzy, with new developments every month and week.</p>
+<p>You might’ve heard that data scientist is the sexiest job of 21st century, that AI is going to take over repetitive jobs, deep reinforcement learning models are beating people at go, Dota, chess, solving almost-impossible protein-folding problems. The world is awash in the newest ChatGPT and Midjourney frenzy, with new developments every month and week. There are so many cool applications of AI and modeling.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p><img src="img/dont.jpg" class="img-fluid" style="width:80.0%"></p>
@@ -477,7 +482,26 @@ How do I keep up?
 <p>You will be surprised <strong>how far can you go with simple, even linear models</strong>. In the end, it is not a competition, nor am I against deep learning: we learn to solve a very different class of problems that businesses encounter.</p>
 </div>
 </div>
-<p>But what does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses? It can be a function of decision-making support or the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others.</p>
+<p>What does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses? Data science and AI can have a function of decision-making support or be an essential part of the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others.</p>
+<p>To get a better sense of what I mean by decision-making support, here is a list of challenges many data scientists are working on. Notice the common thread of optimization at a large scale, that many of these applications are related to important decisions in the value chain of a firm. These problems also can’t be solved in an optimal way by simple rule-based business logic or exploratory data analysis.</p>
+<ul>
+<li>Demand forecasting, inventory optimization, production planning</li>
+<li>Revenue management, pricing, and promotion optimization</li>
+<li>Advertisement, marketing mix, and conversion optimization</li>
+<li>Customer behavior and preferences:
+<ul>
+<li>Churn, repurchase, engagement, LTV, willingness to pay</li>
+<li>Fraud, credit default, insurance risk</li>
+<li>Choice modeling, recommender systems, targeting and uplift models</li>
+</ul></li>
+<li>Improving products, assortment, merchandising</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Speaking from experience, every problem listed here is challenging. The good news is that by having a good grasp of fundamentals, we can tackle any one of them. What I can’t give you though, are universal recipes – they do not exist!</p>
+</div></div><blockquote class="blockquote">
+<p>I want you to take away ONE thing, that is “AI” and Data Science in Businesses boils down to: <strong>Decision-Making under Uncertainty at Scale</strong></p>
+</blockquote>
 <p>Even if you are not a data scientist, you will work with them in one form or another <em>(Quant, Data Analyst, Business Analyst, ML Engineer, Data/BI Engineer, Decision-Maker, Domain Expert)</em>. Therefore, you have to understand their language, what are they doing, how to ask and make sure they solve the right problem for you.</p>
 <p>In university years, you’ve probably been tortured by (or enjoyed) linear algebra, mathematical analysis, probability and statistics, operations research, differential equations, mathematical economics and cybernetics, algorithms and data structures, databases, object-oriented programming, econometrics and so on.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -490,13 +514,11 @@ Why study all of this?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We live in a volatile, uncertain, complex and ambiguous world,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions. For a more in-depth explanation of the essence of each subject/domain, read <a href="./01_fundamentals/prerequisites.html">here</a>.</p>
-<p>I want you to take away ONE thing, that is “AI” and Data Science in Businesses boils down to: <strong>Decision-Making under Uncertainty at Scale</strong></p>
+<p>We live in a volatile, uncertain, complex and ambiguous world,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> but we still have to make decisions. Those decisions will bring better outcomes if they are informed by understanding the causal processes, driven by evidence and robust predictions.</p>
+<p>We studied all of those prerequisites precisely in order to be well equipped for such challenges. For a more in-depth explanation of the essence of each subject and its relevance for decision science, read <a href="./01_fundamentals/prerequisites.html">section iv.</a></p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;<a href="https://www.vuca-world.org/where-does-the-term-vuca-come-from/">VUCA: a mental model to better understand the world</a></p></div></div><blockquote class="blockquote">
-<p>When somebody asks what have you learned in this book and course, I suggest two metaphors: one of simplification and another of seeing relations</p>
-</blockquote>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;<a href="https://www.vuca-world.org/where-does-the-term-vuca-come-from/">VUCA: a mental model to better understand the world</a></p></div></div><p>When somebody asks what have you learned in this book and course, I suggest two metaphors: one of simplification and another of seeing relations</p>
 <div>
 
 </div>
@@ -524,9 +546,9 @@ Why study all of this?
 </div>
 </div>
 </section>
-<section id="what-will-you-learn" class="level2">
+<section id="what-will-you-learn" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="what-will-you-learn">What will you learn?</h2>
-<p>I am tempted to say “act rationally” to improve business outcomes <em>(top line, bottom line, customer satisfaction, efficiency)</em>. However, what you will learn is much more nuanced than that – hence, the short answer below which will take a while to unpack.</p>
+<p>I am tempted to say “act rationally” to improve business outcomes like top line, bottom line, customer satisfaction, and efficiency. However, what you will learn is much more nuanced than that – hence, the short answer below which will take a while to unpack.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -538,7 +560,7 @@ Short version
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome \]</span></p>
-<p>Necessary, but insufficient fundamentals in <strong>business economics</strong> and <strong>statistical modeling</strong>:</p>
+<p>Necessary, but insufficient <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> fundamentals of <strong>business economics</strong> and <strong>statistical modeling</strong>:</p>
 <ul>
 <li>in order to ask the right questions</li>
 <li>so that we can build custom statistical models</li>
@@ -548,7 +570,26 @@ Short version
 </ul>
 </div>
 </div>
-<p>My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;The insufficiency comes from the fact that this course involves a lot of self-study and I can’t ever claim an exhaustive coverage of such a complex field</p></div><div id="fn6"><p><sup>6</sup>&nbsp;Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc</p></div></div><p>At this point you’ve heard the word “model” a lot of times. In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. Reality is overwhelming and combinatorially explosive in its possibilities. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> We build models, because we want to understand a system and capture the essential aspects of the phenomena of interest, in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen.</p>
+<p>We collect data, perform experiments, and build models in order to minimize the effect of biases and our foolishness. It’s also important to remember that all models have assumptions, pressupositions, and limitations. They are little machines, golemns of prague which follow instructions precisely, and can backfire if used outside their range of validity. Remember that all models are wrong, but some are useful.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Three challenges in statisical modeling
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A. Gelman highlights three different aspects of statistical inference. Always remember this when designing your study or learning about a new statistical tool! We want to generalize from sample to the population of interest, from treatment to control group, and from measurement to the underlying theoretical construct.</p>
+<p><span class="math display">\[Sample \longrightarrow Population\]</span></p>
+<p><span class="math display">\[Treatment \longrightarrow Control\]</span></p>
+<p><span class="math display">\[Measurement \longrightarrow Construct\]</span></p>
+<p>The holy grail is to build statistical models based on the <u>causal processes</u> informed by theories and hypotheses. If we take into account how we <u>measured</u>,<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> and <u>collected data</u>, we’ll increase our chances to generalize our conclusions and will have stronger evidence.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;We’ll dedicate one lecture on measurement, but you might have whole specialized classes on this topic</p></div></div><p>My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -559,8 +600,8 @@ Go to “Study Guide” pages for practice!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Conceptual understanding by itself is not enough. So, I curated a <a href="./references.html">list of resources</a> to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.</p>
-<p>Also, keep an eye on the course <a href="https://github.com/Bizovi/decision-making">github repo</a>, in which we’ll do some exciting projects (full stack data apps) and investigate common problems/challenges with a fresh perspective.</p>
+<p>Conceptual understanding by itself is not enough. So, I curated a list of resources to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.</p>
+<p>Also, keep an eye on the course <a href="https://github.com/Bizovi/decision-making">github repo</a>, in which we’ll do a lot of simulations, some exciting projects (full stack data apps) and investigate common challenges with a fresh perspective.</p>
 </div>
 </div>
 </section>
@@ -729,10 +770,10 @@ Project: 5-page applied research paper
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After finishing the first three modules, a good chance to put the knowledge in practice, is to write a 5-page research paper on a question / problem you’re passionate about.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> We will see how easy is it to publish your article / paper / report with quarto and github pages.</p>
+<p>After finishing the first three modules, a good chance to put the knowledge in practice, is to write a 5-page research paper on a question / problem you’re passionate about.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> We will see how easy is it to publish your article / paper / report with quarto and github pages.</p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;In the labs, I give detailed instructions on how a good project should look like, starting from structure and ending in presentation</p></div></div><p>If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference modules. There is, however, one huge problem when it comes to bringing added value in businesses – <u>operationalizing models</u>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;In the labs, I give detailed instructions on how a good project should look like, starting from structure and ending in presentation</p></div></div><p>If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference modules. There is, however, one huge problem when it comes to bringing added value in businesses – <u>operationalizing models</u>.</p>
 <p>I have been speaking at conferences about this topic for 6 years: from data, MLOps, product management, and organizational perspectives – and it’s still very relevant. Of course, the way we operationalize a model and build a system depends on the use-case and many factors – however, the most general case to me is via a “Full Stack Data-Driven App” (with user interface, backend, database; data, training, and serving pipelines).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
