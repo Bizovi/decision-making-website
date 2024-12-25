@@ -1,5 +1,10 @@
 ---
 title: "Cybernetics done right"
+author:
+  - name: Mihai Bizovi
+    id: mb
+    degrees: 
+    - "VP of Decision Science"
 format:
   html:
     toc-location: left
