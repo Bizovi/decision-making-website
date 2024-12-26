@@ -194,6 +194,7 @@ The holy grail is to build statistical models based on the [causal processes]{.u
 
 My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.
 
+![I want to highlight that if you have a good grasp of fundamental concepts in probability and statistics, then study Bayesian generalized linear models from the perspective of causal inference -- you will see the whole field as unified and have a very flexible tool to attempt to solve any challenge](img/roadmap.png) 
 
 ::: {.callout-tip}
 ## Go to "Study Guide" pages for practice!

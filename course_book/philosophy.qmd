@@ -11,7 +11,7 @@ format:
 ---
 
 
-The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in complex adaptive systems (CAS). It is what was originally meant by AI, before symbolic AI, expert systems, and deep learning. The way I think of data science -- is in the context of those CAS. This perspective is powerful, but rarely taught nowadays. Systems dynamics is an example of such a sub-field, which is very useful, for example, in strategic management.
+The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in complex adaptive systems (CAS). It is what was originally meant by AI, before symbolic AI, expert systems, and deep learning. The way I think of data science -- is in the context of those CAS. This perspective is powerful, but rarely taught nowadays. Systems dynamics is an example of such a sub-field, which is very useful in strategic management.
 
 
 ::: {.column-margin}
@@ -21,7 +21,7 @@ The hell is Cybernetics? Does it have something to do with robotics? Not really 
 
 ::: {.callout-warning}
 ## So, what's the problem with Cybernetics education? 
-The idea behind a **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems, that is -- what we know today as weak/specialised AI, combined with quantitative economics.
+The idea behind a **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems -- what we know today as weak/specialised AI, combined with quantitative economics.
 
 Unfortunately, the execution is extremely difficult to pull off without a consistent vision, expertise, and an account of recent developments. It is even more difficult to put those economic models from '80s in practice, especially in a data-driven age.
 
@@ -35,7 +35,7 @@ I am taking the first step to fix this, developing a vision to make it relevant 
 Let's go back to the burning question: **what I wish I had in a course?** It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied. After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
 
 - Provide motivation for **why** something is important (a field, theory, model, method, technology), then showcase relatable expamples and the **story** behind the idea
-- Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it, and where does it fit in the methodology: [^dreyfus]
+- Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it, and where does it fit in the methodology: 
     - Present the tool theoretically rigorous and sound, but **only where it matters**. 
     - More geometry and graphs over equations, more simulations and stories over proofs. Low-level details need careful, individual, hands-on study
     - Leverage previous mathematical, statistical, and domain knowledge
@@ -50,7 +50,9 @@ Let's go back to the burning question: **what I wish I had in a course?** It is 
     - In projects, we implement software solutions, with the main focus on the real-world challenges of deploying models and improving decision making. Interactive data visualization will help a lot in communicating persuasively.
     - Keep in mind best practices from reproducible research and software engineering, so that our apps and research code is easy to maintain and extend 
 
-[^dreyfus]: In teaching and learning, I heavily rely on the Dreyfus model of **skill acquisition**, which describes the following stages: Novice, Competent, Proficient, Expert, Master. This 10 minutes [presentation](https://youtu.be/p8jFp1c4F2E?si=RtMuqW7Gyo2gDeIX) is well worth your time.
+::: {.column-margin}
+ In teaching and learning, I heavily rely on the Dreyfus model of **skill acquisition**, which describes the following stages: Novice, Competent, Proficient, Expert, Master. This 10 minutes [presentation](https://youtu.be/p8jFp1c4F2E?si=RtMuqW7Gyo2gDeIX) is well worth your time.
+:::
 
 ::: {.callout-tip}
 ## Understand by building it (Feynman)!
