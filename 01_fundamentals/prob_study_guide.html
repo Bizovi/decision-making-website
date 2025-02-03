@@ -467,12 +467,24 @@ Figure&nbsp;1: Lectures in pink are purely theoretical. Lectures in yellow prese
 </section>
 <section id="combinatorics-and-sampling" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="combinatorics-and-sampling">Combinatorics and sampling</h2>
-<p>There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;There are three resources I recommend: Joe Blitzstein’s <a href="https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&amp;si=t-fvklHEnNNPY_mX">Lecture 1/2</a> of Probability 110, Santosh Venkatesh’s Probability Lectures, <a href="https://www.santoshvenkatesh.com/video-lectures">Tableau 2</a>, and Richard McElreath’s <a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">“Bayesian inference is just counting”</a>.</p></div></div><ul>
-<li>Multiplication rule and the “garden of forking paths”</li>
-<li>Sampling with and without replacement. Ordered vs unordered</li>
-<li>Naive Probability and motivation for Kolmogorov’s breakthrough</li>
-<li>Read this <a href="https://johnkerl.org/doc/prbstat/prbstat.html">short article</a> about the difference between probability and statistics</li>
+<p>Before jumping into the birthday problem, we need to know the stories behind core concepts in combinatorics, like <span class="math inline">\({n \choose k}\)</span> “n choose k”, factorial, falling factorial, and multiplication rule. We will then have to figure out how to apply these tools to ordered / unordered sampling with / without replacement. By learning the stories, you will never forget or misuse the mathematical relations:</p>
+<ul>
+<li>Multiplication rule and the “garden of forking paths”. Ordered sampling with replacement: urns and balls, unique sequences</li>
+<li>Ways to order n people at a long bar table. Factorials</li>
+<li>Surveying only once, dealing cards from a deck, flags and poles. Sampling without replacement and falling factorial</li>
+<li>Splitting n people into two teams / subgroups of size k and r. Unordered sampling without replacement</li>
+<li>Story proofs of useful relations in combinatorics.</li>
+<li>Naive probability limitations and motivation for Kolmogorov’s breakthrough of putting probability theory on a solid foundation</li>
+</ul>
+<p>If you are studying probability theory and mathematical statistics right now, or feel the need to go through the most important topics again, I highly recommend these <a href="https://www.santoshvenkatesh.com/video-lectures">lectures</a> by Santosh A. Venkatesh and Joe Blitzstein’s <a href="https://projects.iq.harvard.edu/stat110/home">Probability 110</a>. You might rightfully object that no matter how amazing those courses and presentations are, it takes a lot of effort to work through them start-to-finish.</p>
+<p>I encourage you to cherry-pick lectures where there are synergies with this course and could deepen your understanding. In my experience, the majority of people don’t really get probability theory and mathematical statistics from the first time. It’s partly because of an outdated way of teaching, partly because this stuff is really damn deep and complicated if you do it rigorously.</p>
+<p>There is absolutely no shame in going back to it again with a mindset of mastering the fundamentals. For me, this exercise turned out to be one of the most valuable things I studied. Also, understand that the resources I refer you to are a result of decades of teaching and research experience of those authors in top universities. For the purposes of learning probability, it’s almost impossible to explain these topics better. Our only secret weapons are simulations and knowledge of what parts are most important and useful in practice.</p>
+<ul>
+<li>Watch S. Venkatesh’s introductory lecture on probability, called “Prelude to a theory of chance” (Tableau 1).</li>
+<li>What is the difference between probability and statistics? Read this <a href="https://johnkerl.org/doc/prbstat/prbstat.html">short article</a>. Does your answer align?</li>
+<li>Watch J. Blitzstein’s first <a href="https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&amp;si=t-fvklHEnNNPY_mX">three lectures</a>. Feel free to fast-forward and skip the things you already know well.</li>
+<li>Watch S. Venkatesh’s lecture on combinatorics, Tableau 2.</li>
+<li>Follow it up with the urn models in Tableau 3.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -484,15 +496,33 @@ Birthday Paradox. Pigenhole Principle. Collision Problems
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>One of the reasons we’re not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. The birthday problem is one of such examples and we’ll do simulations and derive the analytical solution – suggesting unexpected applications in computer science and engineering.</p>
+<p>One of the reasons we’re not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur.</p>
+<p>The birthday problem is one of such examples. We’ll do simulations and derive the analytical solution – suggesting unexpected applications in computer science and engineering.</p>
 </div>
 </div>
-<p>Rabbit hole - Urn models.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This is completely optional, but I highly recommend the following provocative talk by Richard McElreath, “Bayesian inference is just counting” (<a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">slides</a> and <a href="https://www.youtube.com/watch?v=_NEMHM1wDfI">talk</a>). The understanding you’ll gain from it will make learning Bayesian statistics much easier.</p>
+</div></div><div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rabbit hole: unordered sampling with replacement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Tableau 3, walk through the proof of unordered sampling with replacement, only if you find it interesting. The result will be useful only when we’ll introduce bootstrap (explanation <a href="https://rpubs.com/riazakhan94/bootstrap_distinct_sample">here</a>)</p>
+</div>
+</div>
+<p>I understand if your reaction at this point is: “Are you kidding me, this is just a warm-up?”. I would like to convince you that the time investment is not that big and the payoff is huge. In a formal classroom setting, we would spend 1h 20’ in a lab, with roughly 2-4 hours of self-study and optional readings necessary for you to get a really good grasp on this. If you study by yourself, there are three lectures by J. Blitzstein (45’ each), 3 tableaus by S. Venkatesh (1h each). There will be a huge overlap in the content and not all of it requires hands-on study.</p>
+<p>So, what do you get in return of this time investment? Fun stories and applications in multiple domains, confidence and not being scared of mathematical abstraction, courage to explore more. You might realize that probability and statistics don’t have to be a chore, but a worthwhile and fascinating profession to pursue. Motivation makes all the difference, so we have good reasons to be disciplined and work hard.</p>
 </section>
 <section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
-<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, here are some readings:</p>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
+<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, here are some readings:</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
 <li>Probability Triple and Random Variables - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
 <li>Collectivity (“physical” structure), Statistical Population, Sample. We need to be a bit more precise in what we mean by a statistical model and a DGP.
 <ul>
@@ -519,16 +549,16 @@ Hypotheses, Process models, Statistical models
 </section>
 <section id="stories-behind-distributions" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
-<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
-<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></li>
+<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
+<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
 <li>Poisson. Limiting and Conditioning. Overdispersion</li>
 <li>Beta, Gamma, Exponential. Exponential Family and Information Theory</li>
 <li>Statistical superstars: <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(F(d_1, d_2)\)</span></li>
 <li>Weirdos: Mixtures, Dirichlet, Multinomial, Weibull, heavy tails</li>
 <li>Remember the differences between PMF, PDF, CDF, MGF, <span class="math inline">\(\mathbb{E}\)</span>, <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{E}g(x)\)</span></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -645,8 +675,8 @@ Monty Hall. Simpson’s Paradox and DAGs
 </section>
 <section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
-<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
+<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
 <li>We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">here</a>.</li>
 <li>If you’re interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure</li>
 <li>What does a statistician want? Review important properties of estimators.
