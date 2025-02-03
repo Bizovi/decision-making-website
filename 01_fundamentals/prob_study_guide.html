@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mihai Bizovi">
 
-<title>prob_study_guide – Decision Science Course</title>
+<title>Fundamentals of probability and statistics – Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,8 +126,8 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Decision Science Course">
-<meta property="og:description" content="">
+<meta property="og:title" content="Fundamentals of probability and statistics – Decision Science Course">
+<meta property="og:description" content="A study guide through simulation">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -331,8 +332,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#probability-and-statistics-study-guide" id="toc-probability-and-statistics-study-guide" class="nav-link active" data-scroll-target="#probability-and-statistics-study-guide">Probability and Statistics: Study Guide</a>
-  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#roadmap-and-the-big-picture" id="toc-roadmap-and-the-big-picture" class="nav-link" data-scroll-target="#roadmap-and-the-big-picture">Roadmap and the big picture</a></li>
   <li><a href="#combinatorics.-sampling.-urn-models" id="toc-combinatorics.-sampling.-urn-models" class="nav-link" data-scroll-target="#combinatorics.-sampling.-urn-models">Combinatorics. Sampling. Urn Models</a></li>
   <li><a href="#probability-triple.-random-variables.-models" id="toc-probability-triple.-random-variables.-models" class="nav-link" data-scroll-target="#probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</a></li>
   <li><a href="#stories-behind-distributions" id="toc-stories-behind-distributions" class="nav-link" data-scroll-target="#stories-behind-distributions">Stories behind distributions</a></li>
@@ -342,7 +343,6 @@ window.Quarto = {
   <li><a href="#hypothesis-testing.-neyman-pearson" id="toc-hypothesis-testing.-neyman-pearson" class="nav-link" data-scroll-target="#hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</a></li>
   <li><a href="#frequentism-vs-likelihood-vs-bayes" id="toc-frequentism-vs-likelihood-vs-bayes" class="nav-link" data-scroll-target="#frequentism-vs-likelihood-vs-bayes">Frequentism vs Likelihood vs Bayes</a></li>
   <li><a href="#dead-salmon-experiment.-replication-crisis" id="toc-dead-salmon-experiment.-replication-crisis" class="nav-link" data-scroll-target="#dead-salmon-experiment.-replication-crisis">Dead Salmon Experiment. Replication Crisis</a></li>
-  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -351,18 +351,69 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Fundamentals of probability and statistics</h1>
+<p class="subtitle lead">A study guide through simulation</p>
+</div>
 
 
 
+<div class="quarto-title-meta column-body">
 
-<section id="probability-and-statistics-study-guide" class="level1 page-columns page-full">
-<h1>Probability and Statistics: Study Guide</h1>
-<p>Many mistakes in statistical modeling and inference come from a misunderstanding about the nature of statistical inference. This is why we start from the very beginning, with counting. But first, read the <a href="../index.html#module-2-probability-and-statistics">motivation</a> from course introduction.</p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mihai Bizovi, VP of Decision Science </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
 
-<div class="no-row-height column-margin column-container"><div class="">
-<p>In contrast with the previous module, the lectures here are generally more mathematical, hands-on, and time-consuming. But don’t worry, I keep the promise of stories and graphs over proofs.</p>
-</div></div><div class="cell" data-fig-width="9" data-layout-align="default">
+
+</header>
+
+
+<p>In the introduction and first module (business school for data scientists), I tried to convince you that data science and AI in businesses is about quantitative questions, decision-making, and improving outcomes. By walking through many use-cases in different domains, we saw how widespread are its applications and how valuable a data scientist could be to a firm.</p>
+<p>Previous readings should give you enough motivation, context, and background to decide if you want to follow the proposed path. If the answer is yes, the question becomes how to actually do it<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and where to start. There are two key insights to remember:</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;As a reminder: ask the right questions, in order to build models which bring insight into the consequences of our actions, to improve outcomes.</p></div></div><ul>
+<li>Methodology, asking good questions, and problem formulation is what will make or break your project in practice</li>
+<li>The importance of mastering the fundamentals</li>
+</ul>
+<p>In the introduction, I highlighted two types of prerequisites, which roughly translate to hard skills and soft skills. The hard skills are linear algebra, calculus, probability theory, inferential statistics, and programming for data science. The soft skills have a big overlap with research methods, scientific thinking, and business understanding.</p>
+<p>Before explaining how to study and what are the most important concepts and skills to develop in probability and statistics, I want to tell you two important lessons from Patrick Winston’s talk at MIT, “How to speak”:</p>
+<ul>
+<li>The quality of your idea and solution is a function of knowledge, practice, and talent; where talent is the least important – <span class="math inline">\(f(\mathbb{K}, \mathbf{P}, T)\)</span></li>
+<li>Your success will be largely determined by your ability to speak, write, and the quality of your ideas – <span class="math inline">\(g(S, W, Q)\)</span></li>
+</ul>
+<p>My point is that you need both: skills and understanding, soft skills and hard skills. Many mistakes in statistical modeling come from a misunderstanding of the nature of statistical inference. Other mistakes are not statistical, but a poorly formulated problem, which leads to using the wrong tool, or the right tool in an incorrect way. There is this always-present gap between the real world and mathematical abstraction.</p>
+<section id="prerequisites" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>The way you study probability and statistics will depend on your background. In terms of prerequisites, you need an exposure to linear algebra, calculus or mathematical analysis, and inferential statistics (hypothesis testing and linear regression).</p>
+<p>In this module, I make little use of linear algebra or calculus, as it is an applied, not proof-based or theoretical course. However, if you never had those courses, it will be very difficult to understand the meaning behind mathematical notation and abstractions. If you never had a statistics class on hypothesis testing and linear regression, you won’t know the pain. Jokes aside, it means you will need to use another resource provided in section iv, in parallel with this module.</p>
+<p>You might be at a point in your studies, usually <u>second year of bachelor’s degree</u>, when you don’t know how to code in Python or R yet, and have a probability &amp; mathematical statistics class. Maybe you have another one on applied regression and econometrics as well. This is a perfect moment to study the module fully,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> in order to:</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;for example, in a simulation or scientific computing class</p></div></div><ul>
+<li>Learn programming for data analysis in R or Python, including data wrangling, visualization, and reproducible research</li>
+<li>Apply theoretical concepts and models to real-world stories and case-studies. This will highlight why is that theory relevant, useful, and why was it invented in the first place</li>
+<li>Understand how and why the theory works by doing lots of simulations. Find out under what conditions it fails</li>
+</ul>
+<p>If you already had the classes mentioned above, you might be in third, 4th year, masters’ degree, or finished your formal studies. It’s likely you know how to solve problems and get stuff done in R or Python. Then, I recommend you go through this module in an accelerated way,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> both in terms of theory and coding. You might ask, why not skip it entirely and focus on statistical modeling?</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;for example, using some parts of the module as a review in the context of a data science or econometrics’ class</p></div></div><ul>
+<li>First, it’s a good review and warm-up with fun and realistic case-studies. We all get rusty when not practicing for a while</li>
+<li>A much more important reason is the re-contextualization of the fundamentals and getting rid of misconceptions and bad habits or practices</li>
+<li>I think that statistics is so tricky, that it’s almost guaranteed we misunderstood something the first time we studied it</li>
+</ul>
+</section>
+<section id="roadmap-and-the-big-picture" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="roadmap-and-the-big-picture">Roadmap and the big picture</h2>
+<p>The module is build around stories and case-studies highlighting key concepts from probability theory, mathematical statistics, and applied regression modeling. We start from the very beginning, with counting and combinatorics, ending up with more sophisticated statistical models.</p>
+<p>There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, and optimization algorithms.</p>
+<div class="cell" data-fig-width="9" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-mermaid" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -370,31 +421,39 @@ window.Quarto = {
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
 
-    U[Uncertainty] -- P. construction --&gt; Comb[Combinatorics] --&gt; PTr[Prob Triple, r.v.] --&gt; RV[Distribution stories] --&gt; B[Bayes &amp; Conditioning]
+    U[Introduction] -- Prob &amp; Bayes --&gt; Comb[Birthday problem. Combinatorics] --&gt; PTr[Safari reservations. Binomial, Prob. trees. LLN] --&gt; RVAR[Probability triple. Random variables]  --&gt; NEWS[Newsvendor problem. Distribution stories] --&gt; B[Medical testing. Bayes and Conditioning] --&gt; BB[Left-handed proportion. Beta-Binomial] --&gt; GP[Waiting times. Asthma. Gamma-Poisson ]
 
-    U -- estimator properties --&gt; E[LLN, CLT, Properties] --&gt; BV[Bias-Variance]
+    U -- Math. stats --&gt; E[Splitting U.S. Schools? Central limit theorem] --&gt; SM[Population, sample. Estimands, estimators. ] --&gt; PV[ P-values of many studies. Error control]  --&gt; CI[Wikipedia A/B test. Confidence intervals] --&gt; PC[How much data? Statistical Power. Experiment design]  --&gt; RC[Dead salmon experiment. Replication Crisis] 
 
-    U -- hypothesis testing --&gt; NP[Neyman-Pearson] --&gt; M1[/Module 1: A/B Testing/] --&gt; Persp[Freq, Lik, Bayes] --&gt; RC[Replication Crisis]
+    U -- Modeling. Algorithms --&gt; EC[Divorce rates. Three confounders] --&gt; BV[Bootstrap conf intervals. Out of sample error] --&gt; MCMC[Visiting islands. Markov Chain Monte Carlo] --&gt; UCLA[Berkeley Admissions. Logistic regression] --&gt; OPT[Gradient Descent. Convex optimization in GLMs] 
 
-    style RV fill:#f7f5bc
-    style B fill:#f7f5bc
-    style NP fill:#f7f5bc
+    style MCMC fill:#f7f5bc
+    style OPT fill:#f7f5bc
+    style BV fill:#f7f5bc
 
-    style M1 fill:#ffb6c1
+    style RVAR fill:#f5cdc4 
+    style SM fill:#f5cdc4 
 </pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A mind map of lectures grouped by theme so you can navigate the study guide easier. See below all the topics, case-studies, references, and readings for each chapter or lecture.
+Figure&nbsp;1: Lectures in pink are purely theoretical. Lectures in yellow present the most important algorithms for estimating our workhorse models. The vast majority involve coding and data analysis
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>These topics and case-studies are designed for a whole semester of intensive study. My promise is that by the end of it, you will become a more confident programmer and will have a very solid foundation for further studies of statistical modeling, causal inference, and machine learning.</p>
+<p>When teaching to masters’ students, in the context of a data science class, I still feel it’s necessary to walk through many of these topics. What is sacrificed though, is depth and a limited amount of time available for students to practice on these case-studies. In my opinion, this is evidence that everyone can benefit from this module: undergraduate and graduate students, people already working in the field as data scientists and analysts. Even machine learning engineers.</p>
+<p>There is one more catch. For each of these topics and case-studies, you might feel the need to dive deeper into the underlying mathematics, philosophy, and explore more applications. In other words, many rabbit holes. Your feeling is correct, there is so much to learn and explore, but this should not intimidate you. Instead, let it serve as motivation, dive into a topic that resonates with you and see where does it lead.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Time, attention, and energy are the only constraints you should keep in mind while diving much deeper into your chosen topic.</p>
+</div></div></section>
 <section id="combinatorics.-sampling.-urn-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="combinatorics.-sampling.-urn-models">Combinatorics. Sampling. Urn Models</h2>
-<p>There are several excellent courses which start from counting, and I think there are some useful and practical things ideas you missed about combinatorics. There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;There are three resources I recommend: Joe Blitzstein’s <a href="https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&amp;si=t-fvklHEnNNPY_mX">Lecture 1/2</a> of Probability 110, Santosh Venkatesh’s Probability Lectures, <a href="https://www.santoshvenkatesh.com/video-lectures">Tableau 2</a>, and Richard McElreath’s <a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">“Bayesian inference is just counting”</a>.</p></div></div><ul>
+<p>There are several excellent courses which start from counting, and I think there are some useful and practical things ideas you missed about combinatorics. There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;There are three resources I recommend: Joe Blitzstein’s <a href="https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&amp;si=t-fvklHEnNNPY_mX">Lecture 1/2</a> of Probability 110, Santosh Venkatesh’s Probability Lectures, <a href="https://www.santoshvenkatesh.com/video-lectures">Tableau 2</a>, and Richard McElreath’s <a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">“Bayesian inference is just counting”</a>.</p></div></div><ul>
 <li>Multiplication rule and the “garden of forking paths”</li>
 <li>Sampling with and without replacement. Ordered vs unordered</li>
 <li>Naive Probability and motivation for Kolmogorov’s breakthrough</li>
@@ -416,8 +475,8 @@ Birthday Paradox. Pigenhole Principle. Collision Problems
 </section>
 <section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
-<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, here are some readings:</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
+<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, here are some readings:</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
 <li>Probability Triple and Random Variables - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
 <li>Collectivity (“physical” structure), Statistical Population, Sample. We need to be a bit more precise in what we mean by a statistical model and a DGP.
 <ul>
@@ -444,16 +503,16 @@ Hypotheses, Process models, Statistical models
 </section>
 <section id="stories-behind-distributions" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
-<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
-<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
+<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
 <li>Poisson. Limiting and Conditioning. Overdispersion</li>
 <li>Beta, Gamma, Exponential. Exponential Family and Information Theory</li>
 <li>Statistical superstars: <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(F(d_1, d_2)\)</span></li>
 <li>Weirdos: Mixtures, Dirichlet, Multinomial, Weibull, heavy tails</li>
 <li>Remember the differences between PMF, PDF, CDF, MGF, <span class="math inline">\(\mathbb{E}\)</span>, <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{E}g(x)\)</span></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -570,8 +629,8 @@ Monty Hall. Simpson’s Paradox and DAGs
 </section>
 <section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
-<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
+<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
 <li>We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">here</a>.</li>
 <li>If you’re interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure</li>
 <li>What does a statistician want? Review important properties of estimators.
@@ -764,7 +823,6 @@ Dead salmon experiment
 </div>
 
 
-</section>
 </section>
 
 
