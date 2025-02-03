@@ -160,6 +160,53 @@ I understand if your reaction at this point is: "Are you kidding me, this is jus
 So, what do you get in return of this time investment? Fun stories and applications in multiple domains, confidence and not being scared of mathematical abstraction, courage to explore more. You might realize that probability and statistics don't have to be a chore, but a worthwhile and fascinating profession to pursue. Motivation makes all the difference, so we have good reasons to be disciplined and work hard.
 
 
+## Binomial distribution. Probability trees. Simulation and LLN
+
+The coin flip, which we'll call Bernoulli distribution, is one of the most useful mathematical abstractions, as binary outcomes are ubiquitous -- the event either happens or not, with a probability $\theta$. Think about a few examples from your day-to-day life and from the perspective of a firm.
+
+If we have multiple independent events, each one being a coin flip, we can model the number of successes $k$ out of $n$ trials with the Binomial distribution. In order to apply what we learned about combinatorics, a good exercise is to derive its distribution (probability mass function) via a story proof.
+
+::: {.callout-note}
+## Couples showing up to a safari
+
+We will analyze and simulate a simple, but tricky example to find out what is the probability of a given number of people who signed up for a safari to actually show up. I take as a starting point A. Fleischhacker's [example](https://www.persuasivepython.com/1-repuncertainty) from his book called "Persuasive Python".
+:::
+
+In our version of the problem, we also have 3 seats available, but this time the events are not independent, as we have a proportion of people making reservations for two (couples or friends). We assume that if one of them changes their mind and doesn't show up, neither will the other. Moreover, even if we know the prevalence of couples in the population of our customers, we still have to calculate the proportion of seats reserved by each type. 
+
+In order to overcome these challenges, we will use probability trees, Bernoulli and Binomial distributions. We'll end up with a nasty formula which can be interpreted as a mixture model. Then, we simulate the process and interpret the results, comparing them to the case in which all passengers were independent. 
+
+To take our analysis even further, we can do a sensitivity analysis which will tell us for what proportion of couples in the population we start seeing dramatically different outcomes in terms of expected number of people who show up. There are multiple ways in which we can compute it, but I will leverage the formulas for calculating the expected value and variance for an arbitrary discrete random variable. 
+
+This will enable us to compute the confidence intervals around the mean, which tells us if we're to repeat the simulation many times, 95% of the confidence intervals will contain the true mean. In the safari problem, computing confidence intervals doesn't make too much sense, but we will explore this important idea in much more depth in later lectures. As a rule of thumb, always ask yourself "What if I got really lucky or unlucky with this sample?"
+
+This case-study teaches you a lot of important concepts and techniques in probability. I also introduce the Law of Large Numbers to justify why simulation works and what are the dangers when we don't think about sample size. You also need to be aware about a little theorem, called "Universality of the Uniform", which states that using good pseudo-random numbers, uniformly distributed samples, we can generate samples from any distribution. 
+
+In terms of programming, you will learn to work with data frames, functions, use vectorized calculations instead of for loops, manipulate data, make persuasive visualizations, and generate reproducible reports of your work.
+
+::: {.callout-caution}
+## Rabbit hole: the hot hand strikes again
+
+You might've heard about the hot hand fallacy. We model streaks of successful shots in basketball and ask whether streaks of $k$ are surprising. Read the original paper by Kahneman and Tversky and ignore the statistical test they designed.
+
+Their insight that fans and experts in basketball massively overestimate the magnitude of this effect is fundamentally correct. However, what doesn't follow from their research is that there is no effect, which is pointed out by a few bayesian statisticians in the recent years. The debate goes on, but the limitations of the original statistical test are undeniable
+
+This is a true rabbit hole. Right now, we have the tools to simulte what can we expect if there was no effect or a small effect, but we can't design yet a statistical test. For that, refer to the last section in Tableau 10 of S. Venkatesh, Kahneman's original paper, and recent papers which challenge the statistical methodology and modeling approach based on which the original conclusion was reached.
+:::
+
+Despite the ongoing debate about the magnitude of the effect in the hot hand phenomenon, it is undeniable that such simulations are extremely valuable -- they prevent us to be fooled by randomness. To take a few examples:
+
+- we might see patterns in stock markets which can be explained by a random walk
+- we might not realize the effect of the sample size on observing extreme results
+- we might attribute an observed pattern of ELO and performances by gender in chess to nonsensical explanations, when it can be explained by a disparity in the number of players, combined with estimating a max / top k proportion
+- we might underestimate the support for a political party due to differential non-response
+- we might overestimate the effectiveness of a medical treatment due to drop-out and censoring
+- we might think there is an association between variables, when both can be explained by a common cause, a confounder
+
+This is one of the key reasons to study probability, statistics, and do lots of simulations. We train our brain to spot biases in our reasoning and decision-making. Even though we will still make foolish mistakes, at least we have a method to slow down and check a statement systematically. In the words of Richard McElreath:
+
+> And with no false modesty my intuition is no better. But I have learned to solve these problems by cold, hard, ruthless application of conditional probability. There’s no need to be clever when you can be ruthless.
+
 ## Probability Triple. Random Variables. Models
 
 If you understand and can explain the above ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky[^shaky], here are some readings:
@@ -200,18 +247,6 @@ You studied the properties of a whole zoo of probability distributions, but then
 
 [^prob-simulations]: Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) / applications with more math from Joe Blitzstein.
 
-
-::: {.callout-note}
-## Couples showing up to a safari
-
-We will analyze and simulate a simple, but tricky example to find out what is the probability of a given number of people who signed up to actually go for the safari.
-:::
-
-::: {.callout-note}
-## The hot hand strikes again
-
-We model streaks of successful shots in basketball and ask whether streaks of $k$ are surprising. I review the original paper by Kahneman and Tversky, what they did very well, but also potential problems with the statistical model
-:::
 
 ::: {.callout-note}
 ## Poisson and the Prussian army
