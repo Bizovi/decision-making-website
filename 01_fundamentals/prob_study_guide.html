@@ -334,7 +334,8 @@ window.Quarto = {
   <ul>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#roadmap-and-the-big-picture" id="toc-roadmap-and-the-big-picture" class="nav-link" data-scroll-target="#roadmap-and-the-big-picture">Roadmap and the big picture</a></li>
-  <li><a href="#combinatorics.-sampling.-urn-models" id="toc-combinatorics.-sampling.-urn-models" class="nav-link" data-scroll-target="#combinatorics.-sampling.-urn-models">Combinatorics. Sampling. Urn Models</a></li>
+  <li><a href="#learning-how-to-learn" id="toc-learning-how-to-learn" class="nav-link" data-scroll-target="#learning-how-to-learn">Learning how to learn</a></li>
+  <li><a href="#combinatorics-and-sampling" id="toc-combinatorics-and-sampling" class="nav-link" data-scroll-target="#combinatorics-and-sampling">Combinatorics and sampling</a></li>
   <li><a href="#probability-triple.-random-variables.-models" id="toc-probability-triple.-random-variables.-models" class="nav-link" data-scroll-target="#probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</a></li>
   <li><a href="#stories-behind-distributions" id="toc-stories-behind-distributions" class="nav-link" data-scroll-target="#stories-behind-distributions">Stories behind distributions</a></li>
   <li><a href="#conditioning-and-bayes-rule" id="toc-conditioning-and-bayes-rule" class="nav-link" data-scroll-target="#conditioning-and-bayes-rule">Conditioning and Bayes Rule</a></li>
@@ -412,7 +413,9 @@ window.Quarto = {
 <section id="roadmap-and-the-big-picture" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="roadmap-and-the-big-picture">Roadmap and the big picture</h2>
 <p>The module is build around stories and case-studies highlighting key concepts from probability theory, mathematical statistics, and applied regression modeling. We start from the very beginning, with counting and combinatorics, ending up with more sophisticated statistical models.</p>
-<p>There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, and optimization algorithms.</p>
+<p>There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, optimization algorithms.</p>
+<p>Note that some case studies belong to and interact with other modules.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> For example, in newsvendor problem and Wikipedia A/B test, we have to approach the problem from the perspective of businesses making decisions and carefully consider a few methodological aspects. There are a few simple Bayesian models, for inferring proportions and rates; elements of causal thinking and experiment design; and a gentle introduction to generalized linear models.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;This is a good thing, as our field is interdisciplinary. Moreover, if we strip the statistics out of context, we end up with a dry and abstract exposition</p></div></div><div class="column-page-inset-right">
 <div class="cell" data-fig-width="9" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-mermaid" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -421,11 +424,11 @@ window.Quarto = {
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
 
-    U[Introduction] -- Prob &amp; Bayes --&gt; Comb[Birthday problem. Combinatorics] --&gt; PTr[Safari reservations. Binomial, Prob. trees. LLN] --&gt; RVAR[Probability triple. Random variables]  --&gt; NEWS[Newsvendor problem. Distribution stories] --&gt; B[Medical testing. Bayes and Conditioning] --&gt; BB[Left-handed proportion. Beta-Binomial] --&gt; GP[Waiting times. Asthma. Gamma-Poisson ]
+    U[Introduction] -- Prob &amp; Bayes --&gt; Comb[Birthday problem. Combinatorics] --&gt; PTr[Safari reservations. Binomial, Prob. trees. LLN] --&gt; RVAR[Probability triple. Random variables]  --&gt; NEWS[/Newsvendor problem. Distribution stories/] --&gt; B[Medical testing. Bayes and Conditioning] --&gt; BB[/Left-handed proportion. Beta-Binomial/] --&gt; GP[/Waiting times. Asthma. Gamma-Poisson /]
 
-    U -- Math. stats --&gt; E[Splitting U.S. Schools? Central limit theorem] --&gt; SM[Population, sample. Estimands, estimators. ] --&gt; PV[ P-values of many studies. Error control]  --&gt; CI[Wikipedia A/B test. Confidence intervals] --&gt; PC[How much data? Statistical Power. Experiment design]  --&gt; RC[Dead salmon experiment. Replication Crisis] 
+    U -- Math. stats --&gt; E[Splitting U.S. Schools? Central limit theorem] --&gt; SM[Population, sample. Estimands, estimators. ] --&gt; PV[ P-values of many studies. Error control]  --&gt; CI[Wikipedia A/B test. Confidence intervals] --&gt; PC[How much data? Statistical Power. Experiment design]  --&gt; RC[/Dead salmon experiment. Replication Crisis/] 
 
-    U -- Modeling. Algorithms --&gt; EC[Divorce rates. Three confounders] --&gt; BV[Bootstrap conf intervals. Out of sample error] --&gt; MCMC[Visiting islands. Markov Chain Monte Carlo] --&gt; UCLA[Berkeley Admissions. Logistic regression] --&gt; OPT[Gradient Descent. Convex optimization in GLMs] 
+    U -- Modeling. Algorithms --&gt; EC[/Divorce rates. Three confounders/] --&gt; BV[Bootstrap conf intervals. Out of sample error] --&gt; MCMC[/Visiting islands. Markov Chain Monte Carlo/] --&gt; UCLA[/Berkeley Admissions. Logistic regression/] --&gt; OPT[/Gradient Descent. Convex optimization in GLMs/] 
 
     style MCMC fill:#f7f5bc
     style OPT fill:#f7f5bc
@@ -437,9 +440,10 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Lectures in pink are purely theoretical. Lectures in yellow present the most important algorithms for estimating our workhorse models. The vast majority involve coding and data analysis
+Figure&nbsp;1: Lectures in pink are purely theoretical. Lectures in yellow present the most important algorithms for estimating our workhorse models. The vast majority involve coding and data analysis. The rhomboid indicates that the case-study belongs to another module.
 </figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -450,10 +454,21 @@ Figure&nbsp;1: Lectures in pink are purely theoretical. Lectures in yellow prese
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Time, attention, and energy are the only constraints you should keep in mind while diving much deeper into your chosen topic.</p>
 </div></div></section>
-<section id="combinatorics.-sampling.-urn-models" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="combinatorics.-sampling.-urn-models">Combinatorics. Sampling. Urn Models</h2>
-<p>There are several excellent courses which start from counting, and I think there are some useful and practical things ideas you missed about combinatorics. There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;There are three resources I recommend: Joe Blitzstein’s <a href="https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&amp;si=t-fvklHEnNNPY_mX">Lecture 1/2</a> of Probability 110, Santosh Venkatesh’s Probability Lectures, <a href="https://www.santoshvenkatesh.com/video-lectures">Tableau 2</a>, and Richard McElreath’s <a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">“Bayesian inference is just counting”</a>.</p></div></div><ul>
+<section id="learning-how-to-learn" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="learning-how-to-learn">Learning how to learn</h2>
+<p>Consider the first lecture as a warm-up, where you have a chance to set-up your development environment and get into the flow of studying. I start with combinatorics, because there are several important concepts you might’ve missed or forgot, which have practical implications and pop up throughout the course.</p>
+<p>Another goal of this lecture is to gain an appreciation and overcome the fear of mathematical abstraction and notation. We will see how these mathematical constructs and models have an underlying story and a reason for existence. By understanding the story and with a bit of practice, you will never, ever have to resort to rote memorization.</p>
+<p>At last, I want to highlight that even these simplest tools, known for centuries, have real-world applications and were key to the development of the world as we know it today. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> They look simple only in retrospective and we take them for granted. By connecting the appropriate abstraction (i.e.&nbsp;mathematical tool) to the phenomenon we want to explain and understand, we can make our scientific hypotheses precise and powerful. Urn models applied to physics are a great example of that. See the references in the “rabbit hole” section.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Think of geometry and cathedrals, apeducts, calculus, physics, engineering, industrial revolution, computers, and information technology</p></div></div><p>I think we have a problem in the teaching of mathematics to high-schoolers and undergraduates, where by applications is meant a numerical or toy example. Those are not applications! In the best case, they’re stories and drills. Don’t get me wrong, drills are important and we can’t always do only what we like, but at worst, they’re tedious, useless stuff assigned as homework which kills any passion.</p>
+<p>It might sound obvious, but we practice in a very specific way – with your reference book(s), code editor, and pen / paper at all times. Learn actively, by doing and problem solving, by testing yourself, by trying to come up with your own examples. We cannot afford to rush when studying mathematics and computer science.</p>
+<blockquote class="blockquote">
+<p>Read, pause, think, pause, write, pause, (perhaps erase), pause, read, pause, (perhaps go back), pause, write, … - A. Turing, 1936</p>
+</blockquote>
+</section>
+<section id="combinatorics-and-sampling" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="combinatorics-and-sampling">Combinatorics and sampling</h2>
+<p>There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;There are three resources I recommend: Joe Blitzstein’s <a href="https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&amp;si=t-fvklHEnNNPY_mX">Lecture 1/2</a> of Probability 110, Santosh Venkatesh’s Probability Lectures, <a href="https://www.santoshvenkatesh.com/video-lectures">Tableau 2</a>, and Richard McElreath’s <a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">“Bayesian inference is just counting”</a>.</p></div></div><ul>
 <li>Multiplication rule and the “garden of forking paths”</li>
 <li>Sampling with and without replacement. Ordered vs unordered</li>
 <li>Naive Probability and motivation for Kolmogorov’s breakthrough</li>
@@ -472,11 +487,12 @@ Birthday Paradox. Pigenhole Principle. Collision Problems
 <p>One of the reasons we’re not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. The birthday problem is one of such examples and we’ll do simulations and derive the analytical solution – suggesting unexpected applications in computer science and engineering.</p>
 </div>
 </div>
+<p>Rabbit hole - Urn models.</p>
 </section>
 <section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
-<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, here are some readings:</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
+<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, here are some readings:</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
 <li>Probability Triple and Random Variables - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
 <li>Collectivity (“physical” structure), Statistical Population, Sample. We need to be a bit more precise in what we mean by a statistical model and a DGP.
 <ul>
@@ -503,16 +519,16 @@ Hypotheses, Process models, Statistical models
 </section>
 <section id="stories-behind-distributions" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
-<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
-<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
+<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
+<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></li>
 <li>Poisson. Limiting and Conditioning. Overdispersion</li>
 <li>Beta, Gamma, Exponential. Exponential Family and Information Theory</li>
 <li>Statistical superstars: <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(F(d_1, d_2)\)</span></li>
 <li>Weirdos: Mixtures, Dirichlet, Multinomial, Weibull, heavy tails</li>
 <li>Remember the differences between PMF, PDF, CDF, MGF, <span class="math inline">\(\mathbb{E}\)</span>, <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{E}g(x)\)</span></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -629,8 +645,8 @@ Monty Hall. Simpson’s Paradox and DAGs
 </section>
 <section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
-<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
+<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
 <li>We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">here</a>.</li>
 <li>If you’re interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure</li>
 <li>What does a statistician want? Review important properties of estimators.
