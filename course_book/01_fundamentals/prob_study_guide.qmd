@@ -2,40 +2,92 @@
 format:
   html:
     toc-location: left
+title: Fundamentals of probability and statistics
+subtitle: A study guide through simulation
+author:
+  - name: Mihai Bizovi
+    id: mb
+    degrees: 
+    - "VP of Decision Science"
 ---
 
+In the introduction and first module (business school for data scientists), I tried to convince you that data science and AI in businesses is about quantitative questions, decision-making, and improving outcomes. By walking through many use-cases in different domains, we saw how widespread are its applications and how valuable a data scientist could be to a firm.
 
-# Probability and Statistics: Study Guide
 
-Many mistakes in statistical modeling and inference come from a misunderstanding about the nature of statistical inference. This is why we start from the very beginning, with counting. But first, read the [motivation](../index.qmd#module-2-probability-and-statistics) from course introduction.
+Previous readings should give you enough motivation, context, and background to decide if you want to follow the proposed path. If the answer is yes, the question becomes how to actually do it^[As a reminder: ask the right questions, in order to build models which bring insight into the consequences of our actions, to improve  outcomes.] and where to start. There are two key insights to remember:
 
-::: {.column-margin}
+- Methodology, asking good questions, and problem formulation is what will make or break your project in practice 
+- The importance of mastering the fundamentals
 
-In contrast with the previous module, the lectures here are generally more mathematical, hands-on, and time-consuming. But don't worry, I keep the promise of stories and graphs over proofs. 
-:::
+In the introduction, I highlighted two types of prerequisites, which roughly translate to hard skills and soft skills. The hard skills are linear algebra, calculus, probability theory, inferential statistics, and programming for data science. The soft skills have a big overlap with research methods, scientific thinking, and business understanding.
+
+Before explaining how to study and what are the most important concepts and skills to develop in probability and statistics, I want to tell you two important lessons from Patrick Winston's talk at MIT, "How to speak": 
+
+- The quality of your idea and solution is a function of knowledge, practice, and talent; where talent is the least important -- $f(\mathbb{K}, \mathbf{P}, T)$
+- Your success will be largely determined by your ability to speak, write, and the quality of your ideas -- $g(S, W, Q)$
+
+
+My point is that you need both: skills and understanding, soft skills and hard skills. Many mistakes in statistical modeling come from a misunderstanding of the nature of statistical inference. Other mistakes are not statistical, but a poorly formulated problem, which leads to using the wrong tool, or the right tool in an incorrect way. There is this always-present gap between the real world and mathematical abstraction.
+
+## Prerequisites
+
+The way you study probability and statistics will depend on your background. In terms of prerequisites, you need an exposure to linear algebra, calculus or mathematical analysis, and inferential statistics (hypothesis testing and linear regression).
+
+In this module, I make little use of linear algebra or calculus, as it is an applied, not proof-based or theoretical course. However, if you never had those courses, it will be very difficult to understand the meaning behind mathematical notation and abstractions. If you never had a statistics class on hypothesis testing and linear regression, you won't know the pain. Jokes aside, it means you will need to use another resource provided in section iv, in parallel with this module.
+
+You might be at a point in your studies, usually [second year of bachelor's degree]{.underline}, when you don't know how to code in Python or R yet, and have a probability & mathematical statistics class. Maybe you have another one on applied regression and econometrics as well. This is a perfect moment to study the module fully,^[for example, in a simulation or scientific computing class] in order to:
+
+- Learn programming for data analysis in R or Python, including data wrangling, visualization, and reproducible research
+- Apply theoretical concepts and models to real-world stories and case-studies. This will highlight why is that theory relevant, useful, and why was it invented in the first place
+- Understand how and why the theory works by doing lots of simulations. Find out under what conditions it fails 
+
+If you already had the classes mentioned above, you might be in third, 4th year, masters' degree, or finished your formal studies. It's likely you know how to solve problems and get stuff done in R or Python. Then, I recommend you go through this module in an accelerated way,^[for example, using some parts of the module as a review in the context of a data science or econometrics' class] both in terms of theory and coding. You might ask, why not skip it entirely and focus on statistical modeling?
+
+- First, it's a good review and warm-up with fun and realistic case-studies. We all get rusty when not practicing for a while
+- A much more important reason is the re-contextualization of the fundamentals and getting rid of misconceptions and bad habits or practices
+- I think that statistics is so tricky, that it's almost guaranteed we misunderstood something the first time we studied it
+
+
+## Roadmap and the big picture
+
+The module is build around stories and case-studies highlighting key concepts from probability theory, mathematical statistics, and applied regression modeling. We start from the very beginning, with counting and combinatorics, ending up with more sophisticated statistical models. 
+
+There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, and optimization algorithms. 
+
 
 
 ```{mermaid}
 %%| label: fig-mermaid
 %%| fig-width: 9
 %%| fig-cap: |
-%%|   A mind map of lectures grouped by theme so you can navigate the study guide easier. See below all the topics, case-studies, references, and readings for each chapter or lecture.
+%%|    Lectures in pink are purely theoretical. Lectures in yellow present the most important algorithms for estimating our workhorse models. The vast majority involve coding and data analysis
 
 flowchart TD
 
-    U[Uncertainty] -- P. construction --> Comb[Combinatorics] --> PTr[Prob Triple, r.v.] --> RV[Distribution stories] --> B[Bayes & Conditioning]
+    U[Introduction] -- Prob & Bayes --> Comb[Birthday problem. Combinatorics] --> PTr[Safari reservations. Binomial, Prob. trees. LLN] --> RVAR[Probability triple. Random variables]  --> NEWS[Newsvendor problem. Distribution stories] --> B[Medical testing. Bayes and Conditioning] --> BB[Left-handed proportion. Beta-Binomial] --> GP[Waiting times. Asthma. Gamma-Poisson ]
 
-    U -- estimator properties --> E[LLN, CLT, Properties] --> BV[Bias-Variance]
+    U -- Math. stats --> E[Splitting U.S. Schools? Central limit theorem] --> SM[Population, sample. Estimands, estimators. ] --> PV[ P-values of many studies. Error control]  --> CI[Wikipedia A/B test. Confidence intervals] --> PC[How much data? Statistical Power. Experiment design]  --> RC[Dead salmon experiment. Replication Crisis] 
 
-    U -- hypothesis testing --> NP[Neyman-Pearson] --> M1[/Module 1: A/B Testing/] --> Persp[Freq, Lik, Bayes] --> RC[Replication Crisis]
+    U -- Modeling. Algorithms --> EC[Divorce rates. Three confounders] --> BV[Bootstrap conf intervals. Out of sample error] --> MCMC[Visiting islands. Markov Chain Monte Carlo] --> UCLA[Berkeley Admissions. Logistic regression] --> OPT[Gradient Descent. Convex optimization in GLMs] 
 
-    style RV fill:#f7f5bc
-    style B fill:#f7f5bc
-    style NP fill:#f7f5bc
+    style MCMC fill:#f7f5bc
+    style OPT fill:#f7f5bc
+    style BV fill:#f7f5bc
 
-    style M1 fill:#ffb6c1
+    style RVAR fill:#f5cdc4 
+    style SM fill:#f5cdc4 
 ```
 
+These topics and case-studies are designed for a whole semester of intensive study. My promise is that by the end of it, you will become a more confident programmer and will have a very solid foundation for further studies of statistical modeling, causal inference, and machine learning.
+
+When teaching to masters' students, in the context of a data science class, I still feel it's necessary to walk through many of these topics. What is sacrificed though, is depth and a limited amount of time available for students to practice on these case-studies. In my opinion, this is evidence that everyone can benefit from this module: undergraduate and graduate students, people already working in the field as data scientists and analysts. Even machine learning engineers. 
+
+
+There is one more catch. For each of these topics and case-studies, you might feel the need to dive deeper into the underlying mathematics, philosophy, and explore more applications. In other words, many rabbit holes. Your feeling is correct, there is so much to learn and explore, but this should not intimidate you. Instead, let it serve as motivation, dive into a topic that resonates with you and see where does it lead.
+
+::: {.column-margin}
+Time, attention, and energy are the only constraints you should keep in mind while diving much deeper into your chosen topic. 
+:::
 
 
 ## Combinatorics. Sampling. Urn Models
