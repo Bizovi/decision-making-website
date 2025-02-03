@@ -52,23 +52,24 @@ If you already had the classes mentioned above, you might be in third, 4th year,
 
 The module is build around stories and case-studies highlighting key concepts from probability theory, mathematical statistics, and applied regression modeling. We start from the very beginning, with counting and combinatorics, ending up with more sophisticated statistical models. 
 
-There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, and optimization algorithms. 
+There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, optimization algorithms. 
 
+Note that some case studies belong to and interact with other modules.^[This is a good thing, as our field is interdisciplinary. Moreover, if we strip the statistics out of context, we end up with a dry and abstract exposition] For example, in newsvendor problem and Wikipedia A/B test, we have to approach the problem from the perspective of businesses making decisions and carefully consider a few methodological aspects. There are a few simple Bayesian models, for inferring proportions and rates; elements of causal thinking and experiment design; and a gentle introduction to generalized linear models.
 
-
+::: {.column-page-inset-right}
 ```{mermaid}
 %%| label: fig-mermaid
 %%| fig-width: 9
 %%| fig-cap: |
-%%|    Lectures in pink are purely theoretical. Lectures in yellow present the most important algorithms for estimating our workhorse models. The vast majority involve coding and data analysis
+%%|    Lectures in pink are purely theoretical. Lectures in yellow present the most important algorithms for estimating our workhorse models. The vast majority involve coding and data analysis. The rhomboid indicates that the case-study belongs to another module.
 
 flowchart TD
 
-    U[Introduction] -- Prob & Bayes --> Comb[Birthday problem. Combinatorics] --> PTr[Safari reservations. Binomial, Prob. trees. LLN] --> RVAR[Probability triple. Random variables]  --> NEWS[Newsvendor problem. Distribution stories] --> B[Medical testing. Bayes and Conditioning] --> BB[Left-handed proportion. Beta-Binomial] --> GP[Waiting times. Asthma. Gamma-Poisson ]
+    U[Introduction] -- Prob & Bayes --> Comb[Birthday problem. Combinatorics] --> PTr[Safari reservations. Binomial, Prob. trees. LLN] --> RVAR[Probability triple. Random variables]  --> NEWS[/Newsvendor problem. Distribution stories/] --> B[Medical testing. Bayes and Conditioning] --> BB[/Left-handed proportion. Beta-Binomial/] --> GP[/Waiting times. Asthma. Gamma-Poisson /]
 
-    U -- Math. stats --> E[Splitting U.S. Schools? Central limit theorem] --> SM[Population, sample. Estimands, estimators. ] --> PV[ P-values of many studies. Error control]  --> CI[Wikipedia A/B test. Confidence intervals] --> PC[How much data? Statistical Power. Experiment design]  --> RC[Dead salmon experiment. Replication Crisis] 
+    U -- Math. stats --> E[Splitting U.S. Schools? Central limit theorem] --> SM[Population, sample. Estimands, estimators. ] --> PV[ P-values of many studies. Error control]  --> CI[Wikipedia A/B test. Confidence intervals] --> PC[How much data? Statistical Power. Experiment design]  --> RC[/Dead salmon experiment. Replication Crisis/] 
 
-    U -- Modeling. Algorithms --> EC[Divorce rates. Three confounders] --> BV[Bootstrap conf intervals. Out of sample error] --> MCMC[Visiting islands. Markov Chain Monte Carlo] --> UCLA[Berkeley Admissions. Logistic regression] --> OPT[Gradient Descent. Convex optimization in GLMs] 
+    U -- Modeling. Algorithms --> EC[/Divorce rates. Three confounders/] --> BV[Bootstrap conf intervals. Out of sample error] --> MCMC[/Visiting islands. Markov Chain Monte Carlo/] --> UCLA[/Berkeley Admissions. Logistic regression/] --> OPT[/Gradient Descent. Convex optimization in GLMs/] 
 
     style MCMC fill:#f7f5bc
     style OPT fill:#f7f5bc
@@ -77,6 +78,8 @@ flowchart TD
     style RVAR fill:#f5cdc4 
     style SM fill:#f5cdc4 
 ```
+
+:::
 
 These topics and case-studies are designed for a whole semester of intensive study. My promise is that by the end of it, you will become a more confident programmer and will have a very solid foundation for further studies of statistical modeling, causal inference, and machine learning.
 
@@ -90,9 +93,26 @@ Time, attention, and energy are the only constraints you should keep in mind whi
 :::
 
 
-## Combinatorics. Sampling. Urn Models
+## Learning how to learn
 
-There are several excellent courses which start from counting, and I think there are some useful and practical things ideas you missed about combinatorics. There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. [^combinat-refs]
+Consider the first lecture as a warm-up, where you have a chance to set-up your development environment and get into the flow of studying. I start with combinatorics, because there are several important concepts you might've missed or forgot, which have practical implications and pop up throughout the course.
+
+Another goal of this lecture is to gain an appreciation and overcome the fear of mathematical abstraction and notation. We will see how these mathematical constructs and models have an underlying story and a reason for existence. By understanding the story and with a bit of practice, you will never, ever have to resort to rote memorization.
+
+At last, I want to highlight that even these simplest tools, known for centuries, have real-world applications and were key to the development of the world as we know it today. ^[Think of geometry and cathedrals, apeducts, calculus, physics, engineering, industrial revolution, computers, and information technology] They look simple only in retrospective and we take them for granted. By connecting the appropriate abstraction (i.e. mathematical tool) to the phenomenon we want to explain and understand, we can make our scientific hypotheses precise and powerful. Urn models applied to physics are a great example of that. See the references in the "rabbit hole" section.
+
+
+I think we have a problem in the teaching of mathematics to high-schoolers and undergraduates, where by applications is meant a numerical or toy example. Those are not applications! In the best case, they're stories and drills. Don't get me wrong, drills are important and we can't always do only what we like, but at worst, they're tedious, useless stuff assigned as homework which kills any passion.
+
+
+It might sound obvious, but we practice in a very specific way -- with your reference book(s), code editor, and pen / paper at all times. Learn actively, by doing and problem solving, by testing yourself, by trying to come up with your own examples. We cannot afford to rush when studying mathematics and computer science. 
+
+> Read, pause, think, pause, write, pause, (perhaps erase), pause, read, pause, (perhaps go back), pause, write, ... - A. Turing, 1936
+
+
+## Combinatorics and sampling
+
+There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. [^combinat-refs]
 
 - Multiplication rule and the "garden of forking paths"
 - Sampling with and without replacement. Ordered vs unordered
@@ -104,6 +124,8 @@ There are several excellent courses which start from counting, and I think there
 
 One of the reasons we're not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. The birthday problem is one of such examples and we'll do simulations and derive the analytical solution -- suggesting unexpected applications in computer science and engineering.
 :::
+
+Rabbit hole - Urn models.
 
 [^combinat-refs]: There are three resources I recommend: Joe Blitzstein's [Lecture 1/2](https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&si=t-fvklHEnNNPY_mX) of Probability 110, Santosh Venkatesh's Probability Lectures, [Tableau 2](https://www.santoshvenkatesh.com/video-lectures), and Richard McElreath's ["Bayesian inference is just counting"](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting).
 
