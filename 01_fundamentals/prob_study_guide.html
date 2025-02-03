@@ -407,7 +407,7 @@ window.Quarto = {
 <p>If you already had the classes mentioned above, you might be in third, 4th year, masters’ degree, or finished your formal studies. It’s likely you know how to solve problems and get stuff done in R or Python. Then, I recommend you go through this module in an accelerated way,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> both in terms of theory and coding. You might ask, why not skip it entirely and focus on statistical modeling?</p>
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;for example, using some parts of the module as a review in the context of a data science or econometrics’ class</p></div></div><ul>
 <li>First, it’s a good review and warm-up with fun and realistic case-studies. We all get rusty when not practicing for a while</li>
-<li>A much more important reason is the re-contextualization of the fundamentals and getting rid of misconceptions and bad habits or practices</li>
+<li>A much more important reason is the re-contextualization of the fundamentals and getting rid of misconceptions, bad habits, and questionable statistical practices</li>
 <li>I think that statistics is so tricky, that it’s almost guaranteed we misunderstood something the first time we studied it</li>
 </ul>
 </section>
@@ -448,8 +448,8 @@ Figure&nbsp;1: Lectures in pink are purely theoretical. Lectures in yellow prese
 </div>
 </div>
 </div>
-<p>These topics and case-studies are designed for a whole semester of intensive study. My promise is that by the end of it, you will become a more confident programmer and will have a very solid foundation for further studies of statistical modeling, causal inference, and machine learning.</p>
-<p>When teaching to masters’ students, in the context of a data science class, I still feel it’s necessary to walk through many of these topics. What is sacrificed though, is depth and a limited amount of time available for students to practice on these case-studies. In my opinion, this is evidence that everyone can benefit from this module: undergraduate and graduate students, people already working in the field as data scientists and analysts. Even machine learning engineers.</p>
+<p>These topics and case-studies are designed for a whole semester of intensive study. My promise is that by the end of it, you will become a more confident programmer and will have a very solid foundation for advanced statistical modeling, causal inference, and machine learning.</p>
+<p>When teaching to masters’ students, in the context of a data science class, I still feel it’s necessary to walk through many of these aspects. What is sacrificed though, is depth and a limited amount of time available for students to practice on these case-studies. In my opinion, this is evidence that everyone can benefit from this module: undergraduate and graduate students, people already working in the field as data scientists and analysts. Even machine learning engineers.</p>
 <p>There is one more catch. For each of these topics and case-studies, you might feel the need to dive deeper into the underlying mathematics, philosophy, and explore more applications. In other words, many rabbit holes. Your feeling is correct, there is so much to learn and explore, but this should not intimidate you. Instead, let it serve as motivation, dive into a topic that resonates with you and see where does it lead.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -520,11 +520,14 @@ Rabbit hole: unordered sampling with replacement
 <p>I understand if your reaction at this point is: “Are you kidding me, this is just a warm-up?”. I would like to convince you that the time investment is not that big and the payoff is huge. In a formal classroom setting, we would spend 1h 20’ in a lab, with roughly 2-4 hours of self-study and optional readings necessary for you to get a really good grasp on this. If you study by yourself, there are three lectures by J. Blitzstein (45’ each), 3 tableaus by S. Venkatesh (1h each). There will be a huge overlap in the content and not all of it requires hands-on study.</p>
 <p>So, what do you get in return of this time investment? Fun stories and applications in multiple domains, confidence and not being scared of mathematical abstraction, courage to explore more. You might realize that probability and statistics don’t have to be a chore, but a worthwhile and fascinating profession to pursue. Motivation makes all the difference, so we have good reasons to be disciplined and work hard.</p>
 </section>
-<section id="binomial-distribution.-probability-trees.-simulation-and-lln" class="level2">
+<section id="binomial-distribution.-probability-trees.-simulation-and-lln" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="binomial-distribution.-probability-trees.-simulation-and-lln">Binomial distribution. Probability trees. Simulation and LLN</h2>
 <p>The coin flip, which we’ll call Bernoulli distribution, is one of the most useful mathematical abstractions, as binary outcomes are ubiquitous – the event either happens or not, with a probability <span class="math inline">\(\theta\)</span>. Think about a few examples from your day-to-day life and from the perspective of a firm.</p>
-<p>If we have multiple independent events, each one being a coin flip, we can model the number of successes <span class="math inline">\(k\)</span> out of <span class="math inline">\(n\)</span> trials with the Binomial distribution. In order to apply what we learned about combinatorics, a good exercise is to derive its distribution (probability mass function) via a story proof.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>If we have multiple independent events, each one being a coin flip, we can model the number of successes <span class="math inline">\(k\)</span> out of <span class="math inline">\(n\)</span> trials with the Binomial distribution. In order to apply what we learned about combinatorics, a good exercise is to derive its distribution (probability mass function) via a story proof. I want to remind you that probability is generative: if we know <span class="math inline">\(\theta\)</span> and <span class="math inline">\(n\)</span> we can simulate data / outcomes, and make predictions.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>In statistics, we estimate the parameters of (population) models from data (our sample). You will see the Binomial distribution a lot in hypothesis testing for randomized experiments and surveys. It will help you understand logistic regression.</p>
+</div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -534,15 +537,53 @@ Couples showing up to a safari
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We will analyze and simulate a simple, but tricky example to find out what is the probability of a given number of people who signed up for a safari to actually show up. I take as a starting point A. Fleischhacker’s <a href="https://www.persuasivepython.com/1-repuncertainty">example</a> from his book called “Persuasive Python”.</p>
+<p>In our case-study, we will try to find out what is the distribution of the number of people who sign up to safari and actually show up. We have only three seats available, <span class="math inline">\(n = 3\)</span>. If people decide to show up independently, the problem is straightforward, as you can see in A. Fleischhacker’s “Persuasive Python”, <a href="https://www.persuasivepython.com/1-repuncertainty">Chapter 2</a>. Instead, I introduce a subtle change which will make the problem quite tricky.</p>
+<p>In our version of the problem, a part of our potential customers are friends and couples making reservations for two. Of course, the events are now no longer independent: if one changes their mind and doesn’t show up, neither will the other (or so we assume).</p>
+<p>There is one more gotcha. Even if we know the “prevalence” of couples in the target population, we still have to calculate the proportion of seats reserved by each type of customers.</p>
 </div>
 </div>
-<p>In our version of the problem, we also have 3 seats available, but this time the events are not independent, as we have a proportion of people making reservations for two (couples or friends). We assume that if one of them changes their mind and doesn’t show up, neither will the other. Moreover, even if we know the prevalence of couples in the population of our customers, we still have to calculate the proportion of seats reserved by each type.</p>
-<p>In order to overcome these challenges, we will use probability trees, Bernoulli and Binomial distributions. We’ll end up with a nasty formula which can be interpreted as a mixture model. Then, we simulate the process and interpret the results, comparing them to the case in which all passengers were independent.</p>
-<p>To take our analysis even further, we can do a sensitivity analysis which will tell us for what proportion of couples in the population we start seeing dramatically different outcomes in terms of expected number of people who show up. There are multiple ways in which we can compute it, but I will leverage the formulas for calculating the expected value and variance for an arbitrary discrete random variable.</p>
-<p>This will enable us to compute the confidence intervals around the mean, which tells us if we’re to repeat the simulation many times, 95% of the confidence intervals will contain the true mean. In the safari problem, computing confidence intervals doesn’t make too much sense, but we will explore this important idea in much more depth in later lectures. As a rule of thumb, always ask yourself “What if I got really lucky or unlucky with this sample?”</p>
-<p>This case-study teaches you a lot of important concepts and techniques in probability. I also introduce the Law of Large Numbers to justify why simulation works and what are the dangers when we don’t think about sample size. You also need to be aware about a little theorem, called “Universality of the Uniform”, which states that using good pseudo-random numbers, uniformly distributed samples, we can generate samples from any distribution.</p>
-<p>In terms of programming, you will learn to work with data frames, functions, use vectorized calculations instead of for loops, manipulate data, make persuasive visualizations, and generate reproducible reports of your work.</p>
+<p>In order to overcome these challenges, we will formalize the problem with the appropriate notation, make our assumptions explicit, use probability trees, Bernoulli and Binomial distributions. We’ll end up with a nasty formula which can be interpreted as a mixture model. Then, given a range of prevalences and individual probabilities of showing up, we simulate the process and interpret the results, comparing them to the case in which all passengers were independent.</p>
+<p>In terms of programming, this case study teaches you how to create Quarto or jupyter notebooks in your IDE, how to import packages, work with data frames, functions, how to use vectorized calculations instead of for loops, manipulate data, make persuasive visualizations, and generate reproducible reports of your work. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;This is a lot for a beginner, as one has to understand what each piece of code does and how they connect together. The only solution is to practice, try to solve it yourself, read the errors and documentation, look at similar examples. Be resourceful!</p></div></div><p>We picked and assumed certain values for prevalence of couples parameter. What if we’re terribly wrong? In order to assess that, a sensitivity analysis is needed. It will tell us at what proportion of couples in the population we start seeing dramatically different outcomes in terms of expected number of people who show up. There are two ways to compute it, depending on how the output of the simulation looks like:</p>
+<ul>
+<li>If the 10k simulation runs return only the PMF (distribution), we can leverage the formulas for calculating expected value and variance of an arbitrary discrete random variable.
+<ul>
+<li>In this case, in order to represent the uncertainty in the mean estimation due to simulation (sampling), we could compute the standard error and display confidence intervals as error bars. This sounds a bit shady to me and out of place for this lecture</li>
+</ul></li>
+<li>If the simulation stores all 10k runs, we can just take an average and the standard deviation of the data. For a grid of 50 possible values of the parameter, we work with 500k samples, which is not a problem for your laptop.
+<ul>
+<li>Here, we have a more natural solution for summarizing the distribution: with a mean and a highest density interval</li>
+</ul></li>
+</ul>
+<p>At this point, a fair question would be “what if I got really really unlucky with the sample I got?”. In our case, unlucky with the sequence of 10k random numbers we generated, in the sense of getting a result far from true mean. It is very unlikely, but not impossible. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> There are two obvious ideas: increase the number of simulations and repeat those simulations under different seeds. It will work very well, but why?</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;When we move to the topics in mathematical statistics, we’ll formalize this idea. But generally, it’s a good practice to ask how surprising is the data under a null hypothesis.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Law of Large Numbers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Law of large numbers is the reason why simulation works, and also the reason we need to be very careful when interpreting the means of small sample sizes. To illustrate the theorem, we will simulate iid (independent and identically distributed) samples from the Bernoulli and Poisson distribution of an increasing sample size.</p>
+<p>The graphs will show the formal idea of convergence in probability, and a rate at which we expect the average root mean squared error to drop. In other words, as n increases, sample mean will get closer to the population mean in the long run. Therefore, in simulation, we might find out that we don’t have to worry about being too unlucky after a certain number of runs.</p>
+</div>
+</div>
+<p>I want to emphasize once again, that most of traditional statistics rely on either exact results or asymptotic theory. We should be vigilent and recognize when neither holds in our applications. But this is a topic for another day.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Universality of the Uniform
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This little, but important theorem is the reason we can generate random samples from any distribution, if we have speudo-random numbers which are uniformly distributed.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -554,17 +595,17 @@ Rabbit hole: the hot hand strikes again
 </div>
 <div class="callout-body-container callout-body">
 <p>You might’ve heard about the hot hand fallacy. We model streaks of successful shots in basketball and ask whether streaks of <span class="math inline">\(k\)</span> are surprising. Read the original paper by Kahneman and Tversky and ignore the statistical test they designed.</p>
-<p>Their insight that fans and experts in basketball massively overestimate the magnitude of this effect is fundamentally correct. However, what doesn’t follow from their research is that there is no effect, which is pointed out by a few bayesian statisticians in the recent years. The debate goes on, but the limitations of the original statistical test are undeniable</p>
-<p>This is a true rabbit hole. Right now, we have the tools to simulte what can we expect if there was no effect or a small effect, but we can’t design yet a statistical test. For that, refer to the last section in Tableau 10 of S. Venkatesh, Kahneman’s original paper, and recent papers which challenge the statistical methodology and modeling approach based on which the original conclusion was reached.</p>
+<p>Their insight that fans and experts in basketball massively overestimate the magnitude of this effect is fundamentally correct. However, what doesn’t follow from their research is that there is no effect, which is pointed out by a few Bayesian statisticians in the recent years. The debate goes on, but the limitations of the original statistical test are undeniable</p>
+<p>This is a true rabbit hole. Right now, we have the tools to simulte what can we expect if there was no effect or a small effect, but we can’t design a statistical test yet. For that, refer to the last section in Tableau 10 of S. Venkatesh, Kahneman’s original paper, and recent papers which challenge the statistical methodology and modeling approach based on which the original conclusion was reached.</p>
 </div>
 </div>
-<p>Despite the ongoing debate about the magnitude of the effect in the hot hand phenomenon, it is undeniable that such simulations are extremely valuable – they prevent us to be fooled by randomness. To take a few examples:</p>
+<p>Despite the ongoing debate about the magnitude of the effect in the hot hand phenomenon, it is undeniable that such simulations are extremely valuable – they prevent us from be fooled by randomness. Let’s look at a few more examples:</p>
 <ul>
-<li>we might see patterns in stock markets which can be explained by a random walk</li>
-<li>we might not realize the effect of the sample size on observing extreme results</li>
-<li>we might attribute an observed pattern of ELO and performances by gender in chess to nonsensical explanations, when it can be explained by a disparity in the number of players, combined with estimating a max / top k proportion</li>
-<li>we might underestimate the support for a political party due to differential non-response</li>
-<li>we might overestimate the effectiveness of a medical treatment due to drop-out and censoring</li>
+<li>amateur traders might see “winning” patterns in stock markets which can be explained by a random walk</li>
+<li>policy-makers might not realize that amazing SAT performances in some schools with few students could be just due to small sample sizes</li>
+<li>in chess, some might attribute an observed pattern of ELO by gender to nonsensical explanations, when a simple simulation will show that an initial disparity in the number of players, combined with estimating a proportion in top k overall players results in similar patters.</li>
+<li>pollers might underestimate the support for a political party due to differential non-response</li>
+<li>medical research might overestimate the effectiveness of a treatment due to drop-out and censoring</li>
 <li>we might think there is an association between variables, when both can be explained by a common cause, a confounder</li>
 </ul>
 <p>This is one of the key reasons to study probability, statistics, and do lots of simulations. We train our brain to spot biases in our reasoning and decision-making. Even though we will still make foolish mistakes, at least we have a method to slow down and check a statement systematically. In the words of Richard McElreath:</p>
@@ -574,8 +615,8 @@ Rabbit hole: the hot hand strikes again
 </section>
 <section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
-<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, here are some readings:</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
+<p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, here are some readings:</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
 <li>Probability Triple and Random Variables - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
 <li>Collectivity (“physical” structure), Statistical Population, Sample. We need to be a bit more precise in what we mean by a statistical model and a DGP.
 <ul>
@@ -602,16 +643,16 @@ Hypotheses, Process models, Statistical models
 </section>
 <section id="stories-behind-distributions" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
-<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
-<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>
+<p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
+<li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></li>
 <li>Poisson. Limiting and Conditioning. Overdispersion</li>
 <li>Beta, Gamma, Exponential. Exponential Family and Information Theory</li>
 <li>Statistical superstars: <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(F(d_1, d_2)\)</span></li>
 <li>Weirdos: Mixtures, Dirichlet, Multinomial, Weibull, heavy tails</li>
 <li>Remember the differences between PMF, PDF, CDF, MGF, <span class="math inline">\(\mathbb{E}\)</span>, <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{E}g(x)\)</span></li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -702,8 +743,8 @@ Monty Hall. Simpson’s Paradox and DAGs
 </section>
 <section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
-<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
+<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
 <li>We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">here</a>.</li>
 <li>If you’re interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure</li>
 <li>What does a statistician want? Review important properties of estimators.
