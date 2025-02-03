@@ -336,6 +336,7 @@ window.Quarto = {
   <li><a href="#roadmap-and-the-big-picture" id="toc-roadmap-and-the-big-picture" class="nav-link" data-scroll-target="#roadmap-and-the-big-picture">Roadmap and the big picture</a></li>
   <li><a href="#learning-how-to-learn" id="toc-learning-how-to-learn" class="nav-link" data-scroll-target="#learning-how-to-learn">Learning how to learn</a></li>
   <li><a href="#combinatorics-and-sampling" id="toc-combinatorics-and-sampling" class="nav-link" data-scroll-target="#combinatorics-and-sampling">Combinatorics and sampling</a></li>
+  <li><a href="#binomial-distribution.-probability-trees.-simulation-and-lln" id="toc-binomial-distribution.-probability-trees.-simulation-and-lln" class="nav-link" data-scroll-target="#binomial-distribution.-probability-trees.-simulation-and-lln">Binomial distribution. Probability trees. Simulation and LLN</a></li>
   <li><a href="#probability-triple.-random-variables.-models" id="toc-probability-triple.-random-variables.-models" class="nav-link" data-scroll-target="#probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</a></li>
   <li><a href="#stories-behind-distributions" id="toc-stories-behind-distributions" class="nav-link" data-scroll-target="#stories-behind-distributions">Stories behind distributions</a></li>
   <li><a href="#conditioning-and-bayes-rule" id="toc-conditioning-and-bayes-rule" class="nav-link" data-scroll-target="#conditioning-and-bayes-rule">Conditioning and Bayes Rule</a></li>
@@ -519,6 +520,58 @@ Rabbit hole: unordered sampling with replacement
 <p>I understand if your reaction at this point is: “Are you kidding me, this is just a warm-up?”. I would like to convince you that the time investment is not that big and the payoff is huge. In a formal classroom setting, we would spend 1h 20’ in a lab, with roughly 2-4 hours of self-study and optional readings necessary for you to get a really good grasp on this. If you study by yourself, there are three lectures by J. Blitzstein (45’ each), 3 tableaus by S. Venkatesh (1h each). There will be a huge overlap in the content and not all of it requires hands-on study.</p>
 <p>So, what do you get in return of this time investment? Fun stories and applications in multiple domains, confidence and not being scared of mathematical abstraction, courage to explore more. You might realize that probability and statistics don’t have to be a chore, but a worthwhile and fascinating profession to pursue. Motivation makes all the difference, so we have good reasons to be disciplined and work hard.</p>
 </section>
+<section id="binomial-distribution.-probability-trees.-simulation-and-lln" class="level2">
+<h2 class="anchored" data-anchor-id="binomial-distribution.-probability-trees.-simulation-and-lln">Binomial distribution. Probability trees. Simulation and LLN</h2>
+<p>The coin flip, which we’ll call Bernoulli distribution, is one of the most useful mathematical abstractions, as binary outcomes are ubiquitous – the event either happens or not, with a probability <span class="math inline">\(\theta\)</span>. Think about a few examples from your day-to-day life and from the perspective of a firm.</p>
+<p>If we have multiple independent events, each one being a coin flip, we can model the number of successes <span class="math inline">\(k\)</span> out of <span class="math inline">\(n\)</span> trials with the Binomial distribution. In order to apply what we learned about combinatorics, a good exercise is to derive its distribution (probability mass function) via a story proof.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Couples showing up to a safari
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will analyze and simulate a simple, but tricky example to find out what is the probability of a given number of people who signed up for a safari to actually show up. I take as a starting point A. Fleischhacker’s <a href="https://www.persuasivepython.com/1-repuncertainty">example</a> from his book called “Persuasive Python”.</p>
+</div>
+</div>
+<p>In our version of the problem, we also have 3 seats available, but this time the events are not independent, as we have a proportion of people making reservations for two (couples or friends). We assume that if one of them changes their mind and doesn’t show up, neither will the other. Moreover, even if we know the prevalence of couples in the population of our customers, we still have to calculate the proportion of seats reserved by each type.</p>
+<p>In order to overcome these challenges, we will use probability trees, Bernoulli and Binomial distributions. We’ll end up with a nasty formula which can be interpreted as a mixture model. Then, we simulate the process and interpret the results, comparing them to the case in which all passengers were independent.</p>
+<p>To take our analysis even further, we can do a sensitivity analysis which will tell us for what proportion of couples in the population we start seeing dramatically different outcomes in terms of expected number of people who show up. There are multiple ways in which we can compute it, but I will leverage the formulas for calculating the expected value and variance for an arbitrary discrete random variable.</p>
+<p>This will enable us to compute the confidence intervals around the mean, which tells us if we’re to repeat the simulation many times, 95% of the confidence intervals will contain the true mean. In the safari problem, computing confidence intervals doesn’t make too much sense, but we will explore this important idea in much more depth in later lectures. As a rule of thumb, always ask yourself “What if I got really lucky or unlucky with this sample?”</p>
+<p>This case-study teaches you a lot of important concepts and techniques in probability. I also introduce the Law of Large Numbers to justify why simulation works and what are the dangers when we don’t think about sample size. You also need to be aware about a little theorem, called “Universality of the Uniform”, which states that using good pseudo-random numbers, uniformly distributed samples, we can generate samples from any distribution.</p>
+<p>In terms of programming, you will learn to work with data frames, functions, use vectorized calculations instead of for loops, manipulate data, make persuasive visualizations, and generate reproducible reports of your work.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rabbit hole: the hot hand strikes again
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might’ve heard about the hot hand fallacy. We model streaks of successful shots in basketball and ask whether streaks of <span class="math inline">\(k\)</span> are surprising. Read the original paper by Kahneman and Tversky and ignore the statistical test they designed.</p>
+<p>Their insight that fans and experts in basketball massively overestimate the magnitude of this effect is fundamentally correct. However, what doesn’t follow from their research is that there is no effect, which is pointed out by a few bayesian statisticians in the recent years. The debate goes on, but the limitations of the original statistical test are undeniable</p>
+<p>This is a true rabbit hole. Right now, we have the tools to simulte what can we expect if there was no effect or a small effect, but we can’t design yet a statistical test. For that, refer to the last section in Tableau 10 of S. Venkatesh, Kahneman’s original paper, and recent papers which challenge the statistical methodology and modeling approach based on which the original conclusion was reached.</p>
+</div>
+</div>
+<p>Despite the ongoing debate about the magnitude of the effect in the hot hand phenomenon, it is undeniable that such simulations are extremely valuable – they prevent us to be fooled by randomness. To take a few examples:</p>
+<ul>
+<li>we might see patterns in stock markets which can be explained by a random walk</li>
+<li>we might not realize the effect of the sample size on observing extreme results</li>
+<li>we might attribute an observed pattern of ELO and performances by gender in chess to nonsensical explanations, when it can be explained by a disparity in the number of players, combined with estimating a max / top k proportion</li>
+<li>we might underestimate the support for a political party due to differential non-response</li>
+<li>we might overestimate the effectiveness of a medical treatment due to drop-out and censoring</li>
+<li>we might think there is an association between variables, when both can be explained by a common cause, a confounder</li>
+</ul>
+<p>This is one of the key reasons to study probability, statistics, and do lots of simulations. We train our brain to spot biases in our reasoning and decision-making. Even though we will still make foolish mistakes, at least we have a method to slow down and check a statement systematically. In the words of Richard McElreath:</p>
+<blockquote class="blockquote">
+<p>And with no false modesty my intuition is no better. But I have learned to solve these problems by cold, hard, ruthless application of conditional probability. There’s no need to be clever when you can be ruthless.</p>
+</blockquote>
+</section>
 <section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
 <p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, here are some readings:</p>
@@ -559,32 +612,6 @@ Hypotheses, Process models, Statistical models
 <li>Remember the differences between PMF, PDF, CDF, MGF, <span class="math inline">\(\mathbb{E}\)</span>, <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{E}g(x)\)</span></li>
 </ul>
 <div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Look at some <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications with more math from Joe Blitzstein.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Couples showing up to a safari
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will analyze and simulate a simple, but tricky example to find out what is the probability of a given number of people who signed up to actually go for the safari.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The hot hand strikes again
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We model streaks of successful shots in basketball and ask whether streaks of <span class="math inline">\(k\)</span> are surprising. I review the original paper by Kahneman and Tversky, what they did very well, but also potential problems with the statistical model</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
