@@ -112,22 +112,53 @@ It might sound obvious, but we practice in a very specific way -- with your refe
 
 ## Combinatorics and sampling
 
-There are use-cases and stories with which you will never have to remember important results about sampling with/without replacement by heart. [^combinat-refs]
+Before jumping into the birthday problem, we need to know the stories behind core concepts in combinatorics, like ${n \choose k}$ "n choose k", factorial, falling factorial, and multiplication rule. We will then have to figure out how to apply these tools to ordered / unordered sampling with / without replacement. By learning the stories, you will never forget or misuse the mathematical relations:
 
-- Multiplication rule and the "garden of forking paths"
-- Sampling with and without replacement. Ordered vs unordered
-- Naive Probability and motivation for Kolmogorov's breakthrough
-- Read this [short article](https://johnkerl.org/doc/prbstat/prbstat.html) about the difference between probability and statistics
+
+- Multiplication rule and the "garden of forking paths". Ordered sampling with replacement: urns and balls, unique sequences
+- Ways to order n people at a long bar table. Factorials
+- Surveying only once, dealing cards from a deck, flags and poles. Sampling without replacement and falling factorial
+- Splitting n people into two teams / subgroups of size k and r. Unordered sampling without replacement
+- Story proofs of useful relations in combinatorics.
+- Naive probability limitations and motivation for Kolmogorov's breakthrough of putting probability theory on a solid foundation
+
+If you are studying probability theory and mathematical statistics right now, or feel the need to go through the most important topics again, I highly recommend these [lectures](https://www.santoshvenkatesh.com/video-lectures) by Santosh A. Venkatesh and Joe Blitzstein's [Probability 110](https://projects.iq.harvard.edu/stat110/home). You might rightfully object that no matter how amazing those courses and presentations are, it takes a lot of effort to work through them start-to-finish.
+
+I encourage you to cherry-pick lectures where there are synergies with this course and could deepen your understanding. In my experience, the majority of people don't really get probability theory and mathematical statistics from the first time. It's partly because of an outdated way of teaching, partly because this stuff is really damn deep and complicated if you do it rigorously. 
+
+There is absolutely no shame in going back to it again with a mindset of mastering the fundamentals. For me, this exercise turned out to be one of the most valuable things I studied. Also, understand that the resources I refer you to are a result of decades of teaching and research experience of those authors in top universities. For the purposes of learning probability, it's almost impossible to explain these topics better. Our only secret weapons are simulations and knowledge of what parts are most important and useful in practice. 
+
+
+
+- Watch S. Venkatesh's introductory lecture on probability, called "Prelude to a theory of chance" (Tableau 1). 
+- What is the difference between probability and statistics? Read this [short article](https://johnkerl.org/doc/prbstat/prbstat.html). Does your answer align?
+- Watch J. Blitzstein's first [three lectures](https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&si=t-fvklHEnNNPY_mX). Feel free to fast-forward and skip the things you already know well.
+- Watch S. Venkatesh's lecture on combinatorics, Tableau 2. 
+- Follow it up with the urn models in Tableau 3. 
 
 ::: {.callout-note}
 ## Birthday Paradox. Pigenhole Principle. Collision Problems
 
-One of the reasons we're not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. The birthday problem is one of such examples and we'll do simulations and derive the analytical solution -- suggesting unexpected applications in computer science and engineering.
+One of the reasons we're not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. 
+
+The birthday problem is one of such examples. We'll do simulations and derive the analytical solution -- suggesting unexpected applications in computer science and engineering.
 :::
 
-Rabbit hole - Urn models.
+::: {.column-margin}
+This is completely optional, but I highly recommend the following provocative talk by 
+Richard McElreath, "Bayesian inference is just counting" ([slides](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting) and [talk](https://www.youtube.com/watch?v=_NEMHM1wDfI)). The understanding you'll gain from it will make learning Bayesian statistics much easier.
+:::
 
-[^combinat-refs]: There are three resources I recommend: Joe Blitzstein's [Lecture 1/2](https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&si=t-fvklHEnNNPY_mX) of Probability 110, Santosh Venkatesh's Probability Lectures, [Tableau 2](https://www.santoshvenkatesh.com/video-lectures), and Richard McElreath's ["Bayesian inference is just counting"](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting).
+::: {.callout-caution }
+## Rabbit hole: unordered sampling with replacement
+
+In Tableau 3, walk through the proof of unordered sampling with replacement, only if you find it interesting. The result will be useful only when we'll introduce bootstrap (explanation [here](https://rpubs.com/riazakhan94/bootstrap_distinct_sample))
+:::
+
+I understand if your reaction at this point is: "Are you kidding me, this is just a warm-up?". I would like to convince you that the time investment is not that big and the payoff is huge. In a formal classroom setting, we would spend 1h 20' in a lab, with roughly 2-4 hours of self-study and optional readings necessary for you to get a really good grasp on this. If you study by yourself, there are three lectures by J. Blitzstein (45' each), 3 tableaus by S. Venkatesh (1h each). There will be a huge overlap in the content and not all of it requires hands-on study. 
+
+So, what do you get in return of this time investment? Fun stories and applications in multiple domains, confidence and not being scared of mathematical abstraction, courage to explore more. You might realize that probability and statistics don't have to be a chore, but a worthwhile and fascinating profession to pursue. Motivation makes all the difference, so we have good reasons to be disciplined and work hard.
+
 
 ## Probability Triple. Random Variables. Models
 
