@@ -337,10 +337,12 @@ window.Quarto = {
   <li><a href="#learning-how-to-learn" id="toc-learning-how-to-learn" class="nav-link" data-scroll-target="#learning-how-to-learn">Learning how to learn</a></li>
   <li><a href="#combinatorics-and-sampling" id="toc-combinatorics-and-sampling" class="nav-link" data-scroll-target="#combinatorics-and-sampling">Combinatorics and sampling</a></li>
   <li><a href="#binomial-distribution.-probability-trees.-simulation-and-lln" id="toc-binomial-distribution.-probability-trees.-simulation-and-lln" class="nav-link" data-scroll-target="#binomial-distribution.-probability-trees.-simulation-and-lln">Binomial distribution. Probability trees. Simulation and LLN</a></li>
-  <li><a href="#probability-triple.-random-variables.-models" id="toc-probability-triple.-random-variables.-models" class="nav-link" data-scroll-target="#probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</a></li>
-  <li><a href="#stories-behind-distributions" id="toc-stories-behind-distributions" class="nav-link" data-scroll-target="#stories-behind-distributions">Stories behind distributions</a></li>
+  <li><a href="#probability-triple.-random-variables.-statistical-models" id="toc-probability-triple.-random-variables.-statistical-models" class="nav-link" data-scroll-target="#probability-triple.-random-variables.-statistical-models">Probability Triple. Random Variables. Statistical Models</a></li>
+  <li><a href="#newsvendor-problem.-stories-behind-distributions" id="toc-newsvendor-problem.-stories-behind-distributions" class="nav-link" data-scroll-target="#newsvendor-problem.-stories-behind-distributions">Newsvendor problem. Stories behind distributions</a></li>
+  <li><a href="#the-most-dangerous-equation.-clt" id="toc-the-most-dangerous-equation.-clt" class="nav-link" data-scroll-target="#the-most-dangerous-equation.-clt">The most dangerous equation. CLT</a></li>
+  <li><a href="#p-values-and-error-control" id="toc-p-values-and-error-control" class="nav-link" data-scroll-target="#p-values-and-error-control">P-Values and error control</a></li>
+  <li><a href="#confidence-intervals.-when-randomization-fails" id="toc-confidence-intervals.-when-randomization-fails" class="nav-link" data-scroll-target="#confidence-intervals.-when-randomization-fails">Confidence intervals. When randomization fails</a></li>
   <li><a href="#conditioning-and-bayes-rule" id="toc-conditioning-and-bayes-rule" class="nav-link" data-scroll-target="#conditioning-and-bayes-rule">Conditioning and Bayes Rule</a></li>
-  <li><a href="#llns-clts.-estimator-properties" id="toc-llns-clts.-estimator-properties" class="nav-link" data-scroll-target="#llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</a></li>
   <li><a href="#bias-variance.-fisher-information" id="toc-bias-variance.-fisher-information" class="nav-link" data-scroll-target="#bias-variance.-fisher-information">Bias-Variance. Fisher Information</a></li>
   <li><a href="#hypothesis-testing.-neyman-pearson" id="toc-hypothesis-testing.-neyman-pearson" class="nav-link" data-scroll-target="#hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</a></li>
   <li><a href="#frequentism-vs-likelihood-vs-bayes" id="toc-frequentism-vs-likelihood-vs-bayes" class="nav-link" data-scroll-target="#frequentism-vs-likelihood-vs-bayes">Frequentism vs Likelihood vs Bayes</a></li>
@@ -613,8 +615,8 @@ Rabbit hole: the hot hand strikes again
 <p>And with no false modesty my intuition is no better. But I have learned to solve these problems by cold, hard, ruthless application of conditional probability. There’s no need to be clever when you can be ruthless.</p>
 </blockquote>
 </section>
-<section id="probability-triple.-random-variables.-models" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-models">Probability Triple. Random Variables. Models</h2>
+<section id="probability-triple.-random-variables.-statistical-models" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="probability-triple.-random-variables.-statistical-models">Probability Triple. Random Variables. Statistical Models</h2>
 <p>If you understand and can explain the above ideas in a simple, yet rigorous way – you’re ready for the journey. Otherwise, if it feels shaky<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, here are some readings:</p>
 <div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Some of you might find reviewing this insulting because it’s “trivial”, or useless theory, or a frustrating reminder of probability classes. Please, bear with me – because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.</p></div></div><ul>
 <li>Probability Triple and Random Variables - a quasi formal introduction is written in <a href="https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html">this chapter</a> of the course website. From my experience, not many students have this understanding after their probability theory classes.</li>
@@ -641,8 +643,8 @@ Hypotheses, Process models, Statistical models
 </div>
 </div>
 </section>
-<section id="stories-behind-distributions" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="stories-behind-distributions">Stories behind distributions</h2>
+<section id="newsvendor-problem.-stories-behind-distributions" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="newsvendor-problem.-stories-behind-distributions">Newsvendor problem. Stories behind distributions</h2>
 <p>You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> behind most of them, since the goal will be to build custom models for each application.</p>
 <div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters</p></div></div><ul>
 <li>Bernoulli, Binomial, Hypergeometric, Negative Binomial <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></li>
@@ -666,6 +668,51 @@ Poisson and the Prussian army
 </div>
 </div>
 <p>I limit the number of hands-on applications for this chapter/lecture, not only because of time constraints, but also because most use-cases come in Module 3, in the context of more realistic problems. I hope, however, that I sparked an interest about how to approach Probability, especially when we draw DAGs to tell stories.</p>
+</section>
+<section id="the-most-dangerous-equation.-clt" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-most-dangerous-equation.-clt">The most dangerous equation. CLT</h2>
+<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
+<li>We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">here</a>.</li>
+<li>If you’re interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure</li>
+<li>What does a statistician want? Review important properties of estimators.
+<ul>
+<li>For an accessible explanation of Bias, Consistency, Efficiency – showcased with the corresponding R code, see <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The most dangerous equation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I think that <a href="http://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> is a must read for anyone, not just practicing scientists and statisticians. The example I usually do a demonstration on is about the dubious U.S. policy of splitting the bigger schools.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Calling Bullshit: Best Barbecue
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Continuing on the reddit examples, there are some amazing case-studies in the “Calling Bullshit” website and book. One of them is exactly such a ranking problem: <a href="https://www.callingbullshit.org/case_studies/case_study_barbecue.html">best barbecue in the states</a>. I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill – to call out the bullshit.</p>
+<p>Online platforms which have to rank posts and comments, face the challenges of how to take the sample size into account. It depends, but for inspiration, see the hackernoon ranking algorithm.</p>
+</div>
+</div>
+</section>
+<section id="p-values-and-error-control" class="level2">
+<h2 class="anchored" data-anchor-id="p-values-and-error-control">P-Values and error control</h2>
+</section>
+<section id="confidence-intervals.-when-randomization-fails" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-intervals.-when-randomization-fails">Confidence intervals. When randomization fails</h2>
 </section>
 <section id="conditioning-and-bayes-rule" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="conditioning-and-bayes-rule">Conditioning and Bayes Rule</h2>
@@ -738,45 +785,6 @@ Monty Hall. Simpson’s Paradox and DAGs
 <div class="callout-body-container callout-body">
 <p>The Simpson’s paradox is usually introduced to highlight the importance of conditioning. However, the only resource I found which gets to the core of the problem is Bradley Neal’s <a href="https://www.bradyneal.com/causal-inference-course">first lecture</a> on causal inference.</p>
 <p>The “paradox” part of it is resolved (or at least not puzzling), when we think about the causal structure of the problem (or the DAG of influences).</p>
-</div>
-</div>
-</section>
-<section id="llns-clts.-estimator-properties" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="llns-clts.-estimator-properties">LLNs, CLTs. Estimator properties</h2>
-<p>Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism</p></div></div><ul>
-<li>We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations <a href="https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem">here</a>.</li>
-<li>If you’re interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure</li>
-<li>What does a statistician want? Review important properties of estimators.
-<ul>
-<li>For an accessible explanation of Bias, Consistency, Efficiency – showcased with the corresponding R code, see <a href="https://openforecast.org/sba/estimatesProperties.html">openforecast</a></li>
-</ul></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The most dangerous equation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I think that <a href="http://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> is a must read for anyone, not just practicing scientists and statisticians. The example I usually do a demonstration on is about the dubious U.S. policy of splitting the bigger schools.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Calling Bullshit: Best Barbecue
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Continuing on the reddit examples, there are some amazing case-studies in the “Calling Bullshit” website and book. One of them is exactly such a ranking problem: <a href="https://www.callingbullshit.org/case_studies/case_study_barbecue.html">best barbecue in the states</a>. I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill – to call out the bullshit.</p>
-<p>Online platforms which have to rank posts and comments, face the challenges of how to take the sample size into account. It depends, but for inspiration, see the hackernoon ranking algorithm.</p>
 </div>
 </div>
 </section>
