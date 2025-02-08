@@ -12,43 +12,28 @@ lang: en
 ---
 
 
-There is one question I lose sleep over: "How should data science be taught?" The vision and roadmap outlined on this website emerges out of:
+There is one question I lose sleep over: "How should data science be taught?" In order to bring more clarity, I'll refer to this applied, quantitative, and interdisciplinary field as **decision science**. My first promise is that by following the recommended readings, you will understand what is meant by overused and often ambiguous terms like AI, ML, analytics, and data mining. 
 
 ::: {.column-margin}
-As the author of the course (book) -- all views and mistakes are entirely my own and do not represent any organization. 
+As the author of the course -- all views and mistakes are entirely my own and do not represent any organization. 
 :::
 
+I want you to realize, that despite all the (justified) hype around deep learning and generative AI -- the well established fields of statistics, econometrics, operations research, control theory, dynamical systems, cognitive science, and CS have been evolving as well. These are not just prerequisites and intellectual forerunners for AI, but tools routinely and successfully used in a large problem space.
 
-- my industry experience as a data scientist, ML engineer, then leader 
-- teaching to creative, motivated, but confused students
-- my frustrations about the shortcomings of statistical education
+This website is not a self-contained course or book, but a vision, philosophy, and concrete roadmap for learning and teaching decision science. It emerges out of:
+
+- Lessons learned from my industry experience as a data scientist, engineering and product manager, then leader 
+- Teaching to creative and motivated students, who are confused by the overwhelming amount of content available online
+- My frustrations about the shortcomings of statistical education
+- Standing on the shoulder of giants. My journey was possible grace to outstanding teachers who made their courses freely available. I will polish, but not reinvent what is taught well! ^[Speaking pragmatically, I don't think we need another book on machine learning or data science, but in-depth and hands-on case-studies.]
 
 I aspire to contribute to the understanding of this complex landscape and teach people how to navigate it, how to develop **valuable skills**, and become more **effective at problem-solving**. To achieve this, we need to master "[the fundamentals]{.underline}."
 
-I believe that improving **decision-making** is the reason why we practice "AI".^[We will have to clarify all the loaded terms like AI, Cybernetics, Data Science, Analytics, ML, and Data Mining] The danger when a program lacks unified vision and a coordinated roadmap, is that we miss the interdisciplinary, big picture. Local optimization, global valley. We forget the why.
+I believe that improving **decision-making** is one of the main reasons why we practice "data science" and "AI". The danger when an academic program lacks unified vision and a coordinated roadmap, is that we miss the interdisciplinary, big picture. To me, it's local optimization and a global valley. ^[For example, students might have an excellently taught Linear Algebra class from a mathematical point of view, but never see its relevance for ML or its geometric / computational aspects]  We can easily get lost in the weeds and forget the why.
 
-The commitment needed to get started in the field is so high, that a student is guaranteed to get lost in details, be overwhelmed by all those 800 page hardcore textbooks. On the other hand, seemingly pragmatic, cookbook and bootcamp-style approaches miss depth, nuance, key theoretical ideas, and methodological aspects. 
-
-
-## Decision-Making for the Brave and True {.unnumbered}
-
-This is an introductory, free, and open-source course which bridges the gap between theory and practice,^[There is a similar gap between the "math world" of elegant models / abstractions and messy "real world" of decisions in businesses
-] cultivating the skills and understanding necessary to bring value to organisations by **improving decision-making**. It is an attempt to find a golden mean of both worlds -- so that you choose your own path intentionally. Here's the metaphor:
-
--   Illuminating theoretical ideas (contemplating in the library)
--   Practicing battle-tested technologies (engineering in the trenches).
-
-
-::: {.callout-tip}
-## Think of youself as a business person with superpowers
-
-This is the **best advice** I ever got as a novice data scientist. It is easy to lose track of this idea, especially if inamored with the technicalities of statistics and machine learning.
-:::
-
-This is the **course I wish I had** when starting my journey in data science, which would prepare me for the realities of industry, often very different from the academic world. In my teaching, I achieve this by putting business decisions, understanding the domain, and working software at the forefront of each (statistical) tool we learn. 
 
 ::: {.callout-note}
-## Who should read this book?
+## Who should read this guide?
 
 *Anyone lost, confused, stuck or overwhelmed by Data Science and Machine Learning complexities, who wants to see the big picture, a path forward, and the possibilities.*
 
@@ -59,22 +44,55 @@ Maybe, you're an **engineer** getting curious about ML or an **analyst** with a 
 In my opinion, junior data scientists and ML practitioners a few years into their journey will benefit the most from the re-contextualization of fundamentals that I'm doing here, which could enable them to take another **leap in career**.
 :::
 
+The commitment needed to get started in the field is so high, that a student is guaranteed to get lost in details, be overwhelmed by all those 800 page hardcore textbooks. On the other hand, seemingly pragmatic, cookbook and bootcamp-style approaches miss depth, nuance, key theoretical ideas, and methodological aspects. 
 
-The course is challenging due to its breadth across disciplines and depth (starting from fundamentals).^[Of course, you can just listen, read and extract valuable insights, but the course ultimately fails without deep self-study.] In service of understanding, it becomes conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Keep in mind that:
 
-- It is NOT a theoretical course, nor a replacement for probability, mathematical statistics, and other prerequisites. There are two possibilities:
-  - You already had those courses and will look at them with a fresh perspective 
-  - Otherwise, treat it as learning roadmap of the most relevant ideas
-- At the same time, this is NOT a bootcamp, nor a replacement for learning programming in Python/R/SQL for data science
-  - Therefore, it is not enough by itself to land you a job
-  - For that, there are many wonderful resources for practice and study
+## Decision-Making for the Brave and True {.unnumbered}
 
-Think of it as a skeleton, a **conceptual frame** which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea years later, with greater wisdom and skill -- to unlock its real power. I think that we should embrace the fact that learning is not linear. 
+This is an introductory, free, and open-source "course" which bridges the gap between theory and practice,^[There is a similar gap between the "math world" of elegant models / abstractions and messy "real world" of data and decisions in businesses
+] cultivating the skills and understanding necessary to bring value to organisations by **improving decision-making**. It will help you develop a solid foundation, so you can choose your own path and adventure intentionally, in accord with your passion and career objectives.
+
+A lot has been written about the journey from novice to expert and the process of mastery in chess, tennis, painting, music, etc. Decision science is a challenging and rewarding field, which will require two kinds of intentional practice and active learning over a long period of time:
+
+- [Contemplating in the library]{.underline}: understanding the inner workings and relevance of key theoretical ideas
+- [Engineering in the trenches]{.underline}: practicing battle-tested technologies and solving increasingly messier, more complicated and realistic problems
+
+
+
+I have to clarify what I mean by contemplating in the library and  engineering in the trenches. In contemplation, we try to see how fundamental theoretical ideas translate into real-world stories and solutions to practical problems. We also focus on understanding the problem space in various domains, our clients' needs and challenges -- which enables us to ask the right questions, formulate the problem correctly, then pick the right model and methodology for the task. Last, but not least, we'll gain insights into pitfalls and common mistakes to avoid.
 
 ::: {.column-margin}
-This course stands on the shoulders of giants, and I can only aspire to get to the level of clarity and rigor provided by [Hastie/Tibshirani](https://www.statlearning.com/) or [Andrew Ng](https://www.andrewng.org/courses/) when it comes to ML, and [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/) or [Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/) on Bayesian Statistics / Causal Inference.
+During the course, I present stories and toy problems which motivate probability distributions, LLN/CLT, Bayes' rule, sampling, measurement, etc. This is a way to highlight the **practical relevance** of otherwise dry theoretical ideas
 :::
 
+On the other hand, engineering in the trenches is a skill. The only way to become better at modeling and data analysis is hands-on practice. It is not sufficient to know about the modeling workflow and methodology. In practice, we have to develop pragmatic solutions and test, implement our ideas in code. If we are to increase our chances of success, we'll also have to follow best practices of reproducible research, automation, and model operationalization.
+
+
+This is the **course I wish I had** when starting my journey in data science, which would prepare me for the realities of industry, often very different from the academic world. People usually blame this gap on programming and software engineering aspects. It is indeed correct, but we've got so many excellent resources about how to operationalize models and do reproducible data analysis, that it's not a huge problem in 2025. 
+
+I suspect the real problem is methodological and organizational: a mismatch between business objectives, actions, constraints, tradeoffs, domain specificities and modeling. In other words, the ability to ask good questions, to formulate a problem, and think scientifically is critical. Therefore, I will blame most failed ML/AI projects and replication crisis in research on the **adhockery**. ^[Adhockery in modeling, in product-management, in data-mining, and software engineering to operationalize the models]
+
+I will have to throw Kaggle under the bus here. Despite being an excellent platform for honing ML skills and developing better models, I think it gave too many people the impression that this is what data science is about. Kaggle misses the most important aspects: it is devoid of most of the original business context, problem formulation, and decision-making.
+
+::: {.callout-tip}
+## Think of youself as a business person with superpowers
+
+This is the **best advice** I ever got as a novice data scientist. It is easy to lose track of this idea, especially if inamored with the technicalities of statistics and machine learning.
+:::
+
+In my teaching, I try very hard to bring back the scientific process and methodology in "data science". Understanding and applying a statistical tool or model by itself is not sufficient -- it would be skill without wisdom. We need case-studies in which we put the business context, decisions, domain understanding, and working software at the forefront. As R. McElreath sais, science before statistics!
+
+
+The roadmap is challenging due to its breadth across disciplines and depth (starting from fundamentals).^[Of course, you can just listen, read and extract valuable insights, but the course ultimately fails without deep self-study.] In service of understanding, it becomes conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. Keep in mind that:
+
+- It is NOT a theoretical or academic journey. Despite that, there is no shortcut around probability, mathematical statistics, and other prerequisites. There are two possibilities:
+  - You already had those courses and will look at them with a fresh perspective on the second pass. It is ok to go back and reinforce fundamentals, clear up misunderstandings!
+  - Otherwise, treat it as a learning roadmap of the most important ideas. It is easier to study e.g. probability, if you know its stories and practical relevance 
+- At the same time, this is NOT a bootcamp, nor a replacement for learning programming in Python/R/SQL for data science
+  - Therefore, it is not enough by itself to land you a job
+  - For that, there are many wonderful resources for practice and study provided below
+
+Think of it as a skeleton, a **conceptual frame** which ties together everything you have learned so far and can be built upon as you progress in your career and studies. You will probably go back to the same idea years later, with greater wisdom and skill -- to unlock its real power. We should embrace the fact that learning is not linear. 
 
 ::: {.callout-warning}
 ## Overwhelming amount of content. What is best for learning?
@@ -84,13 +102,6 @@ Given the over-abundance of learning resources, it is too much to sift through a
 The roadmap provided here should help you navigate the landscape of data science and find the shortest path towards developing your skills and better decisions in your firm. Pick a topic you're passionate about, for example, generalized linear models and look in the study guide for tips on where to read and how to practice.
 :::
 
-I have to clarify what I mean by contemplating in the library and  engineering in the trenches. In contemplation, we try to see how fundamental theoretical ideas translate into real-world stories and solutions to practical problems. We also focus on understanding the problem space in various domains, our clients' needs and challenges -- which enables us to ask the right questions, formulate the problem correctly, then pick the right model and methodology for the task. Last, but not least, we'll gain insights into pitfalls and common mistakes to avoid.
-
-::: {.column-margin}
-During the course, I present stories and toy problems which motivate probability distributions, LLN/CLT, Bayes' rule, sampling, measurement, etc. This is a way to highlight the **practical relevance** of otherwise dry theoretical ideas
-:::
-
-On the other hand, engineering in the trenches is a skill. The only way to become better at modeling and data analysis is hands-on practice. It is not sufficient to know about the modeling workflow and methodology. In practice, we have to develop pragmatic solutions and test, implement our ideas in code. If we are to increase our chances of success, we'll also have to follow best practices of reproducible research, automation, and model operationalization.
 
 ## Why should you care?
 
@@ -110,9 +121,9 @@ You will be surprised **how far can you go with simple, even linear models**. In
 
 What does it actually mean, if we step outside the hype and buzzwords, use a plain language, and apply these ideas in down-to-earth, day-to-day problems and challenges in businesses? Data science and AI can have a function of decision-making support or be an essential part of the system/product itself, like in the case of Uber, Amazon, Netflix, Spotify, Google and many others. 
 
-To get a better sense of what I mean by decision-making support, here is a list of challenges many data scientists are working on. Notice the common thread of optimization at a large scale, that many of these applications are related to important decisions in the value chain of a firm. These problems also can't be solved in an optimal way by simple rule-based business logic or exploratory data analysis.
+To get a better sense of what I mean by decision-making support, here is a list of challenges many data scientists are working on. Notice the common thread of optimization at a large scale, that many of these applications are related to important decisions in the value chain of a firm. These problems also can't be solved in an optimal way by simple rule-based business logic, classical algorithms, simple statistics, or exploratory data analysis.
 
-- Demand forecasting, inventory optimization, production planning
+- Demand forecasting, inventory optimization, production planning, routing and allocation in logistics
 - Revenue management, pricing, and promotion optimization
 - Advertisement, marketing mix, and conversion optimization
 - Customer behavior and preferences:
@@ -144,7 +155,7 @@ We studied all of those prerequisites precisely in order to be well equipped for
 [^index-2]: [VUCA: a mental model to better understand the world](https://www.vuca-world.org/where-does-the-term-vuca-come-from/)
 
 
-When somebody asks what have you learned in this book and course, I suggest two metaphors: one of simplification and another of seeing relations
+When somebody asks what have you learned in this course, I suggest two metaphors: one of simplification and another of seeing relations
 
 
 ::: {layout="[45, -2, 55]"}
@@ -156,14 +167,19 @@ When somebody asks what have you learned in this book and course, I suggest two 
 
 ## What will you learn?
 
-I am tempted to say "act rationally" to improve business outcomes like top line, bottom line, customer satisfaction, and efficiency. However, what you will learn is much more nuanced than that -- hence, the short answer below which will take a while to unpack.
+At this point you've heard the word "model" a lot of times. In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. Reality is overwhelming and combinatorially explosive in its possibilities. ^[Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc] 
+
+We build models, because we want to understand a system and capture / explain the essential aspects of the phenomena of interest, in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen. 
+
+A model will take you only as far as the quality of your problem formulation, its assumptions, and the data you have. Its results are useful only if they inspire new questions or hypotheses, generate actionable insight, or make reliable predictions. This lack of focus on context, objectives, actions, causes, and outcomes is one of the biggest pitfalls in the teaching and practice of machine learning or econometrics. So, let's reframe our study objective.
+
 
 ::: {.callout-important}
-## Short version
+## Modeling as a part of decision-making process 
 
 $$Question \longrightarrow Modeling \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome $$
 
-Necessary, but insufficient ^[The insufficiency comes from the fact that this course involves a lot of self-study and I can't ever claim an exhaustive coverage of such a complex field] fundamentals of **business economics** and **statistical modeling**:
+We will study the necessary, but insufficient ^[The insufficiency comes from the fact that this course involves a lot of self-study and I can't ever claim an exhaustive coverage of such a complex field] fundamentals of **business economics** and **statistical modeling**:
 
 - in order to ask the right questions
 - so that we can build custom statistical models 
@@ -173,10 +189,7 @@ Necessary, but insufficient ^[The insufficiency comes from the fact that this co
 
 :::
 
-
-At this point you've heard the word "model" a lot of times. In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. Reality is overwhelming and combinatorially explosive in its possibilities. ^[Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc] We build models, because we want to understand a system and capture the essential aspects of the phenomena of interest, in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen.
-
-We collect data, perform experiments, and build models in order to minimize the effect of biases and our foolishness. It's also important to remember that all models have assumptions, pressupositions, and limitations. They are little machines, golemns of prague which follow instructions precisely, and can backfire if used outside their range of validity. Remember that all models are wrong, but some are useful.
+We collect data, perform experiments, and build models in order to minimize the effect of our biases and foolishness. It's also important to remember that all models have assumptions, pressupositions, and limitations. They are little machines, golemns of prague which follow instructions precisely, and can backfire if used outside their range of validity. Remember that all models are wrong, but some are useful. They can be powerful, but lack wisdom, which is found in your domain / problem understanding and scientific thinking.
 
 ::: {.callout-tip}
 ## Three challenges in statisical modeling
@@ -192,9 +205,19 @@ $$Measurement \longrightarrow Construct$$
 The holy grail is to build statistical models based on the [causal processes]{.underline} informed by theories and hypotheses. If we take into account how we [measured]{.underline},^[We'll dedicate one lecture on measurement, but you might have whole specialized classes on this topic] and [collected data]{.underline}, we'll increase our chances to generalize our conclusions and will have stronger evidence.
 :::
 
-My attempt in organizing the teaching is to split the course into self-contained modules, which can be mixed and matched for diverse audiences and needs. The book will lag years behind my teaching, but the good news is that you can safely use the carefully curated lists of resources and suggested practices.
+You can think of this proposed roadmap as jumping through multiple buckets of decision science, as shown in the diagram below. It happens that in universities, each of these buckets is a course, for example, linear algebra, calculus, probability theory and mathematical statistics, applied regression, research methods, etc.
+
+I will explain the prerequisites and "modules" in the next sections, but here is the gist of it. First, we need to be competent in programming for data analysis with R/Python/Julia and SQL in order to do anything even remotely sophisticated in practice. ^[Most universities introduce it far too late, but things are changing. I would argue that one has to start coding and analyzing data from stats 101 and linear algebra] Probability theory, inferential statistics, and regression is the foundation on which we can develop more powerful modeling approaches. The more in-depth knowledge, experience, and understanding we have in probability and stats, the more challenging problems we can tackle. 
+
+Second, we need to understand the problem space, the domain we're working in, and what challenges businesses face. It doesn't have to be about business, just replace with your field of interest, e.g. finance, medicine, psychology, politics, ecology etc. An awareness of the scientific method in the general sense and research methods of the field will be extremely helpful in this pursuit.  
+
+At last, we will develop 3 approaches to problem-solving which conveniently correspond to main challenges in statistics outlined above: experiment design, causal inference, and machine learning.^[I'm leaving out optimization and algorithms, which are very important, but more on the computer science side of things] Each of these approaches have their own concepts, ideas, tools, methodologies, processes, and workflows -- with some particularities, depending on the target domain. The common, unifying thread is prediction of unknown quantities and effects of causes, consequences of interventions.
+
 
 ![I want to highlight that if you have a good grasp of fundamental concepts in probability and statistics, then study Bayesian generalized linear models from the perspective of causal inference -- you will see the whole field as unified and have a very flexible tool to attempt to solve any challenge](img/roadmap.png) 
+
+Bayesian inference and (multilevel) generalized linear models are general-purpose tools, which can be used for analyzing data and making inferences in a complicated experimental setup, in predictive applications, and for estimating causal effects. Think of this modeling approach as a more powerful, flexible, but computationally expensive workhorse in contrast with the linear regression.
+
 
 ::: {.callout-tip}
 ## Go to "Study Guide" pages for practice!
@@ -203,6 +226,23 @@ Conceptual understanding by itself is not enough. So, I curated a list of resour
 
 Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do a lot of simulations, some exciting projects (full stack data apps) and investigate common challenges with a fresh perspective.
 :::
+
+
+## On the shoulder of giants
+
+I mentioned that my teaching (and industry practice) stands on the shoulder of giants, but I have to explain why I'm not writing a book yet and linking you instead to the best resouces I know of. First, I love programming, but teaching it is not my passion -- one has to pick their battles. The same is true for linear algebra and mathematical analysis, or generally, "math for ML".
+
+When it comes to statistical modeling and machine learning, I can only aspire to get to the level of clarity and rigor provided by [Trevor Hastie](https://www.statlearning.com/), Bradley Efron, [Andrew Ng](https://www.andrewng.org/courses/), Yaser Abu-Mostafa, Shai Ben-David, [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/), [Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/), Jennifer Hill, Aki Vehtari, Stephen Boyd, Gilbert Strang, Steven Burton, Nathan Kutz, etc. ^[The list won't be exhaustive, even if I wanted]
+
+No one has time to study it all and there is no single book which does everything best.^[A cheeky reference to the no free lunch theorem] So, by cherry-picking lectures, chapters, examples, and applications; then arranging them into a coherent roadmap, we get different perspectives and will start developing preferences for one way of teaching and one approach over another. 
+
+The cleanest code associated to their applications is not always written by the authors. Often, the open-source community significantly improves it and we'll take advantage  of this fact. Sometimes, I don't like any code and will do it myself, but this is really, polishing an existing idea rather than an original contribution.
+
+From the point of view of teaching, the only reason to write my own book is the following: we need engaging, high-quality, in-depth, hands-on, realistic case-studies. ^[Ok, enough hyphenated adjectives, you get the point] We have more than enough tutorials and toy examples. Often, the only criticism I can address to some of the books is that the code examples are applied to boring and overused problems and datasets. It is not a fair criticism, since their main goal is teaching how the models work. Moreover, no one will publish a thousand page textbook.
+
+> The best kind of applications are relatively simple, but interesting and pose real modeling challenges. They capture the essence of the problem. This is why I heavily rely on Richard McElreath's "Statistical Rethinking, 2nd ed." and "Bayesian Data Analysis, 3rd ed." by Andrew Gelman et. al. 
+
+In my opinion, writing such case-studies takes more time than actually solving the problem inside a firm. I will do it, someday. In general, after you studied from the linked materials,  tried to write the code without reference, and understood the examples in depth -- it is your responsibility to come up with a project or case-study. It can be on openly available or private data, on messy, real data, or your own, clean simulations. It's a good idea to choose a domain, problem, and question you're passionate about.
 
 
 ## Prerequisites and background

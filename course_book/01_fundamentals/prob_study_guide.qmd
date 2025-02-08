@@ -236,7 +236,7 @@ This is one of the key reasons to study probability, statistics, and do lots of 
 
 >  And with no false modesty my intuition is no better. But I have learned to solve these problems by cold, hard, ruthless application of conditional probability. There’s no need to be clever when you can be ruthless.
 
-## Probability Triple. Random Variables. Models
+## Probability Triple. Random Variables. Statistical Models
 
 If you understand and can explain the above ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky[^shaky], here are some readings:
 
@@ -260,7 +260,8 @@ I highly recommend this first [lecture](https://www.youtube.com/watch?v=FdnMWdIC
 
 :::
 
-## Stories behind distributions
+
+## Newsvendor problem. Stories behind distributions
 
 You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few -- especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories[^stories] behind most of them, since the goal will be to build custom models for each application. 
 
@@ -285,6 +286,38 @@ Originally, Poisson distribution was used to estimate deaths by horses in the Pr
 
 I limit the number of hands-on applications for this chapter/lecture, not only because of time constraints, but also because most use-cases come in Module 3, in the context of more realistic problems. I hope, however, that I sparked an interest about how to approach Probability, especially when we draw DAGs to tell stories.
 
+
+## The most dangerous equation. CLT
+
+Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. [^4]
+
+- We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations [here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem).
+- If you're interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure
+- What does a statistician want? Review important properties of estimators.
+    - For an accessible explanation of Bias, Consistency, Efficiency -- showcased with the corresponding R code, see [openforecast](https://openforecast.org/sba/estimatesProperties.html)
+
+[^4]: Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism
+
+::: {.callout-note}
+## The most dangerous equation
+
+I think that ["The most dangerous equation"](http://assets.press.princeton.edu/chapters/s8863.pdf) is a must read for anyone, not just practicing scientists and statisticians. The example I usually do a demonstration on is about the dubious U.S. policy of splitting the bigger schools. 
+
+:::
+
+::: {.callout-note}
+## Calling Bullshit: Best Barbecue
+
+Continuing on the reddit examples, there are some amazing case-studies in the "Calling Bullshit" website and book. One of them is exactly such a ranking problem: [best barbecue in the states](https://www.callingbullshit.org/case_studies/case_study_barbecue.html). I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill -- to call out the bullshit.
+
+Online platforms which have to rank posts and comments, face the challenges of how to take the sample size into account. It depends, but for inspiration, see the hackernoon ranking algorithm.
+:::
+
+
+
+## P-Values and error control
+
+## Confidence intervals. When randomization fails
 
 ## Conditioning and Bayes Rule
 
@@ -334,33 +367,6 @@ For the simplest models, one approach of comparing different hypotheses is Bayes
 The Simpson's paradox is usually introduced to highlight the importance of conditioning. However, the only resource I found which gets to the core of the problem is Bradley Neal's [first lecture](https://www.bradyneal.com/causal-inference-course) on causal inference. 
 
 The "paradox" part of it is resolved (or at least not puzzling), when we think about the causal structure of the problem (or the DAG of influences).
-:::
-
-
-## LLNs, CLTs. Estimator properties
-
-Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. [^4]
-
-- We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations [here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem).
-- If you're interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure
-- What does a statistician want? Review important properties of estimators.
-    - For an accessible explanation of Bias, Consistency, Efficiency -- showcased with the corresponding R code, see [openforecast](https://openforecast.org/sba/estimatesProperties.html)
-
-[^4]: Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism
-
-::: {.callout-note}
-## The most dangerous equation
-
-I think that ["The most dangerous equation"](http://assets.press.princeton.edu/chapters/s8863.pdf) is a must read for anyone, not just practicing scientists and statisticians. The example I usually do a demonstration on is about the dubious U.S. policy of splitting the bigger schools. 
-
-:::
-
-::: {.callout-note}
-## Calling Bullshit: Best Barbecue
-
-Continuing on the reddit examples, there are some amazing case-studies in the "Calling Bullshit" website and book. One of them is exactly such a ranking problem: [best barbecue in the states](https://www.callingbullshit.org/case_studies/case_study_barbecue.html). I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill -- to call out the bullshit.
-
-Online platforms which have to rank posts and comments, face the challenges of how to take the sample size into account. It depends, but for inspiration, see the hackernoon ranking algorithm.
 :::
 
 
