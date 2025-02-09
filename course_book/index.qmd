@@ -264,7 +264,7 @@ I think this course will bring the most value to masters' students, professional
   - Of course, the more experience you have in one or both, the better
 - This is completely optional, but if you have to deal with financial statements at your job or have an interest in finance, I strongly suggest you check out A. Damodaran's [crash course](https://youtube.com/playlist?list=PLUkh9m2BorqmKaLrNBjKtFDhpdFdi8f7C&si=UjEkr1_smeILJ8ZF) on accounting and corporate finance.
 
-Besides the technical prerequisites, there is a list of concepts and ideas from research design, which can be helpful in practice, but are often not part of statistical curriculum. It is worth to invest a bit of time to get familiar with the following:
+Besides technical prerequisites, there is a list of concepts and ideas from research design, which can be helpful in practice, but are often not part of statistical curriculum. I highly recommend A. Zand Scholten's introductory course on [Quantitative Methods](https://www.coursera.org/learn/quantitative-methods). It is worth to invest a bit of time to get familiar with the following:
 
 ::: {.column-margin}
 Taken in isolation, topics like measurement and sampling are very abstract. Therefore, they have to be integrated into the case-studies whenever they bring added value. This is not easy, so .. work in progress
@@ -276,17 +276,15 @@ Taken in isolation, topics like measurement and sampling are very abstract. Ther
 - **Reproducible research** and literate programming has become a de-facto standard in the data science world. We have amazing tools right now, but it's still not easy to achieve end-to-end reproducibility and automation.
 - **Academic writing** is an important skill, even in businesses. Writing is both a way of thinking, problem-solving, and communication. In my opinion, the structure of a scientific paper is very helpful to crystalize your ideas.
 
-Last, but not least, there is value in understanding the **scientific process**, in its broad sense. In [section v.](sci_process.qmd), I adapt it to the context of data science in businesses and show how most processes and workflows like CRISP-DM,  Tuckey's EDA are a part of it.
+Last, but not least, there is value in understanding the **scientific process**, in its broad sense. In [section v.](sci_process.qmd), I adapt it to the context of decision science in businesses and show how most processes and workflows like CRISP-DM,  Tuckey's EDA are a part of it.
 
 
 
 ## Module 1: Business School for Data Scientists
 
-Remember the advice "think of yourself as a business person with superpowers"? It means that as a data scientist, it's helpful to think question, action, and outcome first -- and only then about models. In other words, we have to deeply understand our client's business domain and **problem space**.  The best way to achieve that, is experience and collaboration on the job. Therefore, my role is to tell as many stories from the trenches, with deep-dives in our case-studies, so that you know what to expect in practice.
+Remember the advice "think of yourself as a business person with superpowers"? It means that as a decision scientist, it's helpful to think question, action, and outcome first -- and only then about models. In other words, we have to deeply understand our client's business domain and **problem space**.  The best way to achieve that, is experience and collaboration on the job.^[Studying business economics, marketing, management, finance, and logistics will also help a lot] Therefore, my role is to tell as many stories from the trenches, so that you know what to expect in practice.
 
-::: {.column-margin}
-Often, there is a disconnect between business economics, analytics classes and ML / stats / data science. We can't expect them to be coherent by defaut, but we can carefully design those synergies
-:::
+
 
 A good starting place is thinking about the purpose of a business from different perspectives.  Then, identify key decisions that firms have to make across many industries and domains. This exercise will show us how widespread are data science applications and use-cases, even in places we don't suspect. 
 
@@ -307,9 +305,9 @@ These methodolgical fundamentals are not "just theory", it is what will make or 
 ::: {.callout-note}
 ## Newsvendor problem, Demand planning, Price optimization
 
-If you worry that the business school is too conceptual -- don't despair, as we'll have a few hands-on, technical lectures -- involving math, modeling, and programming. 
+If you worry that the business school is too conceptual -- don't despair, as we'll have a few hands-on, technical lectures -- involving math, modeling, and programming. We will come back to these problems after getting the required background in probability and statistical modeling.
 
-- I use the newsvendor problem as a starting point in modeling for demand planning
+- I use the newsvendor problem as a starting point in modeling and optimization for demand planning
 - The pricing optimization as a starting point towards revenue management
 :::
 
@@ -330,17 +328,17 @@ Perhaps the most important lecture is also very abstract, where I formally defin
 The module culminates in practical aspects of experiment design and A/B testing, sample size justification, **power analysis**, and a conversation about the causes and remedies to the replication crisis. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, and Causal Inference.
 
 ::: {.column-margin}
-When discussing hypothesis testing, it is very important that you recognize that most statistical tests can be framed as linear models.
+When discussing hypothesis testing, it is very important to recognize that most statistical tests can be framed as linear models.
 :::
 
 ::: {.callout-note}
 ## The art of formulating a hypothesis
 
-In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks.
+In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks in introductory hypothesis testing. We will use Cassie Kozyrkov's 12 steps of statistics to make sure that we don't forget some important aspect or potential pitfall. 
 :::
 
 
-My preferred sequence is to go in parallel with the "business school" and statistics, since there is a great synergy. The prior focuses on the problem space and processes (over content) of analytics, ML, statistics. I also recommend in case of a very short and intensive course to study  bayesian generalized models before the experiment design topics. 
+My preferred sequence is to go in parallel with the "business school" and statistics, since there is a great synergy. The prior focuses on the problem space and processes (over content) of analytics, ML, statistics. I also recommend in case of a very short and intensive course to study  bayesian generalized linear models before the experiment design topics. 
 
 
 
@@ -373,6 +371,10 @@ Often, A/B tests and randomized controlled trials are **unfeasible** or **unethi
 
 This motivates a deep-dive into the field of causal inference. Think of it as a link between the theoretical models and observational data, where we sometimes can take advantage of certain "natural experiments". Causal inference requires deep thinking and understanding, which is truly challenging -- an art and science, in contrast with the "auto-magic", unreasonably effective pattern recognition of ML. 
 
+Causal thinking is useful in description, inference, and prediction, as we need to know the causes of what makes our sample different from target population (for example, differential non-response, selection bias, or non-probability sampling). It also gives us a principled approach to deal with missing data, measurement error, and prevents us from drawing wrong conclusions when exploring data.
+
+ One of the most important lessons is to be very careful when using ML to make predictions, when we actually want to intervene in a system. It can be shown that a model optimized for prediction can suggest nonsensical interventions and that a causal model can make subpar predictions.
+
 
 ::: {.callout-important}
 ## What if I care only about ML?
@@ -391,12 +393,7 @@ This is how we jump through various buckets, highlighting the golden thread link
 
 Other times, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
 
-The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: Demand Forecasting, Recommender Systems, and Natural Language Processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
-
-
-### Full-Stack Data Apps
-
-I mentioned before that a key prerequisite is competence in Python/R, SQL, data wrangling, EDA, visualization, simulation, literate programming. There are many wonderful resources to learn and practice these skills and topics. During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines.
+The icing on the cake is miscellaneous topics dear to me and usually not covered in such a course: demand forecasting, recommender systems, and natural language processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
 
 ::: {.callout-tip}
 ## Project: 5-page applied research paper
@@ -405,6 +402,12 @@ After finishing the first three modules, a good chance to put the knowledge to p
 
 We will see how easy is it to publish your article / paper / report with quarto and github pages.
 :::
+
+
+### Full-Stack Data Apps
+
+I mentioned before that a key prerequisite is competence in Python/R, SQL, data wrangling, EDA, visualization, simulation, literate programming. There are many wonderful resources to learn and practice these skills and topics. During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines.
+
 
 If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference. There is, however, one huge problem when it comes to bringing added value in businesses -- [operationalizing models]{.underline}. 
 
