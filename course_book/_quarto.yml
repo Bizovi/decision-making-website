@@ -69,7 +69,7 @@ website:
         contents:
         - href: 01_fundamentals/prob_study_guide.qmd
           text: "Syllabus & Study Guide"
-        - href: 01_fundamentals/roadmap.qmd
+        - href: roadmap_prob.qmd
           text: "Schedule & Roadmap"
         - href: 01_fundamentals/stat_foundations.qmd
           text: "1. The Probability Triple"
@@ -79,7 +79,7 @@ website:
         contents:
         - href: references.qmd
           text: "Syllabus & Study Guide"
-        - href: 01_fundamentals/roadmap.qmd
+        - href: roadmap_bayes.qmd
           text: "Schedule & Roadmap"
 
 
