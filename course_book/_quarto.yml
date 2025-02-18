@@ -39,20 +39,20 @@ website:
     contents: 
       - href: index.qmd
         text: "i. Introduction"
-      - href: 01_fundamentals/roadmap.qmd
-        text: "ii. Schedule & Roadmap"
       - href: philosophy.qmd
-        text: "iii. Course Philosophy"
+        text: "ii. Course philosophy"
+      - text: "iii. On scientific process"
+        href: sci_process.qmd
       - text: "iv. Why study all of that?"
         href: 01_fundamentals/prerequisites.qmd
-      - text: "v. On scientific process"
-        href: sci_process.qmd
       - text: "-----"
-      - section: "1. Business School for Data Scientists"
+      - section: "1. Business School and Methodology"
         href: 01_fundamentals/0_study_guide.qmd
         contents:
         - href: 01_fundamentals/0_study_guide.qmd
           text: "Syllabus & Study Guide"
+        - href: 01_fundamentals/roadmap.qmd
+          text: "Schedule & Roadmap"
         - href: 01_fundamentals/1_applications.qmd
           text: "1. Application Domains & Use-Cases"
         - href: 01_fundamentals/2_performance_strategy.qmd
@@ -69,14 +69,19 @@ website:
         contents:
         - href: 01_fundamentals/prob_study_guide.qmd
           text: "Syllabus & Study Guide"
+        - href: 01_fundamentals/roadmap.qmd
+          text: "Schedule & Roadmap"
         - href: 01_fundamentals/stat_foundations.qmd
           text: "1. The Probability Triple"
       - text: "-----"
       - section: "3. Applied Bayesian Statistics"
         href: references.qmd
         contents:
-          - href: references.qmd
-            text: "Syllabus & Study Guide"
+        - href: references.qmd
+          text: "Syllabus & Study Guide"
+        - href: 01_fundamentals/roadmap.qmd
+          text: "Schedule & Roadmap"
+
 
   page-navigation: true
   page-footer:

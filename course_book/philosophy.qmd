@@ -1,5 +1,5 @@
 ---
-title: "Cybernetics done right"
+title: "Course philosophy"
 author:
   - name: Mihai Bizovi
     id: mb
@@ -11,24 +11,83 @@ format:
 ---
 
 
-The hell is Cybernetics? Does it have something to do with robotics? Not really -- it is studying general regularities of **information processing** and **control**[^index-4] in complex adaptive systems (CAS). It is what was originally meant by AI, before symbolic AI, expert systems, and deep learning. The way I think of data science -- is in the context of those CAS. This perspective is powerful, but rarely taught nowadays. Systems dynamics is an example of such a sub-field, which is very useful in strategic management.
+
+## On Interdisciplinarity
+
+Decision science is by definition interdisciplinary, which makes studying it challenging, interesting, and rewarding. We will need to borrow ideas, models, and techniques from probability, statistics, causal inference, machine learning, optimization, economics, cognitive science, etc. This means jumping through many fields, which we'll call aspects or "buckets". 
+
+::: {.callout-warning}
+## The danger of thinking in buckets
+
+Our brains think about stuff by creating boundaries, i.e. ‘buckets' around ideas. These buckets can influence our memory, language, behavior, and ability to see the ‘big picture’. ^[I first encountered this idea in one of R. Sapolsky's [lectures](https://youtu.be/NNnIGh9g6fA) / [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/) and it had a huge impact on the way I look at science.]
+
+
+- An implication of our bucketing minds is that we are **bad at differentiating** facts that fall within the same category. Two shades of red are labelled ‘red’.
+- A larger consequence is that when we focus on categories while talking about behavior, we tend to **exagerrate differences** and lose out on the big picture
+- It’s easy to see a single one of these categories as providing The Explanation. But they are merely various "behavior buckets". They are all a part of the big picture explanation.
+- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history, sometimes, with catastrophic consequences.
+
+A major goal is not to fall for bucket thinking – we must resist the temptation to find "The Explanation" in one bucket. Robert Sapolsky explains behavior in terms of evolution, neuroscience, molecular genetics, ethology, etc. 
+:::
+
+Imagine we're exploring a map by travelling through various islands and familiar / unknown places. Sometimes, we'll take a little detour for a fun fact, other times we need to settle for a while and master a craft. Maybe, it's not enough to talk to locals, but we have to live among them in order to understand their challenges. If we don't have a map and guide, we might not be even aware that we're missing important knowledge and understanding from an unexplored place. Here are our destinations:
+
+**Problem space** is the land of challenges. Our goal here is to understand the domain where we have to make decisions, figure out how to improve relevant outcomes for clients and stakeholders. There is much uncertainty here, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System. I will explain what this means in the next section. This is where we get our data from and who we build software for! Also known in a narrow sense as scope.
+
+<!-- - Be it in firms, economics, and finance
+- Be it in biology and life sciences
+- Be it in engineering systems  -->
+
+
+- **Science**, especially **cognitive science**, which will give us insights about our intelligence, rationality, wisdom, foolishness, and biases. This is the place where we'll get the process/method, learn how to observe, formulate scientific hypotheses, use theories, and causal models to make predictions and perform experiments. 
+- In **probability**, we reason about uncertainty in the real world, build narratives and tell stories with DAGs of random variables, which are prague golemns, little robots generating data. In the happy case they match the theoretical models and result in plausible patterns. We'll spend much time simulating phenomena, being the masters of these alternative multiverses. 
+- In **statistics**, we change our minds and actions in the face of evidence. We learn the skills of exploratory data analysis, experiment design, and causal inference. Why build models? To make better decisions, of course.
+- **Machine Learning** and Deep Learning, the younger tribes of statistics are the future: they learn from data and when things go well, make reliable and robust predictions, in order to optimize the heck out of any process. Think of them as shamans or oracles, who sometimes overfit, therefore are prone to acting foolishly.
+- We come back to the homeland of many of you: **computer science** and software engineering, the place where nowadays everything on this map becomes reality. We will learn how to build full-stack, data-driven software, good practices of the guild. While spending time here, an appreciation for the contribution of CS to all other places we already visited will become obvious.
+- It is all overseen by **philosophy**. Some things don't change.
+- Ah! We forgot about **mathematics**. It is everywhere, but also stands proud on its own. It is an essential prerequisite for everything we do, however, it is hard to do rigorous mathematics in the setup we outlined, as it will take a decade. The good news is -- we will be fine just with the starter pack!
+
 
 
 ::: {.column-margin}
-![The golden thread across disciplines. *(Source: Generated with DALL-E)*](img/network_golden%20thread.png)
+![We will take short trips in the fields outlined below. *(Source: Generated with DALL-E)*](img/map_dsc.png)
 :::
 
 
-::: {.callout-warning}
-## So, what's the problem with Cybernetics education? 
-The idea behind a **Cybernetics** curriculum is great: an **interdisciplinary** approach to solving complex economic problems -- what we know today as weak/specialised AI, combined with quantitative economics.
+## Cybernetics and AI
 
-Unfortunately, the execution is extremely difficult to pull off without a consistent vision, expertise, and an account of recent developments. It is even more difficult to put those economic models from '80s in practice, especially in a data-driven age.
+What is cybernetics and how is it relevant to the course philosophy? Does it have something to do with robotics or cybersecurity? Not really. It is studying complex adaptive systems (CAS) and is very close to what we call today weak or specialized AI.
 
-I am taking the first step to fix this, developing a vision to make it relevant for industry and businesses again. The easiest way is by smuggling ideas from systems' thinking into the practice of data science, which provides new insights into the problem space, but doesn't give us many pragmatic solutions yet.
+The term comes from greek *(kybernetes)* -- to steer towards a desired outcome or trajectory. It highlights the aspects of agency, action, pattern recognition, and prediction. Does the idea of "decision-making under uncertainty at scale" ring a bell?
+
+::: {.callout-tip}
+## Unpacking the definition of Cybernetics
+
+The science of **general regularities** of **control** and **information processing** in animals, machines, and humans ^[There are many definitions of Cybernetics, but I find this one by  P. Novikov to be the most useful for us]
+
+
+- **Control** means goal-directedness, the ability to solve problems and achieve objectives by taking action and stirring the system towards a trajectory. The goal can also be perserving the structural-functional organization of the system itself, an autopoesis.
+- **Information processing** can be interpreted as pattern recoginition, perception, how you understand and model the world, what inferences do you draw based on "data inputs"
+- **General regularities** means what is true and plausible of control and information processing across fields and a variety of complex systems, not only in particular cases.
+- Animal refers to applications in biology, machine -- in engineering, and human -- in our society and behavior.
+
+When applied to economics, cybernetics is ultimately concerned with human behavior. It views consumers, households, firms, institutions, markets, and countries as complex adaptive systems.
+
 :::
 
-[^index-4]: Cybernetics: (gr, kybernetes) -- to steer towards a desired outcome or trajectory. It highlights the aspects of agency, action, pattern recognition, and prediction.
+If we are to put **decision science** on a philosophical foundation, ideas from cybernetics, cognitive science, scientific process (philosophy of science), and ethics should be included. I don't do this for the sake of rigor, but because it is an useful way of thinking in practice. These four aspects appear again and again in my teaching and applications. 
+
+Perhaps, the most valuable skill from studying cybernetics is the ability to **think in systems** and bring clarity in messy, dynamic problems. I will not use any of its theory or tools, but it justifies and informs the way I put decision science in a larger context.
+
+::: {.callout-important}
+## Cybernetics and the history of AI
+
+I highly recommend that you stop here and read two brilliant interviews by Michael I. Jordan, in which he tells the story of how the meaning of AI changed throughout the decades and what role did Cybernetics play:
+
+- [Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says 
+-  [Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9): The Revolution Hasn’t Happened Yet
+:::
+
 
 ## Four principles for teaching
 
@@ -71,44 +130,6 @@ At the same time, we have to gradually get **rid of the bad habits** that were a
 
 Therefore, we need to develop a set of processes and methodologies to iterate and improve effectively. We focus and pay close attention to the process of problem-solving: from formulation to modeling and operationalization.
 
-## On interdisciplinarity
-
-The field of data (decision) science is by definition interdisciplinary, both in the sense of tools used and domains it is applied in. Therefore, we have to jump through many fields, which we'll call "buckets". I first encountered this idea in one of R. Sapolsky's [lectures](https://youtu.be/NNnIGh9g6fA) / [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/) and it had a huge impact on the way I look at science.
-
-
-::: {.column-margin}
-![We will take short trips in the fields outlined below. *(Source: Generated with DALL-E)*](img/map_dsc.png)
-:::
-
-::: {.callout-warning}
-## The danger of thinking in buckets (Sapolsky)
-
-
-- Our brains think about stuff by creating boundaries, i.e. ‘buckets' around ideas.
-- These buckets can influence our memory, our language, behavior(?), and our ability to see the ‘big picture’.
-- An implication of our bucketing minds is that we are **bad at differentiating** facts that fall within the same category. Two shades of red are labelled ‘red’.
-- A second, larger implication is that when we focus on categories while talking about behavior, we tend to **exagerrate differences** and lose out on the big picture
-- It’s easy to see a single one of these categories as providing The Explanation. But they are merely various "behavior buckets". They are all a part of the big picture explanation.
-- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history with catastrophic consequences in some cases!
-:::
-
-A major goal is: not to fall for bucket thinking – we must resist the temptation to find "The Explanation" in one bucket. Much time will be spent traversing the various buckets and when we stop for a while, we practice and try to understand. 
-
-Repeat until we've came full circle with a renowed appreciation, perspective, and ability. Sapolsky talks about human behavior in terms of evolution, neuroscience, molecular genetics, ethology, etc. We talk about decision-making by walking trough different ones:
-
-- **Problem space** (challenge land): understanding a domain where we have to make decisions, improve the relevant things for clients and stakeholders. There is much uncertainty here, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System.
-    - Be it in firms, economics, and finance
-    - Be it in biology and life sciences
-    - Be it in engineering systems
-    - This is where we get our data from and who we build software for!
-- **Science**, especially **cognitive science**, which will give us insights about our intelligence, rationality, wisdom, foolishness, and biases. This is the place where we'll get the process/method, learn how to observe, formulate scientific hypotheses, use theories, and causal models to make predictions and perform experiments. 
-- In **probability**, we reason about uncertainty in the real world, build narratives and tell stories with DAGs of random variables, which are prague golemns, little robots generating data. In the happy case they match the theoretical models and result in plausible patterns. We'll spend much time simulating phenomena, being the masters of these alternative multiverses. 
-- In **statistics**, we change our minds and actions in the face of evidence. We learn the skills of exploratory data analysis, experiment design, and causal inference. Why build models? To make better decisions, of course.
-- **Machine Learning** and Deep Learning, the younger tribes of statistics are the future: they learn from data and when things go well, make reliable and robust predictions, in order to optimize the heck out of any process. Think of them as shamans or oracles, who sometimes overfit, therefore are prone to acting foolishly.
-- We come back to the homeland of many of you: **computer science** and software engineering, the place where nowadays everything on this map becomes reality. We will learn how to build full-stack, data-driven software, good practices of the guild. While spending time here, an appreciation for the contribution of CS to all other places we already visited will become obvious.
-- It is all overseen by **philosophy**. Some things don't change.
-- Ah! We forgot about **mathematics**. It is everywhere, but also stands proud on its own. It is an essential prerequisite for everything we do, however, it is hard to do rigorous mathematics in the setup we outlined, as it will take a decade. The good news is -- we will be fine just with the starter pack!
-
 
 ## 10 Lessons in Humility
 
@@ -127,3 +148,4 @@ Whatever will be published here can't be the be-all-end-all bootcamp or course. 
     - In the case of everything goes - there is a risk of wandering aimlessly and not finding a home
 - Fixating on beliefs and propositional knowing (the facts!) is counterproductive. Which should put into question all written above
 - Fixating on skills makes you lose the grasp of the big picture
+
