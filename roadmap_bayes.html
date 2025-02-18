@@ -8,7 +8,7 @@
 
 <meta name="author" content="Mihai Bizovi">
 
-<title>Scientific process is all you need – Decision Science Course</title>
+<title>Module III: Applied Bayesian Statistics – Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_fundamentals/prerequisites.html" rel="next">
-<link href="./philosophy.html" rel="prev">
+<link href="./references.html" rel="prev">
 <link href="./img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -93,44 +92,12 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Scientific process is all you need – Decision Science Course">
+<meta property="og:title" content="Module III: Applied Bayesian Statistics – Decision Science Course">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://course.economic-cybernetics.com/img/sci-process.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image:height" content="1283">
-<meta property="og:image:width" content="1768">
 </head>
 
 <body class="nav-sidebar docked nav-fixed slimcontent">
@@ -195,7 +162,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sci_process.html">iii. On scientific process</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">3. Applied Bayesian Statistics</a></li><li class="breadcrumb-item"><a href="./roadmap_bayes.html">Schedule &amp; Roadmap</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -221,7 +188,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sci_process.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sci_process.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">iii. On scientific process</span></a>
   </div>
 </li>
@@ -320,11 +287,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. Applied Bayesian Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -333,7 +300,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./roadmap_bayes.html" class="sidebar-item-text sidebar-link">
+  <a href="./roadmap_bayes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Schedule &amp; Roadmap</span></a>
   </div>
 </li>
@@ -341,16 +308,7 @@ window.Quarto = {
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#action-and-agent-arena" id="toc-action-and-agent-arena" class="nav-link active" data-scroll-target="#action-and-agent-arena">Action and Agent-Arena</a></li>
-  <li><a href="#building-and-testing-ideas" id="toc-building-and-testing-ideas" class="nav-link" data-scroll-target="#building-and-testing-ideas">Building and testing ideas</a></li>
-  <li><a href="#thinking-discovery-and-explainations" id="toc-thinking-discovery-and-explainations" class="nav-link" data-scroll-target="#thinking-discovery-and-explainations">Thinking, discovery and explainations</a></li>
-  <li><a href="#steering-and-collaboration" id="toc-steering-and-collaboration" class="nav-link" data-scroll-target="#steering-and-collaboration">Steering and collaboration</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -359,9 +317,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">3. Applied Bayesian Statistics</a></li><li class="breadcrumb-item"><a href="./roadmap_bayes.html">Schedule &amp; Roadmap</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Scientific process is all you need</h1>
+<h1 class="title">Module III: Applied Bayesian Statistics</h1>
 </div>
 
 
@@ -384,158 +342,99 @@ window.Quarto = {
 </header>
 
 
-<p>People doing data mining, analytics, ML, and applied statistics recognize the importance of methodology. They design processes and workflows for their domain of expertise, which is indubitably helpful. However, it is confusing for a beginner to see so many of them – as I show on the margin. Even worse, it is hard to decide which one to use.</p>
-<blockquote class="blockquote">
-<p>I claim that an adaptation of the <u>scientific process</u> can place each of these processes in its appropriate context, while including actions and outcomes</p>
-</blockquote>
+<p>After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool. Even when we design experiments or surveys, we still need to model non-response, correct for biases, and account for confounds – meaning, engage in modeling.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<ul>
-<li>Data Mining, ML, and Analytics:
-<ul>
-<li>CRISP-DM, KDD</li>
-<li>Tuckey’s EDA</li>
-<li>Hadley’s Wickham’s tidyverse</li>
-<li>C. Kozyrkov’s 12 steps of ML</li>
-<li>Andrew Ng’s error analysis</li>
-</ul></li>
-<li>Experiment design and A/B testing, besides steps given in a stat101 class
-<ul>
-<li>C. Kozyrkov’s 12 steps of statistics</li>
-<li>A. Gelman’s workflow, described in “Regression and other stories”</li>
-</ul></li>
-<li>Statistical modeling and bayesian approaches:
-<ul>
-<li>A. Fleischhacker’s business analyst’s workflow</li>
-<li>R. Alexander’s process for telling stories with data</li>
-<li>R. McElreath’s “drawing an owl”</li>
-</ul></li>
-<li>Scientific process in its standard formulation</li>
-</ul>
-</div></div><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/sci-process.png" class="img-fluid figure-img"></p>
-<figcaption>The tweak to the scientific process consists in viewing the firm from the point of view of question / problem at hand as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. These tweaks shift the focus to actions and outcomes</figcaption>
-</figure>
-</div>
-<!-- 
-::: {.column-margin} 
-The way many curricula are designed, produces three profiles of professionals in the industry: 
-
-- the applied mathematician, from programs with a heavy focus on maths
-- the data-saavy computer scientist, from programs with a focus on ML/AI 
-- the business-saavy analyst, from programs with a focus on economics
-:::
- -->
-<p>For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I’m increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: “I decided to unify 10 existing standards – now we have 11”.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Scientific process in the broad sense
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A natural question to ask is: “What is the mechanism which could generate all these processes?” You’ve probably seen the scientific method roughly described as: Observations - Hypotheses - Experiment - Data collection - Hypothesis Testing - Conclusions.</p>
-<p>I don’t think this is sufficient for us, nor that we can force other methodologies onto this template. We need a few adaptations to our field and a different structural-functional organization. The <a href="https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/">diagram</a> from Berkeley’s “Understanding Science 101” is a big step in the right direction.</p>
-</div>
-</div>
-<section id="action-and-agent-arena" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="action-and-agent-arena">Action and Agent-Arena</h2>
-<p>In order to make the diagram more specific, let’s take the example of a firm and think of it as an agent. At this level of analysis, we don’t need to consider the full implications of a complex adaptive system. Hopefully, the firm has formulated its mission, vision, has articulated a rough strategy to overcome obstacles and has set reasonable objectives.</p>
-<p>Employees and leadership of the firm will try to make good decisions, develop capabilities in order to increase performance. In a happy and lucky case, these actions are coordinated, aligned with strategy and generate desired outcomes. Besides performance, we can also consider an increase in value added brought by improvements in its processes, products, and services.</p>
-<p>The firm gathers data about its current and past state <span class="math inline">\(\{\mathcal{S}_t\}_{1:t}\)</span>, observes the environment <span class="math inline">\(\mathbfcal{O}_t\)</span>, and its actions <span class="math inline">\(\mathcal{A}_t\)</span> influence the environment, and vice-versa. It also interacts with other agents in the network (be it customers, suppliers, manufacturers, government, the board, stakeholders, etc).</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>This perspective is pretty standard in AI research. We’ll see later in the course how we could also use it to tease out different <strong>sources of uncertainty</strong>.</p>
-</div></div><p>I called this “element” in the bigger process an “agent-arena” relation, because we usually don’t consider the whole firm, but our framing depends on what point of view in the value chain we take. For example, the POW of a team responsible for conversion-rate optimization will have its own objectives, decisions, and data they care about <span class="math inline">\((\mathcal{S}, \mathcal{O}, \mathcal{A} | {POW} )\)</span>. Of course, there is a concern of alignment, of local optimization which results in suboptimal global outcomes – but this topic is outside the scope of our course.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sources of uncertainty
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In their book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a>, M. Kochenderfer, T. Wheeler, and K. Wray make a helpful classification of the sources of uncertainty, based on agent-environment interactions:</p>
-<ul>
-<li><strong>Outcome uncertainty</strong>, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can’t take everything into account when making a decision – it becomes combinatorialy explosive.</li>
-<li><strong>Model uncertainty</strong> suggests we can’t be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.</li>
-<li><strong>State uncertainty</strong> means that the true state of the environment is uncertain, everything changes and is in flux. This is why statisticians argue we always work with samples</li>
-<li><strong>Interaction uncertainty</strong>, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.</li>
-</ul>
-<p>We will focus very little the last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems, and graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
-</div>
-</div>
-</section>
-<section id="building-and-testing-ideas" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="building-and-testing-ideas">Building and testing ideas</h2>
-<p>At the core of scientific process is experimentation, data collection, and testing of ideas – which results in evidence with respect to a hypothesis or theoretical prediction. For our purposes, we consider experimentation in its large sense, not just randomized control trials and highly-controlled experiments. By including statistical models, simulation, ML models; software systems, prototypes, and features – we can benefit from this self-correcting feedback loop not just in science, but in decision-making.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Let’s consider Agile principles and Shape-Up methodology for software development. I think that they fit well into our framework when we’ll sketch out the two remaining pieces</p>
-</div></div><p>This means that inferential and causal statistical models are equally as important ways to test ideas. Moreover, the ultimate test is whether the recommended decisions based on modeling insights work well in practice. Meaning, we get better outcomes in the agent-arena, our problem space. Let’s see how testing of ideas interacts with other elements of our diagram:</p>
-<ul>
-<li>Agent-Arena
-<ul>
-<li>our insights and recommendations can help inform actions</li>
-<li>after operationalization, we get feedback on how well it worked</li>
-</ul></li>
-<li>Collaborators
-<ul>
-<li>we have to communicate our insights clearly and persuasively</li>
-<li>other people give feedback about the analysis / results and best-practices about how should we test our ideas</li>
-</ul></li>
-<li>Discovery and Explanation
-<ul>
-<li>ideally, we don’t test a vague hypothesis, but a well-thought causal model</li>
-<li>our test results in stronger or weaker evidence for/against the explanation</li>
-<li>we can use simulation to validate that our statistical models work in principle, meaning we recover the estimand (unobservable quantity of interest)</li>
-</ul></li>
-</ul>
-<p>Since the data comes from the real world, we will have to consider very carefully how it was collected and measured. This means that when we build models, we might need to learn new tools to correct for biased samples, non-response, missing data, measurement error, etc.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>For some research questions, measurement and sampling is a complicated problem. This is why I’m trying to integrate them in this course.</p>
-</div></div></section>
-<section id="thinking-discovery-and-explainations" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="thinking-discovery-and-explainations">Thinking, discovery and explainations</h2>
-<p>One can make a case that wisdom starts in wonder, and science with curiosity. For a long time, statistics classes were taking hypotheses and theories as given. Our field has caught up to scientists, in the sense of openness in how we gather inspiration.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Many books have been written about how theories are being developed, the role of curiosity, inspiration, observation, previous theories, evidence, etc.</p>
-</div></div><p>Model-driven exploratory data analysis an pattern recognition have become acceptable ways to find inspiration and formulate hypotheses. I would argue that for most problems I encountered, this process was essential and this is the way in which a good analyst is extremely valuable. Note that with this power comes a lot of responsibility to not fool ourselfs, hence we’ll need discipline and guardrails.</p>
-<p>You will probably agree that asking a good question and formulating, framing a problem well gets us “halfway” towards a solution. We can approach a research design data-first or question-first, but in practice it’s almost always a mix.</p>
-<p>Speaking about business decisions, what I mean by theory is our current knowledge and understanding of the problem and domain. Thus, don’t get fooled by claims of “theory-free” AI and ML. The mere fact of selecting what to measure and what features to include in the model, involves human understanding and a judgement of relevance.</p>
-<p>In the course we will try our best to ensure that statistical models are answering the right quantitative question, which we call an estimand. It might not be obvious why we worry about the underlying, unobservable, theoretical constructs and ways we could measure them. After all, we’re not doing quantitative psychology.</p>
-<p>In my experience, sometimes it comes up explicitly and thinking this way is very helpful, for example: willingness to pay, customer satisfaction, engagement, brand loyalty and awareness, who can be convinced to buy via promotions, email fatigure, etc.</p>
-</section>
-<section id="steering-and-collaboration" class="level2">
-<h2 class="anchored" data-anchor-id="steering-and-collaboration">Steering and collaboration</h2>
-<p>Modern science, and science in general doesn’t happen in isolation. The same is true in firms and almost any other domain. I will not spill much ink in trying to convince you of the power of collaboration, since almost any problem which is complex enough can’t be tackled by a single individual.</p>
-<p>In the context of this course, we’re thinking of collaboration with clients, stakeholders, experts, engineers, and decision-makers. A few outcomes of this collaboration are the strategy we mentioned at the beginning, policies, interventions, best-practices, feedback, and review. Collaboration informs what should we do, prioritize, build and test, and hypothesise / think about.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Experiment design, causal inference, and machine learning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the course you will see processes and workflows for experiment design (C. Kozyrkov’s 12 steps of statistics), causal inference (R. McElreath’s owls and DAGs), and machine learning (C. Kozyrkov’s 12 steps of ML, Google’s People+AI).</p>
-<p>Don’t try to memorize them, but go back to this diagram of the scientific process and locate different steps of the workflow. For example, leaving aside a test dataset in machine learning is a way to assess and approximate how well a trained and chosen model generalizes beyond training data.</p>
-<p>Simulating synthetic data from a causal process model in order to validate if a statistical model can draw correct inferences about the estimand can be considered an experiment, although, one which lives in pure theory, until we apply it to real data. This iterative process lives at the intersection of asking questions, building theories and testing ideas.</p>
-</div>
-</div>
+<p>In my opinion, among many excellent resources, Richard McElreath’s 2023 lectures on statistical rethinking is the best way to learn the kind of modeling which fits our course and problem space.</p>
+</div></div><p>I think that the best way to study regression and generalized linear models is to think very carefully about the causal processes underlying the phenomenon we’re studying. The big advantage of switching to a Bayesian perspective and GLMs, is that we treat all models under an unified framework. This means, we can focus on science and much less on the mathematical intricacies of advanced econometrics.</p>
+<div class="column-page-inset-right">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 21%">
+<col style="width: 41%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Lecture Agenda</th>
+<th>Keywords</th>
+<th>Case Studies / Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Introduction to Bayesian Statistics</td>
+<td>Estimating proportions with Beta-Binomial, counts with Gamma-Poisson, defining priors</td>
+<td>Elections, Football Goals, Speed of Light</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Regression and the Bayesian Workflow</td>
+<td>DAGs of influence, categorical variables, assumptions, nonlinearities, splines, simulation</td>
+<td>E2E example on Howell’s study on height and weight. Summarizing estimands</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Confounds. Good and Bad controls</td>
+<td>Deep-dive on translating DAGs into statistical models. Adjustment set, backdoor criterion</td>
+<td>E2E example of Waffle houses and divorce rates. Spurious correlations</td>
+</tr>
+<tr class="even">
+<td>~</td>
+<td>Overfitting and Validation</td>
+<td>Prior and posterior checks, LOO-CV, LOO-PIT, regularization, robust regression, simulation-based calibration</td>
+<td>TBD</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Multiple Groups and Hierarchical Models</td>
+<td>Complete pooling, No pooling, Partial pooling. Post-stratification and non-representative samples</td>
+<td>Radon concentration, Starbucks wait times, Customer LTV, Elections polls</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Binomial GLMs</td>
+<td>Link functions, Simpson’s paradox</td>
+<td>1973 Berkeley admissions</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>Poisson GLMs</td>
+<td>Overdispersion, zero-inflated, Negative Binomial</td>
+<td>Campus Crime, Student absence</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>Hierarchical GLMs</td>
+<td>Deep-dive into model formulation. Studies on stage anxiety and plumonary fibrosis.</td>
+<td>Basketball Fouls, AirBnb reviews, Seat Belts</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Longitudinal Data</td>
+<td>Challenges of multilevel time series</td>
+<td>Teenage drinking, sleep study</td>
+</tr>
+<tr class="even">
+<td>~</td>
+<td>Special topics</td>
+<td>BART and Gaussian Processes</td>
+<td>TBD</td>
+</tr>
+<tr class="odd">
+<td>~</td>
+<td>Special topics</td>
+<td>Missing data and measurement error</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1104,14 +1003,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./philosophy.html" class="pagination-link" aria-label="ii. Course philosophy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">ii. Course philosophy</span>
+      <a href="./references.html" class="pagination-link" aria-label="3. Applied Bayesian Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3. Applied Bayesian Statistics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_fundamentals/prerequisites.html" class="pagination-link" aria-label="iv. Why study all of that?">
-        <span class="nav-page-text">iv. Why study all of that?</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
