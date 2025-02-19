@@ -10,7 +10,7 @@ format:
     toc-location: left
 ---
 
-Why did we have to go through all those excruciating months and years doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics? What about computer science and low-level programming in C? What about more philosophically inclined subjects?
+Why did we have to go through all those excruciating months and years doing mathematical analysis, linear algebra, probability, statistics, econometrics, operations research, and lots of economics? What about computer science and low-level programming in C? What about more abstract subjects like cybernetics and game theory?
 
 ::: {.column-margin}
 
@@ -18,17 +18,10 @@ It might be the case for you, as it is for me, that you didn't engage in detail 
 
 :::
 
+It was very frustrating for me, because it wasn't clear how they fit together, what is the common thread, and more importantly -- what part of the theory is **relevant**. It would've been great to know what works well in practice and why. I will try to be as clear as possible which ideas are helpful in solving the kind of problems in businesses we're interested in, and which ones are designed to enhance our conceptual understanding.
 
-It was very frustrating for me, because it wasn't clear how they fit together, what is the common thread, and more importantly -- what part of the theory is **relevant**, what particular concepts would be helpful in solving the kind of problems we discussed, and which ones are designed to enhance our conceptual understanding.
 
-
-::: {.callout-tip}
-## Sounds good -- doesn't work?
-
-An important question is what works well in practice and why. On the other hand, what is intellectually fascinating, but not at all straightforward to apply. What is a **minimal** or most powerful **set of the prerequisites** that you need? 
-
-Let's draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to AI, Data Science, and ML. We mentioned from the very beginning that it is an interdisciplinary field, but it is not just an union of those subjects -- the inspirations and tools are quite carefully picked. 
-:::
+Let's draw a map, stop at each field and in a sentence explain why we learned it and how it contributes to decision science, ML, and AI. I mentioned from the very beginning that decision science is an applied, quantitative, and interdisciplinary field, but it is not just an union of those subjects -- the inspirations and tools are quite carefully picked.
 
 
 ```{mermaid}
@@ -88,87 +81,89 @@ Note that this map is a "model", a simplification. It is overwhelming and imposs
 Note that all subjects below can be studied in various levels of depth and mathematical rigor. Where do you stop heavily depends on what you want to do in your carreer.
 
 
-- **Linear Algebra** is a language of `data`. The vast majority of models and training algorithms can be reduced to operations on matrices. Therefore, it's not a coincidence that LinAlg is almost the only tool we have in order to take these models and implement them in code, on a computer. 
-  - My perspective over linear algebra is ultimately **computational** and **geometric**, in the sense of the "space" the data points live in and the transformations of that space. I found this perspective to be very relevant in practice. [^linalg]
-  - Ultimately, no matter the data type: image, video, text, voice, structured, panel -- all can be represented as **multidimensional arrays** (or tensors, if you wish).
-- **Mathematical Analysis** is all about `change`, formalizing how a function behaves with respect to its arguments and parameters. It is an essential building block in **optimization** and deep learning (automated differentiation). [^mathan]
-  - I argue that in order to understand any complex system, be it a firm, an economy, the climate, or environnment, we have to model how it **evolves in time**.
-  - This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be very awkward to reason about without mathematical analysis.
-- **Probability** and **Statistics** is the language of `uncertainty`, the only instrument we have, that allows us to say something intelligent about how confident are we. [^prob-soft]
-  - We will explore the role of statistics at length, but as a quote, think of it as a tool which enables us to **change our mind** and decisions in the face of evidence. Please, consider it seriously, this is our most valuable tool!
+**Linear Algebra** is a language of `data`. Most data types (structured, nested, images, video, text, voice, etc) can be represented as multidimensional arrays and tensors. The vast majority of machine learning and mathematical models can be reduced to operations on matrices, which is important if we want to implement them in code. Moreover matrix decomposition algorithms like SVD, Cholesky are useful tools in many practical applications. ^[On a personal note, linear algebra was my gateway drug to applied mathematics and machine learning. Without that course it is possible I would've never discovered a passion for math]
+
+My perspective over linear algebra is **computational** and **geometric**, in the sense of the "space" the data points live in and transformations of that space. It's also a very concise and elegant way to define models, loss functions, and optimization problems. 
 
 
-## Applied Mathematics
+I highly recommend the following resources: [Essence of Linear Algebra](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=U4oYFPSJr-WCFbIf) (conceptual), [Coding the Matrix](https://codingthematrix.com/) (computational), [Linear Algebra Done Right](https://linear.axler.net/) (abstract, mathematical), [Mathematics for ML](https://mml-book.github.io/) (applied), and S. Boyd's [course](https://web.stanford.edu/~boyd/vmls/) (applied).
 
-Here is an explanation for why other subjects are needed -- which students from other backgrounds than quantitative economics or computer science might've not encountered. This is a point in which you see reseachers specializing.
+**Mathematical Analysis** is all about `change`, formalizing how a function behaves with respect to its arguments and parameters. It is an essential building block in probability theory,^[Many mathematically rigorous degrees also require real analysis, measure theory, and even functional analysis] **optimization**, and deep learning (automated differentiation).
 
-- **Econometrics**, in my personal opinion, tries to separate the signal from noise and make inferences about the **causal processes** in economic decisions and phenomena. It specializes statistics in the domain of economics, by infusing economic theory -- because you can't derive a scientific theory from data alone. [^econometrics]
-  - **Warning:** in most introductory econometrics courses you will be at most inferring associations, but the tools you learn are foundational.
-  - There is a **weird tension** in papers/courses between emphasising that the conclusions aren't causal, but then treating them as causal for policy.
-- **Time Series Analysis** *(senso largo)*, bridges the gap between Systems Dynamics (which takes a more theoretical perspective) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolves in time, that are dynamic in their nature. [^tsa]
-  - I like the metaphor of **Data Assimilation**, which is actually an entire field trying to introduce the empirical dimension to differential equations.
-- **Operations Research** is about **optimization** with constraints and **efficiency**. However, the problem is that often we start from an Integer/Linear Programming problem formulation, and that is easy part -- to apply an existing algorithm. 
-  - The hard part is to reduce a messy real world problem at a large scale to that formulation, especially under uncertainty and nonlinearity. 
-  - I suggest that without implementing a problem in code with established OR libraries and inferring the parameters of the problem from data -- we don't really know how to do optimization [^OR]
+I argue that in order to understand any complex system, be it a firm, an economy, the climate, or environnment, we have to model how it **evolves in time**. This suggests the importance of differential equations and systems dynamics, modeling the feedback loops. All of this would be very awkward to reason about without mathematical analysis.
 
+However, be warned, mathematical analysis is a rabbit-hole! The only courses which I can recommend without you going into years of proof-based study, is ["Calculus, Applied!"](https://learning.edx.org/course/course-v1:HarvardX+CalcAPL1x+2T2023/home) from Harvard and John Hopkins' [specialization](https://www.coursera.org/specializations/differential-calculus-data-modeling), which has some cool modeling applications with Python code!
 
-## A word on Economics
+**Probability** theory  is the language and logic of `uncertainty`. In **statistics**, we `change` our mind and `actions` in the face of `evidence`. Just to highlight how important these two complementary fields are, it is hard for me to find an applied domain or aspect of life where probability and statistics isn't useful (at least, in principle). I dare you to find one! 
 
-**Economics** touches upon a wide range of aspects of our society and human behavior. In mathematically-oriented courses, you can think of it as **optimization with constraints**, the constraints being given by our positive or normative theory of economic **decision-making**. In Business Economics, the aspect of optimal allocation of resources is key.
-
-
-- In this course and in practice, we care more about **business economics**. It's a very different beast from theoretical ideas in macroeconomics (ISLM, DSGE type of models) or microeconomic utilitarianism. 
-- By business economics, we mean marketing, management, corporate finance [^corpfin], decision theory, supply chain, and logistics. You might not need to know how to "read" a financial statement, but you definitely need to know your subdomain! [^mehrling]
-- What you have to know about marketing, especially if you are skeptical like me, is that it became innovative, mathematical, rigorous and data-driven. Look at any marketing journal: how much econometrics and ML models are in there. [^business-econ]
-- Moreover, when you combine marketing with **behavioral economics** and psychology, it introduces another layer of nuance and understanding over decision-making.
-- When we make decisions, we like to think of ourselfs as objective, but we have lots of **biases** and blind spots which prevent us to see the reality clearly. 
-  - We often find patterns and regularities which are just noise or not causal. 
-  - So, the usefulness of this kind of domain knowledge from economics about human behavior helps us to be wiser (and practice active open-mindedness)
-  - That is, to prevent self-deception and self-sabotage towards achieving the stated goals and objectives -- and even evaluate if the goals chosen well
-
-[^linalg]: My favorite resources are: [Essence of Linear Algebra](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&si=U4oYFPSJr-WCFbIf) (conceptual), [Coding the Matrix](https://codingthematrix.com/) (computational), [Linear Algebra Done Right](https://linear.axler.net/) (abstract, mathematical), [Mathematics for ML](https://mml-book.github.io/) (applied mathematics), and S. Boyd's [course](https://web.stanford.edu/~boyd/vmls/) (applied mathematics)
-
-[^mathan]: Mathematical analysis is a rabbit-hole! The only course which I can recommend without you going into years of study, is ["Calculus, Applied!"](https://learning.edx.org/course/course-v1:HarvardX+CalcAPL1x+2T2023/home) from Harvard, which has some cool applications with Python code!
-
-[^prob-soft]: We approach probability and statistics as professionals, but it's also important to read about the softer and more philosophical aspects of it. Taleb Nassim's **"Fooled by Randomness"** was the book which introduced me to the importance of the field.
-
-[^econometrics]: Leaving the causal inference aside for a moment, I can safely recommend three resources: ["Mostly Harmless Econometrics"](https://www.mostlyharmlesseconometrics.com/),  ["Econometrics with R"](https://www.econometrics-with-r.org/), and ["Regression and Other Stories"](https://avehtari.github.io/ROS-Examples/)
-
-[^tsa]: I don't particularly like any books read or courses I took on **time series**. However, I can recommend [N. Vandeput's](https://nicolas-vandeput.medium.com/) "Demand Forecasting Best Practices" and his other writing. For practitioners, the gold standard is R. Hyndman's ["Forecasting: Principles and Practice (3ed)"](https://otexts.com/fpp3/) and I. Svetunkov's ["Forecasting and Analytics with ADAM"](https://openforecast.org/adam/)
-
-[^OR]: The only free resource on Operations Research which fits the bill for me is C. Kwon's ["Julia Programming for Operations Research (2ed)"](https://juliabook.chkwon.net/book). Others are kind of strictly focused on optimization for ML and Deep Learning.
-
-[^corpfin]: If you have to deal with financial statements at your job or have an interest in finance, I strongly suggest you check out A. Damodaran's [crash course](https://youtube.com/playlist?list=PLUkh9m2BorqmKaLrNBjKtFDhpdFdi8f7C&si=UjEkr1_smeILJ8ZF) and his MBA Corporare finance lectures.
-
-[^business-econ]: There are a few youtube channels I enjoy watching casually, in which you can learn a lot: ["Money & Macro"](https://www.youtube.com/@MoneyMacro), [Patrick Boyle](https://www.youtube.com/@PBoyle), ["The Plain Bagel"](https://www.youtube.com/@ThePlainBagel), ["Rethinking Economics"](https://www.youtube.com/@RethinkingEconomics/videos), ["Institute for New Economic Thinking"](https://www.youtube.com/@NewEconomicThinking), ["Modern MBA"](https://www.youtube.com/@ModernMBA), ["How Money Works"](https://www.youtube.com/@HowMoneyWorks).
-
-[^mehrling]: When I was in university, I was interested in the Global Financial Crisis -- and found Perry Mehrling's course on [Economics of Money and Banking](https://www.youtube.com/watch?v=wjcU98Uk0gM) to be invaluable in cutting through the finance/banking jargon.
-
-::: {.callout-tip}
-## A word of encouragement
-
-None of those courses were useless. Think of how can we take parts from each of those prerequisites which are relevant in ML/DSc, so that we have more tools to solve the complicated problems we encounter. To reiterate, data science borrows from them all.
-:::
+Moreover, our everyday intuitions make us terrible at probability, which is another reason why we need a more formal tool to reason and make decisions under uncertainty. Why then so many people hate it as a subject? Is it dry teaching, fear of math and abstraction? In the module two, I recommend a simulation and story-based approach to probability, with many resources which will make studying it fun and practically relevant. ^[In my case, Taleb Nassim's "Fooled by Randomness" was what motivated me to study probability seriously. I do highly recommend it]
 
 
 
 ## Give statistics another chance
 
-It is possible that you didn't enjoy your statistics courses, which happened in my case, despite a passion for the field. So, this is what we do in this book -- we give statistics another chance, but we dramatically change the strategy and how we learn it.
+It is possible that you didn't enjoy your statistics classes, which happened in my case, despite a passion for the field. In this journey we have to give statistics another chance, but we dramatically change the strategy of how we learn it. If you're impatient and want to run with it, here is a short and preliminary list of resources, which completes the references found in the course:
 
-If you're impatient and want to run with it, here is a short and preliminary list of resources, which completes the references found in the course:
+- Read [this](https://johnkerl.org/doc/prbstat/prbstat.html) short article on the difference between probability and statistics. Watch this [mini-lecture](https://youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF&si=MRhAab4EAcgse2o8) on statistical thinking by Cassie Kozyrkov.
+- Realize that lots of common statistical tests are particular versions of linear models. It takes a few hours to go through the theory and code in the [book](https://steverxd.github.io/Stat_tests/), which will save you a whole semester of painful and tedious calculations. 
+- Flip through a textbook which has a modern approach to teaching statistics, by leveraging code, simulations, and data analysis. Speegle's [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html) and  Cetinkaya-Runde's [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) are excellent examples of the "new school".
+- Check out A. Gelman's [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html) and [Active Statistics](https://avehtari.github.io/ActiveStatistics/). In my opinion, this is the best book to learn regression from, but the style might not be everyone's cup of tea.
 
-- Realize that lots of common statistical tests are particular versions of linear models [^11]. It takes a few hours to go through the theory and code in the book.
-- Here's a balanced approach approach taken by Speegle & Clair [^24], which integrates math, data analysis, and simulation in teaching of statistics.
-- Upgrade your statistical thinking for the 21st century challenges and be aware of the pitfalls and problems in the field. A good reference is [^12], which takes multiple perspectives (frequentist, bayesian, causal inference), while going through the workhorse models and methods.
-- Be comfortable with exploring, wrangling, visualizing and analyzing data in R or/and Python, get familiar with reproducible research best practices. A good starting point is [^45], which is a course in collaboration with the RStudio team.
+There are a ton of books and courses on statistics which basically do/teach the same thing. I curated a few which stand out with the right balance of data, code, simulation, theory, and real-world applications:
 
-There are a gazillion books, courses on statistics, which basically do/teach the same thing. For reference and your curiosity, I curated a few which stand out with the right balance of data, code, simulation, theoretical rigor and real-world applications:
+- Crump - [Answering questions with data](https://www.crumplab.com/statistics/) is a well written, but traditional introductory statistics book for psychology students 
+- Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) focuses on multidimensional methods and discrete data
+- Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) is perhaps the most complete from this list
+- Rohan - [Telling Stories with data](https://tellingstorieswithdata.com/) has excellent chapters on modeling workflow and writing research
 
-- Cetinkaya-Runde, Hardin - [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) goes through all the fundamentals in a clear, concrete, extensive way, with code!
-- Crump - [Answering questions with data](https://www.crumplab.com/statistics/) -- introductory statistics for Psychology Students has an interesting approach, focused on the challenges of Psychology
-- Thulin - [Modern Statistics with R](http://www.modernstatisticswithr.com/) goes through the whole process, with R, with additional topics, normally not present in a statistics course 
-- Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) is for biologists, but we can see how central to the field are multidimensional methods, clustering and high-performance computing, working with big and messy data
+
+## Applied Mathematics
+
+Here is an explanation for why other subjects are needed -- which students from backgrounds other than quantitative economics or computer science might've not encountered. This is a point in which you see reseachers specializing.
+
+**Econometrics**, in my personal opinion, tries to separate the signal from noise and make inferences about the **causal processes** in economic phenomena. It specializes statistics to the domain of economics, which presents new modeling challenges. Remember that in order to draw causal conclusions, we need a scientific theory, not just data alone. It's not sufficient to check if statistical assumptions hold, but we have to make clear our causal and methodological assumptions.
+
+You should be careful in introductory econometrics, as you can claim only association with the tools you will learn. Even in literature, there is this weird tension between an emphasis that most conclusions aren't causal, but them treating them as such for policy-making. Leaving the causal inference aside for a moment, I can safely recommend ["Mostly Harmless Econometrics"](https://www.mostlyharmlesseconometrics.com/) and  ["Econometrics with R"](https://www.econometrics-with-r.org/).
+
+**Time Series Analysis** *(senso largo)*, bridges the gap between theoretical dynamical models (systems of differential equations) with statistics and probability (stochastic processes). It adapts those tools to make inferences and predictions about phenomena which evolve in time, that are dynamic in their nature. I like the metaphor of **data assimilation**, which is actually an entire field trying to introduce the empirical dimension to all kinds of dynamical systems.
+
+I don't particularly like any books I read or courses I took on **time series**. However, I can recommend [N. Vandeput's](https://nicolas-vandeput.medium.com/) "Demand Forecasting Best Practices" and his other writing. For practitioners, R. Hyndman's ["Forecasting: Principles and Practice (3ed)"](https://otexts.com/fpp3/) and I. Svetunkov's ["Forecasting and Analytics with ADAM"](https://openforecast.org/adam/) are a good starting point.
+
+**Operations Research** is about **optimization** with constraints, allocation of limited resources, and **efficiency**. The easy part is to apply an integer or linear programming algorithm to an already formulated problem. The hard part is to reduce a messy real world problem at a large scale to that formulation, especially under uncertainty and nonlinearity.
+
+I'd argue that without implementing a problem in code with established OR libraries and inferring the parameters of the problem from data -- we don't really know how to do optimization. The only free resources on Operations Research with code which I know of are C. Kwon's ["Julia Programming for Operations Research (2ed)"](https://juliabook.chkwon.net/book) and Huber's ["Algorithms for optimization"](https://algorithmsbook.com/optimization/files/optimization.pdf). Others are strictly focused on optimization for ML and deep learning.
+
+
+::: {.callout-tip}
+## A word of encouragement
+
+None of those courses were useless. Think of how can we take parts from each of those prerequisites which are relevant for decision science, so that we have more tools to solve the complicated problems we encounter.
+:::
+
+
+
+## A note on Economics
+
+In mathematically-oriented courses, you can think of economics as **optimization with constraints**, which are given by limited resources and our positive or normative theories of  **decision-making**. In the most general sense, economics studies behavior and interactions of economic agents.
+
+When we make decisions, we like to think of ourselfs as objective, but we have lots of **biases** and blind spots which prevent us to see the reality clearly. For example, we find patterns and regularities which are not real, but treat the conclusions as causal; we tend to seek data which supports our hypothesis and ignore contradictory evidence, etc.
+
+- This kind of knowledge about human behavior helps us to be wiser and practice active open-mindedness ^[Actively open-minded thinking (AOT) is measured by items that tap the willingness to consider alternative opinions, sensitivity to evidence contradictory to current beliefs, the willingness to postpone closure, and reflective thought.]
+- In other words, we want to prevent self-deception and self-sabotage towards achieving the stated goals and objectives -- and even evaluate if the goals chosen well
+
+Moving on to more practical things, the question is not how much economics a decision scientist should know, but what kind of economics. This list will be wildly different for people going into quantitative finance, banking, insurance, or public policy. 
+
+If you studied in a program which provides a strong background in quantitative economics, econometrics, and operations research -- I have some good news and bad news. The good news is that you know all the mathematics you will need in practice and you're well versed in formulating good economic research questions. The bad news is that you probably need a lot of effort to improve your programming skills and that the kinds of economics you studied don't translate well inside a firm.
+
+Please, do not mistake corporate finance, marketing, management, operations, supply chain, logistics, CRM, and production as fluff. There is a good reason people do business degrees and get MBAs. If you look at a top marketing journal, you will be surprised at the complexity of models and innovations in econometrics and machine learning needed to tackle those challenges.
+Moreover, when you combine marketing with **behavioral economics** and psychology, it adds another layer of nuance and understanding of consumer behavior. We can't learn this all from data alone.
+
+Depending on your role in the firm, you might need to read about demand planning, advertisement, pricing, manufacturing, etc, in order to speak the language of decision-makers and stakeholders. I'm leaving you with a list of youtube playlists and channels which I found helpful to keep up-to-date with the way modern businesses operate:
+
+- Finance: ["Money & Macro"](https://www.youtube.com/@MoneyMacro), [Patrick Boyle](https://www.youtube.com/@PBoyle), ["The Plain Bagel"](https://www.youtube.com/@ThePlainBagel), [Ben Felix](https://www.youtube.com/@BenFelixCSI), [A. Damodaran's NYU MBA](https://www.youtube.com/@AswathDamodaranonValuation)
+- When I was in university, I was interested in the Global Financial Crisis and found Perry Mehrling's course on [Economics of Money and Banking](https://www.youtube.com/watch?v=wjcU98Uk0gM) to be invaluable in cutting through the finance/banking jargon.
+- Business: ["Modern MBA"](https://www.youtube.com/@ModernMBA), ["How Money Works"](https://www.youtube.com/@HowMoneyWorks), [Slidebean](https://www.youtube.com/@slidebean), [Logically Answered](https://youtube.com/@LogicallyAnswered)
+- Economics: ["Rethinking Economics"](https://www.youtube.com/@RethinkingEconomics/videos), ["Institute for New Economic Thinking"](https://www.youtube.com/@NewEconomicThinking)
 
 
 
@@ -185,9 +180,3 @@ There are a gazillion books, courses on statistics, which basically do/teach the
 [^war-wrong-problem]:  V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo)
 [^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA) -->
 
-
-<!-- Statistical Foundations: Reference, Revies --->
-[^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
-[^12]: Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) has two companion books, one with R and another in Python
-[^24]: Speegle, Clair - [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html)
-[^45]: Bryan - [STAT 545](https://stat545.com/) is notable for its focus on teaching using modern R packages, Git and GitHub, beign open-source, and its emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory.
