@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mihai Bizovi">
 
-<title>learning – Decision Science Course</title>
+<title>Simulation of economic processes – Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01_fundamentals/4_ml_stats.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -91,11 +91,39 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Decision Science Course">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://course.economic-cybernetics.com/01_fundamentals/img/imlicit-grammar.jpeg">
+<meta property="og:title" content="Simulation of economic processes – Decision Science Course">
+<meta property="og:description" content="Introduction and background">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -162,7 +190,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School and Methodology</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/learning.html">5. Learning from Data: Intuition and Bias</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -203,11 +231,11 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Business School and Methodology</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
@@ -246,7 +274,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/learning.html" class="sidebar-item-text sidebar-link active">
+  <a href="../01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
   </div>
 </li>
@@ -309,16 +337,16 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
+            <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">~ Simulation of economic processes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">1. Introduction</span></a>
   </div>
 </li>
@@ -330,8 +358,13 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#implicit-learning-intuition-and-bias" id="toc-implicit-learning-intuition-and-bias" class="nav-link active" data-scroll-target="#implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</a></li>
-  <li><a href="#calling-bullshit-in-the-age-of-big-data" id="toc-calling-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</a></li>
+  <li><a href="#decisions-under-uncertainty" id="toc-decisions-under-uncertainty" class="nav-link active" data-scroll-target="#decisions-under-uncertainty">Decisions under uncertainty</a></li>
+  <li><a href="#simulation-and-numerical-methods" id="toc-simulation-and-numerical-methods" class="nav-link" data-scroll-target="#simulation-and-numerical-methods">Simulation and numerical methods</a>
+  <ul class="collapse">
+  <li><a href="#theoretical-and-process-models" id="toc-theoretical-and-process-models" class="nav-link" data-scroll-target="#theoretical-and-process-models">Theoretical and process models</a></li>
+  <li><a href="#what-do-engineers-do" id="toc-what-do-engineers-do" class="nav-link" data-scroll-target="#what-do-engineers-do">What do engineers do?</a></li>
+  <li><a href="#statistical-inference-and-optimization" id="toc-statistical-inference-and-optimization" class="nav-link" data-scroll-target="#statistical-inference-and-optimization">Statistical inference and optimization</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -340,156 +373,210 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School and Methodology</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/learning.html">5. Learning from Data: Intuition and Bias</a></li></ol></nav></header>
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Simulation of economic processes</h1>
+<p class="subtitle lead">Introduction and background</p>
+</div>
 
 
 
+<div class="quarto-title-meta column-body">
 
-<section id="implicit-learning-intuition-and-bias" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</h2>
-<p>In the last two sections of this lecture I felt it is necessary to raise two more warning tales, precisely because we will work with such a powerful machinery and attempt to tackle complex problems in our jobs and lives.</p>
-<p>A good metaphor for what we’re doing in this course is the way people learn. In a way we’re pattern recognition machines, with a powerful capacity for <strong>implicit learning</strong>, meaning we can’t articulate or explain how we did it. For example, riding a bike, catching a baseball, speaking, reading and writing, behaving in social situations and so on.</p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mihai Bizovi, VP of Decision Science </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Welcome to the simulation course! First, let’s talk a little bit about movies. You’re probably well aware how popular films about multiverses and time travel have become. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Their main point is that our actions have consequences and that there is a “garden of forking paths” leading the protagonist to very different outcomes – some very likely, others almost impossible. This idea is faithful to real life: we have to make good decisions under uncertainty and with limited resources. It’s not an easy task.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;“Everything, everywhere, all at once”, “Loki”, “Edge of Tomorrow”, “Person of interest”</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Because we have to place “bets” and our resources are limited</p></div></div><p>If we had a crystal ball which flawlessly predicts the future state of the world and the outcomes of our decisions, we wouldn’t be here in this class. The next best thing is if the oracle tells us the calibrated probabilities of relevant events happening (e.g.&nbsp;if our startup or investment will succeed), but we’ll have to ask the right questions and solve a pretty large optimization problem.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> It’s also useful to know that one of the most important ideas in statistics is <u>the counterfactual</u>, a probabilistic answer to a “what would happen if” question.</p>
+<section id="decisions-under-uncertainty" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="decisions-under-uncertainty">Decisions under uncertainty</h2>
+<p>In the context of businesses, we want to improve financial and non-financial outcomes like revenue, profitability (EBITDA), market share, unit economics, production efficiency, customer acquisition, user experience, customer lifetime value, etc. A firm will increase its chances to improve performance if it has an accurate diagnosis of the current state and formulated a strategy, but it still has to test their ideas and make many good decisions over a long period of time, i.e.&nbsp;execute well. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Even then, there is no guarantee. Most startups fail in the first 5 years</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What makes a decision good?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think for a few minutes and write down what are your criteria which would make a decision good. How did you deal with cases in which we have a great outcome by sheer luck and chance?</p>
+<p>Come up with an example of an important decision a fashion e-commerce has to make. Define the objective, constraints, tradeoffs, and a few alternative choices. Test your criteria. Do they make sense? Are they necessary? Sufficient?</p>
+</div>
+</div>
+<p>I hope you figured where I am leading with the multiverse story. We study probability theory, statistical modeling, optimization (operations research), and economics in order to make better decisions under uncertainty, possibly at a large scale. We also need to know enough programming to analyze data, build models, and solve optimization problems. Think about how many decisions Uber has to make every day in each city to match drivers with passengers’ routes and set the right prices.</p>
+<p>I call this applied, quantitative, and interdisciplinary field <strong>“decision science”</strong>, which is also known as data science, specialized AI, and economic cybernetics. In practice, a decision scientist should collaborate with domain experts, decision-makers, clients, and stakeholders to understand their domain and challenges, <u>ask the right questions</u>, and formulate a problem.</p>
+<p><span class="math display">\[Question \longrightarrow Model \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome \]</span></p>
+<p>Then, they will perform experiments, collect data, and build statistical models which bring insights into consequences of actions, interventions, and policies. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> These insights, inferences, and predictions will inform the firm which decisions are more promising and whether their hypotheses hold up to evidence.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Inspired by A. Fleischhacker’s <a href="https://www.causact.com/becoming-a-data-driven-business-analyst#becoming-a-data-driven-business-analyst">Business Analyst Workflow</a></p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is a model?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. Reality is overwhelming and combinatorially explosive in its possibilities. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>We build models, because we want to understand a system and capture / explain the essential aspects of the phenomena of interest, in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen.</p>
+<p>A model will take you only as far as the quality of your problem formulation, its assumptions, and the data you have. Its results are useful only if they inspire new questions or hypotheses, generate actionable insight, or make reliable predictions.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc</p></div></div><p>To make things more concrete, let’s look at an example of a bakery which produces fresh, but perisable good(ie)s. We assume that if they don’t manage to sell the pastry in the same day, it will have to be thrown away. They choose to sell at the price <span class="math inline">\((p)\)</span> after lots of market research and a bit of experimentation. The cost of producing an unit is <span class="math inline">\((c)\)</span>. The bakery has data on daily historical sales <span class="math inline">\(\{d_1, d_2, ..., d_t\}\)</span> and for the sake of simplicity, we’ll assume that they never ran out of stock. The question is how much they should produce tomorrow <span class="math inline">\((q)\)</span>.</p>
+<p>This is called the “newsvendor problem” and is a prototypical example of inventory management.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> If we order or produce too little, we’ll lose sales, and in the long term, customers. If we order too much, we’ll end up with waste. In a 2003 paper, M. Koschat and N. Kunz<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> have shown how they brought an additional $3.5m of incremental profits to the Time Inc.&nbsp;magazine by solving this optimization problem.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Even with this simple model, things can get complicated very quickly: both in terms of demand forecasting and optimization</p></div><div id="fn7"><p><sup>7</sup>&nbsp;M. Koschat, N. Kunz - <a href="https://www.researchgate.net/publication/239752587_Newsvendors_Tackle_the_Newsvendor_Problem">“Newsvendors tackle the newsvendor problem”</a>, 2003</p></div></div><p><span class="math display">\[
+(\max_q) \; p \cdot  \mathbb{E}_D[\min(D, q)] - c \cdot q
+\]</span></p>
+<p>At first, the problem might look similar with what you did in other classes: we want to maximize the gross margin (profit) and q is our decision variable, which is a count (<span class="math inline">\(q \in \mathbb{Z}_+\)</span>). However, the demand is a random variable which can be modeled as simply as the normal distribution or as complicated as a multilevel regression. Moreover, it’s not clear that reducing the problem to an expectation maximization is the best thing to do in practice.</p>
+<p>If your hunch is that we will need to do some modeling and simulations in order to solve this problem, you’re absolutely correct.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> We will not be satisfied with <span class="math inline">\(d_i \sim N(\mu, \sigma)\)</span>, as this will probably be an over-simplification of the processes generating the demand. In the real world, we don’t want to ignore seasonality, day of week effects, out of stock and promotions in historical data, trends, and serial correlation.</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;It will quickly become unfeasible to find out an analytical solution</p></div></div><p>Of course, the modeling approach will be pretty different if the product is slow-moving, selling a lot, or has an intermittent demand. We will investigate these issues in great detail in the following weeks, but for now you have an example of the idea that models are a simplified representation of reality and have assumptions.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Implicit Learning of Artificial Grammars
+Sources of uncertainty
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There is a famous experiment, in which researchers invented words from two languages, meaning two set of rules,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> let’s say between 3 and 8 characters, with appropriate vowels and so on. Total gibberish, but here we are, with two sets of words.</p>
-<p>Participants saw the lists and they had to say from what “language” does a word come from. It is a good example of <strong>experiment design</strong> coming from cognitive science research.</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;For the curious, they used a Markov Chain artificial grammar, which would be pretty straightforward to implement in R, and is a way of looking at the language which brought the first breakthroughs in NLP (natural language processing)</p></div></div><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/imlicit-grammar.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: <a href="https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm">John Kihlstrom</a></em>; They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either “no idea”, or giving some rules, which when implemented on a computer, were not able to perform better than a coin flip.</figcaption>
-</figure>
-</div>
-<p>Following the experiment, this means that those rules articulated by the people in the experiment were NOT how they were thinking. There is something going on which can’t really be articulated. This means that we have a capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning.</p>
-<p>Another hypothesis about how animals learn is the idea that some <strong>prior</strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> knowledge or mechanism – which is there due to evolution optimizing for fittedness, is necessary to kickstart the process. The discussion about the fascinating interaction between nature and nurture is outside the scope of the point I’m trying to make right now. So, here we go with two more experiments:</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;We will go into more technical details when discussing Statistical Learning and ML models, of why is it the case that biasing a learning process with prior information is essential to successful learning.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Bait Shyness – Rats Learning to Avoid Poisonous Baits
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When rats stumble upon food with new smell or look, they first eat very small amounts. If they got sick, that novel food is likely to be associated with illness, and in the future the rat will avoid it. Quoting Dr.&nbsp;Shai-Ben David:</p>
-<blockquote class="blockquote">
-<p>Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</blockquote>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a></p></div></div><p>The bait shyness is an example of learning, not just rote memorization. More exactly of a basic inductive reasoning, or in a more statistical language, of generalization from a sample. But we intuitively know, that when generalizing a pattern, regularity is sometimes error prone: we pick up on noise, spurious correlations instead of signal, we’re fooled by randomness.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-B.F. Skinner: Pigeon Superstition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In an experiment, B.F. Skinner put a bunch of hungry pigeons in a cage and gave them food at random intervals via an automated mechanism. They were doing something when the food was first delivered, like turning around or pecking – which reinforced that behavior.</p>
-<p>Therefore, they spent more time doing that exact same thing, without regard with the chances of those actions getting them more food. That is a minimal example of superstition, a topic on which philosophers spilled so much ink.</p>
-</div>
-</div>
-<p>Shai-Ben David goes on to argue – what stands at the foundations of Machine Learning, are carefully formulated principles which will prevent our automated learners, who don’t have a common sense like us, to reach these foolish and superstitious conclusions. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><div class="quarto-figure quarto-figure-center"><sup>4</sup>&nbsp;
-<figure class="figure">
-<p><img src="img/pigeon-chamber.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: <a href="https://www.skewsme.com/behavior/">skewsme</a></em>; Here’s Skinner’s pigeon chambers</figcaption>
-</figure>
-</div>
-</div></div><p>What is the common thread among these three stories about learining? In a nutshell, it’s about cultivating the wisdom and ablility to differentiate between correlational and causal patterns.</p>
+<p>In their book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a>, M. Kochenderfer, T. Wheeler, and K. Wray make a helpful classification of the sources of uncertainty, based on agent-environment interactions:</p>
 <ul>
-<li>When all goes well we call it intelligence, intuition, a business knack. It’s our pattern recognition picking up on some real, causal regularities. It’s the common sense working as it is supposed to.</li>
-<li>When learning goes awry, it’s a bias and in worst cases – bigoted prejudice.</li>
-<li>I am not a fan of how behavioral economics treats biases, <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> but here are a few so prevalent and harmful outside their intended evolutionary purpose, that we have to mention them: confirmation bias, recency, selection, various discounting biases.</li>
-<li>We attribute a causal explanation to a phenomena when it’s not. For example, size of the wedding to a long-lasting marriage, extroversion and attractiveness with competence, how religious are people vs years of life.</li>
-<li>There are numerous examples, and I don’t have to repeat that correlation doesn’t imply causation, due to common causes, hidden variables, mediators, reverse causes and confounders.</li>
+<li><strong>Outcome uncertainty</strong> suggests we can’t know the consequences and effects of our actions with certainty. We can’t take everything into account when making a decision</li>
+<li><strong>Model uncertainty</strong> implies we can’t be sure that our understanding, assumptions, and chosen model are correct. In decision-making, we often misframe problems and in statistics, well, choose the wrong model.</li>
+<li><strong>State uncertainty</strong> means that the true state of the environment is uncertain, as everything changes and is in flux. This is why statisticians argue that we always work with samples</li>
+<li><strong>Interaction uncertainty</strong> due to the behavior of the other agents interacting in the environment. For example, competitive firms, and social network effects.</li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;The reasons come from cutting-edge Cognitive Science research, which challenge the normative position of economic rationality. Moreover, they challenge the economic orthodoxy when it comes to rationality – it is a much more complex beast than a maximisation of expected utility.</p></div></div><p>So, what can we do as individuals and professionals? I think one way to get wiser is to cultivate a kind of <strong>active open-mindedness</strong>, which tries to scan for those biases and bring them into our awareness, such that we can correct our beliefs, behavior and decisions. Another thing we can do is to update our beliefs often, in the face of new evidence, keeping a <strong>scout mindset</strong>, trying to see clearly, instead of getting too attached and invested in our beliefs and positions.</p>
-<p>I think we’re extremely lucky to be in a field like data science, where we can use formal tools from probability, causal inference, machine learning, optimization, combined with large amounts of data and domain expertise – in order to practice that kind of a mindset. However, let’s keep in mind how easy researchers are getting fooled, not only by randomness, and that we’ll never be immune to misjudgement.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The double edged sword of our intelligence
+<p>We will focus very little the last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems, and graph theory.</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>The same machinery which makes us intelligent general problem solvers and extraordinarily adaptable, makes us prone, vulnerable to bullshit and self-deceptive, self-destructive behavior.</p>
-<p>It is the same, in a more techincal sense, with overfitting ML models and drawing wrong inferences. In business settings, I believe that firms will realize and appreciate that a <code>decison scientist</code> has this exact role – to help others rationally pursue their goals and strategy.</p>
-</div>
-</div>
+<p>In our toy example of the newsvendor problem, the uncertainty in the state (demand) translated into outcome uncertainty (profits). If we chose the wrong model for the demand, our conclusions might also change significantly. As an exercise, think of a few scenarios where the interaction uncertainty would need to be taken into account.</p>
 </section>
-<section id="calling-bullshit-in-the-age-of-big-data" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</h2>
-<p>You probably noticed that I used the word bullshit a few times in this lecture. It is not a pejorative, but a technical/formal term introduced by Harry Frankfurt in his essay “on Bullshit”. In romanian, the closest equivalent would be <em>“vrăjeală”</em>, a kind of sophistry.</p>
+<section id="simulation-and-numerical-methods" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="simulation-and-numerical-methods">Simulation and numerical methods</h2>
+<p>Now that you have the multiverse metaphor in mind and the context of decision science, <strong>simulation</strong> can be seen as an extremely useful set of <strong>numerical methods and algorithms</strong> used in estimation, optimization, and modeling. Its practical value boils down to the fact that most problems and models of interest to us won’t have efficient and scalable closed-form or algorithmically exact solutions. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> Therefore, we need to learn techniques which make good approximations.</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;In plain english, it means that we can’t do it by hand and have to implement in code. Even if there is an exact algorithm, it might not scale with the amount of data and problem size – which most often renders it useless </p></div></div><p>In the following sections, I explain different ways in which simulation and numerical methods can be applied, which is much more than the “Monte-Carlo” method you might be familiar with. Last, but not least, simulation is extremely useful when learning probability, statistics, and econometrics. It’s a way to take an abstract mathematical idea, for example, Central Limit Theorem or HAC robust standard errors, see how it behaves under different assumptions, and how it could be useful in practical applications.</p>
+<section id="theoretical-and-process-models" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="theoretical-and-process-models">Theoretical and process models</h3>
+<p>There is a famous saying that explains some differences between natural and social sciences: “Atoms are not people”. Human behavior is an endlessly fascinating and complex area of inquiry, but we can’t hope to achieve the same level of confidence in theories and hypotheses we develop as physics, chemistry, or biology. Also, we can’t perform experiments in the way engineers do – it will be highly unethical and often unfeasible.</p>
+<p>Therefore, in applied economics, mathematical modeling takes a back seat to statistical, econometric, and machine learning methods.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> Whatever “laws” we might conjecture, it will be incredibly difficult to empirically validate them and “prove” that the decisions / interventions made bring an improvement. Often, when it comes to consumer behavior, we don’t even have a theory: think about the choices of what movies to watch on Netflix or the premium we’re willing to pay for a branded hoodie. But we do have an understanding and we might have tons of data.</p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Recent Nobel prize awards in economics show how important econometrics and causal inference has been for the field</p></div></div><p>You have to know that “theory-free methods”, for all practical intents and purposes, do not exist. Even when we don’t make distributional assumptions (in nonparametric statistics) and learn a pattern from data (machine learning), we still do have to decide what are the constraints, objectives, relevant data, measurement, sampling, interventions, and most plausible causal mechanism underlying the behavior / observed phenomenon.</p>
+<p>There are multiple techniques for model validation which you will study in econometrics / data analysis classes and they’re extremely important. They will signal to you possible ways in which the model fails and that you might’ve picked the wrong one, but they’re not sufficient. How so?</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The critical difference between Lie and Bullshit
+The causes are not to be found in data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A liar functions on respect for the truth, as he inverts parts of a partially true story to convince you of a different conclusion. It is interesting that we can’t really lie to ouselfs, we kind of know it’s a lie – so we do the other, we distract our attention away from it.</p>
-<p>In Bullshit, you try to convince someone of something without regard for the truth. You distract their attention, drown them in irrelevant, but supersalient stuff.</p>
+<p>Imagine two different models with wildly different assumptions which give similar predictions. We’ll conveniently call them “heliocentric” and “geocentric”. How can we know which one is more plausible?</p>
+<p>The short answer is not from one dataset, and not from a single thing we measure, but from “networks of cumulative evidence” and competing against the next best hypothesis. <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
+<p>The idea is not to celebrate the triumph of Galileo/Copernicus, but to point out that such debates happen routinely. A few examples are the fields of molecular biology and ecology which spanned decades-long bitter rivalries.</p>
+<p>The explanation is simple once you are aware of it – that different <strong>vague hypotheses</strong> can be operationalized in multiple ways as mathematical / <strong>process models</strong>, which might result in very similar statistical and <strong>distributional patterns</strong>.</p>
 </div>
 </div>
-<p>In our age, BS is much more sophisticated than the “good old” advertisement trying to manipulate you to buy something. I can’t recommend enough that you watch the lectures by Carl T. Bergstrom and Javin West,<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> where they explain at length numerous ways we’re being convinced by bullshit arguments, but which are quantitative and have lots of jargon and pretty charts in them.</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Carl T. Bergstrom and Javin West - <a href="https://www.callingbullshit.org/index.html">Calling Bullshit: The art of Skepticism in a Data-Driven World</a></p></div></div><p>The kind of intimidating jargon comes from finance people, economists, when explaining why interest rates were risen, what happened in 2007-2008 great financial crisis. My “favorite” is cryptocurrency-related sophistry and some particular CEOs expertly making things more ambiguous, mysterious, and complicated with their corporate claptrap.</p>
-<p>These lectures are short, fun, informative and useful for developing the critical thinking necessary when assesing the quality of the evidence or reasoning which led to a particular conclusion. I will try to incorporate here and there some examples from their course, where it fits naturally with our use-cases and theoretical topics, especially in <a href="https://www.callingbullshit.org/syllabus.html#Causality">causality</a>.</p>
-<p>There are tempting arguments which boil down to this: due to ever increasing volumes and richness of data, together with computing power and innovations in AI – it will lead to the <strong>end of theory</strong>. I couldn’t disagree more!</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;I highly recommend that you read a little bit about the philosophy of science and how the scientific process works.</p></div></div><p>I hope you bear with me along this justification to finally get to the point of the value of simulation. It’s a way to implement probabilistic models of economic phenomena in code, which forces us to declare explicitly our assumptions about the <strong>causes</strong> and <strong>processes</strong> underlying the data. Recall the idea of “data generating process” from statistics.</p>
+<p>Think of these models as an airplane or driving simulator, which will resemble real piloting if enough effort has been put into its development and enough scenarios have been taken into consideration. Even though they’re just a simulation, we can use them to practice and gain understanding.</p>
+<p>In this course we’ll be much less confident that the patterns which result from our simulations are realistic,<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> but it will be immensely helpful when building statistical models and using real data to solve business problems. This preparation will increase our chances of success in practice and will give more confidence to stakeholders that the approach we’re taking is reasonable.</p>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;We’ll have to make many simplifying assumptions and can’t take into account all relevant factors or ways things can go wrong</p></div></div><div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Small Data problems in Big Data
+Think generatively. Does the model work in principle?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In huge datasets of clients and web events, there are lots of observations and many features/attributes being collected, which theoretically should be excellent for a powerful ML model.</p>
-<p>However, at the level of each observation, when we go to a very granular aggregation level, the information can be extremely sparse, with high cardinality, inconsistent (all data quality issues). For example, in an e-commerce, for a customer, you might have no information about their purchases, and just a few basic facts about their website navigation.</p>
-<p>So, you have the cold start problem, data missing not at random, censoring/survival challenges, selection biases. The data at the lowest level becomes discrete, noisy, heteroskedastic. You know the saying: garbage in garbage out.</p>
-<p>Even in ML when there is a big, clean and rich dataset, we can’t escape theory (which is our understanding of the world), in one way or anover. For example, in demand forecasting, we need to provide the model relevant data, factors which are related, plausibly influencing that demand: like weather, holidays, promotions, competition, and so on.</p>
-<p>We can’t just pour all this data into a ML model and expect the best. It isn’t clear that feeding irrelevant data doesn’t break or bias our model, such that it picks up on noise and <strong>spurious correlation</strong>, especially in very powerful DL models. That definitely doesn’t help with better decisions. From an engineering standpoint, I recommend you watch this talk <a href="https://www.youtube.com/watch?v=lisIQ9ohU8g">“Big Data is Dead”</a> by the creator of DuckDB.</p>
+<p>Think for a minute what is the difference between probability and statistics. Probability is generative (of data) and forward-looking, predictive, given a set of “rules” and assumptions we’ve chosen. Probability is mathematics – a logic of uncertainty.</p>
+<p>On the other hand, statistics is about chaning our actions and opinions in the face of evidence. It looks backwards, given the data and a chosen model – trying to infer and estimate what the “rules” or parameters were. Once we have those estimates, we can make predictions and generalizations. It uses mathematical methods, but is closer to art and engineering.</p>
+<p>So, one important way in which simulation is used in practice is checking that our modeling strategy works in principle and what are different ways in which it can fail and mislead us. This is important before commiting to an expensive real-world experiment or intervention, be it a medical study, marketing campaign, or a macroeconomic policy.</p>
+<p>Isn’t it important to know if our modeling idea or experiment is doomed or unfeasible from the very start?</p>
 </div>
 </div>
-<p>In conclusion, there is no magic to AI, no silver bullet: more data and better models are often necessary, but not sufficient to improve outcomes. We have to ask the right questions. We have to set objectives aligned with business strategy. We have to frame and formulate a problem well, understanding it in its context. We have to collect relevant data, clean it, understand the processes of missingness. If we let AI decide who enters into a quarantine during the pandemic, what it would optimize for? It’s just a machinery combining statistics and optimization.</p>
-<p>Therefore, critical thinking becomes that much more important when we have these powerful quantitative tools at out fingerprints. A part of a data scientist’s job is to constrain artificial stupidity (more exactly, foolishness, because it does perfectly fine what you instructed it to do) and making sure we’re solving the right problem (sounds trivial, but ofter we solve the wrong problem, without being aware of it).</p>
-<!-- Data Science Context, in Business, Interdisciplinarity --->
-<!-- 
-[^jordan-ai]: K. Pretz - [Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says 
-[^jordan-revolution]:  M. Jordan - [Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9): The Revolution Hasn’t Happened Yet
-[^cassie-mfml]: C.Kozyrkov - [Making Friends with Machine Learning](https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG)
-[^cassie-ref]: C. Kozyrkov (Chief Decision Scientist | Google) - https://kozyrkov.medium.com/ 
-[^cassie-ai-def]: C. Kozyrkov - [AI is decision-making at scale](https://www.youtube.com/watch?v=bCjMhZZYlP4)
-[^cassie-steps]: C.Kozyrkov - [12 Steps to Applied AI](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3)
-[^pair]: People and AI Research | Google - [Guidebook](https://pair.withgoogle.com/guidebook/)
-[^mit-ai-covid]: W.Heaven - [Hundreds of AI tools have been built to catch covid. None of them helped.](https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/)
-[^war-wrong-problem]:  V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo)
-[^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)
+<p>This process in which we try to see how the model behaves under different assumptions is called <strong>sensitivity analysis</strong>. It is an important exercise to do, because we can’t be certain our assumptions are correct and it’s likely we won’t have the necessary data or experiment to check one key assumption. We might be lucky and our models robust, or we could get wildly different results and recommendations on a slight change. It is clear that if we don’t check, we’ll never know before the costly project.</p>
+</section>
+<section id="what-do-engineers-do" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="what-do-engineers-do">What do engineers do?</h3>
+<p>Before moving on to the applications of simulation to optimization and statistical inference, I think it’s important to differentiate this class from what engineers would typically study in “Numerical Methods and Scientific Computing” or “Computational Methods for Data Analysis” classes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why do engineers put so much effort into simulation?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might have friends which study physics, chemistry, or all kinds of engineering. If you ask for their numerical methods textbook, you will be shocked at how hard it is. Why?</p>
+<p>In short, because their fields require complicated mathematical modeling, like partial differential equations, fluid dynamics, signal processing, 3D rendering, and so on. So, it’s not only challenging to implement/solve them on a computer, but it’s hard to do it efficiently at scale. And when we talk about climate modeling, for example, it’s the damn planet-scale.</p>
+<p>I’ll also give credit to quantitative finance, where modeling becomes incredibly hard – with stochastic differential equations and other mathematical nightmares.</p>
+</div>
+</div>
+<p>There is a series of important tools which we will NOT cover,<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> but might be useful in data analysis. These include SVD, QR, LU, and Choletsky matrix factorizations which pop-up in machine learning; Fourier transforms and wavelets which are important in signal processing and high-frequency time series; interpolation, approximation methods like Runge-Kutta, Euler-Maruyama for differential equations and SDEs.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;It’s best that you study these methods when you encounter them in context, in order to understand what do those software packages do behind the scenes</p></div></div></section>
+<section id="statistical-inference-and-optimization" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="statistical-inference-and-optimization">Statistical inference and optimization</h3>
+<p>At this point you probably encountered only the simplest optimization and estimation methods, like least squares, generalized method of moments, and simplex algorithm. These algorithms are fundamental and have a very nice set of properties, but they apply to a very specific (and narrow) set of problems and models.</p>
+<p>Efficient parameter estimation and highly-dimensional, nonlinear optimization is an active area of research which has lead to recent breakthroughs in machine learning and AI. You could build an applied or research career in this field, if you wish so – it will be in demand for a long time. However, from the point of view of decision science, these are “just” methods so that we can get stuff done, i.e.&nbsp;answer our research question and make the right business decision.</p>
+<p>In <strong>frequentist statistics</strong>, we want point estimates of parameters and their confidence intervals, but for more complicated models we often don’t closed-form solutions. Even worse, we might not even have an idea of how the sampling distribution looks like, which will make us doubt if our hypothesis test was reliable.</p>
+<p>It is the job of theoretical statisticians to figure these things out, but we’ll inevitably encounter a problem in which we don’t want to make certain statistical assumptions – therefore, no assumptions, no guarantees. Some methods which come to rescue are maximum likelihood, versions of gradient descent, and bootstrap.</p>
+<p>In <strong>Bayesian statistics</strong>,<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> we view parameters as distributions and data as fixed. The advantage is that we can report the whole posterior distribution as our estimate, capture the uncertainty, and propagate it when making predictions. Does it sound more intuitive than frequentist inference? Yes, but there are modeling gotchas and computational gotchas.</p>
+<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;Don’t worry if it doesn’t make sense right now, I’ll show some simple models and the benefits of Bayesian inference</p></div></div><p>Again, the most interesting models to us will not have a closed-form solution, but this time, because we work with samples from probability distributions, the estimation will be muuuuch slower. This is where modern sampling methods like Markov Chain Monte Carlo (MCMC) and Hamiltonian Monte Carlo (HMC) allow us to have our cake (reap the benefits of the Bayesian approach) and eat it too (make it computationally feasible for “mid-sized” datasets). If we work with millions of data points with a large number of features, we’ll definitely have to reconsider.</p>
+<p>In the previous section we were concerned with <u>causal</u> and <u>scientific</u> / economic aspects of statistics. But it’s also clear that we need reliable and efficient estimation, data analysis, model validation and diagnostics. It’s important that you keep in mind both of these aspects, as most classes focus on one or another.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Three challenges in statisical modeling
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A. Gelman highlights three different aspects of statistical inference. Always remember this when designing your study or learning about a new statistical tool! We want to generalize from sample to the population of interest, from treatment to control group, and from measurement to the underlying theoretical construct.</p>
+<p><span class="math display">\[Sample \longrightarrow Population\]</span></p>
+<p><span class="math display">\[Treatment \longrightarrow Control\]</span></p>
+<p><span class="math display">\[Measurement \longrightarrow Construct\]</span></p>
+<p>The holy grail is to build statistical models based on the <u>causal processes</u> informed by theories and hypotheses. If we take into account how we <u>measured</u>, and <u>collected data</u>, we’ll increase our chances to generalize our conclusions and will have stronger evidence.</p>
+</div>
+</div>
+<p>In <strong>machine learning</strong>, for the vast majority of models, the training process boils down to a nasty, nonlinear optimization problem, in which we hope that we won’t end up in a local minimum. As a slight detour, the training process is an algorithm which takes as an input the model, its hyperparameters, and data, which returns another model (with optimal parameters) which hopefully has the best out-of-sample, predictive performance.</p>
+<p><span class="math display">\[\mathcal{A} : \{\mathcal{(X_i, y_i)}\}_{i=1}^N, m, \gamma \longrightarrow m^* \]</span></p>
+<p>The good news is we have many variations of stochastic gradient descent which work well for most models and a whole array of more sophisticated techniques when it fails. Think of the transformer architecture which made ChatGPT possible – training would be unfeasible with more “naive” optimization algorithms.</p>
+<p>A hyperparameter is a quantity which governs the behavior of the model and is not directly learned from data, so we’re responsible for making an informed choice or determining it empirically. This process is called <strong>hyperparameter optimization</strong>.<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> If we have a big model which trains for a long time, clearly, we will have to try as few hyperparameters as possible.</p>
+<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;There are many tree-based models like LightGBM and Random Forests which are pretty good out of the box, and in practice don’t need much hyperparameter tuning</p></div></div><p>Generally, this problem is known as optimization of (expensive) black box functions. The key here is to approximate the slow model via a flexible, but much quicker and simpler one, then iteratively pick hyperparameters which will get us closer to optimal values. We will not cover this techniques here, or in introductory data science classes, but you should know about this solution when you encounter such a problem in practice. <!-- 
 
-[^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html) -->
+## Stories and case-studies
+
+- You studied probability and statistics so far with mathematics. Now, with simulation and data analysis -- towards applied skills. See why the math and theory was important
+- Learn and reinforce the most important ideas in probability and statistics, the stories and practical applications of the distributions. See their practical relevance. Plus, why simulation works LLN & CLT, convergence types reminder
+- A few things to know about simulation: Universality of uniform (behind the scenes) and how to generate random numbers (behind the scenes). The point of monte carlo method (normally explained, statistics )
+- StatQuest and Very Normal --></p>
 
 
+</section>
 </section>
 
 
@@ -1058,15 +1145,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
-  <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/4_ml_stats.html" class="pagination-link" aria-label="4. Analytics, ML, Stats">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4. Analytics, ML, Stats</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
