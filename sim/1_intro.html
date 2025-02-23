@@ -365,6 +365,7 @@ window.Quarto = {
   <li><a href="#what-do-engineers-do" id="toc-what-do-engineers-do" class="nav-link" data-scroll-target="#what-do-engineers-do">What do engineers do?</a></li>
   <li><a href="#statistical-inference-and-optimization" id="toc-statistical-inference-and-optimization" class="nav-link" data-scroll-target="#statistical-inference-and-optimization">Statistical inference and optimization</a></li>
   </ul></li>
+  <li><a href="#stories-and-case-studies" id="toc-stories-and-case-studies" class="nav-link" data-scroll-target="#stories-and-case-studies">Stories and case-studies</a></li>
   </ul>
 </nav>
 </nav>
@@ -566,18 +567,36 @@ Three challenges in statisical modeling
 <p><span class="math display">\[\mathcal{A} : \{\mathcal{(X_i, y_i)}\}_{i=1}^N, m, \gamma \longrightarrow m^* \]</span></p>
 <p>The good news is we have many variations of stochastic gradient descent which work well for most models and a whole array of more sophisticated techniques when it fails. Think of the transformer architecture which made ChatGPT possible – training would be unfeasible with more “naive” optimization algorithms.</p>
 <p>A hyperparameter is a quantity which governs the behavior of the model and is not directly learned from data, so we’re responsible for making an informed choice or determining it empirically. This process is called <strong>hyperparameter optimization</strong>.<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> If we have a big model which trains for a long time, clearly, we will have to try as few hyperparameters as possible.</p>
-<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;There are many tree-based models like LightGBM and Random Forests which are pretty good out of the box, and in practice don’t need much hyperparameter tuning</p></div></div><p>Generally, this problem is known as optimization of (expensive) black box functions. The key here is to approximate the slow model via a flexible, but much quicker and simpler one, then iteratively pick hyperparameters which will get us closer to optimal values. We will not cover this techniques here, or in introductory data science classes, but you should know about this solution when you encounter such a problem in practice. <!-- 
-
-## Stories and case-studies
-
-- You studied probability and statistics so far with mathematics. Now, with simulation and data analysis -- towards applied skills. See why the math and theory was important
-- Learn and reinforce the most important ideas in probability and statistics, the stories and practical applications of the distributions. See their practical relevance. Plus, why simulation works LLN & CLT, convergence types reminder
-- A few things to know about simulation: Universality of uniform (behind the scenes) and how to generate random numbers (behind the scenes). The point of monte carlo method (normally explained, statistics )
-- StatQuest and Very Normal --></p>
-
-
+<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;There are many tree-based models like LightGBM and Random Forests which are pretty good out of the box, and in practice don’t need much hyperparameter tuning</p></div></div><p>Generally, this problem is known as optimization of (expensive) black box functions. The key here is to approximate the slow model via a flexible, but much quicker and simpler one, then iteratively pick hyperparameters which will get us closer to optimal values. We will not cover this techniques here, or in introductory data science classes, but you should know about this solution when you encounter such a problem in practice.</p>
 </section>
 </section>
+<section id="stories-and-case-studies" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="stories-and-case-studies">Stories and case-studies</h2>
+<p>So far, you studied probability, statistics, operations research, and economics from an ultimately mathematical and procedural point of view (i.e.&nbsp;steps to solve a problem). This is a solid foundation to have, but it needs to be balanced out with practical aspects of modeling, data analysis, and programming.</p>
+<p>I will be using stories and real world case-studies to highlight the practical relevance of theoretical ideas like Central Limit Theorem (CLT), Law of Large Numbers (LLN), p-values, conditioning, common distributions, etc. Moreover, by simulation, we’ll reinforce our knowledge and understanding, which will help us avoid most common pitfalls in statistical modeling.</p>
+<p>A funny thing is that we can use simulation to better understand probability and statistical inference, and at the same time, probability justifies why simulation works. I can’t emphasize enough how much your learning will improve if you will apply what you learn here in your econometrics, data analysis, and quantitative economics classes. If you do not trust me, trust Richard Feynman, who said: <u>“What I cannot build, I do not understand.”</u></p>
+<p>You can think of this course as having two parts. First, we use simulation as a problem-solving approach to gain insight into an economic problem. The second part develops specialized methods for estimation, sampling, approximation, and optimization – which can be viewed as tools to overcome a range of technical problems in statistical modeling.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The bare minimum
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Simulation is perhaps the most beginner-friendly course you had, because we need to know just two things to get started.</p>
+<ul>
+<li>How to generate iid, uniformly distributed pseudo-random numbers. This problem is solved, since all programming languages have good RNG (random number generators).<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></li>
+<li>How to generate samples from any probability distribution which is “well-behaved”. Fortunately, a theorem called “Universality of the Uniform” proves that we can and gives us the method for doing so. In R or Python we have access to efficient implementations for the vast majority of distributions we’ll ever need.</li>
+</ul>
+<p>This is not sufficient to understand why simulation works, how to apply it effectively, or how to sample from complicated distributions which don’t have a closed-form solution. However, you can still go a long way in practice with these two simple facts.</p>
+</div>
+</div>
+
+
+<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;You should still know how are they computed behind the scenes and what happens when they are not-so-random</p></div></div></section>
 
 
 </main> <!-- /main -->

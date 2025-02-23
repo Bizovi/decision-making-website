@@ -263,6 +263,17 @@
     ]
   },
   {
+    "objectID": "sim/1_intro.html#stories-and-case-studies",
+    "href": "sim/1_intro.html#stories-and-case-studies",
+    "title": "Simulation of economic processes",
+    "section": "Stories and case-studies",
+    "text": "Stories and case-studies\nSo far, you studied probability, statistics, operations research, and economics from an ultimately mathematical and procedural point of view (i.e. steps to solve a problem). This is a solid foundation to have, but it needs to be balanced out with practical aspects of modeling, data analysis, and programming.\nI will be using stories and real world case-studies to highlight the practical relevance of theoretical ideas like Central Limit Theorem (CLT), Law of Large Numbers (LLN), p-values, conditioning, common distributions, etc. Moreover, by simulation, we’ll reinforce our knowledge and understanding, which will help us avoid most common pitfalls in statistical modeling.\nA funny thing is that we can use simulation to better understand probability and statistical inference, and at the same time, probability justifies why simulation works. I can’t emphasize enough how much your learning will improve if you will apply what you learn here in your econometrics, data analysis, and quantitative economics classes. If you do not trust me, trust Richard Feynman, who said: “What I cannot build, I do not understand.”\nYou can think of this course as having two parts. First, we use simulation as a problem-solving approach to gain insight into an economic problem. The second part develops specialized methods for estimation, sampling, approximation, and optimization – which can be viewed as tools to overcome a range of technical problems in statistical modeling.\n\n\n\n\n\n\nThe bare minimum\n\n\n\nSimulation is perhaps the most beginner-friendly course you had, because we need to know just two things to get started.\n\nHow to generate iid, uniformly distributed pseudo-random numbers. This problem is solved, since all programming languages have good RNG (random number generators).16\nHow to generate samples from any probability distribution which is “well-behaved”. Fortunately, a theorem called “Universality of the Uniform” proves that we can and gives us the method for doing so. In R or Python we have access to efficient implementations for the vast majority of distributions we’ll ever need.\n\nThis is not sufficient to understand why simulation works, how to apply it effectively, or how to sample from complicated distributions which don’t have a closed-form solution. However, you can still go a long way in practice with these two simple facts.\n\n\n\n\n16 You should still know how are they computed behind the scenes and what happens when they are not-so-random",
+    "crumbs": [
+      "| 1. Business |",
+      "~ Simulation of economic processes"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Bayesian Statistics: Study Guide",
