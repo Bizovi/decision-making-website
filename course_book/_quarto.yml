@@ -81,6 +81,12 @@ website:
           text: "Syllabus & Study Guide"
         - href: roadmap_bayes.qmd
           text: "Schedule & Roadmap"
+      - text: "-----"
+      - section: "~ Simulation of economic processes"
+        href: sim/1_intro.qmd
+        contents:
+        - href: sim/1_intro.qmd
+          text: "1. Introduction"
 
 
   page-navigation: true

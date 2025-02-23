@@ -1,0 +1,195 @@
+---
+title: "Simulation of economic processes"
+subtitle: "Introduction and background"
+author:
+  - name: Mihai Bizovi
+    id: mb
+    degrees: 
+    - "VP of Decision Science"
+format:
+  html:
+    toc-location: left
+lang: en
+---
+
+Welcome to the simulation course! First, let's talk a little bit about movies. You're probably well aware how popular films about multiverses and time travel have become. ^["Everything, everywhere, all at once", "Loki", "Edge of Tomorrow", "Person of interest"] Their main point is that our actions have consequences and that there is a "garden of forking paths" leading the protagonist to very different outcomes -- some very likely, others almost impossible. This idea is faithful to real life: we have to make good decisions under uncertainty and with limited resources. It's not an easy task.
+
+If we had a crystal ball which flawlessly predicts the future state of the world and the outcomes of our decisions, we wouldn't be here in this class. The next best thing is if the oracle tells us the calibrated probabilities of relevant events happening (e.g. if our startup or investment will succeed), but we'll have to ask the right questions and solve a pretty large optimization problem.^[Because we have to place "bets" and our resources are limited] It's also useful to know that one of the most important ideas in statistics is [the counterfactual]{.underline}, a probabilistic answer to a "what would happen if" question. 
+
+## Decisions under uncertainty
+
+In the context of businesses, we want to improve financial and non-financial outcomes like revenue, profitability (EBITDA), market share, unit economics, production efficiency, customer acquisition, user experience, customer lifetime value, etc. A firm will increase its chances to improve performance if it has an accurate diagnosis of the current state and formulated a  strategy, but it still has to test their ideas and make many good decisions over a long period of time, i.e. execute well. ^[Even then, there is no guarantee. Most startups fail in the first 5 years]
+
+::: {.callout-note}
+## What makes a decision good?
+
+Think for a few minutes and write down what are your criteria which would make a decision good. How did you deal with cases in which we have a great outcome by sheer luck and chance?
+
+Come up with an example of an important decision a fashion e-commerce has to make. Define the objective, constraints, tradeoffs, and a few alternative choices. Test your criteria. Do they make sense? Are they necessary? Sufficient?
+:::
+
+I hope you figured where I am leading with the multiverse story. We study probability theory, statistical modeling, optimization (operations research), and economics in order to make better decisions under uncertainty, possibly at a large scale. We also need to know enough programming to analyze data, build models, and solve optimization problems. Think about how many decisions Uber has to make every day in each city to match drivers with passengers' routes and set the right prices.  
+
+I call this applied, quantitative, and interdisciplinary field **"decision science"**, which is also known as data science, specialized AI, and economic cybernetics. In practice, a decision scientist should collaborate with domain experts, decision-makers, clients, and stakeholders to understand their domain and challenges, [ask the right questions]{.underline}, and formulate a problem.
+
+$$Question \longrightarrow Model \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome $$  
+
+
+ Then, they will perform experiments, collect data, and build statistical models which bring insights into consequences of actions, interventions, and policies. ^[Inspired by A. Fleischhacker's [Business Analyst Workflow](https://www.causact.com/becoming-a-data-driven-business-analyst#becoming-a-data-driven-business-analyst)] These insights, inferences, and predictions will inform the firm which decisions are more promising and whether their hypotheses hold up to evidence.
+
+::: {.callout-note}
+## What is a model?
+
+In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. Reality is overwhelming and combinatorially explosive in its possibilities. ^[Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc] 
+
+We build models, because we want to understand a system and capture / explain the essential aspects of the phenomena of interest, in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen. 
+
+A model will take you only as far as the quality of your problem formulation, its assumptions, and the data you have. Its results are useful only if they inspire new questions or hypotheses, generate actionable insight, or make reliable predictions.
+
+:::
+
+To make things more concrete, let's look at an example of a bakery which produces fresh, but perisable good(ie)s. We assume that if they don't manage to sell the pastry in the same day, it will have to be thrown away. They choose to sell at the price $(p)$ after lots of market research and a bit of experimentation. The cost of producing an unit is $(c)$. The bakery has data on daily historical sales $\{d_1, d_2, ..., d_t\}$ and for the sake of simplicity, we'll assume that they never ran out of stock. The question is how much they should produce tomorrow $(q)$.
+
+This is called the "newsvendor problem" and is a prototypical example of inventory management.^[Even with this simple model, things can get complicated very quickly: both in terms of demand forecasting and optimization] If we order or produce too little, we'll lose sales, and in the long term, customers. If we order too much, we'll end up with waste. In a 2003 paper, M. Koschat and N. Kunz^[M. Koschat, N. Kunz - ["Newsvendors tackle the newsvendor problem"](https://www.researchgate.net/publication/239752587_Newsvendors_Tackle_the_Newsvendor_Problem), 2003] have shown how they brought an additional $3.5m of incremental profits to the Time Inc. magazine by solving this optimization problem. 
+
+$$
+(\max_q) \; p \cdot  \mathbb{E}_D[\min(D, q)] - c \cdot q
+$$
+
+At first, the problem might look similar with what you did in other classes: we want to maximize the gross margin (profit) and q is our decision variable, which is a count ($q \in \mathbb{Z}_+$). However, the demand is a random variable which can be modeled as simply as the normal distribution or as complicated as a multilevel regression. Moreover, it's not clear that reducing the problem to an expectation maximization is the best thing to do in practice.
+
+If your hunch is that we will need to do some modeling and simulations in order to solve this problem, you're absolutely correct.^[It will quickly become unfeasible to find out an analytical solution] We will not be satisfied with $d_i \sim N(\mu, \sigma)$, as this will probably be an over-simplification of the processes generating the demand. In the real world, we don't want to ignore seasonality, day of week effects, out of stock and promotions in historical data, trends, and serial correlation.
+
+Of course, the modeling approach will be pretty different if the product is slow-moving, selling a lot, or has an intermittent demand. We will investigate these issues in great detail in the following weeks, but for now you have an example of the idea that models are a simplified representation of reality and have assumptions.
+
+::: {.callout-note}
+## Sources of uncertainty
+
+In their book [Algorithms for Decision Making, MIT Press - 2022](https://algorithmsbook.com/), M. Kochenderfer, T. Wheeler, and K. Wray make a helpful classification of the sources of uncertainty, based on agent-environment interactions:
+
+
+- **Outcome uncertainty** suggests we can't know the consequences and effects of our actions with certainty.  We can't take everything into account when making a decision
+- **Model uncertainty** implies we can't be sure that our understanding, assumptions, and chosen model are correct. In decision-making, we often misframe problems and in statistics, well, choose the wrong model.
+- **State uncertainty** means that the true state of the environment is uncertain, as everything changes and is in flux. This is why statisticians argue that we always work with samples
+- **Interaction uncertainty** due to the behavior of the other agents interacting in the environment. For example, competitive firms, and social network effects.
+
+We will focus very little the last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems, and graph theory.
+
+::: 
+
+In our toy example of the newsvendor problem, the uncertainty in the state (demand) translated into outcome uncertainty (profits). If we chose the wrong model for the demand, our conclusions might also change significantly. As an exercise, think of a few scenarios where the interaction uncertainty would need to be taken into account. 
+
+## Simulation and numerical methods
+
+Now that you have the multiverse metaphor in mind and the context of decision science, **simulation** can be seen as an extremely useful set of **numerical methods and algorithms** used in estimation, optimization, and modeling. Its practical value boils down to the fact that  most problems and models of interest to us won't have efficient and scalable closed-form or algorithmically exact solutions. ^[In plain english, it means that we can't do it by hand and have to implement in code. Even if there is an exact algorithm, it might not scale with the amount of data and problem size -- which most often renders it useless ] Therefore, we need to learn techniques which make good approximations. 
+
+In the following sections, I explain different ways in which simulation and numerical methods can be applied, which is much more than the "Monte-Carlo" method you might be familiar with. Last, but not least, simulation is extremely useful when learning probability, statistics, and econometrics. It's a way to take an abstract mathematical idea, for example, Central Limit Theorem or HAC robust standard errors, see how it behaves under different assumptions, and how it could be useful in practical applications.
+
+### Theoretical and process models
+
+There is a famous saying that explains some differences between natural and social sciences: "Atoms are not people". Human behavior is an endlessly fascinating and complex area of inquiry, but we can't hope to achieve the same level of confidence in theories and hypotheses we develop as physics, chemistry, or biology. Also, we can't perform experiments in the way engineers do -- it will be highly unethical and often unfeasible.
+
+Therefore, in applied economics, mathematical modeling takes a back seat to statistical, econometric, and machine learning methods.^[Recent Nobel prize awards in economics show how important econometrics and causal inference has been for the field] Whatever "laws" we might conjecture, it will be incredibly difficult to empirically validate them and "prove" that the decisions / interventions made bring an improvement. Often, when it comes to consumer behavior, we don't even have a theory: think about the choices of what movies to watch on Netflix or the premium we're willing to pay for a branded hoodie. But we do have an understanding and we might have tons of data.
+
+You have to know that "theory-free methods", for all practical intents and purposes, do not exist. Even when we don't make distributional assumptions (in nonparametric statistics) and learn a pattern from data (machine learning), we still do have to decide what are the constraints, objectives, relevant data, measurement, sampling, interventions, and most plausible causal mechanism underlying the behavior / observed phenomenon.
+
+There are multiple techniques for model validation which you will study in econometrics / data analysis classes and they're extremely important. They will signal to you possible ways in which the model fails and that you might've picked the wrong one, but they're not sufficient. How so? 
+
+::: {.callout-important}
+## The causes are not to be found in data
+
+Imagine two different models with wildly different assumptions which give similar predictions. We'll conveniently call them "heliocentric" and "geocentric". How can we know which one is more plausible?
+
+The short answer is not from one dataset, and not from a single thing we measure, but from "networks of cumulative evidence" and competing against the next best hypothesis. ^[I highly recommend that you read a little bit about the philosophy of science and how the scientific process works.]
+
+The idea is not to celebrate the triumph of Galileo/Copernicus, but to point out that such debates happen routinely. A few examples are the fields of molecular biology and ecology which spanned decades-long bitter rivalries. 
+
+The explanation is simple once you are aware of it -- that different **vague hypotheses** can be operationalized in multiple ways as mathematical / **process models**, which might result in very similar statistical and **distributional patterns**.
+:::
+
+I hope you bear with me along this justification to finally get to the point of the value of simulation. It's a way to implement probabilistic models of economic phenomena in code, which forces us to declare explicitly our assumptions about the **causes** and **processes** underlying the data. Recall the idea of "data generating process" from statistics.
+
+Think of these models as an airplane or driving simulator, which will resemble real piloting if enough effort has been put into its development and enough scenarios have been taken into consideration. Even though they're just a simulation, we can use them to practice and gain understanding. 
+
+In this course we'll be much less confident that the patterns which result from our simulations are realistic,^[We'll have to make many simplifying assumptions and can't take into account all relevant factors or ways things can go wrong] but it will be immensely helpful when building statistical models and using real data to solve business problems. This preparation will increase our chances of success in practice and will give more confidence to stakeholders that the approach we're taking is reasonable.
+
+::: {.callout-tip}
+## Think generatively. Does the model work in principle?
+
+Think for a minute what is the difference between probability and statistics. Probability is generative (of data) and forward-looking, predictive, given a set of "rules" and assumptions we've chosen. Probability is mathematics -- a logic of uncertainty.
+
+On the other hand, statistics is about chaning our actions and opinions in the face of evidence. It looks backwards, given the data and a chosen model -- trying to infer and estimate what the "rules" or parameters were. Once we have those estimates, we can make predictions and generalizations. It uses mathematical methods, but is closer to art and engineering.
+
+So, one important way in which simulation is used in practice is checking that our modeling strategy works in principle and what are different ways in which it can fail and mislead us. This is important before commiting to an expensive real-world experiment or intervention, be it a medical study, marketing campaign, or a macroeconomic policy.
+
+Isn't it important to know if our modeling idea or experiment is doomed or unfeasible from the very start?
+:::
+
+This process in which we try to see how the model behaves under different assumptions is called **sensitivity analysis**. It is an important exercise to do, because we can't be certain our assumptions are correct and it's likely we won't have the necessary data or experiment to check one key assumption. We might be lucky and our models robust, or we could get wildly different results and recommendations on a slight change. It is clear that if we don't check, we'll never know before the costly project.
+
+
+### What do engineers do?
+
+Before moving on to the applications of simulation to optimization and statistical inference, I think it's important to differentiate this class from what engineers would typically study in "Numerical Methods and Scientific Computing" or "Computational Methods for Data Analysis" classes.
+
+
+::: {.callout-note}
+## Why do engineers put so much effort into simulation?
+
+You might have friends which study physics, chemistry, or all kinds of engineering. If you ask for their numerical methods textbook, you will be shocked at how hard it is. Why?
+
+In short, because their fields require complicated mathematical modeling, like partial differential equations, fluid dynamics, signal processing, 3D rendering, and so on. So, it's not only challenging to implement/solve them on a computer, but it's hard to do it efficiently at scale. And when we talk about climate modeling, for example, it's the damn planet-scale.
+
+I'll also give credit to quantitative finance, where modeling becomes incredibly hard -- with stochastic differential equations and other mathematical nightmares.
+:::
+
+There is a series of important tools which we will NOT cover,^[It's best that you study these methods when you encounter them in context, in order to understand what do those software packages do behind the scenes] but might be useful in data analysis. These include SVD, QR, LU, and Choletsky matrix factorizations which pop-up in machine learning; Fourier transforms and wavelets which are important in signal processing and high-frequency time series; interpolation, approximation methods like Runge-Kutta, Euler-Maruyama for differential equations and SDEs.
+
+
+### Statistical inference and optimization
+
+At this point you probably encountered only the simplest optimization and estimation methods, like least squares, generalized method of moments, and simplex algorithm. These algorithms are fundamental and have a very nice set of properties, but they apply to a very specific (and narrow) set of problems and models.
+
+Efficient parameter estimation and highly-dimensional, nonlinear optimization is an active area of research which has lead to recent breakthroughs in machine learning and AI. You could build an applied or research career in this field, if you wish so -- it will be in demand for a long time. However, from the point of view of decision science, these are "just" methods so that we can get stuff done, i.e. answer our research question and make the right business decision.
+
+In **frequentist statistics**, we want point estimates of parameters and their confidence intervals, but for more complicated models we often don't closed-form solutions. Even worse, we might not even have an idea of how the sampling distribution looks like, which will make us doubt if our hypothesis test was reliable. 
+
+It is the job of theoretical statisticians to figure these things out, but we'll inevitably encounter a problem in which we don't want to make certain statistical assumptions -- therefore, no assumptions, no guarantees. Some methods which come to rescue are maximum likelihood, versions of gradient descent, and bootstrap.
+
+In **Bayesian statistics**,^[Don't worry if it doesn't make sense right now, I'll show some simple models and the benefits of Bayesian inference] we view parameters as distributions and data as fixed. The advantage is that we can report the whole posterior distribution as our estimate, capture the uncertainty, and propagate it when making predictions. Does it sound more intuitive than frequentist inference? Yes, but there are modeling gotchas and computational gotchas. 
+
+Again, the most interesting models to us will not have a closed-form solution, but this time, because we work with samples from probability distributions, the estimation will be muuuuch slower. This is where modern sampling methods like Markov Chain Monte Carlo (MCMC) and Hamiltonian Monte Carlo (HMC) allow us to have our cake (reap the benefits of the Bayesian approach) and eat it too (make it computationally feasible for "mid-sized" datasets). If we work with millions of data points with a large number of features, we'll definitely have to reconsider.
+
+In the previous section we were concerned with [causal]{.underline} and [scientific]{.underline} / economic aspects of statistics. But it's also clear that we need reliable and efficient estimation, data analysis, model validation and diagnostics. It's important that you keep in mind both of these aspects, as most classes focus on one or another.
+
+
+::: {.callout-tip}
+## Three challenges in statisical modeling
+
+A. Gelman highlights three different aspects of statistical inference. Always remember this when designing your study or learning about a new statistical tool! We want to generalize from sample to the population of interest, from treatment to control group, and from measurement to the underlying theoretical construct.
+
+$$Sample \longrightarrow Population$$
+
+$$Treatment \longrightarrow Control$$
+
+$$Measurement \longrightarrow Construct$$
+
+The holy grail is to build statistical models based on the [causal processes]{.underline} informed by theories and hypotheses. If we take into account how we [measured]{.underline}, and [collected data]{.underline}, we'll increase our chances to generalize our conclusions and will have stronger evidence.
+:::
+
+In **machine learning**, for the vast majority of models, the training process boils down to a nasty, nonlinear optimization problem, in which we hope that we won't end up in a local minimum. As a slight detour, the training process is an algorithm which takes as an input the model, its hyperparameters, and data, which returns another model (with optimal parameters) which hopefully has the best out-of-sample, predictive performance.
+
+$$\mathcal{A} : \{\mathcal{(X_i, y_i)}\}_{i=1}^N, m, \gamma \longrightarrow m^* $$
+
+
+The good news is we have many variations of stochastic gradient descent which work well for most models and a whole array of more sophisticated techniques when it fails. Think of the transformer architecture which made ChatGPT possible -- training would be unfeasible with more "naive" optimization algorithms.
+
+A hyperparameter is a quantity which governs the behavior of the model and is not directly learned from data, so we're responsible for making an informed choice or determining it empirically. This process is called **hyperparameter optimization**.^[There are many tree-based models like LightGBM and Random Forests which are pretty good out of the box, and in practice don't need much hyperparameter tuning] If we have a big model which trains for a long time, clearly, we will have to try as few hyperparameters as possible.
+
+Generally, this problem is known as optimization of (expensive) black box functions. The key here is to approximate the slow model via a flexible, but much quicker and simpler one, then iteratively pick hyperparameters which will get us closer to optimal values. We will not cover this techniques here, or in introductory data science classes, but you should know about this solution when you encounter such a problem in practice. 
+
+
+## Stories and case-studies
+
+
+## Learning R programming
