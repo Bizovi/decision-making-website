@@ -594,9 +594,68 @@ The bare minimum
 <p>This is not sufficient to understand why simulation works, how to apply it effectively, or how to sample from complicated distributions which don’t have a closed-form solution. However, you can still go a long way in practice with these two simple facts.</p>
 </div>
 </div>
+<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;You should still know how are they computed behind the scenes and what happens when they are not-so-random</p></div></div><p>First, we’ll need to set-up the programming environment (R and RStudio), create a script or (quarto) notebook and we’re ready to go! Take your time to understand how to navigate the IDE, run commands, investigate the errors, and read the documentation. We want to solve problems and program, thus techical issues like how to run a line of code or where can I find the output shouldn’t stand in our way.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The full-luxury development setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>R v4.4.2 (later than 4.3.x)</li>
+<li>RStudio as our main IDE</li>
+<li>Quarto or Rmarkdown for literate programming (only needed towards the end of the course)</li>
+<li>Installing <strong>tidyverse</strong> will get us most needed packages:
+<ul>
+<li>dplyr for data wrangling, purrr for functional programming, and stringr / glue for making our life easier with text</li>
+<li>ggplot for data visualization</li>
+</ul></li>
+</ul>
+<p>R is a beginner-friendly language, but has many gotchas because of its weak data types. Tidyverse is an important ecosystem of packages which solves a lot of the issues in base R and makes our life easier and coding much more pleasant.</p>
+<p>If you’re really serious about becoming a data scientist or a ML engineer, you will have to study and practice a lot on your own. This is a non-exhaustive list of practical skills you will need in the future.</p>
+<ul>
+<li>git &amp; github for versioning your code and collaborating on a code-base</li>
+<li>renv for managing environments and packages</li>
+<li>duckdb to practice SQL and data engineering on a analytical, columnar, in-process database</li>
+<li>data.table and arrow for processing huge amounts of data</li>
+<li>how to build interactive applications in Shiny and model serving APIs in plumbr</li>
+<li>how to use the command line interface and automate stuff in Linux</li>
+<li>how to package and deploy your training and prediction pipelines, possibly to a cloud provider</li>
+</ul>
+</div>
+</div>
+<p>Without further ado, here are the stories and case-studies we’re going to discuss and implement in code, along with theoretical ideas they highlight.</p>
+<p>We’ll start with a warm-up. <strong>Birthday paradox</strong> is a straightforward, but counter-intuitive result which is a good opportunity to review key concepts from <strong>combinatorics</strong> and apply the naive definition of probability. We’ll derive the analytical solution, visualize it, and compare with our simulation. This simple exercise will teach us most things we will need for the near future: how to sample, generate sequences, work with arrays, functions, data frames, and repeat a calculation many times.</p>
+<ul>
+<li>Newsvendor problem and inventory optimization is a great case-study of decision-making under uncertainty</li>
+<li>Showing up to a safari. This is a cute story which will teach us about the intuitions behind Binomial distribution, probability trees, independence, and sensitivity analysis</li>
+<li>Simulations which exemplify convergence in probability and the law of large numbers. We’ll discuss why Monte Carlo methods work and what happens if we forget to take into consideration sample size</li>
+<li>US schools, the most dangerous equation. This is a great example of what can go wrong when we draw conclusions from data via a sloppy analysis.<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> CLT is just one of key theoretical ideas from statistics which could’ve prevented the policy makers to start a costly and wasteful project.</li>
+<li>Quality control and measurement error. We’ll discuss the story of Gosset in Guiness beer factories, the original purpose for which the t-test was invented, the philosophy and practice of hypothesis testing. A key idea is one of action in the long run and error control (not being too wrong too often). This perspective of statistics justifies our definition of “changing your actions in the face of evidence”.</li>
+<li>What p-values can we expect? Most people misunderstand the idea of p-values. We will use an example of a scientific study and its probability to find a true, significant finding. In simulation, we can see the distribution of p-values, which is impossible to know for sure in practice, even after a rigorous meta-analysis.</li>
+<li>Wikipedia A/B test and Landon vs Roosevelt elections. These stories serve as drills so that you remember how to calculate confidence intervals for proportions and interpret them correctly. They also serve as a warning of what can go wrong if we fail to randomize.</li>
+<li>Bayes rule, medical testing, and coding bugs. Bayesian thinking and the idea of updating your beliefs is key for rational decision-making under uncertainty. You will also get into the habit of articulating and elliciting your prior knowledge (before seeing the data) about a problem.</li>
+<li>Beta-Binomial model of left-handedness and quality control. This will be perhaps the only time in your bachelor’s degree where you will encounter a fully Bayesian approach to inference (and not just an application of Bayes rule). We will learn what probability distributions are appropriate in modeling proportions and a principled approach to deal with misclassification error.
+<ul>
+<li>I will mention how can we model counts of asthma deaths and kidney cancer with the Gamma-Poisson model, and how it can be applied to customer purchasing behavior.</li>
+<li>By a similar reasoning we’ll see how can we model waiting times in a Starbucks by a Gamma-Exponential model. This is precisely the reason why you studied all of those discrete and continuous distributions in your probability class – they have a purpose and are useful!</li>
+</ul></li>
+<li>Linear regression and confounding. You probably heard a hundred times that correlation doesn’t imply causation. I will show three simple causal mechanisms and graphs of influence which can mislead us into a wrong conclusion: confounders, mediators, and colliders. We’ll discuss real-world studies about divorce rates, gender discrimination, and ethical intuitions.
+<ul>
+<li>In the context of linear regression, we’ll use bootstrap as an alternative way to compute confidence intervals. It’s a must-have technique in your quantitative toolbox, which will be useful any time you don’t have a theoretically proven sampling distribution.</li>
+</ul></li>
+<li>Justifying the sample size for an A/B test. Power calculations is what trips up most product managers and analysts, who end up confused by the online calculators or complicated formulas (which I’ve seen mostly misused). This is where simulation shines and will be helpful in choosing the appropriate sample size of data we need to collect (or how long the experiment should run), while being very clear about our assumptions and expectations.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn17"><p><sup>17</sup>&nbsp;I really like the metaphor of “fooled by randomness”</p></div></div><p>At last, after we get a sense how Markov Chain Monte Carlo works, we will gain a new superpower – to sample from unknown distributions. We can apply it to the modeling of grouped / clustered / correlated data, like in a classical case-study of radon (toxic gas) concentrations in U.S. homes in various counties.</p>
+<p>The idea of partial pooling will help us to automatically adjust our inferences (means and variances) with respect to the sample size of each group (county). This is an example of a multilevel or hierarchical model, for which Bayesian inference has many benefits. However, we don’t have analytical solutions and will have to use a much more sophisticated algorithm to generate samples from the posterior distribution of parameters.</p>
+<p>Treat this topic of multilevel modeling as the culmination of the course, which also serves as a powerful complementary approach to what you study in econometrics.</p>
 
 
-<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;You should still know how are they computed behind the scenes and what happens when they are not-so-random</p></div></div></section>
+</section>
 
 
 </main> <!-- /main -->
