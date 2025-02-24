@@ -2,9 +2,6 @@
 format:
   html:
     toc-location: left
-execute:
-  freeze: true
-  cache: true
 ---
 
 # Foundations of Probability
@@ -58,85 +55,6 @@ I find those interesting for their own sake and understanding the foundations of
 :::
 
 The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessible and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing -- which will be our gateway into truly modern statistics.
-
-
-## The garden of forking paths
-
-As a warm-up, try working out through the following problem, sometimes called "The Birthday Paradox".[^bday] If outcome space, complementarity, *sampling with replacement*, *pigenhole principle* or the simulation code you're seeing seem puzzling, you might benefit from a refresher on probability theory. If you haven't seen this problem before, you will probably find the results surprising.
-
-[^bday]: First, an analytical solution on paper, then simulate it in R or Python to check your answer. 
-
-:::: {.callout-note}
-## The Birthday Problem
-
-What is the probability at least two people have the same birthday, in a room of $n=25$ people? Assuming independence, for example no twins, every day is equally likely and ignoring the problem of 29th February. Can you generalize it to an arbitrary $n$?
-
-For most practical problems, simulation is an extremely important skill. We might start with it to quickly get an answer, however, for simpler problems, the process of working out the solution analytically sheds light on its structure and easily generalizes to other applications. This simulation indeed, converges to the true results, but it takes a lot of computation, so it might not work when the code needs to run really fast!
-
-```{r}
-#| output: false
-#| code-fold: false
-
-nr_people <- 25 
-simulate_birthdays <- function(nr_people, nr_sim = 10000) {
-	birthday_events <- replicate(n = nr_sim, {
-		birthdays <- sample(x = 1:365, size = nr_people, replace = TRUE)
-		anyDuplicated(birthdays) > 0
-	})
-	mean(birthday_events)  # this returns implicitly!
-}
-pr_same_bday <- simulate_birthdays(nr_people)
-bday_match_size <- sapply(2:90, simulate_birthdays, nr_sim = 10000)
-
-```
-
-<!-- <details> <summary>Show the answer</summary> -->
-<!-- </details> -->
-
-So, the probability that a room of `r nr_people` people has two people with the same birth date is $\approx$ `r pr_same_bday`. For 50 people, it's around `r simulate_birthdays(50)`
-
-```{r}
-#| output: true
-#| warning: false
-#| code-fold: true
-#| code-summary: Show the visualization code
-#| fig-cap: "Probability of matching birthdays as a function of the number of people"
-#| column: margin
-
-par(mar = c(3, 3, 2, 1), # Dist' from plot to side of page
-    mgp = c(2, 0.4, 0), # Dist' plot to label
-    las = 1, # Rotate y-axis text
-    tck = -.01, # Reduce tick length
-    xaxs = "i", yaxs = "i") # Remove plot padding
-
-plot(
-	x = 2:90, y = bday_match_size, 
-	type = "l", lty = 1, lwd = 5,
-	xlab = "", ylab = "", # Labels
-	axes = FALSE, # Don't plot the axes
-	frame.plot = FALSE, # Remove the frame
-	xlim = c(0, 80), ylim = c(0, 1), # Limits
-	panel.first = abline(h = seq(0, 1, 0.25), col = "grey80")
-)
-segments(49, bday_match_size[50], 49, 0)
-
-at <- pretty(2:90)
-mtext(side = 1, text = at, at = at,
-      col = "grey20", line = 1, cex = 0.9)
-at = pretty(bday_match_size)
-mtext(side = 2, text = at, at = at, col = "grey20", line = 1, cex = 0.9)
-
-```
-::::
-
-How this counter-intuitive statistical “paradox” relates to satellite collisions, DNA evidence and other coincidences
-
-The source of confusion within the Birthday Paradox is that the probability grows relative to the number of possible pairings of people, not just the group’s size. The number of pairings grows with respect to the square of the number of participants, such that a group of 23 people contains 253 (23 x 22 / 2) unique pairs of people.
-
-In each of these pairings, there is a 364/365 chance of having different birthdays, but this needs to happen for every pair for there to be no matching birthdays across the entire group. Therefore the probability of two people having the same birthday in a group of 23 is:
-
-
-<!-- Go to richard McElreath's garden of forking paths next  -->
 
 
 

@@ -1,0 +1,430 @@
+---
+title: "Introduction to simulation in R"
+subtitle: "Birthday problem"
+author:
+  - name: Mihai Bizovi
+    id: mb
+    degrees: 
+    - "VP of Decision Science"
+format:
+  html:
+    toc-location: left
+lang: en
+execute:
+  freeze: false
+  cache: true
+---
+
+In the introduction, I tried to convince you that simulation can be used to understand fundamental concepts in probability and statistics in order to appreciate their practical relevance. By implementing the stories, toy examples, and case-studies in code, we will bridge the gap between theory and practice. Hopefully, this will help you gain confidence and get over the fear of mathematical abstraction in probability and hone your programming skills for data analysis. ^[If you were traumatized by C and C++ programming, worry not, R is an easy and pleasant language which will allow us to focus on the problem and less on low-level technicalities]
+
+> “What I cannot build, I do not understand” - Richard Feynman
+
+When having trouble understanding something, do not despair and remember this quote from the great physicist. Do not resort under any circumstance to rote memorization,^[When you encounter a problem, stop and think first. Do not try to guess, remember or recall the answer, but work through the logic of solving it] as you will forget it in a few weeks, but instead think like an engineer. Once you build it by yourself, you will understand how a method works and can do it again in the future. At last, I want to tell you two important lessons from Patrick Winston's talk at MIT, "How to speak": 
+
+- The quality of your idea and solution is a function of knowledge, practice, and talent; where talent is the least important -- $f(\mathbb{K}, \mathbf{P}, T)$
+- Your success will be largely determined by your ability to speak, write, and the quality of your ideas -- $g(S, W, Q)$
+
+It might sound obvious, but we practice in a very specific way – with your reference book(s), code editor, and pen / paper at all times. Learn actively, by doing and problem solving, by testing yourself, by trying to come up with your own examples. We cannot afford to rush and take shortcuts when studying mathematics and computer science.^[It is so easy to fool ourselfs that we understood something by just reproducing it or taking notes]
+
+> Read, pause, think, pause, write, pause, (perhaps erase), pause, read, pause, (perhaps go back), pause, write, … - A. Turing, 1936
+
+
+## The Birthday Problem
+
+This classic probability problem about matching and coincidences will remind you of a few important ideas in combinatorics and will teach you some of the most important elements of R programming.
+
+<!-- As a warm-up, try working out through the following problem, sometimes called "The Birthday Paradox". If outcome space, complementarity, *sampling with replacement*, *pigenhole principle* or the simulation code you're seeing seem puzzling, you might benefit from a refresher on probability theory. If you haven't seen this problem before, you will probably find the results surprising. -->
+
+What is the probability that in a room of $n=35$ people, at least two have their birthday on the same day of year? We will assume that every day is equally likely, ignore leap year ($k = 365$), there are no twins (observations are independent with respect to birthday date).
+
+::: {.callout-note}
+## Let's check your intuitions
+
+Find a colleague near you, discuss for two minutes how many people you need in a room so that the probability of any two people having a matching birthday is close to 0.5. 
+
+Then, the other way around, for $n = 35$, what is the probability of a matching birthday? In what range is your answer? Raise your hand for the appropriate bucket. Abstain if you know the exact answer from before.^[It's important to realize that knowing the answer is not important, but the reasoning behind it] 
+
+$$[0, 0.2), [0.20, 0.4), [0.4, 0.6), [0.6, 0.8), [0.8, 1]$$
+
+Then, answer how appropriate are the **assumptions** we're making -- is it good enough for an approximation?
+
+At last, think of **boundary conditions**: what is the probability for 365 and 400 people? Can you figure out the answer for 2 people?
+:::
+
+We solve this problem via simulation first and will check our answers versus the analytical solution. This is an important lesson -- when you're stuck on a problem, it's a good idea to simulate it first and find the numerical answers, which will give us ideas about how to solve it mathematically. In reality, we need both, as a careful mathematical analysis will result in more insights about the properties of a problem or construct and will show us how to generalize to more complicated cases.
+
+::: {.callout-note}
+## Surprising applications
+
+Sometimes, a simple problem like this can have surprising applications and provide valuable insights / tools in different, totally unrelated domains. 
+
+The birthday "paradox" is the simplest way to compute probability of coincidences. This is useful in cryptography (where matching hashes are a bad thing), satellite collisions with space junk, false DNA / genomic matches. A related problem is about partitions, where you try to balance weights on two scales -- which is relevant in matchmaking systems, for example, in games like Dota2.
+
+Similarly, simple urn models resulting from basic combinatorics and probability, were successfully applied by physicists like Bose, Einstein, Fermi, Botzmann to describe the large-scale behavior of different particles and physical phenomena. This is the power and elegance of choosing the right model for the right task.
+
+:::
+
+### Simulation in base R
+
+Without further ado, let's simulate and solve the problem in the simplest possible way. Consult with your professor about how to arrive at this solution step-by-step. We will use the `replicate` function a lot in this course. I suggest you learn about vectorized operations like `sapply` or `purrr::map` as an elegant and performant way to replace for loops.
+
+
+```{r sim-base-r}
+set.seed(15317)  # has to be a larger odd number. why?
+nr_people <- 35  # even integers and floats are vectors of size one!
+
+simulate_birthdays <- function(nr_people, nr_sim = 10000) {
+	birthday_events <- replicate(n = nr_sim, {
+		birthdays <- sample(x = 1:365, size = nr_people, replace = TRUE)
+		anyDuplicated(birthdays) > 0  # returns for each sim
+	})
+	mean(birthday_events)  # this returns implicitly!
+}
+
+pr_same_bday <- simulate_birthdays(nr_people)
+bday_match_size <- sapply(2:90, simulate_birthdays, nr_sim = 10000)
+```
+
+::: {.column-margin}
+This little example teaches you about data types, random number generation, variable assignment, functions and their arguments, implicit returns, sampling with replacement, iteration without using for lops, operations and applying functions on vectors.
+
+:::
+
+A quick check of the result shows that the probability of n = `r nr_people` people having a matching birthday is `r round(pr_same_bday, 2)`. Is this close to your intuitive answer? Now, let's visualize the results for a range of relevant n's. How would you expect the curve to look like?
+
+```{r}
+#| output: true
+#| warning: false
+#| code-fold: true
+#| code-summary: Show the visualization code
+#| fig-cap: "It takes a lot of effort to make a nice visualization in base R. This is why we will switch very soon to the tidyverse and ggplot grammar of graphics"
+
+plot(
+    x = 2:90, y = bday_match_size, 
+    type = "l", lty = 1, lwd = 5,
+    xlab = "number of people", ylab = "probability",
+    main = "Probability of matching birthdays",
+    xlim = c(0, 80), ylim = c(0, 1), # Limits
+    panel.first = abline(h = seq(0, 1, 0.2), col = "grey80")
+)
+segments(
+    x0 = nr_people, y0 = bday_match_size[nr_people - 1], 
+    x1 = nr_people, y1 = 0, 
+    lty = "dashed"
+)
+segments(
+    x0 = 2, y0 = bday_match_size[nr_people - 1], 
+    x1 = nr_people, y1 = bday_match_size[nr_people - 1], 
+    lty = "dashed"
+)
+```
+
+::: {.column-margin}
+Try to keep the visualization as simple as possible. Don't get lost into all the graphical parameters at the beginning, it will take time and practice to make beautiful graphs
+
+:::
+
+One reason for this counterintuitive result is that probability grows relative to the number of possible pairings of people, not just the group’s size. For a group of 23, we'll have $23 \cdot 22 / 2 = 253$  unique pairs of people. As in other applications of probability, having an intuition helps, but we can't afford to be clever -- we'll get to the correct answer only by ruthless application of the rules of probability.
+
+
+
+### Analytical solution
+
+::: {.column-margin}
+Joseph K. Blitzstein, Jessica Hwang - Introduction to probability, 2nd ed, 2019. (pg. 19-20) 
+
+:::
+
+By the multiplication rule, there are $365^n$ ways to assign birthdays to the people in the room (sampling with replacement). First, you have to recognize that it is unfeasible to solve this problem directly via the inclusion-exclusion principle. Therefore, a useful trick in many problems is to focus on the complement: $P(A) = 1 - P(A^C)$
+
+Counting the number of ways in which we can assign birthdays to n people so that they don't share a birthday is equivalent to sampling without replacement. Think of the metaphor of putting k flags on n poles. ^[You might know the numerator as "Aranjamente", but I like the idea of falling factorial and just remembering that we speak of ordered sampling without replacement]
+
+$$
+\mathbb{P}(A^C) = \frac{365 \cdot 364 \cdot ... \cdot (365 - n + 1)}{365^n} 
+$$
+
+In the original formulation of the problem, the question is how many people do we need for the probability to be close to 0.5. Let's compute the analytical solution, visualize it, and use a simple base R mechanism for selecting / filtering the rows of interest.
+
+
+```{r analytical-solution}
+#| warning: false
+n_grid <- seq(2, 70, by = 1)  # alternative to 2:70
+
+# notice the anonymous function notation \(x) 
+prob <- sapply(n_grid, \(x) 1 - prod(366 - 1:x) / 365^x)
+sim  <- data.frame(nr_people = n_grid, prob = prob)
+
+sim["diff"] <- abs(0.5 - sim$prob)
+prob_half   <- sim[which.min(sim$diff), ]
+prob_half
+```
+
+Ignore the code for the following visualization, as it is unnecessarily complicated -- I'm just showing off. ^[treat it as a documentation of the things that can be customized in base R plots] By this, I want to emphasize that a persuasive visualization is a very important practical skill and that it's not easy to do in base R. So, in order not to suffer and achieve the same result much easier, we will have to use tidyverse and ggplot.
+
+
+```{r plotting}
+#| code-fold: true
+#| code-summary: Show the visualization code
+
+par(# mar = c(3, 3, 3, 3),  # Dist' from plot to side of page
+    mgp = c(3, 1, 0),       # Dist' plot to label
+    las = 1,                # Rotate y-axis text
+    tck = -.01,             # Reduce tick length
+    xaxs = "i", yaxs = "i"  # Remove plot padding
+) 
+
+plot(
+    x = sim$nr_people, y = sim$prob, type = "l", 
+    ylab = "probability", xlab = "number of people", lwd=3,
+    main = paste0(
+        "Only ", prob_half$nr_people, " people for a ", 
+        round(prob_half$prob * 100, 1), "% chance of matching bday"
+    ),
+    axes = FALSE, # Don't plot the axes
+	frame.plot = FALSE, # Remove the frame
+	xlim = c(0, 70), ylim = c(0, 1), # Limits
+	panel.first = abline(h = seq(0, 1, 0.25), col = "grey80")
+)
+
+segments(
+    x0 = prob_half$nr_people, y0 = 0, 
+    x1 = prob_half$nr_people, y1 = prob_half$prob,
+    lty="dashed"
+)
+segments(
+    x0 = 0, y0 = prob_half$prob, 
+    x1 = prob_half$nr_people, y1 = prob_half$prob, 
+    lty="dashed"
+)
+at <- pretty(sim$nr_people)
+axis(side = 1, at = at, col = "grey40", line = 1, cex = 0.7)
+at <- seq(0, 1, 0.25)
+mtext(side = 2, text = at, at = at, col = "grey40", line = 1, cex = 0.9)
+```
+
+
+
+### Simulation with tidyverse
+
+Finally, let's see another way of solving the same problem using the tidyverse. It takes some time to get used to the pipelines and working within data frames, but it is a much nicer way of working in R. It almost looks like SQL in its semantics.^[I highly recommend Hadley Wickham's [R for Data Science](https://r4ds.hadley.nz/) free and open-source book. It will take a week or so of intensive study to go through it, but you can benefit a decade ahead from the very practical skills you will acquire.]
+
+```{r sim-tidy}
+#| output: true
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(glue)
+
+sim_tidy <- tidyr::crossing(
+        people = seq(2, 70, by=1), 
+        trial  = 1:10000,
+    ) |>
+    dplyr::mutate(
+        birthday = purrr::map(people, \(x) sample(365, x, replace = TRUE)), 
+        multiple = purrr::map_lgl(birthday, \(x) any(duplicated(x)))
+    ) |>
+    dplyr::group_by(people) |>
+    dplyr::summarise(chance = mean(multiple)) |>
+    dplyr::mutate(analytical_solution = 
+        purrr::map_dbl(people, \(x) 1 - prod(366 - 1:x) / 365^x)
+    )
+
+prob_half_tidy <- sim_tidy |> mutate(diff = abs(0.5 - analytical_solution)) |>
+    arrange(diff) |>
+    head(1)
+prob_half_ppl <- prob_half_tidy |> pull(people)
+prob_half_tidy
+```
+
+```{r}
+#| warning: false
+#| message: false
+#| fig-cap: "Notice how we got a visualization of a similar quality with much less code"
+
+ggplot(sim_tidy) +
+    geom_line(aes(people, chance)) +
+    geom_line(aes(people, analytical_solution), lty="dashed", color = "darkred") + 
+    scale_y_continuous(labels = scales::percent_format()) +
+    labs(
+        title = glue("Only {prob_half_ppl} people for a 50% chance of matching bday"),
+        subtitle = "Analytical vs simulated solution",
+        y = "probability", x = "number of people"
+    ) + 
+    theme_minimal()
+```
+
+
+
+<!-- ## Showing up to a safari trip -->
+
+
+<!-- ```{r load-packages} -->
+<!-- #| warning: false -->
+
+<!-- library(tidyverse) -->
+<!-- library(viridisLite) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- set.seed(13131) -->
+
+<!-- prevalence_couples <- 0.6 -->
+<!-- prob_couple <- 0.6 + 0.4 * 0.6  # (1 - (1 - 0.6)**2) -->
+<!-- prob_showup <- 0.85 -->
+
+<!-- # validate final proportion of couples and individuals -->
+<!-- replicate(n = 10000, { -->
+<!--     first <- ifelse(rbinom(1, 1, prevalence_couples) == 1, "CC", "I") -->
+<!--     second <- ifelse(first == "CC", "",  -->
+<!--         ifelse(rbinom(1, 1, prevalence_couples) == 1, "CC", "I")) -->
+<!--     third <- ifelse(second == "I", "I", "") -->
+<!--     paste0(first, second, third) -->
+<!-- }) |> grepl(pattern = "C") |> table() / 10000 -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- simulate_customers <- function( -->
+<!--     prevalence_couples = 0.6, -->
+<!--     prob_showup = 0.85, -->
+<!--     nr_sim = 10000 -->
+<!-- ) { -->
+<!--     prob_couple <- prevalence_couples +  -->
+<!--         (1 - prevalence_couples) * prevalence_couples -->
+
+<!--     replicate(n = nr_sim, { -->
+<!--         has_couple <- rbinom(1, 1, prob_couple) -->
+<!--         y_ind <- rbinom(1, 3 - 2*has_couple, prob_showup) -->
+<!--         y_mix <- has_couple * 2 * rbinom(1, 1, prob_showup^2) -->
+<!--         y_ind + y_mix -->
+<!--     }) |> table() / nr_sim -->
+<!-- } -->
+
+<!-- simulate_customers() -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- tibble( -->
+<!--     prevalence_couples = seq(0, 1, 0.01), -->
+<!--     prob_couple = prevalence_couples + (1 - prevalence_couples) * prevalence_couples -->
+<!-- ) |>  -->
+<!--     ggplot(aes(x = prevalence_couples, y = prob_couple)) +  -->
+<!--     geom_line() +  -->
+<!--     labs(x = "Prevalence of couples", y = "Probability couple makes reservation") +  -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+
+
+<!-- ```{r} -->
+<!-- nr_sim <- 10000 -->
+<!-- tibble( -->
+<!--     has_couple = rbinom(nr_sim, 1, prob_couple), -->
+<!--     nr_individ = 3 - 2*has_couple, -->
+<!--     y_ind = purrr::map_int(nr_individ, \(x) rbinom(1, x, prob_showup)), -->
+<!--     y = y_ind + has_couple * 2 * purrr::map_int(has_couple, \(x) rbinom(1, 1, prob_showup^2)), -->
+<!--     model = "mixed" -->
+<!-- ) |>  -->
+<!--     select(y, model) |> -->
+<!--     rbind(tibble( -->
+<!--         y = rbinom(nr_sim, 3, prob_showup), -->
+<!--         model = "binom" -->
+<!--     )) |> -->
+<!--     group_by(model) |> -->
+<!--     count(y) |> -->
+<!--     mutate(prob = n / sum(n)) |> -->
+<!--     ggplot(aes(x = y, y = prob, fill = model)) +  -->
+<!--     geom_col(position = "dodge") +  -->
+<!--     labs(x = "Number of people showing up", y = "Proportion") + -->
+<!--     scale_fill_viridis_d(option = "E") +  -->
+<!--     scale_y_continuous(labels = scales::percent_format()) +  -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- set.seed(11131) -->
+
+<!-- prob_grid <- seq(0, 1, 0.02) -->
+<!-- sapply( -->
+<!--     prob_grid,  -->
+<!--     FUN = \(x) simulate_customers(prevalence_couples = x, prob_showup = 0.85, nr_sim = nr_sim) -->
+<!-- ) |> t() |> data.frame() |> tibble() |> -->
+<!--     mutate( -->
+<!--         prevalence = prob_grid, -->
+<!--         expect = 0 * X0 + 1 * X1 + 2 * X2 + 3 * X3, -->
+<!--         variance = (0^2*X0 + 1^2*X1 + 2^2*X2 + 3^2*X3) - expect ^2, -->
+<!--         loss_due_couples = expect - max(expect), -->
+<!--         loss_upper = loss_due_couples + 2 * sqrt(variance / nr_sim), -->
+<!--         loss_lower = loss_due_couples - 2 * sqrt(variance / nr_sim) -->
+<!--     ) |> -->
+<!--     ggplot(aes(x = prevalence, y = loss_due_couples)) +  -->
+<!--     geom_point(color = "darkred") + -->
+<!--     geom_segment(aes( -->
+<!--         y = loss_lower, yend = loss_upper,  -->
+<!--         x = prevalence, xend = prevalence -->
+<!--     )) + -->
+<!--     labs(x = "Prevalence of couples", y = "Expected loss w.r.t. independece") +  -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+
+
+<!-- ## Law of large numbers -->
+
+<!-- ```{r} -->
+<!-- set.seed(137) # careful when setting seed to even number -->
+<!-- nr_sim_pois <- 100000 -->
+<!-- lln_pois <- replicate(n = 3, { -->
+<!--     pois_sim <- rpois(nr_sim_pois, 4.5) -->
+<!--     seq(10, nr_sim_pois, 30) |>  -->
+<!--     sapply(\(x) pois_sim[1:x] |> mean()) -->
+<!-- }) |> data.frame() |> tibble() -->
+
+<!-- lln_pois |> -->
+<!--     mutate(nr_samples = 10 + row_number() * 30) |>  -->
+<!--     pivot_longer(cols = c("X1", "X2", "X3")) |>  -->
+<!--     mutate(name = case_when( -->
+<!--         name == "X1" ~ "sim. 1", -->
+<!--         name == "X2" ~ "sim. 2", -->
+<!--         name == "X3" ~ "sim. 3" -->
+<!--     )) |> -->
+<!--     filter(nr_samples > 60 & nr_samples < 20000) |> -->
+<!--     ggplot(aes(x = nr_samples, y = value, col = name)) +  -->
+<!--     geom_line() +  -->
+<!--     geom_hline(yintercept = 4.5, lty = "dashed") +  -->
+<!--     scale_color_viridis_d() + -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- lln_pois |> -->
+<!--     mutate(nr_samples = 10 + (row_number() - 1) * 30) |>  -->
+<!--     filter(nr_samples >= 10 & nr_samples < 10000) |> -->
+<!--     mutate(theoretical = sqrt(4.5) / sqrt(nr_samples)) |> -->
+<!--     pivot_longer(cols = c("X1", "X2", "X3")) |>  -->
+<!--     mutate(name = case_when( -->
+<!--         name == "X1" ~ "sim. 1", -->
+<!--         name == "X2" ~ "sim. 2", -->
+<!--         name == "X3" ~ "sim. 3", -->
+<!--     )) |> -->
+<!--     mutate(sq_err = (value - 4.55)^2) |> -->
+<!--     group_by(nr_samples) |> summarise(sq_err = mean(sq_err), theoretical = mean(theoretical)) |> -->
+<!--     ggplot(aes(x = nr_samples, y = sq_err)) +  -->
+<!--     geom_line() +  -->
+<!--     geom_line(aes(x = nr_samples, y = theoretical), lty="dashed", col="darkred") + -->
+<!--     scale_color_viridis_d() + -->
+<!--     labs(x = "Sample size", y = "Squared error") + -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+
+## Homework and study resources 
+
+The homework in this course has reading and coding assignments. Your readings will mostly be stories, case-studies, and papers published in academic journals -- there won't be much theory.
+
+- [Introduction and background](1L_bday_problem.qmd). Understand why simulation and numerical methods are important and how this class fits in a larger context of decision science. *~30min* 
+- [Why did you study all of that?](/01_fundamentals/prerequisites.qmd) You will find an explanation of how the subjects you studied before are helpful in practice and what are their main idea. *~15min* 
+- Read this short explanation on the [differences between probability and statistics](https://johnkerl.org/doc/prbstat/prbstat.html) *~5min*
+- Watch this [video](https://www.youtube.com/watch?v=1vvBzopXI80) of Santosh S. Venkatesh showing the vast array of practical applications of probability theory *~5min*
+
+Besides this one hour of light readings, you should spend some time to install R, RStudio, learn how to run commands, where to look for output, documentation, and errors; how to create and save a script, how to install packages, load them and check if they installed successfully. ^[Optional! You can attempt to generalize the birthday paradox to an arbitrary k and 3 or 4 matches. You can check out this [post](https://blogs.sas.com/content/iml/2023/10/23/generalized-birthday-problem.html) in SAS, but think for yourself how would you implement it in R]
+
+In order to make sure you're comfortable with RStudio, try to reproduce the analysis of the 2022 Australian  elections, in [section 2.2](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html#australian-elections) of "Telling stories with data". You will not understand what each line of code does, but will get a sense of what we will do for the remainder of the course. 
+

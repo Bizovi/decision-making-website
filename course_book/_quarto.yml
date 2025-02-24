@@ -87,6 +87,8 @@ website:
         contents:
         - href: sim/1_intro.qmd
           text: "1. Introduction"
+        - href: sim/1L_bday_problem.qmd
+          text: "1L. Birthday problem"
 
 
   page-navigation: true
