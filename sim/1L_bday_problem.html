@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mihai Bizovi">
+
+<title>Introduction to simulation in R – Decision Science Course</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../sim/1_intro.html" rel="prev">
+<link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d5a2d58599beb33ca06a0ee848de3e43.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d5a2d58599beb33ca06a0ee848de3e43.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a5c78d07eefccdbc98157339462acdc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ff0192b0d945743089706b6580115b90.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Introduction to simulation in R – Decision Science Course">
+<meta property="og:description" content="Birthday problem">
+<meta property="og:image" content="https://course.economic-cybernetics.com/sim/1L_bday_problem_files/figure-html/unnamed-chunk-1-1.png">
+<meta property="og:site_name" content="Pragmatic Data Science">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Decision Science Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../01_fundamentals/0_study_guide.html" aria-current="page"> 
+<span class="menu-text">| 1. Business |</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../01_fundamentals/prob_study_guide.html"> 
+<span class="menu-text">| 2. Stats |</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../references.html"> 
+<span class="menu-text">| 3. Bayes |</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mihaibizovi.com/"> <i class="bi bi-journal-bookmark" role="img">
+</i> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/1L_bday_problem.html">1L. Birthday problem</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">i. Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ii. Course philosophy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sci_process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">iii. On scientific process</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">iv. Why study all of that?</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Business School and Methodology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus &amp; Study Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule &amp; Roadmap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/1_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Application Domains &amp; Use-Cases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/2_performance_strategy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Performance and Strategy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. What is AI and Cybernetics?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/4_ml_stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Analytics, ML, Stats</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus &amp; Study Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../roadmap_prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule &amp; Roadmap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. The Probability Triple</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Applied Bayesian Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus &amp; Study Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../roadmap_bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule &amp; Roadmap</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">~ Simulation of economic processes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/1L_bday_problem.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">1L. Birthday problem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-birthday-problem" id="toc-the-birthday-problem" class="nav-link active" data-scroll-target="#the-birthday-problem">The Birthday Problem</a>
+  <ul class="collapse">
+  <li><a href="#simulation-in-base-r" id="toc-simulation-in-base-r" class="nav-link" data-scroll-target="#simulation-in-base-r">Simulation in base R</a></li>
+  <li><a href="#analytical-solution" id="toc-analytical-solution" class="nav-link" data-scroll-target="#analytical-solution">Analytical solution</a></li>
+  <li><a href="#simulation-with-tidyverse" id="toc-simulation-with-tidyverse" class="nav-link" data-scroll-target="#simulation-with-tidyverse">Simulation with tidyverse</a></li>
+  </ul></li>
+  <li><a href="#homework-and-study-resources" id="toc-homework-and-study-resources" class="nav-link" data-scroll-target="#homework-and-study-resources">Homework and study resources</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/1L_bday_problem.html">1L. Birthday problem</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Introduction to simulation in R</h1>
+<p class="subtitle lead">Birthday problem</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mihai Bizovi, VP of Decision Science </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In the introduction, I tried to convince you that simulation can be used to understand fundamental concepts in probability and statistics in order to appreciate their practical relevance. By implementing the stories, toy examples, and case-studies in code, we will bridge the gap between theory and practice. Hopefully, this will help you gain confidence and get over the fear of mathematical abstraction in probability and hone your programming skills for data analysis. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;If you were traumatized by C and C++ programming, worry not, R is an easy and pleasant language which will allow us to focus on the problem and less on low-level technicalities</p></div></div><blockquote class="blockquote">
+<p>“What I cannot build, I do not understand” - Richard Feynman</p>
+</blockquote>
+<p>When having trouble understanding something, do not despair and remember this quote from the great physicist. Do not resort under any circumstance to rote memorization,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> as you will forget it in a few weeks, but instead think like an engineer. Once you build it by yourself, you will understand how a method works and can do it again in the future. At last, I want to tell you two important lessons from Patrick Winston’s talk at MIT, “How to speak”:</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;When you encounter a problem, stop and think first. Do not try to guess, remember or recall the answer, but work through the logic of solving it</p></div></div><ul>
+<li>The quality of your idea and solution is a function of knowledge, practice, and talent; where talent is the least important – <span class="math inline">\(f(\mathbb{K}, \mathbf{P}, T)\)</span></li>
+<li>Your success will be largely determined by your ability to speak, write, and the quality of your ideas – <span class="math inline">\(g(S, W, Q)\)</span></li>
+</ul>
+<p>It might sound obvious, but we practice in a very specific way – with your reference book(s), code editor, and pen / paper at all times. Learn actively, by doing and problem solving, by testing yourself, by trying to come up with your own examples. We cannot afford to rush and take shortcuts when studying mathematics and computer science.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;It is so easy to fool ourselfs that we understood something by just reproducing it or taking notes</p></div></div><blockquote class="blockquote">
+<p>Read, pause, think, pause, write, pause, (perhaps erase), pause, read, pause, (perhaps go back), pause, write, … - A. Turing, 1936</p>
+</blockquote>
+<section id="the-birthday-problem" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-birthday-problem">The Birthday Problem</h2>
+<p>This classic probability problem about matching and coincidences will remind you of a few important ideas in combinatorics and will teach you some of the most important elements of R programming.</p>
+<!-- As a warm-up, try working out through the following problem, sometimes called "The Birthday Paradox". If outcome space, complementarity, *sampling with replacement*, *pigenhole principle* or the simulation code you're seeing seem puzzling, you might benefit from a refresher on probability theory. If you haven't seen this problem before, you will probably find the results surprising. -->
+<p>What is the probability that in a room of <span class="math inline">\(n=35\)</span> people, at least two have their birthday on the same day of year? We will assume that every day is equally likely, ignore leap year (<span class="math inline">\(k = 365\)</span>), there are no twins (observations are independent with respect to birthday date).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Let’s check your intuitions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find a colleague near you, discuss for two minutes how many people you need in a room so that the probability of any two people having a matching birthday is close to 0.5.</p>
+<p>Then, the other way around, for <span class="math inline">\(n = 35\)</span>, what is the probability of a matching birthday? In what range is your answer? Raise your hand for the appropriate bucket. Abstain if you know the exact answer from before.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p><span class="math display">\[[0, 0.2), [0.20, 0.4), [0.4, 0.6), [0.6, 0.8), [0.8, 1]\]</span></p>
+<p>Then, answer how appropriate are the <strong>assumptions</strong> we’re making – is it good enough for an approximation?</p>
+<p>At last, think of <strong>boundary conditions</strong>: what is the probability for 365 and 400 people? Can you figure out the answer for 2 people?</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;It’s important to realize that knowing the answer is not important, but the reasoning behind it</p></div></div><p>We solve this problem via simulation first and will check our answers versus the analytical solution. This is an important lesson – when you’re stuck on a problem, it’s a good idea to simulate it first and find the numerical answers, which will give us ideas about how to solve it mathematically. In reality, we need both, as a careful mathematical analysis will result in more insights about the properties of a problem or construct and will show us how to generalize to more complicated cases.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Surprising applications
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sometimes, a simple problem like this can have surprising applications and provide valuable insights / tools in different, totally unrelated domains.</p>
+<p>The birthday “paradox” is the simplest way to compute probability of coincidences. This is useful in cryptography (where matching hashes are a bad thing), satellite collisions with space junk, false DNA / genomic matches. A related problem is about partitions, where you try to balance weights on two scales – which is relevant in matchmaking systems, for example, in games like Dota2.</p>
+<p>Similarly, simple urn models resulting from basic combinatorics and probability, were successfully applied by physicists like Bose, Einstein, Fermi, Botzmann to describe the large-scale behavior of different particles and physical phenomena. This is the power and elegance of choosing the right model for the right task.</p>
+</div>
+</div>
+<section id="simulation-in-base-r" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="simulation-in-base-r">Simulation in base R</h3>
+<p>Without further ado, let’s simulate and solve the problem in the simplest possible way. Consult with your professor about how to arrive at this solution step-by-step. We will use the <code>replicate</code> function a lot in this course. I suggest you learn about vectorized operations like <code>sapply</code> or <code>purrr::map</code> as an elegant and performant way to replace for loops.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15317</span>)  <span class="co"># has to be a larger odd number. why?</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nr_people <span class="ot">&lt;-</span> <span class="dv">35</span>  <span class="co"># even integers and floats are vectors of size one!</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>simulate_birthdays <span class="ot">&lt;-</span> <span class="cf">function</span>(nr_people, <span class="at">nr_sim =</span> <span class="dv">10000</span>) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    birthday_events <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="at">n =</span> nr_sim, {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        birthdays <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, <span class="at">size =</span> nr_people, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">anyDuplicated</span>(birthdays) <span class="sc">&gt;</span> <span class="dv">0</span>  <span class="co"># returns for each sim</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>(birthday_events)  <span class="co"># this returns implicitly!</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>pr_same_bday <span class="ot">&lt;-</span> <span class="fu">simulate_birthdays</span>(nr_people)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>bday_match_size <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">90</span>, simulate_birthdays, <span class="at">nr_sim =</span> <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This little example teaches you about data types, random number generation, variable assignment, functions and their arguments, implicit returns, sampling with replacement, iteration without using for lops, operations and applying functions on vectors.</p>
+</div></div><p>A quick check of the result shows that the probability of n = 35 people having a matching birthday is 0.81. Is this close to your intuitive answer? Now, let’s visualize the results for a range of relevant n’s. How would you expect the curve to look like?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the visualization code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">90</span>, <span class="at">y =</span> bday_match_size, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">5</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"number of people"</span>, <span class="at">ylab =</span> <span class="st">"probability"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">"Probability of matching birthdays"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="co"># Limits</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.first =</span> <span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="at">col =</span> <span class="st">"grey80"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x0 =</span> nr_people, <span class="at">y0 =</span> bday_match_size[nr_people <span class="sc">-</span> <span class="dv">1</span>], </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x1 =</span> nr_people, <span class="at">y1 =</span> <span class="dv">0</span>, </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="st">"dashed"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x0 =</span> <span class="dv">2</span>, <span class="at">y0 =</span> bday_match_size[nr_people <span class="sc">-</span> <span class="dv">1</span>], </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x1 =</span> nr_people, <span class="at">y1 =</span> bday_match_size[nr_people <span class="sc">-</span> <span class="dv">1</span>], </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="st">"dashed"</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="1L_bday_problem_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>It takes a lot of effort to make a nice visualization in base R. This is why we will switch very soon to the tidyverse and ggplot grammar of graphics</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Try to keep the visualization as simple as possible. Don’t get lost into all the graphical parameters at the beginning, it will take time and practice to make beautiful graphs</p>
+</div></div><p>One reason for this counterintuitive result is that probability grows relative to the number of possible pairings of people, not just the group’s size. For a group of 23, we’ll have <span class="math inline">\(23 \cdot 22 / 2 = 253\)</span> unique pairs of people. As in other applications of probability, having an intuition helps, but we can’t afford to be clever – we’ll get to the correct answer only by ruthless application of the rules of probability.</p>
+</section>
+<section id="analytical-solution" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="analytical-solution">Analytical solution</h3>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Joseph K. Blitzstein, Jessica Hwang - Introduction to probability, 2nd ed, 2019. (pg. 19-20)</p>
+</div></div><p>By the multiplication rule, there are <span class="math inline">\(365^n\)</span> ways to assign birthdays to the people in the room (sampling with replacement). First, you have to recognize that it is unfeasible to solve this problem directly via the inclusion-exclusion principle. Therefore, a useful trick in many problems is to focus on the complement: <span class="math inline">\(P(A) = 1 - P(A^C)\)</span></p>
+<p>Counting the number of ways in which we can assign birthdays to n people so that they don’t share a birthday is equivalent to sampling without replacement. Think of the metaphor of putting k flags on n poles. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;You might know the numerator as “Aranjamente”, but I like the idea of falling factorial and just remembering that we speak of ordered sampling without replacement</p></div></div><p><span class="math display">\[
+\mathbb{P}(A^C) = \frac{365 \cdot 364 \cdot ... \cdot (365 - n + 1)}{365^n}
+\]</span></p>
+<p>In the original formulation of the problem, the question is how many people do we need for the probability to be close to 0.5. Let’s compute the analytical solution, visualize it, and use a simple base R mechanism for selecting / filtering the rows of interest.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span>, <span class="dv">70</span>, <span class="at">by =</span> <span class="dv">1</span>)  <span class="co"># alternative to 2:70</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># notice the anonymous function notation \(x) </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">sapply</span>(n_grid, \(x) <span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>(<span class="dv">366</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">:</span>x) <span class="sc">/</span> <span class="dv">365</span><span class="sc">^</span>x)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sim  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nr_people =</span> n_grid, <span class="at">prob =</span> prob)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sim[<span class="st">"diff"</span>] <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fl">0.5</span> <span class="sc">-</span> sim<span class="sc">$</span>prob)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>prob_half   <span class="ot">&lt;-</span> sim[<span class="fu">which.min</span>(sim<span class="sc">$</span>diff), ]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>prob_half</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   nr_people      prob        diff
+22        23 0.5072972 0.007297234</code></pre>
+</div>
+</div>
+<p>Ignore the code for the following visualization, as it is unnecessarily complicated – I’m just showing off. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> By this, I want to emphasize that a persuasive visualization is a very important practical skill and that it’s not easy to do in base R. So, in order not to suffer and achieve the same result much easier, we will have to use tidyverse and ggplot.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;treat it as a documentation of the things that can be customized in base R plots</p></div></div><div class="cell">
+<details class="code-fold">
+<summary>Show the visualization code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="co"># mar = c(3, 3, 3, 3),  # Dist' from plot to side of page</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">mgp =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">0</span>),       <span class="co"># Dist' plot to label</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">las =</span> <span class="dv">1</span>,                <span class="co"># Rotate y-axis text</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">tck =</span> <span class="sc">-</span>.<span class="dv">01</span>,             <span class="co"># Reduce tick length</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxs =</span> <span class="st">"i"</span>, <span class="at">yaxs =</span> <span class="st">"i"</span>  <span class="co"># Remove plot padding</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> sim<span class="sc">$</span>nr_people, <span class="at">y =</span> sim<span class="sc">$</span>prob, <span class="at">type =</span> <span class="st">"l"</span>, </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">"probability"</span>, <span class="at">xlab =</span> <span class="st">"number of people"</span>, <span class="at">lwd=</span><span class="dv">3</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="fu">paste0</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Only "</span>, prob_half<span class="sc">$</span>nr_people, <span class="st">" people for a "</span>, </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">round</span>(prob_half<span class="sc">$</span>prob <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">"% chance of matching bday"</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="co"># Don't plot the axes</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">frame.plot =</span> <span class="cn">FALSE</span>, <span class="co"># Remove the frame</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="co"># Limits</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.first =</span> <span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>), <span class="at">col =</span> <span class="st">"grey80"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">x0 =</span> prob_half<span class="sc">$</span>nr_people, <span class="at">y0 =</span> <span class="dv">0</span>, </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x1 =</span> prob_half<span class="sc">$</span>nr_people, <span class="at">y1 =</span> prob_half<span class="sc">$</span>prob,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty=</span><span class="st">"dashed"</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">x0 =</span> <span class="dv">0</span>, <span class="at">y0 =</span> prob_half<span class="sc">$</span>prob, </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">x1 =</span> prob_half<span class="sc">$</span>nr_people, <span class="at">y1 =</span> prob_half<span class="sc">$</span>prob, </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty=</span><span class="st">"dashed"</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>at <span class="ot">&lt;-</span> <span class="fu">pretty</span>(sim<span class="sc">$</span>nr_people)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">at =</span> at, <span class="at">col =</span> <span class="st">"grey40"</span>, <span class="at">line =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.7</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>at <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="at">side =</span> <span class="dv">2</span>, <span class="at">text =</span> at, <span class="at">at =</span> at, <span class="at">col =</span> <span class="st">"grey40"</span>, <span class="at">line =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1L_bday_problem_files/figure-html/plotting-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="simulation-with-tidyverse" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="simulation-with-tidyverse">Simulation with tidyverse</h3>
+<p>Finally, let’s see another way of solving the same problem using the tidyverse. It takes some time to get used to the pipelines and working within data frames, but it is a much nicer way of working in R. It almost looks like SQL in its semantics.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;I highly recommend Hadley Wickham’s <a href="https://r4ds.hadley.nz/">R for Data Science</a> free and open-source book. It will take a week or so of intensive study to go through it, but you can benefit a decade ahead from the very practical skills you will acquire.</p></div></div><div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sim_tidy <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">crossing</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">people =</span> <span class="fu">seq</span>(<span class="dv">2</span>, <span class="dv">70</span>, <span class="at">by=</span><span class="dv">1</span>), </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">trial  =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">birthday =</span> purrr<span class="sc">::</span><span class="fu">map</span>(people, \(x) <span class="fu">sample</span>(<span class="dv">365</span>, x, <span class="at">replace =</span> <span class="cn">TRUE</span>)), </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">multiple =</span> purrr<span class="sc">::</span><span class="fu">map_lgl</span>(birthday, \(x) <span class="fu">any</span>(<span class="fu">duplicated</span>(x)))</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(people) <span class="sc">|&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">chance =</span> <span class="fu">mean</span>(multiple)) <span class="sc">|&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">analytical_solution =</span> </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        purrr<span class="sc">::</span><span class="fu">map_dbl</span>(people, \(x) <span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>(<span class="dv">366</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">:</span>x) <span class="sc">/</span> <span class="dv">365</span><span class="sc">^</span>x)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>prob_half_tidy <span class="ot">&lt;-</span> sim_tidy <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">diff =</span> <span class="fu">abs</span>(<span class="fl">0.5</span> <span class="sc">-</span> analytical_solution)) <span class="sc">|&gt;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(diff) <span class="sc">|&gt;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">1</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>prob_half_ppl <span class="ot">&lt;-</span> prob_half_tidy <span class="sc">|&gt;</span> <span class="fu">pull</span>(people)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>prob_half_tidy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  people chance analytical_solution    diff
+   &lt;dbl&gt;  &lt;dbl&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+1     23  0.518               0.507 0.00730</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sim_tidy) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(people, chance)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(people, analytical_solution), <span class="at">lty=</span><span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>()) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="fu">glue</span>(<span class="st">"Only {prob_half_ppl} people for a 50% chance of matching bday"</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"Analytical vs simulated solution"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"probability"</span>, <span class="at">x =</span> <span class="st">"number of people"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span> </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="1L_bday_problem_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Notice how we got a visualization of a similar quality with much less code</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- ## Showing up to a safari trip -->
+<!-- ```{r load-packages} -->
+<!-- #| warning: false -->
+<!-- library(tidyverse) -->
+<!-- library(viridisLite) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- set.seed(13131) -->
+<!-- prevalence_couples <- 0.6 -->
+<!-- prob_couple <- 0.6 + 0.4 * 0.6  # (1 - (1 - 0.6)**2) -->
+<!-- prob_showup <- 0.85 -->
+<!-- # validate final proportion of couples and individuals -->
+<!-- replicate(n = 10000, { -->
+<!--     first <- ifelse(rbinom(1, 1, prevalence_couples) == 1, "CC", "I") -->
+<!--     second <- ifelse(first == "CC", "",  -->
+<!--         ifelse(rbinom(1, 1, prevalence_couples) == 1, "CC", "I")) -->
+<!--     third <- ifelse(second == "I", "I", "") -->
+<!--     paste0(first, second, third) -->
+<!-- }) |> grepl(pattern = "C") |> table() / 10000 -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- simulate_customers <- function( -->
+<!--     prevalence_couples = 0.6, -->
+<!--     prob_showup = 0.85, -->
+<!--     nr_sim = 10000 -->
+<!-- ) { -->
+<!--     prob_couple <- prevalence_couples +  -->
+<!--         (1 - prevalence_couples) * prevalence_couples -->
+<!--     replicate(n = nr_sim, { -->
+<!--         has_couple <- rbinom(1, 1, prob_couple) -->
+<!--         y_ind <- rbinom(1, 3 - 2*has_couple, prob_showup) -->
+<!--         y_mix <- has_couple * 2 * rbinom(1, 1, prob_showup^2) -->
+<!--         y_ind + y_mix -->
+<!--     }) |> table() / nr_sim -->
+<!-- } -->
+<!-- simulate_customers() -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- tibble( -->
+<!--     prevalence_couples = seq(0, 1, 0.01), -->
+<!--     prob_couple = prevalence_couples + (1 - prevalence_couples) * prevalence_couples -->
+<!-- ) |>  -->
+<!--     ggplot(aes(x = prevalence_couples, y = prob_couple)) +  -->
+<!--     geom_line() +  -->
+<!--     labs(x = "Prevalence of couples", y = "Probability couple makes reservation") +  -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- nr_sim <- 10000 -->
+<!-- tibble( -->
+<!--     has_couple = rbinom(nr_sim, 1, prob_couple), -->
+<!--     nr_individ = 3 - 2*has_couple, -->
+<!--     y_ind = purrr::map_int(nr_individ, \(x) rbinom(1, x, prob_showup)), -->
+<!--     y = y_ind + has_couple * 2 * purrr::map_int(has_couple, \(x) rbinom(1, 1, prob_showup^2)), -->
+<!--     model = "mixed" -->
+<!-- ) |>  -->
+<!--     select(y, model) |> -->
+<!--     rbind(tibble( -->
+<!--         y = rbinom(nr_sim, 3, prob_showup), -->
+<!--         model = "binom" -->
+<!--     )) |> -->
+<!--     group_by(model) |> -->
+<!--     count(y) |> -->
+<!--     mutate(prob = n / sum(n)) |> -->
+<!--     ggplot(aes(x = y, y = prob, fill = model)) +  -->
+<!--     geom_col(position = "dodge") +  -->
+<!--     labs(x = "Number of people showing up", y = "Proportion") + -->
+<!--     scale_fill_viridis_d(option = "E") +  -->
+<!--     scale_y_continuous(labels = scales::percent_format()) +  -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- set.seed(11131) -->
+<!-- prob_grid <- seq(0, 1, 0.02) -->
+<!-- sapply( -->
+<!--     prob_grid,  -->
+<!--     FUN = \(x) simulate_customers(prevalence_couples = x, prob_showup = 0.85, nr_sim = nr_sim) -->
+<!-- ) |> t() |> data.frame() |> tibble() |> -->
+<!--     mutate( -->
+<!--         prevalence = prob_grid, -->
+<!--         expect = 0 * X0 + 1 * X1 + 2 * X2 + 3 * X3, -->
+<!--         variance = (0^2*X0 + 1^2*X1 + 2^2*X2 + 3^2*X3) - expect ^2, -->
+<!--         loss_due_couples = expect - max(expect), -->
+<!--         loss_upper = loss_due_couples + 2 * sqrt(variance / nr_sim), -->
+<!--         loss_lower = loss_due_couples - 2 * sqrt(variance / nr_sim) -->
+<!--     ) |> -->
+<!--     ggplot(aes(x = prevalence, y = loss_due_couples)) +  -->
+<!--     geom_point(color = "darkred") + -->
+<!--     geom_segment(aes( -->
+<!--         y = loss_lower, yend = loss_upper,  -->
+<!--         x = prevalence, xend = prevalence -->
+<!--     )) + -->
+<!--     labs(x = "Prevalence of couples", y = "Expected loss w.r.t. independece") +  -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+<!-- ## Law of large numbers -->
+<!-- ```{r} -->
+<!-- set.seed(137) # careful when setting seed to even number -->
+<!-- nr_sim_pois <- 100000 -->
+<!-- lln_pois <- replicate(n = 3, { -->
+<!--     pois_sim <- rpois(nr_sim_pois, 4.5) -->
+<!--     seq(10, nr_sim_pois, 30) |>  -->
+<!--     sapply(\(x) pois_sim[1:x] |> mean()) -->
+<!-- }) |> data.frame() |> tibble() -->
+<!-- lln_pois |> -->
+<!--     mutate(nr_samples = 10 + row_number() * 30) |>  -->
+<!--     pivot_longer(cols = c("X1", "X2", "X3")) |>  -->
+<!--     mutate(name = case_when( -->
+<!--         name == "X1" ~ "sim. 1", -->
+<!--         name == "X2" ~ "sim. 2", -->
+<!--         name == "X3" ~ "sim. 3" -->
+<!--     )) |> -->
+<!--     filter(nr_samples > 60 & nr_samples < 20000) |> -->
+<!--     ggplot(aes(x = nr_samples, y = value, col = name)) +  -->
+<!--     geom_line() +  -->
+<!--     geom_hline(yintercept = 4.5, lty = "dashed") +  -->
+<!--     scale_color_viridis_d() + -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- lln_pois |> -->
+<!--     mutate(nr_samples = 10 + (row_number() - 1) * 30) |>  -->
+<!--     filter(nr_samples >= 10 & nr_samples < 10000) |> -->
+<!--     mutate(theoretical = sqrt(4.5) / sqrt(nr_samples)) |> -->
+<!--     pivot_longer(cols = c("X1", "X2", "X3")) |>  -->
+<!--     mutate(name = case_when( -->
+<!--         name == "X1" ~ "sim. 1", -->
+<!--         name == "X2" ~ "sim. 2", -->
+<!--         name == "X3" ~ "sim. 3", -->
+<!--     )) |> -->
+<!--     mutate(sq_err = (value - 4.55)^2) |> -->
+<!--     group_by(nr_samples) |> summarise(sq_err = mean(sq_err), theoretical = mean(theoretical)) |> -->
+<!--     ggplot(aes(x = nr_samples, y = sq_err)) +  -->
+<!--     geom_line() +  -->
+<!--     geom_line(aes(x = nr_samples, y = theoretical), lty="dashed", col="darkred") + -->
+<!--     scale_color_viridis_d() + -->
+<!--     labs(x = "Sample size", y = "Squared error") + -->
+<!--     theme_minimal() -->
+<!-- ``` -->
+</section>
+</section>
+<section id="homework-and-study-resources" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="homework-and-study-resources">Homework and study resources</h2>
+<p>The homework in this course has reading and coding assignments. Your readings will mostly be stories, case-studies, and papers published in academic journals – there won’t be much theory.</p>
+<ul>
+<li><a href="../sim/1L_bday_problem.html">Introduction and background</a>. Understand why simulation and numerical methods are important and how this class fits in a larger context of decision science. <em>~30min</em></li>
+<li><a href="../01_fundamentals/prerequisites.html">Why did you study all of that?</a> You will find an explanation of how the subjects you studied before are helpful in practice and what are their main idea. <em>~15min</em></li>
+<li>Read this short explanation on the <a href="https://johnkerl.org/doc/prbstat/prbstat.html">differences between probability and statistics</a> <em>~5min</em></li>
+<li>Watch this <a href="https://www.youtube.com/watch?v=1vvBzopXI80">video</a> of Santosh S. Venkatesh showing the vast array of practical applications of probability theory <em>~5min</em></li>
+</ul>
+<p>Besides this one hour of light readings, you should spend some time to install R, RStudio, learn how to run commands, where to look for output, documentation, and errors; how to create and save a script, how to install packages, load them and check if they installed successfully. <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Optional! You can attempt to generalize the birthday paradox to an arbitrary k and 3 or 4 matches. You can check out this <a href="https://blogs.sas.com/content/iml/2023/10/23/generalized-birthday-problem.html">post</a> in SAS, but think for yourself how would you implement it in R</p></div></div><p>In order to make sure you’re comfortable with RStudio, try to reproduce the analysis of the 2022 Australian elections, in <a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html#australian-elections">section 2.2</a> of “Telling stories with data”. You will not understand what each line of code does, but will get a sense of what we will do for the remainder of the course.</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../sim/1_intro.html" class="pagination-link" aria-label="~ Simulation of economic processes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">~ Simulation of economic processes</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>The course I wish I had. Built with ❤️ by Mihai Bizovi</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
