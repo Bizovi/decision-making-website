@@ -12,90 +12,91 @@ format:
 lang: en
 ---
 
-<!-- 
-In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving **decision-making under uncertainty**. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.
+A well-rounded decision scientist should be fluent in the language of probability and statistics, easily go back and forth between a real-world problem and mathematical abstraction.^[In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent *stochastic nature*. ] Think how important is logic for maths, computer science, and philosophy. Similarly, probability theory is a formal language, the logic of uncertainty.
 
-> In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent *stochastic nature*. 
+Even though I emphasize the importance of studying through stories and simulations, there is one mathematical and quite abstract topic we can't afford to avoid. Formally, at the core of probability theory is the triple $(\Omega, \mathcal{F}, \mathbb{P})$ and we have to thank Andrey Kolmogorov for developing a solid axiomatic foundation. All the modern probability machinery we're using in practice is build on top of that.
 
-Data is just the appearance, an external manifestation of some `latent processes` (seen as random mechanisms). Even though we won't know the exact outcome for sure, we can model general regularities and relationships as a result of the large scale of phenomena.
-
-Think of **measurements** taken from the Large Hadron Collider experiments: the volume, noise, and complexity of data. Ultimately, we want to make inferences about the **underlying**, physical processes which govern the behavior and interaction of particles. How do we know that inference is accurate and true? A necessary, but not sufficient condition is that the conditions of that experiment are repeatable -- such that "on average", a pattern emerges.
-
-
-
-::: {.callout-tip}
-## A word of encouragement
-
-Reviewing the fundamentals of statistics doesn't have to be boring! We can put "the classics" in context of modern statistics, big data challenges, and use simulation instead of heavy mathematics and proof-based approaches.
-
-Moreover, theoretical ideas underlying statistical practice, which we often take for granted, deserve an explicit articulation. This will improve our awareness, understanding, and grasp of the field -- such that we can become more effective practitioners.
+::: {.column-margin} 
+![](img/kolmogorov.jpeg) Andrey Kolmogorov's (1933) contribution culminates the work started by Laplace, Gauss, Poincare, and many others. You can check out the short stories of important historical figures [here](https://www.economics.soton.ac.uk/staff/aldrich/Figures.htm)
 :::
 
-::: {.callout-important}
-## Rabbit hole warning
+Speaking more bluntly, without being aware of the relevance and importance  of the probability triple, no amount of stories will make us truly understand it. The reason for writing this chapter is that many students don't know formally what a random variable and probability is. This leads to many mistakes in understanding and thus, in practice.
 
-How far you go back into the abstract foundations? For practical intents and purposes, you won't need measure theory and proof-based mathematical analysis. 
+::: {.callout-warning}
+## Different levels of rigor
 
-I find those interesting for their own sake and understanding the foundations of higher-level tools we use. However, I can't argue it's an efficient use of your time.
+Probability can be studied at different levels of rigor and mathematical abstraction. Most commonly it's a mix of intuition and calculus-based approaches, but some courses do it with heavier mathematical analysis (a la Shiryaev) or even measure theory (the final boss).^[In many top programs in Europe, you will have to study it at the highest levels of rigor. Keep this in mind if you want to pursue a quantitative masters' degree]
+
+How far you go back into the abstract foundations? For practical intents and purposes, you won't need measure theory and proof-based mathematical analysis. Except if you go into quantitative finance or statistical research. 
+
+I find those interesting for their own sake and I'm curious about the deep foundations of higher-level tools we use. However, I can't argue it's an efficient use of your time -- you're proabably better off by studying other things like programming, statistical modeling, causal inference, and machine learning.
 :::
 
-The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessible and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing -- which will be our gateway into truly modern statistics. -->
+One of the tasks of probability theory is the construction of the probability triple with the tools of mathematical analysis (and measure theory). We will not go through this process of construction, but I will explain conceptually what each element is and why is it important.
 
 
-
-
-In the [previous lecture](background.qmd#why-did-you-study-all-of-that), I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it's one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the **logic of uncertainty**, a formal language. [^fuzzy]
-
-[^fuzzy]: If you studied fuzzy set theory, you might have a case for it being the candidate, however, it fell out of favor in practice -- so I would suggest to focus on probability and Bayesian reasoning. 
-
-
-Often, probability and mathematical statistics are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Probability theory is concerned with the construction of probability triple $(\Omega, \mathcal{F}, \mathbb{P})$. 
-
-That is the foundation for developing useful tools like random variables and probability/cumulative density functions. Then, extending those to joint, conditional probabilities and multidimensional cases, introducing the machinery to operate all of that: like expectation, variance, moment-generating functions, conditioning, marginalization, Bayes theorem. This leads to the laws of large numbers, properties of distributions and their transformations. 
-
-[**We use all of those results** to model relationships between observed and latent variables in business processes and phenomena. It's a building block for answering the "simple" question: does X cause Y?]{.aside}
-
-
-Other tools are as prevalent and useful: Bayes rule, DAGs (directed acyclic graphs of random variables), the exponential family, laws of large numbers and the cental limit theorem. It holds both in applications and statistics itself.
-
-In probability theory, we're still in a mathematical world trying to capture the essence of the real world, but ultimately, we need statistical inference to estimate those parameters from data. Before we get into it in more detail: mathematically, computationally and in terms of business cases, we have to define that foundation -- the probability triple.
 
 ## The probability triple
 
-To make the following more clear, let's start with an experiment where we show a customer ten clothing items (a collection), and they have to pick the one they like best. If we repeated it with many customers, preferably representative for the population of interest,[^population] a pattern would emerge. This is an example of a discrete Outcome Set (or universal set, of all possible results). Alternatively, think of pebbles in an urn, where each one represents an outcome.
+We have to start with the notion of a **random experiment** ($\mathscr{E}$). For example, a survey on voting intention, customer responses about their preferred product out of a selection, acidity of brewed beer in a factory. Think of it as a well-defined procedure that produces an outcome which we can observe, with the following properties:
 
-As an academic aside, we have to thank Kolmogorov for putting probability into a rigorous, axiomatic framework based on set theory and making it open for mathematical enquiry with tools from mathematical analysis, which by that time were well-established. That is important, because we can't work the same naive way with continuous measurements and phenomena, as we do with pebbles.
+- Possible results and outcomes are known apriori and exhaustably. For example: a coin/dice toss, quantity of laptops sold, time spent watching youtube, a borrower's default on the loan, a choice between subscription options.
+- We don't known for sure which result of $\mathscr{E}$ will manifest or appear before we run the experiment. Otherwise, it wouldn't be random.
+- Despite that, **there is a perceptible regularity**, which can be eventually measured and quantified, that is, encoding the idea of a probabilistic "law" in the results. That regularity could be a result of the large scale of the phenomena, for example, a small but systematic preference for flashy video thumbnails on youtube.
+- Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we're not thinking in long-run frequency terms.^[Note that Bayesian vs frequentist is a debate over the interpretation of probability. All of its constructions and facts are the same in both approaches]
 
-[^population]: You might intuitively know what a population is, but there are surprisingly many pitfalls, so we'll investigate that notion with lots of care.
+An **elementary event** is one of the possible results of $\mathscr{E}$, usually denoted by $\omega_i \in \Omega$, where $\Omega = \{ \omega_1, \omega_2, \dots \}$ is called a sample space or universal set -- which suggest the idea of all outcomes being listed apriori and exhaustively.^[In practice, it's always a good idea to define what is the range of valid and allowed values that your variable or measuremet can take (scales)]
 
+### Frequentist vs bayesian interpretation 
 
-1. A **random experiment** ($\mathscr{E}$) is a set of *conditions which are favorable for an event* in a given form. It is that real-world process of interest which we try to simplify, with the following properties:
-    - Possible results and outcomes are known apriori and exhaustably. For example: a coin/dice toss, quantity sold, time in a subscription, a default on the credit, a choice between subscriptions.
-    - It's never known which of the results of $\mathscr{E}$ will manifest or appear before we run the experiment, the "experiment" amounting to randomly picking that clothing item or a pebble from the urn.
-    - Despite that, **there is a perceptible regularity**, which can be eventually measured and quantified, that is, encoding the idea of a probabilistic "law" in the results. That regularity could be a result of the large scale of the phenomena, for example, many customers seeing a product on the shelf.
-    - Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we're not thinking in long-run frequency terms. [^lr-freq]
-2. **Elementary event** as an auxiliaty construction: one of the possible results of $\mathscr{E}$, usually denoted by $\omega_i \in \Omega$.
-3. **Universal set**  $\Omega = \{ \omega_1, \omega_2, \dots \}$  is also called (Outcome/ State/ Selection space). It suggests the idea of complementarity and stochasticity: we don't know which $\omega_i$ will manifest, thus is a key object for a further formalization of probability measures. 
-4. We care not only about **an event** $A = \bigcup\limits_{i = 1}^n \omega_i$ (which is an union of elementary events) and its realization, but also about other events in the Universal Set, because they might contribute with additional information (about the probability) of our event of interest -- remember conditioning? This means that we we're interested in "all" other events.
-5. The **event space** $\mathcal{F}$ is a sigma-algebra, should be defined on sets of subsets of $\Omega$ and this is where measure theory shines. For technical reasons, we usually can't define a probability measure on all sets of subsets. On an intuitive note, we define the probability measure on sigma-algebras because if those conditions did not hold, the measure wouldn't make sense, unions of events would step out of the bounds of event space.
-6. **Probability as an extension of the measure**: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability (number between 0 and 1) to elementary events: $\mathbb{P}(\omega_i)$. This is why additivity properties are key, as we care about random events, not only elementary events.
+First, let's address the context in which the repeatable conditions requirement makes total sense (spoiler - it's physics and coin flips). Think of measurements taken from the Large Hadron Collider experiments -- the volume, noise, and complexity of data. Ultimately, we want to make inferences about the underlying, physical processes which govern the behavior and interaction of particles. The hypothesis tests based on the complicated models, despite their high confidence, are ultimately a probabilistic statement about how surprising is the data. Therefore, the long-run action of acting as if the null hypothesis is false, assumes that the experiment is reapeatable.^[Practically speaking, we want to replicate the experiment multiple times in order to make sure it was not a fluke]
 
-[^lr-freq]: ![*Source: [Ross](https://bookdown.org/kevin_davisross/probsim-book/interpretations.html)* This is the view of probability as a long-run frequency of events occuring, for example, flipping a coin](img/coin-flips-lr.png){width="90%"}
-
+In the frequentist perspective, the probability of an event is intrinsic to it's nature, i.e. objective and is the limiting frequency with which that outcome appears in a long series of events. We can think of this convergence of frequency as a "statistical stability", which can be supported only by a large number of trials, i.e. empirical evidence. This applies really well in gambling (by design) and physics, but is it plausible in human behavior? I don't know, but it might be unreasonably effective at a large scale even if not true. 
 
 ::: {.column-margin}
-**Def: Algebra and Sigma-Algebra**
+Formally, we can represent this statement by Bernoulli's theorem, where $m_n$ is the number of times an event $A$ occurs in $n$ trials.
+$$
+\lim_{n \to \infty} \frac{m_n}{n} = p
+$$
 
- A set of subsets $\mathcal{F} \subset 2^\Omega$ is an algebra (field) if the following holds:
+:::
+
+
+Bayesians view probability as the degree of confidence in a belief. An apriori (subjective) knowledge, before seeing the data, will be updated iteratively with every new piece of evidence via inverse probability (Bayes rule). The fact that we need to define and ellicit our prior beliefs is not necessarily a weakness, especially in social science -- if done correctly and rigorously, it can improve our inferences. If we have tons of data, our prior choice, if not too dogmatic or vague, will not matter.
+
+
+### Events and their spaces
+
+Elementary events are rarely the events of interest to us. An event $A$ is an union of elementary events: $A = \bigcup\limits_{i = 1}^n \omega_i$. We care not only about its realization, but also about other events, because they might contribute with additional information (about the probability) of our event of interest.^[This hints at the idea of conditioning, which is the "soul of statistics"] This means that in one way or other, we need to conceptualize a space of all* possible events, which are subsets of $\Omega$. However, this is where the big (theoretical) trouble begins, because the event space has to have certain properties in order for the events to be measurable (so we can assign a probability which makes sense).
+
+
+::: {.callout-note}
+## Algebra and Sigma-Algebra
+
+A set of subsets $\mathcal{F} \subset 2^\Omega$ is an algebra (field) if the following holds:
 
 1. $\Omega \in \mathcal{F}$ and $\varnothing \in \mathcal{F}$
 2. If $A \in \mathcal{F}$ then $A^C \in \mathcal{F}$ (closed under complements)
 3. If $A, B \in \mathcal{F}$ then $A \cup B \in \mathcal{F}$ (closed under union). Note that 2 and 3 imply that it's closed under countable intersection
-4. The additional condition for sigma-algebra: **sigma** refers to countability. If $\{  A_i \}_{i \ge 1} \in \mathcal{F}$ then $\bigcup\limits_{i \ge 1} A_i \in \mathcal{F}$ (closed under **countable union**)
 
-![*Source: [Wikimedia](https://upload.wikimedia.org/wikipedia/commons/d/d3/Sigma_algebra_ellipse_de.svg)* A beautiful visual representation](img/sigma-algebra.svg){width="90%"}
+The additional condition for sigma-algebra is that $\mathcal{F}$ should be closed under countable union. Sigma here refers to countability and additivity. 
 
+If $\{  A_i \}_{i \ge 1} \in \mathcal{F}$ then $\bigcup\limits_{i \ge 1} A_i \in \mathcal{F}$ 
 :::
+
+::: {.column-margin}
+![*Source: [Wikimedia](https://upload.wikimedia.org/wikipedia/commons/d/d3/Sigma_algebra_ellipse_de.svg)* A beautiful visual representation](img/sigma-algebra.svg){width="90%"}
+:::
+
+The **event space** $\mathcal{F}$ is a sigma-algebra. For technical reasons which measure theory deals with, we usually can't define a probability measure on all sets of subsets $2^\Omega$. Remembe that we don't work only with discrete or countable outcomes. Besides $\mathbb{R}$, we can encounter wonky outcomes like simplexes, functions, trees, graphs, etc.^[If you wonder how in the world one can reason about the probability in a phylogenetic tree -- this is where rigorous, measure-theoretic probability comes to rescue]
+
+ On an intuitive note, we define the probability measure on sigma-algebras because if those conditions do not hold, the (probability) measure wouldn't make sense, as unions of events would step out of the bounds of event space. The consequence of this is that important results in probability theory which are necessary for most statistical methods will not hold (fully).
+
+
+
+We finally have the minimal tools to define the triple $(\Omega, \mathcal{F}, \mathbb{P})$. You can think of **probability as an extension of measure**, where we're not concerned with lengths and volumes, but with chances of events realizing. Basically, we're assigning a value between zero and one to elementary events $\mathbb{P}(\omega_i)$. This is why additivity properties are key, as we care about random events $A$, not only $\omega_i$.
+
+
 
 ::: {.callout-note}
 ## Probability Measure
@@ -106,12 +107,14 @@ Suppose we have defined a **measurable space** $(\Omega, \mathcal{F})$, where $\
 2. For countable sequences of mutually disjoint effects, i.e. $\forall \{ A_i \}_{i \ge 1}$ where $A_i \bigcap\limits_{i \ne j} A_j = \varnothing$, the following holds $\mathbb{P}(\bigcup\limits_{i \ge 1} A_i) = \sum\limits_{i \ge 1} \mathbb{P}(A_i)$
 :::
 
-A **probability triple** $(\Omega, \mathcal{F}, \mathbb{P})$ is the fundamental object the whole probability theory is constructed upon. Again, Kolmogorov took the informal, gambling-type probability and put it onto axiomatic foundations -- which enabled future breakthroughs. Notice that this definition of probability is not the naive one, of number of successes over the total possible numbers an event could arise.
+**Probability triple** $(\Omega, \mathcal{F}, \mathbb{P})$ is the fundamental object the whole probability theory is constructed upon. Kolmogorov took the informal, gambling-type probability and put it onto axiomatic foundations -- which enabled future breakthroughs. 
+
+Notice that this definition of probability is not the naive one, of number of successes over the total possible numbers an event could arise. You are allowed to use naive probability only in very special cases of discrete and finite sample space, where all elementary events are independent and equally likely. Otherwise and by default, carefully think about each element in the probability triple. 
 
 
-:::: {.callout-caution}
+:::: {.callout-warning}
 ## Measure theory rabbit hole: Why not all subsets?
-The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you're interested in these technical details, you can check out my relatively accessible introudction to [measure theory and the Caratheodori extension theorem](https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/).  
+The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you're interested in these technical details, you can check out my relatively accessible introduction to [measure theory and the Caratheodori extension theorem](https://mihaibizovi.com/posts/2018-intro-measure/measure_theory.html).  
 
 ::: {.column-margin}
 Jeffrey Rosenthal begins his book by a similar motivation, constructing the following random variable as a coin toss between a discrete $X \sim Pois(\lambda)$ and continuous $Y \sim \mathcal{N}(0,1)$ r.v.
@@ -147,45 +150,15 @@ Evans Lawrence gives the following example of a function which is neither discre
 Even though you can visualize this in two dimensions as the uniform and a spike, or as a CDF with a discontinuity, this approach just breaks down in higher dimensions or more complicated combinations of functions.
 ::::
 
-We stumble upon different interpretations of probability (frequentists vs bayesians), when trying to clarify that "perceptible regularity", despite the mathematics of probability theory being exactly the same. These are not "theorems" to prove, but rather axioms and philosophies often taken in practice as the starting point.
-
-The frequency theory defines the probability of an outcome as the limiting frequency with which that outcome appears in a long series of similar events. If our experiment or investigation is such that those relative frequencies converge, then we can prove the LLN and the CLT. Basically, that we should view probability and predictions based on historical data. [^prob-discovery] 
-
-Formally, we can represent this statement by Bernoulli's theorem, which is a special case of Law of Large Numbers, where $m_n$ is the number of times an event $A$ occurs in $n$ trials.
-
-[^prob-discovery]: *"To a frequentist, the probability of an event is intrinsic to that event’s nature and not something perceived, only discovered."*
-
-$$
-\lim_{n \to \infty} \frac{m_n}{n} = p
-$$
-
-::: {.callout-note}
-## Frequency Convergence as Statistical Stability
-Since we don't have an infinite number of trials, the best we can do is to say that “experimental evidence strongly suggests statistical stability". This applies really well in gambling (by design) and physics, but is it plausible in human behavior? I don't think so, but it might be **unreasonably effective**, even if not true. 
-:::
-
-::: {.column-margin}
-So, which one do you recommend? It depends, **learn both**! But I would agree with [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/)'s meme: it's the scientific process that has the last laugh
-
-![](img/meme-causal.jpeg){width="80%"}
-:::
-
-Bayesians view probability as the degree of confidence in a belief, an apriori guess or knowledge, that is, before seeing the data. Then, using inverse probability, you update your beliefs in the face of evidence and data. Often, you do have knowledge and can define your prior probabilities by a process of ellicitation -- it should't be too vague, neither dogmatic. Other Bayesians put in great effort to pick non-informative priors, as the data should quickly overwhelm it.
-
-
-TODO: Ellicitation of probability -> we'll do more later with inference
-
-
-
-### Random Variables
 
 Thank you for bearing with me through the theory you have probably seen before, but we're not done. We're still in the land of set theory, and it is very hard to operate that way in practice -- so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.
 
-::: {.callout-important}
-## The breakthrough idea of a Random Variable
 
-We started from some phenomena of interest and a random experiment. The random variable is a necessary abstraction in order to mathematically define quantifiable characteristics of the objects. Meaning, we start working with numbers instead of some qualitative properties. Now, we're in business!
-:::
+
+## Random Variables
+
+We take the idea of random variable and probability density functions for granted, but at some point it was a huge breakthrough. It is a necessary abstraction in order to mathematically define the quantifiable characteristics of the outcomes of interest. Meaning, we start working with numbers instead of some qualitative properties.^[Remember that we're studying an interdisciplinary, quantitative field]
+
 
 ::: {.callout-note}
 ## Random Variable is not a variable, nor random
@@ -202,24 +175,19 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 
 Let's figure out what the hell do we mean by that fine print condition, using the diagram below. The idea of conservation of the informational structure is actually equivalent to the one of measurablility. If this property doesn't hold, it's not possible to explicitly and uniquely refer to the sets (events) of interest.
 
-The idea is that the preimage defined above $X^{-1}((-\infty,r]) = E \in \mathcal{F}$ on the following interval corresponds to an event E which should be in the event space $\mathcal{F}$. Because the only thing that varies is the limit of the interval r, the randomness comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is $F_X(X \le r)$.
 
-::: {.column-margin}
-CDF, one of the most important constructs in probability is a direct consequence of the definition of the random variable:
+![Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some aspect of the phenomena which is relevant to us)! ](img/random_variable.png "Random Variable"){width="90%"}
+
+The idea is that the preimage defined above $X^{-1}((-\infty,r]) = E \in \mathcal{F}$ on the following interval corresponds to an event E which should be in the event space $\mathcal{F}$. Because the only thing that varies is the limit of the interval r, the "randomness" comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is $F_X(X \le r)$.
+
+The repartition or CDF -- one of the most important constructs in probability is a direct consequence of the definition of the random variable.^[Later in the course, we will see how ECDF (empirical cumulative distribution function) is an useful tool in data analysis and simulation]
 
 $$
 P(A ≤ r) = F_X(X ≤ r)
 $$
 
-In the practice of modeling, we often work with probability density functions, because it is more convenient in many cases. Then, in order to translate to probabilities, we would think in terms of areas under that curve. For sure, you remember the following duality between CFD and PDF:
+In the practice of modeling, we often work with probability density functions, because it is more convenient in many cases. Then, in order to translate to probabilities, we would think in terms of areas under that curve. For sure, you remember the following duality between CDF and PDF (distribution, probability density function): $F'(x) = p(x)$.
 
-$$
-F'(x) = p(x)
-$$
-:::
-
-
-![Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some relevant aspect of it to us)! ](img/random_variable.png "Random Variable"){width="90%"}
 
 <!-- 
 ::: {.callout-note}
@@ -243,6 +211,8 @@ The best way to see the problem here, is to draw the mapping and pick 3 threshol
 ::: -->
 
 
+## Wonky probability triples
+
 
 As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of compositional data analysis[^cda] and time series analysis. What I want to say, is that for more "exotic" applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.
 
@@ -253,7 +223,7 @@ As a motivation of why do we have to understand all of this, when for most pract
 Sometimes, the data doesn't "live" in our normal, intuitive, euclidian space 
 $\mathbb{R}^n$. There are cases when the object of our analysis are proportions or compositions: think of what a material is made of, the proportion of the demand for different sizes of a shoe or garment.
 
-We don't necessarily care about their absolute value, but about their relative proportion. If we blindly apply traditional methods, or even statistical summaries, we will quickly hit weird results and paradoxes. So, we have to tweak existing methods we have make sense for compositions.
+We don't necessarily care about their absolute value, but about their relative proportion. If we blindly apply traditional methods, or even statistical summaries, we will quickly hit weird results and paradoxes. So, we have to tweak existing methods such that they make sense for compositions.
 
 Compositional data analysis solves those issues by defining a probability triple over the simplex (instead of $\mathbb{R}^n$): $(\mathcal{S}^n, \mathcal{F}, \mathbb{P})$. This leads to a different definition of the event space $\mathcal{F}$, which is also a sigma-algebra and a different definition of the probability measure $\mathbb{P}$. 
 :::
@@ -261,32 +231,30 @@ Compositional data analysis solves those issues by defining a probability triple
 [^cda]:  ![*Source: [Dumuid](https://www.mdpi.com/1660-4601/17/7/2220)*: Data in a Simplex, which is later translated to $R^n$ by a carefully constructed basis expansion](img/composition.png "Simplex"){width="90%"}
 
 
-Remember our exaple of [pigeon superstition](learning.qmd#implicit-learning-intuition-and-bias) in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,[^ml-measure] which is exactly those carefully formulated principles that will prevent our automated learners to become supersitious. 
+For the next example, you don't have to understand what Gaussian Processes are or are used for.^[Modeling complex patterns in (multidimensional) time series, for spatio-temporal modeling, any time our data points are not independent and we can quantify their "closeness"] However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results.
 
-[^ml-measure]: Even though most courses from which I studied don't mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio's Brown [answer](https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR) it's essential in the idea of **uniform convergence** and its bounds, where *"you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets"*. 
-
-For the next example, you don't have to understand what Gaussian Processes are or are used for. However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results, in contrast with choosing a wrong model or distribution. 
-
-It's not that these methods don't have parameters, but the parametrization varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don't know what is a reasonable distribution or parametric functional form for the relationship that we model.
+It's not that these methods don't have parameters, but the "parametrization" varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don't know what is a reasonable distribution or parametric functional form for the relationship that we model.
 
 ::: {.callout-tip}
 ## Nonparametrics and Gaussian Processes
 <!-- Stochastic Processes, Graphs and Trees -->
-If we're thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: $f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}$, [^gp] we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like. 
+If we're thinking about a regression from the nonparametric perspective: that is, over a set of abstract, smooth, twice differentiable functions: $f(x) \in \mathscr{C}^2, f : X \rightarrow \mathbb{R}$, we might want to know how a draw of samples from an infinite set of functions might look like. 
 
 $$
 f(x) \sim GP(\mu(x); K(x,x'))
 $$
 
-The questions arises: how to define a PDF (probability density function) in this space? In my bachelor thesis, I got away with using Gaussian Processes, which are a very special class of stochastic processes. In this special case I could informally define an apriori distribution by defining the mean vector and Kernel (covariance function), then condition it on observed data with a Normal Likelihood. 
+The questions arises: how to define a PDF (probability density function) in this space? In my bachelor thesis, I got away with using Gaussian Processes by informally defining an apriori distribution of the mean vector $\mu$ and a Kernel (covariance function), then conditioning it on observed data with a Normal Likelihood. 
 
 $$
 p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(f)}}{p(\left \{ x\right \})}
 $$
 
+ ![*Source: [Bizovi](https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/)*: A posterior distribution of the Gaussian Processes, when conditioned on data](img/gp-conditioned.png "GP Posterior"){width="90%"}
+
 :::
 
-[^gp]: ![*Source: [Bizovi](https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/)*: A posterior distribution of the Gaussian Processes, when conditioned on data](img/gp-conditioned.png "GP Posterior"){width="90%"}
+
 
 ::: {.column-margin}
 In the case of stochastic processes, we work with a sequence of random variables $\{X_t, t \in T \}$ and start asking questions:
@@ -300,10 +268,12 @@ A lot of important applications in economics and finance are dynamic, so we have
 
 Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.
 
+::: {.callout-warning}
+## Rabbit hole: machine learning theory 
 
+Last, but not least, measure theory and advanced probability is important in machine learning theory, where we try to formally answer the question if our model can generalize successfully given its complexity, the sample size, and the "strength of signal".^[Probably approximately correct (PAC learning)] Vapnik and Chernovenkis' theory started a revolution in pattern recognition, gave a practical model of Support Vector Machines, and established the foundations of modern machine learning. 
 
-<!-- Statistical Foundations: Reference, Revies --->
-<!-- [^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
-[^12]: Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) has two companion books, one with R and another in Python
-[^24]: Speegle, Clair - [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html)
-[^45]: Bryan - [STAT 545](https://stat545.com/) It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory. -->
+One such tool from probability which pops up in ML theory is uniform convergence, where *"you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets"*. ^[You can check out this [answer](https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR) on quora for a more detailed explanation of how measure theory is useful in ML theory]
+
+In plain english, the object of investigation is an infinite of functions mapping from our input space (data, $X$) to the output / target variable $y$. Therefore learning is an algorithmic process which uses our in-sample data to select a function from this infinite space, which will have the greatest chance to generalize and make good predictions.
+:::

@@ -71,8 +71,6 @@ website:
           text: "Syllabus & Study Guide"
         - href: roadmap_prob.qmd
           text: "Schedule & Roadmap"
-        - href: 01_fundamentals/stat_foundations.qmd
-          text: "1. The Probability Triple"
       - text: "-----"
       - section: "3. Applied Bayesian Statistics"
         href: references.qmd
@@ -89,7 +87,8 @@ website:
           text: "1. Introduction"
         - href: sim/1L_bday_problem.qmd
           text: "1L. Birthday problem"
-
+        - href: 01_fundamentals/stat_foundations.qmd
+          text: "2. The Probability Triple"
 
   page-navigation: true
   page-footer:
