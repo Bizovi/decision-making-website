@@ -1,11 +1,18 @@
 ---
+title: "Fundamentals of Probability"
+subtitle: "The probability triple and Kolmogorov's breakthrough"
+author:
+  - name: Mihai Bizovi
+    id: mb
+    degrees: 
+    - "VP of Decision Science"
 format:
   html:
     toc-location: left
+lang: en
 ---
 
-# Foundations of Probability
-
+<!-- 
 In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving **decision-making under uncertainty**. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.
 
 > In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent *stochastic nature*. 
@@ -24,28 +31,6 @@ Reviewing the fundamentals of statistics doesn't have to be boring! We can put "
 Moreover, theoretical ideas underlying statistical practice, which we often take for granted, deserve an explicit articulation. This will improve our awareness, understanding, and grasp of the field -- such that we can become more effective practitioners.
 :::
 
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|   In this chapter and set of lectures, I attempt to review fundamental
-%%|   statistical ideas, concepts, and tools, in order to show their relevance in 
-%%|   the day-to-day practice and decision-making. A secondary objective is to 
-%%|   fill in the conceptual gaps left by the fact that it's hard to make sense 
-%%|   of it all the first time we're encountering it in the classroom.
-
-flowchart TD
-	Motiv[Prob vs Stats] --> C[Combinatorics] --> BD[Birthday Paradox] --> SP[Simpson's Paradox] --> Bayes[Bayes Rule] --> LL[Likelihood]
-	
-	Bayes --> Ind[Independence] --> Ex[Exchangeability]
-	Motiv --> ProbT[Probability Triple] --> SI[Uncertainty] --> RV[Random Variables] --> PDF[Stories Distribution] --> DAG[DAGs] --> LLN[LLNs]
-
-	Motiv --> MS[Mathematical Statistics] --> GP[Prague Golemn] --> Estim[Estimators] --> Prop[Desired Properties] --> US[CLT & US Schools] --> NP[Neyman-Pearson]
-
-```
-
-The plan for this lecture is the following: we start by constructing the probability triple, formalize sources of uncertainty, and investigate the building blocks of a statistical model. I then highlight in a few case-studies what can go wrong in the process of statistical inference and how difficult it is to choose the right model. 
-
 ::: {.callout-important}
 ## Rabbit hole warning
 
@@ -54,11 +39,10 @@ How far you go back into the abstract foundations? For practical intents and pur
 I find those interesting for their own sake and understanding the foundations of higher-level tools we use. However, I can't argue it's an efficient use of your time.
 :::
 
-The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessible and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing -- which will be our gateway into truly modern statistics.
+The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessible and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing -- which will be our gateway into truly modern statistics. -->
 
 
 
-## The probability triple
 
 In the [previous lecture](background.qmd#why-did-you-study-all-of-that), I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it's one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the **logic of uncertainty**, a formal language. [^fuzzy]
 
@@ -71,28 +55,12 @@ That is the foundation for developing useful tools like random variables and pro
 
 [**We use all of those results** to model relationships between observed and latent variables in business processes and phenomena. It's a building block for answering the "simple" question: does X cause Y?]{.aside}
 
-::: {.callout-tip}
-## "I haven't used Poisson outside that probability class"
-
-If you empathise with this statement, you're probably aware that it's important, but wonder if it didn't come up in practice -- what about the rest of the machinery I described? My answer is that it's so, so ubiquitous, but we need to learn to "see" the opportunities to use this set of tools in decision-making.
-
-Poisson distribution and process can be a good choice to model counts of **events per unit of time**, space, with a large number of "trials", each with a small probability of success.
-
-$$
-P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
-$$
-
-- Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.
-- Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.
-- Forecasting slow-moving items in a retail store, e.g. for clothing. We'll investigate the **newsvendor problem** in excruciating detail, where we have to purchase the inventories ahead of time.
-- A famous example is of L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. *("Law of small numbers")*.
-
-Just before you get all excited about these applications, keep in mind that every distribution has a story behind it, and a set of assumptions that have to be met.
-:::
 
 Other tools are as prevalent and useful: Bayes rule, DAGs (directed acyclic graphs of random variables), the exponential family, laws of large numbers and the cental limit theorem. It holds both in applications and statistics itself.
 
 In probability theory, we're still in a mathematical world trying to capture the essence of the real world, but ultimately, we need statistical inference to estimate those parameters from data. Before we get into it in more detail: mathematically, computationally and in terms of business cases, we have to define that foundation -- the probability triple.
+
+## The probability triple
 
 To make the following more clear, let's start with an experiment where we show a customer ten clothing items (a collection), and they have to pick the one they like best. If we repeated it with many customers, preferably representative for the population of interest,[^population] a pattern would emerge. This is an example of a discrete Outcome Set (or universal set, of all possible results). Alternatively, think of pebbles in an urn, where each one represents an outcome.
 
