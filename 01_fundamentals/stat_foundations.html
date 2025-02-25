@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mihai Bizovi">
 
-<title>stat_foundations – Decision Science Course</title>
+<title>Fundamentals of Probability – Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../roadmap_prob.html" rel="prev">
+<link href="../sim/1L_bday_problem.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -90,9 +91,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     document.body.classList.add('hypothesis-enabled');
   });
 </script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -125,9 +123,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Decision Science Course">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://course.economic-cybernetics.com/01_fundamentals/img/sigma-algebra.svg">
+<meta property="og:title" content="Fundamentals of Probability – Decision Science Course">
+<meta property="og:description" content="The probability triple and Kolmogorov’s breakthrough">
+<meta property="og:image" content="https://course.economic-cybernetics.com/01_fundamentals/img/kolmogorov.jpeg">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -194,7 +192,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/prob_study_guide.html">2. Fundamentals of Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/stat_foundations.html">1. The Probability Triple</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/stat_foundations.html">2. The Probability Triple</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -289,11 +287,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
@@ -304,12 +302,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../roadmap_prob.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">1. The Probability Triple</span></a>
   </div>
 </li>
       </ul>
@@ -343,11 +335,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">~ Simulation of economic processes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
@@ -360,6 +352,12 @@ window.Quarto = {
  <span class="menu-text">1L. Birthday problem</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">2. The Probability Triple</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -368,13 +366,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#foundations-of-probability" id="toc-foundations-of-probability" class="nav-link active" data-scroll-target="#foundations-of-probability">Foundations of Probability</a>
+  <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link active" data-scroll-target="#the-probability-triple">The probability triple</a>
   <ul class="collapse">
-  <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link" data-scroll-target="#the-probability-triple">The probability triple</a>
-  <ul class="collapse">
+  <li><a href="#frequentist-vs-bayesian-interpretation" id="toc-frequentist-vs-bayesian-interpretation" class="nav-link" data-scroll-target="#frequentist-vs-bayesian-interpretation">Frequentist vs bayesian interpretation</a></li>
+  <li><a href="#events-and-their-spaces" id="toc-events-and-their-spaces" class="nav-link" data-scroll-target="#events-and-their-spaces">Events and their spaces</a></li>
+  </ul></li>
   <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables">Random Variables</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#wonky-probability-triples" id="toc-wonky-probability-triples" class="nav-link" data-scroll-target="#wonky-probability-triples">Wonky probability triples</a></li>
   </ul>
 </nav>
 </nav>
@@ -383,143 +381,111 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/prob_study_guide.html">2. Fundamentals of Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/stat_foundations.html">1. The Probability Triple</a></li></ol></nav></header>
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/stat_foundations.html">2. The Probability Triple</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Fundamentals of Probability</h1>
+<p class="subtitle lead">The probability triple and Kolmogorov’s breakthrough</p>
+</div>
 
 
 
+<div class="quarto-title-meta column-body">
 
-<section id="foundations-of-probability" class="level1 page-columns page-full">
-<h1>Foundations of Probability</h1>
-<p>In order to be a successful Data Scientist, one has to speak the language of probability and statistics. It is the foundation on which we can build towards more realistic and avanced models, with the purpose of improving <strong>decision-making under uncertainty</strong>. This foundation is a prerequisite for all three perspectives: analytics/mining, machine learning and causal inference.</p>
-<blockquote class="blockquote">
-<p>In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent <em>stochastic nature</em>.</p>
-</blockquote>
-<p>Data is just the appearance, an external manifestation of some <code>latent processes</code> (seen as random mechanisms). Even though we won’t know the exact outcome for sure, we can model general regularities and relationships as a result of the large scale of phenomena.</p>
-<p>Think of <strong>measurements</strong> taken from the Large Hadron Collider experiments: the volume, noise, and complexity of data. Ultimately, we want to make inferences about the <strong>underlying</strong>, physical processes which govern the behavior and interaction of particles. How do we know that inference is accurate and true? A necessary, but not sufficient condition is that the conditions of that experiment are repeatable – such that “on average”, a pattern emerges.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A word of encouragement
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Reviewing the fundamentals of statistics doesn’t have to be boring! We can put “the classics” in context of modern statistics, big data challenges, and use simulation instead of heavy mathematics and proof-based approaches.</p>
-<p>Moreover, theoretical ideas underlying statistical practice, which we often take for granted, deserve an explicit articulation. This will improve our awareness, understanding, and grasp of the field – such that we can become more effective practitioners.</p>
-</div>
-</div>
-<div class="cell" data-fig-width="9" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
-    Motiv[Prob vs Stats] --&gt; C[Combinatorics] --&gt; BD[Birthday Paradox] --&gt; SP[Simpson's Paradox] --&gt; Bayes[Bayes Rule] --&gt; LL[Likelihood]
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mihai Bizovi, VP of Decision Science </p>
+          </div>
+  </div>
     
-    Bayes --&gt; Ind[Independence] --&gt; Ex[Exchangeability]
-    Motiv --&gt; ProbT[Probability Triple] --&gt; SI[Uncertainty] --&gt; RV[Random Variables] --&gt; PDF[Stories Distribution] --&gt; DAG[DAGs] --&gt; LLN[LLNs]
+  
+    
+  </div>
+  
 
-    Motiv --&gt; MS[Mathematical Statistics] --&gt; GP[Prague Golemn] --&gt; Estim[Estimators] --&gt; Prop[Desired Properties] --&gt; US[CLT &amp; US Schools] --&gt; NP[Neyman-Pearson]
 
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: In this chapter and set of lectures, I attempt to review fundamental statistical ideas, concepts, and tools, in order to show their relevance in the day-to-day practice and decision-making. A secondary objective is to fill in the conceptual gaps left by the fact that it’s hard to make sense of it all the first time we’re encountering it in the classroom.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The plan for this lecture is the following: we start by constructing the probability triple, formalize sources of uncertainty, and investigate the building blocks of a statistical model. I then highlight in a few case-studies what can go wrong in the process of statistical inference and how difficult it is to choose the right model.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+</header>
+
+
+<p>A well-rounded decision scientist should be fluent in the language of probability and statistics, easily go back and forth between a real-world problem and mathematical abstraction.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Think how important is logic for maths, computer science, and philosophy. Similarly, probability theory is a formal language, the logic of uncertainty.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent <em>stochastic nature</em>. </p></div></div><p>Even though I emphasize the importance of studying through stories and simulations, there is one mathematical and quite abstract topic we can’t afford to avoid. Formally, at the core of probability theory is the triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> and we have to thank Andrey Kolmogorov for developing a solid axiomatic foundation. All the modern probability machinery we’re using in practice is build on top of that.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="img/kolmogorov.jpeg" class="img-fluid"> Andrey Kolmogorov’s (1933) contribution culminates the work started by Laplace, Gauss, Poincare, and many others. You can check out the short stories of important historical figures <a href="https://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">here</a></p>
+</div></div><p>Speaking more bluntly, without being aware of the relevance and importance of the probability triple, no amount of stories will make us truly understand it. The reason for writing this chapter is that many students don’t know formally what a random variable and probability is. This leads to many mistakes in understanding and thus, in practice.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Rabbit hole warning
+Different levels of rigor
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>How far you go back into the abstract foundations? For practical intents and purposes, you won’t need measure theory and proof-based mathematical analysis.</p>
-<p>I find those interesting for their own sake and understanding the foundations of higher-level tools we use. However, I can’t argue it’s an efficient use of your time.</p>
+<p>Probability can be studied at different levels of rigor and mathematical abstraction. Most commonly it’s a mix of intuition and calculus-based approaches, but some courses do it with heavier mathematical analysis (a la Shiryaev) or even measure theory (the final boss).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>How far you go back into the abstract foundations? For practical intents and purposes, you won’t need measure theory and proof-based mathematical analysis. Except if you go into quantitative finance or statistical research.</p>
+<p>I find those interesting for their own sake and I’m curious about the deep foundations of higher-level tools we use. However, I can’t argue it’s an efficient use of your time – you’re proabably better off by studying other things like programming, statistical modeling, causal inference, and machine learning.</p>
 </div>
 </div>
-<p>The most technical, heavy, and mathematical part is about estimators and their properties, but it is necessary both for hypothesis testing and machine learning. To make it more accessible and intuitive, we will use simulation and visualization during the labs to get an understanding and intuition on how estimators behave. We wrap up the lecture by looking at the statistical process in firms and put it in contrast with the process for ML, predictive systems. Last, but not least, there is one more cautionary tale about multiple testing – which will be our gateway into truly modern statistics.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;In many top programs in Europe, you will have to study it at the highest levels of rigor. Keep this in mind if you want to pursue a quantitative masters’ degree</p></div></div><p>One of the tasks of probability theory is the construction of the probability triple with the tools of mathematical analysis (and measure theory). We will not go through this process of construction, but I will explain conceptually what each element is and why is it important.</p>
 <section id="the-probability-triple" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="the-probability-triple">The probability triple</h2>
-<p>In the <a href="../01_fundamentals/background.html#why-did-you-study-all-of-that">previous lecture</a>, I mentioned why did we study probability theory. However, there is one more useful metaphor: remember how important is logic in mathematics, computer science, and philosophy; it’s one of the prerequisites in each of those, an essential tool for reasoning. Then, probability theory is the <strong>logic of uncertainty</strong>, a formal language. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;If you studied fuzzy set theory, you might have a case for it being the candidate, however, it fell out of favor in practice – so I would suggest to focus on probability and Bayesian reasoning.</p></div></div><p>Often, probability and mathematical statistics are bundled together, as they make perfect sense in sequence, but they have different objectives in mind. Probability theory is concerned with the construction of probability triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>.</p>
-<p>That is the foundation for developing useful tools like random variables and probability/cumulative density functions. Then, extending those to joint, conditional probabilities and multidimensional cases, introducing the machinery to operate all of that: like expectation, variance, moment-generating functions, conditioning, marginalization, Bayes theorem. This leads to the laws of large numbers, properties of distributions and their transformations.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>We use all of those results</strong> to model relationships between observed and latent variables in business processes and phenomena. It’s a building block for answering the “simple” question: does X cause Y?</span></div></div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>We have to start with the notion of a <strong>random experiment</strong> (<span class="math inline">\(\mathscr{E}\)</span>). For example, a survey on voting intention, customer responses about their preferred product out of a selection, acidity of brewed beer in a factory. Think of it as a well-defined procedure that produces an outcome which we can observe, with the following properties:</p>
+<ul>
+<li>Possible results and outcomes are known apriori and exhaustably. For example: a coin/dice toss, quantity of laptops sold, time spent watching youtube, a borrower’s default on the loan, a choice between subscription options.</li>
+<li>We don’t known for sure which result of <span class="math inline">\(\mathscr{E}\)</span> will manifest or appear before we run the experiment. Otherwise, it wouldn’t be random.</li>
+<li>Despite that, <strong>there is a perceptible regularity</strong>, which can be eventually measured and quantified, that is, encoding the idea of a probabilistic “law” in the results. That regularity could be a result of the large scale of the phenomena, for example, a small but systematic preference for flashy video thumbnails on youtube.</li>
+<li>Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we’re not thinking in long-run frequency terms.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Note that Bayesian vs frequentist is a debate over the interpretation of probability. All of its constructions and facts are the same in both approaches</p></div><div id="fn4"><p><sup>4</sup>&nbsp;In practice, it’s always a good idea to define what is the range of valid and allowed values that your variable or measuremet can take (scales)</p></div></div><p>An <strong>elementary event</strong> is one of the possible results of <span class="math inline">\(\mathscr{E}\)</span>, usually denoted by <span class="math inline">\(\omega_i \in \Omega\)</span>, where <span class="math inline">\(\Omega = \{ \omega_1, \omega_2, \dots \}\)</span> is called a sample space or universal set – which suggest the idea of all outcomes being listed apriori and exhaustively.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<section id="frequentist-vs-bayesian-interpretation" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="frequentist-vs-bayesian-interpretation">Frequentist vs bayesian interpretation</h3>
+<p>First, let’s address the context in which the repeatable conditions requirement makes total sense (spoiler - it’s physics and coin flips). Think of measurements taken from the Large Hadron Collider experiments – the volume, noise, and complexity of data. Ultimately, we want to make inferences about the underlying, physical processes which govern the behavior and interaction of particles. The hypothesis tests based on the complicated models, despite their high confidence, are ultimately a probabilistic statement about how surprising is the data. Therefore, the long-run action of acting as if the null hypothesis is false, assumes that the experiment is reapeatable.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Practically speaking, we want to replicate the experiment multiple times in order to make sure it was not a fluke</p></div></div><p>In the frequentist perspective, the probability of an event is intrinsic to it’s nature, i.e.&nbsp;objective and is the limiting frequency with which that outcome appears in a long series of events. We can think of this convergence of frequency as a “statistical stability”, which can be supported only by a large number of trials, i.e.&nbsp;empirical evidence. This applies really well in gambling (by design) and physics, but is it plausible in human behavior? I don’t know, but it might be unreasonably effective at a large scale even if not true.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Formally, we can represent this statement by Bernoulli’s theorem, where <span class="math inline">\(m_n\)</span> is the number of times an event <span class="math inline">\(A\)</span> occurs in <span class="math inline">\(n\)</span> trials. <span class="math display">\[
+\lim_{n \to \infty} \frac{m_n}{n} = p
+\]</span></p>
+</div></div><p>Bayesians view probability as the degree of confidence in a belief. An apriori (subjective) knowledge, before seeing the data, will be updated iteratively with every new piece of evidence via inverse probability (Bayes rule). The fact that we need to define and ellicit our prior beliefs is not necessarily a weakness, especially in social science – if done correctly and rigorously, it can improve our inferences. If we have tons of data, our prior choice, if not too dogmatic or vague, will not matter.</p>
+</section>
+<section id="events-and-their-spaces" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="events-and-their-spaces">Events and their spaces</h3>
+<p>Elementary events are rarely the events of interest to us. An event <span class="math inline">\(A\)</span> is an union of elementary events: <span class="math inline">\(A = \bigcup\limits_{i = 1}^n \omega_i\)</span>. We care not only about its realization, but also about other events, because they might contribute with additional information (about the probability) of our event of interest.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> This means that in one way or other, we need to conceptualize a space of all* possible events, which are subsets of <span class="math inline">\(\Omega\)</span>. However, this is where the big (theoretical) trouble begins, because the event space has to have certain properties in order for the events to be measurable (so we can assign a probability which makes sense).</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;This hints at the idea of conditioning, which is the “soul of statistics”</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-“I haven’t used Poisson outside that probability class”
+Algebra and Sigma-Algebra
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you empathise with this statement, you’re probably aware that it’s important, but wonder if it didn’t come up in practice – what about the rest of the machinery I described? My answer is that it’s so, so ubiquitous, but we need to learn to “see” the opportunities to use this set of tools in decision-making.</p>
-<p>Poisson distribution and process can be a good choice to model counts of <strong>events per unit of time</strong>, space, with a large number of “trials”, each with a small probability of success.</p>
-<p><span class="math display">\[
-P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
-\]</span></p>
-<ul>
-<li>Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.</li>
-<li>Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.</li>
-<li>Forecasting slow-moving items in a retail store, e.g.&nbsp;for clothing. We’ll investigate the <strong>newsvendor problem</strong> in excruciating detail, where we have to purchase the inventories ahead of time.</li>
-<li>A famous example is of L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. <em>(“Law of small numbers”)</em>.</li>
-</ul>
-<p>Just before you get all excited about these applications, keep in mind that every distribution has a story behind it, and a set of assumptions that have to be met.</p>
-</div>
-</div>
-<p>Other tools are as prevalent and useful: Bayes rule, DAGs (directed acyclic graphs of random variables), the exponential family, laws of large numbers and the cental limit theorem. It holds both in applications and statistics itself.</p>
-<p>In probability theory, we’re still in a mathematical world trying to capture the essence of the real world, but ultimately, we need statistical inference to estimate those parameters from data. Before we get into it in more detail: mathematically, computationally and in terms of business cases, we have to define that foundation – the probability triple.</p>
-<p>To make the following more clear, let’s start with an experiment where we show a customer ten clothing items (a collection), and they have to pick the one they like best. If we repeated it with many customers, preferably representative for the population of interest,<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> a pattern would emerge. This is an example of a discrete Outcome Set (or universal set, of all possible results). Alternatively, think of pebbles in an urn, where each one represents an outcome.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;You might intuitively know what a population is, but there are surprisingly many pitfalls, so we’ll investigate that notion with lots of care.</p></div></div><p>As an academic aside, we have to thank Kolmogorov for putting probability into a rigorous, axiomatic framework based on set theory and making it open for mathematical enquiry with tools from mathematical analysis, which by that time were well-established. That is important, because we can’t work the same naive way with continuous measurements and phenomena, as we do with pebbles.</p>
-<ol type="1">
-<li>A <strong>random experiment</strong> (<span class="math inline">\(\mathscr{E}\)</span>) is a set of <em>conditions which are favorable for an event</em> in a given form. It is that real-world process of interest which we try to simplify, with the following properties:
-<ul>
-<li>Possible results and outcomes are known apriori and exhaustably. For example: a coin/dice toss, quantity sold, time in a subscription, a default on the credit, a choice between subscriptions.</li>
-<li>It’s never known which of the results of <span class="math inline">\(\mathscr{E}\)</span> will manifest or appear before we run the experiment, the “experiment” amounting to randomly picking that clothing item or a pebble from the urn.</li>
-<li>Despite that, <strong>there is a perceptible regularity</strong>, which can be eventually measured and quantified, that is, encoding the idea of a probabilistic “law” in the results. That regularity could be a result of the large scale of the phenomena, for example, many customers seeing a product on the shelf.</li>
-<li>Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we’re not thinking in long-run frequency terms. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
-</ul></li>
-<li><strong>Elementary event</strong> as an auxiliaty construction: one of the possible results of <span class="math inline">\(\mathscr{E}\)</span>, usually denoted by <span class="math inline">\(\omega_i \in \Omega\)</span>.</li>
-<li><strong>Universal set</strong> <span class="math inline">\(\Omega = \{ \omega_1, \omega_2, \dots \}\)</span> is also called (Outcome/ State/ Selection space). It suggests the idea of complementarity and stochasticity: we don’t know which <span class="math inline">\(\omega_i\)</span> will manifest, thus is a key object for a further formalization of probability measures.</li>
-<li>We care not only about <strong>an event</strong> <span class="math inline">\(A = \bigcup\limits_{i = 1}^n \omega_i\)</span> (which is an union of elementary events) and its realization, but also about other events in the Universal Set, because they might contribute with additional information (about the probability) of our event of interest – remember conditioning? This means that we we’re interested in “all” other events.</li>
-<li>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> is a sigma-algebra, should be defined on sets of subsets of <span class="math inline">\(\Omega\)</span> and this is where measure theory shines. For technical reasons, we usually can’t define a probability measure on all sets of subsets. On an intuitive note, we define the probability measure on sigma-algebras because if those conditions did not hold, the measure wouldn’t make sense, unions of events would step out of the bounds of event space.</li>
-<li><strong>Probability as an extension of the measure</strong>: chance of events realizing. Note that the perceptible regularity can be thought as the ability to assign a probability (number between 0 and 1) to elementary events: <span class="math inline">\(\mathbb{P}(\omega_i)\)</span>. This is why additivity properties are key, as we care about random events, not only elementary events.</li>
-</ol>
-<div class="no-row-height column-margin column-container"><div id="fn3"><div class="quarto-figure quarto-figure-center"><sup>3</sup>&nbsp;
-<figure class="figure">
-<p><img src="img/coin-flips-lr.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: <a href="https://bookdown.org/kevin_davisross/probsim-book/interpretations.html">Ross</a></em> This is the view of probability as a long-run frequency of events occuring, for example, flipping a coin</figcaption>
-</figure>
-</div>
-</div><div class="">
-<p><strong>Def: Algebra and Sigma-Algebra</strong></p>
 <p>A set of subsets <span class="math inline">\(\mathcal{F} \subset 2^\Omega\)</span> is an algebra (field) if the following holds:</p>
 <ol type="1">
 <li><span class="math inline">\(\Omega \in \mathcal{F}\)</span> and <span class="math inline">\(\varnothing \in \mathcal{F}\)</span></li>
 <li>If <span class="math inline">\(A \in \mathcal{F}\)</span> then <span class="math inline">\(A^C \in \mathcal{F}\)</span> (closed under complements)</li>
 <li>If <span class="math inline">\(A, B \in \mathcal{F}\)</span> then <span class="math inline">\(A \cup B \in \mathcal{F}\)</span> (closed under union). Note that 2 and 3 imply that it’s closed under countable intersection</li>
-<li>The additional condition for sigma-algebra: <strong>sigma</strong> refers to countability. If <span class="math inline">\(\{  A_i \}_{i \ge 1} \in \mathcal{F}\)</span> then <span class="math inline">\(\bigcup\limits_{i \ge 1} A_i \in \mathcal{F}\)</span> (closed under <strong>countable union</strong>)</li>
 </ol>
+<p>The additional condition for sigma-algebra is that <span class="math inline">\(\mathcal{F}\)</span> should be closed under countable union. Sigma here refers to countability and additivity.</p>
+<p>If <span class="math inline">\(\{  A_i \}_{i \ge 1} \in \mathcal{F}\)</span> then <span class="math inline">\(\bigcup\limits_{i \ge 1} A_i \in \mathcal{F}\)</span></p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/sigma-algebra.svg" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption><em>Source: <a href="https://upload.wikimedia.org/wikipedia/commons/d/d3/Sigma_algebra_ellipse_de.svg">Wikimedia</a></em> A beautiful visual representation</figcaption>
 </figure>
 </div>
-</div></div>
+</div><div id="fn7"><p><sup>7</sup>&nbsp;If you wonder how in the world one can reason about the probability in a phylogenetic tree – this is where rigorous, measure-theoretic probability comes to rescue</p></div></div><p>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> is a sigma-algebra. For technical reasons which measure theory deals with, we usually can’t define a probability measure on all sets of subsets <span class="math inline">\(2^\Omega\)</span>. Remembe that we don’t work only with discrete or countable outcomes. Besides <span class="math inline">\(\mathbb{R}\)</span>, we can encounter wonky outcomes like simplexes, functions, trees, graphs, etc.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>On an intuitive note, we define the probability measure on sigma-algebras because if those conditions do not hold, the (probability) measure wouldn’t make sense, as unions of events would step out of the bounds of event space. The consequence of this is that important results in probability theory which are necessary for most statistical methods will not hold (fully).</p>
+<p>We finally have the minimal tools to define the triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>. You can think of <strong>probability as an extension of measure</strong>, where we’re not concerned with lengths and volumes, but with chances of events realizing. Basically, we’re assigning a value between zero and one to elementary events <span class="math inline">\(\mathbb{P}(\omega_i)\)</span>. This is why additivity properties are key, as we care about random events <span class="math inline">\(A\)</span>, not only <span class="math inline">\(\omega_i\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -537,8 +503,9 @@ Probability Measure
 </ol>
 </div>
 </div>
-<p>A <strong>probability triple</strong> <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> is the fundamental object the whole probability theory is constructed upon. Again, Kolmogorov took the informal, gambling-type probability and put it onto axiomatic foundations – which enabled future breakthroughs. Notice that this definition of probability is not the naive one, of number of successes over the total possible numbers an event could arise.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
+<p><strong>Probability triple</strong> <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> is the fundamental object the whole probability theory is constructed upon. Kolmogorov took the informal, gambling-type probability and put it onto axiomatic foundations – which enabled future breakthroughs.</p>
+<p>Notice that this definition of probability is not the naive one, of number of successes over the total possible numbers an event could arise. You are allowed to use naive probability only in very special cases of discrete and finite sample space, where all elementary events are independent and equally likely. Otherwise and by default, carefully think about each element in the probability triple.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -548,7 +515,7 @@ Measure theory rabbit hole: Why not all subsets?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you’re interested in these technical details, you can check out my relatively accessible introudction to <a href="https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/">measure theory and the Caratheodori extension theorem</a>.</p>
+<p>The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you’re interested in these technical details, you can check out my relatively accessible introduction to <a href="https://mihaibizovi.com/posts/2018-intro-measure/measure_theory.html">measure theory and the Caratheodori extension theorem</a>.</p>
 
 <p>Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its <strong>measure-theoretic</strong> foundations could open up a whole new world to the researcher. It’s easy to take the results from statistics and probability for granted, but it’s useful to be aware what hides beneath the surface.</p>
 <p>Evans Lawrence gives the following example of a function which is neither discrete nor continuous, for which you flip a coin and if it comes heads, draw from an uniform distribution and in case of tails a unit mass at one. If <span class="math inline">\(\chi_{[0,1]}(x) = (e^{ix} - 1)/ix\)</span> is the characteristic function of the interval from zero to one, in a way you can formulate its density, but usually it’s not the case, nor is it very helpful to think about it in such terms.</p>
@@ -567,48 +534,13 @@ Measure theory rabbit hole: Why not all subsets?
     \end{cases}
 \end{equation}\]</span></p>
 <p>He then challenges the readers to come up with the expected value <span class="math inline">\(\mathbb{E}[Z^2]\)</span> and asks on what is it defined? It is indeed a hard question.</p>
-</div></div><p>We stumble upon different interpretations of probability (frequentists vs bayesians), when trying to clarify that “perceptible regularity”, despite the mathematics of probability theory being exactly the same. These are not “theorems” to prove, but rather axioms and philosophies often taken in practice as the starting point.</p>
-<p>The frequency theory defines the probability of an outcome as the limiting frequency with which that outcome appears in a long series of similar events. If our experiment or investigation is such that those relative frequencies converge, then we can prove the LLN and the CLT. Basically, that we should view probability and predictions based on historical data. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;<em>“To a frequentist, the probability of an event is intrinsic to that event’s nature and not something perceived, only discovered.”</em></p></div></div><p>Formally, we can represent this statement by Bernoulli’s theorem, which is a special case of Law of Large Numbers, where <span class="math inline">\(m_n\)</span> is the number of times an event <span class="math inline">\(A\)</span> occurs in <span class="math inline">\(n\)</span> trials.</p>
-<p><span class="math display">\[
-\lim_{n \to \infty} \frac{m_n}{n} = p
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Frequency Convergence as Statistical Stability
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Since we don’t have an infinite number of trials, the best we can do is to say that “experimental evidence strongly suggests statistical stability”. This applies really well in gambling (by design) and physics, but is it plausible in human behavior? I don’t think so, but it might be <strong>unreasonably effective</strong>, even if not true.</p>
-</div>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>So, which one do you recommend? It depends, <strong>learn both</strong>! But I would agree with <a href="https://xcelab.net/rm/statistical-rethinking/">Richard McElreath</a>’s meme: it’s the scientific process that has the last laugh</p>
-<p><img src="img/meme-causal.jpeg" class="img-fluid" style="width:80.0%"></p>
-</div></div><p>Bayesians view probability as the degree of confidence in a belief, an apriori guess or knowledge, that is, before seeing the data. Then, using inverse probability, you update your beliefs in the face of evidence and data. Often, you do have knowledge and can define your prior probabilities by a process of ellicitation – it should’t be too vague, neither dogmatic. Other Bayesians put in great effort to pick non-informative priors, as the data should quickly overwhelm it.</p>
-<p>TODO: Ellicitation of probability -&gt; we’ll do more later with inference</p>
-<section id="random-variables" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="random-variables">Random Variables</h3>
-<p>Thank you for bearing with me through the theory you have probably seen before, but we’re not done. We’re still in the land of set theory, and it is very hard to operate that way in practice – so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The breakthrough idea of a Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We started from some phenomena of interest and a random experiment. The random variable is a necessary abstraction in order to mathematically define quantifiable characteristics of the objects. Meaning, we start working with numbers instead of some qualitative properties. Now, we’re in business!</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
+</div></div><p>Thank you for bearing with me through the theory you have probably seen before, but we’re not done. We’re still in the land of set theory, and it is very hard to operate that way in practice – so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.</p>
+</section>
+</section>
+<section id="random-variables" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="random-variables">Random Variables</h2>
+<p>We take the idea of random variable and probability density functions for granted, but at some point it was a huge breakthrough. It is a necessary abstraction in order to mathematically define the quantifiable characteristics of the outcomes of interest. Meaning, we start working with numbers instead of some qualitative properties.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Remember that we’re studying an interdisciplinary, quantitative field</p></div></div><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -626,23 +558,18 @@ s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in 
 </div>
 </div>
 <p>Let’s figure out what the hell do we mean by that fine print condition, using the diagram below. The idea of conservation of the informational structure is actually equivalent to the one of measurablility. If this property doesn’t hold, it’s not possible to explicitly and uniquely refer to the sets (events) of interest.</p>
-<p>The idea is that the preimage defined above <span class="math inline">\(X^{-1}((-\infty,r]) = E \in \mathcal{F}\)</span> on the following interval corresponds to an event E which should be in the event space <span class="math inline">\(\mathcal{F}\)</span>. Because the only thing that varies is the limit of the interval r, the randomness comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is <span class="math inline">\(F_X(X \le r)\)</span>.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>CDF, one of the most important constructs in probability is a direct consequence of the definition of the random variable:</p>
-<p><span class="math display">\[
-P(A ≤ r) = F_X(X ≤ r)
-\]</span></p>
-<p>In the practice of modeling, we often work with probability density functions, because it is more convenient in many cases. Then, in order to translate to probabilities, we would think in terms of areas under that curve. For sure, you remember the following duality between CFD and PDF:</p>
-<p><span class="math display">\[
-F'(x) = p(x)
-\]</span></p>
-</div></div><div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/random_variable.png" title="Random Variable" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some relevant aspect of it to us)!</figcaption>
+<figcaption>Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some aspect of the phenomena which is relevant to us)!</figcaption>
 </figure>
 </div>
+<p>The idea is that the preimage defined above <span class="math inline">\(X^{-1}((-\infty,r]) = E \in \mathcal{F}\)</span> on the following interval corresponds to an event E which should be in the event space <span class="math inline">\(\mathcal{F}\)</span>. Because the only thing that varies is the limit of the interval r, the “randomness” comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is <span class="math inline">\(F_X(X \le r)\)</span>.</p>
+<p>The repartition or CDF – one of the most important constructs in probability is a direct consequence of the definition of the random variable.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Later in the course, we will see how ECDF (empirical cumulative distribution function) is an useful tool in data analysis and simulation</p></div></div><p><span class="math display">\[
+P(A ≤ r) = F_X(X ≤ r)
+\]</span></p>
+<p>In the practice of modeling, we often work with probability density functions, because it is more convenient in many cases. Then, in order to translate to probabilities, we would think in terms of areas under that curve. For sure, you remember the following duality between CDF and PDF (distribution, probability density function): <span class="math inline">\(F'(x) = p(x)\)</span>.</p>
 <!-- 
 ::: {.callout-note}
 ## An adversarial example. Not in F!
@@ -663,8 +590,11 @@ $$
 The best way to see the problem here, is to draw the mapping and pick 3 thresholds for $r$. Then see if we can recover events in $\mathcal{F}$ by $X^{-1}(w)$.
 
 ::: -->
-<p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of compositional data analysis<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><div class="quarto-figure quarto-figure-center"><sup>5</sup>&nbsp;
+</section>
+<section id="wonky-probability-triples" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="wonky-probability-triples">Wonky probability triples</h2>
+<p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of compositional data analysis<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><div class="quarto-figure quarto-figure-center"><sup>10</sup>&nbsp;
 <figure class="figure">
 <p><img src="img/composition.png" title="Simplex" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption><em>Source: <a href="https://www.mdpi.com/1660-4601/17/7/2220">Dumuid</a></em>: Data in a Simplex, which is later translated to <span class="math inline">\(R^n\)</span> by a carefully constructed basis expansion</figcaption>
@@ -681,13 +611,12 @@ The curious case of Compositional Data Analysis
 </div>
 <div class="callout-body-container callout-body">
 <p>Sometimes, the data doesn’t “live” in our normal, intuitive, euclidian space <span class="math inline">\(\mathbb{R}^n\)</span>. There are cases when the object of our analysis are proportions or compositions: think of what a material is made of, the proportion of the demand for different sizes of a shoe or garment.</p>
-<p>We don’t necessarily care about their absolute value, but about their relative proportion. If we blindly apply traditional methods, or even statistical summaries, we will quickly hit weird results and paradoxes. So, we have to tweak existing methods we have make sense for compositions.</p>
+<p>We don’t necessarily care about their absolute value, but about their relative proportion. If we blindly apply traditional methods, or even statistical summaries, we will quickly hit weird results and paradoxes. So, we have to tweak existing methods such that they make sense for compositions.</p>
 <p>Compositional data analysis solves those issues by defining a probability triple over the simplex (instead of <span class="math inline">\(\mathbb{R}^n\)</span>): <span class="math inline">\((\mathcal{S}^n, \mathcal{F}, \mathbb{P})\)</span>. This leads to a different definition of the event space <span class="math inline">\(\mathcal{F}\)</span>, which is also a sigma-algebra and a different definition of the probability measure <span class="math inline">\(\mathbb{P}\)</span>.</p>
 </div>
 </div>
-<p>Remember our exaple of <a href="../01_fundamentals/learning.html#implicit-learning-intuition-and-bias">pigeon superstition</a> in the context of learning? It is not surprising to me that measure theory becomes important in Learning Theory,<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> which is exactly those carefully formulated principles that will prevent our automated learners to become supersitious.</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Even though most courses from which I studied don’t mention it explicitly (Yaser Abu-Mostafa, Shai Ben-David, Reza Shadmehr), according to Mikio’s Brown <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> it’s essential in the idea of <strong>uniform convergence</strong> and its bounds, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>.</p></div></div><p>For the next example, you don’t have to understand what Gaussian Processes are or are used for. However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results, in contrast with choosing a wrong model or distribution.</p>
-<p>It’s not that these methods don’t have parameters, but the parametrization varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don’t know what is a reasonable distribution or parametric functional form for the relationship that we model.</p>
+<p>For the next example, you don’t have to understand what Gaussian Processes are or are used for.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results.</p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Modeling complex patterns in (multidimensional) time series, for spatio-temporal modeling, any time our data points are not independent and we can quantify their “closeness”</p></div></div><p>It’s not that these methods don’t have parameters, but the “parametrization” varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don’t know what is a reasonable distribution or parametric functional form for the relationship that we model.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -699,42 +628,50 @@ Nonparametrics and Gaussian Processes
 </div>
 <div class="callout-body-container callout-body">
 <!-- Stochastic Processes, Graphs and Trees -->
-<p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract functions: <span class="math inline">\(f(x) \in \mathscr{C}^2:X \rightarrow \mathbb{R}\)</span>, <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> we might want to know how a draw of samples from an infinite set of continuous differentiable functions might look like.</p>
+<p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract, smooth, twice differentiable functions: <span class="math inline">\(f(x) \in \mathscr{C}^2, f : X \rightarrow \mathbb{R}\)</span>, we might want to know how a draw of samples from an infinite set of functions might look like.</p>
 <p><span class="math display">\[
 f(x) \sim GP(\mu(x); K(x,x'))
 \]</span></p>
-<p>The questions arises: how to define a PDF (probability density function) in this space? In my bachelor thesis, I got away with using Gaussian Processes, which are a very special class of stochastic processes. In this special case I could informally define an apriori distribution by defining the mean vector and Kernel (covariance function), then condition it on observed data with a Normal Likelihood.</p>
+<p>The questions arises: how to define a PDF (probability density function) in this space? In my bachelor thesis, I got away with using Gaussian Processes by informally defining an apriori distribution of the mean vector <span class="math inline">\(\mu\)</span> and a Kernel (covariance function), then conditioning it on observed data with a Normal Likelihood.</p>
 <p><span class="math display">\[
 p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(f)}}{p(\left \{ x\right \})}
 \]</span></p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn7"><div class="quarto-figure quarto-figure-center"><sup>7</sup>&nbsp;
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/gp-conditioned.png" title="GP Posterior" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption><em>Source: <a href="https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/">Bizovi</a></em>: A posterior distribution of the Gaussian Processes, when conditioned on data</figcaption>
 </figure>
 </div>
-</div><div class="">
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <p>In the case of stochastic processes, we work with a sequence of random variables <span class="math inline">\(\{X_t, t \in T \}\)</span> and start asking questions:</p>
 <ul>
 <li>What kind of time dependency is there? (autocorrelation)</li>
 <li>What is the long-run behavior?</li>
 <li>Can we say something about extreme events?</li>
 </ul>
-</div></div>
-<p>A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically – which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.</p>
+</div></div><p>A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically – which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.</p>
 <p>Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.</p>
-<!-- Statistical Foundations: Reference, Revies --->
-<!-- [^11]: Doogue - [Common statistical tests are linear models](https://steverxd.github.io/Stat_tests/)
-[^12]: Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) has two companion books, one with R and another in Python
-[^24]: Speegle, Clair - [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html)
-[^45]: Bryan - [STAT 545](https://stat545.com/) It is also notable for its focus on teaching using modern R packages, Git and GitHub, its extensive sharing of teaching materials openly online, and its strong emphasis on practical data cleaning, exploration, and visualization skills, rather than algorithms and theory. -->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rabbit hole: machine learning theory
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Last, but not least, measure theory and advanced probability is important in machine learning theory, where we try to formally answer the question if our model can generalize successfully given its complexity, the sample size, and the “strength of signal”.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Vapnik and Chernovenkis’ theory started a revolution in pattern recognition, gave a practical model of Support Vector Machines, and established the foundations of modern machine learning.</p>
+<p>One such tool from probability which pops up in ML theory is uniform convergence, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>. <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
+<p>In plain english, the object of investigation is an infinite of functions mapping from our input space (data, <span class="math inline">\(X\)</span>) to the output / target variable <span class="math inline">\(y\)</span>. Therefore learning is an algorithmic process which uses our in-sample data to select a function from this infinite space, which will have the greatest chance to generalize and make good predictions.</p>
+</div>
+</div>
 
 
-</section>
-</section>
-</section>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;You can check out this <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> on quora for a more detailed explanation of how measure theory is useful in ML theory</p></div></div><div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;Probably approximately correct (PAC learning)</p></div></div></section>
 
 
 </main> <!-- /main -->
@@ -1304,8 +1241,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../roadmap_prob.html" class="pagination-link" aria-label="Schedule &amp; Roadmap">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Schedule &amp; Roadmap</span>
+      <a href="../sim/1L_bday_problem.html" class="pagination-link" aria-label="1L. Birthday problem">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1L. Birthday problem</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -306,12 +306,6 @@ window.Quarto = {
  <span class="menu-text">Schedule &amp; Roadmap</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. The Probability Triple</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -358,6 +352,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../sim/1L_bday_problem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1L. Birthday problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. The Probability Triple</span></a>
   </div>
 </li>
       </ul>
@@ -440,7 +440,7 @@ window.Quarto = {
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;for example, in a simulation or scientific computing class</p></div></div><ul>
 <li>Learn programming for data analysis in R or Python, including data wrangling, visualization, and reproducible research</li>
 <li>Apply theoretical concepts and models to real-world stories and case-studies. This will highlight why is that theory relevant, useful, and why was it invented in the first place</li>
-<li>Understand how and why the theory works by doing lots of simulations. Find out under what conditions it fails</li>
+<li>Understand how and why the theory works by doing lots of simulations. Find out under what conditions it fails. In the section <a href="../sim/1_intro.html">“simulation of economic processes”</a>, I explain multiple ways in which simulation and numerical methods are used in practice.</li>
 </ul>
 <p>If you already had the classes mentioned above, you might be in third, 4th year, masters’ degree, or finished your formal studies. It’s likely you know how to solve problems and get stuff done in R or Python. Then, I recommend you go through this module in an accelerated way,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> both in terms of theory and coding. You might ask, why not skip it entirely and focus on statistical modeling?</p>
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;for example, using some parts of the module as a review in the context of a data science or econometrics’ class</p></div></div><ul>
@@ -448,6 +448,32 @@ window.Quarto = {
 <li>A much more important reason is the re-contextualization of the fundamentals and getting rid of misconceptions, bad habits, and questionable statistical practices</li>
 <li>I think that statistics is so tricky, that it’s almost guaranteed we misunderstood something the first time we studied it</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+“I haven’t used Poisson outside that probability class”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you empathise with this statement, you’re either aware that it’s important and wonder why it didn’t come up in practice or believe it was a tedious academic exercise. The point is not about Poisson distribution, but about the statistical theory in general.</p>
+<p>First, let me assure you that it is helpful in practical applications. The problem with the teaching is two-fold: the lack of stories / use-cases to motivate the theory and a lack of models besides linear regression, simple statistical tests, and ML models like gradient boosting and random forests.</p>
+<p>Poisson distribution and process can be a good choice to model counts of <strong>events per unit of time</strong>, space, with a large number of “trials”, each with a small probability of success.</p>
+<p><span class="math display">\[
+P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
+\]</span></p>
+<ul>
+<li>Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.</li>
+<li>Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.</li>
+<li>Forecasting slow-moving items in a retail store, e.g.&nbsp;for clothing. We’ll investigate the <strong>newsvendor problem</strong> in excruciating detail, where we have to purchase the inventories ahead of time.</li>
+<li>A famous example is of L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. <em>(“Law of small numbers”)</em>.</li>
+<li>Number of asthma or kindey cancer related deaths per US county (examples in Gelman BDA3 recommended in Module 3)</li>
+</ul>
+<p>Just before you get all excited about these applications, keep in mind that every distribution has a story behind it, and a set of assumptions that have to be met.</p>
+</div>
+</div>
 </section>
 <section id="roadmap-and-the-big-picture" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="roadmap-and-the-big-picture">Roadmap and the big picture</h2>
@@ -537,6 +563,7 @@ Birthday Paradox. Pigenhole Principle. Collision Problems
 <div class="callout-body-container callout-body">
 <p>One of the reasons we’re not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur.</p>
 <p>The birthday problem is one of such examples. We’ll do simulations and derive the analytical solution – suggesting unexpected applications in computer science and engineering.</p>
+<p>You can follow an end-to-end, worked out example on this website, in the <a href="../sim/1L_bday_problem.html">section</a> about simulation.</p>
 </div>
 </div>
 
