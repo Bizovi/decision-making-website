@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mihai Bizovi">
 
-<title>applications – Decision Science Course</title>
+<title>The most dangerous equation – Decision Science Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01_fundamentals/2_performance_strategy.html" rel="next">
-<link href="../01_fundamentals/roadmap.html" rel="prev">
+<link href="../sim/3_lln.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -94,13 +94,13 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Decision Science Course">
-<meta property="og:description" content="">
+<meta property="og:title" content="The most dangerous equation – Decision Science Course">
+<meta property="og:description" content="CLT, Inverse Method, Monte-Carlo Integration">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -162,7 +162,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School and Methodology</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/1_applications.html">1. Application Domains &amp; Use-Cases</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/3L_CLT.html">3L. Most dangerous equation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -203,11 +203,11 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Business School and Methodology</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
@@ -222,7 +222,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/1_applications.html" class="sidebar-item-text sidebar-link active">
+  <a href="../01_fundamentals/1_applications.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Application Domains &amp; Use-Cases</span></a>
   </div>
 </li>
@@ -305,11 +305,11 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">~ Simulation of economic processes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
@@ -342,7 +342,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sim/3L_CLT.html" class="sidebar-item-text sidebar-link">
+  <a href="../sim/3L_CLT.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">3L. Most dangerous equation</span></a>
   </div>
 </li>
@@ -350,103 +350,42 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#data-science-in-the-wild" id="toc-data-science-in-the-wild" class="nav-link active" data-scroll-target="#data-science-in-the-wild">Data Science in the Wild</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School and Methodology</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/1_applications.html">1. Application Domains &amp; Use-Cases</a></li></ol></nav></header>
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/3L_CLT.html">3L. Most dangerous equation</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">The most dangerous equation</h1>
+<p class="subtitle lead">CLT, Inverse Method, Monte-Carlo Integration</p>
+</div>
 
 
 
+<div class="quarto-title-meta column-page-right">
 
-<section id="data-science-in-the-wild" class="level1 page-columns page-full">
-<h1>Data Science in the Wild</h1>
-<p>At this point, you might get tired of me emphasizing the decision-making aspect of data science as the main point of why it is important. It’s time we move from the general and abstact towards particular examples and applications in various industries. This will lead us to acknowledge how <strong>prevalent</strong> is AI (that we haven’t fully defined yet) in firms, services and technologies we use every day.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-During a lecture, I usually ask students
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Can you give some examples of businesses, sevices, technologies, problems, and domains which you suspect do have AI/ML algorithms and models behind the scenes?</p>
-<p>See below some very good answers and argumentations provided by the students last year, then we’ll examine in more details one of them. Of course, there is always that one person, very passionate about sports or blockchain.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Do some reverse engineering!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When reading this section, I want to get you into a mindset of the reverse engineer: step back and think deeply about products and services you use every day:</p>
-<ul>
-<li>Put yourself in the shoes of the business making those decisions and building those systems</li>
-<li>What were the goals, user/client needs?</li>
-<li>What was the firm’s objective?</li>
-<li>What constraints did they hit? Why it was a difficult problem?</li>
-<li>What made it an appropriate use-case for ML, Statistics, and AI?</li>
-<li>What are some potential approaches they settled on?</li>
-<li>What would be a baseline, simple, naive solution?</li>
-</ul>
-</div>
-</div>
-<ul>
-<li><strong>Dynamic pricing</strong> in Bolt and Uber, which takes into account the weather, especially if it rains, peak hours: balancing demand and supply. It is at the intersection of ML and economic theory, as they are a platform or marketplace. Prices also change with respect to competitors, so we see aspects of an oligopoly behavior. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><br>
-</li>
-<li><strong>Stock markets</strong> and trading bots: at the intersection of economics, finance and AI. I would add the “good old” and boring portfolio management and venture capital enterprises.</li>
-<li><strong>Management consulting</strong>: what market to enter, whether and how to build a new product (product development). Lots of use-cases in marketing and market research firms.</li>
-<li><strong>Medicine Applications</strong>: developing new vaccines and drugs, aided by AI and designing clinical trials for novel treatments.</li>
-<li><strong>Banks and insurance</strong>: risk management, predicting credit defaults on mortgages and business loans. Chatbots for customer support, for most frequent and simple questions.</li>
-<li><strong>Automotive</strong>: routine tasks like automated parking, the race towards self-driving, autonomous or semi-autonomous cars, safety warnings. Predictive maintainance is tackling a problem where they leverage predictions to replace risky parts before they go out of function.</li>
-<li>Liverpool F.C. won a title, and a key part of their success was leveraging AI and ML to discover new tactis on the field with the highest payoffs. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-<li><strong>NBA</strong> teams invested a lot in the data infrastructure and decision-making capabilities: LA Lakers found the best player at the moment for a particular position they were lacking and would play well along with the team. Rockets won the regular championship divison by going all in on the 3-point shot.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Golden State Warriors simply revolutionised basketball with data, before everyone else was doing it – giving them a competitive edge. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
-</ul>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;When it doesn’t work out – I’m pretty upset at their data scientists and domain experts. Here is where ethical issues creep up: jacking up prices, monopolies, drivers struggling to make a living wage.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;TODO: Reference article and maybe dataset for more details</p></div><div id="fn3"><p><sup>3</sup>&nbsp;<a href="https://d3.harvard.edu/platform-digit/submission/moreyball-the-houston-rockets-and-analytics/">Moreyball: The Houston Rockets and Analytics</a> – an article in Harvard’s MBA Digital Innovation</p></div><div id="fn4"><p><sup>4</sup>&nbsp;Check out the following <a href="https://youtu.be/oUvvfHkXyOA">video by The Economist</a> on how data transformed the NBA. For more details on the statistical methodology, I enjoyed an youtube channel called Thinking Basketball and their <a href="https://www.youtube.com/watch?v=pznoCFs7XZg&amp;list=PLtzZl14BrKjTJZdubjNEY5jU0fGOiy51x">playlist</a> about the statistical methodology.</p></div></div><p>In all of the examples above, those businesses and systems do have to make decisions, under uncertainty from multiple sources, trying to solve complex problems at a large scale, which would be impossible to do manually even with an army of employees.</p>
-<p>I would like to add a few more examples, from an insider and practitioner’s perspective, which might not be as impressive and a bit routine, but no less important. Keep in mind, that if at a closer look, the service seems to do something relatively intelligent very fast, specialized AI might be involved behind the scenes.</p>
-<ul>
-<li><strong>Demand Planning</strong>: How many SKUs (items) should I order for manufacturing, to satisfy the demand (that last item on the shelf, minimizing lost sales) and to minimize excess inventory.</li>
-<li><strong>Logistics</strong> and <strong>Supply Chain</strong>: routing, distribution center operations and automations for order fulfillment, return management</li>
-<li><strong>Recommender systems</strong> for music, videos, books, products, news in social media, services, platforms, and e-commerces like facebook, instagram, tiktok, youtube, spotify, amazon, emag. You can find recommendations in surprising places, like google maps.</li>
-<li><strong>Programmatic Advertisement</strong>: finding best placement for ads on various platforms, right now dominated by meta and google</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Classroom Case Studies for a Deeper Understanding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will explore some challenges and applications from this list in a series of case studies and labs. The idea is to improve our ability to identify opportunities and formulate problems from the point of view of an organisation, such that we can match those with the methods, models and algorithms discussed in the course.</p>
-<p>I’ll have to introduce a lot of new concepts when the language we developed so far will turn out to be insufficient to talk about and understand what’s happening inside these firms. Thus, each case study is an opportunity to play around with a novel idea. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<ul>
-<li>In the first deep-dive, we will look at Uber and Bolt, with publicly available information, trying to figure out what do their data scientists do.</li>
-<li>Then, we will look at the lingerie e-commerce where I work at, AdoreMe and a different set of problems we’re facing.</li>
-</ul>
-</div>
-</div>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mihai Bizovi, VP of Decision Science </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
 
 
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;If you have a pretty good idea about what is AI, Analytics, ML, Deep Learning, Big Data, Causal Inference and when to use one approach or another, feel free to skip the history and terminology and go straight to the case studies.</p></div></div></section>
+</header>
+
+
+
 
 
 </main> <!-- /main -->
@@ -1014,16 +953,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/roadmap.html" class="pagination-link" aria-label="Schedule &amp; Roadmap">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Schedule &amp; Roadmap</span>
+      <a href="../sim/3_lln.html" class="pagination-link" aria-label="3. Three core theorems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3. Three core theorems</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../01_fundamentals/2_performance_strategy.html" class="pagination-link" aria-label="2. Performance and Strategy">
-        <span class="nav-page-text">2. Performance and Strategy</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

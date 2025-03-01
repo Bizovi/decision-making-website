@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../sim/3_lln.html" rel="next">
 <link href="../01_fundamentals/stat_foundations.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -158,7 +159,7 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Who will show up to a safari? – Decision Science Course">
-<meta property="og:description" content="Bernoulli, probability trees, and LLN">
+<meta property="og:description" content="Bernoulli, Binomial, Probability trees">
 <meta property="og:image" content="https://course.economic-cybernetics.com/sim/2L_safari_files/figure-html/unnamed-chunk-1-1.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
@@ -400,6 +401,18 @@ window.Quarto = {
  <span class="menu-text">2L. Safari trips</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/3_lln.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Three core theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/3L_CLT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3L. Most dangerous equation</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -410,7 +423,6 @@ window.Quarto = {
   <ul>
   <li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link active" data-scroll-target="#bernoulli-distribution">Bernoulli distribution</a></li>
   <li><a href="#showing-up-to-a-safari-trip" id="toc-showing-up-to-a-safari-trip" class="nav-link" data-scroll-target="#showing-up-to-a-safari-trip">Showing up to a safari trip</a></li>
-  <li><a href="#laws-of-large-numbers" id="toc-laws-of-large-numbers" class="nav-link" data-scroll-target="#laws-of-large-numbers">Laws of large numbers</a></li>
   <li><a href="#homework-and-study-resources" id="toc-homework-and-study-resources" class="nav-link" data-scroll-target="#homework-and-study-resources">Homework and Study Resources</a></li>
   </ul>
 </nav>
@@ -425,7 +437,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/2L_safari.html">2L. Safari trips</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Who will show up to a safari?</h1>
-<p class="subtitle lead">Bernoulli, probability trees, and LLN</p>
+<p class="subtitle lead">Bernoulli, Binomial, Probability trees</p>
 </div>
 
 
@@ -696,84 +708,10 @@ Y &amp; = Z \cdot Y_{mix} + (1-Z) \cdot Y_{ind}
 </div>
 <p>This story of people showing up to a safari should remind you to check for ways your observations are not independent. This happens quite often in statistical modeling when we deal with repeated observations, groups (like classes, schools, countries, firms), spatial correlation, clustered data (like members of a household), and time series.</p>
 </section>
-<section id="laws-of-large-numbers" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="laws-of-large-numbers">Laws of large numbers</h2>
-<p>Laws of large numbers is a set of results in probability theory which justifies the Monte-Carlo approach to simulation and “makes it work”. You saw the simplest example of it when we discussed statistical stability and Bernoulli’s theorem in the context of probability triple.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;In the next weeks we will get the remaining tools: The Universality of Uniform and Central Limit Theorem</p></div></div><div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">137</span>) </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>nr_sim_pois <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>lln_pois <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, {</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    pois_sim <span class="ot">&lt;-</span> <span class="fu">rpois</span>(nr_sim_pois, <span class="fl">4.5</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">seq</span>(<span class="dv">10</span>, nr_sim_pois, <span class="dv">30</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sapply</span>(\(x) pois_sim[<span class="dv">1</span><span class="sc">:</span>x] <span class="sc">|&gt;</span> <span class="fu">mean</span>())</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">data.frame</span>() <span class="sc">|&gt;</span> <span class="fu">tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Show visualization code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lln_pois <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">nr_samples =</span> <span class="dv">10</span> <span class="sc">+</span> <span class="fu">row_number</span>() <span class="sc">*</span> <span class="dv">30</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"X1"</span>, <span class="st">"X2"</span>, <span class="st">"X3"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">case_when</span>(</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        name <span class="sc">==</span> <span class="st">"X1"</span> <span class="sc">~</span> <span class="st">"sim. 1"</span>,</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        name <span class="sc">==</span> <span class="st">"X2"</span> <span class="sc">~</span> <span class="st">"sim. 2"</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        name <span class="sc">==</span> <span class="st">"X3"</span> <span class="sc">~</span> <span class="st">"sim. 3"</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">|&gt;</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(nr_samples <span class="sc">&gt;</span> <span class="dv">60</span> <span class="sc">&amp;</span> nr_samples <span class="sc">&lt;</span> <span class="dv">20000</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> nr_samples, <span class="at">y =</span> value, <span class="at">col =</span> name)) <span class="sc">+</span> </span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">4.5</span>, <span class="at">lty =</span> <span class="st">"dashed"</span>) <span class="sc">+</span> </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="2L_safari_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Notice the fluctuations at around n = 5000. This should not be unexpected, even when sampling from the true distribution</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Show code for squared error drop</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lln_pois <span class="sc">|&gt;</span> <span class="fu">select</span>(X1) <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">nr_samples =</span> <span class="dv">10</span> <span class="sc">+</span> (<span class="fu">row_number</span>() <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">30</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(nr_samples <span class="sc">&gt;=</span> <span class="dv">10</span> <span class="sc">&amp;</span> nr_samples <span class="sc">&lt;</span> <span class="dv">10000</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">theoretical =</span> <span class="fu">sqrt</span>(<span class="fl">4.5</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(nr_samples),</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">simulated =</span> <span class="fu">sqrt</span>((<span class="fl">4.5</span> <span class="sc">-</span> X1)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> nr_samples, <span class="at">y =</span> simulated), </span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">ol=</span><span class="st">"grey70"</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> nr_samples, <span class="at">y =</span> theoretical), </span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">lty=</span><span class="st">"dashed"</span>, <span class="at">col=</span><span class="st">"darkred"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lims</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3500</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.52</span>)) <span class="sc">+</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sample size"</span>, <span class="at">y =</span> <span class="st">"Squared error"</span>) <span class="sc">+</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="2L_safari_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>We can compare the expected squared error curve vs the one we get in simulation. In practice, we care not only the asymptotic behavior, but how fast the average converges.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>In the case of <span class="math inline">\(X \sim Pois(\lambda)\)</span>, we know that <span class="math inline">\(\lambda\)</span> is both the expectation and variance, hence the expected squared error will be <span class="math inline">\(\frac{\sigma}{\sqrt{n}} = \frac{\sqrt{\lambda}}{\sqrt{n}}\)</span></p>
-</div></div></section>
 <section id="homework-and-study-resources" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="homework-and-study-resources">Homework and Study Resources</h2>
-<p>At the end of this week you should have a working understanding of the probability triple and random variables. This will help you better understand the stories behind probability distributions and move forward with simulations.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Look at your notes from probability and mathematical statistics class. Do they make more sense now once you have this new context and background?</p></div></div><ul>
+<p>At the end of this week you should have a working understanding of the probability triple and random variables. This will help you better understand the stories behind probability distributions and move forward with simulations.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Look at your notes from probability and mathematical statistics class. Do they make more sense now once you have this new context and background?</p></div></div><ul>
 <li>Read <a href="../01_fundamentals/stat_foundations.html">lecture two</a> and understand what the probability triple means and how it’s relevant in practice</li>
 <li>Replicate and practice on the safari example, by changing the probability of showing up, number of passengers, and the proportion of couples in the population</li>
 <li>Read about the properties of the Bernoulli random variables in Speegle’s <a href="https://probstatsdata.com/discreterandomvariables.html#binomialgeometric">chapter three</a> of “Probability, Stats, and Data: A fresh approach using R”. Run the R commands provided there</li>
@@ -1361,6 +1299,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../sim/3_lln.html" class="pagination-link" aria-label="3. Three core theorems">
+        <span class="nav-page-text">3. Three core theorems</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
