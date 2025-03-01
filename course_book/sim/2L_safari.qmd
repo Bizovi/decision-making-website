@@ -1,6 +1,6 @@
 ---
 title: "Who will show up to a safari?"
-subtitle: "Bernoulli, probability trees, and LLN"
+subtitle: "Bernoulli, Binomial, Probability trees"
 author:
   - name: Mihai Bizovi
     id: mb
@@ -255,72 +255,6 @@ sapply(
 
 This story of people showing up to a safari should remind you to check for ways your observations are not independent. This happens quite often in statistical modeling when we deal with repeated observations, groups (like classes, schools, countries, firms), spatial correlation, clustered data (like members of a household), and time series.
 
-
-## Laws of large numbers
-
-Laws of large numbers is a set of results in probability theory which justifies the Monte-Carlo approach to simulation and "makes it work". You saw the simplest example of it when we discussed statistical stability and Bernoulli's theorem in the context of probability triple.^[In the next weeks we will get the remaining tools: The Universality of Uniform and Central Limit Theorem]
-
-
-```{r}
-set.seed(137) 
-nr_sim_pois <- 100000
-lln_pois <- replicate(n = 3, {
-    pois_sim <- rpois(nr_sim_pois, 4.5)
-    seq(10, nr_sim_pois, 30) |> 
-    sapply(\(x) pois_sim[1:x] |> mean())
-}) |> data.frame() |> tibble()
-```
-
-```{r}
-#| code-fold: true
-#| code-summary: Show visualization code
-#| fig-cap: Notice the fluctuations at around n = 5000. This should not be unexpected, even when sampling from the true distribution
-
-lln_pois |>
-    mutate(nr_samples = 10 + row_number() * 30) |> 
-    pivot_longer(cols = c("X1", "X2", "X3")) |> 
-    mutate(name = case_when(
-        name == "X1" ~ "sim. 1",
-        name == "X2" ~ "sim. 2",
-        name == "X3" ~ "sim. 3"
-    )) |>
-    filter(nr_samples > 60 & nr_samples < 20000) |>
-    ggplot(aes(x = nr_samples, y = value, col = name)) + 
-    geom_line() + 
-    geom_hline(yintercept = 4.5, lty = "dashed") + 
-    scale_color_viridis_d() +
-    theme_minimal()
-```
-
-```{r}
-#| code-fold: true
-#| code-summary: Show code for squared error drop
-#| fig-cap: We can compare the expected squared error curve vs the one we get in simulation. In practice, we care not only the asymptotic behavior, but how fast the average converges.
-#| warning: false
-#| message: false
-
-lln_pois |> select(X1) |>
-    mutate(nr_samples = 10 + (row_number() - 1) * 30) |> 
-    filter(nr_samples >= 10 & nr_samples < 10000) |>
-    mutate(
-        theoretical = sqrt(4.5) / sqrt(nr_samples),
-        simulated = sqrt((4.5 - X1)^2)
-    ) |>
-    ggplot() +
-    geom_line(
-        aes(x = nr_samples, y = simulated), 
-        ol="grey70", linewidth = 0.7) +
-    geom_line(
-        aes(x = nr_samples, y = theoretical), 
-        lty="dashed", col="darkred", linewidth = 1) +
-    scale_color_viridis_d() +
-    lims(x = c(0, 3500), y = c(0, 0.52)) +
-    labs(x = "Sample size", y = "Squared error") +
-    theme_minimal()
-```
-::: {.column-margin}
-In the case of $X \sim Pois(\lambda)$, we know that $\lambda$ is both the expectation and variance, hence the expected squared error will be $\frac{\sigma}{\sqrt{n}} = \frac{\sqrt{\lambda}}{\sqrt{n}}$
-:::
 
 ## Homework and Study Resources
 

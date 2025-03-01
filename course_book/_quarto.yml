@@ -91,6 +91,10 @@ website:
           text: "2. The Probability Triple"
         - href: sim/2L_safari.qmd
           text: "2L. Safari trips"
+        - href: sim/3_lln.qmd
+          text: "3. Three core theorems"
+        - href: sim/3L_CLT.qmd
+          text: "3L. Most dangerous equation"
 
   page-navigation: true
   page-footer:

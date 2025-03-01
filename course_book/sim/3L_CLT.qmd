@@ -1,0 +1,16 @@
+---
+title: "The most dangerous equation"
+subtitle: "CLT, Inverse Method, Monte-Carlo Integration"
+author:
+  - name: Mihai Bizovi
+    id: mb
+    degrees: 
+    - "VP of Decision Science"
+format:
+  html:
+    toc-location: left
+lang: en
+execute:
+  freeze: false
+  cache: true
+---
