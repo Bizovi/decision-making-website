@@ -89,6 +89,8 @@ website:
           text: "1L. Birthday problem"
         - href: 01_fundamentals/stat_foundations.qmd
           text: "2. The Probability Triple"
+        - href: sim/2L_safari.qmd
+          text: "2L. Safari trips"
 
   page-navigation: true
   page-footer:
