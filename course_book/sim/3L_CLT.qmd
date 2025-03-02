@@ -14,3 +14,254 @@ execute:
   freeze: false
   cache: true
 ---
+
+During the third lecture, I did a review of three theorems you have to know and be aware of their practical implications. We used simulations to aid our mathematical understanding of CLT (central limit theorem), LLN (weak law of large numbers), and universality of uniform.^[I suggest you run the code that we used in the lecture and understand the ideas of convergence in probability and convergence in distribution] 
+
+We used the latter's inverse method to generate exponential random variables, discussed how Gamma, Beta can be generated from it and how are they used in modeling. Similarly, we leveraged the relationship of Normal to distributions commonly used in statistics like Chi-squared, Student-t. This exercise allowed us to better understand what (implicit) assumptions are we making when working with these distributions.^[This is what I meant in the first lecture when I said we can use simulation as a tool to learn statistics] 
+
+In this lab, we'll apply the CLT to avoid common pitfalls when reasoning about an outcome under different sample sizes, use the LLN for numerical integration, and discuss in more technical detail about how can we generate random samples from common (and arbitrary) distributions.
+
+::: {.callout-important}
+## The most dangerous equation (pitfalls of ignorance)
+
+Howard Wainer's article (your assigned reading for this week) points out to "equations", but more exactly principles, being dangerous in the sense that we fall into reasoning pitfalls and make poor decisions if we're not aware of them.^[This is precisely the reason we go over these fundamental ideas in probability and statistics which you encountered before, but don't necessarily know how to apply them in practice]
+
+$$
+P(Y) = P(Y | k = 1) P(k = 1) + P(Y| k = 0) P(k = 0)
+$$
+I really like this idea put in an equation of total probability of looking foolish, $Y$, where $k$ is the knowledge of equation / principle or lack thereof. We can't do much about the first term, which is motivated reasoning or ideological stubbornness, but we can reduce the second type of "danger" by knowledge and discipline.
+:::
+
+Howard Wainer chose to nominate the sampling distribution of the sample mean (de Moivre, CLT) as the most dangerous "equation", because of how long it causes confusion, how widespread it is, and the serious consequences such ignorance has caused. He gives examples of:
+
+- The variability in weight of medieval coins and the suspicion that someone stole or cheated in the amount of silver/gold
+    - We will have at least one case-study in which we apply hypothesis testing to quality control in manufacturing
+- The rates of kidney cancer by U.S. county. Are people at more risk in the countryside?
+    - I will introduce the Gamma-Poisson model for modeling rates from Gelman's Bayesian Data Analysis (3rd ed)
+    - The same ideas apply to crime rates and driving accidents
+- Sex differences in the top of math scores, potentially caused by differences in variance between groups.
+    - In chess differences in top k ELO ratings can be explained by (initial) cohort sizes and dropout. 
+    - We'll analyze a dataset from UCLA Berkeley 1973 graduate admissions to quantify whether there was direct or indirect gender discrimination in some departments
+    - Generally, you should be very careful when drawing conclusions about the top or maxima.^[Take a look at this [case-study](https://callingbullshit.org/case_studies/case_study_track_records.html) from Calling Bullshit about aging and 100m running world records]  
+    
+The case-study we're going to investigate today is about "The small schools movement" in the late 1990s U.S. You can find the full story and bibliographical references in the article, but I'll present the short version.
+
+
+## Should U.S. split large schools?
+
+As a result of heavy urbanization, the schools became bigger, more concentrated, and with more specialization in teaching. In the 90's there was a growing dissatisfaction with the state of education, which still holds today, which lead to some initiatives, including Bill/Melinda Gates' foundation financing^[Order of magnitude of $ billions, just from the Gates] and pushing for more small schools. 
+
+This idea was picked up by other organizations and sometimes resulted in million-dollar efforts of splitting large schools (e.g. over 1000 students) in smaller ones.
+
+::: {.callout-note}
+## Stop and think: what are the hypotheses?
+
+Find your closest colleague and discuss for 5 minutes what could've been the assumptions, hypotheses, reasoning, and evidence based on which these organizations concluded that it's a good thing to split the big schools or encourage the creation of small ones.
+
+:::
+
+For a series of papers and articles, Wainer collected data on around 1600 schools from the PSSA (Pennsylvania testing program), which has scores on a variety of subjects and broad sample of schools.^[If you plan to make a project or research paper on education, open datasets like [PSSA](https://www.pa.gov/agencies/education/data-and-reporting/assessment-reporting.html#accordion-b3281f6147-item-b29e262299) will be invaluable, but it takes a lot of effort to clean it up and put it all together for modeling] Indeed, the small schools were over-represented in the top 50 schools according to the test scores (3% in sample vs 12% in the top). Could this be the empirical "evidence" that Gates foundation confirmed their beliefs with? Yes, I'm talking about confirmation bias, since this is a heavily loaded and divisive political topic.
+
+Before loading and analyzing some data, let's first do a simple simulation in which we exaggerate the differences in sample size (number of students in small $n_s$ vs big schools $n_b$). We will generate individual scores from the normal distribution, which is not unreasonable, as most standardized tests are designed precisely that way.
+
+
+```{r import-libraries}
+#| output: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+set.seed(1234)
+```
+
+
+```{r}
+#| code-fold: true
+#| code-summary: Show simulation code
+#| fig-cap: Notice that small schools not only dominate the top of performance, but also the bottom. This is not surprising due to CLT, even when we have drawn from the same $N(0, 1)$ at individual level.
+
+nr_stud_small <- 200; nr_small_schools <- 500
+nr_stud_big <- 400; nr_big_schools <- 100
+
+simulate_schools <- function(n_small, n_stud_small, n_big, n_stud_big) {
+    small_scores <- replicate(n_small, { rnorm(n_stud_small) |> mean() })
+    big_scores   <- replicate(n_big,   { rnorm(n_stud_big)   |> mean() })
+    
+    df <- bind_rows(
+        tibble(
+            scores  = small_scores, 
+            nr_stud = n_stud_small, 
+            school_type = "small"
+        ),
+        tibble(
+            scores  = big_scores, 
+            nr_stud = n_stud_big, 
+            school_type = "big"
+        ) 
+    )
+    df
+}
+
+df <- simulate_schools(
+    nr_small_schools, nr_stud_small, 
+    nr_big_schools, nr_stud_big
+)
+
+df |> 
+    ggplot(aes(x = scores, color = school_type)) + 
+    geom_density(linewidth = 1) + 
+    labs(x = "Average standardized scores") + 
+    theme_minimal()
+```
+::: {.column-margin}
+Notice that we even assume the same population variance $\sigma^2$, which might not be true in other practical applications when we compare groups.
+:::
+
+Now, let's look at some data from Brazil's ENEM scores, which is the equivalent of SAT in U.S. or BAC in Romania. You can find instructions on how to download it from [Chapter 3](https://matheusfacure.github.io/python-causality-handbook/03-Stats-Review-The-Most-Dangerous-Equation.html) of Matheus Faucre's "Causal Inference for the Brave and True" or download it from my github [repo](https://github.com/Bizovi/decision-making/blob/main/decision_labs/data/enem_scores.csv).
+
+```{r}
+#| warning: false
+#| message: false
+
+df_scores <- readr::read_csv("data/enem_scores.csv") |> 
+    mutate(
+        date = as.Date(paste0(year, "-01-01")), 
+        school_id = as.factor(school_id)
+    )
+
+df_scores |>
+  arrange(desc(avg_score)) |> 
+  head(10)
+```
+
+```{r}
+#| column: margin
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: Distribution of the number of students. Most schools have less than 200 students.
+
+df_scores |>
+    filter(year == 2005) |>
+    select(number_of_students, school_id) |>
+    ggplot(aes(number_of_students)) + 
+        geom_histogram(fill = "skyblue", color = "white") + 
+        lims(x = c(0, 750)) + 
+        theme_minimal() + 
+        labs(x = "number of students")
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: Show visualization code
+#| message: false
+#| warning: false
+#| fig-cap: Notice the pattern we're interested in, but also the fact that we have many confounders we don't take into account, like school location, funding, number of teachers, if it's private or public, etc. Therefore, we can't know from this data what causes better performance -- but we know it's not the school size!
+
+df_scores |>
+    filter(year != 2005) |>
+    group_by(school_id) |>
+    summarise(
+        number_of_students = mean(number_of_students, na.rm = TRUE),
+        avg_score = mean(avg_score, na.rm = TRUE)
+    ) |>
+    mutate(
+        performance = case_when(
+            avg_score > quantile(avg_score, 0.975) ~ "top",
+            avg_score < quantile(avg_score, 0.225) ~ "bottom",
+            .default = "middle"
+        )
+    ) |>
+    ggplot(aes(number_of_students, avg_score)) +
+    geom_point(aes(shape = performance, color = performance)) +
+    geom_smooth(method = "gam", se = TRUE, color = "dodgerblue3") + 
+    scale_shape_manual(values = c(4, 1, 8)) + 
+    scale_color_manual(values = c("coral", "grey40", "skyblue")) + 
+    theme_minimal() + 
+    labs(
+        x = "Number of students",
+        y = "Average Score", 
+        title = "ENEM Scores by School Size",
+        subtitle = "Fooled by small sample sizes"
+    )
+```
+
+
+```{r}
+#| column: margin
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: Distribution of average scores in 2005 tells us that there are important factors we didn't take into account.
+
+df_scores |>
+    filter(year == 2005) |>
+    ggplot(aes(avg_score)) + 
+        geom_density(stat = "density", fill = "coral", color = "darkred", alpha = 0.4) + 
+        theme_minimal() + 
+        labs(x = "Average score")
+```
+There are better ways to visualize this data, for example, we can split the x-axis (nr of students) into buckets, then display a boxplot or error-bars for each one, along with some of the outliers. We could also color the data points with a contrasting, continuous gradient and not discretize the scores.
+
+```{r}
+#| fig-cap: When a single distribution is not sufficient in describing the outcomes, there might be a latent mixture or heterogeneity in your population. 
+
+c(rnorm(2000, mean = 43, sd = 6), 
+  rnorm(500, mean = 65, sd = 6)) |> 
+    hist(
+        col = "skyblue", border = "white", breaks = 40,
+        main = "Example of a mixture of two distributions", 
+        xlab = "ENEM Scores"
+    )
+```
+::: {.callout-note}
+## Try to make your own simulation
+
+After analyzing the data from Brazil, we got more information about the distribution for number of students in schools and the distribution of average scores. 
+
+
+Use that knowledge to make your own simulation with more realistic assumptions. For example, you will see below how we figure out which distribution is appropriate for the number of students per school.^[But how did I pick the negative binomial? Knowledge and experience of distribution's stories and their properties.]
+
+More specifically, you will now generate the number of students for a lot of schools (from the negative binomial), and for each school a vector of scores (from the mixture of gaussians) which you will summarize by taking the average. Will this lead to more realistic results? 
+:::
+
+```{r}
+#| warning: false
+#| message: false
+#| code-fold: true
+#| code-summary: Show code for fitting data to the negative binomial
+#| fig-cap: Negative binomial captures well the asymmetric distribution of students and is appropriate for the task, because its support is non-negative integers (or counts).
+
+nr_stud <- df_scores |> filter(year == 2005) |> 
+    sample_n(2000, replace = TRUE) |> pull(number_of_students)
+negbinom_params <- MASS::fitdistr(nr_stud, 
+    "negative binomial", method = "SANN")$estimate
+
+rnbinom(10000, size = negbinom_params["size"], mu = negbinom_params["mu"]) |>
+    hist(breaks = 40, col = "skyblue", border = "white", 
+         xlab = "number of students", main = "Negative Binomial fitted to data", 
+         xlim = c(0, 700))
+```
+::: {.column-margin}
+Here are the parameters we obtained by fitting the distribution to the data: `r round(negbinom_params["size"], 2)` for size $n$ and `r round(negbinom_params["mu"], 2)` for $\mu$.
+:::
+
+You should take away one big lesson from this case-study -- that we should always remember the consequences of sample size and its variability. By using basic statistics and simulations, we can prevent mistaken conclusions from a naive data analysis and getting fooled by randomness. You might point out that this example is slightly trivial, but trust me, in practice the pitfalls become much more subtle.
+
+::: {.column-margin}
+Some pitfalls include sampling bias, differential non-response, dropout from study, right censoring, via confounders, mediators, or colliders.
+:::
+
+These kinds of simulations have one more advantage, as we can check if different causal assumptions can generate the kinds of patterns we observe -- even if we haven't collected the data to verify it. You will get used to the situation when two different process models result in similar statistical patterns -- which will force you to think very carefully about the underlying causal process in practice.
+
+## Numerical integration
+
+
+
+## Drawing samples from distributions
+
+
+## Homework and Study Resources
+
+- Read this famous article by Howard Wainer - ["The most dangerous equation"](https://assets.press.princeton.edu/chapters/s8863.pdf) (Princeton university press, 2009).
+
