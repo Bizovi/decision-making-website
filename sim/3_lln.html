@@ -698,20 +698,21 @@ Exponential (Casella and Robert, pg 44)
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"x (time until engine failure)"</span>,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">6</span>)</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rexp</span>(<span class="fl">1e4</span>) <span class="sc">|&gt;</span> <span class="fu">density</span>(<span class="at">from =</span> <span class="fl">0.05</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="at">col =</span> <span class="st">"coral"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="dv">6</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dexp</span>(x), <span class="at">col =</span> <span class="st">"coral"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">add =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="3_lln_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>The red line is the kernel density estimation from R’s rexp function</figcaption>
+<figcaption>The red line is the theoretical PDF from R’s dexp function</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
+<p>I kind of lied to you by implying that the universality of uniform is everything we need to draw samples from distributions. The technical details to make it computationally efficient are not easy at all. Moreover, there are accept-reject methods when everything else fails. You can refer to Alexandru Marioarei’s extensive <a href="https://alexamarioarei.quarto.pub/curs-stat-fmi/Laboratoare/Lab_Sim.html#sec-gen-inv-other">guide on simulation</a> and Casella/Robert’s Chapter 2 and 3 for a much more in-depth explanation and demonstration.</p>
+<p>I think the best time to cover these behind-the-scenes details is only after you are comfortable and confident with actually doing the simulations to solve practical problems. Only then, it makes sense to ask how exactly do R or Python implementations work.</p>
 </section>
 <section id="stories-of-beta-and-gamma" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="stories-of-beta-and-gamma">Stories of Beta and Gamma</h2>
@@ -730,7 +731,35 @@ Y &amp; = 2\sum_{j=1}^\nu X_j \sim \chi^2_{2\nu}
 <div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;Do you know another model for this task? Linear regression won’t do the job, but you might encounter Poisson regression and generalized linear models in the future</p></div></div><p>Lastly, this relationship of the exponential to Chi-squared isn’t very helpful. We would be better served by thinking of it as a sum of squared iid Gaussian random variables <span class="math inline">\(X_1, ..., X_k \overset{iid} \sim N(0, 1)\)</span>.</p>
 <p><span class="math display">\[
 Y = \sum_{j=1}^k X_j^2 \sim \chi^2_k
-\]</span> You might remember <span class="math inline">\(\chi^2_k\)</span> from your hypothesis testing classes, as it appears when talking about the distribution of the sample standard deviation estimators: <span class="math inline">\(\hat \sigma^2 = \frac{1}{n - 1}\sum_{i = 1}^n (x_i - \bar x)^2\)</span>. This should immediately make you worry if assuming normally distributed samples is appropriate.</p>
+\]</span> You might remember <span class="math inline">\(\chi^2_k\)</span> from your hypothesis testing classes, as it appears when talking about the distribution of the sample standard deviation estimators: <span class="math inline">\(S^2 = \frac{1}{n - 1}\sum_{i = 1}^n (x_i - \bar x)^2\)</span>. This should immediately make you worry if assuming normally distributed samples is appropriate.</p>
+<p><span class="math display">\[
+\frac{n - 1}{\sigma^2}S^2 \sim \chi^2_{n-1}
+\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">9</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>lots_of_sigmas <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    (sample_size <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">sd</span>(<span class="fu">rnorm</span>(sample_size, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">9</span>))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(lots_of_sigmas,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">"skyblue2"</span>, <span class="at">border =</span> <span class="st">"white"</span>, <span class="at">breaks =</span> <span class="dv">50</span>, <span class="at">freq =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">"Sample variances vs Chi-squared distribution"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"sample variance"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">25</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">13</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x, <span class="at">df =</span> <span class="dv">3</span>), <span class="at">col =</span> <span class="st">"coral"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3_lln_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Example from Speegle &amp; Clair, Chapter 5. Sample variances for <span class="math inline">\(n=4\)</span>, <span class="math inline">\(\sigma = 9\)</span>, and <span class="math inline">\(\mu = 5\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>As a segway to the next section, one can’t overstate the importance of Gosset’s student/<strong>t distribution</strong> and the idea of sampling distribution of the sample mean in statistics.<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> If <span class="math inline">\(X_0 \sim N(0, 1)\)</span> and <span class="math inline">\(Y \sim \chi^2_k\)</span>, then</p>
 <div class="no-row-height column-margin column-container"><div id="fn17"><p><sup>17</sup>&nbsp;Take a bit of time to read about Gosset’s story of inventing a method for hypothesis testing in quality assurance of Guiness’ beer factories.</p></div></div><p><span class="math display">\[
 Z = \frac{X_0}{\sqrt{Y / k}} \sim t_k
@@ -742,11 +771,17 @@ Z = \frac{X_0}{\sqrt{Y / k}} \sim t_k
 <p>The sample mean, technically, is an estimator <span class="math inline">\(t : X \rightarrow \hat\theta\)</span>. Let <span class="math inline">\(\theta\)</span> be the true but unknown population parameter, which uniquely characterizes the data generating process. Then, the estimator is a function which takes as an input the sample X (viewed as random variables) and returns an estimate (statistic) of the population parameter. Remember that a function of a random variable is also a random variable.</p>
 <p>In practice, since we work with a single, finite sample and would like to know how “surprising” is it to observe that “extreme” of a sample mean due to sheer chance (if null hypothesis is true).<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn18"><p><sup>18</sup>&nbsp;We will pay much more attention and apply more rigor to this question in the following weeks</p></div></div></section>
-<section id="central-limit-theorem" class="level2">
+<section id="central-limit-theorem" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="central-limit-theorem">Central Limit Theorem</h2>
+<p>In the law of large numbers, we saw how the mean of a sequence of random numbers <span class="math inline">\(X_1, X_2, ... \overset{iid} \sim p\)</span>, with <span class="math inline">\(\mathbb{V}(X_j) &lt; \infty\)</span>, converges in probability to the expectation <span class="math inline">\(\mu = \mathbb{E}[X_j]\)</span>. This result motivates the viability of the Monte-Carlo approach, but tells us nothing about how does <span class="math inline">\(\bar X_n\)</span>’s distribution looks like along the way. Therefore, the central limit theorem is an essential result for statistical inference.</p>
+<p><span class="math display">\[
+\sqrt{n} \bigg( \frac{\bar X_n - \mu}{\sigma} \bigg) \overset{d}\longrightarrow N(0, 1)
+\]</span></p>
+<p>CLT states that for (very) large <span class="math inline">\(n\)</span>, the distribution of standardized sample means approaches the normal distribution, no matter how weird the distribution of individual <span class="math inline">\(X_j\)</span> (as long as it has finite variance). This is remarkable, but we can’t celebrate for long, since we might not have sufficient data to leverage CLT for an accurate estimation.</p>
+<p>Also, you have to remember that the theorem is concerned only with the central tendency and sais nothing about the tails, which is tremendously important in risk management, finance, and extreme value theory. Taleb Nassim wrote whole three books hammering down this point and the importance of (fat) tails.<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a></p>
 
 
-</section>
+<div class="no-row-height column-margin column-container"><div id="fn19"><p><sup>19</sup>&nbsp;Fooled by randomness, Black Swan, and Antifragile</p></div></div></section>
 
 
 </main> <!-- /main -->
