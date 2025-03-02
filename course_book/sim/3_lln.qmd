@@ -244,7 +244,7 @@ If $X \sim Exp(\lambda = 1)$, then its CDF is $F(x) = 1 - e^{-x}$. If we assign 
 
 
 ```{r}
-#| fig-cap: The red line is the kernel density estimation from R's rexp function
+#| fig-cap: The red line is the theoretical PDF from R's dexp function
 #| code-fold: true
 
 -log(runif(1e4)) |> 
@@ -254,10 +254,13 @@ If $X \sim Exp(\lambda = 1)$, then its CDF is $F(x) = 1 - e^{-x}$. If we assign 
         xlab = "x (time until engine failure)",
         xlim = c(0, 6)
     )
-rexp(1e4) |> density(from = 0.05) |> 
-    lines(col = "coral", lwd = 2, xlim = c(0.02, 6)) 
+curve(dexp(x), col = "coral", lwd = 2, add = TRUE) 
 ```
 :::
+
+I kind of lied to you by implying that the universality of uniform is everything we need to draw samples from distributions. The technical details to make it computationally efficient are not easy at all. Moreover, there are accept-reject methods when everything else fails. You can refer to Alexandru Marioarei's extensive [guide on simulation](https://alexamarioarei.quarto.pub/curs-stat-fmi/Laboratoare/Lab_Sim.html#sec-gen-inv-other) and Casella/Robert's Chapter 2 and 3 for a much more in-depth explanation and demonstration.
+
+I think the best time to cover these behind-the-scenes details is only after you are comfortable and confident with actually doing the simulations to solve practical problems. Only then, it makes sense to ask how exactly do R or Python implementations work.
 
 ## Stories of Beta and Gamma
 
@@ -286,7 +289,29 @@ Lastly, this relationship of the exponential to Chi-squared isn't very helpful. 
 $$
 Y = \sum_{j=1}^k X_j^2 \sim \chi^2_k
 $$
-You might remember $\chi^2_k$ from your hypothesis testing classes, as it appears when talking about the distribution of the sample standard deviation estimators: $\hat \sigma^2 = \frac{1}{n - 1}\sum_{i = 1}^n (x_i - \bar x)^2$. This should immediately make you worry if assuming normally distributed samples is appropriate.
+You might remember $\chi^2_k$ from your hypothesis testing classes, as it appears when talking about the distribution of the sample standard deviation estimators: $S^2 = \frac{1}{n - 1}\sum_{i = 1}^n (x_i - \bar x)^2$. This should immediately make you worry if assuming normally distributed samples is appropriate.
+
+$$
+\frac{n - 1}{\sigma^2}S^2 \sim \chi^2_{n-1}
+$$
+
+```{r}
+#| fig-cap: Example from Speegle & Clair, Chapter 5. Sample variances for $n=4$, $\sigma = 9$, and $\mu = 5$.
+#| code-fold: true
+
+sample_size <- 4
+sigma <- 9
+lots_of_sigmas <- replicate(10000, 
+    (sample_size - 1) / sigma^2 * sd(rnorm(sample_size, mean = 5, sd = 9))^2
+)
+hist(lots_of_sigmas,
+    col = "skyblue2", border = "white", breaks = 50, freq = FALSE, 
+    main = "Sample variances vs Chi-squared distribution",
+    xlab = "sample variance",
+    ylim = c(0, .25), xlim = c(0, 13)
+)
+curve(dchisq(x, df = 3), col = "coral", add = TRUE, lwd = 2)
+```
 
 As a segway to the next section, one can't overstate the importance of Gosset's student/**t distribution** and the idea of sampling distribution of the sample mean in statistics.^[Take a bit of time to read about Gosset's story of inventing a method for hypothesis testing in quality assurance of Guiness' beer factories.] If $X_0 \sim N(0, 1)$ and $Y \sim \chi^2_k$, then
 
@@ -305,15 +330,18 @@ The sample mean, technically, is an estimator $t : X \rightarrow \hat\theta$. Le
 
 In practice, since we work with a single, finite sample and would like to know how "surprising" is it to observe that "extreme" of a sample mean due to sheer chance (if null hypothesis is true).^[We will pay much more attention and apply more rigor to this question in the following weeks]
 
+
 ## Central Limit Theorem
 
+In the law of large numbers, we saw how the mean of a sequence of random numbers $X_1, X_2, ... \overset{iid} \sim p$, with $\mathbb{V}(X_j) < \infty$, converges in probability to the expectation $\mu = \mathbb{E}[X_j]$. This result motivates the viability of the Monte-Carlo approach, but tells us nothing about how does $\bar X_n$'s distribution looks like along the way. Therefore, the central limit theorem is an essential result for statistical inference.
 
+$$
+\sqrt{n} \bigg( \frac{\bar X_n - \mu}{\sigma} \bigg) \overset{d}\longrightarrow N(0, 1)
+$$
 
+CLT states that for (very) large $n$, the distribution of standardized sample means approaches the normal distribution, no matter how weird the distribution of individual $X_j$ (as long as it has finite variance). This is remarkable, but we can't celebrate for long, since we might not have sufficient data to leverage CLT for an accurate estimation. 
 
-
-
-
-
+Also, you have to remember that the theorem is concerned only with the central tendency and sais nothing about the tails, which is tremendously important in risk management, finance, and extreme value theory. Taleb Nassim wrote whole three books hammering down this point and the importance of (fat) tails.^[Fooled by randomness, Black Swan, and Antifragile]
 
 
 
