@@ -779,9 +779,77 @@ Z = \frac{X_0}{\sqrt{Y / k}} \sim t_k
 \]</span></p>
 <p>CLT states that for (very) large <span class="math inline">\(n\)</span>, the distribution of standardized sample means approaches the normal distribution, no matter how weird the distribution of individual <span class="math inline">\(X_j\)</span> (as long as it has finite variance). This is remarkable, but we can’t celebrate for long, since we might not have sufficient data to leverage CLT for an accurate estimation.</p>
 <p>Also, you have to remember that the theorem is concerned only with the central tendency and sais nothing about the tails, which is tremendously important in risk management, finance, and extreme value theory. Taleb Nassim wrote whole three books hammering down this point and the importance of (fat) tails.<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn19"><p><sup>19</sup>&nbsp;Fooled by randomness, Black Swan, and Antifragile</p></div></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>skewdata <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">replicate</span>(<span class="dv">2000</span>, <span class="dv">0</span>),        <span class="co"># most customers buy nothing </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rexp</span>(<span class="dv">200</span>, <span class="at">rate =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">10</span>),  <span class="co"># some will buy a moderate amount</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">seq</span>(<span class="dv">100000</span>, <span class="dv">500000</span>, <span class="dv">50000</span>) <span class="co"># some very large purchases or errors</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(skewdata)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>sig <span class="ot">&lt;-</span> <span class="fu">sd</span>(skewdata)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>sim_purchases <span class="ot">&lt;-</span> <span class="cf">function</span>(nr_samples) {</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    Z <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, {</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        Xbar <span class="ot">&lt;-</span> <span class="fu">sample</span>(skewdata, nr_samples, <span class="at">replace=</span><span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">mean</span>()</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        (Xbar <span class="sc">-</span> mu) <span class="sc">/</span> (sig <span class="sc">/</span> <span class="fu">sqrt</span>(nr_samples))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    Z</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>))</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">500</span>, <span class="dv">1000</span>, <span class="dv">5000</span>)) {</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(<span class="fu">sim_purchases</span>(n),</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"skyblue2"</span>, <span class="at">border =</span> <span class="st">"white"</span>, <span class="at">breaks =</span> <span class="dv">40</span>, </span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">probability =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="fu">paste0</span>(n, <span class="st">" samples"</span>), <span class="at">xlab =</span> <span class="st">""</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">curve</span>(<span class="fu">dnorm</span>(x), <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"coral"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3_lln_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Example from Speegle &amp; Clair, Chapter 5. An example where we need a lot of samples to overcome the skewed distribution with outliers.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Imagine the following scenario, which might not be completely unrealistic in an e-commerce. We want to design an A/B test for the new cross-sell feature in order to decide if we launch it for all customers or not. The main KPI we optimize for is average order value. Before we start the experiment, we want to compute how many samples do we need in order for the experiment to answer our question – that the feature brings relevant (in $) and significant results.<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn20"><p><sup>20</sup>&nbsp;We will come back to this question, as it is tremendously important and often done incorrectly in practice.</p></div></div><p>So we choose <span class="math inline">\(\alpha\)</span> (type I error), <span class="math inline">\(1 - \beta\)</span> (statistical power), <span class="math inline">\(\Delta\)</span> (minimum effect size of interest) and we plug those into the R function <code>power.t.test()</code> to get the necessary sample size. But you remember in horror that the t-test assumes normal data and homogenous variance.</p>
+<p>So you do a simulation which captures the typical features of customer behavior, in order to assess if this approach would work at all in principle:</p>
+<ul>
+<li>Most visitors buy nothing in a browsing session (or ever). This leads to a zero-inflated distribution</li>
+<li>The average order value is skewed, with the majority of customers having smaller orders</li>
+<li>There might be a few customers who spend a lot, i.e.&nbsp;clear outliers</li>
+</ul>
+<p>When it comes to the applications of CLT in simulation, we can use it to assess the convergence of our numerical calculation and draw confidence intervals or “confidence bands” for each fixed number of iterations. We did a rudimentary implementation of this in the sensitivity analysis of the safari case-study.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rabbit hole: stock market fluctuations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to dive a bit deeper into CLT and LLN, I recommend the following example from Blitzstein and Hwang, pg. 475, ex. 10.3.7.</p>
+<p>Each day, a very volatile stock rises 70% or drops 50% in price, with equal probabilities and with diﬀerent days independent. Let <span class="math inline">\(Y_n\)</span> be the stock price after n days, starting from an initial value of <span class="math inline">\(Y_0 = 100\)</span>.</p>
+<ol type="1">
+<li>Explain why <span class="math inline">\(\log Y_n\)</span> is approximately Normal for a large n and state its parameters.</li>
+<li>What happens to <span class="math inline">\(E(Y_n)\)</span> as <span class="math inline">\(n \rightarrow \infty\)</span>?</li>
+<li>Use the law of large numbers to find out what happens to <span class="math inline">\(Y_n\)</span> as <span class="math inline">\(n \rightarrow \infty\)</span></li>
+</ol>
+</div>
+</div>
 
 
-<div class="no-row-height column-margin column-container"><div id="fn19"><p><sup>19</sup>&nbsp;Fooled by randomness, Black Swan, and Antifragile</p></div></div></section>
+</section>
 
 
 </main> <!-- /main -->
