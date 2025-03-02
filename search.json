@@ -242,6 +242,66 @@
     ]
   },
   {
+    "objectID": "sim/3L_CLT.html",
+    "href": "sim/3L_CLT.html",
+    "title": "The most dangerous equation",
+    "section": "",
+    "text": "During the third lecture, I did a review of three theorems you have to know and be aware of their practical implications. We used simulations to aid our mathematical understanding of CLT (central limit theorem), LLN (weak law of large numbers), and universality of uniform.1\nWe used the latter’s inverse method to generate exponential random variables, discussed how Gamma, Beta can be generated from it and how are they used in modeling. Similarly, we leveraged the relationship of Normal to distributions commonly used in statistics like Chi-squared, Student-t. This exercise allowed us to better understand what (implicit) assumptions are we making when working with these distributions.2\nIn this lab, we’ll apply the CLT to avoid common pitfalls when reasoning about an outcome under different sample sizes, use the LLN for numerical integration, and discuss in more technical detail about how can we generate random samples from common (and arbitrary) distributions.\nHoward Wainer chose to nominate the sampling distribution of the sample mean (de Moivre, CLT) as the most dangerous “equation”, because of how long it causes confusion, how widespread it is, and the serious consequences such ignorance has caused. He gives examples of:\nThe case-study we’re going to investigate today is about “The small schools movement” in the late 1990s U.S. You can find the full story and bibliographical references in the article, but I’ll present the short version.",
+    "crumbs": [
+      "| 1. Business |",
+      "~ Simulation of economic processes",
+      "3L. Most dangerous equation"
+    ]
+  },
+  {
+    "objectID": "sim/3L_CLT.html#should-u.s.-split-large-schools",
+    "href": "sim/3L_CLT.html#should-u.s.-split-large-schools",
+    "title": "The most dangerous equation",
+    "section": "Should U.S. split large schools?",
+    "text": "Should U.S. split large schools?\nAs a result of heavy urbanization, the schools became bigger, more concentrated, and with more specialization in teaching. In the 90’s there was a growing dissatisfaction with the state of education, which still holds today, which lead to some initiatives, including Bill/Melinda Gates’ foundation financing5 and pushing for more small schools.\n5 Order of magnitude of $ billions, just from the GatesThis idea was picked up by other organizations and sometimes resulted in million-dollar efforts of splitting large schools (e.g. over 1000 students) in smaller ones.\n\n\n\n\n\n\nStop and think: what are the hypotheses?\n\n\n\nFind your closest colleague and discuss for 5 minutes what could’ve been the assumptions, hypotheses, reasoning, and evidence based on which these organizations concluded that it’s a good thing to split the big schools or encourage the creation of small ones.\n\n\nFor a series of papers and articles, Wainer collected data on around 1600 schools from the PSSA (Pennsylvania testing program), which has scores on a variety of subjects and broad sample of schools.6 Indeed, the small schools were over-represented in the top 50 schools according to the test scores (3% in sample vs 12% in the top). Could this be the empirical “evidence” that Gates foundation confirmed their beliefs with? Yes, I’m talking about confirmation bias, since this is a heavily loaded and divisive political topic.\n6 If you plan to make a project or research paper on education, open datasets like PSSA will be invaluable, but it takes a lot of effort to clean it up and put it all together for modelingBefore loading and analyzing some data, let’s first do a simple simulation in which we exaggerate the differences in sample size (number of students in small \\(n_s\\) vs big schools \\(n_b\\)). We will generate individual scores from the normal distribution, which is not unreasonable, as most standardized tests are designed precisely that way.\n\nlibrary(tidyverse)\nset.seed(1234)\n\n\n\nShow simulation code\nnr_stud_small &lt;- 200; nr_small_schools &lt;- 500\nnr_stud_big &lt;- 400; nr_big_schools &lt;- 100\n\nsimulate_schools &lt;- function(n_small, n_stud_small, n_big, n_stud_big) {\n    small_scores &lt;- replicate(n_small, { rnorm(n_stud_small) |&gt; mean() })\n    big_scores   &lt;- replicate(n_big,   { rnorm(n_stud_big)   |&gt; mean() })\n    \n    df &lt;- bind_rows(\n        tibble(\n            scores  = small_scores, \n            nr_stud = n_stud_small, \n            school_type = \"small\"\n        ),\n        tibble(\n            scores  = big_scores, \n            nr_stud = n_stud_big, \n            school_type = \"big\"\n        ) \n    )\n    df\n}\n\ndf &lt;- simulate_schools(\n    nr_small_schools, nr_stud_small, \n    nr_big_schools, nr_stud_big\n)\n\ndf |&gt; \n    ggplot(aes(x = scores, color = school_type)) + \n    geom_density(linewidth = 1) + \n    labs(x = \"Average standardized scores\") + \n    theme_minimal()\n\n\n\n\n\nNotice that small schools not only dominate the top of performance, but also the bottom. This is not surprising due to CLT, even when we have drawn from the same \\(N(0, 1)\\) at individual level.\n\n\n\n\n\n\nNotice that we even assume the same population variance \\(\\sigma^2\\), which might not be true in other practical applications when we compare groups.\nNow, let’s look at some data from Brazil’s ENEM scores, which is the equivalent of SAT in U.S. or BAC in Romania. You can find instructions on how to download it from Chapter 3 of Matheus Faucre’s “Causal Inference for the Brave and True” or download it from my github repo.\n\ndf_scores &lt;- readr::read_csv(\"data/enem_scores.csv\") |&gt; \n    mutate(\n        date = as.Date(paste0(year, \"-01-01\")), \n        school_id = as.factor(school_id)\n    )\n\ndf_scores |&gt;\n  arrange(desc(avg_score)) |&gt; \n  head(10)\n\n# A tibble: 10 × 5\n    year school_id number_of_students avg_score date      \n   &lt;dbl&gt; &lt;fct&gt;                  &lt;dbl&gt;     &lt;dbl&gt; &lt;date&gt;    \n 1  2007 33062633                  68      83.0 2007-01-01\n 2  2007 33065403                 172      82.0 2007-01-01\n 3  2005 33062633                  59      81.9 2005-01-01\n 4  2005 33065403                 177      81.7 2005-01-01\n 5  2007 29342880                  43      80.3 2007-01-01\n 6  2007 33152314                  14      79.8 2007-01-01\n 7  2007 33065250                  80      79.7 2007-01-01\n 8  2007 22025740                 144      79.5 2007-01-01\n 9  2007 31311723                 222      79.4 2007-01-01\n10  2007 33087679                 210      79.4 2007-01-01\n\n\n\n\n\n\n\n\nDistribution of the number of students. Most schools have less than 200 students.\n\n\n\n\n\nShow visualization code\ndf_scores |&gt;\n    filter(year != 2005) |&gt;\n    group_by(school_id) |&gt;\n    summarise(\n        number_of_students = mean(number_of_students, na.rm = TRUE),\n        avg_score = mean(avg_score, na.rm = TRUE)\n    ) |&gt;\n    mutate(\n        performance = case_when(\n            avg_score &gt; quantile(avg_score, 0.975) ~ \"top\",\n            avg_score &lt; quantile(avg_score, 0.225) ~ \"bottom\",\n            .default = \"middle\"\n        )\n    ) |&gt;\n    ggplot(aes(number_of_students, avg_score)) +\n    geom_point(aes(shape = performance, color = performance)) +\n    geom_smooth(method = \"gam\", se = TRUE, color = \"dodgerblue3\") + \n    scale_shape_manual(values = c(4, 1, 8)) + \n    scale_color_manual(values = c(\"coral\", \"grey40\", \"skyblue\")) + \n    theme_minimal() + \n    labs(\n        x = \"Number of students\",\n        y = \"Average Score\", \n        title = \"ENEM Scores by School Size\",\n        subtitle = \"Fooled by small sample sizes\"\n    )\n\n\n\n\n\nNotice the pattern we’re interested in, but also the fact that we have many confounders we don’t take into account, like school location, funding, number of teachers, if it’s private or public, etc. Therefore, we can’t know from this data what causes better performance – but we know it’s not the school size!\n\n\n\n\n\n\n\n\n\n\nDistribution of average scores in 2005 tells us that there are important factors we didn’t take into account.\n\n\n\nThere are better ways to visualize this data, for example, we can split the x-axis (nr of students) into buckets, then display a boxplot or error-bars for each one, along with some of the outliers. We could also color the data points with a contrasting, continuous gradient and not discretize the scores.\n\nc(rnorm(2000, mean = 43, sd = 6), \n  rnorm(500, mean = 65, sd = 6)) |&gt; \n    hist(\n        col = \"skyblue\", border = \"white\", breaks = 40,\n        main = \"Example of a mixture of two distributions\", \n        xlab = \"ENEM Scores\"\n    )\n\n\n\n\nWhen a single distribution is not sufficient in describing the outcomes, there might be a latent mixture or heterogeneity in your population.\n\n\n\n\n\n\n\n\n\n\nTry to make your own simulation\n\n\n\nAfter analyzing the data from Brazil, we got more information about the distribution for number of students in schools and the distribution of average scores.\nUse that knowledge to make your own simulation with more realistic assumptions. For example, you will see below how we figure out which distribution is appropriate for the number of students per school.7\nMore specifically, you will now generate the number of students for a lot of schools (from the negative binomial), and for each school a vector of scores (from the mixture of gaussians) which you will summarize by taking the average. Will this lead to more realistic results?\n\n\n7 But how did I pick the negative binomial? Knowledge and experience of distribution’s stories and their properties.\n\nShow code for fitting data to the negative binomial\nnr_stud &lt;- df_scores |&gt; filter(year == 2005) |&gt; \n    sample_n(2000, replace = TRUE) |&gt; pull(number_of_students)\nnegbinom_params &lt;- MASS::fitdistr(nr_stud, \n    \"negative binomial\", method = \"SANN\")$estimate\n\nrnbinom(10000, size = negbinom_params[\"size\"], mu = negbinom_params[\"mu\"]) |&gt;\n    hist(breaks = 40, col = \"skyblue\", border = \"white\", \n         xlab = \"number of students\", main = \"Negative Binomial fitted to data\", \n         xlim = c(0, 700))\n\n\n\n\n\nNegative binomial captures well the asymmetric distribution of students and is appropriate for the task, because its support is non-negative integers (or counts).\n\n\n\n\n\n\nHere are the parameters we obtained by fitting the distribution to the data: 1.75 for size \\(n\\) and 139.7 for \\(\\mu\\).\nYou should take away one big lesson from this case-study – that we should always remember the consequences of sample size and its variability. By using basic statistics and simulations, we can prevent mistaken conclusions from a naive data analysis and getting fooled by randomness. You might point out that this example is slightly trivial, but trust me, in practice the pitfalls become much more subtle.\n\n\nSome pitfalls include sampling bias, differential non-response, dropout from study, right censoring, via confounders, mediators, or colliders.\nThese kinds of simulations have one more advantage, as we can check if different causal assumptions can generate the kinds of patterns we observe – even if we haven’t collected the data to verify it. You will get used to the situation when two different process models result in similar statistical patterns – which will force you to think very carefully about the underlying causal process in practice.",
+    "crumbs": [
+      "| 1. Business |",
+      "~ Simulation of economic processes",
+      "3L. Most dangerous equation"
+    ]
+  },
+  {
+    "objectID": "sim/3L_CLT.html#numerical-integration",
+    "href": "sim/3L_CLT.html#numerical-integration",
+    "title": "The most dangerous equation",
+    "section": "Numerical integration",
+    "text": "Numerical integration",
+    "crumbs": [
+      "| 1. Business |",
+      "~ Simulation of economic processes",
+      "3L. Most dangerous equation"
+    ]
+  },
+  {
+    "objectID": "sim/3L_CLT.html#drawing-samples-from-distributions",
+    "href": "sim/3L_CLT.html#drawing-samples-from-distributions",
+    "title": "The most dangerous equation",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions",
+    "crumbs": [
+      "| 1. Business |",
+      "~ Simulation of economic processes",
+      "3L. Most dangerous equation"
+    ]
+  },
+  {
+    "objectID": "sim/3L_CLT.html#homework-and-study-resources",
+    "href": "sim/3L_CLT.html#homework-and-study-resources",
+    "title": "The most dangerous equation",
+    "section": "Homework and Study Resources",
+    "text": "Homework and Study Resources\n\nRead this famous article by Howard Wainer - “The most dangerous equation” (Princeton university press, 2009).",
+    "crumbs": [
+      "| 1. Business |",
+      "~ Simulation of economic processes",
+      "3L. Most dangerous equation"
+    ]
+  },
+  {
     "objectID": "sim/1L_bday_problem.html",
     "href": "sim/1L_bday_problem.html",
     "title": "Introduction to simulation in R",

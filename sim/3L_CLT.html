@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -92,15 +126,47 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="The most dangerous equation – Decision Science Course">
 <meta property="og:description" content="CLT, Inverse Method, Monte-Carlo Integration">
+<meta property="og:image" content="https://course.economic-cybernetics.com/sim/3L_CLT_files/figure-html/unnamed-chunk-1-1.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -350,14 +416,23 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#should-u.s.-split-large-schools" id="toc-should-u.s.-split-large-schools" class="nav-link active" data-scroll-target="#should-u.s.-split-large-schools">Should U.S. split large schools?</a></li>
+  <li><a href="#numerical-integration" id="toc-numerical-integration" class="nav-link" data-scroll-target="#numerical-integration">Numerical integration</a></li>
+  <li><a href="#drawing-samples-from-distributions" id="toc-drawing-samples-from-distributions" class="nav-link" data-scroll-target="#drawing-samples-from-distributions">Drawing samples from distributions</a></li>
+  <li><a href="#homework-and-study-resources" id="toc-homework-and-study-resources" class="nav-link" data-scroll-target="#homework-and-study-resources">Homework and Study Resources</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/3L_CLT.html">3L. Most dangerous equation</a></li></ol></nav>
 <div class="quarto-title">
@@ -367,7 +442,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -385,7 +460,279 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </header>
 
 
+<p>During the third lecture, I did a review of three theorems you have to know and be aware of their practical implications. We used simulations to aid our mathematical understanding of CLT (central limit theorem), LLN (weak law of large numbers), and universality of uniform.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;I suggest you run the code that we used in the lecture and understand the ideas of convergence in probability and convergence in distribution</p></div><div id="fn2"><p><sup>2</sup>&nbsp;This is what I meant in the first lecture when I said we can use simulation as a tool to learn statistics</p></div></div><p>We used the latter’s inverse method to generate exponential random variables, discussed how Gamma, Beta can be generated from it and how are they used in modeling. Similarly, we leveraged the relationship of Normal to distributions commonly used in statistics like Chi-squared, Student-t. This exercise allowed us to better understand what (implicit) assumptions are we making when working with these distributions.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>In this lab, we’ll apply the CLT to avoid common pitfalls when reasoning about an outcome under different sample sizes, use the LLN for numerical integration, and discuss in more technical detail about how can we generate random samples from common (and arbitrary) distributions.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The most dangerous equation (pitfalls of ignorance)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Howard Wainer’s article (your assigned reading for this week) points out to “equations”, but more exactly principles, being dangerous in the sense that we fall into reasoning pitfalls and make poor decisions if we’re not aware of them.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p><span class="math display">\[
+P(Y) = P(Y | k = 1) P(k = 1) + P(Y| k = 0) P(k = 0)
+\]</span> I really like this idea put in an equation of total probability of looking foolish, <span class="math inline">\(Y\)</span>, where <span class="math inline">\(k\)</span> is the knowledge of equation / principle or lack thereof. We can’t do much about the first term, which is motivated reasoning or ideological stubbornness, but we can reduce the second type of “danger” by knowledge and discipline.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;This is precisely the reason we go over these fundamental ideas in probability and statistics which you encountered before, but don’t necessarily know how to apply them in practice</p></div></div><p>Howard Wainer chose to nominate the sampling distribution of the sample mean (de Moivre, CLT) as the most dangerous “equation”, because of how long it causes confusion, how widespread it is, and the serious consequences such ignorance has caused. He gives examples of:</p>
+<ul>
+<li>The variability in weight of medieval coins and the suspicion that someone stole or cheated in the amount of silver/gold
+<ul>
+<li>We will have at least one case-study in which we apply hypothesis testing to quality control in manufacturing</li>
+</ul></li>
+<li>The rates of kidney cancer by U.S. county. Are people at more risk in the countryside?
+<ul>
+<li>I will introduce the Gamma-Poisson model for modeling rates from Gelman’s Bayesian Data Analysis (3rd ed)</li>
+<li>The same ideas apply to crime rates and driving accidents</li>
+</ul></li>
+<li>Sex differences in the top of math scores, potentially caused by differences in variance between groups.
+<ul>
+<li>In chess differences in top k ELO ratings can be explained by (initial) cohort sizes and dropout.</li>
+<li>We’ll analyze a dataset from UCLA Berkeley 1973 graduate admissions to quantify whether there was direct or indirect gender discrimination in some departments</li>
+<li>Generally, you should be very careful when drawing conclusions about the top or maxima.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+</ul></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Take a look at this <a href="https://callingbullshit.org/case_studies/case_study_track_records.html">case-study</a> from Calling Bullshit about aging and 100m running world records</p></div></div><p>The case-study we’re going to investigate today is about “The small schools movement” in the late 1990s U.S. You can find the full story and bibliographical references in the article, but I’ll present the short version.</p>
+<section id="should-u.s.-split-large-schools" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="should-u.s.-split-large-schools">Should U.S. split large schools?</h2>
+<p>As a result of heavy urbanization, the schools became bigger, more concentrated, and with more specialization in teaching. In the 90’s there was a growing dissatisfaction with the state of education, which still holds today, which lead to some initiatives, including Bill/Melinda Gates’ foundation financing<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and pushing for more small schools.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Order of magnitude of $ billions, just from the Gates</p></div></div><p>This idea was picked up by other organizations and sometimes resulted in million-dollar efforts of splitting large schools (e.g.&nbsp;over 1000 students) in smaller ones.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stop and think: what are the hypotheses?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find your closest colleague and discuss for 5 minutes what could’ve been the assumptions, hypotheses, reasoning, and evidence based on which these organizations concluded that it’s a good thing to split the big schools or encourage the creation of small ones.</p>
+</div>
+</div>
+<p>For a series of papers and articles, Wainer collected data on around 1600 schools from the PSSA (Pennsylvania testing program), which has scores on a variety of subjects and broad sample of schools.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> Indeed, the small schools were over-represented in the top 50 schools according to the test scores (3% in sample vs 12% in the top). Could this be the empirical “evidence” that Gates foundation confirmed their beliefs with? Yes, I’m talking about confirmation bias, since this is a heavily loaded and divisive political topic.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;If you plan to make a project or research paper on education, open datasets like <a href="https://www.pa.gov/agencies/education/data-and-reporting/assessment-reporting.html#accordion-b3281f6147-item-b29e262299">PSSA</a> will be invaluable, but it takes a lot of effort to clean it up and put it all together for modeling</p></div></div><p>Before loading and analyzing some data, let’s first do a simple simulation in which we exaggerate the differences in sample size (number of students in small <span class="math inline">\(n_s\)</span> vs big schools <span class="math inline">\(n_b\)</span>). We will generate individual scores from the normal distribution, which is not unreasonable, as most standardized tests are designed precisely that way.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show simulation code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nr_stud_small <span class="ot">&lt;-</span> <span class="dv">200</span>; nr_small_schools <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nr_stud_big <span class="ot">&lt;-</span> <span class="dv">400</span>; nr_big_schools <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>simulate_schools <span class="ot">&lt;-</span> <span class="cf">function</span>(n_small, n_stud_small, n_big, n_stud_big) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    small_scores <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_small, { <span class="fu">rnorm</span>(n_stud_small) <span class="sc">|&gt;</span> <span class="fu">mean</span>() })</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    big_scores   <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_big,   { <span class="fu">rnorm</span>(n_stud_big)   <span class="sc">|&gt;</span> <span class="fu">mean</span>() })</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tibble</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">scores  =</span> small_scores, </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">nr_stud =</span> n_stud_small, </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">school_type =</span> <span class="st">"small"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tibble</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">scores  =</span> big_scores, </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">nr_stud =</span> n_stud_big, </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">school_type =</span> <span class="st">"big"</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        ) </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    df</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">simulate_schools</span>(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    nr_small_schools, nr_stud_small, </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    nr_big_schools, nr_stud_big</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> scores, <span class="at">color =</span> school_type)) <span class="sc">+</span> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Average standardized scores"</span>) <span class="sc">+</span> </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Notice that small schools not only dominate the top of performance, but also the bottom. This is not surprising due to CLT, even when we have drawn from the same <span class="math inline">\(N(0, 1)\)</span> at individual level.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Notice that we even assume the same population variance <span class="math inline">\(\sigma^2\)</span>, which might not be true in other practical applications when we compare groups.</p>
+</div></div><p>Now, let’s look at some data from Brazil’s ENEM scores, which is the equivalent of SAT in U.S. or BAC in Romania. You can find instructions on how to download it from <a href="https://matheusfacure.github.io/python-causality-handbook/03-Stats-Review-The-Most-Dangerous-Equation.html">Chapter 3</a> of Matheus Faucre’s “Causal Inference for the Brave and True” or download it from my github <a href="https://github.com/Bizovi/decision-making/blob/main/decision_labs/data/enem_scores.csv">repo</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_scores <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/enem_scores.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(year, <span class="st">"-01-01"</span>)), </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">school_id =</span> <span class="fu">as.factor</span>(school_id)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df_scores <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_score)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+    year school_id number_of_students avg_score date      
+   &lt;dbl&gt; &lt;fct&gt;                  &lt;dbl&gt;     &lt;dbl&gt; &lt;date&gt;    
+ 1  2007 33062633                  68      83.0 2007-01-01
+ 2  2007 33065403                 172      82.0 2007-01-01
+ 3  2005 33062633                  59      81.9 2005-01-01
+ 4  2005 33065403                 177      81.7 2005-01-01
+ 5  2007 29342880                  43      80.3 2007-01-01
+ 6  2007 33152314                  14      79.8 2007-01-01
+ 7  2007 33065250                  80      79.7 2007-01-01
+ 8  2007 22025740                 144      79.5 2007-01-01
+ 9  2007 31311723                 222      79.4 2007-01-01
+10  2007 33087679                 210      79.4 2007-01-01</code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Distribution of the number of students. Most schools have less than 200 students.</figcaption>
+</figure>
+</div>
+</div></div></div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show visualization code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_scores <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">!=</span> <span class="dv">2005</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(school_id) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">number_of_students =</span> <span class="fu">mean</span>(number_of_students, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">avg_score =</span> <span class="fu">mean</span>(avg_score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">performance =</span> <span class="fu">case_when</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            avg_score <span class="sc">&gt;</span> <span class="fu">quantile</span>(avg_score, <span class="fl">0.975</span>) <span class="sc">~</span> <span class="st">"top"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            avg_score <span class="sc">&lt;</span> <span class="fu">quantile</span>(avg_score, <span class="fl">0.225</span>) <span class="sc">~</span> <span class="st">"bottom"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">.default =</span> <span class="st">"middle"</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(number_of_students, avg_score)) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">shape =</span> performance, <span class="at">color =</span> performance)) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"gam"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"dodgerblue3"</span>) <span class="sc">+</span> </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">8</span>)) <span class="sc">+</span> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"coral"</span>, <span class="st">"grey40"</span>, <span class="st">"skyblue"</span>)) <span class="sc">+</span> </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Number of students"</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Average Score"</span>, </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"ENEM Scores by School Size"</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"Fooled by small sample sizes"</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Notice the pattern we’re interested in, but also the fact that we have many confounders we don’t take into account, like school location, funding, number of teachers, if it’s private or public, etc. Therefore, we can’t know from this data what causes better performance – but we know it’s not the school size!</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Distribution of average scores in 2005 tells us that there are important factors we didn’t take into account.</figcaption>
+</figure>
+</div>
+</div></div></div>
+<p>There are better ways to visualize this data, for example, we can split the x-axis (nr of students) into buckets, then display a boxplot or error-bars for each one, along with some of the outliers. We could also color the data points with a contrasting, continuous gradient and not discretize the scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>, <span class="at">mean =</span> <span class="dv">43</span>, <span class="at">sd =</span> <span class="dv">6</span>), </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">6</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>, <span class="at">breaks =</span> <span class="dv">40</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Example of a mixture of two distributions"</span>, </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"ENEM Scores"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>When a single distribution is not sufficient in describing the outcomes, there might be a latent mixture or heterogeneity in your population.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Try to make your own simulation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After analyzing the data from Brazil, we got more information about the distribution for number of students in schools and the distribution of average scores.</p>
+<p>Use that knowledge to make your own simulation with more realistic assumptions. For example, you will see below how we figure out which distribution is appropriate for the number of students per school.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>More specifically, you will now generate the number of students for a lot of schools (from the negative binomial), and for each school a vector of scores (from the mixture of gaussians) which you will summarize by taking the average. Will this lead to more realistic results?</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;But how did I pick the negative binomial? Knowledge and experience of distribution’s stories and their properties.</p></div></div><div class="cell">
+<details class="code-fold">
+<summary>Show code for fitting data to the negative binomial</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nr_stud <span class="ot">&lt;-</span> df_scores <span class="sc">|&gt;</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2005</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sample_n</span>(<span class="dv">2000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">pull</span>(number_of_students)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>negbinom_params <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">fitdistr</span>(nr_stud, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"negative binomial"</span>, <span class="at">method =</span> <span class="st">"SANN"</span>)<span class="sc">$</span>estimate</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rnbinom</span>(<span class="dv">10000</span>, <span class="at">size =</span> negbinom_params[<span class="st">"size"</span>], <span class="at">mu =</span> negbinom_params[<span class="st">"mu"</span>]) <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(<span class="at">breaks =</span> <span class="dv">40</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>, </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">"number of students"</span>, <span class="at">main =</span> <span class="st">"Negative Binomial fitted to data"</span>, </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">700</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Negative binomial captures well the asymmetric distribution of students and is appropriate for the task, because its support is non-negative integers (or counts).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Here are the parameters we obtained by fitting the distribution to the data: 1.75 for size <span class="math inline">\(n\)</span> and 139.7 for <span class="math inline">\(\mu\)</span>.</p>
+</div></div><p>You should take away one big lesson from this case-study – that we should always remember the consequences of sample size and its variability. By using basic statistics and simulations, we can prevent mistaken conclusions from a naive data analysis and getting fooled by randomness. You might point out that this example is slightly trivial, but trust me, in practice the pitfalls become much more subtle.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Some pitfalls include sampling bias, differential non-response, dropout from study, right censoring, via confounders, mediators, or colliders.</p>
+</div></div><p>These kinds of simulations have one more advantage, as we can check if different causal assumptions can generate the kinds of patterns we observe – even if we haven’t collected the data to verify it. You will get used to the situation when two different process models result in similar statistical patterns – which will force you to think very carefully about the underlying causal process in practice.</p>
+</section>
+<section id="numerical-integration" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-integration">Numerical integration</h2>
+</section>
+<section id="drawing-samples-from-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="drawing-samples-from-distributions">Drawing samples from distributions</h2>
+</section>
+<section id="homework-and-study-resources" class="level2">
+<h2 class="anchored" data-anchor-id="homework-and-study-resources">Homework and Study Resources</h2>
+<ul>
+<li>Read this famous article by Howard Wainer - <a href="https://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> (Princeton university press, 2009).</li>
+</ul>
+
+
+</section>
 
 
 </main> <!-- /main -->
@@ -953,7 +1300,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../sim/3_lln.html" class="pagination-link" aria-label="3. Three core theorems">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3. Three core theorems</span>
