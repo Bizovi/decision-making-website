@@ -343,10 +343,64 @@ CLT states that for (very) large $n$, the distribution of standardized sample me
 
 Also, you have to remember that the theorem is concerned only with the central tendency and sais nothing about the tails, which is tremendously important in risk management, finance, and extreme value theory. Taleb Nassim wrote whole three books hammering down this point and the importance of (fat) tails.^[Fooled by randomness, Black Swan, and Antifragile]
 
+```{r}
+#| fig-cap: Example from Speegle & Clair, Chapter 5. An example where we need a lot of samples to overcome the skewed distribution with outliers.  
+#| code-fold: true
+
+skewdata <- c(
+    replicate(2000, 0),        # most customers buy nothing 
+    rexp(200, rate = 1 / 10),  # some will buy a moderate amount
+    seq(100000, 500000, 50000) # some very large purchases or errors
+)
+
+mu <- mean(skewdata)
+sig <- sd(skewdata)
+
+sim_purchases <- function(nr_samples) {
+    Z <- replicate(10000, {
+        Xbar <- sample(skewdata, nr_samples, replace=TRUE) |> mean()
+        (Xbar - mu) / (sig / sqrt(nr_samples))
+    })
+    Z
+}
+
+par(mfrow = c(2, 2), mar = c(3, 3, 3, 3))
+
+for (n in c(100, 500, 1000, 5000)) {
+    hist(sim_purchases(n),
+        col = "skyblue2", border = "white", breaks = 40, 
+        probability = TRUE, 
+        main = paste0(n, " samples"), xlab = ""
+    )
+    curve(dnorm(x), add = TRUE, col = "coral", lwd = 2)
+}
 
 
+```
 
+Imagine the following scenario, which might not be completely unrealistic in an e-commerce. We want to design an A/B test for the new cross-sell feature in order to decide if we launch it for all customers or not. The main KPI we optimize for is average order value. Before we start the experiment, we want to compute how many samples do we need in order for the experiment to answer our question -- that the feature brings relevant (in $) and significant results.^[We will come back to this question, as it is tremendously important and often done incorrectly in practice.]
 
+So we choose $\alpha$ (type I error), $1 - \beta$ (statistical power), $\Delta$ (minimum effect size of interest) and we plug those into the R function `power.t.test()` to get the necessary sample size. But you remember in horror that the t-test assumes normal data and homogenous variance.
+
+So you do a simulation which captures the typical features of customer behavior, in order to assess if this approach would work at all in principle:
+
+- Most visitors buy nothing in a browsing session (or ever). This leads to a zero-inflated distribution
+- The average order value is skewed, with the majority of customers having smaller orders
+- There might be a few customers who spend a lot, i.e. clear outliers
+
+When it comes to the applications of CLT in simulation, we can use it to assess the convergence of our numerical calculation and draw confidence intervals or "confidence bands" for each fixed number of iterations. We did a rudimentary implementation of this in the sensitivity analysis of the safari case-study.
+
+::: {.callout-warning}
+## Rabbit hole: stock market fluctuations
+
+If you want to dive a bit deeper into CLT and LLN, I recommend the following example from Blitzstein and Hwang, pg. 475, ex. 10.3.7. 
+
+Each day, a very volatile stock rises 70% or drops 50% in price, with equal probabilities and with diﬀerent days independent. Let $Y_n$ be the stock price after n days, starting from an initial value of $Y_0 = 100$.
+
+1. Explain why $\log Y_n$ is approximately Normal for a large n and state its parameters.
+2. What happens to $E(Y_n)$ as $n \rightarrow \infty$?
+3. Use the law of large numbers to find out what happens to $Y_n$ as $n \rightarrow \infty$
+:::
 
 
 
