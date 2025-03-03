@@ -289,6 +289,8 @@ At last, in statistical modeling we will sometimes need to simulate from really 
 These lectures and labs do not cover at all the details of how to draw random numbers via the inverse method and specific indirect methods.^[The reason for this is that I don't have anything new or interesting to say here] **Please, consult with your professor about what is exactly required in the course from these topics.**
 
 But what can I recommend for sure if you need a deep-dive on the inverse method for discrete and continuous distributions, is this [extensive tutorial](https://alexamarioarei.quarto.pub/curs-stat-fmi/Laboratoare/Lab_Sim.html) by Alexandru Marioarei. Study and replicate the code for one or two distributions by using a different method, for example: Hypergeometric, Normal, Poisson (inverse and custom). 
+
+Regarding the pseudo-random number generation algorithms, you can check out [Chapter 5](https://cswr.nrhstat.org/random-number-generation) of Niels Hansen's "Computational Statistics with R" and Chapter 3 of Tom Kennedy's "[Monte Carlo Methods](https://math.arizona.edu/~tgk/mc/book.pdf) - a special topics course".
 :::
 
 While we can be ok with not being experts at the inverse method and efficient simulation of random variables, we will be missing a lot if we don't have an understanding of the [accept-reject approach]{.underline}. This is because it's a building block in a sequence of increasingly complicated and powerful sampling methods like Importance Sampling, Metropolis-Hastings, Markov Chain Monte Carlo, Hamiltonian Monte Carlo, and Particle Filtering (Sequential Monte Carlo). 
@@ -354,9 +356,89 @@ U \le \frac{1}{M} \frac{f(Y)}{g(Y)}
 $$
 The constant $M$ should be an upper bound on the ratio of $f(x) / g(x) \le M \quad \forall x$. I chose the approach of Casella and Robert, who find the maximum of that ratio with `optimize()`, but we would lose just in efficiency, not accuracy if we picked a larger number.
 
-## Numerical integration
+## Monte Carlo Integration
 
-Numerical integration was one of the immediate applications of the law of large numbers that I mentioned in the lecture. Let's code up the solution to a scary-looking integral.
+One of the immediate applications of the law of large numbers that I mentioned in the lecture was Monte Carlo integration, which is an alternative to traditional numerical methods. In the case our integrals have the following form and we can easily simulate from the density $f(x)$, we're in luck.^[You can read in this Computational Statistics [course](https://www.louisaslett.com/Courses/DSSC/notes/monte-carlo-integration.html) why this form might not be that restrictive after all.] Otherwise, we might need to resort to indirect and more advanced methods like Importance Sampling.
+
+$$
+\mathbb{E}_f[h(X)] =  \int_\chi h(x) \cdot f(x) dx
+$$
+
+$$
+\bar h_n = \frac{1}{n} \sum_{j=1}^n h(x_j)
+$$
+
+But first, as with any approximation method, we need a way to assess its accuracy. In our case, we can give probabilistic confidence intervals via the central limit theorem. More interesting are the concentration inequalities (remember Hoeffding from the lecture), which answer the question of how large $n$ has to be if I want my error to be less than a threshold $\tau$ (e.g. $\epsilon \le 10^{-4}$) with probability 0.999?^[You can check out this question in more details in [Chapter 7](https://cswr.nrhstat.org/mci) of Niels Hansen's "Computational Statistics with R"]
+
+```{r}
+#| code-fold: true
+#| code-summary: Show code for the convergence of a Gamma r.v.
+#| fig-cap: Confidence bands for a Gamma random variable via CLT. The dashed line is the theoretical value of the mean
+
+set.seed(12321)
+
+n <- 1000
+x <- rgamma(n, 8)
+mu_hat <- cumsum(x) / 1:n # cumulative average
+sigma_hat <- sd(x)
+
+ggplot(mapping = aes(1:n, mu_hat)) +
+    geom_ribbon(
+    mapping = aes(
+        ymin = mu_hat - 1.96 * sigma_hat / sqrt(1:n), 
+        ymax = mu_hat + 1.96 * sigma_hat / sqrt(1:n)
+    ), fill = "gray") +
+    coord_cartesian(ylim = c(6, 10)) +
+    geom_line() +
+    geom_hline(yintercept = 8, lty = "dashed") +
+    labs(x = "number of samples", y = "sample mean") + 
+    theme_minimal()
+```
+
+Despite the usefulness of integration in finance, economics, statistics, and natural sciences, it is hard to avoid didactic examples in a simulation course. I will spare you from estimating the constants $\pi$, $e$ or from wild integrals for which it's not clear what is the story. So, let's look at this example from Casella and Robert, then come back to the topic of integration in the context of statistical modeling and MCMC.^[They also give a nice example of Gaussian CDF $\Phi$ and normal-Cauchy Bayes estimator]
+
+$$
+\int_0^1 [cos(50x) + sin(20x)]^2 
+$$
+
+```{r}
+set.seed(12321)
+
+nr_sim <- 1e4
+h <- function(x) { (cos(50*x) + sin(20*x))^2 }
+x <- runif(nr_sim) |> h()
+est_int <- cumsum(x) / 1:nr_sim
+est_err <- sqrt(cumsum((x - est_int)^2))/1:nr_sim
+```
+
+```{r}
+#| column: margin
+#| fig-cap: This is how composing $sin()$ and $cos()$ can result in any kind of signal. This idea of decomposition is used in fourier transforms and has been applied in about any engineering and technology application you can imagine.
+
+curve(h, xlab="", ylab="", lwd=3)
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: Show visualization code
+#| warning: false
+#| message: false
+
+y_lims <- mean(x) + 20*c(-est_err[nr_sim], est_err[nr_sim])
+
+ggplot(mapping = aes(1:nr_sim, est_int)) +
+    geom_ribbon(
+    mapping = aes(
+        ymin = est_int - 1.96 * est_err, 
+        ymax = est_int + 1.96 * est_err
+    ), fill = "gray") +
+    lims(y = y_lims) +
+    geom_line() +
+    labs(x = "number of samples", y = "Integral evaluation") + 
+    theme_minimal()
+```
+
+
 
 
 ::: {.callout-note}
