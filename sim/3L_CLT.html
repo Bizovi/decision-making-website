@@ -422,7 +422,7 @@ window.Quarto = {
   <ul>
   <li><a href="#should-u.s.-split-large-schools" id="toc-should-u.s.-split-large-schools" class="nav-link active" data-scroll-target="#should-u.s.-split-large-schools">Should U.S. split large schools?</a></li>
   <li><a href="#drawing-samples-from-distributions" id="toc-drawing-samples-from-distributions" class="nav-link" data-scroll-target="#drawing-samples-from-distributions">Drawing samples from distributions</a></li>
-  <li><a href="#numerical-integration" id="toc-numerical-integration" class="nav-link" data-scroll-target="#numerical-integration">Numerical integration</a></li>
+  <li><a href="#monte-carlo-integration" id="toc-monte-carlo-integration" class="nav-link" data-scroll-target="#monte-carlo-integration">Monte Carlo Integration</a></li>
   <li><a href="#homework-and-study-resources" id="toc-homework-and-study-resources" class="nav-link" data-scroll-target="#homework-and-study-resources">Homework and Study Resources</a></li>
   </ul>
 </nav>
@@ -773,6 +773,7 @@ Not covered on this website
 <div class="callout-body-container callout-body">
 <p>These lectures and labs do not cover at all the details of how to draw random numbers via the inverse method and specific indirect methods.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> <strong>Please, consult with your professor about what is exactly required in the course from these topics.</strong></p>
 <p>But what can I recommend for sure if you need a deep-dive on the inverse method for discrete and continuous distributions, is this <a href="https://alexamarioarei.quarto.pub/curs-stat-fmi/Laboratoare/Lab_Sim.html">extensive tutorial</a> by Alexandru Marioarei. Study and replicate the code for one or two distributions by using a different method, for example: Hypergeometric, Normal, Poisson (inverse and custom).</p>
+<p>Regarding the pseudo-random number generation algorithms, you can check out <a href="https://cswr.nrhstat.org/random-number-generation">Chapter 5</a> of Niels Hansen’s “Computational Statistics with R” and Chapter 3 of Tom Kennedy’s “<a href="https://math.arizona.edu/~tgk/mc/book.pdf">Monte Carlo Methods</a> - a special topics course”.</p>
 </div>
 </div>
 <div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;The reason for this is that I don’t have anything new or interesting to say here</p></div></div><p>While we can be ok with not being experts at the inverse method and efficient simulation of random variables, we will be missing a lot if we don’t have an understanding of the <u>accept-reject approach</u>. This is because it’s a building block in a sequence of increasingly complicated and powerful sampling methods like Importance Sampling, Metropolis-Hastings, Markov Chain Monte Carlo, Hamiltonian Monte Carlo, and Particle Filtering (Sequential Monte Carlo).</p>
@@ -841,9 +842,95 @@ f(x) = w Beta(x | a_l, b_l) + (1 - w)Beta(x|a_r, b_r)
 U \le \frac{1}{M} \frac{f(Y)}{g(Y)}
 \]</span> The constant <span class="math inline">\(M\)</span> should be an upper bound on the ratio of <span class="math inline">\(f(x) / g(x) \le M \quad \forall x\)</span>. I chose the approach of Casella and Robert, who find the maximum of that ratio with <code>optimize()</code>, but we would lose just in efficiency, not accuracy if we picked a larger number.</p>
 </section>
-<section id="numerical-integration" class="level2">
-<h2 class="anchored" data-anchor-id="numerical-integration">Numerical integration</h2>
-<p>Numerical integration was one of the immediate applications of the law of large numbers that I mentioned in the lecture. Let’s code up the solution to a scary-looking integral.</p>
+<section id="monte-carlo-integration" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="monte-carlo-integration">Monte Carlo Integration</h2>
+<p>One of the immediate applications of the law of large numbers that I mentioned in the lecture was Monte Carlo integration, which is an alternative to traditional numerical methods. In the case our integrals have the following form and we can easily simulate from the density <span class="math inline">\(f(x)\)</span>, we’re in luck.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> Otherwise, we might need to resort to indirect and more advanced methods like Importance Sampling.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;You can read in this Computational Statistics <a href="https://www.louisaslett.com/Courses/DSSC/notes/monte-carlo-integration.html">course</a> why this form might not be that restrictive after all.</p></div></div><p><span class="math display">\[
+\mathbb{E}_f[h(X)] =  \int_\chi h(x) \cdot f(x) dx
+\]</span></p>
+<p><span class="math display">\[
+\bar h_n = \frac{1}{n} \sum_{j=1}^n h(x_j)
+\]</span></p>
+<p>But first, as with any approximation method, we need a way to assess its accuracy. In our case, we can give probabilistic confidence intervals via the central limit theorem. More interesting are the concentration inequalities (remember Hoeffding from the lecture), which answer the question of how large <span class="math inline">\(n\)</span> has to be if I want my error to be less than a threshold <span class="math inline">\(\tau\)</span> (e.g.&nbsp;<span class="math inline">\(\epsilon \le 10^{-4}\)</span>) with probability 0.999?<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;You can check out this question in more details in <a href="https://cswr.nrhstat.org/mci">Chapter 7</a> of Niels Hansen’s “Computational Statistics with R”</p></div></div><div class="cell">
+<details class="code-fold">
+<summary>Show code for the convergence of a Gamma r.v.</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12321</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(n, <span class="dv">8</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>mu_hat <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(x) <span class="sc">/</span> <span class="dv">1</span><span class="sc">:</span>n <span class="co"># cumulative average</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>sigma_hat <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="dv">1</span><span class="sc">:</span>n, mu_hat)) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">ymin =</span> mu_hat <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> sigma_hat <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">:</span>n), </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">ymax =</span> mu_hat <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> sigma_hat <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">:</span>n)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    ), <span class="at">fill =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">8</span>, <span class="at">lty =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of samples"</span>, <span class="at">y =</span> <span class="st">"sample mean"</span>) <span class="sc">+</span> </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Confidence bands for a Gamma random variable via CLT. The dashed line is the theoretical value of the mean</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Despite the usefulness of integration in finance, economics, statistics, and natural sciences, it is hard to avoid didactic examples in a simulation course. I will spare you from estimating the constants <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span> or from wild integrals for which it’s not clear what is the story. So, let’s look at this example from Casella and Robert, then come back to the topic of integration in the context of statistical modeling and MCMC.<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;They also give a nice example of Gaussian CDF <span class="math inline">\(\Phi\)</span> and normal-Cauchy Bayes estimator</p></div></div><p><span class="math display">\[
+\int_0^1 [cos(50x) + sin(20x)]^2
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12321</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>nr_sim <span class="ot">&lt;-</span> <span class="fl">1e4</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { (<span class="fu">cos</span>(<span class="dv">50</span><span class="sc">*</span>x) <span class="sc">+</span> <span class="fu">sin</span>(<span class="dv">20</span><span class="sc">*</span>x))<span class="sc">^</span><span class="dv">2</span> }</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(nr_sim) <span class="sc">|&gt;</span> <span class="fu">h</span>()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>est_int <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(x) <span class="sc">/</span> <span class="dv">1</span><span class="sc">:</span>nr_sim</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>est_err <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">cumsum</span>((x <span class="sc">-</span> est_int)<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span><span class="dv">1</span><span class="sc">:</span>nr_sim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(h, <span class="at">xlab=</span><span class="st">""</span>, <span class="at">ylab=</span><span class="st">""</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>This is how composing <span class="math inline">\(sin()\)</span> and <span class="math inline">\(cos()\)</span> can result in any kind of signal. This idea of decomposition is used in fourier transforms and has been applied in about any engineering and technology application you can imagine.</figcaption>
+</figure>
+</div>
+</div></div></div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show visualization code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>y_lims <span class="ot">&lt;-</span> <span class="fu">mean</span>(x) <span class="sc">+</span> <span class="dv">20</span><span class="sc">*</span><span class="fu">c</span>(<span class="sc">-</span>est_err[nr_sim], est_err[nr_sim])</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="dv">1</span><span class="sc">:</span>nr_sim, est_int)) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ymin =</span> est_int <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> est_err, </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">ymax =</span> est_int <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> est_err</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    ), <span class="at">fill =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lims</span>(<span class="at">y =</span> y_lims) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of samples"</span>, <span class="at">y =</span> <span class="st">"Integral evaluation"</span>) <span class="sc">+</span> </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
