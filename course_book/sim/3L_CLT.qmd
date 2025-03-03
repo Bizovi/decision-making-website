@@ -1,6 +1,6 @@
 ---
 title: "The most dangerous equation"
-subtitle: "CLT, Inverse Method, Monte-Carlo Integration"
+subtitle: "CLT, Accept-Reject, Monte-Carlo Integration"
 author:
   - name: Mihai Bizovi
     id: mb
@@ -254,14 +254,126 @@ Some pitfalls include sampling bias, differential non-response, dropout from stu
 
 These kinds of simulations have one more advantage, as we can check if different causal assumptions can generate the kinds of patterns we observe -- even if we haven't collected the data to verify it. You will get used to the situation when two different process models result in similar statistical patterns -- which will force you to think very carefully about the underlying causal process in practice.
 
-## Numerical integration
-
 
 
 ## Drawing samples from distributions
 
+In the lecture, we saw how important is universality of the uniform and inverse method to simulation. I also presented the stories, use-cases, and relationships of exponential, gamma, beta, normal, chi-squared, and student-t distributions.
+
+Today we introduced the negative binomial, which can be represented as a mixture of gamma and Poisson. It was helpful in capturing the skewed distribution of the number of students in Brazil's schools. In practice, you might encounter other, more exotic distributions like Weibull, inverse-gamma, Dirichlet, and Wishart -- which have their own specialized roles and purposes.^[Weibull is used in survival modeling, Inverse-Gamma as a prior for the variance, Dirichlet in modeling proportions, and Wishart for generating random, symmetric covariance matrices] 
+
+However, if you understand well the standard ones that I presented, you're all good for the majority of applied problems. We will encounter each one in the context of the appropriate case-study and explain their properties in more detail, like we did with the binomial.
+
+::: {.callout-note}
+## Methods for generating random samples
+
+We're still ignoring the details of how do we generate pseudo-random numbers from the uniform, but it will be useful to summarize what methods do we have for other distributions.
+
+|  | general | specific |
+|---|---|---|
+| direct | inverse method | custom algorithms |
+| indirect | accept-reject | mixtures |
+
+We have used the inverse method to simulate exponential random variables and a mixture for the remaining ones. The prior is a direct and general method, while the latter is an indirect and specific way, when theory tells us it can be represented by a mixture. 
+
+Both have a big downside of not being the most computationally efficient way, but are transparent and interpretable. Therefore, many software implementations, like R or Python's RNG, often use specific algorithms for each distribution -- which is more of a numerical methods problem.
+:::
+
+At last, in statistical modeling we will sometimes need to simulate from really complicated random variables, which might not even have a closed-form representation, but we know the functional form up to a multiplicative constant.^[Often, that constant is a nasty integral which we can't solve by hand or at least it's not practical to do so] Thus, we're out of luck with the direct and specific methods -- but accept-reject algorithm and its generalizations in importance sampling are to the rescue in such situations.
+
+
+
+::: {.callout-important}
+## Not covered on this website
+
+These lectures and labs do not cover at all the details of how to draw random numbers via the inverse method and specific indirect methods.^[The reason for this is that I don't have anything new or interesting to say here] **Please, consult with your professor about what is exactly required in the course from these topics.**
+
+But what can I recommend for sure if you need a deep-dive on the inverse method for discrete and continuous distributions, is this [extensive tutorial](https://alexamarioarei.quarto.pub/curs-stat-fmi/Laboratoare/Lab_Sim.html) by Alexandru Marioarei. Study and replicate the code for one or two distributions by using a different method, for example: Hypergeometric, Normal, Poisson (inverse and custom). 
+:::
+
+While we can be ok with not being experts at the inverse method and efficient simulation of random variables, we will be missing a lot if we don't have an understanding of the [accept-reject approach]{.underline}. This is because it's a building block in a sequence of increasingly complicated and powerful sampling methods like Importance Sampling, Metropolis-Hastings, Markov Chain Monte Carlo, Hamiltonian Monte Carlo, and Particle Filtering (Sequential Monte Carlo). 
+
+Without further ado, let's look at the simplest form of Accept-Reject algorithm, a naive implementation, and apply it to an example.^[This is an extension of the Beta example in Casella and Robert, pg. 53] We'll get the chance to analyze why it works and how to make it more efficient in more detail in future lectures.
+
+::: {.callout-note}
+## Calibrating a classification model
+
+Imagine you have developed a machine learning model which scores your customer's propensity to unsubscribe in the next month (churn). You know that one group is loyal and another one at high risk of going to your competitors. 
+
+The problem is that your ML model gives you scores, not calibrated probabilities, and you can't interpret them as such for downstream decisions (like offering a promotion). So, you leave aside a validation dataset, in which you count the number of scores / predictions for each bucket / decile of true frequency of unsubscription.
+
+What you need now is a model which maps the scores to probabilities. In practice, you would use something like an Isotonic Regression or a Mixture Model, but let's not ruin a good story.
+:::
+
+So, before running the calibration, you would like to know if your method works in principle, on some simulated data. First, you need to draw samples from the mixture model below and luckily we can do it in R with `0.6 * rbeta(10000, 2, 6) + 0.4 * rbeta(10000, 18, 3)`. But what would we do if we didn't have it? This seems a bit too intimidating for the inverse method.
+
+$$
+f(x) = w Beta(x | a_l, b_l) + (1 - w)Beta(x|a_r, b_r)
+$$
+
+```{r}
+#| code-fold: true
+#| code-summary: Show code for Accept-Reject method
+#| fig-cap: The histogram is the generated samples, the red curve the theoretical density, and the black curve is the instrumental distribution g. The proportion of accepted samples is 35%, which is not to bad for the weird distribution we have chosen.
+
+set.seed(16173)
+nr_sim <- 1e4; g_a <- 0.7; g_b <- 0.4
+
+f <- function(x) { 0.6 * dbeta(x, 2.1, 6.3) + 0.4 * dbeta(x, 18, 3) }
+
+M <- optimize(
+    f = function(x) {f(x) / dbeta(x, g_a, g_b)}, 
+    interval = c(0, 1), maximum = TRUE
+)$objective + 0.02
+
+u <- runif(nr_sim)
+y <- rbeta(nr_sim, g_a, g_b)            # generation from g
+x <- y[u < f(y) / (dbeta(y, g_a, g_b) * M)] # accepted subsample
+
+hist(
+    x, breaks = 30, probability = TRUE, 
+    xlab = "x (proportion)", main = "", 
+    col = "skyblue", border = "white", 
+    xlim = c(0, 1), ylim = c(0, 3.1)
+)
+curve(f(x), add = TRUE, lwd = 2, col = "coral")
+curve(dbeta(x, g_a, g_b), add = TRUE, col = "grey30", 
+      lwd = 2)
+```
+
+::: {.column-margin}
+This story is not that far from reality. If we manage to find the parameters of the mixture components which fit the data well - for any ML model score we can assign its probability.
+:::
+
+What does the code above do? For the Accept-Reject algorithm, we need a lot of uniformly distributed samples $U$, an instrumental (proposal) probability density function $g(x)$, which has the same support as our unknown PDF $f(x)$. We should pick a $g()$ with available simulation methods and which covers the support well. 
+
+We could choose the uniform, but I settled on a $Beta(0.7, 0.4)$ in order to make sure we have enough "attempts" at the extremes (near 0 and 1). We generate the same number of $Y$ from $g$ and accept only those which satisfy the following condition:^[You will see more performant and sophisticated implementations, but I think it's better to start as simple as possible]
+
+$$
+U \le \frac{1}{M} \frac{f(Y)}{g(Y)}
+$$
+The constant $M$ should be an upper bound on the ratio of $f(x) / g(x) \le M \quad \forall x$. I chose the approach of Casella and Robert, who find the maximum of that ratio with `optimize()`, but we would lose just in efficiency, not accuracy if we picked a larger number.
+
+## Numerical integration
+
+Numerical integration was one of the immediate applications of the law of large numbers that I mentioned in the lecture. Let's code up the solution to a scary-looking integral.
+
+
+::: {.callout-note}
+## We won't cover differential equations solvers
+
+In some fields, systems of ordinary differential equations (and not only) are tremendously important. You encountered some simple ones in your Cybernetics classes and will study the dynamics of economic models in your third year class.
+
+At this point, you should know that there are reliable numerical solvers in R, Python, and other languages. They use methods like 4th order Runge-Kutta for ODEs and Euler-Maruyama for stochastic differential equations.
+:::
+
 
 ## Homework and Study Resources
 
-- Read this famous article by Howard Wainer - ["The most dangerous equation"](https://assets.press.princeton.edu/chapters/s8863.pdf) (Princeton university press, 2009).
+The purpose of this week's homework and readings is to get a deeper understanding of the law of large numbers, central limit theorem, and probability distributions.
+
+- Read the [lecture](3_lln.qmd) about three core theorems in simulation: LLN, CLT, and Universality of Uniform. Run the code snippets you encounter as a warm-up for the following exercises.
+- Read this famous article by Howard Wainer - ["The most dangerous equation"](https://assets.press.princeton.edu/chapters/s8863.pdf) (Princeton university press, 2009)
+- Do your own simulation based on Brazil's ENEM scores by school, using the gaussian mixture and negative binomial distribution.
+- Take the list of other examples from the beginning of this lab and Wainer's paper, write a paragraph for each one on how would you do simulations to assess the claims and where could you find the data to verify your assumptions
 
