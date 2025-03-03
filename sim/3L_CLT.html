@@ -158,7 +158,7 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="The most dangerous equation – Decision Science Course">
-<meta property="og:description" content="CLT, Inverse Method, Monte-Carlo Integration">
+<meta property="og:description" content="CLT, Accept-Reject, Monte-Carlo Integration">
 <meta property="og:image" content="https://course.economic-cybernetics.com/sim/3L_CLT_files/figure-html/unnamed-chunk-1-1.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
@@ -421,8 +421,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#should-u.s.-split-large-schools" id="toc-should-u.s.-split-large-schools" class="nav-link active" data-scroll-target="#should-u.s.-split-large-schools">Should U.S. split large schools?</a></li>
-  <li><a href="#numerical-integration" id="toc-numerical-integration" class="nav-link" data-scroll-target="#numerical-integration">Numerical integration</a></li>
   <li><a href="#drawing-samples-from-distributions" id="toc-drawing-samples-from-distributions" class="nav-link" data-scroll-target="#drawing-samples-from-distributions">Drawing samples from distributions</a></li>
+  <li><a href="#numerical-integration" id="toc-numerical-integration" class="nav-link" data-scroll-target="#numerical-integration">Numerical integration</a></li>
   <li><a href="#homework-and-study-resources" id="toc-homework-and-study-resources" class="nav-link" data-scroll-target="#homework-and-study-resources">Homework and Study Resources</a></li>
   </ul>
 </nav>
@@ -437,7 +437,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">~ Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/3L_CLT.html">3L. Most dangerous equation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">The most dangerous equation</h1>
-<p class="subtitle lead">CLT, Inverse Method, Monte-Carlo Integration</p>
+<p class="subtitle lead">CLT, Accept-Reject, Monte-Carlo Integration</p>
 </div>
 
 
@@ -719,16 +719,154 @@ Try to make your own simulation
 <p>Some pitfalls include sampling bias, differential non-response, dropout from study, right censoring, via confounders, mediators, or colliders.</p>
 </div></div><p>These kinds of simulations have one more advantage, as we can check if different causal assumptions can generate the kinds of patterns we observe – even if we haven’t collected the data to verify it. You will get used to the situation when two different process models result in similar statistical patterns – which will force you to think very carefully about the underlying causal process in practice.</p>
 </section>
+<section id="drawing-samples-from-distributions" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="drawing-samples-from-distributions">Drawing samples from distributions</h2>
+<p>In the lecture, we saw how important is universality of the uniform and inverse method to simulation. I also presented the stories, use-cases, and relationships of exponential, gamma, beta, normal, chi-squared, and student-t distributions.</p>
+<p>Today we introduced the negative binomial, which can be represented as a mixture of gamma and Poisson. It was helpful in capturing the skewed distribution of the number of students in Brazil’s schools. In practice, you might encounter other, more exotic distributions like Weibull, inverse-gamma, Dirichlet, and Wishart – which have their own specialized roles and purposes.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Weibull is used in survival modeling, Inverse-Gamma as a prior for the variance, Dirichlet in modeling proportions, and Wishart for generating random, symmetric covariance matrices</p></div></div><p>However, if you understand well the standard ones that I presented, you’re all good for the majority of applied problems. We will encounter each one in the context of the appropriate case-study and explain their properties in more detail, like we did with the binomial.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Methods for generating random samples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’re still ignoring the details of how do we generate pseudo-random numbers from the uniform, but it will be useful to summarize what methods do we have for other distributions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>general</th>
+<th>specific</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>direct</td>
+<td>inverse method</td>
+<td>custom algorithms</td>
+</tr>
+<tr class="even">
+<td>indirect</td>
+<td>accept-reject</td>
+<td>mixtures</td>
+</tr>
+</tbody>
+</table>
+<p>We have used the inverse method to simulate exponential random variables and a mixture for the remaining ones. The prior is a direct and general method, while the latter is an indirect and specific way, when theory tells us it can be represented by a mixture.</p>
+<p>Both have a big downside of not being the most computationally efficient way, but are transparent and interpretable. Therefore, many software implementations, like R or Python’s RNG, often use specific algorithms for each distribution – which is more of a numerical methods problem.</p>
+</div>
+</div>
+<p>At last, in statistical modeling we will sometimes need to simulate from really complicated random variables, which might not even have a closed-form representation, but we know the functional form up to a multiplicative constant.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> Thus, we’re out of luck with the direct and specific methods – but accept-reject algorithm and its generalizations in importance sampling are to the rescue in such situations.</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Often, that constant is a nasty integral which we can’t solve by hand or at least it’s not practical to do so</p></div></div><div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Not covered on this website
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These lectures and labs do not cover at all the details of how to draw random numbers via the inverse method and specific indirect methods.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> <strong>Please, consult with your professor about what is exactly required in the course from these topics.</strong></p>
+<p>But what can I recommend for sure if you need a deep-dive on the inverse method for discrete and continuous distributions, is this <a href="https://alexamarioarei.quarto.pub/curs-stat-fmi/Laboratoare/Lab_Sim.html">extensive tutorial</a> by Alexandru Marioarei. Study and replicate the code for one or two distributions by using a different method, for example: Hypergeometric, Normal, Poisson (inverse and custom).</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;The reason for this is that I don’t have anything new or interesting to say here</p></div></div><p>While we can be ok with not being experts at the inverse method and efficient simulation of random variables, we will be missing a lot if we don’t have an understanding of the <u>accept-reject approach</u>. This is because it’s a building block in a sequence of increasingly complicated and powerful sampling methods like Importance Sampling, Metropolis-Hastings, Markov Chain Monte Carlo, Hamiltonian Monte Carlo, and Particle Filtering (Sequential Monte Carlo).</p>
+<p>Without further ado, let’s look at the simplest form of Accept-Reject algorithm, a naive implementation, and apply it to an example.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> We’ll get the chance to analyze why it works and how to make it more efficient in more detail in future lectures.</p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;This is an extension of the Beta example in Casella and Robert, pg. 53</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Calibrating a classification model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imagine you have developed a machine learning model which scores your customer’s propensity to unsubscribe in the next month (churn). You know that one group is loyal and another one at high risk of going to your competitors.</p>
+<p>The problem is that your ML model gives you scores, not calibrated probabilities, and you can’t interpret them as such for downstream decisions (like offering a promotion). So, you leave aside a validation dataset, in which you count the number of scores / predictions for each bucket / decile of true frequency of unsubscription.</p>
+<p>What you need now is a model which maps the scores to probabilities. In practice, you would use something like an Isotonic Regression or a Mixture Model, but let’s not ruin a good story.</p>
+</div>
+</div>
+<p>So, before running the calibration, you would like to know if your method works in principle, on some simulated data. First, you need to draw samples from the mixture model below and luckily we can do it in R with <code>0.6 * rbeta(10000, 2, 6) + 0.4 * rbeta(10000, 18, 3)</code>. But what would we do if we didn’t have it? This seems a bit too intimidating for the inverse method.</p>
+<p><span class="math display">\[
+f(x) = w Beta(x | a_l, b_l) + (1 - w)Beta(x|a_r, b_r)
+\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code for Accept-Reject method</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">16173</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>nr_sim <span class="ot">&lt;-</span> <span class="fl">1e4</span>; g_a <span class="ot">&lt;-</span> <span class="fl">0.7</span>; g_b <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { <span class="fl">0.6</span> <span class="sc">*</span> <span class="fu">dbeta</span>(x, <span class="fl">2.1</span>, <span class="fl">6.3</span>) <span class="sc">+</span> <span class="fl">0.4</span> <span class="sc">*</span> <span class="fu">dbeta</span>(x, <span class="dv">18</span>, <span class="dv">3</span>) }</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">optimize</span>(</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">f =</span> <span class="cf">function</span>(x) {<span class="fu">f</span>(x) <span class="sc">/</span> <span class="fu">dbeta</span>(x, g_a, g_b)}, </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">maximum =</span> <span class="cn">TRUE</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)<span class="sc">$</span>objective <span class="sc">+</span> <span class="fl">0.02</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(nr_sim)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(nr_sim, g_a, g_b)            <span class="co"># generation from g</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> y[u <span class="sc">&lt;</span> <span class="fu">f</span>(y) <span class="sc">/</span> (<span class="fu">dbeta</span>(y, g_a, g_b) <span class="sc">*</span> M)] <span class="co"># accepted subsample</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    x, <span class="at">breaks =</span> <span class="dv">30</span>, <span class="at">probability =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"x (proportion)"</span>, <span class="at">main =</span> <span class="st">""</span>, </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>, </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">3.1</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">f</span>(x), <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"coral"</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dbeta</span>(x, g_a, g_b), <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"grey30"</span>, </span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3L_CLT_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>The histogram is the generated samples, the red curve the theoretical density, and the black curve is the instrumental distribution g. The proportion of accepted samples is 35%, which is not to bad for the weird distribution we have chosen.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This story is not that far from reality. If we manage to find the parameters of the mixture components which fit the data well - for any ML model score we can assign its probability.</p>
+</div></div><p>What does the code above do? For the Accept-Reject algorithm, we need a lot of uniformly distributed samples <span class="math inline">\(U\)</span>, an instrumental (proposal) probability density function <span class="math inline">\(g(x)\)</span>, which has the same support as our unknown PDF <span class="math inline">\(f(x)\)</span>. We should pick a <span class="math inline">\(g()\)</span> with available simulation methods and which covers the support well.</p>
+<p>We could choose the uniform, but I settled on a <span class="math inline">\(Beta(0.7, 0.4)\)</span> in order to make sure we have enough “attempts” at the extremes (near 0 and 1). We generate the same number of <span class="math inline">\(Y\)</span> from <span class="math inline">\(g\)</span> and accept only those which satisfy the following condition:<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;You will see more performant and sophisticated implementations, but I think it’s better to start as simple as possible</p></div></div><p><span class="math display">\[
+U \le \frac{1}{M} \frac{f(Y)}{g(Y)}
+\]</span> The constant <span class="math inline">\(M\)</span> should be an upper bound on the ratio of <span class="math inline">\(f(x) / g(x) \le M \quad \forall x\)</span>. I chose the approach of Casella and Robert, who find the maximum of that ratio with <code>optimize()</code>, but we would lose just in efficiency, not accuracy if we picked a larger number.</p>
+</section>
 <section id="numerical-integration" class="level2">
 <h2 class="anchored" data-anchor-id="numerical-integration">Numerical integration</h2>
-</section>
-<section id="drawing-samples-from-distributions" class="level2">
-<h2 class="anchored" data-anchor-id="drawing-samples-from-distributions">Drawing samples from distributions</h2>
+<p>Numerical integration was one of the immediate applications of the law of large numbers that I mentioned in the lecture. Let’s code up the solution to a scary-looking integral.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+We won’t cover differential equations solvers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In some fields, systems of ordinary differential equations (and not only) are tremendously important. You encountered some simple ones in your Cybernetics classes and will study the dynamics of economic models in your third year class.</p>
+<p>At this point, you should know that there are reliable numerical solvers in R, Python, and other languages. They use methods like 4th order Runge-Kutta for ODEs and Euler-Maruyama for stochastic differential equations.</p>
+</div>
+</div>
 </section>
 <section id="homework-and-study-resources" class="level2">
 <h2 class="anchored" data-anchor-id="homework-and-study-resources">Homework and Study Resources</h2>
+<p>The purpose of this week’s homework and readings is to get a deeper understanding of the law of large numbers, central limit theorem, and probability distributions.</p>
 <ul>
-<li>Read this famous article by Howard Wainer - <a href="https://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> (Princeton university press, 2009).</li>
+<li>Read the <a href="../sim/3_lln.html">lecture</a> about three core theorems in simulation: LLN, CLT, and Universality of Uniform. Run the code snippets you encounter as a warm-up for the following exercises.</li>
+<li>Read this famous article by Howard Wainer - <a href="https://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> (Princeton university press, 2009)</li>
+<li>Do your own simulation based on Brazil’s ENEM scores by school, using the gaussian mixture and negative binomial distribution.</li>
+<li>Take the list of other examples from the beginning of this lab and Wainer’s paper, write a paragraph for each one on how would you do simulations to assess the claims and where could you find the data to verify your assumptions</li>
 </ul>
 
 
