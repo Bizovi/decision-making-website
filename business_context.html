@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mihai Bizovi">
+
+<title>Business school for decision scientists – Modern Decision Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sci_process.html" rel="next">
+<link href="./philosophy.html" rel="prev">
+<link href="./img/favicon.jpeg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d5a2d58599beb33ca06a0ee848de3e43.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d5a2d58599beb33ca06a0ee848de3e43.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a5c78d07eefccdbc98157339462acdc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ff0192b0d945743089706b6580115b90.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNKQREJHQW"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Business school for decision scientists – Modern Decision Science">
+<meta property="og:description" content="Introduction and background">
+<meta property="og:image" content="https://course.economic-cybernetics.com/01_fundamentals/img/trajectories.png">
+<meta property="og:site_name" content="Pragmatic Data Science">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image:height" content="422">
+<meta property="og:image:width" content="682">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Modern Decision Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about_me.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mihaibizovi.com/"> <i class="bi bi-journal-bookmark" role="img">
+</i> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making-website"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/mihai-bizovi-56982abb/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction and Background</a></li><li class="breadcrumb-item"><a href="./business_context.html">1. Business context</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction and Background</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">i. Why decision science?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ii. Course philosophy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./business_context.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">1. Business context</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sci_process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. On scientific process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/ai_ml_cybernetics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. AI, ML, Cybernetics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Study guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Probability and Statistics Study Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Bayesian Statistics Study Guide</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./sim/1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation of economic processes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sim/1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sim/1L_bday_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1L. Birthday problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. The Probability Triple</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sim/2L_safari.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2L. Safari trips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sim/3_lln.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Three core theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sim/3L_CLT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3L. Most dangerous equation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Why study all of that?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-science-in-the-wild" id="toc-data-science-in-the-wild" class="nav-link active" data-scroll-target="#data-science-in-the-wild">Data Science in the Wild</a></li>
+  <li><a href="#business-performance-and-strategy" id="toc-business-performance-and-strategy" class="nav-link" data-scroll-target="#business-performance-and-strategy">Business Performance and Strategy</a>
+  <ul class="collapse">
+  <li><a href="#what-is-strategy" id="toc-what-is-strategy" class="nav-link" data-scroll-target="#what-is-strategy">What is Strategy?</a></li>
+  <li><a href="#module-1-business-school-and-methodology" id="toc-module-1-business-school-and-methodology" class="nav-link" data-scroll-target="#module-1-business-school-and-methodology">Module 1: Business School and Methodology</a></li>
+  <li><a href="#introduction-and-course-overview" id="toc-introduction-and-course-overview" class="nav-link" data-scroll-target="#introduction-and-course-overview">Introduction and course overview</a></li>
+  <li><a href="#business-context-decisions-and-strategy" id="toc-business-context-decisions-and-strategy" class="nav-link" data-scroll-target="#business-context-decisions-and-strategy">Business context, decisions, and strategy</a></li>
+  <li><a href="#decision-making-under-uncertainty-at-scale" id="toc-decision-making-under-uncertainty-at-scale" class="nav-link" data-scroll-target="#decision-making-under-uncertainty-at-scale">Decision-making under uncertainty at scale</a></li>
+  <li><a href="#newsvendor-problem-and-demand-planning" id="toc-newsvendor-problem-and-demand-planning" class="nav-link" data-scroll-target="#newsvendor-problem-and-demand-planning">Newsvendor Problem and Demand Planning</a></li>
+  <li><a href="#price-optimization-under-limited-capacity" id="toc-price-optimization-under-limited-capacity" class="nav-link" data-scroll-target="#price-optimization-under-limited-capacity">Price optimization under limited capacity</a></li>
+  <li><a href="#churn-and-lifetime-value.-open-datasets" id="toc-churn-and-lifetime-value.-open-datasets" class="nav-link" data-scroll-target="#churn-and-lifetime-value.-open-datasets">Churn and Lifetime Value. Open datasets</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction and Background</a></li><li class="breadcrumb-item"><a href="./business_context.html">1. Business context</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Business school for decision scientists</h1>
+<p class="subtitle lead">Introduction and background</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mihai Bizovi, VP of Decision Science </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="data-science-in-the-wild" class="level1 page-columns page-full">
+<h1>Data Science in the Wild</h1>
+<p>At this point, you might get tired of me emphasizing the decision-making aspect of data science as the main point of why it is important. It’s time we move from the general and abstact towards particular examples and applications in various industries. This will lead us to acknowledge how <strong>prevalent</strong> is AI (that we haven’t fully defined yet) in firms, services and technologies we use every day.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+During a lecture, I usually ask students
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Can you give some examples of businesses, sevices, technologies, problems, and domains which you suspect do have AI/ML algorithms and models behind the scenes?</p>
+<p>See below some very good answers and argumentations provided by the students last year, then we’ll examine in more details one of them. Of course, there is always that one person, very passionate about sports or blockchain.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do some reverse engineering!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When reading this section, I want to get you into a mindset of the reverse engineer: step back and think deeply about products and services you use every day:</p>
+<ul>
+<li>Put yourself in the shoes of the business making those decisions and building those systems</li>
+<li>What were the goals, user/client needs?</li>
+<li>What was the firm’s objective?</li>
+<li>What constraints did they hit? Why it was a difficult problem?</li>
+<li>What made it an appropriate use-case for ML, Statistics, and AI?</li>
+<li>What are some potential approaches they settled on?</li>
+<li>What would be a baseline, simple, naive solution?</li>
+</ul>
+</div>
+</div>
+<ul>
+<li><strong>Dynamic pricing</strong> in Bolt and Uber, which takes into account the weather, especially if it rains, peak hours: balancing demand and supply. It is at the intersection of ML and economic theory, as they are a platform or marketplace. Prices also change with respect to competitors, so we see aspects of an oligopoly behavior. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><br>
+</li>
+<li><strong>Stock markets</strong> and trading bots: at the intersection of economics, finance and AI. I would add the “good old” and boring portfolio management and venture capital enterprises.</li>
+<li><strong>Management consulting</strong>: what market to enter, whether and how to build a new product (product development). Lots of use-cases in marketing and market research firms.</li>
+<li><strong>Medicine Applications</strong>: developing new vaccines and drugs, aided by AI and designing clinical trials for novel treatments.</li>
+<li><strong>Banks and insurance</strong>: risk management, predicting credit defaults on mortgages and business loans. Chatbots for customer support, for most frequent and simple questions.</li>
+<li><strong>Automotive</strong>: routine tasks like automated parking, the race towards self-driving, autonomous or semi-autonomous cars, safety warnings. Predictive maintainance is tackling a problem where they leverage predictions to replace risky parts before they go out of function.</li>
+<li>Liverpool F.C. won a title, and a key part of their success was leveraging AI and ML to discover new tactis on the field with the highest payoffs. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+<li><strong>NBA</strong> teams invested a lot in the data infrastructure and decision-making capabilities: LA Lakers found the best player at the moment for a particular position they were lacking and would play well along with the team. Rockets won the regular championship divison by going all in on the 3-point shot.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Golden State Warriors simply revolutionised basketball with data, before everyone else was doing it – giving them a competitive edge. <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;When it doesn’t work out – I’m pretty upset at their data scientists and domain experts. Here is where ethical issues creep up: jacking up prices, monopolies, drivers struggling to make a living wage.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;TODO: Reference article and maybe dataset for more details</p></div><div id="fn3"><p><sup>3</sup>&nbsp;<a href="https://d3.harvard.edu/platform-digit/submission/moreyball-the-houston-rockets-and-analytics/">Moreyball: The Houston Rockets and Analytics</a> – an article in Harvard’s MBA Digital Innovation</p></div><div id="fn4"><p><sup>4</sup>&nbsp;Check out the following <a href="https://youtu.be/oUvvfHkXyOA">video by The Economist</a> on how data transformed the NBA. For more details on the statistical methodology, I enjoyed an youtube channel called Thinking Basketball and their <a href="https://www.youtube.com/watch?v=pznoCFs7XZg&amp;list=PLtzZl14BrKjTJZdubjNEY5jU0fGOiy51x">playlist</a> about the statistical methodology.</p></div></div><p>In all of the examples above, those businesses and systems do have to make decisions, under uncertainty from multiple sources, trying to solve complex problems at a large scale, which would be impossible to do manually even with an army of employees.</p>
+<p>I would like to add a few more examples, from an insider and practitioner’s perspective, which might not be as impressive and a bit routine, but no less important. Keep in mind, that if at a closer look, the service seems to do something relatively intelligent very fast, specialized AI might be involved behind the scenes.</p>
+<ul>
+<li><strong>Demand Planning</strong>: How many SKUs (items) should I order for manufacturing, to satisfy the demand (that last item on the shelf, minimizing lost sales) and to minimize excess inventory.</li>
+<li><strong>Logistics</strong> and <strong>Supply Chain</strong>: routing, distribution center operations and automations for order fulfillment, return management</li>
+<li><strong>Recommender systems</strong> for music, videos, books, products, news in social media, services, platforms, and e-commerces like facebook, instagram, tiktok, youtube, spotify, amazon, emag. You can find recommendations in surprising places, like google maps.</li>
+<li><strong>Programmatic Advertisement</strong>: finding best placement for ads on various platforms, right now dominated by meta and google</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Classroom Case Studies for a Deeper Understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will explore some challenges and applications from this list in a series of case studies and labs. The idea is to improve our ability to identify opportunities and formulate problems from the point of view of an organisation, such that we can match those with the methods, models and algorithms discussed in the course.</p>
+<p>I’ll have to introduce a lot of new concepts when the language we developed so far will turn out to be insufficient to talk about and understand what’s happening inside these firms. Thus, each case study is an opportunity to play around with a novel idea. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<ul>
+<li>In the first deep-dive, we will look at Uber and Bolt, with publicly available information, trying to figure out what do their data scientists do.</li>
+<li>Then, we will look at the lingerie e-commerce where I work at, AdoreMe and a different set of problems we’re facing.</li>
+</ul>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;If you have a pretty good idea about what is AI, Analytics, ML, Deep Learning, Big Data, Causal Inference and when to use one approach or another, feel free to skip the history and terminology and go straight to the case studies.</p></div></div></section>
+<section id="business-performance-and-strategy" class="level1 page-columns page-full">
+<h1>Business Performance and Strategy</h1>
+<p>Arguably, we live in a <em>volatile, uncertain, complex, and ambiguous</em> world that we have to understand in order to navigate it well. By “world”, I mean the economy, society, environment, or any other complex system – especially when human behavior is involved. It is reasonable to ask: wasn’t it always the case, depending on how we define the terms, level of analysis, and point of view?</p>
+<p>I think it’s a matter of scale and magnitude in VUCA dimensions, where an accelerating rate of change poses a great challenge to our capacity to adapt. Instead of an evolutionary or philosophical comment on why we need this field of data/decision science, I have two questions on my mind when it comes to living well or improving business outcomes: <strong>what is true</strong> and <strong>how should I act</strong>? <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;This implies that we already framed the problem and figured out what we want to achieve, and that indeed we chose the right goals and objectives. Moreover, the questions of epistemiology and ethics are a never ending topic for discussion and enquiry.</p></div></div><div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Decision Science: (not only) truth and action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s start from a business setting of an e-commerce, where we want to increase sales, customer satisfaction, and reduce costs. Imagine three scenarios, which neatly fall into the SWOT framework:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01_fundamentals/img/trajectories.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption><em>Source: <a href="https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf">Kim Warren</a></em> - Status Quo, Desired and Feared Trajectories</figcaption>
+</figure>
+</div>
+<ul>
+<li>We keep the status quo, doing everyting as before. What is the most likely trajectory of profits? Can we come up with an educated guess? If the trajectory looks good, that is our <strong>strenghts</strong> and compentencies contributing to it, if not, our <strong>weakness</strong>.</li>
+<li>A feared trajectory, that is, if our business is hit by a shock in supply chain, inflation, by competition or customer demand. It’s the <strong>threats</strong>.</li>
+<li>A desired or aspirational trajectory. Is it reasonable and realistically achievable? If yes, what strategy and tactics should we implement, how sould we act? This is our <strong>opportunity</strong>.</li>
+</ul>
+</div>
+</div>
+<p>After this exercise, we defined more precisely where we stand, that is, quantify the current state of the firm. We framed the problem in terms of most relevant outcomes and we’re in the process of figuring out what are the optimal goals to aim for. Obviously, we need a mechanism, measurements to know that we’re on track and to recognize when we get there. Now, let’s go back to our two questions and unpack them:</p>
+<ul>
+<li><strong>What is true?</strong> In the most general sense, we’re not asking for a mathematical and logical truth, but if it’s plausible, probable, deserves serious consideration, is backed by evidence. I also mean that we understand the underlying causal mechanisms. Not least, an assessment of the current situation. The metaphor which I suggest for this is “seeing clearly”, through the fog, illusions, and biases. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
+<li><strong>How should I act?</strong> What is plausible doesn’t entirely answer this question, we can’t derive an ought from is.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> In business settings, I would think about action in terms of strategic alignment and optimisation.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Recommended reading: Scout Mindset by Julia Galef</p></div><div id="fn8"><p><sup>8</sup>&nbsp;This is one of the most important and applicable philosophical ideas, introduced by David Hume: when one makes claims about what ought to be that are based solely on statements about what is.</p></div></div><p>The only missing pieces from this mental model that I argue for is tremendously important: <strong>iteration</strong> and <strong>feedback</strong>. Due to VUCA, we can’t be sure our actions are optimal, or even that we’re solving the right problem, therefore fast iteration and feedback ensures we’re not taking too much risk, that we find out early about problems in our thinking and action, that we can change course to steer the ship back on track.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wait, this sounds familiar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sounds an awflul lot like Cybernetics, doesn’t it? Especially if we have the idea of a firm as a complex adaptive system as a pressuposition for this discussion.</p>
+</div>
+</div>
+<!-- You might've heard in the news that data scientist is the sexiest job of 21st century, that AI is going to take over, Deep Reinforcement Learning models are beating people at Dota and Chess, solving almost-impossible protein-folding problems. But what does it actually mean, if we step outside the hype/buzzwords, use a plain language, and apply these ideas in a more down-to-earth, day-to-day problems and challenges in businesses? -->
+<p>Now that it’s more clear what I meant in the course introduction by improving business outcomes and bringing value to organizations, I didn’t yet explain what does analytics, data science, machine learning, and AI do or are, and how to they fit in the picture we painted so far.</p>
+<section id="what-is-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-strategy">What is Strategy?</h2>
+<p>Sounds like a naive question, but bad strategy is prevalent – which comes from a misunderstanding about what is a strategy. I highly recommend <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy">this article published by McKinsey</a> – we learn better from other’s mistakes.</p>
+<p>In short, it is not just <strong>aspiration</strong> towards goal or having a <strong>vision</strong> or setting a <strong>target</strong>. By analogy, remember the SMART criteria when you’re setting goals. As true consultants, we can summarize the steps involved in developing a strategy in a matrix.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 36%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Outcome</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Honest diagnosis</td>
+<td>Identify obstacles</td>
+<td>Few critical, relevant aspects</td>
+</tr>
+<tr class="even">
+<td>Guiding policy</td>
+<td>General approach to overcome</td>
+<td>Focused on key aspects</td>
+</tr>
+<tr class="odd">
+<td>Coherent actions</td>
+<td>Support policy with action plan</td>
+<td>Coordinated and focused</td>
+</tr>
+</tbody>
+</table>
+<p>Since strategy informs so much of decision-making, know your firm’s strategy – ask around, understand it, contribute to it. Call out bad strategy.</p>
+</section>
+<section id="module-1-business-school-and-methodology" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="module-1-business-school-and-methodology">Module 1: Business School and Methodology</h2>
+<p>Remember the advice “think of yourself as a business person with superpowers”? It means that as a decision scientist, it’s helpful to think question, action, and outcome first – and only then about models. In other words, we have to deeply understand our client’s business domain and <strong>problem space</strong>. The best way to achieve that, is experience and collaboration on the job. Therefore, my role is to tell as many stories from the trenches, so that you know what to expect in practice.</p>
+<p>A good starting place is thinking about the purpose of a business from different perspectives. Then, identify key decisions that firms have to make across many industries and domains. This exercise will show us how widespread are data science applications and use-cases, even in places we don’t suspect.</p>
+<p>At this point it is important to clarify what we mean by AI, ML, analytics, data mining, statistics and when is it appropriate to choose one approach over another. You’ll be surprised, but statistics is the hardest to define and often misunderstood, because of its inferential, experimental, and causal facets.</p>
+<p>Next, we’ll learn a few frameworks for understanding a firm’s performance evolution, value chain, strategy and tie them all together in an analyst’s workflow. These tools will help us ask good (statistical) questions and increase the chances that our modeling efforts result in actionable insights.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>In time, I’ll add many more case-studies from advertisement, promotion, merchandising, engagement, CRM, conversion rate optimization, demand planning, supply chain, etc.</p>
+</div></div><p>An essential aid in this pursuit of improving decision-making at scale, are different processes and <strong>methodologies</strong> for machine learning, experiment design, causal inference, and exploratory data analysis. It is important to mention that methodology is not a recipe, but way of structuring our work, a set of guiding principles and constraints over the space of all the things that we could do in analysis. Don’t think of these constraints as limiting your freedom, but as helpful allies in effective problem problem solving.</p>
+<p>These methodolgical fundamentals are not “just theory”, it is what will make or break projects in practice. There are so many pitfalls in ML and statistics that we cannot afford to do it ad-hoc. In my teaching, I try very hard to bring back the scientific process and methodology into “data science”. Understanding and applying a statistical tool or model by itself is not sufficient. We need case-studies in which we put the business context, decisions, domain understanding, and working software at the forefront. As R. McElreath sais, science before statistics!</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why most AI/ML projects fail?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A lot of attention has been paid in the industry to the software engineering aspects of machine learning as one of the causes of failed projects. In the last 5 years, a lot of tools and best practices have emerged which can help us mitigate those risks and increase our chances of successful operationalization.</p>
+<p>In my opinion, a bigger problem is methodological and organizational: a mismatch between business objectives, actions, constraints, tradeoffs, domain specificities vs modeling. This is why the ability to ask good questions, to formulate a problem, and think scientifically is critical. Therefore, an important goal of my writing is to recognize and avoid <strong>adhockery</strong>. <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<p>There is one more problem you have to be aware of, which I call the “Kaggle phenomenon”. Despite Kaggle competitions being an excellent platform for honing ML skills and developing better models, I think it gave too many people the impression that this is what data science is about. Kaggle misses the most important aspects of problem-solving and it is devoid of most of the original business context and decision-making.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Adhockery in modeling, in product-management, in data-mining, and software engineering</p></div></div><p>If you worry that the business school is too conceptual – don’t despair, as we’ll have a few hands-on, technical lectures – involving math, modeling, and programming. We will come back to these problems after getting the required background in probability and statistical modeling.</p>
+<ul>
+<li>I use the newsvendor problem as a starting point in modeling and optimization for demand planning</li>
+<li>The pricing optimization as a starting point towards revenue management</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Go to “Study Guide” pages for practice!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Conceptual understanding by itself is not enough. So, I curated a list of resources to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.</p>
+<p>Also, keep an eye on the course <a href="https://github.com/Bizovi/decision-making">github repo</a>, in which we’ll do a lot of simulations, some exciting projects (full stack data apps) and investigate common challenges with a fresh perspective.</p>
+</div>
+</div>
+<p>In the study guide we go into more details and granularity – with references, readings, and practices for particular topics within each lecture. I suggest to read about the <a href="../philosophy.qmd">course philosophy</a>, which motivates why it is structured in this way. If you’re unsure about the prerequisites and background knowledge, refer to <a href="prerequisites.qmd">“Why did you study all of that?”</a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Some lectures are conceptual and you might go into more depth by reading. Some are highly technical and you want to go through the math and practice/code on suggested case-studies.</p>
+</div></div><div class="cell" data-fig-width="9" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart TD
+
+    DM[Decision Science] -- big picture --&gt; App[Domains &amp; Use-Cases]
+     --&gt; Strat[Business Strategy] --&gt; Adv[Analytics vs ML vs Stats]
+
+    DM -- bussiness econ --&gt; NW[Newsvendor] --&gt; PD[Pricing Decisions] 
+        --&gt; Churn[Churn &amp; LTV]
+
+    DM -- methodology --&gt; ML[Learning &amp; Bias] --&gt; ML12[12 Steps of ML] 
+        --&gt; Stat[12 Steps of Stats]
+
+
+    style NW fill:#f7f5bc
+    style PD fill:#f7f5bc
+    style Churn fill:#f7f5bc
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A mind map of lectures grouped by theme so you can navigate the study guide easier. See below all the topics, case-studies, references, and readings for each chapter or lecture.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction-and-course-overview" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="introduction-and-course-overview">Introduction and course overview</h2>
+<p>First, make sure you read the <a href="../index.qmd#module-1-business-school-for-data-scientists">introduction</a> for a motivation and brief summary of what are we going to study, then review the <a href="roadmap.qmd#module-i-business-school-for-data-scientists">schedule and syllabus</a> in order to understand how the course is structured in particular lectures.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>If you’re a student, please, don’t skip the readings in the first two lectures. These are perhaps the most important learnings from 10 years of practice and will serve you well.</p>
+</div></div><ul>
+<li>Understand the particularities of decision-making in businesses</li>
+<li>Why I prefer “decision science” over “data science”</li>
+<li>Necessary admin stuff and project requirements. Think about your goals, aspirations, interests and hobbies, so that you can pick a fun use-case</li>
+<li>Go through the slides again after the readings and lectures</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Activity: What is the purpose of the business?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On the card you received in the class, answer the following questions:</p>
+<ul>
+<li>Answer from 1 (strongly disagree) to 5 (strongly agree) to each to the possible purposes (raison d’etre) of a busines.</li>
+<li>Are you considering to start a business in the next 5 years?</li>
+</ul>
+<p>Now, imagine you’re in charge of public policy, or take part of an entreprenorial think-tank or NGO for youths. Formulate a research question that a further study would try to answer. It doesn’t have to relate to the particular questions you answered before.</p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>If you’re serious about data science and statistical fundamentals, I highly recommend the following two books by A. Gelman for self study: <a href="https://avehtari.github.io/ROS-Examples/index.html">Regression and Other Stories</a> and <a href="https://avehtari.github.io/ActiveStatistics/index.html">Active Statistics</a></p>
+</div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wikipedia donations experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This story can be found in “Active Statistics” and “Regression and Other Stories” by A. Gelman.</p>
+</div>
+</div>
+</section>
+<section id="business-context-decisions-and-strategy" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="business-context-decisions-and-strategy">Business context, decisions, and strategy</h2>
+<p>I build upon the previous lecture to develop the story of decisions in a business environment. We need additional terminology, concepts, and models in order to structure the problem space. What is key here, is to get immersed and <strong>put yourself in the shoes</strong> of decision-makers. Read the <a href="2_performance_strategy.qmd">second chapter</a>.</p>
+<ul>
+<li>Evolution of firm’s performance in time. Why, Where, How? <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>
+<ul>
+<li>Status quo, desired, and feared trajectories.</li>
+<li>Tradeoffs and limited resources, SWOT Analysis</li>
+</ul></li>
+<li>A deep-dive into Business Analyst’s Workflow</li>
+<li>What is strategy? What makes good or bad strategy? <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></li>
+<li>What is a Value Chain? Data Science Strategy Safari <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Read Kim Warren’s article on “The Dynamics of Strategy” <a href="https://strategydynamics.com/free/assets/The%20Dynamics%20of%20Strategy,%202016.pdf">here</a></p></div><div id="fn11"><p><sup>11</sup>&nbsp;Read the article published in McKinsey by Richard Rumelt <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-perils-of-bad-strategy">“The perils of bad strategy”</a></p></div><div id="fn12"><p><sup>12</sup>&nbsp;Read about the framework of aligning business objectives to data science use-cases. Data Science Strategy Safari at <a href="https://bayesianquest.com/2018/11/13/data-science-strategy-safari-aligning-data-science-strategy-to-org-strategy/">bayesianquest</a></p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Survey of use-cases in various domains
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As a second activity, think about as many domains and use-cases as possible in which AI and data science plays an important role. Put yourself in the shoes of the firm: how would you reverse-engineer the product? Then, see what resonates with you <a href="1_applications.qmd">here</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: LRB Subscriptions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Take a subscription-based publication like <a href="https://www.lrb.co.uk/">London Review of Books</a> and analyze it using the tools and frameworks you learned.</p>
+<p>Think about acquisition, churn, printing, transportation, and market share. How can it grow? What would make it profitable? What are the key decisions to be made?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: Food Stamps and Fermi Estimation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a good reason why management consultants practice Fermi Estimation (sanity, order-of-magnitude checks) and it is asked in many interviews.</p>
+<p>Take a look at the case study on <a href="https://callingbullshit.org/case_studies/case_study_foodstamp_fraud.html">Food Stamp Fraud</a> by Carl Bergstrom and Jevin West in Calling Bullshit. Practice on other classical Fermi estimtion examples.</p>
+</div>
+</div>
+</section>
+<section id="decision-making-under-uncertainty-at-scale" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="decision-making-under-uncertainty-at-scale">Decision-making under uncertainty at scale</h2>
+<p>In the previous lecture we learned how data science fits into the larger context of a business. The ideas of value chain and business analyst’s workflow are immediately applicable in practice. Now, read the <a href="4_ml_stats.qmd">third chapter</a>.</p>
+<ul>
+<li>Clarify what I mean by AI and Cybernetics and the historical confusion <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></li>
+<li>When do we need Analytics vs Statistics vs Machine Learning?</li>
+<li>A note on interdisciplinarity and thinking in buckets</li>
+<li>Agents, environments, and sources of uncertainty</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;K. Pretz, “<a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says”; M. Jordan, “<a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a> - The Revolution Hasn’t Happened Yet”</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: DTC Fashion E-Commerces
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Choose a direct-to-consumer e-commerce, like Zara, H&amp;M, or a marketplace like Zalando (the big players in the oligopoly). How does a potential business strategy look like? What are some use-cases for Data Science / AI which can improve their outcomes?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: Uber and Dynamic Pricing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the case of Uber, Bolt (ride sharing platforms), we’re very much interested in same questions as before, however, we need to get a grasp on the idea of market-making. If you were to reverse-engineer the pricing algorithms, how would you go about doing it?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Overview of <strong>open datasets</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is very hard to find good, realistic datasets which map well on representative use-cases from this course. This is why I curated a list of public datasets in a variety of domains. These should help if you don’t know where to start your project, that is don’t have particular problems, hypotheses, or research questions in mind.</p>
+</div>
+</div>
+</section>
+<section id="newsvendor-problem-and-demand-planning" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="newsvendor-problem-and-demand-planning">Newsvendor Problem and Demand Planning</h2>
+<p>Demand planning, especially demand forecasting and inventory optimization is an obvious and widespread application of the models and methods from the course. The newsvendor problem is a good way to get started in this area of businesses.</p>
+<p>In the economics’ courses you might’ve solved this problem analytically, under strong assumptions, but we have a huge problem of trying to quantify and take into account the uncertainty. Therefore, we rely on simulation, motivate the need for statistical inference and optimization algorithms. <a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;There is an excellent presentation of the newsvendor problem by Adam Fleischhacker in <a href="https://www.persuasivepython.com/2-decisionanalysis">Chapter 3</a> and <a href="https://www.persuasivepython.com/4-multidimarrays">Chapter 5</a> of “Persuasive Python”. <a href="https://www.causact.com/intro#intro">Chapter 20</a> of his Business Analytics book contains another classic economic problem interpreted in modern way. If you prefer, there is a <a href="https://www.youtube.com/watch?v=QLsSPnwWS_M">video lecture</a> on the newsvendor.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: TIME INC. printing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the paper <a href="https://www.jstor.org/stable/20141257">“Newsvendors Tackle the Newsvendor Problem”</a>, Koschat, Berk et. al.&nbsp;show how an analysis and optimization of printing decisions led to TIME INC. to revise its policies and generate additional <span class="math inline">\(\$3.5m\)</span> in profit.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: Restaurant Data and Project Ideas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Besides Persuasive Python, you can find an alternative case-study on <a href="https://opimwue.github.io/ddop/tutorial_modules/tutorial.html">“Yaz” restaurant data</a>, which makes playing around with the newsvendor problem easy, due to its Python package.</p>
+</div>
+</div>
+<p>For an academic paper with a meta-analysis of data-driven approaches to the newswendor problem, check out <a href="https://ml-eval.github.io/assets/pdf/ICLR22_Workshop_ML_Eval_DDNV.pdf">S. Buttler, A. Philippi</a>. If you have a demand planning use-case at work, the best resources are written by N. Vandeput and I. Svetunkov’s CMAF seminars.</p>
+</section>
+<section id="price-optimization-under-limited-capacity" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="price-optimization-under-limited-capacity">Price optimization under limited capacity</h2>
+<p>In contrast with the newsvendor problem (where prices were fixed), it’s time we focus on pricing decisions. The limited capacity of airplane seats, concert tickets, hotel rooms, on the one hand simplifies the problem formulation, but introduces many complexities in practice.</p>
+<p>This seemingly simple problem motivates why the young field of revenue management was created. When forecasting the demand, we need to think about how to model it well <a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> and take into account most relevant factors influencing it. This is where we have to be careful, or at least aware of what economic theory has to say about demand elasticity, competition, and price discrimination.</p>
+<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;This is where what we learn in <a href="../references.qmd">Module 3</a>: Applied Bayesian Statistics, especially the hierarchical models help a lot.</p></div></div><p>On the optimization side, we will keep things simple, as in the newsvendor problem. We will not go into the complexities of dynamic programming.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: Concerts, Events, and Airlines
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can use the Kaggle simulator for dynamic pricing in the airline industry, get creative with the Mercari Challenge or other open datasets. There isn’t a firm which will make such kind of data public, so we need to get creative in how we simulate, estimate, or collect the data from what is available.</p>
+<p>Adam Fleischhacker has an excellent <a href="https://www.youtube.com/watch?v=RScjq1mkDc0">tutorial</a> (Chapter 24: Compelling Decisions and Actions Under Uncertainty) which is a good starting point.</p>
+</div>
+</div>
+</section>
+<section id="churn-and-lifetime-value.-open-datasets" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="churn-and-lifetime-value.-open-datasets">Churn and Lifetime Value. Open datasets</h2>
+<p>Customer retention and repurchase is what makes or breaks businesses, especially in the past few years, with so many subscription and SAAS business models. Therefore, this topic deserves a full lecture – to cover the contractual and PAYG/non-contractual settings.</p>
+<p>I show that predicting churn and remaining customer lifetime value is not just a simple classification / regression problem. First, we need some tools from survival analysis and second – what we really want to know is who can be convinced to remain by an intervention, like promotions or loyalty programs. <a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;This is a good opportunity to introduce the idea of Uplift and Calibration of classification scores returned by a ML model.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: BTYD models (Buy till you die)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a body of work spanning two decades by Bruce Hardie and Peter Fader, who developed statistical models that estimate the remaining LTV (Lifetime Value) of customers, which depends on their survival/activity and repurchase patterns.</p>
+<p>We will implement a model for contractual and non-contractual settings on the limited data available on the web. Luckily, that would be sufficient to apply them for your own use-cases.</p>
+</div>
+</div>
+<p>Last, but not least, I present an overview of curated open datasets from various sources, organized by industry – which should serve as an inspiration for future practice and your project. There is a shortlist of the ones I found most intriguing and representative, then a long tail of alternatives and fun stuff.</p>
+<p>In previous courses you probably did a lot of exploratory data analysis. It is a skill which demands lots of practice and experience in order to do it well (finding inspiration and interesting patterns in data). Having a methodology for EDA helps, however, in practice we have to work with databases.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case-Study: DuckDB and e-commerce database
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I use a relational dataset from a real e-commerce which was made public in Kaggle, in order to showcase how to interact with databases and highlight the importance of knowing SQL.</p>
+<p>We use a recent innovation in databases, duckDB, which allows us to have an analytic, in-process database, with almost zero setup or dependencies. Once the e-commerce data is loaded and modeled inside the DB, we can start cleaning it, putting it all together, and extracting insights from it. This particular dataset is very rich in information and lends itself well to open-ended investigations.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./philosophy.html" class="pagination-link" aria-label="ii. Course philosophy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">ii. Course philosophy</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sci_process.html" class="pagination-link" aria-label="2. On scientific process">
+        <span class="nav-page-text">2. On scientific process</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>The course I wish I had. Built with ❤️ by Mihai Bizovi</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

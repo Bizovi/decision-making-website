@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../01_fundamentals/4_ml_stats.html" rel="next">
-<link href="../01_fundamentals/2_performance_strategy.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -95,12 +93,11 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Decision Science Course">
-<meta property="og:description" content="">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,20 +113,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../01_fundamentals/0_study_guide.html" aria-current="page"> 
-<span class="menu-text">| 1. Business |</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../01_fundamentals/prob_study_guide.html"> 
-<span class="menu-text">| 2. Stats |</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../references.html"> 
-<span class="menu-text">| 3. Bayes |</span></a>
-  </li>  
-</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../about_me.html"> 
@@ -141,7 +124,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making-website"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -157,374 +140,22 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School and Methodology</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">3. What is AI and Cybernetics?</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">i. Introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../philosophy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ii. Course philosophy</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sci_process.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iii. On scientific process</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iv. Why study all of that?</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Business School and Methodology</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/1_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Application Domains &amp; Use-Cases</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/2_performance_strategy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Performance and Strategy</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/background.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">3. What is AI and Cybernetics?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/4_ml_stats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Analytics, ML, Stats</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../roadmap_prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Applied Bayesian Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../roadmap_bayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">~ Simulation of economic processes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sim/1L_bday_problem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1L. Birthday problem</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. The Probability Triple</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sim/2L_safari.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2L. Safari trips</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sim/3_lln.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Three core theorems</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sim/3L_CLT.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3L. Most dangerous equation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#what-is-ai-data-science-cybernetics" id="toc-what-is-ai-data-science-cybernetics" class="nav-link active" data-scroll-target="#what-is-ai-data-science-cybernetics">What is AI, Data Science, Cybernetics?</a>
-  <ul class="collapse">
-  <li><a href="#cybernetics-is-what-we-call-ai" id="toc-cybernetics-is-what-we-call-ai" class="nav-link" data-scroll-target="#cybernetics-is-what-we-call-ai">Cybernetics is what we call AI</a></li>
-  </ul></li>
-  </ul>
-</nav>
-</nav>
+  
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_fundamentals/0_study_guide.html">1. Business School and Methodology</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/background.html">3. What is AI and Cybernetics?</a></li></ol></nav></header>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="what-is-ai-data-science-cybernetics" class="level1 page-columns page-full">
-<h1>What is AI, Data Science, Cybernetics?</h1>
-<p>It’s undeniable that there is a lot of excitement when it comes to AI, ML, and data science – to the point of calling it the sexiest job of 21st century. Data science is an umbrella term, with interdisciplinary at its core, drawing inspiration from multiple fields, sets of tools, practices, methods and it continuously evolves. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It is designed to help us tackle increasingly more complicated problems at a large scale. There is also a reasonable worry about ways in which these systems can go wrong or awry.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;There are many questions still unanswered: How does this landscape of Data Science look like? What are the roles and jobs? What is the process for building smarter, data-driven software systems; drawing more reliable inferences and conclusions from data and theory? How does a day in data scientist’s life look like?</p></div></div><p>You will often see a Venn diagram where data science sits at the intersection of mathematics – statistics, computer science – software engineering, and domain knowledge. I think this is not sufficient to characterise data science, therefore, will try to elaborate <strong>what</strong> it does, and <strong>how</strong> (which is as important).</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-AI in a Nutshell
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For all pragmatic intents and purposes, especially in businesses, AI is about <strong>Decision-Making under Uncertainty at Scale</strong> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-<p>One important keyword here is <code>uncertainty</code>, as there is no point in building AI solutions based on complex models if we don’t have uncertainty. We have to be able to change our mind and actions in the face of evidence.</p>
-<p>On the other hand, <code>scale</code> is the reason ML and Deep Learning is so powerful, because you can take lots of small decisions in an automated way, with little curation or guidance from humans. This is why many traditionally “paperwork” industries like legal and accounting embrace digitalisation and automation now.</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;C. Kozyrkov - <a href="https://www.youtube.com/watch?v=bCjMhZZYlP4">AI is decision-making at scale</a></p></div></div><p>Ultimately, why would I build a system which predicts demand for products in a direct-to-consumer ecommerce like Allbirds, Macy’s, or AdoreMe? Either in a marketplace like Emag or Amazon? Why would I try to find out the factors which contribute to a successful advertisement?</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Here are some answers from students
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>In order to <strong>allocate resources</strong> to the stuff which generates growth and profit. Avoid being scattered around (which I would call bad strategy), resulting in costs over targets and inefficiency.</li>
-<li>In short, we attempt to allocate resources and efforts <strong>efficiently</strong>.</li>
-<li>We can view <strong>information as a competitive advantage</strong>, anticipating and predicting so that we can plan and prepare, outperform competitors.</li>
-</ul>
-</div>
-</div>
-<p>When we talk about uncertainty, it’s important to recognize its sources: <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> one coming from incomplete information, that we always work with samples in one way or another. For example, even if at a certain point in time we might have real-time data, everything evolves and quickly becomes outdated. Everything is in a state of flux and change. Even in the current state, we don’t know for sure where we stand – sometimes, in economics, this problem is called <code>nowcasting</code>. When talking about the future, making a good prediction is one of the most difficult things.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;We will talk more formally about sources of uncertainty in the next lecture, while reviewing the <a href="../01_fundamentals/stat_foundations.html#sources-of-uncertainty">fundamentals of statistics</a>.</p></div></div><p>For example, who would’ve predicted the pandemic and all its implications on the supply chain and society? It’s important to note the difference between this kind of <strong>black swan events</strong> and the irreducible, fundamental uncertainty, which can’t be captured by any explanatory factors.</p>
-<p>In a happy case, we can quantify and reduce it by conditioning the model, that is, joint distribution of random variables with a given structure, on data. That would result in inferences and evidence with respect to our hypothesis and model of the world.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> At the very least we can try to quantify how uncertain are we.</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;We want to say something intelligent about the population, technically, to generalize. However, there is ambiguity, as objectives and the meaning/semantics of data fields are not always mathematically clear or without conflict.</p></div></div><p>So, we still have to make decisions. Those have to have a level of <strong>robustness</strong> and resilience to shocks, in the face of uncertainty. I would go even further, to suggest that we should <strong>aim for antifragility</strong>, meaning, the system improves after a shock or negative event, but that is very hard to implement and operationalize, therefore, it falls outside the scope of this course – to the realm of systems’ design.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-When you don’t need AI and Statistics
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As a though experiment, imagine we have an equation or program, with well-defined rules, which perfectly predicts the price on stock markets, or perfectly predicts how many items will a client buy and how she will respond if we change the price (an intervention). We won’t need machine learning, causal inference, or AI there.</p>
-<p>Of course, we don’t have that kind of program. It’s only somewhat true in cases when we have a well-tested theory, which stood the test of time and went through the scientific process to become the best theory with respect to all others. For example newtonian physics, relativity, quantum mechanics, evolution.</p>
-</div>
-</div>
-<p>However, when we talk about human behavior, we should resist the temptation and arrogance to say that we have a well-defined theory, be it normative or positive. Our preferences change, and we can “decide” in which direction they change or persist.</p>
-<p>Regardless of the business we work at or own, the place in the value chain, we’ll have to deal with human behavior: customers, employees, decision-makers, engineers. We need other kind of tools to infer perceptible regularities and patterns in their behavior. We will be forced in one way or another to learn from data and observation.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A model is a simplified representation of reality
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We need models to make sense of the world around us, because it is so complex and uncomprehensible if we are to represent it faithfully in a simulation. Therefore, we focus on relevant, interestig, essential aspects to us, we simplify by baking in domain knowledge, assumptions, and data into the models and algorithms.</p>
-<p>So, we can collect data, apply algorithms to train models, in order to make inferences about some relevant quantities. That will help us in making evidence-based decisions which gets us closer to our objective in an efficient way.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Weak AI is Domain-Specific
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>By now, you probably figured out that we’re not talking about General AI, trying to surpass human intelligence in general reasoning and problem-solving. Thus, we’re talking about weak or specialized AI, which depends very much on the domain.</p>
-<p>AI in an a fashion e-commerce, like AdoreMe, where we sell lingerie, will have a very different flavor from the tools and methods used in genomics, medicine, social science or psychology.</p>
-<p>Despite the fact that there are a lot of shared fundamentals, when it comes to the principles of building models, it is not straightforward to take something which works in one domain and apply it in another. Significant tweaks and adaptations are needed, which are dependent on the specificities of that domain.</p>
-<p>The good news is that when these transdisciplinary groups of people work together and successfully adapt a method, it is often a breakthrough in the field borrowing the theory and technology.</p>
-</div>
-</div>
-<section id="cybernetics-is-what-we-call-ai" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="cybernetics-is-what-we-call-ai">Cybernetics is what we call AI</h3>
-<p>At this point we have a working definition of Weak AI. At a first glance it might be hard to see what does it have in common with Cybernetics and its study of Complex Adaptive Systems.</p>
-<p>I’m not trying to equivocate those two, but argue that weak AI is how Cybernetics evolved and is mostly used in practice now. I will give a definition from P. Novikov, which I found tremendously useful, then explain it. Can you spot the parallels of “decision-making under uncertainty at scale” in this definition?</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A better definition of Cybernetics
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The science of <strong>general regularities</strong> of <strong>control</strong> and <strong>information processing</strong> in animal, machine and human (socitey)</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Unpacking this dense/abstract definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Control</strong> means <strong>goal-directedness</strong>, the ability to reach the goals and objectives by taking action and stirring the system towards a trajectory. The objective can also be perserving the structural-functional organization of the system itself, an <strong>autopoesis</strong>.</li>
-<li><strong>Information Processing</strong> could be pattern recoginition, perception, how you understand and model the world, what inferences do you draw, what “data inputs” are used</li>
-<li><strong>General regularities</strong> means what is true and plausible of control and information processing across fields and a variety of complex systems, not only in particular cases.</li>
-<li>Animal refers to applications in biology, machine – in engineering, and human – in our society and behavior.</li>
-</ul>
-<p>In economic cybernetics, we’re concerned with economics, society and human behavior, rather than engineering, biology, or natural science applications.</p>
-</div>
-</div>
-<p>To explain how Cybernetics evolved into Weak AI, there is a conglomeration of fields which went a bit out of fashion and favor: Game Theory, General Systems’ Theory, Agent-Based Modeling, Systems’ Dynamics, Complexity and Chaos, Evolutionary Algorithms. This stuff is fascinating and inspired many other breakthroughs, but it is extremely difficult to implement in practice.</p>
-<p>So, we kind of settled on a more pragmatic set of tools, which is dominated by pattern recognition and optimisation, in one form or another trying to learn from data (ML, DL, Causality) and act optimally (Dynamic Programming, Reinforcement Learning). .</p>
-<p>Wait. What’s going on here? Am I saying that we did a bachelor’s degree in AI under the term of Economic Cybernetics? For me, personally, after having this epiphany – everything I studied makes so much more sense in retrospective.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The meaning of AI changed in the meanwhile
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can make sense of the terminology and general confusion of terms, by reading M. I. Jordan’s brilliant article <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, which tells the history of “AI” and how this confusion arose. He also points out how many of the claims in the field, as of today are a stretch (i.e.&nbsp;the revolution hasn’t happened yet) <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
-<p>I highly encourage you to read the articles by M. Jordan, but until then, here are a few ways people understand AI:</p>
-<ul>
-<li>Cybernetics and <strong>Weak AI</strong>, which we discussed before</li>
-<li><strong>General AI</strong> is a titanic project. It interweaves with Philosophy, Cognitive Science, in order to understand what makes us intelligent and conscious. On the other hand, trying to build general-purpose problem solving machines.</li>
-<li>Symbolic AI, is still relevant in a few niches, especially in automated proofs and logical reasoning.</li>
-<li>Augmentative AI, like VR, augmenting human capabilities, human-machine interactions</li>
-</ul>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;M. Jordan - <a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Artificial Intelligence</a>: The Revolution Hasn’t Happened Yet</p></div></div><div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;K. Pretz - <a href="https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044">Stop Calling Everything AI</a>, Machine-Learning Pioneer Says</p></div></div><p>In practice, if you’re a data/business analyst, ML/data engineer, data scientist, statistician, product manager – Cybernetics is a way of thinking in systems and formulate problems well. When it comes to implementation, we mostly use data and the tools, models, methods discussed in this course.</p>
-<!-- [TODO: Provide examples]{.aside} -->
-<!-- Data Science Context, in Business, Interdisciplinarity --->
-<!-- [^37]: Thoen - [Agile Data Science with R](https://edwinth.github.io/ADSwR/index.html) -->
 
-
-</section>
-</section>
 
 
 </main> <!-- /main -->
@@ -764,7 +395,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1092,18 +723,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
-  <div class="nav-page nav-page-previous">
-      <a href="../01_fundamentals/2_performance_strategy.html" class="pagination-link" aria-label="2. Performance and Strategy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Performance and Strategy</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../01_fundamentals/4_ml_stats.html" class="pagination-link" aria-label="4. Analytics, ML, Stats">
-        <span class="nav-page-text">4. Analytics, ML, Stats</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Mihai Bizovi">
 
-<title>Module II: Probability and Statistics – Decision Science Course</title>
+<title>Module II: Probability and Statistics – Modern Decision Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_fundamentals/prob_study_guide.html" rel="prev">
 <link href="./img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -123,13 +122,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Module II: Probability and Statistics – Decision Science Course">
+<meta property="og:title" content="Module II: Probability and Statistics – Modern Decision Science">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
 
-<body class="nav-sidebar docked nav-fixed slimcontent">
+<body class="docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -137,7 +136,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Decision Science Course</span>
+    <span class="navbar-title">Modern Decision Science</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -145,20 +144,6 @@ window.Quarto = {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./01_fundamentals/0_study_guide.html" aria-current="page"> 
-<span class="menu-text">| 1. Business |</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./01_fundamentals/prob_study_guide.html"> 
-<span class="menu-text">| 2. Stats |</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./references.html"> 
-<span class="menu-text">| 3. Bayes |</span></a>
-  </li>  
-</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about_me.html"> 
@@ -170,12 +155,12 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making-website"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/mihai-bizovi-56982abb/"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -186,199 +171,11 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_fundamentals/prob_study_guide.html">2. Fundamentals of Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="./roadmap_prob.html">Schedule &amp; Roadmap</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">i. Introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ii. Course philosophy</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sci_process.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iii. On scientific process</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iv. Why study all of that?</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Business School and Methodology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/1_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Application Domains &amp; Use-Cases</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/2_performance_strategy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Performance and Strategy</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. What is AI and Cybernetics?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/4_ml_stats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Analytics, ML, Stats</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./roadmap_prob.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Applied Bayesian Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./roadmap_bayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./sim/1_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">~ Simulation of economic processes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sim/1_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sim/1L_bday_problem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1L. Birthday problem</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. The Probability Triple</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sim/2L_safari.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2L. Safari trips</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sim/3_lln.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Three core theorems</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sim/3L_CLT.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3L. Most dangerous equation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -394,7 +191,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_fundamentals/prob_study_guide.html">2. Fundamentals of Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="./roadmap_prob.html">Schedule &amp; Roadmap</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Module II: Probability and Statistics</h1>
 </div>
@@ -1122,15 +919,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
-  <div class="nav-page nav-page-previous">
-      <a href="./01_fundamentals/prob_study_guide.html" class="pagination-link" aria-label="2. Fundamentals of Probability &amp; Statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Fundamentals of Probability &amp; Statistics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

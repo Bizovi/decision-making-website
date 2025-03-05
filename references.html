@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>references – Decision Science Course</title>
+<title>references – Modern Decision Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./roadmap_bayes.html" rel="next">
+<link href="./01_fundamentals/prob_study_guide.html" rel="prev">
 <link href="./img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -125,8 +125,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Decision Science Course">
+<meta property="og:title" content="Modern Decision Science">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://course.economic-cybernetics.com/01_fundamentals/img/meme-causal.jpeg">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -139,7 +140,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Decision Science Course</span>
+    <span class="navbar-title">Modern Decision Science</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -147,20 +148,6 @@ window.Quarto = {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./01_fundamentals/0_study_guide.html" aria-current="page"> 
-<span class="menu-text">| 1. Business |</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./01_fundamentals/prob_study_guide.html"> 
-<span class="menu-text">| 2. Stats |</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./references.html"> 
-<span class="menu-text">| 3. Bayes |</span></a>
-  </li>  
-</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about_me.html"> 
@@ -172,12 +159,12 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bizovi/decision-making"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/bizovi/decision-making-website"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/bizovi-mihai-56982abb/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/mihai-bizovi-56982abb/"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -193,7 +180,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">3. Applied Bayesian Statistics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_fundamentals/prob_study_guide.html">Study guides</a></li><li class="breadcrumb-item"><a href="./references.html">2. Bayesian Statistics Study Guide</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -205,35 +192,10 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">i. Introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ii. Course philosophy</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sci_process.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iii. On scientific process</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iv. Why study all of that?</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Business School and Methodology</span></a>
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction and Background</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -241,44 +203,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/0_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">i. Why decision science?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/roadmap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
+  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ii. Course philosophy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/1_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Application Domains &amp; Use-Cases</span></a>
+  <a href="./business_context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Business context</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/2_performance_strategy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Performance and Strategy</span></a>
+  <a href="./sci_process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. On scientific process</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. What is AI and Cybernetics?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/4_ml_stats.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Analytics, ML, Stats</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01_fundamentals/learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Learning from Data: Intuition and Bias</span></a>
+  <a href="./01_fundamentals/ai_ml_cybernetics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. AI, ML, Cybernetics</span></a>
   </div>
 </li>
       </ul>
@@ -286,47 +236,23 @@ window.Quarto = {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Fundamentals of Probability &amp; Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Study guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
+ <span class="menu-text">1. Probability and Statistics Study Guide</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./roadmap_prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./references.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">3. Applied Bayesian Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Syllabus &amp; Study Guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./roadmap_bayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule &amp; Roadmap</span></a>
+ <span class="menu-text">2. Bayesian Statistics Study Guide</span></a>
   </div>
 </li>
       </ul>
@@ -335,12 +261,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./sim/1_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">~ Simulation of economic processes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+ <span class="menu-text">Simulation of economic processes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sim/1_intro.html" class="sidebar-item-text sidebar-link">
@@ -379,13 +305,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Why study all of that?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bayesian-statistics-study-guide" id="toc-bayesian-statistics-study-guide" class="nav-link active" data-scroll-target="#bayesian-statistics-study-guide">Bayesian Statistics: Study Guide</a>
+  <li><a href="#module-3-applied-bayesian-statistics" id="toc-module-3-applied-bayesian-statistics" class="nav-link active" data-scroll-target="#module-3-applied-bayesian-statistics">Module 3: Applied Bayesian Statistics</a>
+  <ul class="collapse">
+  <li><a href="#notes-on-causal-inference-and-ml" id="toc-notes-on-causal-inference-and-ml" class="nav-link" data-scroll-target="#notes-on-causal-inference-and-ml">Notes on Causal Inference and ML</a></li>
+  </ul></li>
+  <li><a href="#bayesian-statistics-study-guide" id="toc-bayesian-statistics-study-guide" class="nav-link" data-scroll-target="#bayesian-statistics-study-guide">Bayesian Statistics: Study Guide</a>
   <ul class="collapse">
   <li><a href="#introduction-to-bayesian-statistics" id="toc-introduction-to-bayesian-statistics" class="nav-link" data-scroll-target="#introduction-to-bayesian-statistics">Introduction to Bayesian Statistics</a></li>
   <li><a href="#multiple-groups-and-hierarchical-models" id="toc-multiple-groups-and-hierarchical-models" class="nav-link" data-scroll-target="#multiple-groups-and-hierarchical-models">Multiple Groups and Hierarchical Models</a></li>
@@ -407,11 +355,77 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_fundamentals/prob_study_guide.html">Study guides</a></li><li class="breadcrumb-item"><a href="./references.html">2. Bayesian Statistics Study Guide</a></li></ol></nav></header>
 
 
 
 
+<section id="module-3-applied-bayesian-statistics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="module-3-applied-bayesian-statistics">Module 3: Applied Bayesian Statistics</h2>
+<p>Once we have a confident grasp of the fundamentals, we continue on the path of applied Bayesian statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. We will learn new tools to deal in a principled way with missing data, measurement error, sampling biases, nonlinearities, discreteness, dynamics, and heterogeneity.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01_fundamentals/img/meme-causal.jpeg" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption><em>(Source: <a href="https://youtu.be/KNPYUVmY3NM">R. McElreath</a> – Science before statistics)</em></figcaption>
+</figure>
+</div>
+</div></div><p>Instead of applying an out-of-the-box model, we will build custom ones for each individual application in an iterative way. Choosing appropriate probability distributions and modeling assumptions will be critical in this process, along with model critique and validation. There are many ways to teach bayesian statistics and generalized linear models, but I think R. McElreath has the best approach, by giving a lot of importance to DAGs of influence, simulation, and ideas from causal inference.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hierarchical Generalized Linear Models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many experts in the field argue that this should be the default way we do regression analysis and that we need a strong justification to show that a simple linear regression is the appropriate model.</p>
+<p>This modeling approach will enable us to overcome the limitations of simpler models encountered before. Handling correlated and multilevel data is essential to make efficient inferences and draw correct conclusions.</p>
+</div>
+</div>
+<p>One notable difference between the Bayesian approach and the traditional way advanced econometrics is taught, is that we will focus on computation instead of proofs and heavy-duty mathematical statistics. In a sense, it means that we work with a single estimator which updates our prior beliefs about parameter distributions. We declare the model and the sampler does the job for us! If it explodes, we probably mis-specified the model or priors.</p>
+<section id="notes-on-causal-inference-and-ml" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="notes-on-causal-inference-and-ml">Notes on Causal Inference and ML</h3>
+<p>Did you get comfortable with building custom statistical models for inference and prediction? What about decisions with high stakes, where we sometimes want to do randomized experiments?</p>
+<p>Often, A/B tests and randomized controlled trials are <strong>unfeasible</strong> or <strong>unethical</strong>. Also realize that we cannot reach a causal conclusion from observational data alone – we can talk just about <strong>associations</strong>. We need a theory, which is our understanding of how the “world” works – translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).</p>
+<p>This motivates a deep-dive into the field of causal inference. Think of it as a link between the theoretical models and observational data, where we sometimes can take advantage of certain “natural experiments”. Causal inference requires deep thinking and understanding, which is truly challenging – an art and science, in contrast with the “auto-magic”, unreasonably effective pattern recognition of ML.</p>
+<p>Causal thinking is useful in description, inference, and prediction, as we need to know the causes of what makes our sample different from target population (for example, differential non-response, selection bias, or non-probability sampling). It also gives us a principled approach to deal with missing data, measurement error, and prevents us from drawing wrong conclusions when exploring data.</p>
+<p>One of the most important lessons is to be very careful when using ML to make predictions, when we actually want to intervene in a system. It can be shown that a model optimized for prediction can suggest nonsensical interventions and that a causal model can make subpar predictions.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What if I care only about ML?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even if you’re interested only in machine learning, most practitioners will emphasize the importance of mastering regression (often starting with generalized linear models) and doing A/B tests resulting in evidence that our new model brings an improvement (or not).</p>
+<p>This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML – the lines between these two fields are blurry. This is especially the case when considering flexible models like Gaussian Processes and Bayesian Additive Regression Trees.</p>
+</div>
+</div>
+<p>Other times, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.</p>
+<p>There are other miscellaneous topics dear to me and usually not covered in such courses: demand forecasting, recommender systems, and natural language processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Project: 5-page applied research paper
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After finishing the first three modules, a good chance to put the knowledge to practice, is to write a 5-page research paper on a question / problem you’re passionate about.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This will test your study design, modeling, programming, and writing skills.</p>
+<p>We will see how easy is it to publish your article / paper / report with quarto and github pages.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;In the labs, I give detailed instructions on how a good project should look like, starting from structure and ending in presentation</p></div></div></section>
+</section>
 <section id="bayesian-statistics-study-guide" class="level1 page-columns page-full">
 <h1>Bayesian Statistics: Study Guide</h1>
 <p>The study guide for the third module was incredibly hard to put together, since there is so much content on the web and it’s so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic. The most important criteria was for the case-study or resource to have <strong>code</strong>, <strong>data</strong>, and explained <strong>theory</strong> or methodology in a <strong>freely</strong> available e-book.</p>
@@ -475,8 +489,8 @@ Figure&nbsp;1: We develop a composable toolbox, capable to tackle the challenges
 <div class="no-row-height column-margin column-container"><div class="">
 <p>We are not wasting time by switching to Bayes (7 lectures to get to GLMs), because we treat all models under the same framework.</p>
 </div></div><p>Instead of taking regression as the starting point, then going into advanced econometrics – I prefer we switch to a Bayesian perspective, so we can build custom models taking into account the particularities of the phenomena of interest. The course culminates in Hierarchical GLMs, which should be sufficient for the majority of problems you encounter in practice, or at least a good first attempt.</p>
-<p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a conjugate prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, or <code>bambi</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. The latter two are a high-level API for most common models.</p></div></div><p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling of the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
+<p>We start simple, by modeling a single random variable <span class="math inline">\(Y\)</span>, choosing the appropriate distribution for each phenomenon, a conjugate prior for the parameters, doing simulations – then sampling from the posterior with <code>pymc</code>, <code>numpyro</code>, or <code>bambi</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;The R equivalents would be <code>stan</code> and <code>brms</code>, <code>rstanarm</code>. The latter two are a high-level API for most common models.</p></div></div><p>Limiting? Yes, as in reality we care about the relationship between random variables. However, we can get a lot of insight from thoughtful modeling of the data generating process, which will serve as building blocks in more complicated and realistic models.</p>
 <p>In the second module, we applied Bayes rule and got some insightful results in three totally different domains. However, we weren’t doing neither statistics, nor inference – but got into the right mindset. Now it’s time for full-luxury Bayes!</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1655,11 +1669,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./01_fundamentals/prob_study_guide.html" class="pagination-link" aria-label="1. Probability and Statistics Study Guide">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Probability and Statistics Study Guide</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./roadmap_bayes.html" class="pagination-link" aria-label="Schedule &amp; Roadmap">
-        <span class="nav-page-text">Schedule &amp; Roadmap</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
