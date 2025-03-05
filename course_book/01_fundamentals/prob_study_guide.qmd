@@ -11,6 +11,8 @@ author:
     - "VP of Decision Science"
 ---
 
+
+
 In the introduction and first module (business school for data scientists), I tried to convince you that data science and AI in businesses is about quantitative questions, decision-making, and improving outcomes. By walking through many use-cases in different domains, we saw how widespread are its applications and how valuable a data scientist could be to a firm.
 
 
@@ -28,6 +30,57 @@ Before explaining how to study and what are the most important concepts and skil
 
 
 My point is that you need both: skills and understanding, soft skills and hard skills. Many mistakes in statistical modeling come from a misunderstanding of the nature of statistical inference. Other mistakes are not statistical, but a poorly formulated problem, which leads to using the wrong tool, or the right tool in an incorrect way. There is this always-present gap between the real world and mathematical abstraction.
+
+## Module 2: Probability and Statistics
+
+I think that most students will benefit from re-framing the fundamentals of probability and statistics. A lot of mistakes in practice come from a fundamental misunderstanding of the nature of statistical inference. If we view statistics as **changing our minds and actions in the face of evidence** -- the good ol' t-test will shine in a new light. It will become clear why those models and procedures were invented in the first place.
+
+::: {.column-margin}
+Another benefit of revising these fundamentals is that we can develop an appreciation for the stories and ideas behind these methods. Also, it can be fun.
+:::
+
+We start with combinatorics and urn models, probability trees, distributions, conditioning, laws of large numbers, central limit theorem, Bayes' rule. For each one of these topics, I present the story, use-case, and [hands-on simulations]{.underline} to show that even very simple tools can be useful.
+
+Perhaps the most important lecture is also very abstract, where I formally define what is probability, a random variable, what is the key difference between probability and statistics. Understanding what is collectivity, statistical population, sample; estimands, estimators, estimates; and formally, what is a statistical model -- will give you the right terminology and set you on a good path towards more advanced models.
+
+The module culminates in practical aspects of experiment design and A/B testing, sample size justification, **power analysis**, and a conversation about the causes and remedies to the replication crisis. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, and Causal Inference.
+
+::: {.column-margin}
+When discussing hypothesis testing, it is very important to recognize that most statistical tests can be framed as linear models.
+:::
+
+::: {.callout-note}
+## The art of formulating a hypothesis
+
+In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks in introductory hypothesis testing. We will use Cassie Kozyrkov's 12 steps of statistics to make sure that we don't forget some important aspect or potential pitfall. 
+:::
+
+
+My preferred sequence is to go in parallel with the "business school" and statistics, since there is a great synergy. The prior focuses on the problem space and processes of analytics, ML, statistics. I also recommend in case of a very short and intensive course to study  bayesian generalized linear models before the experiment design topics. 
+
+
+
+### Full-Stack Data Apps
+
+I mentioned before that a key prerequisite is competence in Python/R, SQL, data wrangling, EDA, visualization, and literate programming. There are many wonderful resources to learn and practice these skills. During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines.
+
+
+If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference. There is, however, one huge problem when it comes to bringing added value in businesses -- [operationalizing models]{.underline}. 
+
+I have been speaking at conferences about this topic for 6 years: from data, MLOps, product management, and organizational perspectives -- and it's still very relevant. Of course, the way we operationalize a model and build a system depends on the use-case and many factors -- however, the most general case to me is via a "Full Stack Data-Driven App" (with user interface, backend, database; data, training, and serving pipelines).
+
+
+
+::: {.callout-tip}
+## Build an impressive project for your portfolio
+
+A full-stack data-driven app is your final project and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools and frameworks to make it easy for us. This will force you to think about the user need and how your software product solves their problem.
+
+Don't worry about getting everything perfect, but focus on a problem and single area from the course you're passionate about: it could be statistical modeling, ML pipelines, or even frontend development and data visualization. 
+
+:::
+
+
 
 ## Prerequisites
 
@@ -338,10 +391,6 @@ Online platforms which have to rank posts and comments, face the challenges of h
 
 
 
-## P-Values and error control
-
-## Confidence intervals. When randomization fails
-
 ## Conditioning and Bayes Rule
 
 There is a quote I like a lot: "Conditioning is the soul of statistics". The Bayes rule, which follows directly from the axioms of probability, is an essential in decision-making and the most important tool in this course -- both conceptually and technically. Any introduction to the subject will work out:
@@ -525,3 +574,20 @@ Just think about how important this experiment was for the field of medicine -- 
 :::
 
 
+
+
+## Give statistics another chance
+
+It is possible that you didn't enjoy your statistics classes, which happened in my case, despite a passion for the field. In this journey we have to give statistics another chance, but we dramatically change the strategy of how we learn it. If you're impatient and want to run with it, here is a short and preliminary list of resources, which completes the references found in the course:
+
+- Read [this](https://johnkerl.org/doc/prbstat/prbstat.html) short article on the difference between probability and statistics. Watch this [mini-lecture](https://youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF&si=MRhAab4EAcgse2o8) on statistical thinking by Cassie Kozyrkov.
+- Realize that lots of common statistical tests are particular versions of linear models. It takes a few hours to go through the theory and code in the [book](https://steverxd.github.io/Stat_tests/), which will save you a whole semester of painful and tedious calculations. 
+- Flip through a textbook which has a modern approach to teaching statistics, by leveraging code, simulations, and data analysis. Speegle's [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html) and  Cetinkaya-Runde's [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) are excellent examples of the "new school".
+- Check out A. Gelman's [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html) and [Active Statistics](https://avehtari.github.io/ActiveStatistics/). In my opinion, this is the best book to learn regression from, but the style might not be everyone's cup of tea.
+
+There are a ton of books and courses on statistics which basically do/teach the same thing. I curated a few which stand out with the right balance of data, code, simulation, theory, and real-world applications:
+
+- Crump - [Answering questions with data](https://www.crumplab.com/statistics/) is a well written, but traditional introductory statistics book for psychology students 
+- Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) focuses on multidimensional methods and discrete data
+- Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) is perhaps the most complete from this list
+- Rohan - [Telling Stories with data](https://tellingstorieswithdata.com/) has excellent chapters on modeling workflow and writing researchc

@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Decision Science Course"
+  title: "Modern Decision Science"
   favicon: img/favicon.jpeg
   open-graph:
     locale: es_ES
@@ -11,13 +11,6 @@ website:
 
   navbar:
     search: true
-    left:
-      - href: 01_fundamentals/0_study_guide.qmd
-        text: "| 1. Business |"
-      - href: 01_fundamentals/prob_study_guide.qmd
-        text: "| 2. Stats |"
-      - href: references.qmd
-        text: "| 3. Bayes |"
     right: 
       - href: about_me.qmd
         text: "About Me"
@@ -25,9 +18,9 @@ website:
         href: https://mihaibizovi.com/
         text: "Blog"
       - icon: github
-        href: https://github.com/bizovi/decision-making
+        href: https://github.com/bizovi/decision-making-website
       - icon: linkedin
-        href: https://www.linkedin.com/in/bizovi-mihai-56982abb/
+        href: https://www.linkedin.com/in/mihai-bizovi-56982abb/
 
   sidebar:
     # - id: fundamentals
@@ -37,50 +30,28 @@ website:
     collapse-level: 1
 
     contents: 
-      - href: index.qmd
-        text: "i. Introduction"
-      - href: philosophy.qmd
-        text: "ii. Course philosophy"
-      - text: "iii. On scientific process"
-        href: sci_process.qmd
-      - text: "iv. Why study all of that?"
-        href: 01_fundamentals/prerequisites.qmd
-      - text: "-----"
-      - section: "1. Business School and Methodology"
-        href: 01_fundamentals/0_study_guide.qmd
+      - section: "Introduction and Background"
+        href: index.qmd
         contents:
-        - href: 01_fundamentals/0_study_guide.qmd
-          text: "Syllabus & Study Guide"
-        - href: 01_fundamentals/roadmap.qmd
-          text: "Schedule & Roadmap"
-        - href: 01_fundamentals/1_applications.qmd
-          text: "1. Application Domains & Use-Cases"
-        - href: 01_fundamentals/2_performance_strategy.qmd
-          text: "2. Performance and Strategy"
-        - href: 01_fundamentals/background.qmd
-          text: "3. What is AI and Cybernetics?"
-        - href: 01_fundamentals/4_ml_stats.qmd
-          text: "4. Analytics, ML, Stats"
-        - href: 01_fundamentals/learning.qmd
-          text: "5. Learning from Data: Intuition and Bias"
+        - href: index.qmd
+          text: "i. Why decision science?"
+        - href: philosophy.qmd
+          text: "ii. Course philosophy"
+        - text: "1. Business context"
+          href: business_context.qmd
+        - text: "2. On scientific process"
+          href: sci_process.qmd
+        - text: "3. AI, ML, Cybernetics"
+          href: 01_fundamentals/ai_ml_cybernetics.qmd
       - text: "-----"
-      - section: "2. Fundamentals of Probability & Statistics"
-        href: 01_fundamentals/prob_study_guide.qmd
+      - section: "Study guides"
         contents:
         - href: 01_fundamentals/prob_study_guide.qmd
-          text: "Syllabus & Study Guide"
-        - href: roadmap_prob.qmd
-          text: "Schedule & Roadmap"
-      - text: "-----"
-      - section: "3. Applied Bayesian Statistics"
-        href: references.qmd
-        contents:
+          text: "1. Probability and Statistics Study Guide"
         - href: references.qmd
-          text: "Syllabus & Study Guide"
-        - href: roadmap_bayes.qmd
-          text: "Schedule & Roadmap"
+          text: "2. Bayesian Statistics Study Guide"
       - text: "-----"
-      - section: "~ Simulation of economic processes"
+      - section: "Simulation of economic processes"
         href: sim/1_intro.qmd
         contents:
         - href: sim/1_intro.qmd
@@ -95,6 +66,11 @@ website:
           text: "3. Three core theorems"
         - href: sim/3L_CLT.qmd
           text: "3L. Most dangerous equation"
+      - text: "-----"
+      - section: "Appendix"
+        contents:
+        - text: "1. Why study all of that?"
+          href: 01_fundamentals/prerequisites.qmd
 
   page-navigation: true
   page-footer:

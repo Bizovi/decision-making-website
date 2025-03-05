@@ -12,22 +12,30 @@ lang: en
 ---
 
 
-There are three questions I lose sleep over: What is data science? Why is it important? How should it be taught? The standard "intersection of statistics, economics, and computer science", answers none. Instead, I find it helpful to think of this [applied]{.underline}, [quantitative]{.underline}, and [interdisciplinary]{.underline} field as **decision science**.
+There are three questions I lose sleep over: "What is data science?", "Is it still relevant?", and "How should it be taught?" The standard definition "intersection of statistics, economics, and computer science", answers none. Instead, I find it helpful to think of this [applied]{.underline}, [quantitative]{.underline}, and [interdisciplinary]{.underline} field as **decision science**.
 
 
 ::: {.column-margin}
 As the author of the course -- all views and mistakes are entirely my own and do not represent any organization. 
 :::
 
-In the context of businesses, we want to improve financial and non-financial outcomes like revenue, profitability (EBITDA), market share, unit economics, production efficiency, customer acquisition, user experience, customer lifetime value, etc. A firm will increase its chances to improve performance if it has an accurate diagnosis of the current state and formulated a good strategy, but it still has to test their ideas and make many decisions under uncertainty.
+In the context of businesses, we want to improve financial and non-financial outcomes like revenue, profitability / EBITDA, market share, unit economics, production efficiency, customer acquisition, user experience, customer lifetime value, etc. A firm will increase its chances to improve performance if it has an accurate diagnosis of the current state and formulated a good strategy, but it still has to make many good [decisions under uncertainty]{.underline}, test and validate new ideas.
 
-A decision scientist should collaborate with domain experts, decision-makers, clients, and stakeholders to understand their domain and challenges, ask the right questions, and frame the problem space (formulate a problem). Then, they will collect data, build statistical models, and apply optimization algorithms which bring insights into consequences of actions, interventions, and policies. ^[Inspired by A. Fleischhacker's [Business Analyst Workflow](https://www.causact.com/becoming-a-data-driven-business-analyst#becoming-a-data-driven-business-analyst)] These insights, inferences, and predictions will inform the firm which decisions are more promising and whether their hypotheses hold up to evidence.
+A decision scientist should collaborate with domain experts, decision-makers, clients, and stakeholders to understand their domain, challenges, ask the right questions, and  formulate a problem well. They will probably use tools from systems' thinking,^[Systems' thinking helps in developing a big picture understanding of messy problems, by acknowledging the interconnectedness of the parts, feedback loops, causes, and global optimization] data analysis, statistical modeling, and simulation to come up with hypotheses, ideas, and an understanding of the problem space. 
 
-$$Question \longrightarrow Model \longrightarrow Insight \longrightarrow Action \longrightarrow Outcome $$ 
+This effort could already be valuable as a diagnosis of the causes of performance, inspiration for decision-making and strategy. However, we still need to test if our ideas bring an improvement and whether our hypotheses are plausible. For that, we design experiments, operationalize predictive models and optimization algorithms, implement interventions and policies.^[I'll use actions, decisions, interventions, and testing ideas interchangeably]
 
-Not gonna lie, this task and endeavor is not easy at all. In this website, I will explain how to study and [master the fundamentals]{.underline} of statistical modeling, business economics, and programming for data analysis which will help you become more effective at problem-solving. These skills will be valuable in the majority of career paths you might choose.
+$$ 
+\text{Question} 	\rightleftharpoons \text{Model} \implies [ \text{Insight} \rightarrow \text{Action} \rightarrow \text{Outcome}]
+$$ 
 
-Last, but not least, I aspire to teach people how to navigate this interdisciplinary landscape and gain an understanding of how statistics, machine learning, econometrics, operations research, AI, cognitive science, and scientific method fit together. ^[The terms of AI, data science, quant, analytics are overused. We will have to define them more precisely]
+The models we're building should not only be statistically rigorous and implemented well, but bring insight into the [consequences of our actions]{.underline}. Moreover, a decision scientist should have the skills to communicate these insights in a plain language, [persuasively]{.underline}, and be transparent about the assumptions they're making and the uncertainty associated to their predictions and inferences.
+
+## Why focus on fundamentals?
+
+Not gonna lie, the task and endeavor I outlined is not easy at all. In this website, I will explain how to study and [master the fundamentals]{.underline} of statistical modeling, business economics, and "programming for data science", which will help you become more effective at problem-solving. These skills will be valuable in the majority of career paths you might choose, but require effort and commitment.
+
+Last, but not least, I aspire to teach people how to [navigate this interdisciplinary landscape]{.underline} and gain an understanding of how statistics, machine learning, econometrics, operations research, AI, cognitive science, and scientific method fit together. ^[The terms of AI, data science, quant, analytics are overused. We will have to define them more precisely] The mastery of fundamentals, together with an understanding of "the landscape" will enable you to develop a powerful toolbox for tackling most problems that you will encounter in businesses.
 
 
 ::: {.callout-note}
@@ -35,7 +43,7 @@ Last, but not least, I aspire to teach people how to navigate this interdiscipli
 
 *Anyone lost, confused, stuck, or overwhelmed by data science and machine learning complexities, who wants to see the big picture, a path forward, and the possibilities afforded by decision science.*
 
-If you stumbled upon this website, you're probably a student in Business Analytics, or know me personally -- well, because I shamelessly promoted it.
+If you stumbled upon this website, you're probably a student in Quantitative Economics, Business Analytics, or know me personally -- well, because I shamelessly promoted it.
 
 Maybe, you're an **engineer** getting curious about ML or an **analyst** with a knack for the business, looking to improve your workflow and expand the quantitative toolbox. Maybe you're a **product manager** or an **entrepreneur** who wants to infuse AI into your startup.
 
@@ -43,25 +51,39 @@ In my opinion, junior data scientists and ML practitioners a few years into thei
 :::
 
 
-This website is not a self-contained course or book, but a vision, philosophy, and concrete roadmap for learning and teaching decision science. It emerges out of:
+This website is not a self-contained course, book, or bootcamp -- but a vision, philosophy, and concrete roadmap for learning and teaching decision science. It emerges out of:
 
 - Lessons learned from my industry experience as a data scientist, engineering and product manager, then leader 
 - Teaching to creative and motivated students, who are confused by the overwhelming amount of content available online
-- The need to bridge the gap between theory and practice, between mathematical world of elegant abstractions and messy real world of data and decisions in businesses ^[There are many excellent textbooks, but we need better case-studies]
+- The need to bridge the gap between theory and practice, between mathematical world of elegant abstractions and messy real world of data and decisions in businesses ^[There are many excellent textbooks, but we need better stories and case-studies]
 - The work of outstanding teachers and researchers who made their courses freely available. Without them, both my career and this guide would be impossible
 
 A lot has been written about the journey from novice to expert and the process of mastery in programming, chess, tennis, painting, music, etc. Decision science is challenging due to its breadth across disciplines and depth (starting from fundamentals). It will require two kinds of intentional practice and active learning over a long period of time:
 
 - [Contemplating in the library]{.underline}: understanding the inner workings and practical relevance of key theoretical ideas
-- [Engineering in the trenches]{.underline}: practicing battle-tested technologies and solving increasingly messier, more complicated and realistic problems
-
-In contemplation, we try to see how fundamental theoretical ideas translate into real-world stories and solutions to practical problems. In service of understanding, it becomes conceptual at times, but I hope you bear with me until you see the benefits of those abstractions. We also focus on understanding the problem space in various domains, our clients' needs and challenges -- which enables us to ask the right questions, formulate the problem correctly, then pick the right model and methodology for the task. Last, but not least, we'll gain insights into pitfalls and common mistakes to avoid.
+- [Engineering in the trenches]{.underline}: practicing battle-tested technologies and solving increasingly messier, more complicated, and realistic problems
 
 ::: {.column-margin}
 I my teaching, I present stories and use-cases which motivate probability distributions, LLN/CLT, Bayes' rule, sampling, measurement, etc.
 :::
 
-On the other hand, engineering in the trenches is a skill. The only way to become better at modeling and data analysis is hands-on practice. It is not sufficient to know about the modeling workflow and methodology. In practice, we have to develop pragmatic solutions and test, implement our ideas in code. If we are to increase our chances of success, we'll also have to follow best practices of reproducible research, automation, and model operationalization.
+In contemplation, we try to see how fundamental theoretical concepts and models translate into real-world stories and solutions to practical problems. It might become confusing at times, but I hope you bear with me until you see the benefits of those abstractions. 
+
+When exploring the problem space in various domains,^[Like banking, e-commerce, tech platforms, finance, insurance, public health, etc] I recommend that you take the point of view of a decision-maker inside a business and not of a detached scientist. This practice will force you to focus on actions, relevance of insights, and understanding clients' needs, challenges, and objectives. In practice, it's little consolation if we picked the right model and methodology for the task if it's not actionable and useful -- interesting is not good enough!
+
+On the other hand, engineering in the trenches is a hard skill. The only way to become better at modeling and data analysis is hands-on practice -- with your code editor, book, and pen/paper near you at all times. You will truly understand something only by building it. 
+
+In order for our models to be useful at scale, we have to implement these ideas in code and integrate into existing software systems. If we are to increase the chances of success, we'll also have to follow best practices of reproducible research, automation, and model operationalization. We'll also have to think as a product manager.
+
+::: {.callout-note}
+## How is modern decision science different?
+
+A fair question to ask is how this vision is different from data science. In my experience, data science teaching and jobs focus much more on exploration, data mining, and inspiration -- to the point of becoming "analytics + machine learning". There is nothing wrong with it when applied appropriately, but something important is missing.
+
+In decision science, actions and outcomes are central, not the insight, inspiration, or prediction. This means that we need more statistical and methodological rigor, scientific and causal thinking / inference, economics and cognitive science of decision-making.^[One has to be very careful when using a predictive model in situations when we want to intervene in a system, not just to use predictions in a downsteam optimization task.]
+
+Therefore, we don't pay much attention to data mining, LLMs, computer vision, and deep learning. Nor we do complicated ensembles, stackings, and hyperparameter optimization of machine learning models. Having said that, we do respect robust predictions and software engineering aspects of data science -- but choose to focus on what do we do with it next.
+:::
 
 
 ## Why is this journey rewarding?
@@ -222,19 +244,10 @@ Most people I know studied statistics and probability at some point, but the pre
   - Of course, the more experience you have in one or both, the better
 - If you have to deal with financial statements at your job or have an interest in finance, I strongly suggest you check out A. Damodaran's [crash course](https://youtube.com/playlist?list=PLUkh9m2BorqmKaLrNBjKtFDhpdFdi8f7C&si=UjEkr1_smeILJ8ZF) on accounting and corporate finance. Depending on your job, knowledge of microeconomics, marketing, management, operations, and logistics might be essential.
 
-Besides technical prerequisites, there is a list of concepts and ideas from research design, which can be helpful in practice, but are often not part of statistical curriculum. I highly recommend A. Zand Scholten's introductory course on [Quantitative Methods](https://www.coursera.org/learn/quantitative-methods). It is worth to invest a bit of time to get familiar with the following:
-
-::: {.column-margin}
-Taken in isolation, topics like measurement and sampling are very abstract. Therefore, they have to be integrated into the case-studies whenever they bring added value. This is not easy, so .. work in progress
-:::
-
-- **Measurement** is especially relevant and tricky in social science. Sometimes, we do not measure what we think we do (underlying construct). For measuring abstract things like happiness or personality, we need to dive into scales, instrumentation, operationalization, validity, and reliability. 
-- **Sampling** isn't limited to simple random samples, as these rarely occur in practice. We need to be aware what tools exist so that we can generalize to the population of interest. For example, weighting and post-stratification.
-- **Threats to validity**, including confounds, artifacts, and biases. On the one hand we use statistics as a guardrail against foolishness, on the other hand there a lot of the same problems that can compromise our study.
-- **Reproducible research** and literate programming has become a de-facto standard in the data science world. We have amazing tools right now, but it's still not easy to achieve end-to-end reproducibility and automation.
-- **Academic writing** is an important skill, even in businesses. Writing is both a way of thinking, problem-solving, and communication. In my opinion, the structure of a scientific paper is very helpful to crystalize your ideas.
 
 Last, but not least, there is value in understanding the **scientific process**, in its broad sense. In [section iii.](sci_process.qmd), I adapt it to the context of decision science in businesses and show how most processes and workflows like CRISP-DM,  Tuckey's EDA are a part of it.
+
+## What will you learn?
 
 ![This poorly drawn diagram is a way to visualize the prerequisites (top and bottom rows) for the three modeling and problem-solving approaches which we will develop in the following modules. ](img/roadmap.png) 
 
@@ -243,160 +256,6 @@ What can you expect from the three modules? You probably heard the distinction b
 We leverage these prerequisites to deeply understand statistical inference applied to generalized linear models and complement it with causal thinking. This foundation will enable us to respond to the 3 challenges in statistics: generalizing from sample to population, from treatment to control group, and from measurement to the underlying construct / causal effect. 
 
 In other words, we will learn how to design experiments to test our hypotheses and the effects of interventions, make predictions to optimize processes, and make inferences about the (potential) causes of the observed performance. ^[I'm leaving out optimization algorithms, which are very important, but more are more of an operations research and computer science topic]  Each of these approaches have their own concepts, ideas, tools, methodologies, processes, and workflows -- with some particularities, depending on the target domain. 
-
-
-## Module 1: Business School and Methodology
-
-Remember the advice "think of yourself as a business person with superpowers"? It means that as a decision scientist, it's helpful to think question, action, and outcome first -- and only then about models. In other words, we have to deeply understand our client's business domain and **problem space**.  The best way to achieve that, is experience and collaboration on the job. Therefore, my role is to tell as many stories from the trenches, so that you know what to expect in practice.
-
-A good starting place is thinking about the purpose of a business from different perspectives.  Then, identify key decisions that firms have to make across many industries and domains. This exercise will show us how widespread are data science applications and use-cases, even in places we don't suspect. 
-
-At this point it is important to clarify what we mean by AI, ML, analytics, data mining, statistics and when is it appropriate to choose one approach over another. You'll be surprised, but statistics is the hardest to define and often misunderstood, because of its inferential, experimental, and causal facets.
-
-Next, we'll learn a few frameworks for understanding a firm's performance evolution, value chain, strategy and tie them all together in an analyst's workflow. These tools will help us ask good (statistical) questions and increase the chances that our modeling efforts result in actionable insights.  
-
-::: {.column-margin} 
-In time, I'll add many more case-studies from advertisement, promotion, merchandising, engagement, CRM, conversion rate optimization, demand planning, supply chain, etc.
-:::
-
-An essential aid in this pursuit of improving decision-making at scale, are different processes and **methodologies** for machine learning, experiment design, causal inference, and exploratory data analysis. It is important to mention that methodology is not a recipe, but way of structuring our work, a set of guiding principles and constraints over the space of all the things that we could do in analysis. Don't think of these constraints as limiting your freedom, but as helpful allies in effective problem problem solving.
-
-These methodolgical fundamentals are not "just theory", it is what will make or break projects in practice. There are so many pitfalls in ML and statistics that we cannot afford to do it ad-hoc. In my teaching, I try very hard to bring back the scientific process and methodology into "data science". Understanding and applying a statistical tool or model by itself is not sufficient. We need case-studies in which we put the business context, decisions, domain understanding, and working software at the forefront. As R. McElreath sais, science before statistics! 
-
-::: {.callout-warning}
-## Why most AI/ML projects fail?
-
-A lot of attention has been paid in the industry to the software engineering aspects of machine learning as one of the causes of failed projects. In the last 5 years, a lot of tools and best practices have emerged which can help us mitigate those risks and increase our chances of successful operationalization.
-
-In my opinion, a bigger problem is methodological and organizational: a mismatch between business objectives, actions, constraints, tradeoffs, domain specificities vs modeling. This is why the ability to ask good questions, to formulate a problem, and think scientifically is critical. Therefore, an important goal of my writing is to recognize and avoid **adhockery**. ^[Adhockery in modeling, in product-management, in data-mining, and software engineering] 
-
-There is one more problem you have to be aware of, which I call the "Kaggle phenomenon". Despite Kaggle competitions being an excellent platform for honing ML skills and developing better models, I think it gave too many people the impression that this is what data science is about. Kaggle misses the most important aspects of problem-solving and it is devoid of most of the original business context and decision-making.
-
-:::
-
-
-If you worry that the business school is too conceptual -- don't despair, as we'll have a few hands-on, technical lectures -- involving math, modeling, and programming. We will come back to these problems after getting the required background in probability and statistical modeling.
-
-- I use the newsvendor problem as a starting point in modeling and optimization for demand planning
-- The pricing optimization as a starting point towards revenue management
-
-
-
-::: {.callout-tip}
-## Go to "Study Guide" pages for practice!
-
-Conceptual understanding by itself is not enough. So, I curated a list of resources to practice on interesting case-studies, datasets, which directly apply the models, tools, and methodologies presented. These are written by experts in the field, are usually well thought, easy to follow, reproducible, and highlight important aspects of a problem and model.
-
-Also, keep an eye on the course [github repo](https://github.com/Bizovi/decision-making), in which we'll do a lot of simulations, some exciting projects (full stack data apps) and investigate common challenges with a fresh perspective.
-:::
-
-
-
-## Module 2: Probability and Statistics
-
-I think that most students will benefit from re-framing the fundamentals of probability and statistics. A lot of mistakes in practice come from a fundamental misunderstanding of the nature of statistical inference. If we view statistics as **changing our minds and actions in the face of evidence** -- the good ol' t-test will shine in a new light. It will become clear why those models and procedures were invented in the first place.
-
-::: {.column-margin}
-Another benefit of revising these fundamentals is that we can develop an appreciation for the stories and ideas behind these methods. Also, it can be fun.
-:::
-
-We start with combinatorics and urn models, probability trees, distributions, conditioning, laws of large numbers, central limit theorem, Bayes' rule. For each one of these topics, I present the story, use-case, and [hands-on simulations]{.underline} to show that even very simple tools can be useful.
-
-Perhaps the most important lecture is also very abstract, where I formally define what is probability, a random variable, what is the key difference between probability and statistics. Understanding what is collectivity, statistical population, sample; estimands, estimators, estimates; and formally, what is a statistical model -- will give you the right terminology and set you on a good path towards more advanced models.
-
-The module culminates in practical aspects of experiment design and A/B testing, sample size justification, **power analysis**, and a conversation about the causes and remedies to the replication crisis. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, and Causal Inference.
-
-::: {.column-margin}
-When discussing hypothesis testing, it is very important to recognize that most statistical tests can be framed as linear models.
-:::
-
-::: {.callout-note}
-## The art of formulating a hypothesis
-
-In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks in introductory hypothesis testing. We will use Cassie Kozyrkov's 12 steps of statistics to make sure that we don't forget some important aspect or potential pitfall. 
-:::
-
-
-My preferred sequence is to go in parallel with the "business school" and statistics, since there is a great synergy. The prior focuses on the problem space and processes of analytics, ML, statistics. I also recommend in case of a very short and intensive course to study  bayesian generalized linear models before the experiment design topics. 
-
-
-
-## Module 3: Applied Bayesian Statistics
-
-Once we have a confident grasp of the fundamentals, we continue on the path of applied Bayesian statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. We will learn new tools to deal in a principled way with missing data, measurement error, sampling biases, nonlinearities, discreteness, dynamics, and heterogeneity.
-
-::: {.column-margin}
-![*(Source: [R. McElreath](https://youtu.be/KNPYUVmY3NM) -- Science before statistics)*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
-:::
-
-Instead of applying an out-of-the-box model, we will build custom ones for each individual application in an iterative way. Choosing appropriate probability distributions and modeling assumptions will be critical in this process, along with model critique and validation. There are many ways to teach bayesian statistics and generalized linear models, but I think R. McElreath has the best approach, by giving a lot of importance to DAGs of influence, simulation, and ideas from causal inference.
-
-::: {.callout-tip}
-## Hierarchical Generalized Linear Models
-
-Many experts in the field argue that this should be the default way we do regression analysis and that we need a strong justification to show that a simple linear regression is the appropriate model. 
-
-This modeling approach will enable us to overcome the limitations of simpler models encountered before. Handling correlated and multilevel data is essential to make efficient inferences and draw correct conclusions.
-:::
-
-One notable difference between the Bayesian approach and the traditional way advanced econometrics is taught, is that we will focus on computation instead of proofs and heavy-duty mathematical statistics. In a sense, it means that we work with a single estimator which updates our prior beliefs about parameter distributions. We declare the model and the sampler does the job for us!  If it explodes, we probably mis-specified the model or priors.
-
-
-### Notes on Causal Inference and ML
-
-Did you get comfortable with building custom statistical models for inference and prediction? What about decisions with high stakes, where we sometimes want to do randomized experiments?
-
-
-Often, A/B tests and randomized controlled trials are **unfeasible** or **unethical**. Also realize that we cannot reach a causal conclusion from observational data alone -- we can talk just about **associations**. We need a theory, which is our understanding of how the "world" works -- translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).
-
-This motivates a deep-dive into the field of causal inference. Think of it as a link between the theoretical models and observational data, where we sometimes can take advantage of certain "natural experiments". Causal inference requires deep thinking and understanding, which is truly challenging -- an art and science, in contrast with the "auto-magic", unreasonably effective pattern recognition of ML. 
-
-Causal thinking is useful in description, inference, and prediction, as we need to know the causes of what makes our sample different from target population (for example, differential non-response, selection bias, or non-probability sampling). It also gives us a principled approach to deal with missing data, measurement error, and prevents us from drawing wrong conclusions when exploring data.
-
- One of the most important lessons is to be very careful when using ML to make predictions, when we actually want to intervene in a system. It can be shown that a model optimized for prediction can suggest nonsensical interventions and that a causal model can make subpar predictions.
-
-
-::: {.callout-important}
-## What if I care only about ML?
-
-Even if you're interested only in machine learning, most practitioners will emphasize the importance of mastering regression (often starting with generalized linear models) and doing A/B tests resulting in evidence that our new model brings an improvement (or not). 
-
-This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML -- the lines between these two fields are blurry. This is especially the case when considering flexible models like Gaussian Processes and Bayesian Additive Regression Trees.
-:::
-
-
-Other times, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
-
-There are other miscellaneous topics dear to me and usually not covered in such courses: demand forecasting, recommender systems, and natural language processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
-
-::: {.callout-tip}
-## Project: 5-page applied research paper
-
-After finishing the first three modules, a good chance to put the knowledge to practice, is to write a 5-page research paper on a question / problem you're passionate about.^[In the labs, I give detailed instructions on how a good project should look like, starting from structure and ending in presentation] This will test your study design, modeling, programming, and writing skills.
-
-We will see how easy is it to publish your article / paper / report with quarto and github pages.
-:::
-
-
-### Full-Stack Data Apps
-
-I mentioned before that a key prerequisite is competence in Python/R, SQL, data wrangling, EDA, visualization, and literate programming. There are many wonderful resources to learn and practice these skills. During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines.
-
-
-If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference. There is, however, one huge problem when it comes to bringing added value in businesses -- [operationalizing models]{.underline}. 
-
-I have been speaking at conferences about this topic for 6 years: from data, MLOps, product management, and organizational perspectives -- and it's still very relevant. Of course, the way we operationalize a model and build a system depends on the use-case and many factors -- however, the most general case to me is via a "Full Stack Data-Driven App" (with user interface, backend, database; data, training, and serving pipelines).
-
-
-
-::: {.callout-tip}
-## Build an impressive project for your portfolio
-
-A full-stack data-driven app is your final project and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools and frameworks to make it easy for us. This will force you to think about the user need and how your software product solves their problem.
-
-Don't worry about getting everything perfect, but focus on a problem and single area from the course you're passionate about: it could be statistical modeling, ML pipelines, or even frontend development and data visualization. 
-
-:::
 
 
 

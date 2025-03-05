@@ -5,6 +5,64 @@ format:
 ---
 
 
+
+## Module 3: Applied Bayesian Statistics
+
+Once we have a confident grasp of the fundamentals, we continue on the path of applied Bayesian statistics. It is an extremely flexible and composable approach to building explainable models of increasing complexity and realism. We will learn new tools to deal in a principled way with missing data, measurement error, sampling biases, nonlinearities, discreteness, dynamics, and heterogeneity.
+
+::: {.column-margin}
+![*(Source: [R. McElreath](https://youtu.be/KNPYUVmY3NM) -- Science before statistics)*](01_fundamentals/img/meme-causal.jpeg){width="90%"}
+:::
+
+Instead of applying an out-of-the-box model, we will build custom ones for each individual application in an iterative way. Choosing appropriate probability distributions and modeling assumptions will be critical in this process, along with model critique and validation. There are many ways to teach bayesian statistics and generalized linear models, but I think R. McElreath has the best approach, by giving a lot of importance to DAGs of influence, simulation, and ideas from causal inference.
+
+::: {.callout-tip}
+## Hierarchical Generalized Linear Models
+
+Many experts in the field argue that this should be the default way we do regression analysis and that we need a strong justification to show that a simple linear regression is the appropriate model. 
+
+This modeling approach will enable us to overcome the limitations of simpler models encountered before. Handling correlated and multilevel data is essential to make efficient inferences and draw correct conclusions.
+:::
+
+One notable difference between the Bayesian approach and the traditional way advanced econometrics is taught, is that we will focus on computation instead of proofs and heavy-duty mathematical statistics. In a sense, it means that we work with a single estimator which updates our prior beliefs about parameter distributions. We declare the model and the sampler does the job for us!  If it explodes, we probably mis-specified the model or priors.
+
+
+### Notes on Causal Inference and ML
+
+Did you get comfortable with building custom statistical models for inference and prediction? What about decisions with high stakes, where we sometimes want to do randomized experiments?
+
+
+Often, A/B tests and randomized controlled trials are **unfeasible** or **unethical**. Also realize that we cannot reach a causal conclusion from observational data alone -- we can talk just about **associations**. We need a theory, which is our understanding of how the "world" works -- translated into a statistical model, plus data, which will give us new insight into the causal processes (the evidence).
+
+This motivates a deep-dive into the field of causal inference. Think of it as a link between the theoretical models and observational data, where we sometimes can take advantage of certain "natural experiments". Causal inference requires deep thinking and understanding, which is truly challenging -- an art and science, in contrast with the "auto-magic", unreasonably effective pattern recognition of ML. 
+
+Causal thinking is useful in description, inference, and prediction, as we need to know the causes of what makes our sample different from target population (for example, differential non-response, selection bias, or non-probability sampling). It also gives us a principled approach to deal with missing data, measurement error, and prevents us from drawing wrong conclusions when exploring data.
+
+ One of the most important lessons is to be very careful when using ML to make predictions, when we actually want to intervene in a system. It can be shown that a model optimized for prediction can suggest nonsensical interventions and that a causal model can make subpar predictions.
+
+
+::: {.callout-important}
+## What if I care only about ML?
+
+Even if you're interested only in machine learning, most practitioners will emphasize the importance of mastering regression (often starting with generalized linear models) and doing A/B tests resulting in evidence that our new model brings an improvement (or not). 
+
+This is how we jump through various buckets, highlighting the golden thread linking them all: decisions and uncertainty. Moreover, the tools we learned in Bayesian Statistics are directly applicable in ML -- the lines between these two fields are blurry. This is especially the case when considering flexible models like Gaussian Processes and Bayesian Additive Regression Trees.
+:::
+
+
+Other times, we care not just about a single decision or developing better policies, but we have to make tons of little decisions at scale. This is when we switch to a predictive, Machine Learning perspective and walk through our workhorse models, which should serve us decades ahead in a wide range of applications: both predictive and exploratory.
+
+There are other miscellaneous topics dear to me and usually not covered in such courses: demand forecasting, recommender systems, and natural language processing. All extremely useful in business contexts, but significant tweaks are needed to the models discussed before.
+
+::: {.callout-tip}
+## Project: 5-page applied research paper
+
+After finishing the first three modules, a good chance to put the knowledge to practice, is to write a 5-page research paper on a question / problem you're passionate about.^[In the labs, I give detailed instructions on how a good project should look like, starting from structure and ending in presentation] This will test your study design, modeling, programming, and writing skills.
+
+We will see how easy is it to publish your article / paper / report with quarto and github pages.
+:::
+
+
 # Bayesian Statistics: Study Guide
 
 The study guide for the third module was incredibly hard to put together, since there is so much content on the web and it's so hard to strike a balance between clarity, simplicity, and the use-case being interesting, realistic. The most important criteria was for the case-study or resource to have **code**, **data**, and explained **theory** or methodology in a **freely** available e-book.

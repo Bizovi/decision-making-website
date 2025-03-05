@@ -99,24 +99,6 @@ However, be warned, mathematical analysis is a rabbit-hole! The only courses whi
 Moreover, our everyday intuitions make us terrible at probability, which is another reason why we need a more formal tool to reason and make decisions under uncertainty. Why then so many people hate it as a subject? Is it dry teaching, fear of math and abstraction? In the module two, I recommend a simulation and story-based approach to probability, with many resources which will make studying it fun and practically relevant. ^[In my case, Taleb Nassim's "Fooled by Randomness" was what motivated me to study probability seriously. I do highly recommend it]
 
 
-
-## Give statistics another chance
-
-It is possible that you didn't enjoy your statistics classes, which happened in my case, despite a passion for the field. In this journey we have to give statistics another chance, but we dramatically change the strategy of how we learn it. If you're impatient and want to run with it, here is a short and preliminary list of resources, which completes the references found in the course:
-
-- Read [this](https://johnkerl.org/doc/prbstat/prbstat.html) short article on the difference between probability and statistics. Watch this [mini-lecture](https://youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF&si=MRhAab4EAcgse2o8) on statistical thinking by Cassie Kozyrkov.
-- Realize that lots of common statistical tests are particular versions of linear models. It takes a few hours to go through the theory and code in the [book](https://steverxd.github.io/Stat_tests/), which will save you a whole semester of painful and tedious calculations. 
-- Flip through a textbook which has a modern approach to teaching statistics, by leveraging code, simulations, and data analysis. Speegle's [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html) and  Cetinkaya-Runde's [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) are excellent examples of the "new school".
-- Check out A. Gelman's [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html) and [Active Statistics](https://avehtari.github.io/ActiveStatistics/). In my opinion, this is the best book to learn regression from, but the style might not be everyone's cup of tea.
-
-There are a ton of books and courses on statistics which basically do/teach the same thing. I curated a few which stand out with the right balance of data, code, simulation, theory, and real-world applications:
-
-- Crump - [Answering questions with data](https://www.crumplab.com/statistics/) is a well written, but traditional introductory statistics book for psychology students 
-- Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) focuses on multidimensional methods and discrete data
-- Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) is perhaps the most complete from this list
-- Rohan - [Telling Stories with data](https://tellingstorieswithdata.com/) has excellent chapters on modeling workflow and writing research
-
-
 ## Applied Mathematics
 
 Here is an explanation for why other subjects are needed -- which students from backgrounds other than quantitative economics or computer science might've not encountered. This is a point in which you see reseachers specializing.
