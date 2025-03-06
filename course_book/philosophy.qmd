@@ -1,5 +1,6 @@
 ---
 title: "Course philosophy"
+subtitle: "Interdisciplinarity, Cybernetics, Teaching Priciples"
 author:
   - name: Mihai Bizovi
     id: mb
@@ -12,41 +13,42 @@ format:
 
 
 
-## On Interdisciplinarity
+Decision science is by definition interdisciplinary, which makes studying it challenging, interesting, and rewarding. We will need to borrow ideas, models, and techniques from probability, statistics, causal inference, machine learning, optimization, economics, cognitive science, etc. In one sense, we're fundamentally limited to quantitative questions in social science and applied problems, which places the field closer to engineering, than science.
 
-Decision science is by definition interdisciplinary, which makes studying it challenging, interesting, and rewarding. We will need to borrow ideas, models, and techniques from probability, statistics, causal inference, machine learning, optimization, economics, cognitive science, etc. This means jumping through many fields, which we'll call aspects or "buckets". 
+This interdisciplinarity means jumping through many fields, which we'll call "buckets" and we'll resist the temptation to find and settle on THE tool or THE explanation. Any individual field, like machine learning, econometrics, or optimization is complex enough for an entire career of study and practice. The danger is, when the only tool you have is a hammer, everything starts looking like a nail.
 
 ::: {.callout-warning}
 ## The danger of thinking in buckets
 
-Our brains think about stuff by creating boundaries, i.e. ‘buckets' around ideas. These buckets can influence our memory, language, behavior, and ability to see the ‘big picture’. ^[I first encountered this idea in one of R. Sapolsky's [lectures](https://youtu.be/NNnIGh9g6fA) / [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/) and it had a huge impact on the way I look at science.]
+Our brains think about stuff by creating boundaries around ideas. These buckets can influence our memory, language, behavior, and ability to see the ‘big picture’. ^[I first encountered this idea in one of R. Sapolsky's [lectures](https://youtu.be/NNnIGh9g6fA) / [notes](https://alexvermeer.com/human-behavioral-biology-01-introduction/) and it had a huge impact on the way I look at science.]
 
 
-- An implication of our bucketing minds is that we are **bad at differentiating** facts that fall within the same category. Two shades of red are labelled ‘red’.
-- A larger consequence is that when we focus on categories while talking about behavior, we tend to **exagerrate differences** and lose out on the big picture
+- An implication of our bucketing minds is that we are **bad at differentiating** facts that fall within the same category. Two shades of red are labelled ‘red’, but nuances matter
+- A larger consequence is that when we focus on categories while talking about behavior, we tend to **exagerrate differences** between groups. Think of within-group and between-group variance
 - It’s easy to see a single one of these categories as providing The Explanation. But they are merely various "behavior buckets". They are all a part of the big picture explanation.
-- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history, sometimes, with catastrophic consequences.
+- It is an easy trap to fall into. Flawed bucket thinking has been done by many of the most influential scientists in history, sometimes, with catastrophic consequences (e.g. lobotomy).
 
-A major goal is not to fall for bucket thinking – we must resist the temptation to find "The Explanation" in one bucket. Robert Sapolsky explains behavior in terms of evolution, neuroscience, molecular genetics, ethology, etc. 
+Robert Sapolsky explains behavior in terms of evolution, neuroscience, molecular genetics, ethology, etc. We have our own buckets!
 :::
 
 Imagine we're exploring a map by travelling through various islands: familiar or unknown places. Sometimes, we'll take a little detour for a fun fact, other times we need to settle for a while and master a craft. Maybe, it's not enough to talk to locals, but we have to live among them in order to understand their challenges. If we don't have a map and guide, we might not be even aware that we're missing important knowledge and understanding from an unexplored place. 
 
-**Problem space** is the land of challenges. Our goal here is to understand the domain where we have to make decisions, figure out how to improve relevant outcomes for clients and stakeholders. There is much uncertainty here, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System (I will explain what this means in the next chapter). This is where we get our data from and who we build software for! 
+**Problem space** is the land of challenges. Our goal here is to understand the domain where we have to make decisions, figure out how to improve relevant outcomes for clients and stakeholders. There is much uncertainty here, questions about what will happen and how should we act. It's the real world, seen as a Complex Adaptive System, which I will explain in the next section. This is where we get our data from and who we build software for.
 
 ::: {.column-margin}
 ![We will take short trips in the fields outlined below. *(Source: Generated with DALL-E)*](img/map_dsc.png)
 :::
 
-**Science**, especially **cognitive science**, which will give us insights about our intelligence, rationality, wisdom, foolishness, and biases. This is the place where we'll get the process, method, learn how to observe, formulate scientific hypotheses, use theories, and causal models to make predictions and perform experiments. 
+**Science**, especially **cognitive science**, which will give us insights about our intelligence, rationality, wisdom, foolishness, and biases. This is the place where we'll get the process, method, learn how to systematically observe, formulate scientific hypotheses, use theories and causal models to make predictions and perform experiments. 
 
-In **probability**, we reason about uncertainty in the real world, build narratives and tell stories with DAGs (directed acyclic graphs) of random variables, which are little machines generating data. In the happy case they match theoretical models and result in plausible patterns. We'll spend much time simulating (economic) phenomena, being the masters of these alternative multiverses. 
+In **probability**, we reason about uncertainty in the real world, build narratives and tell stories with DAGs (directed acyclic graphs) of random variables, which are little machines generating data. These stochastic models, when informed by theory and domain understanding, result in plausible patterns. We'll spend a lot of time simulating economic processes, being the masters of these alternative, synthetic multiverses. 
 
-In **statistics**, we change our minds and actions in the face of evidence. We learn the skills of exploratory data analysis, experiment design, and causal inference. Why build models? To make better decisions, of course.
+In **statistics**, we change our minds and actions in the face of evidence. By carefully thinking about how the data came to be, we can take into account potential problems in sampling, data collection, and measurement. On the one hand, statistical inference prevents us from getting fooled by randomness and enables quantification of how confident are we in our conclusions and predictions. Moreover, when paired with ideas from causal inference, it generates insight into the potential consequences of our interventions.^[And whether we can generalize the conclusions from the experiments we perform]
 
-**Machine learning** and deep learning, the younger tribes of statistics are the future: they learn from data and when things go well, make reliable and robust predictions, in order to optimize the heck out of any process. Think of them as shamans or oracles, who sometimes overfit by seeing patterns which are not real, therefore are prone to acting foolishly.
 
-We come back to the homeland of many of you: **computer science** and software engineering, the place where nowadays everything on this map becomes reality. We will learn how to build full-stack, data-driven software, good practices of the guild. While spending time here, we will develop an appreciation for the contribution of CS to all other places we already visited.
+**Machine learning** and deep learning, the younger tribes of statistics, are the future: they learn from data and when things go well, make reliable and robust predictions, in order to optimize the heck out of any process. Think of them as shamans or oracles, who sometimes overfit by seeing patterns which are not real, therefore are prone to acting foolishly.
+
+We come back to the homeland of many of you: **computer science** and software engineering, the place where nowadays everything on this map becomes reality. We will learn best practices of the guild, the principles of reproducible analysis, and how to build full-stack, data-driven software. While spending time here, we will develop an appreciation for the contribution of CS to all other places we already visited.
 
 Ah! We forgot about **mathematics**. It is an essential prerequisite for everything we do, however, it is hard to do rigorous mathematics in the setup we outlined, as it will take a decade. The good news is, we will be fine with the starter pack!
 
@@ -55,26 +57,25 @@ Last, but not least, do not underestimate **philosophy**. It will help us reason
 
 ## Cybernetics and AI
 
-What is cybernetics and how is it relevant to the course philosophy? Does it have something to do with robotics or cybersecurity? Not really. It is studying complex adaptive systems (CAS) and is very close to what we call today weak or specialized AI. Does the idea of "decision-making under uncertainty at scale" ring a bell?
+What is cybernetics and how is it relevant to the course philosophy? Does it have something to do with robotics or cybersecurity? Not really. It is studying complex adaptive systems (CAS) and is very close to what we call today weak or specialized AI -- recall the idea of "decision-making under uncertainty at scale" from the introduction.
 
 The term comes from greek *(kybernetes)* -- to steer towards a desired outcome or trajectory. It highlights the aspects of agency, action, pattern recognition, and prediction. 
 
 ::: {.callout-tip}
 ## Unpacking the definition of Cybernetics
 
-The science of **general regularities** of **control** and **information processing** in animals, machines, and humans ^[There are many definitions of Cybernetics, but I find this one by  P. Novikov to be the most useful for us]
-
+The science of general regularities of **control** and **information processing** in animals, machines, and humans ^[There are many definitions of Cybernetics, but I find this one by  P. Novikov to be the most useful for us]
 
 - **Control** means goal-directedness, the ability to solve problems and achieve objectives by taking action and stirring the system towards a trajectory. The goal can also be perserving the structural-functional organization of the system itself, an autopoesis.
 - **Information processing** can be interpreted as pattern recoginition, perception, how you understand and model the world, what inferences do you draw based on "data inputs"
-- **General regularities** means what is true and plausible of control and information processing across fields and a variety of complex systems, not only in particular cases.
-- Animal refers to applications in biology, machine -- in engineering, and human -- in our society and behavior.
+- General regularities means what is true and plausible of control and information processing across fields and a variety of complex systems, not only in particular cases.
+- Animal refers to applications in biology, machine -- in engineering, and human -- in our society
 
 When applied to economics, cybernetics is ultimately concerned with human behavior. It views consumers, households, firms, institutions, markets, and countries as complex adaptive systems.
 
 :::
 
-If we are to put **decision science** on a philosophical foundation, ideas from cybernetics, cognitive science, scientific process (philosophy of science), and ethics should be included. I don't do this for the sake of rigor, but because it is an useful way of thinking in practice. These four aspects appear again and again in my teaching and applications. 
+If we are to put **decision science** on a philosophical foundation,[Utilitarism won't do the job for us, although, we have to be aware of how influential it has been]{.aside} ideas from cybernetics, cognitive science, scientific process (philosophy of science), and ethics should be included. I don't do this for the sake of rigor, but because it is an useful way of thinking in practice. These four aspects appear again and again in my teaching and applications. 
 
 Perhaps, the most valuable skill from studying cybernetics is the ability to **think in systems** and bring clarity in messy, dynamic problems. I will not use any of its theory or tools, but it justifies and informs the way I put decision science in a larger context.
 
@@ -88,25 +89,27 @@ I highly recommend that you stop here and read two brilliant interviews by Micha
 :::
 
 
+
 ## Four principles for teaching
 
-Let's go back to the burning question: **what I wish I had in a course?** It is hard to teach these topics in a way which is both theoretically sound and can be immediately applied. After recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
+It is hard to teach decision science in a way which is both theoretically sound and can be immediately applied. Recognizing that there is no silver bullet, my conclusion is that following the principles outlined below consistently, dramatically increases the chances of preparing a new generation ready to tackle the messy, ill-defined problems we encounter.
 
-- Provide motivation for **why** something is important (a field, theory, model, method, technology), then showcase relatable expamples and the **story** behind the idea
-- Develop a **conceptual undestanding**, an intuition about the problem and the "tool" we think is appropriate in tackling it, and where does it fit in the methodology: 
-    - Present the tool theoretically rigorous and sound, but **only where it matters**. 
-    - More geometry and graphs over equations, more simulations and stories over proofs. Low-level details need careful, individual, hands-on study
-    - Leverage previous mathematical, statistical, and domain knowledge
-    - For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
-- Heavily use **simulations** as a safe playground that we control, to get a feel for the behavior of models and algorithms.
-    - It forces us to declare our assumptions about the problem and investigate the implications
-    - Before we commit to a costly real-life experiment or modeling project, it is essential to know that a model works in principle for our application: is able to recover the parameters, causal structure, and generalize beyond the sample?
-- Discuss **practical applications** and challenges the firms face, from an insider's perspective. Those are our case-studies, outlined systematically in the following way:
-    - First, we try to deeply understand the problem and frame it in "our" language of decision-making. We clarify our assumptions and reduce ambiguity
-    - Then, we strip the problem to the simplest model, to illuminate some key aspect, like uncertainty in pricing and demand planning decisions. 
-    - Then, and only then, we bring back all the realism, nuances, and complexities. Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
-    - In projects, we implement software solutions, with the main focus on the real-world challenges of deploying models and improving decision making. Interactive data visualization will help a lot in communicating persuasively.
-    - Keep in mind best practices from reproducible research and software engineering, so that our apps and research code is easy to maintain and extend 
+First and foremost, provide motivation for **why** something is important (a field, theory, model, method, technology), then showcase relatable examples, use-cases, and the **story** behind the idea.^[Imagine how helpful such a 5 minute introduction would be in heavily mathematical classes] Then, develop a **conceptual undestanding**, an intuition about the problem and the tool we think is appropriate in tackling it. 
+
+- Use more geometric intuitions, diagrams, and graphs over equations, more simulations and stories over proofs. Low-level details need careful, individual, hands-on study
+- Connect the concept with previously encountered mathematical, statistical, and economic subjects
+- Present the tool theoretically rigorous and sound, but **only where it matters**. I believe we can make this field much more accessible without sacrificing a lot of depth 
+- For the mathematically inclined, add some elements of abstract math to understand the underlying foundations of these methods and models
+
+Heavily use **simulations** as a safe playground that we control, to get a feel for the behavior of models and algorithms. It forces us to declare our assumptions about the problem and investigate their implications. Before we commit to a costly real-life experiment or modeling project, it is essential to know that a model works in principle for our application: is able to recover the parameters, causal structure, and generalize beyond the sample?
+
+Discuss **practical applications** and challenges firms face, from an insider's perspective. Those are our case-studies, outlined systematically in the following way:
+
+- First, we try to deeply understand the problem and frame it in the "language" of decision-making. We clarify our assumptions and ask the right questions to reduce ambiguity
+- Then, we reduce the problem to the simplest model, to illuminate some key aspect, like uncertainty in pricing, demand planning, and quality control decisions 
+- Only then, we bring back all the realism, nuances, and complexities. Applications are based on realistic or real data, which can be messy, hard to access, biased and incomplete
+- In projects, we implement software solutions, with the main focus on the real-world challenges of operationalizing models and decision-making to improve performance. Interactive data visualization will help a lot in communicating persuasively.
+- Keep in mind best practices from reproducible research and software engineering, so that our apps and research code are easy to maintain and extend 
 
 ::: {.column-margin}
  In teaching and learning, I heavily rely on the Dreyfus model of **skill acquisition**, which describes the following stages: Novice, Competent, Proficient, Expert, Master. This 10 minutes [presentation](https://youtu.be/p8jFp1c4F2E?si=RtMuqW7Gyo2gDeIX) is well worth your time.
@@ -116,9 +119,6 @@ Let's go back to the burning question: **what I wish I had in a course?** It is 
 ## Understand by building it (Feynman)
 
 I often find myself truly understanding something, only after I code it up and get a sense of the behavior and mechanics of a model. Then, I try to think of how I would apply it in practice in different contexts. 
-
-This hints to the idea that we need a complementary computational background and set of tools (R/Python/SQL), right from the beginning of higher education.
-
 :::
 
 Speaking of **prerequisites**, there are some tools we have to dust off the shelves and cultivate an appreciation of their importance: linear algebra, calculus, probability theory and mathematical statistics. 
@@ -127,7 +127,7 @@ Speaking of **prerequisites**, there are some tools we have to dust off the shel
 Those prerequisites are placed in context of the business practice, with swift reviews and references to resources which should fill in all the gaps.
 :::
 
-At the same time, we have to gradually get **rid of the bad habits** that were accumulated: analyses which can't be reproduced, mechanically following a statistical procedure (because the flowchart of statistical tests said so, for example), jumping to a conclusion (as if there is only one, correct, textbook answer), rushing the learning process, handwaving to cover for a poorly articulated argument. On the other side of the spectrum, perfectionism doesn't help either, as this field is inherently iterative and experimental.
+At the same time, we have to gradually get **rid of the bad habits** that were accumulated: analyses which can't be reproduced, mechanically following a statistical procedure (because the flowchart of statistical tests said so), jumping to a conclusion (as if there is only one, correct, textbook answer), and rushing the learning process. On the other side of the spectrum, perfectionism doesn't help either, as this field is inherently iterative and experimental.
 
 Therefore, we need to develop a set of processes and methodologies to iterate and improve effectively. We focus and pay close attention to the process of problem-solving: from formulation to modeling and operationalization.
 

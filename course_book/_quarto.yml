@@ -37,12 +37,12 @@ website:
           text: "i. Why decision science?"
         - href: philosophy.qmd
           text: "ii. Course philosophy"
-        - text: "1. Business context"
-          href: business_context.qmd
-        - text: "2. On scientific process"
+        # - text: "iii. Business context"
+        #   href: business_context.qmd
+        - text: "iii. On scientific process"
           href: sci_process.qmd
-        - text: "3. AI, ML, Cybernetics"
-          href: 01_fundamentals/ai_ml_cybernetics.qmd
+        # - text: "v. AI, ML, Cybernetics"
+        #   href: 01_fundamentals/ai_ml_cybernetics.qmd
       - text: "-----"
       - section: "Study guides"
         contents:
