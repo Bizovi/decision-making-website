@@ -85,6 +85,11 @@ In decision science, actions and outcomes are central, not the insight, inspirat
 Therefore, we don't pay much attention to data mining, LLMs, computer vision, and deep learning. Nor we do complicated ensembles, stackings, and hyperparameter optimization of machine learning models. Having said that, we do respect robust predictions and software engineering aspects of data science -- but choose to focus on what do we do with it next.
 :::
 
+ At last, I want to tell you two important lessons from Patrick Winston's talk at MIT, ["How to speak"](https://www.youtube.com/watch?v=Unzc731iCUY), which motivate the intentional practice and the value of mastering the fundamentals
+
+- The quality of your idea and solution is a function of knowledge, practice, and talent: $Q = f(\mathbb{K}, \mathbf{P}, T)$, where talent is the least important and we shouldn't over-emphasize it
+- Your success will be largely determined by your ability to speak, write, and the quality of your ideas -- $g(S, W, Q)$
+
 
 ## Why is this journey rewarding?
 
@@ -160,7 +165,7 @@ At the risk of annoying you with my metaphors, let me explain what is wrong with
 ::: {.callout-warning}
 ## Overwhelming amount of content
 
-If you go to the data science section in Coursera, you will see a hundred pages of courses and specializations. The situation is even worse with the amount of available tutorials.
+If you go to the data science section in Coursera, you will see a hundred pages of courses and specializations. The situation is even worse with the amount of available tutorials and Medium.com articles.
 
 A student is guaranteed to get lost in details and be overwhelmed by all those 800 page hardcore textbooks required by some classes. On the other hand, seemingly pragmatic, cookbook and bootcamp-style approaches miss depth, nuance, key theoretical ideas, and methodological aspects. 
 
@@ -171,38 +176,34 @@ Inevitably, you have to use the recommendations provided by other people. I real
 This is the **course I wish I had** when starting my journey in data science, which would prepare me for the realities of industry, often very different from the academic world. In the following sections and chapters, I will outline a powerful set of fundamentals, the common threads and connections between them, where to read or watch to gain understanding, and how to practice in order to develop your skills.
 
 
-
-
-
-
 ## What is a model?
 
-By now you've heard the word "model" a lot of times. In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. Reality is overwhelming and combinatorially explosive in its possibilities. ^[Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc] 
+By now you've heard the word "model" a lot of times. In the most general sense, a mental, mathematical, or statistical model is a simplified representation of reality. The real world is overwhelming and combinatorially explosive in its possibilities -- we can't take into account everything when making a decision. ^[Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc] 
 
-We build models, because we want to understand a system and capture / explain the essential aspects of the phenomena of interest, in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen. 
+We build models, because we want to understand a system and capture, explain the essential and [relevant aspects]{.underline} of the phenomena of interest (e.g. what drives demand), in order to make good decisions. This notion of understanding hints to the idea of causality: if we intervene, this is what is likely going to happen. The reverse side of the medal are biases: patterns we think are causal, but are not real.
 
-A model will take you only as far as the quality of your problem formulation, its assumptions, and the data you have. Its results are useful only if they inspire new questions or hypotheses, generate actionable insight, or make reliable predictions. I know this sounds very abstract, but be patient, I'll formalize what a statistical model means and give plenty of practical applications and examples. Until then, keep the following metaphors in mind: 
+A model will take you only as far as the quality of your problem formulation, its assumptions, and the data you have. Its results are useful only if they inspire new questions or hypotheses, generate actionable insight, or make reliable predictions. I know this sounds very abstract, but be patient, I'll formalize what a statistical model means and give plenty of practical applications and examples.
 
 ::: {.column-margin}
 ![What does Pollock and Picasso have to do with statistical modeling and quantitative questions?](01_fundamentals/img/logo.jpeg "Reality"){.preview-image width="90%"}
 :::
 
-::: {.callout-tip}
+::: {.callout-warning}
 ## Philosophical detour on latent processes
 
-One of the most important ideas in statistics is that the causes are not found in data, but in scientific theories. In other words, the answer to our quantitative question is an unobserved, latent quantity or process. We collect data and perform experiments in order to infer those parameters. Hence, the data is the phenomenon, at the surface (Pollock's canvas) and we would like to know what mechanism could plausibly generate it.
+One of the most important ideas in statistics is that the causes are not found in data, but in scientific theories. In other words, the answer to our quantitative question is an unobserved, latent quantity or process. Hence, the data is the phenomenon, at the surface (Pollock's canvas) and we would like to know what mechanism could plausibly generate it.
 
 On the other hand, models are useful because if successful, they separate the noise from the signal and synthesize all the relevant information we have in our sample. This generalization (abstracting away from idiosyncrasies of each observation) allows us to make predictions and gain insights. Think of the way Picasso drew a camel -- lots of artists will agree that simplification is also beautiful.
 
 :::
 
-We collect data, perform experiments, and build models in order to minimize the effect of our biases and foolishness. It's also important to remember that all models have assumptions, pressupositions, and limitations. They are little machines, golemns of prague which follow instructions precisely, and can backfire if used outside their range of validity. All models are wrong, but some are useful. They can be powerful, but lack wisdom, which is found in your domain / problem understanding and scientific thinking.
+We collect data, perform experiments, and build models in order to minimize the effect of our biases and foolishness. It's also important to remember that all models have assumptions, pressupositions, and limitations. They are little machines, golemns of prague which follow instructions precisely, and can backfire if used outside their range of validity. They can be powerful, but lack wisdom, which is found in your domain / problem understanding and scientific thinking.
 
 
-::: {.callout-tip}
+::: {.callout-note}
 ## Three challenges in statisical modeling
 
-A. Gelman highlights three different aspects of statistical inference. Always remember this when designing your study or learning about a new statistical tool! We want to generalize from sample to the population of interest, from treatment to control group, and from measurement to the underlying theoretical construct.
+A. Gelman highlights three different aspects of statistical inference. We want to generalize from sample to the population of interest, from treatment to control group, and from measurement to the underlying theoretical construct.^[You can also think of prediction and inference as the problem of missing data]
 
 $$Sample \longrightarrow Population$$
 
@@ -210,13 +211,15 @@ $$Treatment \longrightarrow Control$$
 
 $$Measurement \longrightarrow Construct$$
 
-The holy grail is to build statistical models based on the [causal processes]{.underline} informed by theories and hypotheses. If we take into account how we [measured]{.underline},^[We'll dedicate one lecture on measurement, but you might have whole specialized classes on this topic] and [collected data]{.underline}, we'll increase our chances to generalize our conclusions and will have stronger evidence.
+The holy grail is to build statistical models based on the [causal processes]{.underline} informed by theories and hypotheses. If we take into account how we [measured]{.underline}, and [collected data]{.underline}, we'll increase our chances to generalize our conclusions and will have stronger evidence.
 :::
 
-## Prerequisites and background
+In other words, our vague economic or scientific hypotheses translate into concrete process models (that we can analyze mathematicaly and in simulations),[A good hypothesis is equivalent to asking a good question, and the process model is informed by our domain knowledge]{.aside} for which we build statistical models in order to draw empirical conclusions and quantify the uncertainty in our beliefs (or the expected outcomes of long-run action).
+
+## Prerequisites
 
 
-I think this roadmap will bring the most value to masters' students, professionals, and students in their last year of BSc. If you never had a linear algebra, calculus, statistics, probability, and programming classes (or are very rusty in them) -- read [section iv.](01_fundamentals/prerequisites.qmd) for a guide on how to integrate these foundational subjects into your study plan.
+I think this roadmap will bring the most value to masters' students, professionals, and students in their last year of BSc. If you never had a linear algebra, calculus, statistics, probability, and programming classes (or are very rusty in them) -- read [appendix 1](01_fundamentals/prerequisites.qmd) for a guide on how to integrate these foundational subjects into your study plan.
 
 Most people I know studied statistics and probability at some point, but the presentation was highly theoretical and without any programming or data analysis. I propose we go back to the most important ideas, discuss their practical relevance, and really understand them by coding up the simulations for our real-world stories. We will see that statistics is not just useful, but can be a lot of fun!
 
@@ -224,28 +227,48 @@ Most people I know studied statistics and probability at some point, but the pre
 ![Practice the fundamentals with patience and care, develop competence. Then, a beautiful world will open up to you!](01_fundamentals/img/karate-kid.webp "Practice"){width="90%"}
 :::
 
-
-- For **Linear Algebra** and **Calculus** -- only exposure is needed, but competence and mathematical maturity will help a lot. It is a personal choice how deep to dive, but generally, it will make your journey much easier.
-- For **Probability Theory** -- competence is needed, even though we start from the very beginning with a review of combinatorics. I suggest you read along and practice with a more comprehensive resource, like Joe Blitzstein's ["Probability 110"](https://projects.iq.harvard.edu/stat110/home). As your understanding of probability grows, you can tackle more challenges. 
-- For **Mathematical Statistics** the story is the same as for Probability. You will need at least to be familiar with estimators, sampling distributions, LLN/CLT, hypothesis testing and regression. This course attempts to clear up misunderstandings so that you don't fall into common pitfalls of statistical practice.
-- **Python or R programming** for data science is **mandatory** in order to do anything even remotely sophisticated in practice. ^[Most universities introduce it far too late, but things are changing. I would argue that one has to start coding and analyzing data from stats 101 and linear algebra] Besides the basics of the language, we need to develop competence in data wrangling, visualization, SQL / databases, and reproducible data analysis. I recommend two free books:
+- For **Linear Algebra** and **Calculus** -- only exposure is needed, but competence and mathematical maturity will help a lot. It is a personal choice how deep to dive, but the more you know, the more comfortable you will be with mathematical abstraction.
+- For **Probability Theory** -- competence is needed, even though we start from the very beginning with a review of combinatorics. I suggest you read along and practice with a more comprehensive resource, like Joseph Blitzstein's ["Probability 110"](https://projects.iq.harvard.edu/stat110/home).
+- For **Mathematical Statistics** the story is the same as for Probability. You will need at least to be familiar with sampling distributions, CLT, hypothesis testing, and regression. This course attempts to clear up misunderstandings so that you don't fall into common pitfalls of statistical practice.
+- **Python or R programming** for data science is **mandatory** in order to do anything even remotely sophisticated in practice. ^[Most universities introduce it far too late, but things are changing. I would argue that one has to start coding and analyzing data from stats 101 and linear algebra. Of course, the more experience and proficiency you have in one or both, the better] Besides the basics of the language, we need to develop competence in data wrangling, visualization, SQL / databases, and reproducible data analysis. I recommend two free books:
   - ["R for Data Science"](https://r4ds.had.co.nz/) by Hadley Wickham 
   - ["Python for Data Analysis"](https://wesmckinney.com/book/) by Wes McKinney.
-  - Of course, the more experience you have in one or both, the better
-- If you have to deal with financial statements at your job or have an interest in finance, I strongly suggest you check out A. Damodaran's [crash course](https://youtube.com/playlist?list=PLUkh9m2BorqmKaLrNBjKtFDhpdFdi8f7C&si=UjEkr1_smeILJ8ZF) on accounting and corporate finance. Depending on your job, knowledge of microeconomics, marketing, management, operations, and logistics might be essential.
+
+If you have to deal with financial statements at your job or have an interest in corporate finance, I strongly suggest you check out A. Damodaran's [NYU MBA lectures](https://www.youtube.com/@AswathDamodaranonValuation).^[And if you're interested in investment and portfolio management, check out [Ben Felix](https://www.youtube.com/@BenFelixCSI), who recommends many foundational papers in the field] Depending on your role in the firm, knowledge of microeconomics, marketing, management, operations, and logistics might be essential.
 
 
-Last, but not least, there is value in understanding the **scientific process**, in its broad sense. In [section iii.](sci_process.qmd), I adapt it to the context of decision science in businesses and show how most processes and workflows like CRISP-DM,  Tuckey's EDA are a part of it.
+Last, but not least, there is value in understanding the **scientific process** and quantitative research methods. In [Chapter 2](sci_process.qmd), I adapt it to the context of decision science in businesses and show how most processes and workflows like CRISP-DM (data mining),  Tuckey's EDA (exploratory data analysis) are a part of it.
 
 ## What will you learn?
 
-![This poorly drawn diagram is a way to visualize the prerequisites (top and bottom rows) for the three modeling and problem-solving approaches which we will develop in the following modules. ](img/roadmap.png) 
+First, in "Course Philosophy", you will get some important tips and perspectives on how to learn in the context of this challenging, interdisciplinary field. I can attribute most of my past failures in learning to either a lack of solid fundamentals or to little intentional practice. Generally, you will truly understand by building it. 
 
+![](img/modules.png) 
+
+::: {.column-margin}
+The top and bottom rows are the fundamentals, out of which we don't cover linear algebra, calculus, and the basics of programming. I will highlight the practical relevance of probability and statistics through stories and case-studies. The four rectangles in the middle correspond to different modeling approaches
+:::
+
+Then, I will frame everything we do in the context of the [scientific process](sci_process.qmd) and show how methodology is important in maximizing our chances of a successful project. I think that most AI/ML and research initiatives fail because of poor planning and ad-hockery, but we can do better by not falling into most common pitfalls.
+
+We also need to disucuss how our quantitative toolbox fits with what [businesses are trying to do](business_context.qmd). I will briefly present a few ways to think about performance, strategy, decisions, and the value chain. It's a good place to dive into more details on the wide range of applications and use-cases in various domains and industries. This is where we will introduce our [three problem-solving approaches](01_fundamentals/ai_ml_cybernetics.qmd) and perspectives: predictive (machine learning), inferential (statistical modeling), and causal (causal inference).
+
+Next, we will use stories, case-studies, and simulations to get a solid grasp of most important concepts and ideas from probability and statistics. Many errors in applied statistics stem from a fundamental misunderstanding of the nature of statistical inference -- so it's very important that we think carefully about our problem, assumptions and not blindly follow a procedure. 
+
+We will also see what was the original motivation and practical relevance for the theory and methods you encountered before (t-test, ANOVA, linear regression, CLT etc). You can find this material, which is work-in-progress, in the ["Simulation of economic processes"](sim/1_intro.qmd) section -- with both conceptual lectures and hands-on labs.^[Alternatively, you can look into the ["Probability and Statistics study guide"](01_fundamentals/prob_study_guide.qmd) for resources of what to read, code, and practice on each topic.]
+
+In the ["Bayesian Statistics study guide"](references.qmd), you will find a clear sequence for studying statistical modeling and the fundamentals of causal inference. The set of techniques you're going to encounter on the way towards hierarchical gerneralized linear models (GLMs) will be useful in about any practical application you're going to encounter in practice. Moreover, this will prepare you for both machine learning and more advanced techniques in causal inference.
+
+At this point, a good way to apply what you have studied is to pick a research question you're passionate about, pick a problem-solving and modeling approach, do simulations, collect data, implement a model, and share the results in a 5 page paper or report. This will also teach you how to apply a methodology and communicate your ideas clearly in writing. 
+
+Last, but not least, I'll share practical advice on how to operationalize your models and build full-stack data apps. This is important if you want your solution to bring the most impact for your clients and stakeholders. For that, you need their trust and buy-in, thus, an interactive application is one of the best ways to showcase what the models can do.
+
+<!-- 
 What can you expect from the three modules? You probably heard the distinction between descriptive, predictive, and prescriptive analytics. I want to propose a better way of thinking about the problem-solving approaches available in our toolkit.
 
 We leverage these prerequisites to deeply understand statistical inference applied to generalized linear models and complement it with causal thinking. This foundation will enable us to respond to the 3 challenges in statistics: generalizing from sample to population, from treatment to control group, and from measurement to the underlying construct / causal effect. 
 
-In other words, we will learn how to design experiments to test our hypotheses and the effects of interventions, make predictions to optimize processes, and make inferences about the (potential) causes of the observed performance. ^[I'm leaving out optimization algorithms, which are very important, but more are more of an operations research and computer science topic]  Each of these approaches have their own concepts, ideas, tools, methodologies, processes, and workflows -- with some particularities, depending on the target domain. 
+In other words, we will learn how to design experiments to test our hypotheses and the effects of interventions, make predictions to optimize processes, and make inferences about the (potential) causes of the observed performance. ^[I'm leaving out optimization algorithms, which are very important, but more are more of an operations research and computer science topic]  Each of these approaches have their own concepts, ideas, tools, methodologies, processes, and workflows -- with some particularities, depending on the target domain.  -->
 
 
 
@@ -255,16 +278,22 @@ I mentioned that my teaching and industry success stands on the shoulder of gian
 
 When it comes to statistical modeling and machine learning, the following people had a large influence on the way I think and in turn, I will refer you to their excellent books and courses: [Trevor Hastie](https://www.statlearning.com/), Bradley Efron, Yaser Abu-Mostafa, Shai Ben-David, [Richard McElreath](https://xcelab.net/rm/statistical-rethinking/), [Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/), Jennifer Hill, Aki Vehtari, Stephen Boyd, Gilbert Strang, Steven Burton, Nathan Kutz, Cassie Kozyrkov. 
 
+I have to especially thank Dr. Gheorghe Ruxanda for repeatedly pointing out the beauty, elegance, and importance of the deep foundations underlying probability theory and statistical modeling. I hope to pass on these insights to the future generations of students in quantiatative economics.
+
+## Why not another textbook?
+
 At last, I have to explain why I'm not writing a book yet and linking you instead to the best resouces I know of. I think we have more than enough excellent books to learn the theory and develop skills in the fields within decision science. 
-
-From the point of view of teaching, the only reason to write my own book is the following: we need engaging, high-quality, in-depth, hands-on, realistic case-studies. ^[Ok, enough hyphenated adjectives, you get the point] We have more than enough tutorials and toy examples. Often, the only criticism I can address to some of the books is that the code examples are applied to boring and overused problems and datasets. It is not a fair criticism, since their main goal is teaching how the models work. Moreover, no one will publish a thousand page textbook.
-
 
 No one has time to study it all and there is no single book which does everything best.^[A cheeky reference to the no free lunch theorem] So, by cherry-picking lectures, chapters, examples, and applications; then arranging them into a coherent roadmap, we get different perspectives and will start developing preferences for one way of teaching and one approach over another. 
 
-The cleanest code associated to applications is not always written by the authors. Often, the open-source community significantly improves it and we'll take advantage  of this fact. Sometimes, I don't like any code and will do it myself, but this is really, polishing an existing idea rather than an original contribution.
+
+From the point of view of teaching, the only reason to write my own book is the following: we need engaging, high-quality, in-depth, hands-on, realistic case-studies. ^[Ok, enough hyphenated adjectives, you get the point] Sometimes, the only criticism I can address to some of the books is that the code examples are applied to boring and overused problems and datasets. It is not a fair criticism, since their main goal is teaching how the models work and no one will publish a thousand page manuscript.
 
 
 > The best kind of applications are relatively simple, but interesting and pose real modeling challenges. They capture the essence of the problem. This is why I heavily rely on Richard McElreath's "Statistical Rethinking, 2nd ed." and "Bayesian Data Analysis, 3rd ed." by Andrew Gelman et. al. 
 
 In my opinion, writing such case-studies takes more time than actually solving the problem inside a firm. I will do it, someday. In general, after you studied from the linked materials,  tried to write the code without reference, and understood the examples in depth -- it is your responsibility to come up with a project or case-study. It can be on openly available or private data, on messy, real data, or your own, clean simulations. It's a good idea to choose a domain, problem, and question you're passionate about.
+
+
+At last, the cleanest code associated to applications is not always written by the authors. Often, the open-source community significantly improves it and we'll take advantage  of this fact. Sometimes, I don't like any code and will do it myself, but this is really, polishing an existing idea rather than an original contribution.
+
