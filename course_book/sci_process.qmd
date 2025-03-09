@@ -1,5 +1,6 @@
 ---
 title: "Scientific process is all you need"
+subtitle: "One method to rule them all"
 author:
   - name: Mihai Bizovi
     id: mb
@@ -11,49 +12,33 @@ format:
 lang: en
 ---
 
-People doing data mining, analytics, ML, and applied statistics recognize the importance of methodology. They design processes and workflows for their domain of expertise, which is indubitably helpful. However, it is confusing for a beginner to see so many of them -- as I show on the margin. Even worse, it is hard to decide which one to use.
+People doing analytics, machine learning, and applied statistics recognize the importance of methodology. They design processes and workflows for their domain of expertise, which helps them solve problems systematically. However, it is confusing for a beginner to see so many of them and decide which one to use for each particular application, as I show in the card below.
 
-> I claim that an adaptation of the [scientific process]{.underline} can place each of these processes in its appropriate context, while including actions and outcomes
+I claim that an adaptation of the [scientific process]{.underline} which includes agency, can place each of these processes in its appropriate context and take into account actions and outcomes
 
 ::: {.column-margin}
-- Data Mining, ML, and Analytics:
-    - CRISP-DM, KDD
-    - Tuckey's EDA
-    - Hadley's Wickham's tidyverse 
-    - C. Kozyrkov's 12 steps of ML
-    - Andrew Ng's error analysis
-- Experiment design and A/B testing, besides steps given in a stat101 class
-    - C. Kozyrkov's 12 steps of statistics
-    - A. Gelman's workflow, described in "Regression and other stories"
-- Statistical modeling and bayesian approaches:
-    - A. Fleischhacker's business analyst's workflow
-    - R. Alexander's process for telling stories with data
-    - R. McElreath's "drawing an owl"
-- Scientific process in its standard formulation
+
+For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I'm increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: "I decided to unify 10 existing standards -- now we have 11"
 :::
 
-![The tweak to the scientific process consists in viewing the firm from the point of view of question / problem at hand as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. These tweaks shift the focus to actions and outcomes](img/scientific-process.png) 
+![The tweak to the scientific process consists in viewing the firm as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. This enables us to focus on actions and outcomes, instead of scientific questions and hypotheses](img/scientific-process.png) 
 
+Before I explain each box on the diagram^[The diagram above is inspired by Berkeley's ["Understanding Science 101"](https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/)] and how are they connected, I'll show some processes that you might encounter in literature and practice. Also, think how the scientific process you're probably familiar with is encompassed by the diagram above: Observations -- Hypotheses -- Experiment -- Data collection -- Hypothesis testing -- Communicating conclusions. 
 
-<!-- 
-::: {.column-margin} 
-The way many curricula are designed, produces three profiles of professionals in the industry: 
+::: {.callout-warning}
+## A proliferation of workflows
 
-- the applied mathematician, from programs with a heavy focus on maths
-- the data-saavy computer scientist, from programs with a focus on ML/AI 
-- the business-saavy analyst, from programs with a focus on economics
+In data mining, machine learning, and analytics, you might encounter [CRISP-DM](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining) (cross-industry process for data mining), [KDD](https://medium.com/@shawn.chumbar/kdd-process-in-data-science-a-beginners-guide-426d1f0fc062) (knowledge discovery in databases), J. Tuckey's [EDA](https://www.huber.embl.de/msmb/00-chap.html) (exploratory data analysis), A. Fleischhacker's [BAW](https://www.causact.com/becoming-a-data-driven-business-analyst) (business analyst's workflow), H. Wickham's [tidyverse workflow](https://r4ds.hadley.nz/intro.html), and C. Kozyrkov's [12 steps to AI](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3). 
+
+They are heavily focused on pattern recognition, finding inspiration and hypotheses from data (sometimes, in an model-driven way), and building predictive models. Despite their diferences, they all point to the same idea.
+
+In statistical modeling and experiment design, you might know the stats 101 process for [hypothesis testing](https://online.stat.psu.edu/stat500/lesson/6a/6a.2). More sophisticated workflows are concerned with the whole process of modeling and study design, like C. Kozyrkov's [12 steps of statistics](https://www.youtube.com/watch?v=R4ckbZCgmxQ),  A. Gelman's [Bayesian Workflow](https://arxiv.org/abs/2011.01808), R. Alexander's [telling stories with data](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html), and R. McElreath's [simulation-based model development](https://www.pnas.org/doi/10.1073/pnas.2322887121). 
+
+All of the above attempt to iteratively develop statistical models (estimators) to answer scientific questions and to gain insight into the underlying causal processes of social science phenomena. 
 :::
- -->
 
+Out of all these processes, I found C. Kozyrkov's 12 steps to AI to be extremely useful in [predictive applications]{.underline}, 12 steps to statistics in designing A/B tests, and R. McElreath's process when developing statistical models to draw causal conclusions. 
 
-For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I'm increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: "I decided to unify 10 existing standards -- now we have 11".
-
-::: {.callout-tip}
-## Scientific process in the broad sense
-A natural question to ask is: "What is the mechanism which could generate all these processes?" You've probably seen the scientific method roughly described as: Observations - Hypotheses - Experiment - Data collection - Hypothesis Testing - Conclusions.
-
-I don't think this is sufficient for us, nor that we can force other methodologies onto this template. We need a few adaptations to our field and a different structural-functional organization. The [diagram](https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/) from Berkeley's "Understanding Science 101" is a big step in the right direction.
-:::
 
 
 ## Action and Agent-Arena
