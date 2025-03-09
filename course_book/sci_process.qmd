@@ -32,7 +32,7 @@ People doing data mining, analytics, ML, and applied statistics recognize the im
 - Scientific process in its standard formulation
 :::
 
-![The tweak to the scientific process consists in viewing the firm from the point of view of question / problem at hand as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. These tweaks shift the focus to actions and outcomes](img/sci-process.png) 
+![The tweak to the scientific process consists in viewing the firm from the point of view of question / problem at hand as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. These tweaks shift the focus to actions and outcomes](img/scientific-process.png) 
 
 
 <!-- 
