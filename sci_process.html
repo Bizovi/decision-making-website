@@ -324,13 +324,14 @@ window.Quarto = {
    
   <ul>
   <li><a href="#action-and-agent-arena" id="toc-action-and-agent-arena" class="nav-link active" data-scroll-target="#action-and-agent-arena">Action and Agent-Arena</a></li>
-  <li><a href="#building-and-testing-ideas" id="toc-building-and-testing-ideas" class="nav-link" data-scroll-target="#building-and-testing-ideas">Building and testing ideas</a></li>
-  <li><a href="#thinking-discovery-and-explainations" id="toc-thinking-discovery-and-explainations" class="nav-link" data-scroll-target="#thinking-discovery-and-explainations">Thinking, discovery and explainations</a></li>
+  <li><a href="#testing-ideas-and-solutions" id="toc-testing-ideas-and-solutions" class="nav-link" data-scroll-target="#testing-ideas-and-solutions">Testing ideas and solutions</a></li>
+  <li><a href="#discovery-and-explanations" id="toc-discovery-and-explanations" class="nav-link" data-scroll-target="#discovery-and-explanations">Discovery and explanations</a></li>
   <li><a href="#steering-and-collaboration" id="toc-steering-and-collaboration" class="nav-link" data-scroll-target="#steering-and-collaboration">Steering and collaboration</a></li>
-  <li><a href="#steps-of-machine-learning" id="toc-steps-of-machine-learning" class="nav-link" data-scroll-target="#steps-of-machine-learning">12 Steps of Machine Learning</a></li>
-  <li><a href="#steps-of-statistics.-ab-testing-scheme" id="toc-steps-of-statistics.-ab-testing-scheme" class="nav-link" data-scroll-target="#steps-of-statistics.-ab-testing-scheme">12 Steps of Statistics. A/B Testing Scheme</a></li>
-  <li><a href="#research-methods" id="toc-research-methods" class="nav-link" data-scroll-target="#research-methods">Research methods</a></li>
-  <li><a href="#business-analysts-workflow" id="toc-business-analysts-workflow" class="nav-link" data-scroll-target="#business-analysts-workflow">Business Analysts’ Workflow</a></li>
+  <li><a href="#particular-processes" id="toc-particular-processes" class="nav-link" data-scroll-target="#particular-processes">Particular processes</a>
+  <ul class="collapse">
+  <li><a href="#steps-to-applied-ai" id="toc-steps-to-applied-ai" class="nav-link" data-scroll-target="#steps-to-applied-ai">12 Steps to Applied AI</a></li>
+  <li><a href="#steps-of-statistics" id="toc-steps-of-statistics" class="nav-link" data-scroll-target="#steps-of-statistics">12 Steps of Statistics</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -390,21 +391,21 @@ A proliferation of workflows
 </div>
 <div class="callout-body-container callout-body">
 <p>In data mining, machine learning, and analytics, you might encounter <a href="https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining">CRISP-DM</a> (cross-industry process for data mining), <a href="https://medium.com/@shawn.chumbar/kdd-process-in-data-science-a-beginners-guide-426d1f0fc062">KDD</a> (knowledge discovery in databases), J. Tuckey’s <a href="https://www.huber.embl.de/msmb/00-chap.html">EDA</a> (exploratory data analysis), A. Fleischhacker’s <a href="https://www.causact.com/becoming-a-data-driven-business-analyst">BAW</a> (business analyst’s workflow), H. Wickham’s <a href="https://r4ds.hadley.nz/intro.html">tidyverse workflow</a>, and C. Kozyrkov’s <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 steps to AI</a>.</p>
-<p>They are heavily focused on pattern recognition, finding inspiration and hypotheses from data (sometimes, in an model-driven way), and building predictive models. Despite their diferences, they all point to the same idea.</p>
+<p>They are heavily focused on pattern recognition, finding inspiration and hypotheses from data (sometimes, in an model-driven way), and building predictive models. Despite their diferences, they all point to the same idea.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>In statistical modeling and experiment design, you might know the stats 101 process for <a href="https://online.stat.psu.edu/stat500/lesson/6a/6a.2">hypothesis testing</a>. More sophisticated workflows are concerned with the whole process of modeling and study design, like C. Kozyrkov’s <a href="https://www.youtube.com/watch?v=R4ckbZCgmxQ">12 steps of statistics</a>, A. Gelman’s <a href="https://arxiv.org/abs/2011.01808">Bayesian Workflow</a>, R. Alexander’s <a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html">telling stories with data</a>, and R. McElreath’s <a href="https://www.pnas.org/doi/10.1073/pnas.2322887121">simulation-based model development</a>.</p>
 <p>All of the above attempt to iteratively develop statistical models (estimators) to answer scientific questions and to gain insight into the underlying causal processes of social science phenomena.</p>
 </div>
 </div>
-<p>Out of all these processes, I found C. Kozyrkov’s 12 steps to AI to be extremely useful in <u>predictive applications</u>, 12 steps to statistics in designing A/B tests, and R. McElreath’s process when developing statistical models to draw causal conclusions.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Don’t try to memorize them, but go back to this diagram of the scientific process and locate different steps of the workflow.</p></div></div><p>Out of all these processes, I found C. Kozyrkov’s 12 steps to AI to be extremely useful in <u>predictive applications</u>, 12 steps to statistics in designing A/B tests, and R. McElreath’s process when developing statistical models to draw causal conclusions.</p>
 <section id="action-and-agent-arena" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="action-and-agent-arena">Action and Agent-Arena</h2>
-<p>In order to make the diagram more specific, let’s take the example of a firm and think of it as an agent. At this level of analysis, we don’t need to consider the full implications of a complex adaptive system. Hopefully, the firm has formulated its mission, vision, has articulated a rough strategy to overcome obstacles and has set reasonable objectives.</p>
-<p>Employees and leadership of the firm will try to make good decisions, develop capabilities in order to increase performance. In a happy and lucky case, these actions are coordinated, aligned with strategy and generate desired outcomes. Besides performance, we can also consider an increase in value added brought by improvements in its processes, products, and services.</p>
-<p>The firm gathers data about its current and past state <span class="math inline">\(\{\mathcal{S}_t\}_{1:t}\)</span>, observes the environment <span class="math inline">\(\mathbfcal{O}_t\)</span>, and its actions <span class="math inline">\(\mathcal{A}_t\)</span> influence the environment, and vice-versa. It also interacts with other agents in the network (be it customers, suppliers, manufacturers, government, the board, stakeholders, etc).</p>
+<p>First, let’s take the exmple of a firm and think of it as an agent. Hopefully, it has formulated its mission, vision, a strategy to overcome obstacles, and has set reasonable objectives. Employees and leadership of the firm will try to make good decisions and develop capabilities in order to improve performance. At this level of analysis, we don’t need to consider the full implications of a complex adaptive system.</p>
+<p>In a happy and lucky case, these actions are coordinated, aligned with strategy and generate desired outcomes. Besides performance, we can also consider an increase in value added brought by improvements in its processes, products, and services.</p>
+<p>The firm gathers data about its current and past state <span class="math inline">\(\{\mathcal{S}_t\}_{1:t}\)</span>, observes the environment <span class="math inline">\(\mathbfcal{O}_t\)</span>, its actions <span class="math inline">\(\mathcal{A}_t\)</span> influence the environment, and vice-versa. It also interacts with other agents in the network, be it customers, suppliers, manufacturers, government, stakeholders, etc.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>This perspective is pretty standard in AI research. We’ll see later in the course how we could also use it to tease out different <strong>sources of uncertainty</strong>.</p>
-</div></div><p>I called this “element” in the bigger process an “agent-arena” relation, because we usually don’t consider the whole firm, but our framing depends on what point of view in the value chain we take. For example, the POW of a team responsible for conversion-rate optimization will have its own objectives, decisions, and data they care about <span class="math inline">\((\mathcal{S}, \mathcal{O}, \mathcal{A} | {POW} )\)</span>. Of course, there is a concern of alignment, of local optimization which results in suboptimal global outcomes – but this topic is outside the scope of our course.</p>
+<p>This perspective is pretty standard in AI research. We can use it to tease out different <strong>sources of uncertainty</strong>.</p>
+</div></div><p>I called this element in the scientific process an “agent-arena” relation, because we usually don’t consider the whole firm, but our framing depends on what <u>point of view</u> in the value chain we take. For example, a team responsible for conversion-rate optimization will have its own objectives, decisions, and data they care about <span class="math inline">\((\mathcal{S}, \mathcal{O}, \mathcal{A} | {POW} )\)</span>. Of course, there is a concern of alignment, of local optimization which results in suboptimal global outcomes – but this topic is outside the scope of our course.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -417,178 +418,137 @@ Sources of uncertainty
 <div class="callout-body-container callout-body">
 <p>In their book <a href="https://algorithmsbook.com/">Algorithms for Decision Making, MIT Press - 2022</a>, M. Kochenderfer, T. Wheeler, and K. Wray make a helpful classification of the sources of uncertainty, based on agent-environment interactions:</p>
 <ul>
-<li><strong>Outcome uncertainty</strong>, as the consequences and effects of actions are uncertain. Can we be sure that an intervention works out? We can’t take everything into account when making a decision – it becomes combinatorialy explosive.</li>
-<li><strong>Model uncertainty</strong> suggests we can’t be sure that our understanding, model as a simplification of reality is the right one. In decision-making, we often mis-frame problems and in statistics, well, choose the wrong model.</li>
-<li><strong>State uncertainty</strong> means that the true state of the environment is uncertain, everything changes and is in flux. This is why statisticians argue we always work with samples</li>
-<li><strong>Interaction uncertainty</strong>, due to the behavior of the other agents interacting in the environment. For example, competitive firms, social network effects.</li>
+<li><strong>Outcome uncertainty</strong> suggests we can’t know the consequences and effects of our actions with certainty. We can’t take everything into account when making a decision</li>
+<li><strong>Model uncertainty</strong> implies we can’t be sure that our understanding, assumptions, and chosen model are correct. In decision-making, we often misframe problems and in statistics, well, choose the wrong model.</li>
+<li><strong>State uncertainty</strong> means that the true state of the environment is uncertain, as everything changes and is in flux. This is why statisticians argue that we always work with samples</li>
+<li><strong>Interaction uncertainty</strong> due to the behavior of the other agents interacting in the environment. For example, competitive firms, and social network effects.</li>
 </ul>
 <p>We will focus very little the last aspect of uncertainty, but you have some tools to reason about it: game-theoretic arguments, ideas from multi-agent systems, and graph theory. I think it is an important dimension of reality, however, taking it into account in this course would make it incomparably more complicated and advanced.</p>
 </div>
 </div>
 </section>
-<section id="building-and-testing-ideas" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="building-and-testing-ideas">Building and testing ideas</h2>
-<p>At the core of scientific process is experimentation, data collection, and testing of ideas – which results in evidence with respect to a hypothesis or theoretical prediction. For our purposes, we consider experimentation in its large sense, not just randomized control trials and highly-controlled experiments. By including statistical models, simulation, ML models; software systems, prototypes, and features – we can benefit from this self-correcting feedback loop not just in science, but in decision-making.</p>
+<section id="testing-ideas-and-solutions" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="testing-ideas-and-solutions">Testing ideas and solutions</h2>
+<p>At the core of scientific process is experimentation, systematic observation, and testing of ideas – which results in evidence with respect to a hypothesis or theoretical prediction. For our purposes, we consider experimentation in its large sense, not just randomized control trials and highly-controlled experiments.</p>
+<p>By including statistical models, simulations, ML models; prototypes, software systems and features – we can benefit from this self-correcting feedback loop not just in science, but in decision-making. For example, leaving aside a test dataset in machine learning is a way to assess and approximate how well a model generalizes beyond training data.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Let’s consider Agile principles and Shape-Up methodology for software development. I think that they fit well into our framework when we’ll sketch out the two remaining pieces</p>
-</div></div><p>This means that inferential and causal statistical models are equally as important ways to test ideas. Moreover, the ultimate test is whether the recommended decisions based on modeling insights work well in practice. Meaning, we get better outcomes in the agent-arena, our problem space. Let’s see how testing of ideas interacts with other elements of our diagram:</p>
+</div></div><p>This means that inferential and causal statistical models are equally as important ways to test ideas. Moreover, the ultimate test is whether the recommended decisions based on modeling insights work well in practice. Meaning, we get better outcomes in the agent-arena, our problem space. Let’s see how testing of ideas interacts with other elements in our diagram:</p>
 <ul>
-<li>Agent-Arena
-<ul>
-<li>our insights and recommendations can help inform actions</li>
-<li>after operationalization, we get feedback on how well it worked</li>
-</ul></li>
-<li>Collaborators
-<ul>
-<li>we have to communicate our insights clearly and persuasively</li>
-<li>other people give feedback about the analysis / results and best-practices about how should we test our ideas</li>
-</ul></li>
-<li>Discovery and Explanation
-<ul>
-<li>ideally, we don’t test a vague hypothesis, but a well-thought causal model</li>
-<li>our test results in stronger or weaker evidence for/against the explanation</li>
-<li>we can use simulation to validate that our statistical models work in principle, meaning we recover the estimand (unobservable quantity of interest)</li>
-</ul></li>
+<li>The insights and recommendations from our experiments inform actions in Agent-Arena. After operationalization, we get feedback on how well it worked and what can we improve</li>
+<li>We have to communicate our insights clearly and persuasively to the people we collaborate with. Our colleague’s expertise will give us best-practices in the field and feedback about the analysis</li>
+<li>With respect to <u>discovery and explanation</u>, we don’t want to test a vague idea, but a well-thought, sharp hypothesis or causal model</li>
 </ul>
-<p>Since the data comes from the real world, we will have to consider very carefully how it was collected and measured. This means that when we build models, we might need to learn new tools to correct for biased samples, non-response, missing data, measurement error, etc.</p>
+<p>The tests will result in stronger or weaker evidence for or against the explanation. We can use simulation to validate that our statistical models work in principle, meaning we recover the estimand (unobservable quantity or effect of interest).</p>
+<p>Simulating synthetic data from a causal process model in order to validate if a statistical model can draw correct inferences about the estimand can be considered an experiment, although, one which lives in pure theory, until we apply it to real data. This iterative process lives at the intersection of asking questions, building theories and testing ideas.</p>
+<p>Since the data comes from messy real world systems, we will have to consider very carefully how it was collected and measured. This means that when we build models, we might need to learn new tools to correct for biased samples, differential non-response, missing data, measurement error, repeated observations, etc.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>For some research questions, measurement and sampling is a complicated problem. This is why I’m trying to integrate them in this course.</p>
-</div></div></section>
-<section id="thinking-discovery-and-explainations" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="thinking-discovery-and-explainations">Thinking, discovery and explainations</h2>
-<p>One can make a case that wisdom starts in wonder, and science with curiosity. For a long time, statistics classes were taking hypotheses and theories as given. Our field has caught up to scientists, in the sense of openness in how we gather inspiration.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Many books have been written about how theories are being developed, the role of curiosity, inspiration, observation, previous theories, evidence, etc.</p>
-</div></div><p>Model-driven exploratory data analysis an pattern recognition have become acceptable ways to find inspiration and formulate hypotheses. I would argue that for most problems I encountered, this process was essential and this is the way in which a good analyst is extremely valuable. Note that with this power comes a lot of responsibility to not fool ourselfs, hence we’ll need discipline and guardrails.</p>
-<p>You will probably agree that asking a good question and formulating, framing a problem well gets us “halfway” towards a solution. We can approach a research design data-first or question-first, but in practice it’s almost always a mix.</p>
-<p>Speaking about business decisions, what I mean by theory is our current knowledge and understanding of the problem and domain. Thus, don’t get fooled by claims of “theory-free” AI and ML. The mere fact of selecting what to measure and what features to include in the model, involves human understanding and a judgement of relevance.</p>
-<p>In the course we will try our best to ensure that statistical models are answering the right quantitative question, which we call an estimand. It might not be obvious why we worry about the underlying, unobservable, theoretical constructs and ways we could measure them. After all, we’re not doing quantitative psychology.</p>
-<p>In my experience, sometimes it comes up explicitly and thinking this way is very helpful, for example: willingness to pay, customer satisfaction, engagement, brand loyalty and awareness, who can be convinced to buy via promotions, email fatigure, etc.</p>
+</div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The value of research methods
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quantitative research methods are a valuable when dealing with the issues outlined above, but are often not part of a statistical curriculum. I highly recommend A. Zand Scholten’s introductory course on <a href="https://www.coursera.org/learn/quantitative-methods">Quantitative Methods</a>. It is worth to invest a bit of time to get familiar with the following:</p>
+<ul>
+<li><strong>Measurement</strong> is especially relevant and tricky in social science. Sometimes, we do not measure what we think we do. For measuring abstract things like happiness, preferences, or personality – we need to dive into scales, instrumentation, operationalization, validity, and reliability</li>
+<li><strong>Sampling</strong> isn’t limited to simple random samples, as these rarely occur in practice. We need to be aware what tools exist so that we can generalize to the population of interest</li>
+<li><strong>Threats to validity</strong>, including confounds, artifacts, and biases. On the one hand we use statistics as a guardrail against foolishness, on the other hand there a lot of the same problems that can compromise our study.</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="steering-and-collaboration" class="level2">
-<h2 class="anchored" data-anchor-id="steering-and-collaboration">Steering and collaboration</h2>
-<p>Modern science, and science in general doesn’t happen in isolation. The same is true in firms and almost any other domain. I will not spill much ink in trying to convince you of the power of collaboration, since almost any problem which is complex enough can’t be tackled by a single individual.</p>
-<p>In the context of this course, we’re thinking of collaboration with clients, stakeholders, experts, engineers, and decision-makers. A few outcomes of this collaboration are the strategy we mentioned at the beginning, policies, interventions, best-practices, feedback, and review. Collaboration informs what should we do, prioritize, build and test, and hypothesise / think about.</p>
+<section id="discovery-and-explanations" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="discovery-and-explanations">Discovery and explanations</h2>
+<p>One can make a case that wisdom starts in wonder and science with curiosity. Don’t get fooled by statistics classes were hypotheses and theories are taken for granted. Our field has caught up to scientists, in the sense of openness in how we gather inspiration.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Many books have been written about how theories are being developed, the role of curiosity, inspiration, observation, previous theories, and evidence</p></div></div><p>Model-driven exploratory data analysis an pattern recognition have become acceptable ways to formulate hypotheses. I would argue that for most problems I encountered, this exploratory process was essential. This is precisely the way in which a good analyst is extremely valuable. Note that with this power comes a lot of responsibility to not fall for confirmation bias, hence we’ll need discipline and guardrails.</p>
+<p>You will probably agree that asking a good question and formulating / framing a problem well gets us “halfway” towards a solution. We can approach a research design data-first or question-first, but in business practice it’s almost always a mix.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Experiment design, causal inference, and machine learning
+PICOT criteria for a research question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the course you will see processes and workflows for experiment design (C. Kozyrkov’s 12 steps of statistics), causal inference (R. McElreath’s owls and DAGs), and machine learning (C. Kozyrkov’s 12 steps of ML, Google’s People+AI).</p>
-<p>Don’t try to memorize them, but go back to this diagram of the scientific process and locate different steps of the workflow. For example, leaving aside a test dataset in machine learning is a way to assess and approximate how well a trained and chosen model generalizes beyond training data.</p>
-<p>Simulating synthetic data from a causal process model in order to validate if a statistical model can draw correct inferences about the estimand can be considered an experiment, although, one which lives in pure theory, until we apply it to real data. This iterative process lives at the intersection of asking questions, building theories and testing ideas.</p>
+<p>When starting question-first, it’s helpful to think what is the target population of interest, potential interventions, whether we have a comparison group, what are the relevant outcomes, and the time-frame of the study.</p>
 </div>
 </div>
+<p>Speaking about business decisions, what I mean by theory is our current knowledge and understanding of the problem / domain.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Don’t get fooled by claims that AI and ML are exempt of theory, assumptions, and will figure out those from data. The mere fact of selecting what to measure and what features to include in the model, involves human understanding and a judgement of relevance.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;For example, customer preferences and behavior, drivers of the demand, and sourcing of raw materials</p></div></div><p>In the course we will try our best to ensure that statistical models are answering the right quantitative question, which we call an estimand. It might not be obvious why we worry about the underlying, unobservable, theoretical constructs and ways we could measure them. After all, we’re not doing quantitative psychology.</p>
+<p>In my experience, these constructs appear implicitly, for example: willingness to pay, customer satisfaction, engagement, brand loyalty and awareness, who can be convinced to buy via promotions, email fatigure, etc. Hence, the decisions we make in operationalizing these abstract concepts are critical to a project’s success.</p>
 </section>
-<section id="steps-of-machine-learning" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="steps-of-machine-learning">12 Steps of Machine Learning</h2>
-<p>By now, I introduced the bare minimum of motivation, formalism, and practices of Machine Learning for you to get by. However, we need a structured approach to tackle real-world problems with ML models. The methodology I like most is articulated by Cassie Kozyrkov, (ex) Chief Decision Scientist at Google. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Cassie Kozyrkov - Making friends with machine learning, <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">full course</a>. It is 6 hours which will serve you during the entire carreer</p></div></div><ul>
-<li>Present the 12 steps with representative examples of classification and regression</li>
-<li>Is the ML project feasible? If yes, is it a good idea?</li>
-<li>Split your damn data. Cross-Validation and hyperparameters. Pitfalls</li>
-<li>Similarities with CRISP-DM, tuckey’s EDA, and tidy modeling</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Case-Study: Mercari pricing challenge
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I like this Kaggle challenge and dataset, because of how realistic and open-ended it is. You can keep it simple, with out-of-the-box models, or build some highly customized ML pipelines.</p>
-<p>It also has data which requires a combination of different approaches to feature engineering. It is messy enough that we have to justify how we deal with those missingness patterns and weird data points. Those modeling decisions will have an impact on model performance.</p>
-</div>
-</div>
+<section id="steering-and-collaboration" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="steering-and-collaboration">Steering and collaboration</h2>
+<p>Modern research and science in general do not happen in isolation. The same is true in firms and almost any other domain. I will not spill much ink in trying to convince you of the power of collaboration, since almost any problem which is complex enough can’t be tackled by a single individual.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;This argument is developed much further in C. Hidalgo’s book “Why information grows” and his research into measures of economic complexity</p></div></div><p>In the context of this course, we’re thinking of collaboration with clients, stakeholders, experts, engineers, and decision-makers. A few outcomes of this collaboration are the strategy we mentioned at the beginning, policies, interventions, best-practices, feedback, and review. Collaboration informs what should we do, prioritize, build and test, and hypothesise / think about.</p>
+<p>I can’t emphasize enough the importance of developing your writing skills. It is both a way of thinking, problem-solving, and communicating ideas. When it comes to academic writing, the structure of a scientific paper is very helpful even in businesses, as it forces you to articulate the relevance of your research, results, and contribution.</p>
+<p>Last, but not least, <u>reproducible research</u> and literate programming has become a de-facto standard in the data science world. It is a very important aspect to keep in mind, as your work should be easily checked and reproduced by others if you expect a contribution from them. We have amazing tools for that right now, but it’s still not easy to achieve end-to-end reproducibility and automation.</p>
 </section>
-<section id="steps-of-statistics.-ab-testing-scheme" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="steps-of-statistics.-ab-testing-scheme">12 Steps of Statistics. A/B Testing Scheme</h2>
-<p>I assume you have been working on Module 2 (Fundamentals of Statistics and Probability) in parallel, so that we can get to a point where we discuss the practical and methodological aspects of A/B testing and randomized experiments.</p>
-<p>In this lecture I bridge the gap between the theory/fundamentals and practice. We will see how an end-to-end process of experiment design looks like. In the end, you will learn how to make justified choices in how you set-up and run an experiment.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Case-Study: Conversion Rate Optimization
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Marketing is one area of online businesses which heavily relies on randomized experiments and A/B tests. Firms try to make the most out of their <strong>advertisement spending</strong> (customer acquisition), by testing <strong>changes in user experience</strong>, promotion, merchandising, to convince a larger proportion of them to buy the product or subscribe (conversion rate).</p>
-<p>Read this <a href="https://towardsdatascience.com/simple-and-complet-guide-to-a-b-testing-c34154d0ce5a">end-to-end example</a>, which takes a lot of attention and care into verifying potential pitfalls. If you need other perspectives about what can go wrong, you can refer to: <a href="https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing">HBR article</a>, <a href="https://towardsdatascience.com/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e">8 pitfalls and solutions</a>, <a href="https://towardsdatascience.com/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241">A/A tests</a>, and <a href="https://towardsdatascience.com/how-user-interference-may-mess-up-your-a-b-tests-f29abfcfccf8">user interference</a></p>
-</div>
-</div>
-<ul>
-<li>Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Maybe we want to explore or predict?</li>
-<li><a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">Default action</a> is one of the most important ideas in statistics.</li>
-<li>What is a statistical hypothesis anyways? How does it relate to the original question?
-<ul>
-<li>Make sure you define the minimal effect size of interest/relevance</li>
-<li>Type 3 errors: be careful what is the question you really ask of your test</li>
-</ul></li>
-<li>Watch the <a href="https://youtu.be/R4ckbZCgmxQ?si=pkxQD3lG3CIo4NKf">12 steps to statistics</a> by Cassie Kozyrkov for a methodology of how to perform experiments in business settings. For a more traditional exposition, check out Poldrack’s <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">Chapter 9</a>.</li>
-<li>One of the most difficult aspects in practice is metric design, since we deal with tradeoffs so often. An useful way to think about properties of good metrics is described in <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">this paper, STEDII</a>. Also see <a href="https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">this example</a> discussing sensitivity, stability, and directedness.</li>
-</ul>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Read Cassie Kozyrkov’s article to recognize when <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">“not to waste your time with statistics”</a>. You can also watch <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">this video</a>. You can also see her <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">full, short lecture</a> for Google employees.</p></div></div></section>
-<section id="research-methods" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="research-methods">Research methods</h2>
-<p>Besides technical prerequisites, there is a list of concepts and ideas from research design, which can be helpful in practice, but are often not part of statistical curriculum. I highly recommend A. Zand Scholten’s introductory course on <a href="https://www.coursera.org/learn/quantitative-methods">Quantitative Methods</a>. It is worth to invest a bit of time to get familiar with the following:</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Taken in isolation, topics like measurement and sampling are very abstract. Therefore, they have to be integrated into the case-studies whenever they bring added value. This is not easy, so .. work in progress</p>
-</div></div><ul>
-<li><strong>Measurement</strong> is especially relevant and tricky in social science. Sometimes, we do not measure what we think we do (underlying construct). For measuring abstract things like happiness or personality, we need to dive into scales, instrumentation, operationalization, validity, and reliability.</li>
-<li><strong>Sampling</strong> isn’t limited to simple random samples, as these rarely occur in practice. We need to be aware what tools exist so that we can generalize to the population of interest. For example, weighting and post-stratification.</li>
-<li><strong>Threats to validity</strong>, including confounds, artifacts, and biases. On the one hand we use statistics as a guardrail against foolishness, on the other hand there a lot of the same problems that can compromise our study.</li>
-<li><strong>Reproducible research</strong> and literate programming has become a de-facto standard in the data science world. We have amazing tools right now, but it’s still not easy to achieve end-to-end reproducibility and automation.</li>
-<li><strong>Academic writing</strong> is an important skill, even in businesses. Writing is both a way of thinking, problem-solving, and communication. In my opinion, the structure of a scientific paper is very helpful to crystalize your ideas.</li>
-</ul>
-</section>
-<section id="business-analysts-workflow" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="business-analysts-workflow">Business Analysts’ Workflow</h2>
-<p>This is a lot to take in! But there is one more thing to explore – a brilliant idea from a course by Dr.&nbsp;Adam Fleischhacker <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Adam Fleischhacker - <a href="https://www.causact.com/">Introduction to Business Analytics</a>: Intro to Bayesian Business Analytics in the R Ecosystem</p></div></div><blockquote class="blockquote">
+<section id="particular-processes" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="particular-processes">Particular processes</h2>
+<p>Now that you have this very general version of the scientific process in your conceptual toolbox, we can look at some particular workflows, see how they map onto it, and what can we learn from them.</p>
+<p>I really like the idea of “Business analyst’s workflow” from A. Fleischhacker <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, which served as a major inspiration for this chapter. The normative criteria for such a workflow are very well aligned with our “project”: it should focus on outcomes, be strategically-aligned, action-oriented, and computationally rigorous.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;<a href="https://www.causact.com/">A Business Analyst’s Introduction to Business Analytics (2nd ed)</a></p></div></div><blockquote class="blockquote">
 <p>“You will translate real-world scenarios into both mathematical and computational representations that yield actionable insight. You will then take that insight back to the real-world to persuade stakeholders to alter and improve their real-world decisions.”</p>
 </blockquote>
-<p>Dr.&nbsp;Fleischhacker makes an illuminating distinction between the <strong>business analyst’s workflow</strong> and a machine learning workflow, and sets up the normative criteria which make it successful. In our course, his workflow falls under the discussions related to <strong>causal inference</strong>. One interesting thing to note, is the convergence in the approach of an extremely diverse set of people: Cassie Kozyrkov, Vincent Warmerdam, Adam Fleischhacker, Richard McElreath, Andrew Ng – all coming from different backgrounds and activating in different environments and domains.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01_fundamentals/img/analyst-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: causact.com</em>; “(The workflow) starts with strategy, expertise, and data as inputs and results in the business analyst leading their firms to act on value-adding insights”</figcaption>
+<figcaption><em>Source: causact.com</em>; “(The workflow) starts with strategy, expertise, and data as inputs. By modeling, the business analyst gains insight and persuades the firm to act on it to improve outcomes”</figcaption>
 </figure>
 </div>
-<p>Let’s briefly review those normative criteria of this workflow. It might be a confirmation bias on my part, but the fact that these are present in the current course in one way or another, means I stumbled upon them by trial-and-error and painful mistakes:</p>
+<section id="steps-to-applied-ai" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="steps-to-applied-ai">12 Steps to Applied AI</h3>
+<p>Moving on to machine learning and predictive applications, out of all the workflows, I prefer C. Kozyrkov’s <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">“12 steps to applied AI”</a>. It encompasses all others and gives a set of concrete steps when defining and planning for a ML use-case.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> This short reading will dramatically increase your chances to make your predictive use-case successful.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Cassie Kozyrkov has a set of <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">lectures</a> for complete beginners which I highly recommend: “Making friends with machine learning”.</p></div></div><p>First, we need to make sure that ML is the right approach for the problem and that our project is feasible: is there a pattern and do we have relevant data? Then, we need to define our objectives, decisions, constraints and assess how costly is each type of mistaken prediction.</p>
+<p>In the second phase, we need to collect data and leave aside a test dataset, so we can check if our model generalizes before we launch it in production. Otherwise, we won’t know if the model is reliable on unseen data. Next, explore the data, clean it up, choose the models you’re going to try, and train them. You might need to debug, iterate, and tune your model pipeline to solve the problems which will inevitably arise.</p>
+<p>In the third phase, you have to validate your models, pick the most promising one and test it on the pristine test dataset which was left aside. If the performance is good enough and the model survived our critiques and ways to break it, we’re ready to operationalize and build it for production. Often, we’ll have to run live tests and randomized experiments in order to see if it actually works in practice and it’s safe to launch. At last, we’ll have to monitor its performance, fix bugs, re-train, and maintain the system.</p>
+<p>Coming back to our scientific process, you see how these 12 steps have a component of problem formulation, exploration, experimentation, and testing in production. The latter is a ultimate test if our idea (ML use-case) works. We’ll have to improve it based on the feedback we get, then test again.</p>
+</section>
+<section id="steps-of-statistics" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="steps-of-statistics">12 Steps of Statistics</h3>
+<p>In order to show how this workflow is applied in experiment design, think of an A/B test for improving conversion-rate on a website, a randomized trial which evaluates a new treatment, a quality control sample, or a survey for the next parlamentary election. All of them try to answer a research question.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;The relationship between the scientific process and statistical methods has been well explored and established</p></div></div><p>Before jumping into hypothesis testing, we should ask whether we <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">need an experiment at all</a>. Maybe we want to explore, predict, or we already have access to the whole population of interest (e.g.&nbsp;our customer base)? Or maybe we’re limited to work with observational data and self-reports due to experiments being unethical or unfeasible.</p>
+<p>In the frequentist, Neyman-Pearson school of statistical thought, we have to first define our <a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">default action</a>, i.e.&nbsp;what would we do in the absence of evidence. When it comes to knowledge, hypotheses, or beliefs – think of acting as if that claim was true. Then, statistics can tell us how to change our actions in the face of evidence, so we’re not wrong too often in the long run. Really strong evidece resulting from a well-designed study and modeling will make our default action ridiculous and unreasonable.</p>
+<p>Of course, we have to choose our target population of interest, as our conclusions do not apply beyond it without a strong justification. We also have to define our causal and real-world assumptions and a really good way to do that is by drawing causal diagrams (DAGs). This is where we’ll have to worry about potential threats to validity.</p>
+<p>In operationalization, we’ll have to make our research question really sharp and specific, define procedures of how are we going to measure the observable quantities and outcomes of interest, choose the appropriate interventions. As a part of research design, we have to define our data collection strategy and procedures, for which we have to account in the modeling stage.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Measurement and threats to validity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R. Crump gives an excellent overview of the threats to validity in <a href="https://www.crumplab.com/statistics/01-Science_Data.html">Chapter 1</a> of his “Answering questions with data”. Here are some good readings regarding threats to validity in A/B testing:</p>
 <ul>
-<li><strong>Outcome-focused</strong>: What is the point of fancy models, if we don’t achieve good or desired outcomes? If I was implying it so far, for the rest of the course we’ll ask this explicitly every time we tackle a business problem.</li>
-<li><strong>Strategically-aligned</strong>: <em>“Not all outcomes are created equal. Companies seeking to capture market share might increase expenses to aid market capture. Companies seeking to be cost leaders might leave some customers unsatisifed to keep expenses low. So a one-size-fits-all approach to defining good outcomes is ill-advised.”</em></li>
-<li><strong>Action-oriented</strong>: We insisted so much on insights influencing, driving actions and decisions that there is little to add here. The remaining question is how can we communicate and articulate it well to convince decision-makers and stakeholders.</li>
-<li><strong>Computationally Rigorous</strong>: Refers to the know-how, the engineering in the trenches. Even though we’ll spend most of the time in the frequentist land – I think the future is at the intersection of Causality and Bayesian Inference.
-<ul>
-<li>Taking it one step further, this kind of workflow should be reproducible and (mostly) automated. This is why we’ll explore an ecosystem of software engineering tools and practices in the labs.</li>
-<li>Ideally, given in the hands of our clients/users in form of a full stack data app. This is where we take off our consulting hat and start building software products.</li>
-</ul></li>
+<li><a href="https://www.lunartech.ai/blog/simple-and-complete-guide-to-a-b-testing">“Simple and Complete Guide to A/B Testing”</a> by K. Tatev</li>
+<li><a href="https://hbr.org/2020/03/avoid-the-pitfalls-of-a-b-testing">“Avoid the pitfalls of A/B testing”</a> by I. Bojinov</li>
+<li><a href="https://medium.com/towards-data-science/online-controlled-experiment-8-common-pitfalls-and-solutions-ea4488e5a82e">“8 common pitfalls of running A/B tests”</a> and <a href="https://medium.com/towards-data-science/an-a-b-test-loses-its-luster-if-a-a-tests-fail-2dd11fa6d241">“An A/B Test Loses Its Luster If A/A Tests Fail”</a> by L. Ye</li>
+<li><a href="https://dzone.com/articles/interference-in-ab-tests">On user interference</a> by S. Kumar</li>
 </ul>
-<p>This is in contrast with a predictive, machine learning workflow, which we called before “workhorse models”, a “hammer” for which everything is a nail. We got a taste of its power and limitations, and tried to articulate which are appropriate applications for ML. This course gives equal attention to ML and Causality, due to the prevalence of use-cases from which we can learn from data to make tons of decisions at scale and high frequency.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01_fundamentals/img/ml-workflow.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: causact.com</em>; “The machine learning analyst transforms historical data with known outcomes into future outcome predictions.”</figcaption>
-</figure>
+<p>One of the most difficult aspects in practice is measurement and metric design. A useful way to think about properties of good metrics is described in <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">this paper</a> by S. Gupta and W. Machmouchi. The STEDII acronym stands for sensitivity, trustworthiness, efficiency, debuggability, interpretability (actionability), and inclusivity (fairness). Here’s another <a href="https://medium.com/towards-data-science/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">article</a> by A. Rustgi which discusses most common mistakes.</p>
 </div>
+</div>
+<p>The null and alternative hypotheses tell under what conditions we’ll choose the default or alternative action. At this point, we have all the information needed for us to choose or build the appropriate model or method and validate it on a simulation study. This exercise will tell us if our approach works in principle and in what ways could it fail, especially when our assumptions don’t hold.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;It is quite common that our statistical models don’t answer the question we think they do. This is due to poor design and is often jokingly referred to as a “type 3 error” or “the art of solving the wrong problem”</p></div></div><p>In power analysis, we’ll define our type 1 and type 2 errors, the minimum effect sizes of interest, and figure out how many observations we need for our study to answer the research question.</p>
+<p>Notice how much preparation we have to do before we actually collect the data, analyze it, and apply a model or statistical test. This is not because I want rigor for rigor’s sake, but missing a single aspect outlined above in preparation can render our expensive study useless.</p>
+<p>Finally, we can start collecting data, launch the experiment and apply the statistical model we defined before. If we did everything right, there is not much work left to do, besides loading and conforming the data to the specification, reporting and communicating our findings.</p>
 
 
+</section>
 </section>
 
 
