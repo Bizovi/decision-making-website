@@ -1,6 +1,6 @@
 ---
 title: "Scientific process is all you need"
-subtitle: "One method to rule them all"
+subtitle: "Workflow, Methodology, Research Design"
 author:
   - name: Mihai Bizovi
     id: mb
