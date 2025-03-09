@@ -124,7 +124,7 @@ window.Quarto = {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Scientific process is all you need – Modern Decision Science">
-<meta property="og:description" content="">
+<meta property="og:description" content="One method to rule them all">
 <meta property="og:image" content="https://course.economic-cybernetics.com/img/scientific-process.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
@@ -344,6 +344,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction and Background</a></li><li class="breadcrumb-item"><a href="./sci_process.html">iv. On scientific process</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Scientific process is all you need</h1>
+<p class="subtitle lead">One method to rule them all</p>
 </div>
 
 
@@ -366,64 +367,35 @@ window.Quarto = {
 </header>
 
 
-<p>People doing data mining, analytics, ML, and applied statistics recognize the importance of methodology. They design processes and workflows for their domain of expertise, which is indubitably helpful. However, it is confusing for a beginner to see so many of them – as I show on the margin. Even worse, it is hard to decide which one to use.</p>
-<blockquote class="blockquote">
-<p>I claim that an adaptation of the <u>scientific process</u> can place each of these processes in its appropriate context, while including actions and outcomes</p>
-</blockquote>
+<p>People doing analytics, machine learning, and applied statistics recognize the importance of methodology. They design processes and workflows for their domain of expertise, which helps them solve problems systematically. However, it is confusing for a beginner to see so many of them and decide which one to use for each particular application, as I show in the card below.</p>
+<p>I claim that an adaptation of the <u>scientific process</u> which includes agency, can place each of these processes in its appropriate context and take into account actions and outcomes</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<ul>
-<li>Data Mining, ML, and Analytics:
-<ul>
-<li>CRISP-DM, KDD</li>
-<li>Tuckey’s EDA</li>
-<li>Hadley’s Wickham’s tidyverse</li>
-<li>C. Kozyrkov’s 12 steps of ML</li>
-<li>Andrew Ng’s error analysis</li>
-</ul></li>
-<li>Experiment design and A/B testing, besides steps given in a stat101 class
-<ul>
-<li>C. Kozyrkov’s 12 steps of statistics</li>
-<li>A. Gelman’s workflow, described in “Regression and other stories”</li>
-</ul></li>
-<li>Statistical modeling and bayesian approaches:
-<ul>
-<li>A. Fleischhacker’s business analyst’s workflow</li>
-<li>R. Alexander’s process for telling stories with data</li>
-<li>R. McElreath’s “drawing an owl”</li>
-</ul></li>
-<li>Scientific process in its standard formulation</li>
-</ul>
+<p>For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I’m increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: “I decided to unify 10 existing standards – now we have 11”</p>
 </div></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/scientific-process.png" class="img-fluid figure-img"></p>
-<figcaption>The tweak to the scientific process consists in viewing the firm from the point of view of question / problem at hand as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. These tweaks shift the focus to actions and outcomes</figcaption>
+<figcaption>The tweak to the scientific process consists in viewing the firm as an agent / system interacting with its enviroment, which I call an Agent-Arena relationship. Second, I extend the notion of experiment to include prototypes and software systems. This enables us to focus on actions and outcomes, instead of scientific questions and hypotheses</figcaption>
 </figure>
 </div>
-<!-- 
-::: {.column-margin} 
-The way many curricula are designed, produces three profiles of professionals in the industry: 
-
-- the applied mathematician, from programs with a heavy focus on maths
-- the data-saavy computer scientist, from programs with a focus on ML/AI 
-- the business-saavy analyst, from programs with a focus on economics
-:::
- -->
-<p>For a very long time, I chose a process depending on the type of question and problem at hand. I still do, but I’m increasingly unease about it, as every well-intentioned author seems to make their own slight variations. You know the joke: “I decided to unify 10 existing standards – now we have 11”.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Before I explain each box on the diagram<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and how are they connected, I’ll show some processes that you might encounter in literature and practice. Also, think how the scientific process you’re probably familiar with is encompassed by the diagram above: Observations – Hypotheses – Experiment – Data collection – Hypothesis testing – Communicating conclusions.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;The diagram above is inspired by Berkeley’s <a href="https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/">“Understanding Science 101”</a></p></div></div><div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Scientific process in the broad sense
+A proliferation of workflows
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A natural question to ask is: “What is the mechanism which could generate all these processes?” You’ve probably seen the scientific method roughly described as: Observations - Hypotheses - Experiment - Data collection - Hypothesis Testing - Conclusions.</p>
-<p>I don’t think this is sufficient for us, nor that we can force other methodologies onto this template. We need a few adaptations to our field and a different structural-functional organization. The <a href="https://undsci.berkeley.edu/understanding-science-101/how-science-works/the-real-process-of-science/">diagram</a> from Berkeley’s “Understanding Science 101” is a big step in the right direction.</p>
+<p>In data mining, machine learning, and analytics, you might encounter <a href="https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining">CRISP-DM</a> (cross-industry process for data mining), <a href="https://medium.com/@shawn.chumbar/kdd-process-in-data-science-a-beginners-guide-426d1f0fc062">KDD</a> (knowledge discovery in databases), J. Tuckey’s <a href="https://www.huber.embl.de/msmb/00-chap.html">EDA</a> (exploratory data analysis), A. Fleischhacker’s <a href="https://www.causact.com/becoming-a-data-driven-business-analyst">BAW</a> (business analyst’s workflow), H. Wickham’s <a href="https://r4ds.hadley.nz/intro.html">tidyverse workflow</a>, and C. Kozyrkov’s <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 steps to AI</a>.</p>
+<p>They are heavily focused on pattern recognition, finding inspiration and hypotheses from data (sometimes, in an model-driven way), and building predictive models. Despite their diferences, they all point to the same idea.</p>
+<p>In statistical modeling and experiment design, you might know the stats 101 process for <a href="https://online.stat.psu.edu/stat500/lesson/6a/6a.2">hypothesis testing</a>. More sophisticated workflows are concerned with the whole process of modeling and study design, like C. Kozyrkov’s <a href="https://www.youtube.com/watch?v=R4ckbZCgmxQ">12 steps of statistics</a>, A. Gelman’s <a href="https://arxiv.org/abs/2011.01808">Bayesian Workflow</a>, R. Alexander’s <a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html">telling stories with data</a>, and R. McElreath’s <a href="https://www.pnas.org/doi/10.1073/pnas.2322887121">simulation-based model development</a>.</p>
+<p>All of the above attempt to iteratively develop statistical models (estimators) to answer scientific questions and to gain insight into the underlying causal processes of social science phenomena.</p>
 </div>
 </div>
+<p>Out of all these processes, I found C. Kozyrkov’s 12 steps to AI to be extremely useful in <u>predictive applications</u>, 12 steps to statistics in designing A/B tests, and R. McElreath’s process when developing statistical models to draw causal conclusions.</p>
 <section id="action-and-agent-arena" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="action-and-agent-arena">Action and Agent-Arena</h2>
 <p>In order to make the diagram more specific, let’s take the example of a firm and think of it as an agent. At this level of analysis, we don’t need to consider the full implications of a complex adaptive system. Hopefully, the firm has formulated its mission, vision, has articulated a rough strategy to overcome obstacles and has set reasonable objectives.</p>
@@ -518,8 +490,8 @@ Experiment design, causal inference, and machine learning
 </section>
 <section id="steps-of-machine-learning" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="steps-of-machine-learning">12 Steps of Machine Learning</h2>
-<p>By now, I introduced the bare minimum of motivation, formalism, and practices of Machine Learning for you to get by. However, we need a structured approach to tackle real-world problems with ML models. The methodology I like most is articulated by Cassie Kozyrkov, (ex) Chief Decision Scientist at Google. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Cassie Kozyrkov - Making friends with machine learning, <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">full course</a>. It is 6 hours which will serve you during the entire carreer</p></div></div><ul>
+<p>By now, I introduced the bare minimum of motivation, formalism, and practices of Machine Learning for you to get by. However, we need a structured approach to tackle real-world problems with ML models. The methodology I like most is articulated by Cassie Kozyrkov, (ex) Chief Decision Scientist at Google. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Cassie Kozyrkov - Making friends with machine learning, <a href="https://www.youtube.com/watch?v=1vkb7BCMQd0">full course</a>. It is 6 hours which will serve you during the entire carreer</p></div></div><ul>
 <li>Present the 12 steps with representative examples of classification and regression</li>
 <li>Is the ML project feasible? If yes, is it a good idea?</li>
 <li>Split your damn data. Cross-Validation and hyperparameters. Pitfalls</li>
@@ -559,7 +531,7 @@ Case-Study: Conversion Rate Optimization
 </div>
 </div>
 <ul>
-<li>Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Maybe we want to explore or predict?</li>
+<li>Before jumping into the hypothesis testing, we should carefully ask whether we need an experiment at all. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Maybe we want to explore or predict?</li>
 <li><a href="https://towardsdatascience.com/the-most-important-idea-in-statistics-8c18d514ad1c">Default action</a> is one of the most important ideas in statistics.</li>
 <li>What is a statistical hypothesis anyways? How does it relate to the original question?
 <ul>
@@ -569,7 +541,7 @@ Case-Study: Conversion Rate Optimization
 <li>Watch the <a href="https://youtu.be/R4ckbZCgmxQ?si=pkxQD3lG3CIo4NKf">12 steps to statistics</a> by Cassie Kozyrkov for a methodology of how to perform experiments in business settings. For a more traditional exposition, check out Poldrack’s <a href="https://statsthinking21.github.io/statsthinking21-core-site/hypothesis-testing.html">Chapter 9</a>.</li>
 <li>One of the most difficult aspects in practice is metric design, since we deal with tradeoffs so often. An useful way to think about properties of good metrics is described in <a href="https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/stedii-properties-of-a-good-metric/">this paper, STEDII</a>. Also see <a href="https://towardsdatascience.com/a-guide-for-selecting-an-appropriate-metric-for-your-a-b-test-9068cccb7fb">this example</a> discussing sensitivity, stability, and directedness.</li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Read Cassie Kozyrkov’s article to recognize when <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">“not to waste your time with statistics”</a>. You can also watch <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">this video</a>. You can also see her <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">full, short lecture</a> for Google employees.</p></div></div></section>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Read Cassie Kozyrkov’s article to recognize when <a href="https://towardsdatascience.com/whats-the-point-of-statistics-8163635da56c">“not to waste your time with statistics”</a>. You can also watch <a href="https://www.coursera.org/learn/improving-statistical-questions/lecture/uHfmn/lecture-1-2-do-you-really-want-to-test-a-hypothesis">this video</a>. You can also see her <a href="https://www.youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF">full, short lecture</a> for Google employees.</p></div></div></section>
 <section id="research-methods" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="research-methods">Research methods</h2>
 <p>Besides technical prerequisites, there is a list of concepts and ideas from research design, which can be helpful in practice, but are often not part of statistical curriculum. I highly recommend A. Zand Scholten’s introductory course on <a href="https://www.coursera.org/learn/quantitative-methods">Quantitative Methods</a>. It is worth to invest a bit of time to get familiar with the following:</p>
@@ -586,8 +558,8 @@ Case-Study: Conversion Rate Optimization
 </section>
 <section id="business-analysts-workflow" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="business-analysts-workflow">Business Analysts’ Workflow</h2>
-<p>This is a lot to take in! But there is one more thing to explore – a brilliant idea from a course by Dr.&nbsp;Adam Fleischhacker <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Adam Fleischhacker - <a href="https://www.causact.com/">Introduction to Business Analytics</a>: Intro to Bayesian Business Analytics in the R Ecosystem</p></div></div><blockquote class="blockquote">
+<p>This is a lot to take in! But there is one more thing to explore – a brilliant idea from a course by Dr.&nbsp;Adam Fleischhacker <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, which has a very similar philosophy, but is much more established and thought out, with many practical examples. Here is what he has to say in the course intro:</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Adam Fleischhacker - <a href="https://www.causact.com/">Introduction to Business Analytics</a>: Intro to Bayesian Business Analytics in the R Ecosystem</p></div></div><blockquote class="blockquote">
 <p>“You will translate real-world scenarios into both mathematical and computational representations that yield actionable insight. You will then take that insight back to the real-world to persuade stakeholders to alter and improve their real-world decisions.”</p>
 </blockquote>
 <p>Dr.&nbsp;Fleischhacker makes an illuminating distinction between the <strong>business analyst’s workflow</strong> and a machine learning workflow, and sets up the normative criteria which make it successful. In our course, his workflow falls under the discussions related to <strong>causal inference</strong>. One interesting thing to note, is the convergence in the approach of an extremely diverse set of people: Cassie Kozyrkov, Vincent Warmerdam, Adam Fleischhacker, Richard McElreath, Andrew Ng – all coming from different backgrounds and activating in different environments and domains.</p>
