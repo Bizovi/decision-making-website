@@ -91,44 +91,14 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Module II: Probability and Statistics – Modern Decision Science">
-<meta property="og:description" content="">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
 
-<body class="docked nav-fixed slimcontent">
+<body class="docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -175,21 +145,13 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#pythonr-computational-toolbox" id="toc-pythonr-computational-toolbox" class="nav-link active" data-scroll-target="#pythonr-computational-toolbox">Python/R Computational Toolbox</a></li>
-  </ul>
-</nav>
-</nav>
+  
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -198,7 +160,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-body">
+<div class="quarto-title-meta column-page">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -216,143 +178,8 @@ window.Quarto = {
 </header>
 
 
-<p>There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals. I prefer to fill in the gaps with <strong>stories</strong> and <strong>simulations</strong>, however, in some cases the mathematical formalism and abstractions can’t be avoided and actually helps understanding.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>I think that the best way to start understanding inferential statistics is Daniel Lakens’ book on “Improving your statistical inferences”, combined with another resource like Speegle’s “Probability, Statistics, and Data” for a deep-dive on technicalities.</p>
-</div></div><p>Therefore, fundamental – doesn’t mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.</p>
-<div class="column-page-inset-right">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 3%">
-<col style="width: 21%">
-<col style="width: 41%">
-<col style="width: 32%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Lecture Agenda</th>
-<th>Key Ideas</th>
-<th>Case Studies / Activities</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1*</td>
-<td>Combinatorics. Sampling &amp; Urn Models</td>
-<td>Sampling with and without replacement, multiplication rule, naive <span class="math inline">\(\mathbb{P}\)</span>, probability trees</td>
-<td>Birthday Paradox simulation, Why bootstrap works</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Probability Triple. Random Variables. What is a model?</td>
-<td>collectivity, population, sample; estimand, estimator, estimation; <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>, <span class="math inline">\(X\)</span> r.v., <span class="math inline">\(H(y | F(u), \phi(y, u))\)</span></td>
-<td>Probability vs Statistics. <span class="math inline">\(\mathcal{H}\)</span>, Process models, Statistical models, Inference</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td><strong>Stories behind distributions</strong></td>
-<td>Binomial, Poisson, Mixtures, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, F, Beta, Gamma, Exponential, NBin, HGeom</td>
-<td>couples showing up to safari, arrival times, basketball shots, hot hand</td>
-</tr>
-<tr class="even">
-<td>4*</td>
-<td>Conditioning and Bayes Rule. Likelihood Ratios</td>
-<td>Updating prior beliefs, Bayesian vs frequentist interpretation of probability. Graphical models</td>
-<td>Monty Hall, Simpsons’ Paradox, Football Spreads, Medical testing</td>
-</tr>
-<tr class="odd">
-<td>5*</td>
-<td><strong>CLT</strong> and LLNs. Convergence types. Estimator properties</td>
-<td>Never forget about sample size. Why simulation works? Limitation: rare events, fat tails, mixtures, non-iid</td>
-<td>The most dangerous equation: US schools, gold coins. Simulation</td>
-</tr>
-<tr class="even">
-<td>6*</td>
-<td>Fisher Information. <strong>Bias-Variance</strong> tradeoff</td>
-<td>Efficiency, bias, James-Stein paradox and the curse of dimensionality. Rao-Cramer. Likelihood approach</td>
-<td>Overfitting, underfitting, and mis-specification. Bootstrap, simulations</td>
-</tr>
-<tr class="odd">
-<td>7*</td>
-<td>Neyman-Pearson frequentism. Long-run action</td>
-<td>Type I, II errors, confint, p-value, PPV, effect sizes, <strong>power analysis, range predictions</strong>, <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_A\)</span></td>
-<td>How to ask better questions. Stahel’s relevance, Interval <span class="math inline">\(\mathcal{H}\)</span> testing. Default action</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Frequentist vs Likelihood vs Bayesian inference</td>
-<td>Popperian philosophical roots, practical agreements, strengths and weaknesses</td>
-<td>Discussion on practical interpretation: path of action vs devotion vs belief</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Dead Salmon Experiment. Replication Crisis</td>
-<td>multiple testing, harking, snooping, publication bias, open science, underpowered studies</td>
-<td>Examination of controversies in medicine, psychology, and social science</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><br></p>
-<section id="pythonr-computational-toolbox" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="pythonr-computational-toolbox">Python/R Computational Toolbox</h2>
-<p>In order to make the most out of the three modules, we need to be skilled (or at least competent) programmers, from the perspective of data science. It is a skill which can be developed independently – I give a few recommendations in the introduction (prerequisites section).</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>In this course I heavily rely on the principles of reproducible research, which have 3 key aspects: data, computational environment, and code.</p>
-</div></div><p>A second aspect that we need for the programming part not to slow us down and stand in the way, is to have a good, pleasant, and reliable development environment setup. Here is a starting, non-exhaustive list of tools you will need.</p>
-<p>For Windows 11+ users, I strongly recommend you use WSLII – and get familiar with the command line &amp; linux. Between R and Python, I choose technologies which make it easy to draw parallels and transition from one to another.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-For R (v4.4.2)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>RStudio as our main IDE</li>
-<li>Quarto for literate programming</li>
-<li>git &amp; github</li>
-<li>renv for managing environments</li>
-<li>database: duckdb (analytical, in-process)</li>
-<li>data wrangling: tidyverse, data.table (bigger data), arrow</li>
-<li>data visualization: ggplot, plotly</li>
-<li>interactive applications: shiny</li>
-<li>APIs: plumbr</li>
-</ul>
-<p>R has many gotchas, which is the main reason that makes the language hard. Therefore, we need to some additional concepts in R, especially functional programming and understanding the S3 object system. Tidyverse is an important ecosystem which tries to solve a lot of the issues in base R.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-For Python (v3.10.x)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>VScode as our main IDE</li>
-<li>Jupyter Notebooks or Quarto for literate programming</li>
-<li>git &amp; github</li>
-<li>uv (recommended) or conda for managing environments</li>
-<li>database: duckdb (analytical, in-process), sqlite (transactional, in-process)</li>
-<li>data wrangling: pandas 2.0, pypolars (bigger data), arrow</li>
-<li>interactive applications: streamlit, shiny, or dash</li>
-<li>APIs: fastapi</li>
-</ul>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -591,7 +418,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

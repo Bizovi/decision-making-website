@@ -94,7 +94,6 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Module III: Applied Bayesian Statistics – Modern Decision Science">
-<meta property="og:description" content="">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
 </head>
@@ -152,7 +151,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -161,7 +160,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -179,99 +178,8 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </header>
 
 
-<p>After the first two modules, we should have a solid foundation for building more realistic models. As discussed in the introduction, randomized experiments and A/B tests have obvious limitations: might be unfeasible, unethical, or just not the right tool. Even when we design experiments or surveys, we still need to model non-response, correct for biases, and account for confounds – meaning, engage in modeling.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>In my opinion, among many excellent resources, Richard McElreath’s 2023 lectures on statistical rethinking is the best way to learn the kind of modeling which fits our course and problem space.</p>
-</div></div><p>I think that the best way to study regression and generalized linear models is to think very carefully about the causal processes underlying the phenomenon we’re studying. The big advantage of switching to a Bayesian perspective and GLMs, is that we treat all models under an unified framework. This means, we can focus on science and much less on the mathematical intricacies of advanced econometrics.</p>
-<div class="column-page-inset-right">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 3%">
-<col style="width: 21%">
-<col style="width: 41%">
-<col style="width: 32%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Lecture Agenda</th>
-<th>Keywords</th>
-<th>Case Studies / Activities</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Introduction to Bayesian Statistics</td>
-<td>Estimating proportions with Beta-Binomial, counts with Gamma-Poisson, defining priors</td>
-<td>Elections, Football Goals, Speed of Light</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Regression and the Bayesian Workflow</td>
-<td>DAGs of influence, categorical variables, assumptions, nonlinearities, splines, simulation</td>
-<td>E2E example on Howell’s study on height and weight. Summarizing estimands</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Confounds. Good and Bad controls</td>
-<td>Deep-dive on translating DAGs into statistical models. Adjustment set, backdoor criterion</td>
-<td>E2E example of Waffle houses and divorce rates. Spurious correlations</td>
-</tr>
-<tr class="even">
-<td>~</td>
-<td>Overfitting and Validation</td>
-<td>Prior and posterior checks, LOO-CV, LOO-PIT, regularization, robust regression, simulation-based calibration</td>
-<td>TBD</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>Multiple Groups and Hierarchical Models</td>
-<td>Complete pooling, No pooling, Partial pooling. Post-stratification and non-representative samples</td>
-<td>Radon concentration, Starbucks wait times, Customer LTV, Elections polls</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>Binomial GLMs</td>
-<td>Link functions, Simpson’s paradox</td>
-<td>1973 Berkeley admissions</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>Poisson GLMs</td>
-<td>Overdispersion, zero-inflated, Negative Binomial</td>
-<td>Campus Crime, Student absence</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>Hierarchical GLMs</td>
-<td>Deep-dive into model formulation. Studies on stage anxiety and plumonary fibrosis.</td>
-<td>Basketball Fouls, AirBnb reviews, Seat Belts</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>Longitudinal Data</td>
-<td>Challenges of multilevel time series</td>
-<td>Teenage drinking, sleep study</td>
-</tr>
-<tr class="even">
-<td>~</td>
-<td>Special topics</td>
-<td>BART and Gaussian Processes</td>
-<td>TBD</td>
-</tr>
-<tr class="odd">
-<td>~</td>
-<td>Special topics</td>
-<td>Missing data and measurement error</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
 
 
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -510,7 +418,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/course\.economic-cybernetics\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
