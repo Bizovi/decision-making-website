@@ -1,6 +1,6 @@
 ---
-title: "AI, ML, Cybernetics"
-subtitle: "Clarifying the loaded terms"
+title: "What approach to take?"
+subtitle: "Analytics, Statistical Modeling, Machine Learning"
 author:
   - name: Mihai Bizovi
     id: mb
@@ -12,289 +12,222 @@ format:
 lang: en
 ---
 
+In decision science, we have a lot of quantitative tools at our disposal, but we should have the wisdom to know which one is appropriate for each applied problem. Of course, it's foolish to use machine learning when all we need is a controlled experiment or a statistical model which quantifies a causal effect. The converse is also true, you probably won't use a linear regression to do demand forecasting at scale.
 
+This might sound obvious, however, a surprisingly large number of people fall into the pitfall of misusing ML, or trying to do hypothesis testing when what's needed is to find inspiration and come up with hypotheses. Even if you could use some ideas from LLMs (large language models) for time series forecasting, it's often a bad idea.^[[This](https://arxiv.org/html/2406.16964v1) is just one of the recent review papers which benchemarked these kind of models and found that they're no better than well-established approaches]
 
-::: {.callout-tip}
-## Here are some answers from students
+![*Source: xkcd;* That's it, in a nutshell -- this cartoon will save you lots of headache ](img/ds-adventure.png "Analysis"){width="90%"}
 
-- In order to **allocate resources** to the stuff which generates growth and profit. Avoid being scattered around (which I would call bad strategy), resulting in costs over targets and inefficiency.
-- In short, we attempt to allocate resources and efforts **efficiently**.
-- We can view **information as a competitive advantage**, anticipating and predicting so that we can plan and prepare, outperform competitors.
-:::
-
-When we talk about uncertainty, it's important to recognize its sources: [^uncertainty-sources] one coming from incomplete information, that we always work with samples in one way or another. For example, even if at a certain point in time we might have real-time data, everything evolves and quickly becomes outdated. Everything is in a state of flux and change. Even in the current state, we don't know for sure where we stand -- sometimes, in economics, this problem is called `nowcasting`. When talking about the future, making a good prediction is one of the most difficult things. 
-
-For example, who would've predicted the pandemic and all its implications on the supply chain and society? It's important to note the difference between this kind of **black swan events** and the irreducible, fundamental uncertainty, which can't be captured by any explanatory factors.
-
-In a happy case, we can quantify and reduce it by conditioning the model, that is, joint distribution of random variables with a given structure, on data. That would result in inferences and evidence with respect to our hypothesis and model of the world.[^generalization] At the very least we can try to quantify how uncertain are we. 
-
-So, we still have to make decisions. Those have to have a level of **robustness** and resilience to shocks, in the face of uncertainty. I would go even further, to suggest that we should **aim for antifragility**, meaning, the system improves after a shock or negative event, but that is very hard to implement and operationalize, therefore, it falls outside the scope of this course -- to the realm of systems' design. 
-
-
-[^uncertainty-sources]: We will talk more formally about sources of uncertainty in the next lecture, while reviewing the [fundamentals of statistics](stat_foundations.qmd#sources-of-uncertainty).
-
-[^generalization]: We want to say something intelligent about the population, technically, to generalize. However, there is ambiguity, as objectives and the meaning/semantics of data fields are not always mathematically clear or without conflict. 
+This is not a debate which tools are better, as the question makes no sense -- each model has its purpose. Moreover, a statistical model can be used to make predictions, and machine learning methods are heavily used in analytics. For example, statistical models like GLMMs, used without a strong justification from causal inference, quantify only associations -- which will result implicitly in doing "analytics".^[Be careful, as lots of research carefully claims only associations, but then treats the conclusions as causal, resulting in policy-making recommendations] 
 
 ::: {.callout-warning}
-## When you don't need AI and Statistics
+## When you don't need Statistics and ML
 
-As a though experiment, imagine we have an equation or program, with well-defined rules, which perfectly predicts the price on stock markets, or perfectly predicts how many items will a client buy and how she will respond if we change the price (an intervention). We won't need machine learning, causal inference, or AI there.
+As a though experiment, imagine we have an equation or program with well-defined rules, which perfectly predicts the price of stock markets, or how many items will a client buy and how she will respond if we change the price (an intervention). We won't need machine learning or causal inference.
 
-Of course, we don't have that kind of program. It's only somewhat true in cases when we have a well-tested theory, which stood the test of time and went through the scientific process to become the best theory with respect to all others. For example newtonian physics, relativity, quantum mechanics, evolution. 
+Of course, we don't have that kind of program. It's only somewhat true in cases when we have a well-tested theory, which stood the test of time and went through the scientific process to become the best theory with respect to all others. For example, Newtonian physics, relativity, quantum mechanics, and evolution. 
+
+Another good example is accounting, where we have well defined rules (GAAP) for revenue recognition. There is no wiggle-room for ML or stats.
 :::
 
-However, when we talk about human behavior, we should resist the temptation and arrogance to say that we have a well-defined theory, be it normative or positive. Our preferences change, and we can "decide" in which direction they change or persist. 
-
-Regardless of the business we work at or own, the place in the value chain, we'll have to deal with human behavior: customers, employees, decision-makers, engineers. We need other kind of tools to infer perceptible regularities and patterns in their behavior. We will be forced in one way or another to learn from data and observation.
+Now, you will be much more careful when people ask you "Can we use AI for that?" Remember, that our starting point is the problem and we choose the appropriate tool, not the other way around.
 
 
+## Analytics and data mining
 
+In analytics, the main goal is formulating better research questions and hypotheses, to get [inspiration]{.underline}, find interesting, relevant patterns and relationships in massive datasets. These hypotheses might very well come from experience, observation, domain expertise, qualitative research, or even anecdotal evidence. However, in modern businesses they increasingly come from automated data mining methods and model-driven exploration.^[First, it's more efficient in very unclear situations and second, we can find patterns we couldn't think of apriori]
 
+You should be suspicious, as those hypotheses might not be true and the relationships spurious -- they have to be tested in the context of a study or experiment! The mere fact of statistical significance shouldn't tell you anything at this point, as there are too many potential ways in which our model might not be valid.
 
-<!-- Data Science Context, in Business, Interdisciplinarity --->
-[^pragmatic-ai-gcp]: M. Bizovi - [Pragmatic AI in Google Cloud Platform](https://www.youtube.com/watch?v=02NPR_nDaxQ)
-[^jordan-ai]: K. Pretz - [Stop Calling Everything AI](https://spectrum-ieee-org.cdn.ampproject.org/c/s/spectrum.ieee.org/amp/stop-calling-everything-ai-machinelearning-pioneer-says-2652904044), Machine-Learning Pioneer Says 
-[^jordan-revolution]:  M. Jordan - [Artificial  Intelligence](https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9): The Revolution Hasn’t Happened Yet
-
-[^cassie-ai-def]: C. Kozyrkov - [AI is decision-making at scale](https://www.youtube.com/watch?v=bCjMhZZYlP4)
-
-
-
-
-# Analytics, ML or Statistics?
-
-At this point, you should have a pretty good idea why data science is important, what are some possible applications and domains, what does it do and is concerned about. It is the motivation, real-world use-cases, and conceptual understanding that I promised at the beginning of the course.
-
-Disentangling the ambiguity around AI was one of the most difficult aspects of the course to articulate. Now, it's time to transition to a lower level of analysis (inside data science, not outside it), break down the landscape into manageable chunks and develop our toolbox, in which we learn how to formulate problems well and match them with existing models, methods, and technologies.
-
-One of the first tools I want to introduce, is distinguishing three ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:
-
-* **Analytics and Data Mining**, where the main goal is formulating better research questions and hypotheses, that is, get **inspiration**, find interesting and relevant patterns and relationships in massive datasets
-* **Machine Learning**, as a way to use training algorithms to go automatically from experience (data) to expertise (a program or recipe for prediction). Put in other words, learning from data, finding invariants, patterns which generalize beyond our sample and training data.
-* **Causal Inference** [^caus-stats] for making decisions with high stakes, where we have to understand the causal processes of the system in order to intervene optimally. It enables greater transparency, reliability, and rigor in the inferences and conclusions drawn.
-
-[^caus-stats]: I find that statistics is not the right term here, as it is too broad, especially recently when the lines between ML and Stats are getting more blurry, as one adopts methods from other. 
-
-![*Source: xkcd;* Which one to choose and when? We will have some unlearning to do here, as much of the previous courses were in one way or another focused on analytics. Even in statistics or econometrics, there is little from the field of causality, which is necessary to apply it to real-world challenges. On the other hand, you applied ML methods, but in my opinion, without understanding what ML is, without a rigorous process which would ensure we don't overfit or snoop the data, without a clear plan of how to deploy it to production and make decisions based on those predictions.](img/ds-adventure.png "Analysis"){width="90%"}
+Even when you monitor the current state of the business and its performance in a dashboard, which are supposed to be hard facts (given a correct data collection and processing pipeline) -- you don't know yet the reasons and causes of it.^[Reporting these "hard facts" is important, but almost immediately any business person will ask you "Why" and "What should we do about it?"] The same problem appears when we do a survey, if we don't take into account how data came to be (the reasons for non-response and why our sample is different from population). Therefore, even [a good description requires causal and statistical thinking]{.underline}.
 
 ::: {.callout-important}
 ## The art of formulating a hypothesis
 
-In many intro to statistics or science courses, we take for granted the hypothesis, it is often our starting point. How does one come up with a business or scientific hypothesis with makes sense, is reasonable, plausible, deserves serious consideration? Since there are an infinity of possible ones, how do we pick the most relevant?
+In many introductory statistics courses, we take the hypothesis for granted, it's often our starting point. Even worse, the standard textbooks often fail to differentiate between a business / scientific question, a process model, and a statistical hypothesis. They coincide only in the most trivial cases.
 
-I argue, it is an art which requires a kind of **intuition**, **sensibility**, and **attunement** to the problem. In my opinion, it is the most underrated aspect of scientific enquiry and process: a good problem formulation often gets us halfway towards a solution.
+There is a combinatorially explosive number of hypotheses we could investigate, so 
+how do we come up with one that is relevant to the outcomes, makes sense, is reasonable, plausible, deserves serious consideration?
 
-In this course we focus on data mining and analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of the behavior, coupled with a deep understanding of the field, existing theories and their shortcomings and inconsistencies. Often, these hypotheses follow as a consequence from the theory itself.
+I argue it is an art which requires experience and knowledge in a domain, an intuition, sensibility, and attunement to the problem. In my opinion, it is the most underrated aspect of scientific enquiry and process.
+
+In this course we focus on data mining and analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of behavior, coupled with a deep understanding of the field, existing theories, their shortcomings and inconsistencies.^[Often, these predictions and hypotheses follow from the theory itself] 
 :::
 
-If we don't have to make decisions and want to find interesting patterns in data, to inform our future questions, we have lots of methods for exploratory data analysis -- from visualization (manual) to clustering (automated) and model-driven exploration. Sometimes, we just want to monitor and display the facts and current state of a business on a dashboard -- this is why your previous class was on BI (Business Intelligence).
-
-Then, in the decision-making processs, these questions and hypotheses can be communicated to statisticians and decision-makers, so that they have a clearer direction and more promising candidates to experiment with. This doesn't mean that what we found the causal process which makes some clients more profitable than others, when we notice a difference between groups or clusters of clients.
+Now, being aware of the potential pitfalls, we can use these insights to select the most promising candidate hypotheses and questions to investigate further. This is one aspect in which an analyst is extremely important, as we can't afford to test most ideas, nor do we have the time for it. Inspiration is not only useful with respect to questions, but for what features to include in our machine learning models (proxies for the strongest drivers of an outcome).
 
 
-If we do have to make a few, high-stakes, strategic decisions of major importance to business outcomes and user experience, that means we need some rigorous statistics. For example, how to price the products, whether to enter a new market, what products to develop, how to allocate advertisement spending across different platforms, whether to deploy a new recommender system. We will discuss at length what can go wrong in drawing conclusions from data alone (with analytics or ML), and how that can backfire spectacularly.
+## Statistical modeling
+
+If we have to make a few, high-stakes decisions under uncertainty which have major consequences on business outcomes and user experience, we probably need to do some rigorous statistics. For example, how to price products, to enter a new market or not, what products to develop, how to allocate advertisement spending across different platforms, whether to deploy a new recommender system.
+
+This is an appropriate moment to remember and review the three challenges in statistics, 12 steps when we apply it to a research question, and the array of methodological issues we have to worry about.
+
+We have to decide whether we need to do a randomized controlled trial, a quasi-experiment, or we're limited to working with observational data, surveys, and self-reports. In contrast with analytics, where we engage in pattern mining, and with machine learning, where we want reliable out-of-sample predictions -- in statistics, we need to think very carefully about the causal processes and the assumptions we're making. Only then we have a chance to give trustworthy recommendations on how to intervene in a system.^[Thus, when I say "statistics", I mean statistical modeling informed by the causal processes and methodological aspects like measurement, samplig, validity, and reliability]
+
+Since we deal with human behavior in the value chain of a firm, be it customers, employees, decision-makers, engineers -- we need to be aware of the multiple subtle threats to the validity of our study. This means lots of planning and preparation. Moreover, we need to put in a tremendous amount of effort to criticize and validate our model so we can trust its conclusions.
+
+Perhaps, the most common mistake is when people use a predictive, machine learning approach for developing policies and interventions. More exactly, they train a machine learning model on past data and then try out different inputs for the decision variables and pick the ones which maximize an objective. This assumes that the system remains the same, therefore that the learned probabilistic relationship between inputs $X$ and target $y$ is unchanged under an intervention.^[Perhaps, the clearest explanation of this phenomenon can be found in M. Faucre's book "Causal inference for the brave and true", in the chapter ["When prediction fails"]()]
 
 
-If we have to make lots of decisions at scale and high frequency, for example -- doing demand forecasting and inventory optimization for 100k product SKUs, it cannot be done manually or with carefully designed experiments. In this case, an appropriate choice would be to learn from data and get predictions as reliable as possible. Keep in mind, that we will have to be very careful when defining what the model is optimizing for -- it has to be aligned with business objectives.
+## Machine learning
 
-Why ML, since we put so much emphasis onto scientific rigor and trying to infer the causal processes? Sometimes -- you don't have a theory. For example, in recommender systems it's just too complicated, with so many heterogenous users and items, each with their specific preferences and idiosyncracies.
+If we have to make lots of decisions at scale to optimize a process, for example, demand planning and inventory management for 100k product SKUs, it cannot be done manually or with carefully designed experiments. In this case, an appropriate choice would be to learn from data.
 
-
-
-::: {.callout-tip}
-## Why not use all at various stages of a project?
-
-It is not a debate of which one is better: ML vs Stats vs Analytics. One has to cycle through these approaches, gain greater understanding, experience, and skill in order to use the appropriate tools in the right context. 
-
-I recommend the following 4-part presentation [^cassie-mfml] by Cassie Kozyrkov, so that you get a good idea of how AI fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium.
-:::
-
-Pay close attention to the process of developing data-driven products [^cassie-steps] and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians, and data engineers. A good blueprint [^pair] for thinking about how to define and plan an AI project is given by Google's PAIR (People and AI Research group). We will discuss all of this in detail during our next lectures and case studies.
+Notice how inventory optimization is a downstream task to the demand forecasting, therefore we're ok with robust and reliable predictions from a black-box model. A big advantage is if we can also accuratey quantify the uncertainty in those predictions. We still have to be very careful in designing the objective the model is optimizing for,^[A hard problem in machine learning is to make sure the model performance metrics, and maybe loss function is aligned to business objectives. Your colleagues do not care about RMSE and cross-entropy] what features do we include in the model, and whether they're drivers or reliable predictors of the demand. 
 
 
-::: {.callout-important}
+Why machine learning then, since we put so much emphasis on scientific rigor and trying to infer the causal processes? Sometimes, you just don't have a theory or process model. For example, in recommender systems it's just too complicated, with so many heterogenous users and items, each with their specific preferences and idiosyncracies. Then, we take down our scientist lab coat, put on the engineer's hard hat, and build pragmatic solutions to decision-making at scale.
+
+Machine learning is "simply" a way to use optimization algorithms to go automatically from experience (data) to expertise (a program or recipe for prediction). In other words, models which learn from data find patterns and invariants which generalize beyond the training data.
+
+
+::: {.callout-warning}
 ## Are we in the business of ML?
 
-The next two questions are tremendously important and will prevent you from embarking on an AI project which is doomed from the start:
+The next two questions are tremendously important and will prevent you from embarking on an ML project which is doomed from the start:
 
-- Is there a value proposition for AI? In other words, is there an underlying pattern to be discovered?
-- Do I have the (necessary and relevant) data?
+- Is there an underlying pattern to be discovered?^[Think of a perfectly efficient financial market, there is no pattern to be learned. The same is true for absurd "research" which tries to predict crime propensity or sexuality based on photos.]
+- Do I have the necessary and relevant data at training / prediction time?
 
-If yes and yes, we MIGHT be in business! But we shall not forget about the pragmatic aspects: is it feasible to be done with a small team, without a huge investment? What is the simplest way we can solve it? Are we solving the right problem? Are we making the job of people in the firm easier and more efficient?
+If yes and yes, we might be in business, but we shall not forget about the pragmatic aspects: is it feasible to be done with a small team, without a huge investment? Are we solving the right problem?
 :::
 
-Make no mistake, the data science field is fascinating and full of exciting applications, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI and get humble, down to earth about what it can and can't do -- its power, but also the limitations:
+Don't get me wrong, there are lots of exciting ML applications, but it's not a silver bullet and there are numerous pitfalls one fall into. Thus, we should be aware of its power and usefulness, but also limitations. As a recent [example](https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/), W.Heaven argues that Hundreds of AI tools have been built to catch covid and none of them helped.
 
-- Just take a look at how many AI tools have been built to catch covid, and none helped [^mit-ai-covid]
-- One part of the problem is the mismatch between the real/business problem and objectives, versus what models optimize for. Vincent Warmerdam brilliantly explains it in "The profession of solving the wrong problem"[^war-wrong-problem] and "How to constrain artificial stupidity" [^war-stupidity].
+One part of the problem is the mismatch between the real world, business problem and objectives, versus what models optimize for. Vincent Warmerdam brilliantly explains it in his talks "The profession of solving the wrong problem" and "How to constrain artificial stupidity". ^[V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo) and [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)] This should remind you of the conversation about statistical golemns which we had in the course introduction.
 
 
 ::: {.callout-warning}
 ## Split your damn data! (on data snooping)
 
-Since we're engaging in the business of data mining and analytics at one point or another of the project, we have to be extra careful. Intuitively, you understand that discovering hypotheses and testing them on the same set of data is a bad idea, because we'll get an overly confident estimation of how good it is. 
+Since we're engaging in the business of data mining and analytics at one point or another of the project, we have to be extra careful. Intuitively, you understand that discovering hypotheses and testing them on the same set of data is a bad idea, because we'll get an overly confident estimation of how much evidence we have. 
 
-However, sometimes, we don't shy away from doing an exploratory data analysis, finding relevant and predictive features for our target variable by trying out a few models. Next day, we forget about this, having the conclusions crystalized in our mind, and apply a new, final model ... on the same data. Often we get away with this, but it is as bad, meaning equivalent to the first case -- we contaminated the data with our mining.
+Sometimes, we'll do exploratory data analysis, find relevant and predictive features for our target variable by trying out a few models on the whole dataset. Next day, we "forget" about this, having the conclusions crystalized in our mind, and apply a new, final model ... on the same data.^[Other times, people accidentally use some information from the test dataset when transforming their variables, e.g. by centering and using the mean on the whole dataset. Or they might use information from the future in a time-series application] 
 
-So, before we get into the nuances of model validation, selection, and experiment design, get into the habit of always splitting your data. Give that test dataset to a friend, locked under a key and don't let her give you that data, until you have your final model to be deployed and used for decisions.
+Maybe you'll be lucky and get away with this, but the data is "contaminated" with our mining. Thus, before you get into the nuances of model building, validation, and selection -- get into the habit of always splitting your data. 
+
+Give that test dataset to a friend, locked under a key and don't let them give you that data until you have your final model to be deployed and tested.
 :::
 
-Why go through all of that pain to critique our own model with such a vigor? The answer is simple -- if it passes this rigorous critique, it has greater chance of finding a real/causal pattern and generalize to examples outside our sample. 
-
-[^cassie-mfml]: C.Kozyrkov - [Making Friends with Machine Learning](https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG)
-[^cassie-ref]: C. Kozyrkov (Chief Decision Scientist | Google) - https://kozyrkov.medium.com/ 
-[^cassie-steps]: C.Kozyrkov - [12 Steps to Applied AI](https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3)
-[^pair]: People and AI Research | Google - [Guidebook](https://pair.withgoogle.com/guidebook/)
-[^mit-ai-covid]: W.Heaven - [Hundreds of AI tools have been built to catch covid. None of them helped.](https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/)
-[^war-wrong-problem]:  V. Warmerdam - [The profession of solving the wrong problem](https://www.youtube.com/watch?v=kYMfE9u-lMo)
-[^war-stupidity]: V. Warmerdam - [How to Constrain Artificial Stupidity](https://www.youtube.com/watch?v=Z8MEFI7ZJlA)
+At last, we have to go to similar lengths to validate and test our ML model as we did in statistics. You should build guardrails and sanity-checks for different scenarios in which the model might go really wrong. If it passes this rigorous critique, it has greater chance of finding a real pattern and generalize to examples outside our sample. 
 
 
-## Implicit Learning, Intuition and Bias
+## Implicit Learning, Intuition, and Bias
 
-In the last two sections of this lecture I felt it is necessary to raise two more warning tales, precisely because we will work with such a powerful machinery and attempt to tackle complex problems in our jobs and lives. 
+In the last two sections, I felt it was necessary to raise warning tales about what can go wrong in statistics and machine learning. It's precisely because we will work with such a powerful machinery and attempt to tackle complex problems in our jobs and lives. 
 
-A good metaphor for what we're doing in this course is the way people learn. In a way we're pattern recognition machines, with a powerful capacity for **implicit learning**, meaning we can't articulate or explain how we did it. For example, riding a bike, catching a baseball, speaking, reading and writing, behaving in social situations and so on. 
+A good metaphor for what we're doing in this course is the way people learn. In a sense, we're pattern recognition "machines", with a powerful capacity for [implicit learning]{.underline}. Implicit means we can't articulate or explain how we did it. For example, riding a bike, catching a baseball, speaking, reading and writing, behaving in social situations, and so on. 
 
 ::: {.callout-note}
 ## Implicit Learning of Artificial Grammars
 
-There is a famous experiment, in which researchers invented words from two languages, meaning two set of rules,[^markov-grammar] let's say between 3 and 8 characters, with appropriate vowels and so on. Total gibberish, but here we are, with two sets of words. 
+There is a famous experiment, in which researchers invented words from two fake languages, i.e. two set of rules.^[For the curious, they used a Markov Chain artificial grammar] Let's say the words have between 3 and 8 characters, with appropriate vowel patterns. So, here we are, with two sets of words ready to be shown to our subjects. 
 
-Participants saw the lists and they had to say from what "language" does a word come from. It is a good example of **experiment design** coming from cognitive science research. 
+Participants saw the lists and they had to say from what "language" does a word come from. It is a good example of experiment design coming from cognitive science research. 
+
+![*Source: [John Kihlstrom](https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm)*](img/imlicit-grammar.jpeg "Implicit learning"){width="90%"}
+
+They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either "no idea", or giving some rules. When implemented on a computer, those rules were not able to perform better than a coin flip.
 :::
 
-[^markov-grammar]: For the curious, they used a Markov Chain artificial grammar, which would be pretty straightforward to implement in R, and is a way of looking at the language which brought the first breakthroughs in NLP (natural language processing)
+In the artificial grammars experiment, those rules articulated by the people were a post-hoc justification and not how they were thinking. Even more surprising is the ability to distinguish between words which are total gibberish. This means we have a powerful capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning. 
 
-![*Source: [John Kihlstrom](https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm)*; They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either "no idea", or giving some rules, which when implemented on a computer, were not able to perform better than a coin flip.](img/imlicit-grammar.jpeg "Implicit learning"){width="90%"}
+Another hypothesis on how animals learn is the idea that some [prior knowledge]{.underline} or mechanism is necessary to kickstart the process. Those mechanisms are there due to evolution optimizing for fittedness. We might refer to them as "instincts" or "natural intuitions". The discussion about the fascinating interaction between nature and nurture is outside the scope of the point I'm trying to make right now. So, here we go with two more experiments.
 
-Following the experiment, this means that those rules articulated by the people in the experiment were NOT how they were thinking. There is something going on which can't really be articulated. This means that we have a capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning. 
 
-Another hypothesis about how animals learn is the idea that some **prior** [^prior] knowledge or mechanism -- which is there due to evolution optimizing for fittedness, is necessary to kickstart the process. The discussion about the fascinating interaction between nature and nurture is outside the scope of the point I'm trying to make right now. So, here we go with two more experiments:
-
-[^prior]: We will go into more technical details when discussing Statistical Learning and ML models, of why is it the case that biasing a learning process with prior information is essential to successful learning.
 
 ::: {.callout-note}
 ## Bait Shyness -- Rats Learning to Avoid Poisonous Baits
 
 When rats stumble upon food with new smell or look, they first eat very small amounts. If they got sick, that novel food is likely to be associated with illness, and in the future the rat will avoid it. Quoting Dr. Shai-Ben David: 
 
-> Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future. [^lrn-data]
+*"Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future."* ^[Shai Ben-David - [Understanding Machine Learning, 2014](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf). This book is difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML ]
 :::
 
-[^lrn-data]: Shai-Ben David - [Understanding Machine Learning, 2014](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf)
-
-The bait shyness is an example of learning, not just rote memorization. More exactly of a basic inductive reasoning, or in a more statistical language, of generalization from a sample. But we intuitively know, that when generalizing a pattern, regularity is sometimes error prone: we pick up on noise, spurious correlations instead of signal, we're fooled by randomness. 
+The bait shyness is an example of learning, not just rote memorization. More precisely, a basic form of inductive reasoning, or in a more statistical language -- generalization from a sample. However, we do know intuitively that generalization is prone to error, as we might pick up on noise and spurious correlation instead of signal -- we can get fooled by randomness and mistake it for a real pattern.
 
 
 ::: {.callout-note}
 ## B.F. Skinner: Pigeon Superstition
 
-In an experiment, B.F. Skinner put a bunch of hungry pigeons in a cage and gave them food at random intervals via an automated mechanism. They were doing something when the food was first delivered, like turning around or pecking -- which reinforced that behavior. 
+In an experiment, B.F. Skinner put a bunch of hungry pigeons in a cage and gave them food at random intervals with an automated mechanism.[^pigeon] They were doing something when the food was first delivered, like turning around or pecking. The reward in terms of food reinforced that behavior. 
 
-Therefore, they spent more time doing that exact same thing, without regard with the chances of those actions getting them more food. That is a minimal example of superstition, a topic on which philosophers spilled so much ink. 
+Therefore, they spent more time doing that exact same thing, without regard to the chances of those actions getting them more food. This is an example of superstition, a topic on which philosophers spilled so much ink. 
 :::
 
-Shai-Ben David goes on to argue -- what stands at the foundations of Machine Learning, are carefully formulated principles which will prevent our automated learners, who don't have a common sense like us, to reach these foolish and superstitious conclusions. [^pigeon]
-
+Shai Ben-David goes on to argue -- what stands at the foundations of machine learning, are carefully formulated principles which will prevent our automated learners, who don't have a common sense like us, to reach these foolish and superstitious conclusions. 
 
 [^pigeon]: ![*Source: [skewsme](https://www.skewsme.com/behavior/)*; Here's Skinner's pigeon chambers](img/pigeon-chamber.jpeg "Implicit learning"){width="90%"}
 
 
-What is the common thread among these three stories about learining? In a nutshell, it's about cultivating the wisdom and ablility to differentiate between correlational and causal patterns.
+What is the common thread among these three stories about learining? In a nutshell, it's about the ablility to differentiate between correlational and real, causal patterns.
 
-- When all goes well we call it intelligence, intuition, a business knack. It's our pattern recognition picking up on some real, causal regularities. It's the common sense working as it is supposed to.
-- When learning goes awry, it's a bias and in worst cases -- bigoted prejudice.
-- I am not a fan of how behavioral economics treats biases, [^bias-econ] but here are a few so prevalent and harmful outside their intended evolutionary purpose, that we have to mention them: confirmation bias, recency, selection, various discounting biases.
-- We attribute a causal explanation to a phenomena when it's not. For example, size of the wedding to a long-lasting marriage, extroversion and attractiveness with competence, how religious are people vs years of life. 
-- There are numerous examples, and I don't have to repeat that correlation doesn't imply causation, due to common causes, hidden variables, mediators, reverse causes and confounders.  
+- When all goes well we call it intelligence, intuition, a business knack. It's our pattern recognition picking up on some real, causal regularities. It's the common sense working as it is supposed
+- When learning goes awry, we call it a (cognitive) bias. In worst cases, it can become a bigoted prejudice. We might attribute a causal explanation to a phenomena when it's not. ^[For example, size of the wedding / long-lasting marriage, extraversion and attractiveness / competence, how religious people are / their ethical behavior]
+- You know very well that correlation doesn't imply causation, due to multiple of threats to validity, including but not limited to: confounders, mediators, colliders, and reverse causalities  
 
-[^bias-econ]: The reasons come from cutting-edge Cognitive Science research, which challenge the normative position of economic rationality. Moreover, they challenge the economic orthodoxy when it comes to rationality -- it is a much more complex beast than a maximisation of expected utility. 
+So, what can we do as individuals and professionals? I think one way to get wiser is to cultivate a kind of **active open-mindedness**, which tries to scan for those biases and bring them into our awareness, such that we can correct our beliefs, behavior, and decisions. Another thing we can do is to update our beliefs in the face of new evidence, keeping a scout mindset, trying to see clearly, instead of getting too attached and invested in our beliefs and positions.
 
 
-So, what can we do as individuals and professionals? I think one way to get wiser is to cultivate a kind of **active open-mindedness**, which tries to scan for those biases and bring them into our awareness, such that we can correct our beliefs, behavior and decisions. Another thing we can do is to update our beliefs often, in the face of new evidence, keeping a **scout mindset**, trying to see clearly, instead of getting too attached and invested in our beliefs and positions.
+::: {.callout-note}
+## 99 biases, but Bayes ain't one
 
-I think we're extremely lucky to be in a field like data science, where we can use formal tools from probability, causal inference, machine learning, optimization, combined with large amounts of data and domain expertise -- in order to practice that kind of a mindset. However, let's keep in mind how easy researchers are getting fooled, not only by randomness, and that we'll never be immune to misjudgement.
+There are a few biases so prevalent and harmful outside their intended evolutionary purpose, that we have to mention them: confirmation bias, recency bias, selection bias, various discounting biases, and survivorship bias.
+
+However, I'm not a big fan of how [behavioral economics]{.underline} treats biases. First, if you take the axiomatic economic rationality of expectation maximization to be the normative standard -- of course you'll view any deviation as a bias. It makes no scientific sense to have lists of hundred of biases. At the very least we need a hierarchy, a structural-functional organization of them. Also we need to know their causes!
+
+The best theory we got, in my opinion, comes from [4E Cognitive Science research]{.underline}. First, it challenges the normative position of economic rationality in real-world complexity, ambiguity, and our limited computational resources. Second, it gives us insight into why are we prone to foolishness. 
+:::
+
+I think we're extremely lucky to be in a field like decision science, where we can use formal tools from probability, causal inference, machine learning, optimization, combined with large amounts of data and domain expertise -- in order to practice that kind of a mindset. However, let's keep in mind that researchers are not immune to getting fooled.^[I think we're as vunerable as the next person, especially when it comes to decisions outside of our profession]
+
+> “And with no false modesty my intuition is no better. But I have learned to solve these problems by cold, hard, ruthless application of conditional probability. There’s no need to be clever when you can be ruthless.” -- Richard McElreath, Statistical Rethinking
 
 ::: {.callout-important}
 ## The double edged sword of our intelligence
 
 The same machinery which makes us intelligent general problem solvers and extraordinarily adaptable, makes us prone, vulnerable to bullshit and self-deceptive, self-destructive behavior. 
-
-It is the same, in a more techincal sense, with overfitting ML models and drawing wrong inferences. In business settings, I believe that firms will realize and appreciate that a `decison scientist` has this exact role -- to help others rationally pursue their goals and strategy.
 :::
+
+By analogy, but in a more technical sense, think of overfitting ML models and drawing wrong inferences. In business settings, I believe that firms will realize and appreciate that a decison scientist has this exact role -- to help others rationally pursue their goals and strategy.
 
 
 ## Calling Bullshit in the age of Big Data
 
-You probably noticed that I used the word bullshit a few times in this lecture. It is not a pejorative, but a technical/formal term introduced by Harry Frankfurt in his essay "on Bullshit". In romanian, the closest equivalent would be *"vrăjeală"*, a kind of sophistry.
+You probably noticed that I used or implied the word bullshit a few times before. It is not a pejorative, but a formal term introduced by Harry Frankfurt in his essay "on Bullshit". In romanian, the closest equivalent would be *"vrăjeală"*, a kind of sophistry.
 
-::: {.callout-important}
+::: {.callout-note}
 ## The critical difference between Lie and Bullshit
 
-A liar functions on respect for the truth, as he inverts parts of a partially true story to convince you of a different conclusion. It is interesting that we can't really lie to ouselfs, we kind of know it's a lie -- so we do the other, we distract our attention away from it.
+A liar functions with respect for the truth, as he inverts parts of a true story to convince you of a different conclusion. It is interesting that we can't really lie to ouselfs, we kind of always know it's a lie. Thus, we distract our attention away from it with salient, but irrelevant stuff and justifications.
 
-In Bullshit, you try to convince someone of something without regard for the truth. You distract their attention, drown them in irrelevant, but supersalient stuff.
+In Bullshit, you try to convince someone of something without regard for the truth. You distract their attention, drown them in irrelevant, but appealing (supersalient) stuff. This is how advertisement works.
 :::
 
 
-In our age, BS is much more sophisticated than the "good old" advertisement trying to manipulate you to buy something. I can't recommend enough that you watch the lectures by Carl T. Bergstrom and Javin West,[^call-bs] where they explain at length numerous ways we're being convinced by bullshit arguments, but which are quantitative and have lots of jargon and pretty charts in them. 
+In our times, BS is much more sophisticated than the "good old" advertisement trying to manipulate you into buying something. I can't recommend enough that you watch the lectures by Carl T. Bergstrom and Javin West,[^call-bs] where they explain at length numerous ways we're being convinced by bullshit arguments, but which are quantitative, have lots of jargon and pretty charts in them. These lectures are short, fun, informative, and useful for developing the critical thinking necessary when assesing the quality of evidence or reasoning.
 
-The kind of intimidating jargon comes from finance people, economists, when explaining why interest rates were risen, what happened in 2007-2008 great financial crisis. My "favorite" is cryptocurrency-related sophistry and some particular CEOs expertly making things more ambiguous, mysterious, and complicated with their corporate claptrap.
-
-These lectures are short, fun, informative and useful for developing the critical thinking necessary when assesing the quality of the evidence or reasoning which led to a particular conclusion. I will try to incorporate here and there some examples from their course, where it fits naturally with our use-cases and theoretical topics, especially in [causality](https://www.callingbullshit.org/syllabus.html#Causality).
-
+This kind of intimidating jargon comes from finance people, economists, when explaining why interest rates were risen, what happened in 2007-2008 great financial crisis. My "favorite" is cryptocurrency-related sophistry and some particular CEOs expertly making things more ambiguous, mysterious, and complicated with their corporate claptrap.
 
 [^call-bs]: Carl T. Bergstrom and Javin West - [Calling Bullshit: The art of Skepticism in a Data-Driven World](https://www.callingbullshit.org/index.html)
 
-
-There are tempting arguments which boil down to this: due to ever increasing volumes and richness of data, together with computing power and innovations in AI -- it will lead to the **end of theory**. I couldn't disagree more!
+The last argument I want to address in this chapter is the following: *"Due to ever increasing volumes and richness of data, together with computing power and innovations in AI -- it will lead to the [end of theory]{.underline}"*.^[Meaning, you will feed the machines all the data and it will figure out the theories and causal processes by itself, given the right feedback mechanisms] I couldn't disagree more, both from a philosophical, statistical, and cognitive science perspective.
 
 ::: {.callout-warning}
 ## Small Data problems in Big Data
 
-In huge datasets of clients and web events, there are lots of observations and many features/attributes being collected, which theoretically should be excellent for a powerful ML model.
+In huge datasets of customer behavior and web events, there are lots of observations and many features / attributes being collected, which theoretically should be excellent for a powerful ML model.
 
-However, at the level of each observation, when we go to a very granular aggregation level, the information can be extremely sparse, with high cardinality, inconsistent (all data quality issues). For example, in an e-commerce, for a customer, you might have no information about their purchases, and just a few basic facts about their website navigation.
+However, when we go to a very granular aggregation level, the information can be extremely sparse, with high cardinality, ambiguous and inconsistent (all data quality issues). For example, in an e-commerce, you might have no information about a user's purchases, just a few basic facts about their website navigation in the current session.^[From an engineering standpoint, I recommend you watch this talk ["Big Data is Dead"](https://www.youtube.com/watch?v=lisIQ9ohU8g) by the creator of DuckDB.]
 
-So, you have the cold start problem, data missing not at random, censoring/survival challenges, selection biases. The data at the lowest level becomes discrete, noisy, heteroskedastic. You know the saying: garbage in garbage out.
-
-Even in ML when there is a big, clean and rich dataset, we can't escape theory (which is our understanding of the world), in one way or anover. For example, in demand forecasting, we need to provide the model relevant data, factors which are related, plausibly influencing that demand: like weather, holidays, promotions, competition, and so on. 
-
-We can't just pour all this data into a ML model and expect the best. It isn't clear that feeding irrelevant data doesn't break or bias our model, such that it picks up on noise and **spurious correlation**, especially in very powerful DL models. That definitely doesn't help with better decisions. From an engineering standpoint, I recommend you watch this talk ["Big Data is Dead"](https://www.youtube.com/watch?v=lisIQ9ohU8g) by the creator of DuckDB.
+Thus, you have deal with the cold start problem, data missing not at random, censoring and survival, selection biases. The data becomes discrete, noisy, heteroskedastic. You know the saying when it comes to machine learning -- garbage in garbage out, and no one proved this wrong yet.
 :::
 
-
-In conclusion, there is no magic to AI, no silver bullet: more data and better models are often necessary, but not sufficient to improve outcomes. We have to ask the right questions. We have to set objectives aligned with business strategy. We have to frame and formulate a problem well, understanding it in its context. We have to collect relevant data, clean it, understand the processes of missingness. If we let AI decide who enters into a quarantine during the pandemic, what it would optimize for? It's just a machinery combining statistics and optimization.
-
-Therefore, critical thinking becomes that much more important when we have these powerful quantitative tools at out fingerprints. A part of a data scientist's job is to constrain artificial stupidity (more exactly, foolishness, because it does perfectly fine what you instructed it to do) and making sure we're solving the right problem (sounds trivial, but ofter we solve the wrong problem, without being aware of it). 
+You can guess the second part of my rebuttal, which reduces to the fact that the [causes are not in data]{.underline}. Even when there is a big, clean, and rich dataset, we can't escape theory, which is our understanding of the world works and how data came to be. Implicitly or explicitly, we're making an assumption somewhere: what data to include in the model and what is our desired objective.
 
 
+For example, in demand forecasting, we need to provide the model relevant data about factors and drivers plausibly influencing demand: like weather, holidays, promotions, competition, and so on. First, we can't collect "all the data" and by including irrelevant stuff we risk picking up on noise and spurious correlations. 
 
-## Learning, Intuition, and Bias. What is ML? 
-
-At this point you will have a better grasp of the business environment, the processes involved in decision-making and had exposure to multiple contexts via case-studies. The newsvendor problem exposed the fact that we need additional skills and understanding of statistical modeling, machine learning and analytics. Read [chapter five](learning.qmd).
-
-I start the introduction to machine learning in an unorthodox way, from a **cognitive science perspective**. The reason is: because we gain additional insights into decision-making. But don't worry, top courses like Shai Ben-David's "Understanding Machine Learning" [^lrn-data] and Yaser Abu-Mostafa's "Learning from data" [^yaser] start with similar motivations. 
-
-[^lrn-data]: Shai-Ben David - [Understanding Machine Learning, 2014](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf). Read chapter 1 and 2 for the intuition. The following ones are difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML. 
-
-[^yaser]: [Learning from data](https://work.caltech.edu/telecourse) is still a great foundational course a decade later. The teaching in the recorded lectures is exceptional
-
-- Implicit learning, intuition, and bias. Bait shyness and pigeon superstition
-- The double edged sword of our intelligence. Bounded rationality
-- Calling bullshit in the age of Big Data. Small data problems in Big Data
-- Intelligence, Rationality, Wisdom, and Foolishness
-- The learning problem and empirical risk minimization
-- The surprising consequences of Bias-Variance tradeoff
-
-::: {.callout-note}
-## Case-Study: ML workflow Demonstration
-
-We can pick a (seemingly) simpler use-case like housing prices prediction, credit default risk assessment, churn prediction, demand forecasting, or recommender systems -- and show how training and prediction look like in code.
-
-I will show that there is much more nuance behind the scenes than what kaggle datasets show, and that often the problem framing makes ML look deceptively simple.
-
-:::
-
+In conclusion, AI is not a silver bullet, nor there is any magic to it. More high-quality data and better models are often necessary, but not sufficient to improve outcomes. We have to ask the right questions, frame and formulate a problem well, set objectives aligned with business strategy. If we let AI decide who enters quarantine during the pandemic, what would it optimize for and what unexpected side-effects can those decisions lead to?^[Remember, we can't take everything into account, as this problem is combinatorially explosive and computationally unfeasible.] Therefore, a part of a decision scientist's job is to constrain artificial stupidity. More precisely, foolishness, because it does perfectly fine what you instructed it to do. 
 

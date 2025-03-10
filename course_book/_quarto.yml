@@ -41,8 +41,8 @@ website:
           href: business_context.qmd
         - text: "iv. On scientific process"
           href: sci_process.qmd
-        # - text: "v. AI, ML, Cybernetics"
-        #   href: 01_fundamentals/ai_ml_cybernetics.qmd
+        - text: "v. Analytics, Stats, ML"
+          href: 01_fundamentals/ai_ml_cybernetics.qmd
       - text: "-----"
       - section: "Study guides"
         contents:
