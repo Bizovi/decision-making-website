@@ -2,8 +2,8 @@
 format:
   html:
     toc-location: left
-title: Fundamentals of probability and statistics
-subtitle: A study guide through simulation
+title: Probability and statistics
+subtitle: A study guide through simulation (WIP)
 author:
   - name: Mihai Bizovi
     id: mb
@@ -12,123 +12,12 @@ author:
 ---
 
 
-
-In the introduction and first module (business school for data scientists), I tried to convince you that data science and AI in businesses is about quantitative questions, decision-making, and improving outcomes. By walking through many use-cases in different domains, we saw how widespread are its applications and how valuable a data scientist could be to a firm.
-
-
-Previous readings should give you enough motivation, context, and background to decide if you want to follow the proposed path. If the answer is yes, the question becomes how to actually do it^[As a reminder: ask the right questions, in order to build models which bring insight into the consequences of our actions, to improve  outcomes.] and where to start. There are two key insights to remember:
-
-- Methodology, asking good questions, and problem formulation is what will make or break your project in practice 
-- The importance of mastering the fundamentals
-
-In the introduction, I highlighted two types of prerequisites, which roughly translate to hard skills and soft skills. The hard skills are linear algebra, calculus, probability theory, inferential statistics, and programming for data science. The soft skills have a big overlap with research methods, scientific thinking, and business understanding.
-
-Before explaining how to study and what are the most important concepts and skills to develop in probability and statistics, I want to tell you two important lessons from Patrick Winston's talk at MIT, "How to speak": 
-
-- The quality of your idea and solution is a function of knowledge, practice, and talent; where talent is the least important -- $f(\mathbb{K}, \mathbf{P}, T)$
-- Your success will be largely determined by your ability to speak, write, and the quality of your ideas -- $g(S, W, Q)$
-
-
-My point is that you need both: skills and understanding, soft skills and hard skills. Many mistakes in statistical modeling come from a misunderstanding of the nature of statistical inference. Other mistakes are not statistical, but a poorly formulated problem, which leads to using the wrong tool, or the right tool in an incorrect way. There is this always-present gap between the real world and mathematical abstraction.
-
-## Module 2: Probability and Statistics
-
-I think that most students will benefit from re-framing the fundamentals of probability and statistics. A lot of mistakes in practice come from a fundamental misunderstanding of the nature of statistical inference. If we view statistics as **changing our minds and actions in the face of evidence** -- the good ol' t-test will shine in a new light. It will become clear why those models and procedures were invented in the first place.
-
-::: {.column-margin}
-Another benefit of revising these fundamentals is that we can develop an appreciation for the stories and ideas behind these methods. Also, it can be fun.
-:::
-
-We start with combinatorics and urn models, probability trees, distributions, conditioning, laws of large numbers, central limit theorem, Bayes' rule. For each one of these topics, I present the story, use-case, and [hands-on simulations]{.underline} to show that even very simple tools can be useful.
-
-Perhaps the most important lecture is also very abstract, where I formally define what is probability, a random variable, what is the key difference between probability and statistics. Understanding what is collectivity, statistical population, sample; estimands, estimators, estimates; and formally, what is a statistical model -- will give you the right terminology and set you on a good path towards more advanced models.
-
-The module culminates in practical aspects of experiment design and A/B testing, sample size justification, **power analysis**, and a conversation about the causes and remedies to the replication crisis. After all this effort put into the study of fundamentals, you can go with ease and confidence into Bayesian Statistics, Machine Learning, and Causal Inference.
-
-::: {.column-margin}
-When discussing hypothesis testing, it is very important to recognize that most statistical tests can be framed as linear models.
-:::
-
-::: {.callout-note}
-## The art of formulating a hypothesis
-
-In statistics' classes, the problem is usually completely framed and students focus on computation / interpretation. Experiment design in practice is tricky and more complicated than it looks in introductory hypothesis testing. We will use Cassie Kozyrkov's 12 steps of statistics to make sure that we don't forget some important aspect or potential pitfall. 
-:::
-
-
-My preferred sequence is to go in parallel with the "business school" and statistics, since there is a great synergy. The prior focuses on the problem space and processes of analytics, ML, statistics. I also recommend in case of a very short and intensive course to study  bayesian generalized linear models before the experiment design topics. 
-
-
-
-### Full-Stack Data Apps
-
-I mentioned before that a key prerequisite is competence in Python/R, SQL, data wrangling, EDA, visualization, and literate programming. There are many wonderful resources to learn and practice these skills. During the labs we'll build from the ground up a tech stack for reproducible data analysis, model and data pipelines.
-
-
-If you got to this point and want to continue, you will probably move onto Machine Learning and Causal Inference. There is, however, one huge problem when it comes to bringing added value in businesses -- [operationalizing models]{.underline}. 
-
-I have been speaking at conferences about this topic for 6 years: from data, MLOps, product management, and organizational perspectives -- and it's still very relevant. Of course, the way we operationalize a model and build a system depends on the use-case and many factors -- however, the most general case to me is via a "Full Stack Data-Driven App" (with user interface, backend, database; data, training, and serving pipelines).
-
-
-
-::: {.callout-tip}
-## Build an impressive project for your portfolio
-
-A full-stack data-driven app is your final project and something you can brag about in your portfolio and github profile. It sounds complicated, but we have the tools and frameworks to make it easy for us. This will force you to think about the user need and how your software product solves their problem.
-
-Don't worry about getting everything perfect, but focus on a problem and single area from the course you're passionate about: it could be statistical modeling, ML pipelines, or even frontend development and data visualization. 
-
-:::
-
-
-
-## Prerequisites
-
-The way you study probability and statistics will depend on your background. In terms of prerequisites, you need an exposure to linear algebra, calculus or mathematical analysis, and inferential statistics (hypothesis testing and linear regression).
-
-In this module, I make little use of linear algebra or calculus, as it is an applied, not proof-based or theoretical course. However, if you never had those courses, it will be very difficult to understand the meaning behind mathematical notation and abstractions. If you never had a statistics class on hypothesis testing and linear regression, you won't know the pain. Jokes aside, it means you will need to use another resource provided in section iv, in parallel with this module.
-
-You might be at a point in your studies, usually [second year of bachelor's degree]{.underline}, when you don't know how to code in Python or R yet, and have a probability & mathematical statistics class. Maybe you have another one on applied regression and econometrics as well. This is a perfect moment to study the module fully,^[for example, in a simulation or scientific computing class] in order to:
-
-- Learn programming for data analysis in R or Python, including data wrangling, visualization, and reproducible research
-- Apply theoretical concepts and models to real-world stories and case-studies. This will highlight why is that theory relevant, useful, and why was it invented in the first place
-- Understand how and why the theory works by doing lots of simulations. Find out under what conditions it fails. In the section ["simulation of economic processes"](/sim/1_intro.qmd), I explain multiple ways in which simulation and numerical methods are used in practice.
-
-If you already had the classes mentioned above, you might be in third, 4th year, masters' degree, or finished your formal studies. It's likely you know how to solve problems and get stuff done in R or Python. Then, I recommend you go through this module in an accelerated way,^[for example, using some parts of the module as a review in the context of a data science or econometrics' class] both in terms of theory and coding. You might ask, why not skip it entirely and focus on statistical modeling?
-
-- First, it's a good review and warm-up with fun and realistic case-studies. We all get rusty when not practicing for a while
-- A much more important reason is the re-contextualization of the fundamentals and getting rid of misconceptions, bad habits, and questionable statistical practices
-- I think that statistics is so tricky, that it's almost guaranteed we misunderstood something the first time we studied it
-
-::: {.callout-tip}
-## "I haven't used Poisson outside that probability class"
-
-If you empathise with this statement, you're either aware that it's important and wonder why it didn't come up in practice or believe it was a tedious academic exercise. The point is not about Poisson distribution, but about the statistical theory in general.
-
-First, let me assure you that it is helpful in practical applications. The problem with the teaching is two-fold: the lack of stories / use-cases to motivate the theory and a lack of models besides linear regression, simple statistical tests, and ML models like gradient boosting and random forests.
-
-Poisson distribution and process can be a good choice to model counts of **events per unit of time**, space, with a large number of "trials", each with a small probability of success.
-
-$$
-P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
-$$
-
-- Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.
-- Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.
-- Forecasting slow-moving items in a retail store, e.g. for clothing. We'll investigate the **newsvendor problem** in excruciating detail, where we have to purchase the inventories ahead of time.
-- A famous example is of L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. *("Law of small numbers")*.
-- Number of asthma or kindey cancer related deaths per US county (examples in Gelman BDA3 recommended in Module 3)
-
-Just before you get all excited about these applications, keep in mind that every distribution has a story behind it, and a set of assumptions that have to be met.
-:::
-
-## Roadmap and the big picture
-
-The module is build around stories and case-studies highlighting key concepts from probability theory, mathematical statistics, and applied regression modeling. We start from the very beginning, with counting and combinatorics, ending up with more sophisticated statistical models. 
+The way we study the fundamentals of probability theory and mathematical statistics is build around stories and case-studies, highlighting the practical relevance of key theoretical ideas.
 
 There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, optimization algorithms. 
 
-Note that some case studies belong to and interact with other modules.^[This is a good thing, as our field is interdisciplinary. Moreover, if we strip the statistics out of context, we end up with a dry and abstract exposition] For example, in newsvendor problem and Wikipedia A/B test, we have to approach the problem from the perspective of businesses making decisions and carefully consider a few methodological aspects. There are a few simple Bayesian models, for inferring proportions and rates; elements of causal thinking and experiment design; and a gentle introduction to generalized linear models.
+<details>
+<summary>The flowchart</summary>
 
 ::: {.column-page-inset-right}
 ```{mermaid}
@@ -154,6 +43,7 @@ flowchart TD
 ```
 
 :::
+</details>
 
 These topics and case-studies are designed for a whole semester of intensive study. My promise is that by the end of it, you will become a more confident programmer and will have a very solid foundation for advanced statistical modeling, causal inference, and machine learning.
 
@@ -167,7 +57,7 @@ Time, attention, and energy are the only constraints you should keep in mind whi
 :::
 
 
-## Learning how to learn
+### Learning how to learn
 
 Consider the first lecture as a warm-up, where you have a chance to set-up your development environment and get into the flow of studying. I start with combinatorics, because there are several important concepts you might've missed or forgot, which have practical implications and pop up throughout the course.
 
@@ -177,11 +67,6 @@ At last, I want to highlight that even these simplest tools, known for centuries
 
 
 I think we have a problem in the teaching of mathematics to high-schoolers and undergraduates, where by applications is meant a numerical or toy example. Those are not applications! In the best case, they're stories and drills. Don't get me wrong, drills are important and we can't always do only what we like, but at worst, they're tedious, useless stuff assigned as homework which kills any passion.
-
-
-It might sound obvious, but we practice in a very specific way -- with your reference book(s), code editor, and pen / paper at all times. Learn actively, by doing and problem solving, by testing yourself, by trying to come up with your own examples. We cannot afford to rush when studying mathematics and computer science. 
-
-> Read, pause, think, pause, write, pause, (perhaps erase), pause, read, pause, (perhaps go back), pause, write, ... - A. Turing, 1936
 
 
 ## Combinatorics and sampling
@@ -590,4 +475,104 @@ There are a ton of books and courses on statistics which basically do/teach the 
 - Crump - [Answering questions with data](https://www.crumplab.com/statistics/) is a well written, but traditional introductory statistics book for psychology students 
 - Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) focuses on multidimensional methods and discrete data
 - Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) is perhaps the most complete from this list
-- Rohan - [Telling Stories with data](https://tellingstorieswithdata.com/) has excellent chapters on modeling workflow and writing researchc
+- Rohan - [Telling Stories with data](https://tellingstorieswithdata.com/) has excellent chapters on modeling workflow and writing research
+
+
+
+There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals. I prefer to fill in the gaps with **stories** and **simulations**, however, in some cases the mathematical formalism and abstractions can't be avoided and actually helps understanding.
+
+
+::: {.column-margin}
+
+I think that the best way to start understanding inferential statistics is Daniel Lakens' book on "Improving your statistical inferences", combined with another resource like Speegle's "Probability, Statistics, and Data" for a deep-dive on technicalities.
+
+:::
+
+Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.
+
+
+::: {.column-page-inset-right}
+
+|   | Lecture Agenda  | Key Ideas  | Case Studies / Activities |
+|---|------------------|----------------------------------|---------------------------|
+| 1* | Combinatorics. Sampling & Urn Models | Sampling with and without replacement, multiplication rule, naive $\mathbb{P}$, probability trees | Birthday Paradox simulation, Why bootstrap works |
+| 2 | Probability Triple. Random Variables. What is a model? | collectivity, population, sample; estimand, estimator, estimation; $(\Omega, \mathcal{F}, \mathbb{P})$, $X$ r.v., $H(y | F(u), \phi(y, u))$| Probability vs Statistics. $\mathcal{H}$, Process models, Statistical models, Inference |
+| 3 | **Stories behind distributions** | Binomial, Poisson, Mixtures, $N(\mu, \sigma)$, $\chi^2_k$, $t_k$, F, Beta, Gamma, Exponential, NBin, HGeom | couples showing up to safari, arrival times, basketball shots, hot hand |
+| 4* | Conditioning and Bayes Rule. Likelihood Ratios | Updating prior beliefs, Bayesian vs frequentist interpretation of probability. Graphical models | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
+| 5* | **CLT** and LLNs. Convergence types. Estimator properties | Never forget about sample size. Why simulation works? Limitation: rare events, fat tails, mixtures, non-iid | The most dangerous equation: US schools, gold coins. Simulation |
+| 6* | Fisher Information. **Bias-Variance** tradeoff | Efficiency, bias, James-Stein paradox and the curse of dimensionality. Rao-Cramer. Likelihood approach | Overfitting, underfitting, and mis-specification. Bootstrap, simulations |
+| 7* | Neyman-Pearson frequentism. Long-run action | Type I, II errors, confint, p-value, PPV, effect sizes, **power analysis, range predictions**, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance, Interval $\mathcal{H}$ testing. Default action  |
+| 8 | Frequentist vs Likelihood vs Bayesian inference | Popperian philosophical roots, practical agreements, strengths and weaknesses | Discussion on practical interpretation: path of action vs devotion vs belief  |
+| 9 | Dead Salmon Experiment. Replication Crisis | multiple testing, harking, snooping, publication bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science  |
+
+:::
+
+<br>
+
+## Python/R Computational Toolbox
+
+In order to make the most out of the three modules, we need to be skilled (or at least competent) programmers, from the perspective of data science. It is a skill which can be developed independently -- I give a few recommendations in the introduction (prerequisites section).
+
+::: {.column-margin}
+
+In this course I heavily rely on the principles of reproducible research, which have 3 key aspects: data, computational environment, and code.
+
+:::
+
+A second aspect that we need for the programming part not to slow us down and stand in the way, is to have a good, pleasant, and reliable development environment setup. Here is a starting, non-exhaustive list of tools you will need. 
+
+For Windows 11+ users, I strongly recommend you use WSLII -- and get familiar with the command line & linux. Between R and Python, I choose technologies which make it easy to draw parallels and transition from one to another.
+
+::: {.callout-tip}
+## For R (v4.4.2)
+
+- RStudio as our main IDE
+- Quarto for literate programming
+- git & github
+- renv for managing environments
+- database: duckdb (analytical, in-process)
+- data wrangling: tidyverse, data.table (bigger data), arrow
+- data visualization: ggplot, plotly
+- interactive applications: shiny
+- APIs: plumbr
+
+R has many gotchas, which is the main reason that makes the language hard. Therefore, we need to some additional concepts in R, especially functional programming and understanding the S3 object system. Tidyverse is an important ecosystem which tries to solve a lot of the issues in base R.
+:::
+
+::: {.callout-tip}
+## For Python (v3.10.x)
+
+- VScode as our main IDE
+- Jupyter Notebooks or Quarto for literate programming
+- git & github
+- uv (recommended) or conda for managing environments
+- database: duckdb (analytical, in-process), sqlite (transactional, in-process)
+- data wrangling: pandas 2.0, pypolars (bigger data), arrow
+- interactive applications: streamlit, shiny, or dash
+- APIs: fastapi
+
+:::
+
+
+
+::: {.callout-tip}
+## "I haven't used Poisson outside that probability class"
+
+If you empathise with this statement, you're either aware that it's important and wonder why it didn't come up in practice or believe it was a tedious academic exercise. The point is not about Poisson distribution, but about the statistical theory in general.
+
+First, let me assure you that it is helpful in practical applications. The problem with the teaching is two-fold: the lack of stories / use-cases to motivate the theory and a lack of models besides linear regression, simple statistical tests, and ML models like gradient boosting and random forests.
+
+Poisson distribution and process can be a good choice to model counts of **events per unit of time**, space, with a large number of "trials", each with a small probability of success.
+
+$$
+P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
+$$
+
+- Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.
+- Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.
+- Forecasting slow-moving items in a retail store, e.g. for clothing. We'll investigate the **newsvendor problem** in excruciating detail, where we have to purchase the inventories ahead of time.
+- A famous example is of L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. *("Law of small numbers")*.
+- Number of asthma or kindey cancer related deaths per US county (examples in Gelman BDA3 recommended in Module 3)
+
+Just before you get all excited about these applications, keep in mind that every distribution has a story behind it, and a set of assumptions that have to be met.
+:::

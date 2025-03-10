@@ -44,13 +44,6 @@ website:
         - text: "v. Analytics, Stats, ML"
           href: 01_fundamentals/ai_ml_cybernetics.qmd
       - text: "-----"
-      - section: "Study guides"
-        contents:
-        - href: 01_fundamentals/prob_study_guide.qmd
-          text: "1. Probability and Statistics Study Guide"
-        - href: references.qmd
-          text: "2. Bayesian Statistics Study Guide"
-      - text: "-----"
       - section: "Simulation of economic processes"
         href: sim/1_intro.qmd
         contents:
@@ -71,6 +64,11 @@ website:
         contents:
         - text: "1. Why study all of that?"
           href: 01_fundamentals/prerequisites.qmd
+        - href: 01_fundamentals/prob_study_guide.qmd
+          text: "2. Probability and Statistics Study Guide"
+        - href: references.qmd
+          text: "3. Bayesian Statistics Study Guide"
+
 
   page-navigation: true
   page-footer:
