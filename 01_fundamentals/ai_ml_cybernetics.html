@@ -8,7 +8,7 @@
 
 <meta name="author" content="Mihai Bizovi">
 
-<title>AI, ML, Cybernetics – Modern Decision Science</title>
+<title>What approach to take? – Modern Decision Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../sci_process.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -91,10 +92,39 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="AI, ML, Cybernetics – Modern Decision Science">
-<meta property="og:description" content="Clarifying the loaded terms">
+<meta property="og:title" content="What approach to take? – Modern Decision Science">
+<meta property="og:description" content="Analytics, Statistical Modeling, Machine Learning">
 <meta property="og:image" content="https://course.economic-cybernetics.com/01_fundamentals/img/ds-adventure.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
@@ -102,7 +132,7 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <meta property="og:image:width" content="782">
 </head>
 
-<body class="docked nav-fixed slimcontent">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -145,21 +175,165 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Introduction and Background</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/ai_ml_cybernetics.html">v. Analytics, Stats, ML</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction and Background</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">i. Why decision science?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../philosophy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ii. Course philosophy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../business_context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">iii. Business context</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sci_process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">iv. On scientific process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/ai_ml_cybernetics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">v. Analytics, Stats, ML</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Study guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/prob_study_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Probability and Statistics Study Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Bayesian Statistics Study Guide</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation of economic processes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/1L_bday_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1L. Birthday problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. The Probability Triple</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/2L_safari.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2L. Safari trips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/3_lln.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Three core theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/3L_CLT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3L. Most dangerous equation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_fundamentals/prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Why study all of that?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analytics-ml-or-statistics" id="toc-analytics-ml-or-statistics" class="nav-link active" data-scroll-target="#analytics-ml-or-statistics">Analytics, ML or Statistics?</a>
-  <ul class="collapse">
-  <li><a href="#implicit-learning-intuition-and-bias" id="toc-implicit-learning-intuition-and-bias" class="nav-link" data-scroll-target="#implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</a></li>
+  <li><a href="#analytics-and-data-mining" id="toc-analytics-and-data-mining" class="nav-link active" data-scroll-target="#analytics-and-data-mining">Analytics and data mining</a></li>
+  <li><a href="#statistical-modeling" id="toc-statistical-modeling" class="nav-link" data-scroll-target="#statistical-modeling">Statistical modeling</a></li>
+  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine learning</a></li>
+  <li><a href="#implicit-learning-intuition-and-bias" id="toc-implicit-learning-intuition-and-bias" class="nav-link" data-scroll-target="#implicit-learning-intuition-and-bias">Implicit Learning, Intuition, and Bias</a></li>
   <li><a href="#calling-bullshit-in-the-age-of-big-data" id="toc-calling-bullshit-in-the-age-of-big-data" class="nav-link" data-scroll-target="#calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</a></li>
-  <li><a href="#learning-intuition-and-bias.-what-is-ml" id="toc-learning-intuition-and-bias.-what-is-ml" class="nav-link" data-scroll-target="#learning-intuition-and-bias.-what-is-ml">Learning, Intuition, and Bias. What is ML?</a></li>
-  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -170,10 +344,10 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Introduction and Background</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/ai_ml_cybernetics.html">v. Analytics, Stats, ML</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI, ML, Cybernetics</h1>
-<p class="subtitle lead">Clarifying the loaded terms</p>
+<h1 class="title">What approach to take?</h1>
+<p class="subtitle lead">Analytics, Statistical Modeling, Machine Learning</p>
 </div>
 
 
@@ -196,61 +370,37 @@ gtag('config', 'G-TNKQREJHQW', { 'anonymize_ip': true});
 </header>
 
 
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Here are some answers from students
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>In order to <strong>allocate resources</strong> to the stuff which generates growth and profit. Avoid being scattered around (which I would call bad strategy), resulting in costs over targets and inefficiency.</li>
-<li>In short, we attempt to allocate resources and efforts <strong>efficiently</strong>.</li>
-<li>We can view <strong>information as a competitive advantage</strong>, anticipating and predicting so that we can plan and prepare, outperform competitors.</li>
-</ul>
-</div>
-</div>
-<p>When we talk about uncertainty, it’s important to recognize its sources: <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> one coming from incomplete information, that we always work with samples in one way or another. For example, even if at a certain point in time we might have real-time data, everything evolves and quickly becomes outdated. Everything is in a state of flux and change. Even in the current state, we don’t know for sure where we stand – sometimes, in economics, this problem is called <code>nowcasting</code>. When talking about the future, making a good prediction is one of the most difficult things.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;We will talk more formally about sources of uncertainty in the next lecture, while reviewing the <a href="../01_fundamentals/stat_foundations.html#sources-of-uncertainty">fundamentals of statistics</a>.</p></div></div><p>For example, who would’ve predicted the pandemic and all its implications on the supply chain and society? It’s important to note the difference between this kind of <strong>black swan events</strong> and the irreducible, fundamental uncertainty, which can’t be captured by any explanatory factors.</p>
-<p>In a happy case, we can quantify and reduce it by conditioning the model, that is, joint distribution of random variables with a given structure, on data. That would result in inferences and evidence with respect to our hypothesis and model of the world.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> At the very least we can try to quantify how uncertain are we.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;We want to say something intelligent about the population, technically, to generalize. However, there is ambiguity, as objectives and the meaning/semantics of data fields are not always mathematically clear or without conflict.</p></div></div><p>So, we still have to make decisions. Those have to have a level of <strong>robustness</strong> and resilience to shocks, in the face of uncertainty. I would go even further, to suggest that we should <strong>aim for antifragility</strong>, meaning, the system improves after a shock or negative event, but that is very hard to implement and operationalize, therefore, it falls outside the scope of this course – to the realm of systems’ design.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-When you don’t need AI and Statistics
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As a though experiment, imagine we have an equation or program, with well-defined rules, which perfectly predicts the price on stock markets, or perfectly predicts how many items will a client buy and how she will respond if we change the price (an intervention). We won’t need machine learning, causal inference, or AI there.</p>
-<p>Of course, we don’t have that kind of program. It’s only somewhat true in cases when we have a well-tested theory, which stood the test of time and went through the scientific process to become the best theory with respect to all others. For example newtonian physics, relativity, quantum mechanics, evolution.</p>
-</div>
-</div>
-<p>However, when we talk about human behavior, we should resist the temptation and arrogance to say that we have a well-defined theory, be it normative or positive. Our preferences change, and we can “decide” in which direction they change or persist.</p>
-<p>Regardless of the business we work at or own, the place in the value chain, we’ll have to deal with human behavior: customers, employees, decision-makers, engineers. We need other kind of tools to infer perceptible regularities and patterns in their behavior. We will be forced in one way or another to learn from data and observation.</p>
-<!-- Data Science Context, in Business, Interdisciplinarity --->
-<section id="analytics-ml-or-statistics" class="level1 page-columns page-full">
-<h1>Analytics, ML or Statistics?</h1>
-<p>At this point, you should have a pretty good idea why data science is important, what are some possible applications and domains, what does it do and is concerned about. It is the motivation, real-world use-cases, and conceptual understanding that I promised at the beginning of the course.</p>
-<p>Disentangling the ambiguity around AI was one of the most difficult aspects of the course to articulate. Now, it’s time to transition to a lower level of analysis (inside data science, not outside it), break down the landscape into manageable chunks and develop our toolbox, in which we learn how to formulate problems well and match them with existing models, methods, and technologies.</p>
-<p>One of the first tools I want to introduce, is distinguishing three ways of thinking, which have to work harmoniously together, in order for a data science project to be successful:</p>
-<ul>
-<li><strong>Analytics and Data Mining</strong>, where the main goal is formulating better research questions and hypotheses, that is, get <strong>inspiration</strong>, find interesting and relevant patterns and relationships in massive datasets</li>
-<li><strong>Machine Learning</strong>, as a way to use training algorithms to go automatically from experience (data) to expertise (a program or recipe for prediction). Put in other words, learning from data, finding invariants, patterns which generalize beyond our sample and training data.</li>
-<li><strong>Causal Inference</strong> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> for making decisions with high stakes, where we have to understand the causal processes of the system in order to intervene optimally. It enables greater transparency, reliability, and rigor in the inferences and conclusions drawn.</li>
-</ul>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;I find that statistics is not the right term here, as it is too broad, especially recently when the lines between ML and Stats are getting more blurry, as one adopts methods from other.</p></div></div><div class="quarto-figure quarto-figure-center">
+<p>In decision science, we have a lot of quantitative tools at our disposal, but we should have the wisdom to know which one is appropriate for each applied problem. Of course, it’s foolish to use machine learning when all we need is a controlled experiment or a statistical model which quantifies a causal effect. The converse is also true, you probably won’t use a linear regression to do demand forecasting at scale.</p>
+<p>This might sound obvious, however, a surprisingly large number of people fall into the pitfall of misusing ML, or trying to do hypothesis testing when what’s needed is to find inspiration and come up with hypotheses. Even if you could use some ideas from LLMs (large language models) for time series forecasting, it’s often a bad idea.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;<a href="https://arxiv.org/html/2406.16964v1">This</a> is just one of the recent review papers which benchemarked these kind of models and found that they’re no better than well-established approaches</p></div></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/ds-adventure.png" title="Analysis" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: xkcd;</em> Which one to choose and when? We will have some unlearning to do here, as much of the previous courses were in one way or another focused on analytics. Even in statistics or econometrics, there is little from the field of causality, which is necessary to apply it to real-world challenges. On the other hand, you applied ML methods, but in my opinion, without understanding what ML is, without a rigorous process which would ensure we don’t overfit or snoop the data, without a clear plan of how to deploy it to production and make decisions based on those predictions.</figcaption>
+<figcaption><em>Source: xkcd;</em> That’s it, in a nutshell – this cartoon will save you lots of headache</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>This is not a debate which tools are better, as the question makes no sense – each model has its purpose. Moreover, a statistical model can be used to make predictions, and machine learning methods are heavily used in analytics. For example, statistical models like GLMMs, used without a strong justification from causal inference, quantify only associations – which will result implicitly in doing “analytics”.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Be careful, as lots of research carefully claims only associations, but then treats the conclusions as causal, resulting in policy-making recommendations</p></div></div><div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+When you don’t need Statistics and ML
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As a though experiment, imagine we have an equation or program with well-defined rules, which perfectly predicts the price of stock markets, or how many items will a client buy and how she will respond if we change the price (an intervention). We won’t need machine learning or causal inference.</p>
+<p>Of course, we don’t have that kind of program. It’s only somewhat true in cases when we have a well-tested theory, which stood the test of time and went through the scientific process to become the best theory with respect to all others. For example, Newtonian physics, relativity, quantum mechanics, and evolution.</p>
+<p>Another good example is accounting, where we have well defined rules (GAAP) for revenue recognition. There is no wiggle-room for ML or stats.</p>
+</div>
+</div>
+<p>Now, you will be much more careful when people ask you “Can we use AI for that?” Remember, that our starting point is the problem and we choose the appropriate tool, not the other way around.</p>
+<section id="analytics-and-data-mining" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="analytics-and-data-mining">Analytics and data mining</h2>
+<p>In analytics, the main goal is formulating better research questions and hypotheses, to get <u>inspiration</u>, find interesting, relevant patterns and relationships in massive datasets. These hypotheses might very well come from experience, observation, domain expertise, qualitative research, or even anecdotal evidence. However, in modern businesses they increasingly come from automated data mining methods and model-driven exploration.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;First, it’s more efficient in very unclear situations and second, we can find patterns we couldn’t think of apriori</p></div></div><p>You should be suspicious, as those hypotheses might not be true and the relationships spurious – they have to be tested in the context of a study or experiment! The mere fact of statistical significance shouldn’t tell you anything at this point, as there are too many potential ways in which our model might not be valid.</p>
+<p>Even when you monitor the current state of the business and its performance in a dashboard, which are supposed to be hard facts (given a correct data collection and processing pipeline) – you don’t know yet the reasons and causes of it.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The same problem appears when we do a survey, if we don’t take into account how data came to be (the reasons for non-response and why our sample is different from population). Therefore, even <u>a good description requires causal and statistical thinking</u>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Reporting these “hard facts” is important, but almost immediately any business person will ask you “Why” and “What should we do about it?”</p></div></div><div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -260,32 +410,29 @@ The art of formulating a hypothesis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In many intro to statistics or science courses, we take for granted the hypothesis, it is often our starting point. How does one come up with a business or scientific hypothesis with makes sense, is reasonable, plausible, deserves serious consideration? Since there are an infinity of possible ones, how do we pick the most relevant?</p>
-<p>I argue, it is an art which requires a kind of <strong>intuition</strong>, <strong>sensibility</strong>, and <strong>attunement</strong> to the problem. In my opinion, it is the most underrated aspect of scientific enquiry and process: a good problem formulation often gets us halfway towards a solution.</p>
-<p>In this course we focus on data mining and analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of the behavior, coupled with a deep understanding of the field, existing theories and their shortcomings and inconsistencies. Often, these hypotheses follow as a consequence from the theory itself.</p>
+<p>In many introductory statistics courses, we take the hypothesis for granted, it’s often our starting point. Even worse, the standard textbooks often fail to differentiate between a business / scientific question, a process model, and a statistical hypothesis. They coincide only in the most trivial cases.</p>
+<p>There is a combinatorially explosive number of hypotheses we could investigate, so how do we come up with one that is relevant to the outcomes, makes sense, is reasonable, plausible, deserves serious consideration?</p>
+<p>I argue it is an art which requires experience and knowledge in a domain, an intuition, sensibility, and attunement to the problem. In my opinion, it is the most underrated aspect of scientific enquiry and process.</p>
+<p>In this course we focus on data mining and analytics as a way to get inspiration for good questions to ask and hypotheses to formulate. However, in anthropology or evolutionary biology, it could be done by careful observation of behavior, coupled with a deep understanding of the field, existing theories, their shortcomings and inconsistencies.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 </div>
 </div>
-<p>If we don’t have to make decisions and want to find interesting patterns in data, to inform our future questions, we have lots of methods for exploratory data analysis – from visualization (manual) to clustering (automated) and model-driven exploration. Sometimes, we just want to monitor and display the facts and current state of a business on a dashboard – this is why your previous class was on BI (Business Intelligence).</p>
-<p>Then, in the decision-making processs, these questions and hypotheses can be communicated to statisticians and decision-makers, so that they have a clearer direction and more promising candidates to experiment with. This doesn’t mean that what we found the causal process which makes some clients more profitable than others, when we notice a difference between groups or clusters of clients.</p>
-<p>If we do have to make a few, high-stakes, strategic decisions of major importance to business outcomes and user experience, that means we need some rigorous statistics. For example, how to price the products, whether to enter a new market, what products to develop, how to allocate advertisement spending across different platforms, whether to deploy a new recommender system. We will discuss at length what can go wrong in drawing conclusions from data alone (with analytics or ML), and how that can backfire spectacularly.</p>
-<p>If we have to make lots of decisions at scale and high frequency, for example – doing demand forecasting and inventory optimization for 100k product SKUs, it cannot be done manually or with carefully designed experiments. In this case, an appropriate choice would be to learn from data and get predictions as reliable as possible. Keep in mind, that we will have to be very careful when defining what the model is optimizing for – it has to be aligned with business objectives.</p>
-<p>Why ML, since we put so much emphasis onto scientific rigor and trying to infer the causal processes? Sometimes – you don’t have a theory. For example, in recommender systems it’s just too complicated, with so many heterogenous users and items, each with their specific preferences and idiosyncracies.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Why not use all at various stages of a project?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is not a debate of which one is better: ML vs Stats vs Analytics. One has to cycle through these approaches, gain greater understanding, experience, and skill in order to use the appropriate tools in the right context.</p>
-<p>I recommend the following 4-part presentation <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> by Cassie Kozyrkov, so that you get a good idea of how AI fits into organization and decision-making process. I recommend following her and, basically reading everything she has written on medium.</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;C.Kozyrkov - <a href="https://youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG">Making Friends with Machine Learning</a></p></div><div id="fn5"><p><sup>5</sup>&nbsp;C.Kozyrkov - <a href="https://medium.com/swlh/12-steps-to-applied-ai-2fdad7fdcdf3">12 Steps to Applied AI</a></p></div><div id="fn6"><p><sup>6</sup>&nbsp;People and AI Research | Google - <a href="https://pair.withgoogle.com/guidebook/">Guidebook</a></p></div></div><p>Pay close attention to the process of developing data-driven products <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and what are the prerequisites for an AI project to be successful (or doomed from the very start). It is important not to skip the relevant steps, understand the roles of people involved: from decision-makers, to statisticians, and data engineers. A good blueprint <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> for thinking about how to define and plan an AI project is given by Google’s PAIR (People and AI Research group). We will discuss all of this in detail during our next lectures and case studies.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Often, these predictions and hypotheses follow from the theory itself</p></div></div><p>Now, being aware of the potential pitfalls, we can use these insights to select the most promising candidate hypotheses and questions to investigate further. This is one aspect in which an analyst is extremely important, as we can’t afford to test most ideas, nor do we have the time for it. Inspiration is not only useful with respect to questions, but for what features to include in our machine learning models (proxies for the strongest drivers of an outcome).</p>
+</section>
+<section id="statistical-modeling" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="statistical-modeling">Statistical modeling</h2>
+<p>If we have to make a few, high-stakes decisions under uncertainty which have major consequences on business outcomes and user experience, we probably need to do some rigorous statistics. For example, how to price products, to enter a new market or not, what products to develop, how to allocate advertisement spending across different platforms, whether to deploy a new recommender system.</p>
+<p>This is an appropriate moment to remember and review the three challenges in statistics, 12 steps when we apply it to a research question, and the array of methodological issues we have to worry about.</p>
+<p>We have to decide whether we need to do a randomized controlled trial, a quasi-experiment, or we’re limited to working with observational data, surveys, and self-reports. In contrast with analytics, where we engage in pattern mining, and with machine learning, where we want reliable out-of-sample predictions – in statistics, we need to think very carefully about the causal processes and the assumptions we’re making. Only then we have a chance to give trustworthy recommendations on how to intervene in a system.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Thus, when I say “statistics”, I mean statistical modeling informed by the causal processes and methodological aspects like measurement, samplig, validity, and reliability</p></div></div><p>Since we deal with human behavior in the value chain of a firm, be it customers, employees, decision-makers, engineers – we need to be aware of the multiple subtle threats to the validity of our study. This means lots of planning and preparation. Moreover, we need to put in a tremendous amount of effort to criticize and validate our model so we can trust its conclusions.</p>
+<p>Perhaps, the most common mistake is when people use a predictive, machine learning approach for developing policies and interventions. More exactly, they train a machine learning model on past data and then try out different inputs for the decision variables and pick the ones which maximize an objective. This assumes that the system remains the same, therefore that the learned probabilistic relationship between inputs <span class="math inline">\(X\)</span> and target <span class="math inline">\(y\)</span> is unchanged under an intervention.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;Perhaps, the clearest explanation of this phenomenon can be found in M. Faucre’s book “Causal inference for the brave and true”, in the chapter <a href="">“When prediction fails”</a></p></div></div></section>
+<section id="machine-learning" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="machine-learning">Machine learning</h2>
+<p>If we have to make lots of decisions at scale to optimize a process, for example, demand planning and inventory management for 100k product SKUs, it cannot be done manually or with carefully designed experiments. In this case, an appropriate choice would be to learn from data.</p>
+<p>Notice how inventory optimization is a downstream task to the demand forecasting, therefore we’re ok with robust and reliable predictions from a black-box model. A big advantage is if we can also accuratey quantify the uncertainty in those predictions. We still have to be very careful in designing the objective the model is optimizing for,<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> what features do we include in the model, and whether they’re drivers or reliable predictors of the demand.</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;A hard problem in machine learning is to make sure the model performance metrics, and maybe loss function is aligned to business objectives. Your colleagues do not care about RMSE and cross-entropy</p></div></div><p>Why machine learning then, since we put so much emphasis on scientific rigor and trying to infer the causal processes? Sometimes, you just don’t have a theory or process model. For example, in recommender systems it’s just too complicated, with so many heterogenous users and items, each with their specific preferences and idiosyncracies. Then, we take down our scientist lab coat, put on the engineer’s hard hat, and build pragmatic solutions to decision-making at scale.</p>
+<p>Machine learning is “simply” a way to use optimization algorithms to go automatically from experience (data) to expertise (a program or recipe for prediction). In other words, models which learn from data find patterns and invariants which generalize beyond the training data.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -295,20 +442,17 @@ Are we in the business of ML?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The next two questions are tremendously important and will prevent you from embarking on an AI project which is doomed from the start:</p>
+<p>The next two questions are tremendously important and will prevent you from embarking on an ML project which is doomed from the start:</p>
 <ul>
-<li>Is there a value proposition for AI? In other words, is there an underlying pattern to be discovered?</li>
-<li>Do I have the (necessary and relevant) data?</li>
+<li>Is there an underlying pattern to be discovered?<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></li>
+<li>Do I have the necessary and relevant data at training / prediction time?</li>
 </ul>
-<p>If yes and yes, we MIGHT be in business! But we shall not forget about the pragmatic aspects: is it feasible to be done with a small team, without a huge investment? What is the simplest way we can solve it? Are we solving the right problem? Are we making the job of people in the firm easier and more efficient?</p>
+<p>If yes and yes, we might be in business, but we shall not forget about the pragmatic aspects: is it feasible to be done with a small team, without a huge investment? Are we solving the right problem?</p>
 </div>
 </div>
-<p>Make no mistake, the data science field is fascinating and full of exciting applications, but as you well know from statistics, there are numerous pitfalls we can fall into. I think it is useful to demistify AI and get humble, down to earth about what it can and can’t do – its power, but also the limitations:</p>
-<ul>
-<li>Just take a look at how many AI tools have been built to catch covid, and none helped <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
-<li>One part of the problem is the mismatch between the real/business problem and objectives, versus what models optimize for. Vincent Warmerdam brilliantly explains it in “The profession of solving the wrong problem”<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> and “How to constrain artificial stupidity” <a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</li>
-</ul>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;W.Heaven - <a href="https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/">Hundreds of AI tools have been built to catch covid. None of them helped.</a></p></div><div id="fn8"><p><sup>8</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=kYMfE9u-lMo">The profession of solving the wrong problem</a></p></div><div id="fn9"><p><sup>9</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">How to Constrain Artificial Stupidity</a></p></div></div><div class="callout callout-style-default callout-warning callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Think of a perfectly efficient financial market, there is no pattern to be learned. The same is true for absurd “research” which tries to predict crime propensity or sexuality based on photos.</p></div></div><p>Don’t get me wrong, there are lots of exciting ML applications, but it’s not a silver bullet and there are numerous pitfalls one fall into. Thus, we should be aware of its power and usefulness, but also limitations. As a recent <a href="https://www.technologyreview.com/2021/07/30/1030329/machine-learning-ai-failed-covid-hospital-diagnosis-pandemic/">example</a>, W.Heaven argues that Hundreds of AI tools have been built to catch covid and none of them helped.</p>
+<p>One part of the problem is the mismatch between the real world, business problem and objectives, versus what models optimize for. Vincent Warmerdam brilliantly explains it in his talks “The profession of solving the wrong problem” and “How to constrain artificial stupidity”. <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> This should remind you of the conversation about statistical golemns which we had in the course introduction.</p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;V. Warmerdam - <a href="https://www.youtube.com/watch?v=kYMfE9u-lMo">The profession of solving the wrong problem</a> and <a href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">How to Constrain Artificial Stupidity</a></p></div></div><div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -318,16 +462,18 @@ Split your damn data! (on data snooping)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Since we’re engaging in the business of data mining and analytics at one point or another of the project, we have to be extra careful. Intuitively, you understand that discovering hypotheses and testing them on the same set of data is a bad idea, because we’ll get an overly confident estimation of how good it is.</p>
-<p>However, sometimes, we don’t shy away from doing an exploratory data analysis, finding relevant and predictive features for our target variable by trying out a few models. Next day, we forget about this, having the conclusions crystalized in our mind, and apply a new, final model … on the same data. Often we get away with this, but it is as bad, meaning equivalent to the first case – we contaminated the data with our mining.</p>
-<p>So, before we get into the nuances of model validation, selection, and experiment design, get into the habit of always splitting your data. Give that test dataset to a friend, locked under a key and don’t let her give you that data, until you have your final model to be deployed and used for decisions.</p>
+<p>Since we’re engaging in the business of data mining and analytics at one point or another of the project, we have to be extra careful. Intuitively, you understand that discovering hypotheses and testing them on the same set of data is a bad idea, because we’ll get an overly confident estimation of how much evidence we have.</p>
+<p>Sometimes, we’ll do exploratory data analysis, find relevant and predictive features for our target variable by trying out a few models on the whole dataset. Next day, we “forget” about this, having the conclusions crystalized in our mind, and apply a new, final model … on the same data.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
+<p>Maybe you’ll be lucky and get away with this, but the data is “contaminated” with our mining. Thus, before you get into the nuances of model building, validation, and selection – get into the habit of always splitting your data.</p>
+<p>Give that test dataset to a friend, locked under a key and don’t let them give you that data until you have your final model to be deployed and tested.</p>
 </div>
 </div>
-<p>Why go through all of that pain to critique our own model with such a vigor? The answer is simple – if it passes this rigorous critique, it has greater chance of finding a real/causal pattern and generalize to examples outside our sample.</p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Other times, people accidentally use some information from the test dataset when transforming their variables, e.g.&nbsp;by centering and using the mean on the whole dataset. Or they might use information from the future in a time-series application</p></div></div><p>At last, we have to go to similar lengths to validate and test our ML model as we did in statistics. You should build guardrails and sanity-checks for different scenarios in which the model might go really wrong. If it passes this rigorous critique, it has greater chance of finding a real pattern and generalize to examples outside our sample.</p>
+</section>
 <section id="implicit-learning-intuition-and-bias" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="implicit-learning-intuition-and-bias">Implicit Learning, Intuition and Bias</h2>
-<p>In the last two sections of this lecture I felt it is necessary to raise two more warning tales, precisely because we will work with such a powerful machinery and attempt to tackle complex problems in our jobs and lives.</p>
-<p>A good metaphor for what we’re doing in this course is the way people learn. In a way we’re pattern recognition machines, with a powerful capacity for <strong>implicit learning</strong>, meaning we can’t articulate or explain how we did it. For example, riding a bike, catching a baseball, speaking, reading and writing, behaving in social situations and so on.</p>
+<h2 class="anchored" data-anchor-id="implicit-learning-intuition-and-bias">Implicit Learning, Intuition, and Bias</h2>
+<p>In the last two sections, I felt it was necessary to raise warning tales about what can go wrong in statistics and machine learning. It’s precisely because we will work with such a powerful machinery and attempt to tackle complex problems in our jobs and lives.</p>
+<p>A good metaphor for what we’re doing in this course is the way people learn. In a sense, we’re pattern recognition “machines”, with a powerful capacity for <u>implicit learning</u>. Implicit means we can’t articulate or explain how we did it. For example, riding a bike, catching a baseball, speaking, reading and writing, behaving in social situations, and so on.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -338,19 +484,20 @@ Implicit Learning of Artificial Grammars
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There is a famous experiment, in which researchers invented words from two languages, meaning two set of rules,<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> let’s say between 3 and 8 characters, with appropriate vowels and so on. Total gibberish, but here we are, with two sets of words.</p>
-<p>Participants saw the lists and they had to say from what “language” does a word come from. It is a good example of <strong>experiment design</strong> coming from cognitive science research.</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;For the curious, they used a Markov Chain artificial grammar, which would be pretty straightforward to implement in R, and is a way of looking at the language which brought the first breakthroughs in NLP (natural language processing)</p></div></div><div class="quarto-figure quarto-figure-center">
+<p>There is a famous experiment, in which researchers invented words from two fake languages, i.e.&nbsp;two set of rules.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Let’s say the words have between 3 and 8 characters, with appropriate vowel patterns. So, here we are, with two sets of words ready to be shown to our subjects.</p>
+<p>Participants saw the lists and they had to say from what “language” does a word come from. It is a good example of experiment design coming from cognitive science research.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/imlicit-grammar.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: <a href="https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm">John Kihlstrom</a></em>; They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either “no idea”, or giving some rules, which when implemented on a computer, were not able to perform better than a coin flip.</figcaption>
+<figcaption><em>Source: <a href="https://www.ocf.berkeley.edu/~jfkihlstrom/MemoryWeb/implicitlearning/ImpLearn_supp.htm">John Kihlstrom</a></em></figcaption>
 </figure>
 </div>
-<p>Following the experiment, this means that those rules articulated by the people in the experiment were NOT how they were thinking. There is something going on which can’t really be articulated. This means that we have a capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning.</p>
-<p>Another hypothesis about how animals learn is the idea that some <strong>prior</strong> <a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> knowledge or mechanism – which is there due to evolution optimizing for fittedness, is necessary to kickstart the process. The discussion about the fascinating interaction between nature and nurture is outside the scope of the point I’m trying to make right now. So, here we go with two more experiments:</p>
-<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;We will go into more technical details when discussing Statistical Learning and ML models, of why is it the case that biasing a learning process with prior information is essential to successful learning.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<p>They found that subjects differentiated them much better than chance and the results were statistically significant. During the interviews, when asked to explain how they did it, the responses were either “no idea”, or giving some rules. When implemented on a computer, those rules were not able to perform better than a coin flip.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;For the curious, they used a Markov Chain artificial grammar</p></div></div><p>In the artificial grammars experiment, those rules articulated by the people were a post-hoc justification and not how they were thinking. Even more surprising is the ability to distinguish between words which are total gibberish. This means we have a powerful capacity to find patterns and regularities in the real world, due to evolution building into us this powerful machinery of implicit learning.</p>
+<p>Another hypothesis on how animals learn is the idea that some <u>prior knowledge</u> or mechanism is necessary to kickstart the process. Those mechanisms are there due to evolution optimizing for fittedness. We might refer to them as “instincts” or “natural intuitions”. The discussion about the fascinating interaction between nature and nurture is outside the scope of the point I’m trying to make right now. So, here we go with two more experiments.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -361,12 +508,10 @@ Bait Shyness – Rats Learning to Avoid Poisonous Baits
 </div>
 <div class="callout-body-container callout-body">
 <p>When rats stumble upon food with new smell or look, they first eat very small amounts. If they got sick, that novel food is likely to be associated with illness, and in the future the rat will avoid it. Quoting Dr.&nbsp;Shai-Ben David:</p>
-<blockquote class="blockquote">
-<p>Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future. <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p>
-</blockquote>
+<p><em>“Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future.”</em> <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a>. Read chapter 1 and 2 for the intuition. The following ones are difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML.</p></div></div><p>The bait shyness is an example of learning, not just rote memorization. More exactly of a basic inductive reasoning, or in a more statistical language, of generalization from a sample. But we intuitively know, that when generalizing a pattern, regularity is sometimes error prone: we pick up on noise, spurious correlations instead of signal, we’re fooled by randomness.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;Shai Ben-David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a>. This book is difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML </p></div></div><p>The bait shyness is an example of learning, not just rote memorization. More precisely, a basic form of inductive reasoning, or in a more statistical language – generalization from a sample. However, we do know intuitively that generalization is prone to error, as we might pick up on noise and spurious correlation instead of signal – we can get fooled by randomness and mistake it for a real pattern.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -377,27 +522,43 @@ B.F. Skinner: Pigeon Superstition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In an experiment, B.F. Skinner put a bunch of hungry pigeons in a cage and gave them food at random intervals via an automated mechanism. They were doing something when the food was first delivered, like turning around or pecking – which reinforced that behavior.</p>
-<p>Therefore, they spent more time doing that exact same thing, without regard with the chances of those actions getting them more food. That is a minimal example of superstition, a topic on which philosophers spilled so much ink.</p>
+<p>In an experiment, B.F. Skinner put a bunch of hungry pigeons in a cage and gave them food at random intervals with an automated mechanism.<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> They were doing something when the food was first delivered, like turning around or pecking. The reward in terms of food reinforced that behavior.</p>
+<p>Therefore, they spent more time doing that exact same thing, without regard to the chances of those actions getting them more food. This is an example of superstition, a topic on which philosophers spilled so much ink.</p>
 </div>
 </div>
-<p>Shai-Ben David goes on to argue – what stands at the foundations of Machine Learning, are carefully formulated principles which will prevent our automated learners, who don’t have a common sense like us, to reach these foolish and superstitious conclusions. <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn13"><div class="quarto-figure quarto-figure-center"><sup>13</sup>&nbsp;
+<div class="no-row-height column-margin column-container"><div id="fn14"><div class="quarto-figure quarto-figure-center"><sup>14</sup>&nbsp;
 <figure class="figure">
 <p><img src="img/pigeon-chamber.jpeg" title="Implicit learning" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption><em>Source: <a href="https://www.skewsme.com/behavior/">skewsme</a></em>; Here’s Skinner’s pigeon chambers</figcaption>
 </figure>
 </div>
-</div></div><p>What is the common thread among these three stories about learining? In a nutshell, it’s about cultivating the wisdom and ablility to differentiate between correlational and causal patterns.</p>
+</div></div><p>Shai Ben-David goes on to argue – what stands at the foundations of machine learning, are carefully formulated principles which will prevent our automated learners, who don’t have a common sense like us, to reach these foolish and superstitious conclusions.</p>
+<p>What is the common thread among these three stories about learining? In a nutshell, it’s about the ablility to differentiate between correlational and real, causal patterns.</p>
 <ul>
-<li>When all goes well we call it intelligence, intuition, a business knack. It’s our pattern recognition picking up on some real, causal regularities. It’s the common sense working as it is supposed to.</li>
-<li>When learning goes awry, it’s a bias and in worst cases – bigoted prejudice.</li>
-<li>I am not a fan of how behavioral economics treats biases, <a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> but here are a few so prevalent and harmful outside their intended evolutionary purpose, that we have to mention them: confirmation bias, recency, selection, various discounting biases.</li>
-<li>We attribute a causal explanation to a phenomena when it’s not. For example, size of the wedding to a long-lasting marriage, extroversion and attractiveness with competence, how religious are people vs years of life.</li>
-<li>There are numerous examples, and I don’t have to repeat that correlation doesn’t imply causation, due to common causes, hidden variables, mediators, reverse causes and confounders.</li>
+<li>When all goes well we call it intelligence, intuition, a business knack. It’s our pattern recognition picking up on some real, causal regularities. It’s the common sense working as it is supposed</li>
+<li>When learning goes awry, we call it a (cognitive) bias. In worst cases, it can become a bigoted prejudice. We might attribute a causal explanation to a phenomena when it’s not. <a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></li>
+<li>You know very well that correlation doesn’t imply causation, due to multiple of threats to validity, including but not limited to: confounders, mediators, colliders, and reverse causalities</li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;The reasons come from cutting-edge Cognitive Science research, which challenge the normative position of economic rationality. Moreover, they challenge the economic orthodoxy when it comes to rationality – it is a much more complex beast than a maximisation of expected utility.</p></div></div><p>So, what can we do as individuals and professionals? I think one way to get wiser is to cultivate a kind of <strong>active open-mindedness</strong>, which tries to scan for those biases and bring them into our awareness, such that we can correct our beliefs, behavior and decisions. Another thing we can do is to update our beliefs often, in the face of new evidence, keeping a <strong>scout mindset</strong>, trying to see clearly, instead of getting too attached and invested in our beliefs and positions.</p>
-<p>I think we’re extremely lucky to be in a field like data science, where we can use formal tools from probability, causal inference, machine learning, optimization, combined with large amounts of data and domain expertise – in order to practice that kind of a mindset. However, let’s keep in mind how easy researchers are getting fooled, not only by randomness, and that we’ll never be immune to misjudgement.</p>
+<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;For example, size of the wedding / long-lasting marriage, extraversion and attractiveness / competence, how religious people are / their ethical behavior</p></div></div><p>So, what can we do as individuals and professionals? I think one way to get wiser is to cultivate a kind of <strong>active open-mindedness</strong>, which tries to scan for those biases and bring them into our awareness, such that we can correct our beliefs, behavior, and decisions. Another thing we can do is to update our beliefs in the face of new evidence, keeping a scout mindset, trying to see clearly, instead of getting too attached and invested in our beliefs and positions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+99 biases, but Bayes ain’t one
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are a few biases so prevalent and harmful outside their intended evolutionary purpose, that we have to mention them: confirmation bias, recency bias, selection bias, various discounting biases, and survivorship bias.</p>
+<p>However, I’m not a big fan of how <u>behavioral economics</u> treats biases. First, if you take the axiomatic economic rationality of expectation maximization to be the normative standard – of course you’ll view any deviation as a bias. It makes no scientific sense to have lists of hundred of biases. At the very least we need a hierarchy, a structural-functional organization of them. Also we need to know their causes!</p>
+<p>The best theory we got, in my opinion, comes from <u>4E Cognitive Science research</u>. First, it challenges the normative position of economic rationality in real-world complexity, ambiguity, and our limited computational resources. Second, it gives us insight into why are we prone to foolishness.</p>
+</div>
+</div>
+<p>I think we’re extremely lucky to be in a field like decision science, where we can use formal tools from probability, causal inference, machine learning, optimization, combined with large amounts of data and domain expertise – in order to practice that kind of a mindset. However, let’s keep in mind that researchers are not immune to getting fooled.<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;I think we’re as vunerable as the next person, especially when it comes to decisions outside of our profession</p></div></div><blockquote class="blockquote">
+<p>“And with no false modesty my intuition is no better. But I have learned to solve these problems by cold, hard, ruthless application of conditional probability. There’s no need to be clever when you can be ruthless.” – Richard McElreath, Statistical Rethinking</p>
+</blockquote>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -409,14 +570,14 @@ The double edged sword of our intelligence
 </div>
 <div class="callout-body-container callout-body">
 <p>The same machinery which makes us intelligent general problem solvers and extraordinarily adaptable, makes us prone, vulnerable to bullshit and self-deceptive, self-destructive behavior.</p>
-<p>It is the same, in a more techincal sense, with overfitting ML models and drawing wrong inferences. In business settings, I believe that firms will realize and appreciate that a <code>decison scientist</code> has this exact role – to help others rationally pursue their goals and strategy.</p>
 </div>
 </div>
+<p>By analogy, but in a more technical sense, think of overfitting ML models and drawing wrong inferences. In business settings, I believe that firms will realize and appreciate that a decison scientist has this exact role – to help others rationally pursue their goals and strategy.</p>
 </section>
 <section id="calling-bullshit-in-the-age-of-big-data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="calling-bullshit-in-the-age-of-big-data">Calling Bullshit in the age of Big Data</h2>
-<p>You probably noticed that I used the word bullshit a few times in this lecture. It is not a pejorative, but a technical/formal term introduced by Harry Frankfurt in his essay “on Bullshit”. In romanian, the closest equivalent would be <em>“vrăjeală”</em>, a kind of sophistry.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>You probably noticed that I used or implied the word bullshit a few times before. It is not a pejorative, but a formal term introduced by Harry Frankfurt in his essay “on Bullshit”. In romanian, the closest equivalent would be <em>“vrăjeală”</em>, a kind of sophistry.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -426,15 +587,14 @@ The critical difference between Lie and Bullshit
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A liar functions on respect for the truth, as he inverts parts of a partially true story to convince you of a different conclusion. It is interesting that we can’t really lie to ouselfs, we kind of know it’s a lie – so we do the other, we distract our attention away from it.</p>
-<p>In Bullshit, you try to convince someone of something without regard for the truth. You distract their attention, drown them in irrelevant, but supersalient stuff.</p>
+<p>A liar functions with respect for the truth, as he inverts parts of a true story to convince you of a different conclusion. It is interesting that we can’t really lie to ouselfs, we kind of always know it’s a lie. Thus, we distract our attention away from it with salient, but irrelevant stuff and justifications.</p>
+<p>In Bullshit, you try to convince someone of something without regard for the truth. You distract their attention, drown them in irrelevant, but appealing (supersalient) stuff. This is how advertisement works.</p>
 </div>
 </div>
-<p>In our age, BS is much more sophisticated than the “good old” advertisement trying to manipulate you to buy something. I can’t recommend enough that you watch the lectures by Carl T. Bergstrom and Javin West,<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> where they explain at length numerous ways we’re being convinced by bullshit arguments, but which are quantitative and have lots of jargon and pretty charts in them.</p>
-<div class="no-row-height column-margin column-container"><div id="fn15"><p><sup>15</sup>&nbsp;Carl T. Bergstrom and Javin West - <a href="https://www.callingbullshit.org/index.html">Calling Bullshit: The art of Skepticism in a Data-Driven World</a></p></div></div><p>The kind of intimidating jargon comes from finance people, economists, when explaining why interest rates were risen, what happened in 2007-2008 great financial crisis. My “favorite” is cryptocurrency-related sophistry and some particular CEOs expertly making things more ambiguous, mysterious, and complicated with their corporate claptrap.</p>
-<p>These lectures are short, fun, informative and useful for developing the critical thinking necessary when assesing the quality of the evidence or reasoning which led to a particular conclusion. I will try to incorporate here and there some examples from their course, where it fits naturally with our use-cases and theoretical topics, especially in <a href="https://www.callingbullshit.org/syllabus.html#Causality">causality</a>.</p>
-<p>There are tempting arguments which boil down to this: due to ever increasing volumes and richness of data, together with computing power and innovations in AI – it will lead to the <strong>end of theory</strong>. I couldn’t disagree more!</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<p>In our times, BS is much more sophisticated than the “good old” advertisement trying to manipulate you into buying something. I can’t recommend enough that you watch the lectures by Carl T. Bergstrom and Javin West,<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> where they explain at length numerous ways we’re being convinced by bullshit arguments, but which are quantitative, have lots of jargon and pretty charts in them. These lectures are short, fun, informative, and useful for developing the critical thinking necessary when assesing the quality of evidence or reasoning.</p>
+<div class="no-row-height column-margin column-container"><div id="fn17"><p><sup>17</sup>&nbsp;Carl T. Bergstrom and Javin West - <a href="https://www.callingbullshit.org/index.html">Calling Bullshit: The art of Skepticism in a Data-Driven World</a></p></div></div><p>This kind of intimidating jargon comes from finance people, economists, when explaining why interest rates were risen, what happened in 2007-2008 great financial crisis. My “favorite” is cryptocurrency-related sophistry and some particular CEOs expertly making things more ambiguous, mysterious, and complicated with their corporate claptrap.</p>
+<p>The last argument I want to address in this chapter is the following: <em>“Due to ever increasing volumes and richness of data, together with computing power and innovations in AI – it will lead to the <u>end of theory</u>”</em>.<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> I couldn’t disagree more, both from a philosophical, statistical, and cognitive science perspective.</p>
+<div class="no-row-height column-margin column-container"><div id="fn18"><p><sup>18</sup>&nbsp;Meaning, you will feed the machines all the data and it will figure out the theories and causal processes by itself, given the right feedback mechanisms</p></div></div><div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -444,46 +604,17 @@ Small Data problems in Big Data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In huge datasets of clients and web events, there are lots of observations and many features/attributes being collected, which theoretically should be excellent for a powerful ML model.</p>
-<p>However, at the level of each observation, when we go to a very granular aggregation level, the information can be extremely sparse, with high cardinality, inconsistent (all data quality issues). For example, in an e-commerce, for a customer, you might have no information about their purchases, and just a few basic facts about their website navigation.</p>
-<p>So, you have the cold start problem, data missing not at random, censoring/survival challenges, selection biases. The data at the lowest level becomes discrete, noisy, heteroskedastic. You know the saying: garbage in garbage out.</p>
-<p>Even in ML when there is a big, clean and rich dataset, we can’t escape theory (which is our understanding of the world), in one way or anover. For example, in demand forecasting, we need to provide the model relevant data, factors which are related, plausibly influencing that demand: like weather, holidays, promotions, competition, and so on.</p>
-<p>We can’t just pour all this data into a ML model and expect the best. It isn’t clear that feeding irrelevant data doesn’t break or bias our model, such that it picks up on noise and <strong>spurious correlation</strong>, especially in very powerful DL models. That definitely doesn’t help with better decisions. From an engineering standpoint, I recommend you watch this talk <a href="https://www.youtube.com/watch?v=lisIQ9ohU8g">“Big Data is Dead”</a> by the creator of DuckDB.</p>
+<p>In huge datasets of customer behavior and web events, there are lots of observations and many features / attributes being collected, which theoretically should be excellent for a powerful ML model.</p>
+<p>However, when we go to a very granular aggregation level, the information can be extremely sparse, with high cardinality, ambiguous and inconsistent (all data quality issues). For example, in an e-commerce, you might have no information about a user’s purchases, just a few basic facts about their website navigation in the current session.<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a></p>
+<p>Thus, you have deal with the cold start problem, data missing not at random, censoring and survival, selection biases. The data becomes discrete, noisy, heteroskedastic. You know the saying when it comes to machine learning – garbage in garbage out, and no one proved this wrong yet.</p>
 </div>
 </div>
-<p>In conclusion, there is no magic to AI, no silver bullet: more data and better models are often necessary, but not sufficient to improve outcomes. We have to ask the right questions. We have to set objectives aligned with business strategy. We have to frame and formulate a problem well, understanding it in its context. We have to collect relevant data, clean it, understand the processes of missingness. If we let AI decide who enters into a quarantine during the pandemic, what it would optimize for? It’s just a machinery combining statistics and optimization.</p>
-<p>Therefore, critical thinking becomes that much more important when we have these powerful quantitative tools at out fingerprints. A part of a data scientist’s job is to constrain artificial stupidity (more exactly, foolishness, because it does perfectly fine what you instructed it to do) and making sure we’re solving the right problem (sounds trivial, but ofter we solve the wrong problem, without being aware of it).</p>
-</section>
-<section id="learning-intuition-and-bias.-what-is-ml" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="learning-intuition-and-bias.-what-is-ml">Learning, Intuition, and Bias. What is ML?</h2>
-<p>At this point you will have a better grasp of the business environment, the processes involved in decision-making and had exposure to multiple contexts via case-studies. The newsvendor problem exposed the fact that we need additional skills and understanding of statistical modeling, machine learning and analytics. Read <a href="learning.qmd">chapter five</a>.</p>
-<p>I start the introduction to machine learning in an unorthodox way, from a <strong>cognitive science perspective</strong>. The reason is: because we gain additional insights into decision-making. But don’t worry, top courses like Shai Ben-David’s “Understanding Machine Learning” <a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> and Yaser Abu-Mostafa’s “Learning from data” <a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> start with similar motivations.</p>
-<div class="no-row-height column-margin column-container"><div id="fn16"><p><sup>16</sup>&nbsp;Shai-Ben David - <a href="https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf">Understanding Machine Learning, 2014</a>. Read chapter 1 and 2 for the intuition. The following ones are difficult, mathematical, but highly rewarding if you want to understand the theoretical foundations of ML.</p></div><div id="fn17"><p><sup>17</sup>&nbsp;<a href="https://work.caltech.edu/telecourse">Learning from data</a> is still a great foundational course a decade later. The teaching in the recorded lectures is exceptional</p></div></div><ul>
-<li>Implicit learning, intuition, and bias. Bait shyness and pigeon superstition</li>
-<li>The double edged sword of our intelligence. Bounded rationality</li>
-<li>Calling bullshit in the age of Big Data. Small data problems in Big Data</li>
-<li>Intelligence, Rationality, Wisdom, and Foolishness</li>
-<li>The learning problem and empirical risk minimization</li>
-<li>The surprising consequences of Bias-Variance tradeoff</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Case-Study: ML workflow Demonstration
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can pick a (seemingly) simpler use-case like housing prices prediction, credit default risk assessment, churn prediction, demand forecasting, or recommender systems – and show how training and prediction look like in code.</p>
-<p>I will show that there is much more nuance behind the scenes than what kaggle datasets show, and that often the problem framing makes ML look deceptively simple.</p>
-</div>
-</div>
+<div class="no-row-height column-margin column-container"><div id="fn19"><p><sup>19</sup>&nbsp;From an engineering standpoint, I recommend you watch this talk <a href="https://www.youtube.com/watch?v=lisIQ9ohU8g">“Big Data is Dead”</a> by the creator of DuckDB.</p></div></div><p>You can guess the second part of my rebuttal, which reduces to the fact that the <u>causes are not in data</u>. Even when there is a big, clean, and rich dataset, we can’t escape theory, which is our understanding of the world works and how data came to be. Implicitly or explicitly, we’re making an assumption somewhere: what data to include in the model and what is our desired objective.</p>
+<p>For example, in demand forecasting, we need to provide the model relevant data about factors and drivers plausibly influencing demand: like weather, holidays, promotions, competition, and so on. First, we can’t collect “all the data” and by including irrelevant stuff we risk picking up on noise and spurious correlations.</p>
+<p>In conclusion, AI is not a silver bullet, nor there is any magic to it. More high-quality data and better models are often necessary, but not sufficient to improve outcomes. We have to ask the right questions, frame and formulate a problem well, set objectives aligned with business strategy. If we let AI decide who enters quarantine during the pandemic, what would it optimize for and what unexpected side-effects can those decisions lead to?<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a> Therefore, a part of a decision scientist’s job is to constrain artificial stupidity. More precisely, foolishness, because it does perfectly fine what you instructed it to do.</p>
 
 
-</section>
-</section>
+<div class="no-row-height column-margin column-container"><div id="fn20"><p><sup>20</sup>&nbsp;Remember, we can’t take everything into account, as this problem is combinatorially explosive and computationally unfeasible.</p></div></div></section>
 
 
 </main> <!-- /main -->
@@ -1051,6 +1182,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../sci_process.html" class="pagination-link" aria-label="iv. On scientific process">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">iv. On scientific process</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
