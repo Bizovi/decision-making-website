@@ -318,6 +318,15 @@ window.Quarto = {
   <li><a href="#probability-theory" id="toc-probability-theory" class="nav-link active" data-scroll-target="#probability-theory">Probability theory</a>
   <ul class="collapse">
   <li><a href="#combinatorics-and-sampling" id="toc-combinatorics-and-sampling" class="nav-link" data-scroll-target="#combinatorics-and-sampling">Combinatorics and sampling</a></li>
+  <li><a href="#probability-triple-and-random-variables" id="toc-probability-triple-and-random-variables" class="nav-link" data-scroll-target="#probability-triple-and-random-variables">Probability Triple and Random Variables</a></li>
+  <li><a href="#binomial-distribution.-simulation" id="toc-binomial-distribution.-simulation" class="nav-link" data-scroll-target="#binomial-distribution.-simulation">Binomial distribution. Simulation</a></li>
+  <li><a href="#three-core-theorems-clt-lln-uniform" id="toc-three-core-theorems-clt-lln-uniform" class="nav-link" data-scroll-target="#three-core-theorems-clt-lln-uniform">Three core theorems: CLT, LLN, Uniform</a></li>
+  <li><a href="#newsvendor-problem.-distribution-stories" id="toc-newsvendor-problem.-distribution-stories" class="nav-link" data-scroll-target="#newsvendor-problem.-distribution-stories">Newsvendor problem. Distribution stories</a></li>
+  </ul></li>
+  <li><a href="#mathematical-statistics" id="toc-mathematical-statistics" class="nav-link" data-scroll-target="#mathematical-statistics">Mathematical statistics</a>
+  <ul class="collapse">
+  <li><a href="#properties-of-estimators" id="toc-properties-of-estimators" class="nav-link" data-scroll-target="#properties-of-estimators">Properties of estimators</a></li>
+  <li><a href="#bootstrap-and-nonparametric-statistics" id="toc-bootstrap-and-nonparametric-statistics" class="nav-link" data-scroll-target="#bootstrap-and-nonparametric-statistics">Bootstrap and Nonparametric Statistics</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -365,7 +374,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="combinatorics-and-sampling">Combinatorics and sampling</h3>
 <p>In the <a href="../sim/1L_bday_problem.html">first lab</a>, where we simulated the <u>birthday problem</u>, I mentioned the importance of knowing the stories behind core concepts in combinatorics, like <span class="math inline">\({n \choose k}\)</span> “n choose k”, factorial, falling factorial, and the multiplication rule. They translate into urn models and sampling procedures (ordered, unordered, with and without replacement).</p>
 <p>The first three lectures from SV and JB should be more than sufficient as a review of combinatorics and naive probability.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In the latter you will see how urn models were successfully applied in modeling different phenomena in physics.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Pay close attention to their story proofs and the effort they put in to get you over the fear of mathematical abstraction</p></div></div><div class="callout callout-style-default callout-caution callout-titled">
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Pay close attention to their story proofs and the effort they put in to get you over the fear of mathematical abstraction</p></div></div><div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -379,108 +388,105 @@ Rabbit hole: unordered sampling with replacement
 </div>
 </div>
 <p>I understand if your reaction at this point is: “Are you kidding me, this is just a warm-up?”. I would like to convince you that the time investment is not that big and the payoff is huge. You will encounter fun stories and applications in multiple domains, get comfortable with mathematical abstraction, and see that probability doesn’t have to be a chore or just a prerequisite you have to get over with.</p>
+</section>
+<section id="probability-triple-and-random-variables" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="probability-triple-and-random-variables">Probability Triple and Random Variables</h3>
+<p>Read the <a href="../01_fundamentals/stat_foundations.html">second lecture</a>, which is a bit abstract and theoretical, but essential for understanding probability. By understanding how the probability triple is constructed and why we need the abstraction of random variables, the rest of machinery in probability will start making much more sense.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hypotheses, Process models, Statistical models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some of the biggest debates in science, spanning across decades, causing much confusion and controversy could’ve been resolved much quicker by having this explicit distinction between Scientific Hypotheses, Process Models, and Statistical Models or estimators.</p>
+<p>I highly recommend this first <a href="https://www.youtube.com/watch?v=FdnMWdICdRs">lecture</a> by Richard McElreath, where he shows how tricky could it be to map the correspondences between these three.</p>
+</div>
+</div>
+<p>This is a good place for you to understand the distinction between collectivity (physical structure / entities), statistical population, and sampling procedures.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The second distinction is concerned with the data generating process: parameters (estimands), estimators, and estimates (statistic). Never confuse those!</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Sampling is a more nuanced topic than it looks, explained well <a href="https://openintro-ims.netlify.app/data-design.html">here</a> and <a href="https://crumplab.com/statistics/04-SamplesPopulations.html">here</a></p></div></div></section>
+<section id="binomial-distribution.-simulation" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="binomial-distribution.-simulation">Binomial distribution. Simulation</h3>
+<p>In the <a href="../sim/2L_safari.html">second lab</a>, I introduce the Bernoulli (coin flip) and Binomial distribution with a story of people booking and showing up to a safari trip. We will see how our conclusions and calculations change when people are not deciding to show up independently.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rabbit hole: the hot hand strikes again
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might’ve heard about the hot hand fallacy. We model streaks of successful shots in basketball and ask whether streaks of <span class="math inline">\(k\)</span> are surprising. Read the <a href="https://www.sciencedirect.com/science/article/abs/pii/0010028585900106">original paper</a> A. Tversky and ignore the statistical test they designed.</p>
+<p>Their insight that fans and experts in basketball overestimate the magnitude of this effect is fundamentally correct. However, what doesn’t follow from their research is that there is no effect, which is pointed out by a few Bayesian statisticians in the recent years. The debate goes on, but the limitations of the original statistical test are undeniable.</p>
+<p>This is a true rabbit hole. Right now, we have the tools to simulte what can we expect if there was no effect or a small effect, but we can’t design a statistical test yet. For that, refer to the last section in Tableau 10 of SV, A. Tversky’s original paper, and recent papers which challenge the statistical methodology and modeling approach based on which the original conclusion was reached.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;You can look at <a href="http://shiny.calpoly.sh/Hothand/hot_hand_paper_final.pdf">this article</a> by Kevin Ross for a good overview of the original permutation test and about the ongoing debate</p></div></div><p>Despite the ongoing debate about the magnitude of the effect in the hot hand phenomenon, it is undeniable that such simulations are extremely valuable – they prevent us from being fooled by randomness. Let’s look at a few more examples in which simulation can be valuable in figuring out what’s going on:</p>
+<ul>
+<li>Amateur traders might see “winning” patterns in stock markets which can be explained by a random walk. Be suspicious any time you see a “technical analysis”</li>
+<li>Policy-makers might not realize that amazing SAT performances in some schools with few students could be just due to small sample sizes</li>
+<li>In chess, some might attribute an observed pattern of ELO by gender to nonsensical explanations, when a simple simulation will show that an initial disparity in the number of players, combined with estimating a proportion in top k overall players results in similar outcomes</li>
+<li>Pollers and political scientists might underestimate the support for a political party due to differential non-response</li>
+<li>Medical research might overestimate the effectiveness of a treatment or underestimate side-effects due to drop-out and right-censoring</li>
+<li>We might think there is an association between variables, when both can be explained by a common cause, a confounder</li>
+</ul>
+</section>
+<section id="three-core-theorems-clt-lln-uniform" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="three-core-theorems-clt-lln-uniform">Three core theorems: CLT, LLN, Uniform</h3>
+<p>In the <a href="../sim/3_lln.html">third lecture</a>, I introduce the most important theorems in probability: central limit theorem, law of large numbers, and the universality of uniform. The latter two justify why simulation works and gives us an immediate practical tool for numerical integration. Moreover, we’ll get to know the 3 convergence types the theorems are referring to.</p>
+<p>In both the lecture and <a href="../sim/3L_CLT.html">lab</a>, I use simulation to show graphically how the theorems work. We also get to know the stories and use-cases behind common distributions used in statistical modeling and the relationships between them.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> The accept-reject method will serve us as an useful tool for sampling from complex distributions (including mixtures) not available out-of-the-box in R or Python.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;You will also encounter the empirical cumulative density function, which will be a very important tool in nonparametric approaches to statistics</p></div></div><p>I think that <a href="http://assets.press.princeton.edu/chapters/s8863.pdf">“The most dangerous equation”</a> is a must read for anyone, not just practicing scientists and statisticians. The example I use for simulation is about the dubious U.S. policy in 90’s of splitting big schools into smaller ones. The key theoretical idea we will encounter for the rest of our journey is sampling distribution of sample mean (or any other estimator) – and we will always have to worry about sample size, especially when comparing groups.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Calling Bullshit: Best Barbecue
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I highly recommend the case-study from Bergstrom and West about the <a href="https://www.callingbullshit.org/case_studies/case_study_barbecue.html">best barbecue in US</a>, which is a great exercise in critical and statistical thinking. This problem is prevalent in online platforms which have to rank products, posts, and comments. Moreover, they face the challenge of how to take the sample size into account. It depends on their objectives, but for inspiration, I recommend you check out the HackerNews <a href="https://vigneshwarar.substack.com/p/hackernews-ranking-algorithm-how">ranking algorithm</a>.</p>
+</div>
+</div>
+<p>Out of this lecture and lab, there are two directions we have to investigate further: <u>probability distributions</u> and properties of estimators. The latter is a topic in mathematical statistics which is relevant even for machine learning.</p>
+</section>
+<section id="newsvendor-problem.-distribution-stories" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="newsvendor-problem.-distribution-stories">Newsvendor problem. Distribution stories</h3>
+<p>You probably studied the properties of a whole range of probability distributions, but then, in statistics, encountered just a few – especially in the context of hypothesis testing. In the previous lecture we saw the motivation behind <span class="math inline">\(\chi^2_k\)</span>, <span class="math inline">\(t_k\)</span>, <span class="math inline">\(N(\mu, \sigma)\)</span>, <span class="math inline">\(F(d_1, d_2)\)</span> and the relationships between them.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. This is the reason they can be accurately described by particular probability distributions</p></div><div id="fn7"><p><sup>7</sup>&nbsp;For more details, look at more <a href="https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob">examples with simulations</a> and <a href="https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view">stories</a> / applications</p></div></div><p>We also did simulations for Beta, Gamma, Exponential, Negative Binomial and saw how mixtures are helpful in modeling various business outcomes, like customer purchasing patterns.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> These distributions will be our building blocks when developing more complicated and realistic Bayesian models.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+“I haven’t used Poisson outside that probability class”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you empathise with this statement, you’re either aware that it’s important and wonder why it didn’t come up in practice or believe it was a tedious academic exercise. The point is not about Poisson distribution, but about probability and statistics theory in general. First, let me assure you that it is helpful in practical applications.</p>
+<p>Poisson distribution and process can be a good choice to model counts of <strong>events per unit of time</strong>, space, with a large number of “trials”, each with a small probability of success.</p>
+<p><span class="math display">\[
+P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
+\]</span></p>
+<ul>
+<li>Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.</li>
+<li>Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.</li>
+<li>Forecasting slow-moving items in a retail store, e.g.&nbsp;for clothing</li>
+<li>A famous example is of L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. <em>(“Law of small numbers”)</em>. Here is the <a href="https://rpubs.com/SmilodonCub/567089">historical data</a> and a <a href="https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f">blog post</a> telling the story.</li>
+<li>Number of asthma or kindey cancer related deaths per US county (examples from Gelman’s Bayesian Data Analysis, 3rd ed., recommended in next appendix)</li>
+</ul>
+<p>Just before you get all excited about these applications, keep in mind that every distribution also has a set of assumptions that have to be met.</p>
+</div>
+</div>
+<p>Next, we’re going to simulate the newsvendor problem which I outlined in the <a href="../sim/1_intro.html">introduction</a> and use different probability distributions to represent different types of demand patterns which we might encounter in practice (slow moving, fast moving, intermittent).<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
 <!-- 
-## Binomial distribution. Probability trees. Simulation and LLN
-
-
-::: {.callout-caution}
-## Rabbit hole: the hot hand strikes again
-
-You might've heard about the hot hand fallacy. We model streaks of successful shots in basketball and ask whether streaks of $k$ are surprising. Read the original paper by Kahneman and Tversky and ignore the statistical test they designed.
-
-Their insight that fans and experts in basketball massively overestimate the magnitude of this effect is fundamentally correct. However, what doesn't follow from their research is that there is no effect, which is pointed out by a few Bayesian statisticians in the recent years. The debate goes on, but the limitations of the original statistical test are undeniable
-
-This is a true rabbit hole. Right now, we have the tools to simulte what can we expect if there was no effect or a small effect, but we can't design a statistical test yet. For that, refer to the last section in Tableau 10 of S. Venkatesh, Kahneman's original paper, and recent papers which challenge the statistical methodology and modeling approach based on which the original conclusion was reached.
-:::
-
-Despite the ongoing debate about the magnitude of the effect in the hot hand phenomenon, it is undeniable that such simulations are extremely valuable -- they prevent us from be fooled by randomness. Let's look at a few more examples:
-
-- amateur traders might see "winning" patterns in stock markets which can be explained by a random walk
-- policy-makers might not realize that amazing SAT performances in some schools with few students could be just due to small sample sizes
-- in chess, some might attribute an observed pattern of ELO by gender to nonsensical explanations, when a simple simulation will show that an initial disparity in the number of players, combined with estimating a proportion in top k overall players results in similar patters.
-- pollers might underestimate the support for a political party due to differential non-response
-- medical research might overestimate the effectiveness of a treatment due to drop-out and censoring
-- we might think there is an association between variables, when both can be explained by a common cause, a confounder
-
-
-## Probability Triple. Random Variables. Statistical Models
-
-If you understand and can explain the above ideas in a simple, yet rigorous way  -- you're ready for the journey. Otherwise, if it feels shaky[^shaky], here are some readings:
-
-- Probability Triple and Random Variables - a quasi formal introduction is written in [this chapter](https://course.economic-cybernetics.com/01_fundamentals/stat_foundations.html) of the course website. From my experience, not many students have this understanding after their probability theory classes.
-- Collectivity ("physical" structure), Statistical Population, Sample. We need to be a bit more precise in what we mean by a statistical model and a DGP. 
-    - Defining the population and sampling process is a critical step in statistics. 
-    - The population is the "contract" we're bound to when talking about inferences
-    - It is a much more nuanced topic than it looks, explained well [here](https://openintro-ims.netlify.app/data-design.html) and [here](https://crumplab.com/statistics/04-SamplesPopulations.html).
-- Parameter (Estimand), Estimator, Estimation/Statistic. Never confuse those! 
-
-
-[^shaky]: Some of you might find reviewing this insulting because it's "trivial", or useless theory, or a frustrating reminder of probability classes. Please, bear with me -- because we will eliminate a whole class of errors practitioners make by not keeping these things in mind.
-
-
-::: {.callout-important}
-## Hypotheses, Process models, Statistical models
-
-Some of the biggest debates in science, spanning across decades and causing much confusion and controversy could've been resolved much quicker by having this explicit distinction about Scientific Hypotheses, Process Models, and Statistical Models or procedures. 
-
-I highly recommend this first [lecture](https://www.youtube.com/watch?v=FdnMWdICdRs) by Richard McElreath, showing how tricky could it be to map the correspondences between these three.
-
-:::
-
-
-## Newsvendor problem. Stories behind distributions
-
-You studied the properties of a whole zoo of probability distributions, but then, in statistics, encountered just a few -- especially in the context of hypothesis testing. In Module 3 (Applied Bayesian Statistics) we will need to know the stories[^stories] behind most of them, since the goal will be to build custom models for each application. 
-
-[^stories]: There are particular physical processes and phenomena (stories, in general) which underly the patterns we observe. Often, those patterns can be accurately described by a particular probability distribution, governed by its parameters
-
-- Bernoulli, Binomial, Hypergeometric, Negative Binomial [^prob-simulations]
-- Poisson. Limiting and Conditioning. Overdispersion
-- Beta, Gamma, Exponential. Exponential Family and Information Theory
-- Statistical superstars: $\chi^2_k$,  $t_k$, $N(\mu, \sigma)$, $F(d_1, d_2)$
-- Weirdos: Mixtures, Dirichlet, Multinomial, Weibull, heavy tails
-- Remember the differences between PMF, PDF, CDF, MGF, $\mathbb{E}$, $\mathbb{V}$, $\mathbb{E}g(x)$
-
-
-[^prob-simulations]: Look at some [examples with simulations](https://mathstat.slu.edu/~speegle/_book/probchapter.html#simulationsprob) and [stories](https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view) / applications with more math from Joe Blitzstein.
-
-
-::: {.callout-note}
-## Poisson and the Prussian army
-
-Originally, Poisson distribution was used to estimate deaths by horses in the Prussian Army. Here is the [historical data](https://rpubs.com/SmilodonCub/567089) and a [blog post](https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f) telling the story.
-:::
-
-I limit the number of hands-on applications for this chapter/lecture, not only because of time constraints, but also because most use-cases come in Module 3, in the context of more realistic problems. I hope, however, that I sparked an interest about how to approach Probability, especially when we draw DAGs to tell stories.
-
-
-## The most dangerous equation. CLT
-
-Halfway in the module, we switch from Probability Theory to Mathematical Statistics. The goal is to develop the fundamentals needed for applied statistics, designing randomized experiments, and even machine learning. [^4]
-
-- We continue with the key idea of estimators and sampling distributions, review laws of large numbers and the central limit theorem. See simulations [here](https://mathstat.slu.edu/~speegle/_book/SimulationRV.html#centrallimittheorem).
-- If you're interested in the underlying theory, I go on a technical detour about convergence types: in probability, in distribution, and almost-sure
-- What does a statistician want? Review important properties of estimators.
-    - For an accessible explanation of Bias, Consistency, Efficiency -- showcased with the corresponding R code, see [openforecast](https://openforecast.org/sba/estimatesProperties.html)
-
-[^4]: Although the perspective I take in Module 3 is Bayesian, I will take time in Module 2 to cover and re-contextualize the Neyman-Pearson frequentism
-
-::: {.callout-note}
-## The most dangerous equation
-
-I think that ["The most dangerous equation"](http://assets.press.princeton.edu/chapters/s8863.pdf) is a must read for anyone, not just practicing scientists and statisticians. The example I usually do a demonstration on is about the dubious U.S. policy of splitting the bigger schools. 
-
-:::
-
-::: {.callout-note}
-## Calling Bullshit: Best Barbecue
-
-Continuing on the reddit examples, there are some amazing case-studies in the "Calling Bullshit" website and book. One of them is exactly such a ranking problem: [best barbecue in the states](https://www.callingbullshit.org/case_studies/case_study_barbecue.html). I recommend you watch the whole playlist and work through the case studies: it is fun and an essential skill -- to call out the bullshit.
-
-Online platforms which have to rank posts and comments, face the challenges of how to take the sample size into account. It depends, but for inspiration, see the hackernoon ranking algorithm.
-:::
-
-
 
 ## Conditioning and Bayes Rule
 
@@ -539,30 +545,24 @@ This is completely optional, but I highly recommend the following provocative ta
 Richard McElreath, "Bayesian inference is just counting" ([slides](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting) and [talk](https://www.youtube.com/watch?v=_NEMHM1wDfI)). The understanding you'll gain from it will make learning Bayesian statistics much easier.
 :::
 
-## Bias-Variance. Fisher Information
 
-I spend another lecture to deep-dive into estimators, because the concepts of bias-variance tradeoff and Fisher information have far-reaching consequences in a myriad of tools, applications and fields -- especially machine learning. It is also an appropriate point in time to introduce a technique which was revolutionary at its time: bootstrap.
-
-There are objections to the Bias-Variance decomposition when seen as a tradeoff, in the context of Deep Learning -- however, in the most general sense, it is a universal problem not only in statistics, but also for human cognition. For an intuitive explanation, watch [lecture 8, slides](https://work.caltech.edu/lectures.html). See how this [tradeoff needs an update](https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update) for the modern deep learning. 
-
-
-::: {.column-margin}
-
-This lecture is highly mathematical, but we will get some powerful intuitions about some fundamental tradeoffs we make in statistics, when selecting a model or estimator.
-
-:::
-
-- Bias-Variance decomposition and the curse of dimensionality
-- Fisher Information and Rao-Cramer lower bound
-- The Bootstrap scheme: motivation, applications, and limitations
-
-::: {.callout-note}
-## Bootstraping for Confidence Intervals
-
-Bias-variance can be made more relatable in code, simulations, and visualization. However, I will not leave you hanging without introducing a technique you can use for solving practical and concrete problems, namely -- bootstrap.
-
-:::
-
+ -->
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Demand forecasting and inventory optimization is a large field, and we’ll need to come back to it with more powerful statistical models</p></div></div></section>
+</section>
+<section id="mathematical-statistics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="mathematical-statistics">Mathematical statistics</h2>
+<section id="properties-of-estimators" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="properties-of-estimators">Properties of estimators</h3>
+<p>We will worry a lot about causal and methodological aspects when we’ll learn statistical modeling, but everything else being equal, there are some estimators which make better use of our data than others (if assumptions hold).</p>
+<p>For an accessible explanation of bias, consistency, efficiency, showcased with the corresponding R code, see <a href="https://openforecast.org/sba/estimatesProperties.html">Chapter 6</a> of I. Svetunkov’s “Statistics for Business Analytics”. An important idea in the likelihood approach to estimation is Fisher’s information, which is presented clearly in Chapter 4 of B. Efron’s <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">“Computer age statistical inference”</a>, along with an important result of Rao-Cramer lower bound.</p>
+<p>In modern statistics, we often have to deal with highly multidimensional parameter spaces, where unbiasedness is no longer the most important criteria for a good estimation. Therefore, knowing about the curse of dimensionality and the bias-variance tradeoff is tremendously important in applied statistics. For this topic, I recommend <a href="https://work.caltech.edu/lectures.html">Lecture 8</a> of Y. Abu-Mostafa’s “Learning from Data” course.</p>
+<p>There are objections in the context of Deep Learning to the traditional bias-variance decomposition. See how this tradeoff <a href="https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update">needs an update</a> for the modern deep learning. However, in the most general sense, it is a universal problem not only in statistics, but also for human cognition.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;When it comes to notions of rationality, it’s useful to think about the tradeoff between efficiency and resilience</p></div></div></section>
+<section id="bootstrap-and-nonparametric-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrap-and-nonparametric-statistics">Bootstrap and Nonparametric Statistics</h3>
+<p>Often, we can’t affort to make strict distributional assumptions about our data-generating process, functional relationship, or population model. This means that we sometimes resort to more flexible or robust models, but we’re out of luck with having theoretical, closed-form sampling distributions. Thus, we need computational methods for calculating the confidence intervals.</p>
+<p>Bootstrap was a revolutionary technique at the time, which enabled people to use estimators which were too hard or impossible to use before. <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">Chapter 12</a> of “Introduction to Modern Statistics, 2nd ed.” is a good introduction to it.</p>
+<!-- 
 
 ## Hypothesis testing. Neyman-Pearson
 
@@ -577,7 +577,7 @@ I start from the first principles and will let go of mechanical application of p
 - Minimal **effect size** of interest, [Cohen's](https://rpsychologist.com/cohend/) $d$
 - [Power Analysis](https://rpsychologist.com/d3/nhst/) and Sample Size justification. How surprising are significant findings under each hypothesis? Positive Predictive Value
 - p-values [simulation](https://rpsychologist.com/pvalue/), [p-curve](https://rpsychologist.com/d3/pdist/) under $H_0, H_A$. 
-- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  Also [chapter 12](https://openintro-ims.netlify.app/foundations-bootstrapping.html), uses bootstrap to estimate those. The tricky idea of "capture percent"
+- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  The tricky idea of "capture percent"
 
 
 ::: {.column-margin}
@@ -626,7 +626,6 @@ There is a zoo of different statistical tests and procedures, which might be ver
 - [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests) and the [python port](https://www.georgeho.org/tests-as-linear/) 
 - Choosing a statistical test: difference in proportions and means, test of $\sigma$, correlations
 - For a bayesian alternative to t-tests, see [Krutsche's example](https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html)
-- If you're not clear if your distributional assumptions hold, use a nonparametric test
 :::
 
 
@@ -699,28 +698,7 @@ Just think about how important this experiment was for the field of medicine -- 
 
 <br>
 
-
-::: {.callout-tip}
-## "I haven't used Poisson outside that probability class"
-
-If you empathise with this statement, you're either aware that it's important and wonder why it didn't come up in practice or believe it was a tedious academic exercise. The point is not about Poisson distribution, but about the statistical theory in general.
-
-First, let me assure you that it is helpful in practical applications. The problem with the teaching is two-fold: the lack of stories / use-cases to motivate the theory and a lack of models besides linear regression, simple statistical tests, and ML models like gradient boosting and random forests.
-
-Poisson distribution and process can be a good choice to model counts of **events per unit of time**, space, with a large number of "trials", each with a small probability of success.
-
-$$
-P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
-$$
-
-- Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.
-- Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.
-- Forecasting slow-moving items in a retail store, e.g. for clothing. We'll investigate the **newsvendor problem** in excruciating detail, where we have to purchase the inventories ahead of time.
-- A famous example is of L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. *("Law of small numbers")*.
-- Number of asthma or kindey cancer related deaths per US county (examples in Gelman BDA3 recommended in Module 3)
-
-Just before you get all excited about these applications, keep in mind that every distribution has a story behind it, and a set of assumptions that have to be met.
-::: -->
+ -->
 
 
 </section>
