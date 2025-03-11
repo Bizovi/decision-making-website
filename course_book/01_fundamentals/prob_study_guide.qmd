@@ -11,167 +11,33 @@ author:
     - "VP of Decision Science"
 ---
 
+This study guide is designed as a complementary resource to "Simulation of economic processes". It provides additional references for studying and practicing the fundamentals of probability and statistics.
 
-The way we study the fundamentals of probability theory and mathematical statistics is build around stories and case-studies, highlighting the practical relevance of key theoretical ideas.
+It's possible you didn't enjoy your statistics classes. This happened in my case, despite a passion for the field. In this journey of decision science, we have to give statistics another chance, but we dramatically change the strategy of how we learn it. We'll heavily use simulations, stories, and case-studies which highlight the practical relevance of key theoretical ideas.^[Just flip through a modern book which takes a similar approach to get a sense of how different it looks from traditional teaching.]  Speegle's [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html) and  Cetinkaya-Runde's [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) are excellent examples of this new way of teaching.
 
-There are a few purely theoretical lectures, but they are strictly necessary in order to combat common misconceptions and establish a correct, consistent terminology. The mind map below organizes the lectures into three main tracks: probability theory and simple Bayesian models, mathematical statistics and experiment design, regression modeling and estimation, sampling, optimization algorithms. 
+There is absolutely no shame in going back to a subject again with a mindset of mastering the fundamentals. For me, this exercise turned out to be one of the most valuable things I've done.
 
-<details>
-<summary>The flowchart</summary>
+## Probability theory
 
-::: {.column-page-inset-right}
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|    Lectures in pink are purely theoretical. Lectures in yellow present the most important algorithms for estimating our workhorse models. The vast majority involve coding and data analysis. The rhomboid indicates that the case-study belongs to another module.
+First, read the [introductory chapter](/sim/1_intro.qmd) in which I explain how probability fits in the larger context of decision science and how can we use simulation to learn and appreciate it better. I highly recommend these [lectures](https://www.santoshvenkatesh.com/video-lectures) by Santosh A. Venkatesh (SV) and Joseph Blitzstein's [Probability 110](https://projects.iq.harvard.edu/stat110/home) course (JB) as your main references for probability theory.
 
-flowchart TD
+### Combinatorics and sampling
 
-    U[Introduction] -- Prob & Bayes --> Comb[Birthday problem. Combinatorics] --> PTr[Safari reservations. Binomial, Prob. trees. LLN] --> RVAR[Probability triple. Random variables]  --> NEWS[/Newsvendor problem. Distribution stories/] --> B[Medical testing. Bayes and Conditioning] --> BB[/Left-handed proportion. Beta-Binomial/] --> GP[/Waiting times. Asthma. Gamma-Poisson /]
+In the [first lab](/sim/1L_bday_problem.qmd), where we simulated the [birthday problem]{.underline}, I mentioned the importance of knowing the stories behind core concepts in combinatorics, like ${n \choose k}$ "n choose k", factorial, falling factorial, and the multiplication rule. They translate into urn models and sampling procedures (ordered, unordered, with and without replacement).
 
-    U -- Math. stats --> E[Splitting U.S. Schools? Central limit theorem] --> SM[Population, sample. Estimands, estimators. ] --> PV[ P-values of many studies. Error control]  --> CI[Wikipedia A/B test. Confidence intervals] --> PC[How much data? Statistical Power. Experiment design]  --> RC[/Dead salmon experiment. Replication Crisis/] 
+ The first three lectures from SV and JB should be more than sufficient as a review of combinatorics and naive probability.^[Pay close attention to their story proofs and the effort they put in to get you over the fear of mathematical abstraction] In the latter you will see how urn models were successfully applied in modeling different phenomena in physics.
 
-    U -- Modeling. Algorithms --> EC[/Divorce rates. Three confounders/] --> BV[Bootstrap conf intervals. Out of sample error] --> MCMC[/Visiting islands. Markov Chain Monte Carlo/] --> UCLA[/Berkeley Admissions. Logistic regression/] --> OPT[/Gradient Descent. Convex optimization in GLMs/] 
-
-    style MCMC fill:#f7f5bc
-    style OPT fill:#f7f5bc
-    style BV fill:#f7f5bc
-
-    style RVAR fill:#f5cdc4 
-    style SM fill:#f5cdc4 
-```
-
-:::
-</details>
-
-These topics and case-studies are designed for a whole semester of intensive study. My promise is that by the end of it, you will become a more confident programmer and will have a very solid foundation for advanced statistical modeling, causal inference, and machine learning.
-
-When teaching to masters' students, in the context of a data science class, I still feel it's necessary to walk through many of these aspects. What is sacrificed though, is depth and a limited amount of time available for students to practice on these case-studies. In my opinion, this is evidence that everyone can benefit from this module: undergraduate and graduate students, people already working in the field as data scientists and analysts. Even machine learning engineers. 
-
-
-There is one more catch. For each of these topics and case-studies, you might feel the need to dive deeper into the underlying mathematics, philosophy, and explore more applications. In other words, many rabbit holes. Your feeling is correct, there is so much to learn and explore, but this should not intimidate you. Instead, let it serve as motivation, dive into a topic that resonates with you and see where does it lead.
-
-::: {.column-margin}
-Time, attention, and energy are the only constraints you should keep in mind while diving much deeper into your chosen topic. 
-:::
-
-
-### Learning how to learn
-
-Consider the first lecture as a warm-up, where you have a chance to set-up your development environment and get into the flow of studying. I start with combinatorics, because there are several important concepts you might've missed or forgot, which have practical implications and pop up throughout the course.
-
-Another goal of this lecture is to gain an appreciation and overcome the fear of mathematical abstraction and notation. We will see how these mathematical constructs and models have an underlying story and a reason for existence. By understanding the story and with a bit of practice, you will never, ever have to resort to rote memorization.
-
-At last, I want to highlight that even these simplest tools, known for centuries, have real-world applications and were key to the development of the world as we know it today. ^[Think of geometry and cathedrals, apeducts, calculus, physics, engineering, industrial revolution, computers, and information technology] They look simple only in retrospective and we take them for granted. By connecting the appropriate abstraction (i.e. mathematical tool) to the phenomenon we want to explain and understand, we can make our scientific hypotheses precise and powerful. Urn models applied to physics are a great example of that. See the references in the "rabbit hole" section.
-
-
-I think we have a problem in the teaching of mathematics to high-schoolers and undergraduates, where by applications is meant a numerical or toy example. Those are not applications! In the best case, they're stories and drills. Don't get me wrong, drills are important and we can't always do only what we like, but at worst, they're tedious, useless stuff assigned as homework which kills any passion.
-
-
-## Combinatorics and sampling
-
-Before jumping into the birthday problem, we need to know the stories behind core concepts in combinatorics, like ${n \choose k}$ "n choose k", factorial, falling factorial, and multiplication rule. We will then have to figure out how to apply these tools to ordered / unordered sampling with / without replacement. By learning the stories, you will never forget or misuse the mathematical relations:
-
-
-- Multiplication rule and the "garden of forking paths". Ordered sampling with replacement: urns and balls, unique sequences
-- Ways to order n people at a long bar table. Factorials
-- Surveying only once, dealing cards from a deck, flags and poles. Sampling without replacement and falling factorial
-- Splitting n people into two teams / subgroups of size k and r. Unordered sampling without replacement
-- Story proofs of useful relations in combinatorics.
-- Naive probability limitations and motivation for Kolmogorov's breakthrough of putting probability theory on a solid foundation
-
-If you are studying probability theory and mathematical statistics right now, or feel the need to go through the most important topics again, I highly recommend these [lectures](https://www.santoshvenkatesh.com/video-lectures) by Santosh A. Venkatesh and Joe Blitzstein's [Probability 110](https://projects.iq.harvard.edu/stat110/home). You might rightfully object that no matter how amazing those courses and presentations are, it takes a lot of effort to work through them start-to-finish.
-
-I encourage you to cherry-pick lectures where there are synergies with this course and could deepen your understanding. In my experience, the majority of people don't really get probability theory and mathematical statistics from the first time. It's partly because of an outdated way of teaching, partly because this stuff is really damn deep and complicated if you do it rigorously. 
-
-There is absolutely no shame in going back to it again with a mindset of mastering the fundamentals. For me, this exercise turned out to be one of the most valuable things I studied. Also, understand that the resources I refer you to are a result of decades of teaching and research experience of those authors in top universities. For the purposes of learning probability, it's almost impossible to explain these topics better. Our only secret weapons are simulations and knowledge of what parts are most important and useful in practice. 
-
-
-
-- Watch S. Venkatesh's introductory lecture on probability, called "Prelude to a theory of chance" (Tableau 1). 
-- What is the difference between probability and statistics? Read this [short article](https://johnkerl.org/doc/prbstat/prbstat.html). Does your answer align?
-- Watch J. Blitzstein's first [three lectures](https://youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo&si=t-fvklHEnNNPY_mX). Feel free to fast-forward and skip the things you already know well.
-- Watch S. Venkatesh's lecture on combinatorics, Tableau 2. 
-- Follow it up with the urn models in Tableau 3. 
-
-::: {.callout-note}
-## Birthday Paradox. Pigenhole Principle. Collision Problems
-
-One of the reasons we're not intuitively good at probability, is that in many cases it is difficult to count the way favorable/possible outcomes could occur. 
-
-The birthday problem is one of such examples. We'll do simulations and derive the analytical solution -- suggesting unexpected applications in computer science and engineering.
-
-You can follow an end-to-end, worked out example on this website, in the [section](/sim/1L_bday_problem.qmd) about simulation.
-:::
-
-::: {.column-margin}
-This is completely optional, but I highly recommend the following provocative talk by 
-Richard McElreath, "Bayesian inference is just counting" ([slides](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting) and [talk](https://www.youtube.com/watch?v=_NEMHM1wDfI)). The understanding you'll gain from it will make learning Bayesian statistics much easier.
-:::
 
 ::: {.callout-caution }
 ## Rabbit hole: unordered sampling with replacement
 
-In Tableau 3, walk through the proof of unordered sampling with replacement, only if you find it interesting. The result will be useful only when we'll introduce bootstrap (explanation [here](https://rpubs.com/riazakhan94/bootstrap_distinct_sample))
+In S. Venkatesh, Tableau 3, there is an elegant proof of unordered sampling with replacement, which was used by Bose and Einstein to describe the behavior of bosons. The result will be useful to us when we'll introduce bootstrap, but you can check out a neat [explanation](https://rpubs.com/riazakhan94/bootstrap_distinct_sample) by Riaz Khan.
 :::
 
-I understand if your reaction at this point is: "Are you kidding me, this is just a warm-up?". I would like to convince you that the time investment is not that big and the payoff is huge. In a formal classroom setting, we would spend 1h 20' in a lab, with roughly 2-4 hours of self-study and optional readings necessary for you to get a really good grasp on this. If you study by yourself, there are three lectures by J. Blitzstein (45' each), 3 tableaus by S. Venkatesh (1h each). There will be a huge overlap in the content and not all of it requires hands-on study. 
+I understand if your reaction at this point is: "Are you kidding me, this is just a warm-up?". I would like to convince you that the time investment is not that big and the payoff is huge. You will encounter fun stories and applications in multiple domains, get comfortable with mathematical abstraction, and see that probability doesn't have to be a chore or just a prerequisite you have to get over with.
 
-So, what do you get in return of this time investment? Fun stories and applications in multiple domains, confidence and not being scared of mathematical abstraction, courage to explore more. You might realize that probability and statistics don't have to be a chore, but a worthwhile and fascinating profession to pursue. Motivation makes all the difference, so we have good reasons to be disciplined and work hard.
-
-
+<!-- 
 ## Binomial distribution. Probability trees. Simulation and LLN
-
-The coin flip, which we'll call Bernoulli distribution, is one of the most useful mathematical abstractions, as binary outcomes are ubiquitous -- the event either happens or not, with a probability $\theta$. Think about a few examples from your day-to-day life and from the perspective of a firm.
-
-If we have multiple independent events, each one being a coin flip, we can model the number of successes $k$ out of $n$ trials with the Binomial distribution. In order to apply what we learned about combinatorics, a good exercise is to derive its distribution (probability mass function) via a story proof. I want to remind you that probability is generative: if we know $\theta$ and $n$ we can simulate data / outcomes, and make predictions. 
-
-::: {.column-margin}
-In statistics, we estimate the parameters of (population) models from data (our sample). You will see the Binomial distribution a lot in hypothesis testing for randomized experiments and surveys. It will help you understand logistic regression. 
-:::
-
-::: {.callout-note}
-## Couples showing up to a safari
-
-In our case-study, we will try to find out what is the distribution of the number of people who sign up to safari and actually show up. We have only three seats available, $n = 3$. If people decide to show up independently, the problem is straightforward, as you can see in A. Fleischhacker's "Persuasive Python", [Chapter 2](https://www.persuasivepython.com/1-repuncertainty). Instead, I introduce a subtle change which will make the problem quite tricky.
-
-
-In our version of the problem, a part of our potential customers are friends and couples making reservations for two. Of course, the events are now no longer independent: if one changes their mind and doesn't show up, neither will the other (or so we assume). 
-
-There is one more gotcha. Even if we know the "prevalence" of couples in the target population, we still have to calculate the proportion of seats reserved by each type of customers. 
-:::
-
-
-In order to overcome these challenges, we will formalize the problem with the appropriate notation, make our assumptions explicit, use probability trees, Bernoulli and Binomial distributions. We'll end up with a nasty formula which can be interpreted as a mixture model. Then, given a range of prevalences and individual probabilities of showing up, we simulate the process and interpret the results, comparing them to the case in which all passengers were independent. 
-
-In terms of programming, this case study teaches you how to create Quarto or jupyter notebooks in your IDE, how to import packages, work with data frames, functions, how to use vectorized calculations instead of for loops, manipulate data, make persuasive visualizations, and generate reproducible reports of your work. ^[This is a lot for a beginner, as one has to understand what each piece of code does and how they connect together. The only solution is to practice, try to solve it yourself, read the errors and documentation, look at similar examples. Be resourceful!]
-
-We picked and assumed certain values for prevalence of couples parameter. What if we're terribly wrong? In order to assess that, a sensitivity analysis is needed. It will tell us at what proportion of couples in the population we start seeing dramatically different outcomes in terms of expected number of people who show up. There are two ways to compute it, depending on how the output of the simulation looks like:
-
-- If the 10k simulation runs return only the PMF (distribution), we can leverage the formulas for calculating expected value and variance of an arbitrary discrete random variable.
-    - In this case, in order to represent the uncertainty in the mean estimation due to simulation (sampling), we could compute the standard error and display confidence intervals as error bars. This sounds a bit shady to me and out of place for this lecture
-- If the simulation stores all 10k runs, we can just take an average and the standard deviation of the data. For a grid of 50 possible values of the parameter, we work with 500k samples, which is not a problem for your laptop.
-    - Here, we have a more natural solution for summarizing the distribution: with a mean and a highest density interval
-
-At this point, a fair question would be "what if I got really really unlucky with the sample I got?". In our case, unlucky with the sequence of 10k random numbers we generated, in the sense of getting a result far from true mean. It is very unlikely, but not impossible. ^[When we move to the topics in mathematical statistics, we'll formalize this idea. But generally, it's a good practice to ask how surprising is the data under a null hypothesis.] There are two obvious ideas: increase the number of simulations and repeat those simulations under different seeds. It will work very well, but why?
-
-::: {.callout-note}
-## Law of Large Numbers
-
-Law of large numbers is the reason why simulation works, and also the reason we need to be very careful when interpreting the means of small sample sizes. To illustrate the theorem, we will simulate iid (independent and identically distributed) samples from the Bernoulli and Poisson distribution of an increasing sample size. 
-
-The graphs will show the formal idea of convergence in probability, and a rate at which we expect the average root mean squared error to drop. In other words, as n increases, sample mean will get closer to the population mean in the long run. Therefore, in simulation, we might find out that we don't have to worry about being too unlucky after a certain number of runs. 
-:::
-
-I want to emphasize once again, that most of traditional statistics rely on either exact results or asymptotic theory. We should be vigilent and recognize when neither holds in our applications. But this is a topic for another day.
-
-::: {.callout-note}
-## Universality of the Uniform
-
-This little, but important theorem is the reason we can generate random samples from any distribution, if we have speudo-random numbers which are uniformly distributed.
-:::
-
 
 
 ::: {.callout-caution}
@@ -193,9 +59,6 @@ Despite the ongoing debate about the magnitude of the effect in the hot hand phe
 - medical research might overestimate the effectiveness of a treatment due to drop-out and censoring
 - we might think there is an association between variables, when both can be explained by a common cause, a confounder
 
-This is one of the key reasons to study probability, statistics, and do lots of simulations. We train our brain to spot biases in our reasoning and decision-making. Even though we will still make foolish mistakes, at least we have a method to slow down and check a statement systematically. In the words of Richard McElreath:
-
->  And with no false modesty my intuition is no better. But I have learned to solve these problems by cold, hard, ruthless application of conditional probability. There’s no need to be clever when you can be ruthless.
 
 ## Probability Triple. Random Variables. Statistical Models
 
@@ -327,6 +190,12 @@ The "paradox" part of it is resolved (or at least not puzzling), when we think a
 :::
 
 
+
+::: {.column-margin}
+This is completely optional, but I highly recommend the following provocative talk by 
+Richard McElreath, "Bayesian inference is just counting" ([slides](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting) and [talk](https://www.youtube.com/watch?v=_NEMHM1wDfI)). The understanding you'll gain from it will make learning Bayesian statistics much easier.
+:::
+
 ## Bias-Variance. Fisher Information
 
 I spend another lecture to deep-dive into estimators, because the concepts of bias-variance tradeoff and Fisher information have far-reaching consequences in a myriad of tools, applications and fields -- especially machine learning. It is also an appropriate point in time to introduce a technique which was revolutionary at its time: bootstrap.
@@ -387,6 +256,13 @@ The most complicated part of hypothesis testing is asking better questions. I me
 - Minimal Effect Size of interest: telescope method and resource-based
 - Type 3 errors (solving the wrong problem)
 - Read Werner Stahel's ["Relevance"](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) paper and Gelman's "Sign and Magnitude" [paper](https://stat.columbia.edu/~gelman/research/published/retropower_final.pdf)
+
+:::
+
+
+::: {.column-margin}
+
+I think that the best way to start understanding inferential statistics is Daniel Lakens' book on "Improving your statistical inferences", combined with another resource like Speegle's "Probability, Statistics, and Data" for a deep-dive on technicalities.
 
 :::
 
@@ -461,35 +337,6 @@ Just think about how important this experiment was for the field of medicine -- 
 
 
 
-## Give statistics another chance
-
-It is possible that you didn't enjoy your statistics classes, which happened in my case, despite a passion for the field. In this journey we have to give statistics another chance, but we dramatically change the strategy of how we learn it. If you're impatient and want to run with it, here is a short and preliminary list of resources, which completes the references found in the course:
-
-- Read [this](https://johnkerl.org/doc/prbstat/prbstat.html) short article on the difference between probability and statistics. Watch this [mini-lecture](https://youtube.com/playlist?list=PLRKtJ4IpxJpBxX2S9wXJUhB1_ha3ADFpF&si=MRhAab4EAcgse2o8) on statistical thinking by Cassie Kozyrkov.
-- Realize that lots of common statistical tests are particular versions of linear models. It takes a few hours to go through the theory and code in the [book](https://steverxd.github.io/Stat_tests/), which will save you a whole semester of painful and tedious calculations. 
-- Flip through a textbook which has a modern approach to teaching statistics, by leveraging code, simulations, and data analysis. Speegle's [Probability, Statistics, and Data: A fresh approach using R](https://mathstat.slu.edu/~speegle/_book/preface.html) and  Cetinkaya-Runde's [Introduction to Modern Statistics](https://openintro-ims.netlify.app/index.html) are excellent examples of the "new school".
-- Check out A. Gelman's [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html) and [Active Statistics](https://avehtari.github.io/ActiveStatistics/). In my opinion, this is the best book to learn regression from, but the style might not be everyone's cup of tea.
-
-There are a ton of books and courses on statistics which basically do/teach the same thing. I curated a few which stand out with the right balance of data, code, simulation, theory, and real-world applications:
-
-- Crump - [Answering questions with data](https://www.crumplab.com/statistics/) is a well written, but traditional introductory statistics book for psychology students 
-- Holmes, Huber - [Modern Statistics for Modern Biology](https://www.huber.embl.de/msmb/index.html) focuses on multidimensional methods and discrete data
-- Poldrack - [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/) is perhaps the most complete from this list
-- Rohan - [Telling Stories with data](https://tellingstorieswithdata.com/) has excellent chapters on modeling workflow and writing research
-
-
-
-There are so many pitfalls in statistics and many of them come from a misunderstanding about the nature of statistical inference, a mechanical application of methods, and an insufficient grasp of fundamentals. I prefer to fill in the gaps with **stories** and **simulations**, however, in some cases the mathematical formalism and abstractions can't be avoided and actually helps understanding.
-
-
-::: {.column-margin}
-
-I think that the best way to start understanding inferential statistics is Daniel Lakens' book on "Improving your statistical inferences", combined with another resource like Speegle's "Probability, Statistics, and Data" for a deep-dive on technicalities.
-
-:::
-
-Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most courses make you solve puzzles, but I ask you to appropriately define, justify, and apply the choice of method and tool in the context of business applications.
-
 
 ::: {.column-page-inset-right}
 
@@ -508,51 +355,6 @@ Therefore, fundamental -- doesn't mean easy, nor basic, nor trivial. Most course
 :::
 
 <br>
-
-## Python/R Computational Toolbox
-
-In order to make the most out of the three modules, we need to be skilled (or at least competent) programmers, from the perspective of data science. It is a skill which can be developed independently -- I give a few recommendations in the introduction (prerequisites section).
-
-::: {.column-margin}
-
-In this course I heavily rely on the principles of reproducible research, which have 3 key aspects: data, computational environment, and code.
-
-:::
-
-A second aspect that we need for the programming part not to slow us down and stand in the way, is to have a good, pleasant, and reliable development environment setup. Here is a starting, non-exhaustive list of tools you will need. 
-
-For Windows 11+ users, I strongly recommend you use WSLII -- and get familiar with the command line & linux. Between R and Python, I choose technologies which make it easy to draw parallels and transition from one to another.
-
-::: {.callout-tip}
-## For R (v4.4.2)
-
-- RStudio as our main IDE
-- Quarto for literate programming
-- git & github
-- renv for managing environments
-- database: duckdb (analytical, in-process)
-- data wrangling: tidyverse, data.table (bigger data), arrow
-- data visualization: ggplot, plotly
-- interactive applications: shiny
-- APIs: plumbr
-
-R has many gotchas, which is the main reason that makes the language hard. Therefore, we need to some additional concepts in R, especially functional programming and understanding the S3 object system. Tidyverse is an important ecosystem which tries to solve a lot of the issues in base R.
-:::
-
-::: {.callout-tip}
-## For Python (v3.10.x)
-
-- VScode as our main IDE
-- Jupyter Notebooks or Quarto for literate programming
-- git & github
-- uv (recommended) or conda for managing environments
-- database: duckdb (analytical, in-process), sqlite (transactional, in-process)
-- data wrangling: pandas 2.0, pypolars (bigger data), arrow
-- interactive applications: streamlit, shiny, or dash
-- APIs: fastapi
-
-:::
-
 
 
 ::: {.callout-tip}
@@ -575,4 +377,4 @@ $$
 - Number of asthma or kindey cancer related deaths per US county (examples in Gelman BDA3 recommended in Module 3)
 
 Just before you get all excited about these applications, keep in mind that every distribution has a story behind it, and a set of assumptions that have to be met.
-:::
+::: -->

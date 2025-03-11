@@ -39,36 +39,6 @@ Often, you will have to combine various aspects of an use-case, model, method --
 
 I made sure to include interesting examples and archetypal applications for each statistical tool and theoretical topic, so you can immediately apply the concepts you read about or saw during the lectures. However, the responsibility to practice falls entirely on the learner -- I can just do my best to make your journey less frustrating.
 
-<details>
-<summary>The flowchart</summary>
-
-```{mermaid}
-%%| label: fig-mermaid
-%%| fig-width: 9
-%%| fig-cap: |
-%%|   We develop a composable toolbox, capable to tackle the challenges of nonlinearity, heterogeneity, low level of aggregation, discreteness, missing data and heteroskedasticity. By putting together the right pieces in a right way, we can improve predictions and decisions in most aspects of a business. 
-
-
-flowchart TD
-  DM[/ Probability & Stats /]
-  DM --> CJ[Conjugate Priors] 
-  DM --> LR1[Regression Workflow] --> LR2[Model Critique] --> LR3[Model Selection. LOO-PIT] --> LR4[Nonlinearities] --> GLM[GLMs] 
-  DM --> G[Groups & Pooling] --> MCMC(MCMC & HMC) --> HM1[Hierarchial Models] --> HM2[ Longitudinal Data] --> HM3[Hierarchical GLMs]
-
-  GLM --> HM1 
-  CJ --> BB(Beta-Binomial) --> GP(Gamma-Poisson) --> NG(Normal-IG. Link fn)
-  NG --> GLM
-  HM3 --> BART(ML & BART)
-
-  style DM fill:#ffb6c1
-  style BB fill:#f7f5bc
-  style GP fill:#f7f5bc
-  style NG fill:#f7f5bc
-  style BART fill:#f7f5bc
-  style MCMC fill:#f7f5bc
-
-``` 
-</details>
 
 ## Introduction to Bayesian Statistics 
 
