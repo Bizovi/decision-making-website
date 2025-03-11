@@ -322,11 +322,15 @@ window.Quarto = {
   <li><a href="#binomial-distribution.-simulation" id="toc-binomial-distribution.-simulation" class="nav-link" data-scroll-target="#binomial-distribution.-simulation">Binomial distribution. Simulation</a></li>
   <li><a href="#three-core-theorems-clt-lln-uniform" id="toc-three-core-theorems-clt-lln-uniform" class="nav-link" data-scroll-target="#three-core-theorems-clt-lln-uniform">Three core theorems: CLT, LLN, Uniform</a></li>
   <li><a href="#newsvendor-problem.-distribution-stories" id="toc-newsvendor-problem.-distribution-stories" class="nav-link" data-scroll-target="#newsvendor-problem.-distribution-stories">Newsvendor problem. Distribution stories</a></li>
+  <li><a href="#conditioning-and-bayes-rule" id="toc-conditioning-and-bayes-rule" class="nav-link" data-scroll-target="#conditioning-and-bayes-rule">Conditioning and Bayes Rule</a></li>
   </ul></li>
   <li><a href="#mathematical-statistics" id="toc-mathematical-statistics" class="nav-link" data-scroll-target="#mathematical-statistics">Mathematical statistics</a>
   <ul class="collapse">
   <li><a href="#properties-of-estimators" id="toc-properties-of-estimators" class="nav-link" data-scroll-target="#properties-of-estimators">Properties of estimators</a></li>
   <li><a href="#bootstrap-and-nonparametric-statistics" id="toc-bootstrap-and-nonparametric-statistics" class="nav-link" data-scroll-target="#bootstrap-and-nonparametric-statistics">Bootstrap and Nonparametric Statistics</a></li>
+  <li><a href="#hypothesis-testing.-neyman-pearson" id="toc-hypothesis-testing.-neyman-pearson" class="nav-link" data-scroll-target="#hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</a></li>
+  <li><a href="#frequentism-vs-likelihood-vs-bayes" id="toc-frequentism-vs-likelihood-vs-bayes" class="nav-link" data-scroll-target="#frequentism-vs-likelihood-vs-bayes">Frequentism vs Likelihood vs Bayes</a></li>
+  <li><a href="#replication-crisis" id="toc-replication-crisis" class="nav-link" data-scroll-target="#replication-crisis">Replication Crisis</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -486,219 +490,143 @@ P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
 </div>
 </div>
 <p>Next, we’re going to simulate the newsvendor problem which I outlined in the <a href="../sim/1_intro.html">introduction</a> and use different probability distributions to represent different types of demand patterns which we might encounter in practice (slow moving, fast moving, intermittent).<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<!-- 
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Demand forecasting and inventory optimization is a large field, and we’ll need to come back to it with more powerful statistical models</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Football point spreads and betting experts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you’re into sports betting, you have to understand the idea of point spreads. You can find the following example of using the normal distribution as a population model, instead of empirical frequenties in Chapter 1 of “Bayesian Data Analysis, 3rd ed”. You can use this <a href="http://www.stat.columbia.edu/~gelman/book/data/football.asc">data about matches</a> to compute the probability a team wins. You can also investigate if experts (and subjective point spreads) are right, on average.</p>
+</div>
+</div>
+</section>
+<section id="conditioning-and-bayes-rule" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="conditioning-and-bayes-rule">Conditioning and Bayes Rule</h3>
+<p>I like a lot the quote “Conditioning is the soul of statistics”. The Bayes rule, which follows from the axioms of probability, is an essential tool for reasoning under uncertainty and updating your beliefs. It is worth understanding not only the details of its computation, but also conceptually, as a tool in decision-making.</p>
+<p>There are a few great resources which will teach you about conditioning, marginalization, priors, and how to think like a Bayesian. Check out Chapter 1 and 2 from A. Gelman’s <a href="http://www.stat.columbia.edu/~gelman/book/">“Bayesian Data Analysis, 3rd ed.”</a>,<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> A. Johnson’s <a href="https://www.bayesrulesbook.com/chapter-2.html">Bayes Rules!</a>, and R. McElreath’s <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>. If you prefer videos, enjoy G. Sanderson’s (3Blue1Brown) <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">visual guide</a> to the Bayes rule and its <a href="https://www.youtube.com/watch?v=lG4VkPoG3ko">alternative formulation</a> for medical testing.</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;We’ll refer to it as BDA3 from now on</p></div></div><p>We will code up and simulate an example of <u>medical testing for rare diseases</u>, then use the same idea to reason about how confident are we that our code has no bugs. If you remember the Covid-19 rapid tests and their confusion matrices printed on instruction sheet, you could’ve applied the same idea, but had to pick your priors very thoughtfully!</p>
 
-## Conditioning and Bayes Rule
-
-There is a quote I like a lot: "Conditioning is the soul of statistics". The Bayes rule, which follows directly from the axioms of probability, is an essential in decision-making and the most important tool in this course -- both conceptually and technically. Any introduction to the subject will work out:
-
-- A few excellent resources are Chapter 1/2 of [BDA3](http://www.stat.columbia.edu/~gelman/book/), or Chapter 1/2 of [Bayes Rules](https://www.bayesrulesbook.com/chapter-2.html), or Chapter 1/2 of [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/). They will teach you about:
-    - Conditioning, Marginalization, Priors, and Updating
-- If you prefer videos, enjoy the 3Blue1Brown [visual masterpiece](https://www.youtube.com/watch?v=HZGCoVF3YvM) on how to think like a Bayesian or the explanation [here](https://www.coursera.org/learn/statistical-inferences/lecture/R6nV5/bayesian-thinking).
-- I introduce the idea of Likelihood, which would serve us in future use-cases. It is another important perspective over statistical modeling to consider
-
-::: {.callout-note}
-## Medical testing for rare diseases
-**Medical testing** for rare diseases, hypothetical example with code in my [course repository](https://github.com/Bizovi/decision-making/blob/main/playground/02_bayes.ipynb). We use the same idea to reason about how confident are we our code has no bugs.
-
-If you remember the Covid-19 rapid tests and their confusion matrices printed on instructions, you could've applied the same idea!
-
-:::
-
-::: {.column-margin}
-Or maybe you're passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence
-:::
-
-For the simplest models, one approach of comparing different hypotheses is Bayes Factors. However, these do not translate well in practice for more sophisticated, multilevel models. You can look it up in the following courses [here](https://www.coursera.org/learn/statistical-inferences/supplement/IPkZK/assignment-2-2-bayesian-statistics) and [here](https://www.coursera.org/learn/bayesian/home/week/3) for the theory and examples.
-
-::: {.callout-note}
-## Football spreads and betting experts
-
-(BDA3, Ch1): **Football spreads**, that can be estimated from [data about matches](http://www.stat.columbia.edu/~gelman/book/data/football.asc). What is the probability that a team wins? Are experts right, on average?
-
-- If you're into betting and sports, can you replicate the analysis on other datasets? What are your options for data collection?
-- For brevity, I won't elaborate much from now on, how to take an use-case and example to its limit. **If you're passionate about a particular topic -- go for it!**
-
-:::
-
-::: {.callout-note}
-## Spelling Correction
-
-(BDA3, Ch1): **Spelling correction**, based on [empirical frequencies](http://norvig.com/ngrams/) provided by Peter Norvig. As in the previous case-study, you will have to code it up and figure it out for yourself -- it is good for a warm-up, but challenging enough to keep you occupied.
-
-:::
-
-
-
-::: {.callout-note}
-## Monty Hall. Simpson's Paradox and DAGs
-
-The Simpson's paradox is usually introduced to highlight the importance of conditioning. However, the only resource I found which gets to the core of the problem is Bradley Neal's [first lecture](https://www.bradyneal.com/causal-inference-course) on causal inference. 
-
-The "paradox" part of it is resolved (or at least not puzzling), when we think about the causal structure of the problem (or the DAG of influences).
-:::
-
-
-
-::: {.column-margin}
-This is completely optional, but I highly recommend the following provocative talk by 
-Richard McElreath, "Bayesian inference is just counting" ([slides](https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting) and [talk](https://www.youtube.com/watch?v=_NEMHM1wDfI)). The understanding you'll gain from it will make learning Bayesian statistics much easier.
-:::
-
-
- -->
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Demand forecasting and inventory optimization is a large field, and we’ll need to come back to it with more powerful statistical models</p></div></div></section>
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Or maybe you’re passionate about biology, where you could apply it for Mendelian genetics and think about the mystery of deadly genes persistence (SV, Tableau 10). This case study is more complex than the others recommended here.</p>
+</div></div><div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Monty Hall. Simpson’s Paradox and DAGs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Simpson’s paradox is usually introduced to highlight the importance of conditioning. However, the only resource I found which gets to the core of the problem is B. Neal’s <a href="https://www.bradyneal.com/causal-inference-course">first lecture</a> on causal inference and R. McElreath’s note on it in “Statistical Rethinking”.</p>
+<p>The “paradox” is resolved only when when we think about the underlying causal process and the DAG of influences (i.e.&nbsp;probabilistic story of the use-case).</p>
+</div>
+</div>
+<p>In order to make a small step from Bayes rule towards the Bayesian approach to statistics, I recommend the following provocative talk by Richard McElreath, “Bayesian inference is just counting” (<a href="https://speakerdeck.com/rmcelreath/bayesian-inference-is-just-counting">slides</a> and <a href="https://www.youtube.com/watch?v=_NEMHM1wDfI">recording</a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Spelling Correction and Murder Mystery
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>(BDA3, Ch1): You can implement a rudimentary spell checker, based on <a href="http://norvig.com/ngrams/">empirical frequencies</a> provided by Peter Norvig. You will have to code it up for yourself, but it’s an excellent exercise.</p>
+<p>In <a href="https://mbmlbook.com/">Chapter 1</a> of John Winn’s “Model-based Machine Learning”, you will use the Bayes rule and conditioning to solve a hypothetical murder mystery and update your opinions based on the increasing amount of evidence collected.</p>
+</div>
+</div>
+<p>For the simplest models, one approach of comparing the “relative evidence” of different hypotheses is Bayes Factors, explained well by D. Lakens in <a href="https://lakens.github.io/statistical_inferences/04-bayes.html">Chapter 4</a> of “Improving your Statistical Inferences”. However, it doesn’t translate well in practice for more sophisticated models and is generally not recommended.</p>
+</section>
 </section>
 <section id="mathematical-statistics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="mathematical-statistics">Mathematical statistics</h2>
-<section id="properties-of-estimators" class="level3 page-columns page-full">
+<p>For the fundamentals of hypothesis testing, our go-to resource will be D. Lakens’ <a href="https://lakens.github.io/statistical_inferences/">“Improving your statistical inferences”</a> (LI). D. Speegle’s “<a href="https://probstatsdata.com/">Probability, Statistics, and Data</a>: A Fresh Approach Using R” is perhaps the most accessible book. There are many excellent and well-established resources, but they get heavy and mathematical really fast, for example, Casella &amp; Berger’s “Statistical Inference”, M. Schervish’s “Theory of statistics”.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Perhaps after gaining an intuition from our lectures and doing some statistical modeling, you will go back and study probability and mathematical statistics more rigorously</p></div></div><section id="properties-of-estimators" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="properties-of-estimators">Properties of estimators</h3>
 <p>We will worry a lot about causal and methodological aspects when we’ll learn statistical modeling, but everything else being equal, there are some estimators which make better use of our data than others (if assumptions hold).</p>
-<p>For an accessible explanation of bias, consistency, efficiency, showcased with the corresponding R code, see <a href="https://openforecast.org/sba/estimatesProperties.html">Chapter 6</a> of I. Svetunkov’s “Statistics for Business Analytics”. An important idea in the likelihood approach to estimation is Fisher’s information, which is presented clearly in Chapter 4 of B. Efron’s <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">“Computer age statistical inference”</a>, along with an important result of Rao-Cramer lower bound.</p>
-<p>In modern statistics, we often have to deal with highly multidimensional parameter spaces, where unbiasedness is no longer the most important criteria for a good estimation. Therefore, knowing about the curse of dimensionality and the bias-variance tradeoff is tremendously important in applied statistics. For this topic, I recommend <a href="https://work.caltech.edu/lectures.html">Lecture 8</a> of Y. Abu-Mostafa’s “Learning from Data” course.</p>
-<p>There are objections in the context of Deep Learning to the traditional bias-variance decomposition. See how this tradeoff <a href="https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update">needs an update</a> for the modern deep learning. However, in the most general sense, it is a universal problem not only in statistics, but also for human cognition.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;When it comes to notions of rationality, it’s useful to think about the tradeoff between efficiency and resilience</p></div></div></section>
+<p>For an accessible explanation of bias, consistency, efficiency, showcased with the corresponding R code, see <a href="https://openforecast.org/sba/estimatesProperties.html">Chapter 6</a> of I. Svetunkov’s “Statistics for Business Analytics”. An important idea in the likelihood approach to estimation is Fisher’s information, which is presented clearly in Chapter 4 of B. Efron’s <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">“Computer age statistical inference”</a>,<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> along with an important result of Rao-Cramer lower bound.</p>
+<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Unfortunately, “Computer Age Statistical Inference” is no longer available online as a free pdf</p></div></div><p>In modern statistics, we often have to deal with highly multidimensional parameter spaces, where unbiasedness is no longer the most important criteria for a good estimation. Therefore, knowing about the curse of dimensionality and the bias-variance tradeoff is tremendously important in applied statistics. For this topic, I recommend <a href="https://work.caltech.edu/lectures.html">Lecture 8</a> of Y. Abu-Mostafa’s “Learning from Data” course.</p>
+<p>There are objections in the context of Deep Learning to the traditional bias-variance decomposition. See how this tradeoff <a href="https://www.bradyneal.com/bias-variance-tradeoff-textbooks-update">needs an update</a> for the modern deep learning. However, in the most general sense, it is a universal problem not only in statistics, but also for human cognition.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;When it comes to notions of rationality, it’s useful to think about the tradeoff between efficiency and resilience</p></div></div></section>
 <section id="bootstrap-and-nonparametric-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="bootstrap-and-nonparametric-statistics">Bootstrap and Nonparametric Statistics</h3>
 <p>Often, we can’t affort to make strict distributional assumptions about our data-generating process, functional relationship, or population model. This means that we sometimes resort to more flexible or robust models, but we’re out of luck with having theoretical, closed-form sampling distributions. Thus, we need computational methods for calculating the confidence intervals.</p>
 <p>Bootstrap was a revolutionary technique at the time, which enabled people to use estimators which were too hard or impossible to use before. <a href="https://openintro-ims.netlify.app/foundations-bootstrapping.html">Chapter 12</a> of “Introduction to Modern Statistics, 2nd ed.” is a good introduction to it.</p>
-<!-- 
-
-## Hypothesis testing. Neyman-Pearson
-
-In order to make sense of frequentist hypothesis testing, I strongly recommend you read about the original idea of Neyman and Pearson (error control -- don't make a fool of yourself too often in the long run). It is a "path of action" perspective of statistics.
-
-[This is certainly the most difficult lecture of the module, combining the math, programming, and even philosophy.]{.aside}
-
-I start from the first principles and will let go of mechanical application of procedures and conventions (p-values, $\alpha, \beta$, test choice). You should to be able to justify all the choices you make during the phase of experiment design. 
-
-
-- Picking a default action. [Type I, II errors](https://openintro-ims.netlify.app/decerr.html). How costly is each type of mistakes?
-- Minimal **effect size** of interest, [Cohen's](https://rpsychologist.com/cohend/) $d$
-- [Power Analysis](https://rpsychologist.com/d3/nhst/) and Sample Size justification. How surprising are significant findings under each hypothesis? Positive Predictive Value
-- p-values [simulation](https://rpsychologist.com/pvalue/), [p-curve](https://rpsychologist.com/d3/pdist/) under $H_0, H_A$. 
-- Confidence Intervals - first check out this [simulation](https://rpsychologist.com/d3/ci/).  The tricky idea of "capture percent"
-
-
-::: {.column-margin}
-In order to put everything together, there are four resources I can recommend:
-
-- Speegle's [book](https://mathstat.slu.edu/~speegle/_book/HTCI.html) on data+probability+R
-- Huber's [Chapter 6](https://www.huber.embl.de/msmb/06-chap.html) of Modern Statistics 
-- [Statistical thinking for 21st century](https://statsthinking21.github.io/statsthinking21-core-site/ci-effect-size-power.html)
-- [Improving your statistical inferences](https://www.coursera.org/learn/statistical-inferences/)
-:::
-
-::: {.callout-note}
-## Asking better questions
-
-The most complicated part of hypothesis testing is asking better questions. I mean that in a highly technical sense, and whole-heartedly recommend you the following course from a TU Eindhoven professor, named ["Improving your statistical questions"](https://www.coursera.org/learn/improving-statistical-questions/).
-
-- Make riskier predictions: [Non-Inferiority testing](https://rpsychologist.com/d3/equivalence/), Equivalence Testing, Range predictions
-- Publication bias, open science, pre-registrations
-- Minimal Effect Size of interest: telescope method and resource-based
-- Type 3 errors (solving the wrong problem)
-- Read Werner Stahel's ["Relevance"](https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf) paper and Gelman's "Sign and Magnitude" [paper](https://stat.columbia.edu/~gelman/research/published/retropower_final.pdf)
-
-:::
-
-
-::: {.column-margin}
-
-I think that the best way to start understanding inferential statistics is Daniel Lakens' book on "Improving your statistical inferences", combined with another resource like Speegle's "Probability, Statistics, and Data" for a deep-dive on technicalities.
-
-:::
-
-
-::: {.callout-note}
-## A detour on the philosophy of science
-
-- Understanding the philosophy of falsification and how it applies to hypothesis testing. [Week2 of this course](https://www.coursera.org/learn/improving-statistical-questions/lecture/j6Duu/lecture-2-1-falsifying-predictions-in-theory) has a great 20 minute explanation.
-- Philosophy of science: Popper and Latakos, in this [lecture](https://www.youtube.com/watch?v=cgvKG_3Ck7Y). "The null is always false"
-:::
-
-
-::: {.callout-tip}
-## Common statistical tests are linear models
-
-There is a zoo of different statistical tests and procedures, which might be very confusing -- especially trying to remember their particularities. It's important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models.
-
-- [Common statistical tests are linear models](https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests) and the [python port](https://www.georgeho.org/tests-as-linear/) 
-- Choosing a statistical test: difference in proportions and means, test of $\sigma$, correlations
-- For a bayesian alternative to t-tests, see [Krutsche's example](https://www.pymc.io/projects/examples/en/latest/case_studies/BEST.html)
-:::
-
-
-## Frequentism vs Likelihood vs Bayes
-
-There are three main schools of thought in statistics, which have their [respective metaphors](https://www.coursera.org/learn/statistical-inferences/lecture/qC3A1/frequentism-likelihoods-bayesian-statistics): "path of action" (Neyman-Pearson frequentism), "path of devotion" (Fisherian Likelihood), and "path of belief / knowledge" (Bayesian). I like very much the presentation of each school of thought in the book of Hastie/Efron "Computer Age Statistical Inference", [chapter 2, 3, 4](https://hastie.su.domains/CASI_files/PDF/casi.pdf). 
-
-Each one has their strenghts, weaknesses, and contribute tools & insights for our future use-cases. When we got into the topic of A/B testing and experiment design, we unavoidably stumbled upon a few fascinating philosophical questions in relation to the nature of evidence. The philosophical debate is fierce, but in statistical practice, less so. I suggest a level of pragmatism to pick the right tool/perspective for the particular job. In the courses I teach, I dedicate quite a lot of time on how not to fall into the most common pitfalls when applying frequentist methods. It's an useful skill when critically reading the literature.
-
-
-::: {.column-margin}
-By now, you encountered the Neyman-Pearson (frequentist) approach. If you want another presentation, watch this [lecture](https://www.youtube.com/watch?v=LYcu3LoGqKc) by Zoltan Dienes to get a sense of the orthodox approach: its power and limitations.
-:::
-
-The likelihood approach is widely used in Machine Learning / Statistical Learning teaching and practice. This [lecture](https://www.youtube.com/watch?v=NHFfJEvzPIo) by Zoltan Dienes contrasts Bayes Factors vs classical methods in t-test situations. 
-
-
-
-::: {.callout-note}
-## Three approaches to single-parameter models
-
-We can pick a simple example of inferring a proportion, which has many practical applications that you might remember from "Distribution Stories". We care not just about the estimation, but also about confidence/credible intervals and the practical workflow.
-
-- Frequentist: Normal Approximation, Agresti-Coull intervals
-- Likelihood: Maximum likelihood, point estimates, bootstrapping. Check out [this interactive visualization](https://rpsychologist.com/likelihood/) an [lecture / lab](https://www.coursera.org/learn/statistical-inferences/lecture/8yZDk/likelihoods). 
-- Bayes: The full posterior distribution, the tricky business of prior choice
-
-:::
-
-
-## Dead Salmon Experiment. Replication Crisis 
-
-Lastly, we can't avoid a conversation about the replication crisis happening in multiple disciplines, but especially in social sciences. What scientific literature can we trust? This is relevant not just for research and science, but will help you avoid many pitfalls in the business practice -- therefore, you will be less likely to be fooled by randomness.
-
-- Multiple testing, p-hacking, HARKING, snooping. Ethics and Integrity
-- Underpowered studies and vague questions
-- Publication Bias, Open Science, Pre-registration and simulation
-- False-discovery rate, Bonferoni correction
-- Confounding, Mediation and all that causal jazz
-- Computational Reproducibility vs Replication. Meta-Analysis
-
-
-::: {.callout-note}
-## Dead salmon experiment
-
-An examination of a famous experiment in neuroscience, putting into question standard/current statistical practices, leads to a conversation of controversies in medicine, psychology, and social science. 
-
-Just think about how important this experiment was for the field of medicine -- it won the [nobel prize](https://blogs.scientificamerican.com/scicurious-brain/ignobel-prize-in-neuroscience-the-dead-salmon-study/)!
-:::
-
-
-
-
-
-::: {.column-page-inset-right}
-
-|   | Lecture Agenda  | Key Ideas  | Case Studies / Activities |
-|---|------------------|----------------------------------|---------------------------|
-| 1* | Combinatorics. Sampling & Urn Models | Sampling with and without replacement, multiplication rule, naive $\mathbb{P}$, probability trees | Birthday Paradox simulation, Why bootstrap works |
-| 2 | Probability Triple. Random Variables. What is a model? | collectivity, population, sample; estimand, estimator, estimation; $(\Omega, \mathcal{F}, \mathbb{P})$, $X$ r.v., $H(y | F(u), \phi(y, u))$| Probability vs Statistics. $\mathcal{H}$, Process models, Statistical models, Inference |
-| 3 | **Stories behind distributions** | Binomial, Poisson, Mixtures, $N(\mu, \sigma)$, $\chi^2_k$, $t_k$, F, Beta, Gamma, Exponential, NBin, HGeom | couples showing up to safari, arrival times, basketball shots, hot hand |
-| 4* | Conditioning and Bayes Rule. Likelihood Ratios | Updating prior beliefs, Bayesian vs frequentist interpretation of probability. Graphical models | Monty Hall, Simpsons' Paradox, Football Spreads, Medical testing |
-| 5* | **CLT** and LLNs. Convergence types. Estimator properties | Never forget about sample size. Why simulation works? Limitation: rare events, fat tails, mixtures, non-iid | The most dangerous equation: US schools, gold coins. Simulation |
-| 6* | Fisher Information. **Bias-Variance** tradeoff | Efficiency, bias, James-Stein paradox and the curse of dimensionality. Rao-Cramer. Likelihood approach | Overfitting, underfitting, and mis-specification. Bootstrap, simulations |
-| 7* | Neyman-Pearson frequentism. Long-run action | Type I, II errors, confint, p-value, PPV, effect sizes, **power analysis, range predictions**, $H_0$, $H_A$ | How to ask better questions. Stahel's relevance, Interval $\mathcal{H}$ testing. Default action  |
-| 8 | Frequentist vs Likelihood vs Bayesian inference | Popperian philosophical roots, practical agreements, strengths and weaknesses | Discussion on practical interpretation: path of action vs devotion vs belief  |
-| 9 | Dead Salmon Experiment. Replication Crisis | multiple testing, harking, snooping, publication bias, open science, underpowered studies | Examination of controversies in medicine, psychology, and social science  |
-
-:::
-
-<br>
-
- -->
+</section>
+<section id="hypothesis-testing.-neyman-pearson" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="hypothesis-testing.-neyman-pearson">Hypothesis testing. Neyman-Pearson</h3>
+<p>In order to make sense of hypothesis testing, we need to go back to the original idea of Neyman and Pearson – error control in the long run. This is a “path of action” perspective on statistics, in contrast with the Bayesian updating of beliefs and Fisherian likelihood or relative evidence. It’s a powerful approach when used well for the appropriate problem, but also can backfire spectacularly when misused or misunderstood.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;This is one of the core reasons for the replication crisis in multiple disciplines like psychology and social science</p></div></div><p>As you have seen in <a href="../01_fundamentals/ai_ml_cybernetics.html">Chapter v.</a> (12 steps of statistics), we will have to make a lot of choices in the phase of study / experiment design. You have to justify why you picked the default action, population, sampling scheme, measurement, minimal effect size, sample size, etc. Read the following chapters from D. Lakens, which tackles most of the statistical choices:</p>
+<ul>
+<li>Chapter 1 debunks common misconceptions about p-values and simulates its distribution under repeated studies. You can find an interactive visualization of the p-curve <a href="https://rpsychologist.com/d3/pdist/">here</a>.</li>
+<li>Chapter 2 tells you how to justify type I and type II error rates and which outcomes can you expect apriori from your study</li>
+<li>Chapter 6 deep-dives into effect sizes and Chapter 7 focuses on the correct interpretation of confidence intervals</li>
+<li>Chapter 8 puts it all together into power analysis and how to justify sample sizes, given the practical constraints of your problem</li>
+</ul>
+<p>All of the above is pretty standard and well-known material among statisticians, but you will avoid tons of pitfalls as a practitioner by knowing it. Perhaps, D. Lakens’ most important contribution is the idea of asking better and riskier questions, in a very specific, statistical sense. This involves using one-sided, equivalence, non-inferiority tests when appropriate (range predictions) – otherwise we risk getting the right answer to the wrong question.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A detour on the philosophy of science
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Neyman-Pearson approachs requires a little detour into epistemiology and K. Popper’s idea of falsification. You can read Chapter 5, section 6 and watch <a href="https://www.youtube.com/watch?v=cgvKG_3Ck7Y">this lecture</a> on Popper and Lakatos from Z. Dienes. The same author has another comprehensive overview of frequentist statistics – you can watch the lecture <a href="https://www.youtube.com/watch?v=LYcu3LoGqKc">here</a>.</p>
+</div>
+</div>
+<p>It is also good to know that there are alternatives to the p-value approach to the final decision and reporting of results. Two of the most notable are W. Stahel’s <a href="https://stat.ethz.ch/~stahel/relevance/stahel-relevance2103.pdf">“Relevance”</a> paper and A. Gelman’s <a href="https://stat.columbia.edu/~gelman/research/published/retropower_final.pdf">“Sign and Magnitude”</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common statistical tests are linear models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a zoo of different statistical tests and procedures, which might be very confusing – especially trying to remember their particularities. It’s important to realize that a lot of seemingly unrelated statistical tests in frequentist statistics are particular versions of linear models. The following book will save you lots of headache: <a href="https://lindeloev.github.io/tests-as-linear/#1_the_simplicity_underlying_common_tests">Common statistical tests are linear models</a> and its <a href="https://www.georgeho.org/tests-as-linear/">python port</a></p>
+</div>
+</div>
+</section>
+<section id="frequentism-vs-likelihood-vs-bayes" class="level3">
+<h3 class="anchored" data-anchor-id="frequentism-vs-likelihood-vs-bayes">Frequentism vs Likelihood vs Bayes</h3>
+<p>There are three main schools of thought in statistics, which have their <a href="https://lakens.github.io/statistical_inferences/05-questions.html#three-statistical-philosophies">respective metaphors</a>: “path of action” (Neyman-Pearson frequentism), “path of devotion” (Fisherian Likelihood), and “path of belief / knowledge” (Bayesian). I like very much the presentation of each school in “Computer Age Statistical Inference”, <a href="https://hastie.su.domains/CASI_files/PDF/casi.pdf">chapter 2, 3, 4</a>.</p>
+<p>Each one has their strenghts, weaknesses, contribute tools and insights for our future use-cases. For example, Neyman-Pearson approach is excellent for quality control at scale, the likelihood approach is widely used in machine learning, and Bayesian inference is a good alternative to frequentism for statistical modeling.</p>
+</section>
+<section id="replication-crisis" class="level3">
+<h3 class="anchored" data-anchor-id="replication-crisis">Replication Crisis</h3>
+<p>At last, we can’t avoid a conversation about the replication crisis happening in multiple disciplines, but especially in social sciences. What scientific literature can we trust? This is relevant not just for research, but will help you avoid many pitfalls in business practice. Here are some of the topics you will encounter in this conversation:</p>
+<ul>
+<li>Sloppy science: multiple testing, p-hacking, HARKING, snooping</li>
+<li>Ethics and research integrity, increasing rates of scientific fraud</li>
+<li>Publication bias, open science, and pre-registration</li>
+<li>False-discovery rate, underpowered studies and vague questions</li>
+<li>Confounding, mediation, and all that causal jazz</li>
+<li>Computational reproducibility vs replication, meta-analysis</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dead salmon experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a famous study in which researchers put a <a href="https://blogs.scientificamerican.com/scicurious-brain/ignobel-prize-in-neuroscience-the-dead-salmon-study/">dead salmon</a> in a fMRI machine and lo and behold – the statistical software showed some neural activation. It put into question standard practices of applied statistics in neuroscience and led to a larger conversation on controversies in medicine, psychology, and social science.</p>
+</div>
+</div>
 
 
 </section>
