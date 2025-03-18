@@ -276,6 +276,12 @@ window.Quarto = {
  <span class="menu-text">3L. Most dangerous equation</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sim/4L_newsvendor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4L. Newsvendor problem</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -396,7 +402,7 @@ What is a model?
 <p>A model will take you only as far as the quality of your problem formulation, its assumptions, and the data you have. Its results are useful only if they inspire new questions or hypotheses, generate actionable insight, or make reliable predictions.</p>
 </div>
 </div>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc</p></div></div><p>To make things more concrete, let’s look at an example of a bakery which produces fresh, but perisable good(ie)s. We assume that if they don’t manage to sell the pastry in the same day, it will have to be thrown away. They choose to sell at the price <span class="math inline">\((p)\)</span> after lots of market research and a bit of experimentation. The cost of producing an unit is <span class="math inline">\((c)\)</span>. The bakery has data on daily historical sales <span class="math inline">\(\{d_1, d_2, ..., d_t\}\)</span> and for the sake of simplicity, we’ll assume that they never ran out of stock. The question is how much they should produce tomorrow <span class="math inline">\((q)\)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Imagine how many possible paths are there if for every minute we have a choice between 20 actions: read, eat, move, watch, etc</p></div></div><p>To make things more concrete, let’s look at an example of a bakery which produces fresh, but perishable good(ie)s. We assume that if they don’t manage to sell the pastry in the same day, it will have to be thrown away. They choose to sell at the price <span class="math inline">\((p)\)</span> after lots of market research and a bit of experimentation. The cost of producing an unit is <span class="math inline">\((c)\)</span>. The bakery has data on daily historical sales <span class="math inline">\(\{d_1, d_2, ..., d_t\}\)</span> and for the sake of simplicity, we’ll assume that they never ran out of stock. The question is how much they should produce tomorrow <span class="math inline">\((q)\)</span>.</p>
 <p>This is called the “newsvendor problem” and is a prototypical example of inventory management.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> If we order or produce too little, we’ll lose sales, and in the long term, customers. If we order too much, we’ll end up with waste. In a 2003 paper, M. Koschat and N. Kunz<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> have shown how they brought an additional $3.5m of incremental profits to the Time Inc.&nbsp;magazine by solving this optimization problem.</p>
 <div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Even with this simple model, things can get complicated very quickly: both in terms of demand forecasting and optimization</p></div><div id="fn7"><p><sup>7</sup>&nbsp;M. Koschat, N. Kunz - <a href="https://www.researchgate.net/publication/239752587_Newsvendors_Tackle_the_Newsvendor_Problem">“Newsvendors tackle the newsvendor problem”</a>, 2003</p></div></div><p><span class="math display">\[
 (\max_q) \; p \cdot  \mathbb{E}_D[\min(D, q)] - c \cdot q

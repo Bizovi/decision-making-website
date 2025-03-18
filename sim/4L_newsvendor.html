@@ -8,7 +8,7 @@
 
 <meta name="author" content="Mihai Bizovi">
 
-<title>Fundamentals of Probability – Modern Decision Science</title>
+<title>Newsvendor Problem – Modern Decision Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sim/2L_safari.html" rel="next">
-<link href="../sim/1L_bday_problem.html" rel="prev">
+<link href="../sim/3L_CLT.html" rel="prev">
 <link href="../img/favicon.jpeg" rel="icon" type="image/jpeg">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -124,11 +157,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Fundamentals of Probability – Modern Decision Science">
-<meta property="og:description" content="The probability triple and Kolmogorov’s breakthrough">
-<meta property="og:image" content="https://course.economic-cybernetics.com/01_fundamentals/img/kolmogorov.jpeg">
+<meta property="og:title" content="Newsvendor Problem – Modern Decision Science">
+<meta property="og:description" content="Inventory management under uncertainty">
+<meta property="og:image" content="https://course.economic-cybernetics.com/sim/4L_newsvendor_files/figure-html/unnamed-chunk-1-1.png">
 <meta property="og:site_name" content="Pragmatic Data Science">
 <meta property="og:locale" content="es_ES">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
 </head>
 
 <body class="nav-sidebar docked nav-fixed slimcontent">
@@ -179,7 +214,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/stat_foundations.html">2. The Probability Triple</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/4L_newsvendor.html">4L. Newsvendor problem</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -256,7 +291,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link active">
+  <a href="../01_fundamentals/stat_foundations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. The Probability Triple</span></a>
   </div>
 </li>
@@ -280,7 +315,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sim/4L_newsvendor.html" class="sidebar-item-text sidebar-link">
+  <a href="../sim/4L_newsvendor.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4L. Newsvendor problem</span></a>
   </div>
 </li>
@@ -322,13 +357,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-probability-triple" id="toc-the-probability-triple" class="nav-link active" data-scroll-target="#the-probability-triple">The probability triple</a>
-  <ul class="collapse">
-  <li><a href="#frequentist-vs-bayesian-interpretation" id="toc-frequentist-vs-bayesian-interpretation" class="nav-link" data-scroll-target="#frequentist-vs-bayesian-interpretation">Frequentist vs bayesian interpretation</a></li>
-  <li><a href="#events-and-their-spaces" id="toc-events-and-their-spaces" class="nav-link" data-scroll-target="#events-and-their-spaces">Events and their spaces</a></li>
-  </ul></li>
-  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables">Random Variables</a></li>
-  <li><a href="#wonky-probability-triples" id="toc-wonky-probability-triples" class="nav-link" data-scroll-target="#wonky-probability-triples">Wonky probability triples</a></li>
+  <li><a href="#decisions-under-uncertainty" id="toc-decisions-under-uncertainty" class="nav-link active" data-scroll-target="#decisions-under-uncertainty">Decisions under uncertainty</a></li>
+  <li><a href="#a-poisson-detour" id="toc-a-poisson-detour" class="nav-link" data-scroll-target="#a-poisson-detour">A Poisson Detour</a></li>
   </ul>
 </nav>
 </nav>
@@ -339,10 +369,10 @@ window.Quarto = {
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../01_fundamentals/stat_foundations.html">2. The Probability Triple</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sim/1_intro.html">Simulation of economic processes</a></li><li class="breadcrumb-item"><a href="../sim/4L_newsvendor.html">4L. Newsvendor problem</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Fundamentals of Probability</h1>
-<p class="subtitle lead">The probability triple and Kolmogorov’s breakthrough</p>
+<h1 class="title">Newsvendor Problem</h1>
+<p class="subtitle lead">Inventory management under uncertainty</p>
 </div>
 
 
@@ -365,269 +395,195 @@ window.Quarto = {
 </header>
 
 
-<p>A well-rounded decision scientist should be fluent in the language of probability and statistics, easily go back and forth between a real-world problem and mathematical abstraction.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Think how important is logic for maths, computer science, and philosophy. Similarly, probability theory is a formal language, the logic of uncertainty.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;In order to build adequate models of economic and other complex phenomena, we have to take into account their inherent <em>stochastic nature</em>. </p></div></div><p>Even though I emphasize the importance of studying through stories and simulations, there is one mathematical and quite abstract topic we can’t afford to avoid. Formally, at the core of probability theory is the triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> and we have to thank Andrey Kolmogorov for developing a solid axiomatic foundation. All the modern probability machinery we’re using in practice is build on top of that.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="img/kolmogorov.jpeg" class="img-fluid"> Andrey Kolmogorov’s (1933) contribution culminates the work started by Laplace, Gauss, Poincare, and many others. You can check out the short stories of important historical figures <a href="https://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">here</a></p>
-</div></div><p>Speaking more bluntly, without being aware of the relevance and importance of the probability triple, no amount of stories will make us truly understand it. The reason for writing this chapter is that many students don’t know formally what a random variable and probability is. This leads to many mistakes in understanding and thus, in practice.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Different levels of rigor
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Probability can be studied at different levels of rigor and mathematical abstraction. Most commonly it’s a mix of intuition and calculus-based approaches, but some courses do it with heavier mathematical analysis (a la Shiryaev) or even measure theory (the final boss).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>How far you go back into the abstract foundations? For practical intents and purposes, you won’t need measure theory and proof-based mathematical analysis. Except if you go into quantitative finance or statistical research.</p>
-<p>I find those interesting for their own sake and I’m curious about the deep foundations of higher-level tools we use. However, I can’t argue it’s an efficient use of your time – you’re proabably better off by studying other things like programming, statistical modeling, causal inference, and machine learning.</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;In many top programs in Europe, you will have to study it at the highest levels of rigor. Keep this in mind if you want to pursue a quantitative masters’ degree</p></div></div><p>One of the tasks of probability theory is the construction of the probability triple with the tools of mathematical analysis (and measure theory). We will not go through this process of construction, but I will explain conceptually what each element is and why is it important.</p>
-<section id="the-probability-triple" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="the-probability-triple">The probability triple</h2>
-<p>We have to start with the notion of a <strong>random experiment</strong> (<span class="math inline">\(\mathscr{E}\)</span>). For example, a survey on voting intention, customer responses about their preferred product out of a selection, acidity of brewed beer in a factory. Think of it as a well-defined procedure that produces an outcome which we can observe, with the following properties:</p>
-<ul>
-<li>Possible results and outcomes are known apriori and exhaustably. For example: a coin/dice toss, quantity of laptops sold, time spent watching youtube, a borrower’s default on the loan, a choice between subscription options.</li>
-<li>We don’t known for sure which result of <span class="math inline">\(\mathscr{E}\)</span> will manifest or appear before we run the experiment. Otherwise, it wouldn’t be random.</li>
-<li>Despite that, <strong>there is a perceptible regularity</strong>, which can be eventually measured and quantified, that is, encoding the idea of a probabilistic “law” in the results. That regularity could be a result of the large scale of the phenomena, for example, a small but systematic preference for flashy video thumbnails on youtube.</li>
-<li>Repeatability of the conditions in which the experiment runs, like the comparability and perservation of context. This is optional in the Bayesian perspective, where we’re not thinking in long-run frequency terms.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
-</ul>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Note that Bayesian vs frequentist is a debate over the interpretation of probability. All of its constructions and facts are the same in both approaches</p></div><div id="fn4"><p><sup>4</sup>&nbsp;In practice, it’s always a good idea to define what is the range of valid and allowed values that your variable or measuremet can take (scales)</p></div></div><p>An <strong>elementary event</strong> is one of the possible results of <span class="math inline">\(\mathscr{E}\)</span>, usually denoted by <span class="math inline">\(\omega_i \in \Omega\)</span>, where <span class="math inline">\(\Omega = \{ \omega_1, \omega_2, \dots \}\)</span> is called a sample space or universal set – which suggest the idea of all outcomes being listed apriori and exhaustively.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<section id="frequentist-vs-bayesian-interpretation" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="frequentist-vs-bayesian-interpretation">Frequentist vs bayesian interpretation</h3>
-<p>First, let’s address the context in which the repeatable conditions requirement makes total sense (spoiler - it’s physics and coin flips). Think of measurements taken from the Large Hadron Collider experiments – the volume, noise, and complexity of data. Ultimately, we want to make inferences about the underlying, physical processes which govern the behavior and interaction of particles. The hypothesis tests based on the complicated models, despite their high confidence, are ultimately a probabilistic statement about how surprising is the data. Therefore, the long-run action of acting as if the null hypothesis is false, assumes that the experiment is reapeatable.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Practically speaking, we want to replicate the experiment multiple times in order to make sure it was not a fluke</p></div></div><p>In the frequentist perspective, the probability of an event is intrinsic to it’s nature, i.e.&nbsp;objective and is the limiting frequency with which that outcome appears in a long series of events. We can think of this convergence of frequency as a “statistical stability”, which can be supported only by a large number of trials, i.e.&nbsp;empirical evidence. This applies really well in gambling (by design) and physics, but is it plausible in human behavior? I don’t know, but it might be unreasonably effective at a large scale even if not true.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Formally, we can represent this statement by Bernoulli’s theorem, where <span class="math inline">\(m_n\)</span> is the number of times an event <span class="math inline">\(A\)</span> occurs in <span class="math inline">\(n\)</span> trials. <span class="math display">\[
-\lim_{n \to \infty} \frac{m_n}{n} = p
+<p>In the previous lectures and labs you learned the most important tools and concepts to successfully apply simulation in practical applications. Now we can confidently go back to the newsvendor problem I outlined in the introduction.</p>
+<p>Imagine you’re in charge of a pastry shop and have to decide how much to produce (<span class="math inline">\(q\)</span>) at unit cost <span class="math inline">\((c)\)</span>, which will be sold at price <span class="math inline">\((p)\)</span>. This is the simplest version of an <u>inventory management problem</u>, in which we optimize for a single perishable product, a single order period, assume no lead time or carrying costs.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We’re also not concerned here with developing a model which generates reliable predictions and captures the uncertainty in the demand <span class="math inline">\((D)\)</span> – we take its (predictive) distribution as given.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Of course, the challenges in reality get much more complicated, but there are well-established tools to tackle those</p></div></div><p><span class="math display">\[
+(\max_q) \; p \cdot  \mathbb{E}_D[\min(D, q)] - c \cdot q
 \]</span></p>
-</div></div><p>Bayesians view probability as the degree of confidence in a belief. An apriori (subjective) knowledge, before seeing the data, will be updated iteratively with every new piece of evidence via inverse probability (Bayes rule). The fact that we need to define and ellicit our prior beliefs is not necessarily a weakness, especially in social science – if done correctly and rigorously, it can improve our inferences. If we have tons of data, our prior choice, if not too dogmatic or vague, will not matter.</p>
-</section>
-<section id="events-and-their-spaces" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="events-and-their-spaces">Events and their spaces</h3>
-<p>Elementary events are rarely the events of interest to us. An event <span class="math inline">\(A\)</span> is an union of elementary events: <span class="math inline">\(A = \bigcup\limits_{i = 1}^n \omega_i\)</span>. We care not only about its realization, but also about other events, because they might contribute with additional information (about the probability) of our event of interest.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> This means that in one way or other, we need to conceptualize a space of all* possible events, which are subsets of <span class="math inline">\(\Omega\)</span>. However, this is where the big (theoretical) trouble begins, because the event space has to have certain properties in order for the events to be measurable (so we can assign a probability which makes sense).</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;This hints at the idea of conditioning, which is the “soul of statistics”</p></div></div><div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Algebra and Sigma-Algebra
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A set of subsets <span class="math inline">\(\mathcal{F} \subset 2^\Omega\)</span> is an algebra (field) if the following holds:</p>
-<ol type="1">
-<li><span class="math inline">\(\Omega \in \mathcal{F}\)</span> and <span class="math inline">\(\varnothing \in \mathcal{F}\)</span></li>
-<li>If <span class="math inline">\(A \in \mathcal{F}\)</span> then <span class="math inline">\(A^C \in \mathcal{F}\)</span> (closed under complements)</li>
-<li>If <span class="math inline">\(A, B \in \mathcal{F}\)</span> then <span class="math inline">\(A \cup B \in \mathcal{F}\)</span> (closed under union). Note that 2 and 3 imply that it’s closed under countable intersection</li>
-</ol>
-<p>The additional condition for sigma-algebra is that <span class="math inline">\(\mathcal{F}\)</span> should be closed under countable union. Sigma here refers to countability and additivity.</p>
-<p>If <span class="math inline">\(\{  A_i \}_{i \ge 1} \in \mathcal{F}\)</span> then <span class="math inline">\(\bigcup\limits_{i \ge 1} A_i \in \mathcal{F}\)</span></p>
-</div>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/sigma-algebra.svg" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: <a href="https://upload.wikimedia.org/wikipedia/commons/d/d3/Sigma_algebra_ellipse_de.svg">Wikimedia</a></em> A beautiful visual representation</figcaption>
-</figure>
-</div>
-</div><div id="fn7"><p><sup>7</sup>&nbsp;If you wonder how in the world one can reason about the probability in a phylogenetic tree – this is where rigorous, measure-theoretic probability comes to rescue</p></div></div><p>The <strong>event space</strong> <span class="math inline">\(\mathcal{F}\)</span> is a sigma-algebra. For technical reasons which measure theory deals with, we usually can’t define a probability measure on all sets of subsets <span class="math inline">\(2^\Omega\)</span>. Remembe that we don’t work only with discrete or countable outcomes. Besides <span class="math inline">\(\mathbb{R}\)</span>, we can encounter wonky outcomes like simplexes, functions, trees, graphs, etc.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
-<p>On an intuitive note, we define the probability measure on sigma-algebras because if those conditions do not hold, the (probability) measure wouldn’t make sense, as unions of events would step out of the bounds of event space. The consequence of this is that important results in probability theory which are necessary for most statistical methods will not hold (fully).</p>
-<p>We finally have the minimal tools to define the triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span>. You can think of <strong>probability as an extension of measure</strong>, where we’re not concerned with lengths and volumes, but with chances of events realizing. Basically, we’re assigning a value between zero and one to elementary events <span class="math inline">\(\mathbb{P}(\omega_i)\)</span>. This is why additivity properties are key, as we care about random events <span class="math inline">\(A\)</span>, not only <span class="math inline">\(\omega_i\)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Probability Measure
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose we have defined a <strong>measurable space</strong> <span class="math inline">\((\Omega, \mathcal{F})\)</span>, where <span class="math inline">\(\mathcal{F}\)</span> is a sigma-algebra. A <strong>probability measure</strong> is the function <span class="math inline">\(\mathbb{P}:\mathcal{F} \rightarrow [0, 1]\)</span> such that:</p>
-<ol type="1">
-<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span> </li>
-<li>For countable sequences of mutually disjoint effects, i.e.&nbsp;<span class="math inline">\(\forall \{ A_i \}_{i \ge 1}\)</span> where <span class="math inline">\(A_i \bigcap\limits_{i \ne j} A_j = \varnothing\)</span>, the following holds <span class="math inline">\(\mathbb{P}(\bigcup\limits_{i \ge 1} A_i) = \sum\limits_{i \ge 1} \mathbb{P}(A_i)\)</span></li>
-</ol>
-</div>
-</div>
-<p><strong>Probability triple</strong> <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> is the fundamental object the whole probability theory is constructed upon. Kolmogorov took the informal, gambling-type probability and put it onto axiomatic foundations – which enabled future breakthroughs.</p>
-<p>Notice that this definition of probability is not the naive one, of number of successes over the total possible numbers an event could arise. You are allowed to use naive probability only in very special cases of discrete and finite sample space, where all elementary events are independent and equally likely. Otherwise and by default, carefully think about each element in the probability triple.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Measure theory rabbit hole: Why not all subsets?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The reasons for this are very technical, and the concept of a sigma-algebra is essential in resolving the resulting paradoxes. If you’re interested in these technical details, you can check out my relatively accessible introduction to <a href="https://mihaibizovi.com/posts/2018-intro-measure/measure_theory.html">measure theory and the Caratheodori extension theorem</a>.</p>
-
-<p>Even though you can go a long way as a practitioner with standard tools in probability theory, deeply understanding its <strong>measure-theoretic</strong> foundations could open up a whole new world to the researcher. It’s easy to take the results from statistics and probability for granted, but it’s useful to be aware what hides beneath the surface.</p>
-<p>Evans Lawrence gives the following example of a function which is neither discrete nor continuous, for which you flip a coin and if it comes heads, draw from an uniform distribution and in case of tails a unit mass at one. If <span class="math inline">\(\chi_{[0,1]}(x) = (e^{ix} - 1)/ix\)</span> is the characteristic function of the interval from zero to one, in a way you can formulate its density, but usually it’s not the case, nor is it very helpful to think about it in such terms.</p>
-<p><span class="math display">\[\begin{equation}
-    p(x) = w_1 \chi_{[0,1]}(x) +  w_2\delta_1(x)
-\end{equation}\]</span></p>
-<p>Even though you can visualize this in two dimensions as the uniform and a spike, or as a CDF with a discontinuity, this approach just breaks down in higher dimensions or more complicated combinations of functions.</p>
-</div>
-</div>
-<div class="no-row-height column-margin column-container"><div class="callout-margin-content">
-<p>Jeffrey Rosenthal begins his book by a similar motivation, constructing the following random variable as a coin toss between a discrete <span class="math inline">\(X \sim Pois(\lambda)\)</span> and continuous <span class="math inline">\(Y \sim \mathcal{N}(0,1)\)</span> r.v.</p>
-<p><span class="math display">\[\begin{equation}
-    Z = \begin{cases}
-    X, p = 0.5 \\
-    Y, p = 0.5
-    \end{cases}
-\end{equation}\]</span></p>
-<p>He then challenges the readers to come up with the expected value <span class="math inline">\(\mathbb{E}[Z^2]\)</span> and asks on what is it defined? It is indeed a hard question.</p>
-</div></div><p>Thank you for bearing with me through the theory you have probably seen before, but we’re not done. We’re still in the land of set theory, and it is very hard to operate that way in practice – so, we need a new concept which will allow us to use the tools of mathematical analysis in probability, in order to make it feasible for practical uses.</p>
-</section>
-</section>
-<section id="random-variables" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="random-variables">Random Variables</h2>
-<p>We take the idea of random variable and probability density functions for granted, but at some point it was a huge breakthrough. It is a necessary abstraction in order to mathematically define the quantifiable characteristics of the outcomes of interest. Meaning, we start working with numbers instead of some qualitative properties.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;Remember that we’re studying an interdisciplinary, quantitative field</p></div></div><div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Random Variable is not a variable, nor random
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A random variable is quantificator of elementary events, a function defined on the outcome space which maps the elementary events to the real number line. That mapping can’t be done in any way we wish, it has to perserve the informational structure of the sample space. That is one of the technical reasons for sigma-algebras we mentioned before and is related to the idea of <strong>measurability</strong>, meaning we can assign a meaningful “volume”.</p>
-<p><span class="math display">\[\begin{align}
-X(\omega):\Omega \rightarrow \mathbb{R} \\
-s.t. ~~ \{\omega \in \Omega | X(\omega) \leq r, \forall r \in \mathbb{R} \} \in \mathcal{F}
-\end{align}\]</span></p>
-</div>
-</div>
-<p>Let’s figure out what the hell do we mean by that fine print condition, using the diagram below. The idea of conservation of the informational structure is actually equivalent to the one of measurablility. If this property doesn’t hold, it’s not possible to explicitly and uniquely refer to the sets (events) of interest.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/random_variable.png" title="Random Variable" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Idea: Norman Wildberger, Gheorghe Ruxanda. A graphical representation of the random variable. It is the construct that enables us to define the statistical population (some aspect of the phenomena which is relevant to us)!</figcaption>
-</figure>
-</div>
-<p>The idea is that the preimage defined above <span class="math inline">\(X^{-1}((-\infty,r]) = E \in \mathcal{F}\)</span> on the following interval corresponds to an event E which should be in the event space <span class="math inline">\(\mathcal{F}\)</span>. Because the only thing that varies is the limit of the interval r, the “randomness” comes from it. Also, it automatically suggests the idea of the Cumulative Distribution Function, which is <span class="math inline">\(F_X(X \le r)\)</span>.</p>
-<p>The repartition or CDF – one of the most important constructs in probability is a direct consequence of the definition of the random variable.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;Later in the course, we will see how ECDF (empirical cumulative distribution function) is an useful tool in data analysis and simulation</p></div></div><p><span class="math display">\[
-P(A ≤ r) = F_X(X ≤ r)
-\]</span></p>
-<p>In the practice of modeling, we often work with probability density functions, because it is more convenient in many cases. Then, in order to translate to probabilities, we would think in terms of areas under that curve. For sure, you remember the following duality between CDF and PDF (distribution, probability density function): <span class="math inline">\(F'(x) = p(x)\)</span>.</p>
-<!-- 
-::: {.callout-note}
-## An adversarial example. Not in F!
-
-The example shouldn't be too complicated in order not to respect the definition of a random variable. Here's a a mapping of a strange dice $X(w_i)$ given by G. Ruxanda in his lectures:
-
-$$
-X: \{ 
-    (w_1 \rightarrow 0), 
-    (w_2 \rightarrow 0), 
-    (w_3 \rightarrow 1), 
-    (w_4 \rightarrow 0), 
-    (w_5 \rightarrow 1), 
-    (w_6 \rightarrow 1)
-\}
-$$
-
-The best way to see the problem here, is to draw the mapping and pick 3 thresholds for $r$. Then see if we can recover events in $\mathcal{F}$ by $X^{-1}(w)$.
-
-::: -->
-</section>
-<section id="wonky-probability-triples" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="wonky-probability-triples">Wonky probability triples</h2>
-<p>As a motivation of why do we have to understand all of this, when for most practical applications we can get by just fine with using the results and tools from probability, I will introduce two examples: one of compositional data analysis<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and time series analysis. What I want to say, is that for more “exotic” applications, we might need to tweak that probability triple because of the nature of the problem, which has downstream consequences for all the statistical machinery we use in those applications.</p>
-<div class="no-row-height column-margin column-container"><div id="fn10"><div class="quarto-figure quarto-figure-center"><sup>10</sup>&nbsp;
-<figure class="figure">
-<p><img src="img/composition.png" title="Simplex" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: <a href="https://www.mdpi.com/1660-4601/17/7/2220">Dumuid</a></em>: Data in a Simplex, which is later translated to <span class="math inline">\(R^n\)</span> by a carefully constructed basis expansion</figcaption>
-</figure>
-</div>
-</div></div><div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The curious case of Compositional Data Analysis
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Sometimes, the data doesn’t “live” in our normal, intuitive, euclidian space <span class="math inline">\(\mathbb{R}^n\)</span>. There are cases when the object of our analysis are proportions or compositions: think of what a material is made of, the proportion of the demand for different sizes of a shoe or garment.</p>
-<p>We don’t necessarily care about their absolute value, but about their relative proportion. If we blindly apply traditional methods, or even statistical summaries, we will quickly hit weird results and paradoxes. So, we have to tweak existing methods such that they make sense for compositions.</p>
-<p>Compositional data analysis solves those issues by defining a probability triple over the simplex (instead of <span class="math inline">\(\mathbb{R}^n\)</span>): <span class="math inline">\((\mathcal{S}^n, \mathcal{F}, \mathbb{P})\)</span>. This leads to a different definition of the event space <span class="math inline">\(\mathcal{F}\)</span>, which is also a sigma-algebra and a different definition of the probability measure <span class="math inline">\(\mathbb{P}\)</span>.</p>
-</div>
-</div>
-<p>For the next example, you don’t have to understand what Gaussian Processes are or are used for.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> However, later in the course, we will discuss nonparametric methods for hypothesis testing. Their usefulness comes from the fact that we make less distributional assumptions about our population, therefore getting more robust results.</p>
-<div class="no-row-height column-margin column-container"><div id="fn11"><p><sup>11</sup>&nbsp;Modeling complex patterns in (multidimensional) time series, for spatio-temporal modeling, any time our data points are not independent and we can quantify their “closeness”</p></div></div><p>It’s not that these methods don’t have parameters, but the “parametrization” varies depending on how much data we have, which makes them very flexible in a wide variety of applications, where we just don’t know what is a reasonable distribution or parametric functional form for the relationship that we model.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nonparametrics and Gaussian Processes
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<!-- Stochastic Processes, Graphs and Trees -->
-<p>If we’re thinking about a regression from the nonparametric perspective: that is, over a set of abstract, smooth, twice differentiable functions: <span class="math inline">\(f(x) \in \mathscr{C}^2, f : X \rightarrow \mathbb{R}\)</span>, we might want to know how a draw of samples from an infinite set of functions might look like.</p>
+<p>If we order too much, we’ll have to throw away the unsold products, thus lose <span class="math inline">\(c_o = c\)</span> per unit. If we order too little, we lose the opportunity to make <span class="math inline">\((c_u = p - c)\)</span> in sales.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We don’t have the opportunity to replenish inventory during the day, but in other applications it’s the right approach to take – order more when inventory falls bellow a threshold.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;In reality, we might have substitute products and do clearance selling to attenuate both of these costs – which has to be modeled differently</p></div></div><section id="decisions-under-uncertainty" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="decisions-under-uncertainty">Decisions under uncertainty</h2>
+<p>Without further ado and before we dive into a more mathematical analysis of this problem, let’s see how simulation can help us make a better decision. In the first version of the (demand) story, we have <span class="math inline">\(n\)</span> people passing by our shop and each has a probability <span class="math inline">\(\theta\)</span> to buy. This is entirely reasonable, except for assuming people buy independently or buy a single unit. Think about how would you take that into account in your simulation.</p>
 <p><span class="math display">\[
-f(x) \sim GP(\mu(x); K(x,x'))
+D \sim Binom(n = 200, \theta = 0.2)
 \]</span></p>
-<p>The questions arises: how to define a PDF (probability density function) in this space? In my bachelor thesis, I got away with using Gaussian Processes by informally defining an apriori distribution of the mean vector <span class="math inline">\(\mu\)</span> and a Kernel (covariance function), then conditioning it on observed data with a Normal Likelihood.</p>
-<p><span class="math display">\[
-p(f(x) \, |\left \{ x\right \})=\frac{p(\left \{ x\right \}| \, f) \, \mathbf{p(f)}}{p(\left \{ x\right \})}
-\]</span></p>
+<div class="cell page-columns page-full">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dem <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="at">size =</span> <span class="dv">200</span>, <span class="at">n =</span> <span class="dv">10000</span>, <span class="at">prob =</span> <span class="fl">0.2</span>) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dem_dens <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">200</span>, <span class="at">prob =</span> <span class="fl">0.2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dem <span class="sc">|&gt;</span> <span class="fu">hist</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"demand"</span>, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> <span class="dv">30</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">"skyblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>, <span class="at">main =</span> <span class="st">""</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(dem_dens, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rug</span>(<span class="fu">jitter</span>(dem), <span class="at">col =</span> <span class="st">"dodgerblue2"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/gp-conditioned.png" title="GP Posterior" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption><em>Source: <a href="https://blog.economic-cybernetics.com/post/2018-06-01-probabiliy/">Bizovi</a></em>: A posterior distribution of the Gaussian Processes, when conditioned on data</figcaption>
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>A sanity check on the distribution of demand</figcaption>
+</figure>
+</div>
+</div></div></div>
+<p>Let’s say that in our neighborhood there are 200 people walking by our shop on Mondays, and each has a 20% chance to buy, as they really love the pastries. As you can see below, the story is more complicated than just deciding to produce the average <span class="math inline">\(\mathbb{E} = n \theta\)</span>.</p>
+<p>First, notice that we can reasonably expect to sell between 30 and 50 units based on the distribution of demand. However, we need to simulate how this uncertainty translates into the distribution of profits for each quantity we might decide to produce.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">13753</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">3.4</span>; c <span class="ot">&lt;-</span> <span class="fl">1.9</span>; n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sim_newsvendor <span class="ot">&lt;-</span> <span class="cf">function</span>(p, c, qty_grid, demand) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    df_sim <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">demand =</span> demand) <span class="sc">|&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">nr_sim =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">crossing</span>(<span class="at">qty =</span> qty_grid) <span class="sc">|&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">profit =</span> p <span class="sc">*</span> <span class="fu">pmin</span>(demand, qty) <span class="sc">-</span> c <span class="sc">*</span> qty</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        )    </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    df_sim</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>qty_grid <span class="ot">&lt;-</span> <span class="dv">25</span><span class="sc">:</span><span class="dv">70</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>demand <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">200</span>, <span class="fl">0.2</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>df_sim <span class="ot">&lt;-</span> <span class="fu">sim_newsvendor</span>(p, c, qty_grid, demand) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell page-columns page-full">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_sim <span class="sc">|&gt;</span> <span class="fu">filter</span>(qty <span class="sc">==</span> <span class="dv">47</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> profit)) <span class="sc">+</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Profit ($)"</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>The distribution of profits at q = 47 might not be what you expect</figcaption>
+</figure>
+</div>
+</div></div></div>
+<p>As you can see on the margin, the distribution of profits might be highly skewed. A way to represent the uncertainty in this outcome is to use highest density intervals (<code>coda::HDPinterval()</code>), and not the classical, symmetric confindence or credible intervals.</p>
+<p>Another direct consequence of the uncertainty in demand and assymmetry in the cost of errors we make (underbuy vs overbuy), is that we might want a service level (availability) greater than on average. This is why we also take into consideration the 60th quantile.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code for aggregation and visualization</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>visualize_profit <span class="ot">&lt;-</span> <span class="cf">function</span>(df_sim, <span class="at">hdi =</span> <span class="fl">0.7</span>, <span class="at">upper_q =</span> <span class="fl">0.6</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    df_sim <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(qty) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">reframe</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">avg_profit =</span> <span class="fu">mean</span>(profit),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">profit_upper =</span> coda<span class="sc">::</span><span class="fu">HPDinterval</span>(<span class="fu">mcmc</span>(profit), <span class="at">prob =</span> hdi)[<span class="dv">1</span>],</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">profit_lower =</span> coda<span class="sc">::</span><span class="fu">HPDinterval</span>(<span class="fu">mcmc</span>(profit), <span class="at">prob =</span> hdi)[<span class="dv">2</span>],</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">upper_profit =</span> <span class="fu">quantile</span>(profit, <span class="at">probs =</span> upper_q)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> qty, <span class="at">y =</span> avg_profit)) <span class="sc">+</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> upper_profit), <span class="at">color =</span> <span class="st">"coral"</span>) <span class="sc">+</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> profit_lower, <span class="at">yend =</span> profit_upper, </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> qty, <span class="at">xend =</span> qty</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"quantity ordered"</span>, <span class="at">y =</span> <span class="st">"Profit ($)"</span>, </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Expectation max. might not be what we want"</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"Suggested by 70% highest density interval, not conf. int."</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize_profit</span>(df_sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>This simulation tells us that we should be very careful when optimizing for average demand. By choosing a higher service level, we will have sufficient products to fully fulfill the demand on more Mondays. It makes total sense from the perspective of customer experience and you should get used to such reasoning when making decisions under uncertainty.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> You would miss all this nuance if you’re ignoring the stochastic nature of the demand and pretend that it’s deterministic, or even worse, constant.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;This is where other aspects inform the decision, including the firm’s risk appetite</p></div></div><p>Next, let’s investigate what happens when we deal with a “slow-moving” item, meaning, we sell a low quantity. In this case, the Poisson distribution and its generalizations might be an appropriate choice for modeling counts.</p>
+<p><span class="math display">\[
+D \sim Pois(\lambda = 10)
+\]</span> A useful tip in practice, when dealing with slow-moving products, is that you can use the Poisson distribution as a baseline against which you can benchmark more advanced models, which often won’t do much better.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>qty_grid <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>demand <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> n, <span class="at">lambda =</span> <span class="dv">10</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df_sim_pois <span class="ot">&lt;-</span> <span class="fu">sim_newsvendor</span>(p, c, qty_grid, demand)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize_profit</span>(df_sim_pois) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<div class="no-row-height column-margin column-container"><div class="">
-<p>In the case of stochastic processes, we work with a sequence of random variables <span class="math inline">\(\{X_t, t \in T \}\)</span> and start asking questions:</p>
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Slow moving item demand modeled with Poisson distribution</figcaption>
+</figure>
+</div>
+</div></div></div>
+<p>Sometimes, you have to model intermittent demand, where you will have periods in which you sell nothing. In an e-commerce or grocery store, these products might be not what we care about, but when we talk luxury items – it’s a feature, not a bug.</p>
+<p>Once again, we can leverage the idea of a mixture model, in which we break down the demand into its occurrence and volume components. This idea was successfully used by I. Svetunkov to develop a cutting-edge time series model for forecasting intermittent demand.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;I. Svetunkov - “Forecasting and analytics with ADAM”, <a href="https://openforecast.org/adam/ADAMOccurrence.html">Chapter 13</a></p></div></div><p><span class="math display">\[
+D \sim Bern(\theta) \cdot P(Y)
+\]</span> Let’s take an example of a dish which requires expensive ingredients, like a fresh tuna steak. Here, the story is very different and we’re out of luck – it shouldn’t be surprising that we lose money in half of the days. Perisable products and intermittent demand is not a great business idea, unless there is another reason for having it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>qty_grid <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>demand <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> n, <span class="at">lambda =</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="fu">rbinom</span>(<span class="at">n =</span> n, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.4</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df_sim_tuna <span class="ot">&lt;-</span> <span class="fu">sim_newsvendor</span>(<span class="at">p =</span> <span class="dv">100</span>, <span class="at">c =</span> <span class="dv">30</span>, <span class="at">qty_grid =</span> qty_grid, <span class="at">demand =</span> demand)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize_profit</span>(df_sim_tuna) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>At last, we can look at fast-moving items, which sell a lot (stably) – like bread and milk in a supermarket. On the one hand we can predict the demand better, but we should also keep in mind that these products have a low gross margin.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>qty_grid <span class="ot">&lt;-</span> <span class="dv">280</span><span class="sc">:</span><span class="dv">320</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>demand <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> <span class="dv">300</span>, <span class="at">sd =</span> <span class="dv">25</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df_sim_norm <span class="ot">&lt;-</span> <span class="fu">sim_newsvendor</span>(p, c, qty_grid, demand)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize_profit</span>(df_sim_norm) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Try out the normal distribution for fast-moving demand</figcaption>
+</figure>
+</div>
+</div></div></div>
+</section>
+<section id="a-poisson-detour" class="level2">
+<h2 class="anchored" data-anchor-id="a-poisson-detour">A Poisson Detour</h2>
+<p>I often hear the following statement, especially about probability theory: “I haven’t used Poisson outside university”. By now, you’re either aware that it’s important and wonder why it didn’t come up in practice or believe it was a tedious academic exercise.</p>
+<p>The point is not about Poisson distribution, but about probability and statistics theory in general. First, let me assure you that it is helpful in practical applications. Poisson distribution and process can be a good choice to model counts of <strong>events per unit of time</strong> and space, with a large number of “trials”, each with a small probability of success.</p>
+<p><span class="math display">\[
+P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
+\]</span> Poisson distribution is often a building block in more complicated models (poisson regression, gamma-poisson, GLMs), which can be used in the following applications:</p>
 <ul>
-<li>What kind of time dependency is there? (autocorrelation)</li>
-<li>What is the long-run behavior?</li>
-<li>Can we say something about extreme events?</li>
+<li>Arrivals per hour: requests in a call center, arrivals at a restaurant, website visits. We can use it for capacity planning.</li>
+<li>Bankrupcies filed per month, mechanical piece failures per week, engine shutdowns, work-related accidents. We can use these insights to assess risk and improve safety.</li>
+<li>Forecasting slow-moving items in a retail store, e.g.&nbsp;for clothing</li>
+<li>A famous example by L. Bortkiewicz: in Prussian army there were 0.70 deaths per one corps per one year caused by horse kicks. Here is the <a href="https://rpubs.com/SmilodonCub/567089">historical data</a> and a <a href="https://towardsdatascience.com/poisson-distribution-from-horse-kick-history-data-to-modern-analytic-5eb49e60fb5f">blog post</a> telling the story of the <em>“Law of small numbers”</em>.</li>
+<li>Number of asthma or kindey cancer related deaths</li>
 </ul>
-</div></div><p>A lot of important applications in economics and finance are dynamic, so we have to work with time series very often. It gets worse when data is correlated not only in time, but also geographically – which is why the field of spatio-temporal data analysis is in such demand right now for policy-making.</p>
-<p>Thus, a natural extension of this probability machinery we discussed so far is stochastic processes, underlying these dynamical systems. We can look at our time series as a manifestation, a particular instantiation of this latent process. Depending on which one we choose, we can model a wide range of phenomena.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Rabbit hole: machine learning theory
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Last, but not least, measure theory and advanced probability is important in machine learning theory, where we try to formally answer the question if our model can generalize successfully given its complexity, the sample size, and the “strength of signal”.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Vapnik and Chernovenkis’ theory started a revolution in pattern recognition, gave a practical model of Support Vector Machines, and established the foundations of modern machine learning.</p>
-<p>One such tool from probability which pops up in ML theory is uniform convergence, where <em>“you consider the probability of a supremum over an infinite set of functions, but out of the box measure theory only allows for constructions with countably infinite index sets”</em>. <a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
-<p>In plain english, the object of investigation is an infinite of functions mapping from our input space (data, <span class="math inline">\(X\)</span>) to the output / target variable <span class="math inline">\(y\)</span>. Therefore learning is an algorithmic process which uses our in-sample data to select a function from this infinite space, which will have the greatest chance to generalize and make good predictions.</p>
-</div>
-</div>
+<p>Just before you get all excited about these applications, keep in mind that every distribution has a set of assumptions that have to be met. This is where knowing the theory makes a difference.</p>
 
 
-<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;You can check out this <a href="https://www.quora.com/Is-Measure-Theory-relevant-to-Machine-Learning/answer/Mikio-L-Braun?srid=KONR">answer</a> on quora for a more detailed explanation of how measure theory is useful in ML theory</p></div></div><div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;Probably approximately correct (PAC learning)</p></div></div></section>
+</section>
 
 
 </main> <!-- /main -->
@@ -1197,14 +1153,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../sim/1L_bday_problem.html" class="pagination-link" aria-label="1L. Birthday problem">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1L. Birthday problem</span>
+      <a href="../sim/3L_CLT.html" class="pagination-link" aria-label="3L. Most dangerous equation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3L. Most dangerous equation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sim/2L_safari.html" class="pagination-link" aria-label="2L. Safari trips">
-        <span class="nav-page-text">2L. Safari trips</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
