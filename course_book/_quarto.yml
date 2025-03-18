@@ -59,6 +59,8 @@ website:
           text: "3. Three core theorems"
         - href: sim/3L_CLT.qmd
           text: "3L. Most dangerous equation"
+        - href: sim/4L_newsvendor.qmd
+          text: "4L. Newsvendor problem"
       - text: "-----"
       - section: "Appendix"
         contents:
