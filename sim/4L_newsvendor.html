@@ -359,6 +359,11 @@ window.Quarto = {
   <ul>
   <li><a href="#decisions-under-uncertainty" id="toc-decisions-under-uncertainty" class="nav-link active" data-scroll-target="#decisions-under-uncertainty">Decisions under uncertainty</a></li>
   <li><a href="#a-poisson-detour" id="toc-a-poisson-detour" class="nav-link" data-scroll-target="#a-poisson-detour">A Poisson Detour</a></li>
+  <li><a href="#the-mathematics-of-newsvendor" id="toc-the-mathematics-of-newsvendor" class="nav-link" data-scroll-target="#the-mathematics-of-newsvendor">The mathematics of newsvendor</a>
+  <ul class="collapse">
+  <li><a href="#continuous-demand" id="toc-continuous-demand" class="nav-link" data-scroll-target="#continuous-demand">Continuous demand</a></li>
+  </ul></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
   </ul>
 </nav>
 </nav>
@@ -395,13 +400,27 @@ window.Quarto = {
 </header>
 
 
-<p>In the previous lectures and labs you learned the most important tools and concepts to successfully apply simulation in practical applications. Now we can confidently go back to the newsvendor problem I outlined in the introduction.</p>
-<p>Imagine you’re in charge of a pastry shop and have to decide how much to produce (<span class="math inline">\(q\)</span>) at unit cost <span class="math inline">\((c)\)</span>, which will be sold at price <span class="math inline">\((p)\)</span>. This is the simplest version of an <u>inventory management problem</u>, in which we optimize for a single perishable product, a single order period, assume no lead time or carrying costs.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We’re also not concerned here with developing a model which generates reliable predictions and captures the uncertainty in the demand <span class="math inline">\((D)\)</span> – we take its (predictive) distribution as given.</p>
+<p>In the previous lectures and labs you learned the most important tools and concepts to successfully apply simulation in practical applications. Now we can confidently go back to the newsvendor problem I outlined in the <a href="../sim/1_intro.html">introduction</a>.</p>
+<p>Imagine you’re in charge of a pastry shop and have to decide how much to produce (<span class="math inline">\(q\)</span>) at unit cost <span class="math inline">\((c)\)</span>, which will be sold at price <span class="math inline">\((p)\)</span>. Since the demand <span class="math inline">\(D\)</span> is uncertain, there is a chance we’ll be left with unsold products – which we’ll try to sell at discount (<span class="math inline">\(s_v\)</span>), also called salvage value.</p>
+<p>In this simplest version of stochastic <u>inventory management</u>, we optimize for a single “perishable” or seasonal product, a single order period, assume no lead time or carrying costs.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We’re also not concerned with developing a model which generates reliable predictions and captures the uncertainty in the demand <span class="math inline">\((D)\)</span> – we take its (predictive) distribution as given. It could be either discrete or continuous, depending on the type of product sold. The objective is to choose an order quantity which maximizes profits (<span class="math inline">\(\mathcal{P}\)</span>) or minimizes costs (<span class="math inline">\(\mathcal{C}\)</span>).</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Of course, the challenges in reality get much more complicated, but there are well-established tools to tackle those</p></div></div><p><span class="math display">\[
-(\max_q) \; p \cdot  \mathbb{E}_D[\min(D, q)] - c \cdot q
+\mathcal{P}(q) = \; p \cdot  \mathbb{E}_D[\min(D, q)] + s_v \cdot \mathbb{E}[max(d - Q, 0)] - c \cdot q
 \]</span></p>
-<p>If we order too much, we’ll have to throw away the unsold products, thus lose <span class="math inline">\(c_o = c\)</span> per unit. If we order too little, we lose the opportunity to make <span class="math inline">\((c_u = p - c)\)</span> in sales.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We don’t have the opportunity to replenish inventory during the day, but in other applications it’s the right approach to take – order more when inventory falls bellow a threshold.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;In reality, we might have substitute products and do clearance selling to attenuate both of these costs – which has to be modeled differently</p></div></div><section id="decisions-under-uncertainty" class="level2 page-columns page-full">
+<p>If we order too much, we’ll lose <span class="math inline">\((c_o = c - s_v + h)\)</span> per unit, where <span class="math inline">\(h\)</span> is the holding cost, which we’ll ignore. If we order too little, we lose the opportunity to make <span class="math inline">\((c_u = p - c + g)\)</span> in profits, where <span class="math inline">\(g\)</span> is the goodwill cost – a damage in customer satisfaction and brand reputation.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The first type of cost <span class="math inline">\(c_o\)</span> is called overage (overstocking), and <span class="math inline">\(c_u\)</span> is understocking cost.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;In practice, both <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> are difficult, but not impossible to estimate</p></div></div><p>In the newsvendor problem, it can be shown that maximizing profits and minimizing costs yield the same optimal order quantity. We will simulate profits, however, analyzing the total costs is more insightful.</p>
+<p><span class="math display">\[
+\mathcal{C}(q) = c_u \cdot \mathbb{E}[max(d - Q, 0)] + c_o \cdot \mathbb{E} [max(Q - d, 0)]
+\]</span> <!-- We don't have the opportunity to replenish inventory during the day, but in other applications it's the right approach to take -- order more when inventory falls bellow a threshold. --></p>
+<p>This mathematical structure of uncertain demand, quantity as the decision variable, understocking and overstocking costs is shared in lots of practical applications. Seasonal products in fashion, like swimsuits, might have long lead times if manufactured overseas. Thus, we don’t get an opportunity to replenish the inventory if we sell out. If we order too much, we might be forced to sell at a discount in outlets.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Go back to the scary-looking formulas above and think for 5 minutes what each term means, by using the examples below.</p></div></div><ul>
+<li>Stocks for special events, like concert-specific merchandise, sports finals, or a brand collaborating with a celebrity</li>
+<li>Last buy decision for products at the end of their lifecycle, like in machinery parts / components</li>
+<li>Setting the right capacity and workforce for a facility, e.g in preparation for a music festival</li>
+<li>Airlines deciding how much overbooking to do on a particular flight. Very annoying for passengers, but common practice</li>
+<li>Setting the safety stock for a product before we get the opportunity to order it again, thus ensuring a “service level”</li>
+</ul>
+<p>To keep the simulation as simple as possible, we’ll ignore at first the salvage price (<span class="math inline">\(s_v = 0\)</span>), assuming that we’ll have to dispose of unsold products at no cost. Then, I will present the mathematical analysis, which justifies and interprets the results we obtained.</p>
+<section id="decisions-under-uncertainty" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="decisions-under-uncertainty">Decisions under uncertainty</h2>
 <p>Without further ado and before we dive into a more mathematical analysis of this problem, let’s see how simulation can help us make a better decision. In the first version of the (demand) story, we have <span class="math inline">\(n\)</span> people passing by our shop and each has a probability <span class="math inline">\(\theta\)</span> to buy. This is entirely reasonable, except for assuming people buy independently or buy a single unit. Think about how would you take that into account in your simulation.</p>
 <p><span class="math display">\[
@@ -428,7 +447,7 @@ D \sim Binom(n = 200, \theta = 0.2)
 </figure>
 </div>
 </div></div></div>
-<p>Let’s say that in our neighborhood there are 200 people walking by our shop on Mondays, and each has a 20% chance to buy, as they really love the pastries. As you can see below, the story is more complicated than just deciding to produce the average <span class="math inline">\(\mathbb{E} = n \theta\)</span>.</p>
+<p>Let’s say that in our neighborhood there are 200 people walking by our shop on Mondays, and each has a 20% chance to buy, as they really love the pastries. As you can see below, the story is more complicated than just deciding to produce the average <span class="math inline">\(\mathbb{E}[D] = n \theta\)</span>.</p>
 <p>First, notice that we can reasonably expect to sell between 30 and 50 units based on the distribution of demand. However, we need to simulate how this uncertainty translates into the distribution of profits for each quantity we might decide to produce.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -510,8 +529,8 @@ D \sim Binom(n = 200, \theta = 0.2)
 </div>
 </div>
 </div>
-<p>This simulation tells us that we should be very careful when optimizing for average demand. By choosing a higher service level, we will have sufficient products to fully fulfill the demand on more Mondays. It makes total sense from the perspective of customer experience and you should get used to such reasoning when making decisions under uncertainty.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> You would miss all this nuance if you’re ignoring the stochastic nature of the demand and pretend that it’s deterministic, or even worse, constant.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;This is where other aspects inform the decision, including the firm’s risk appetite</p></div></div><p>Next, let’s investigate what happens when we deal with a “slow-moving” item, meaning, we sell a low quantity. In this case, the Poisson distribution and its generalizations might be an appropriate choice for modeling counts.</p>
+<p>This simulation tells us that we should be very careful when optimizing for average demand. By choosing a higher service level, we will have sufficient products to fully fulfill the demand on more Mondays. It makes total sense from the perspective of customer experience and you should get used to such reasoning when making decisions under uncertainty.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> You would miss all this nuance if you’re ignoring the stochastic nature of the demand and pretend that it’s deterministic, or even worse, constant.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;This is where other aspects inform the decision, including the firm’s risk appetite</p></div></div><p>Next, let’s investigate what happens when we deal with a “slow-moving” item, meaning, we sell a low quantity. In this case, the Poisson distribution and its generalizations might be an appropriate choice for modeling counts.</p>
 <p><span class="math display">\[
 D \sim Pois(\lambda = 10)
 \]</span> A useful tip in practice, when dealing with slow-moving products, is that you can use the Poisson distribution as a baseline against which you can benchmark more advanced models, which often won’t do much better.</p>
@@ -531,8 +550,8 @@ D \sim Pois(\lambda = 10)
 </div>
 </div></div></div>
 <p>Sometimes, you have to model intermittent demand, where you will have periods in which you sell nothing. In an e-commerce or grocery store, these products might be not what we care about, but when we talk luxury items – it’s a feature, not a bug.</p>
-<p>Once again, we can leverage the idea of a mixture model, in which we break down the demand into its occurrence and volume components. This idea was successfully used by I. Svetunkov to develop a cutting-edge time series model for forecasting intermittent demand.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;I. Svetunkov - “Forecasting and analytics with ADAM”, <a href="https://openforecast.org/adam/ADAMOccurrence.html">Chapter 13</a></p></div></div><p><span class="math display">\[
+<p>Once again, we can leverage the idea of a mixture model, in which we break down the demand into its occurrence and volume components. This idea was successfully used by I. Svetunkov to develop a cutting-edge time series model for forecasting intermittent demand.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;I. Svetunkov - “Forecasting and analytics with ADAM”, <a href="https://openforecast.org/adam/ADAMOccurrence.html">Chapter 13</a></p></div></div><p><span class="math display">\[
 D \sim Bern(\theta) \cdot P(Y)
 \]</span> Let’s take an example of a dish which requires expensive ingredients, like a fresh tuna steak. Here, the story is very different and we’re out of luck – it shouldn’t be surprising that we lose money in half of the days. Perisable products and intermittent demand is not a great business idea, unless there is another reason for having it.</p>
 <div class="cell">
@@ -565,6 +584,27 @@ D \sim Bern(\theta) \cdot P(Y)
 </figure>
 </div>
 </div></div></div>
+<p>Technically, the normal distribution isn’t appropriate for modeling counts, since it is continuous and can take negative values. However, when used in the right context, with appropriate guardrails, it can be a good enough approximation in practice.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stock-outs in historical data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In practice, the sales data is not equivalent to demand. When building models for demand forecasting, we should be aware of the following nasty feedback loop:</p>
+<ul>
+<li>If we don’t correct for stock-outs, we’ll underestimate demand</li>
+<li>Which leads to lower quantities ordered and lower stocks</li>
+<li>Which leads to more stock-outs</li>
+<li>Resulting in a further underestimation of demand</li>
+</ul>
+<p>Most often, we can’t know for sure how much we would sell if we had inventory. We can estimate it based on customer behavior and feedback, ignore some data points, order more than “optimal” to learn more about the demand, or build models to estimate this counterfactual.</p>
+</div>
+</div>
 </section>
 <section id="a-poisson-detour" class="level2">
 <h2 class="anchored" data-anchor-id="a-poisson-detour">A Poisson Detour</h2>
@@ -581,6 +621,127 @@ P(X=k) = \frac{e^{−\lambda} \lambda^k}{k!}; \space k=0, 1, ...
 <li>Number of asthma or kindey cancer related deaths</li>
 </ul>
 <p>Just before you get all excited about these applications, keep in mind that every distribution has a set of assumptions that have to be met. This is where knowing the theory makes a difference.</p>
+</section>
+<section id="the-mathematics-of-newsvendor" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-mathematics-of-newsvendor">The mathematics of newsvendor</h2>
+<p>There are more insights to be discovered than what we did in our simulation. For that, we’ll have to investigate the cost function, marginal overstock and understock costs, under discrete and continuous demand.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> We also need to look at other performance measures, like fill rate, expected leftover inventory, and in-stock probability.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;To simplify notation, <span class="math inline">\(\mathbb{E}[max(x, 0)] = \mathbb{E}[x]^+\)</span>.</p></div></div><p><span class="math display">\[\begin{align}
+
+\mathcal{C}(Q) &amp;= c_u \cdot \underbrace{ \mathbb{E}[D - Q]^+}_\text{shortage}  + c_o \cdot \underbrace{ \mathbb{E}[Q - D]^+ }_\text{excess} \\
+
+&amp;= c_u \int_Q^\infty (D - Q) f(D) dD + c_o \int_0^Q(Q - D) f(D) dD
+
+\end{align}\]</span></p>
+<p>The two terms represent total understock and overstock costs, which are convex functions of quantity. Their trade-off gives the shape of <span class="math inline">\(\mathcal{C}(Q)\)</span> and suggests a strategy for finding the optimum.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> Before showing how to derive this result, let’s first review this important quantity called <strong>critical fractile</strong> <span class="math inline">\(\tau = c_u / (c_u + c_o)\)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;There is a tedious and an easy, but abstract way to derive the relation for optimum</p></div></div><p><span class="math display">\[
+Q^* = F^{-1}_D \bigg( \frac{c_u}{c_u + c_o} \bigg)
+\]</span></p>
+<p>By plugging the critical fractile into the inverse CDF of demand, be it theoretical or empirical, we will get the optimal quantity, where the marginal cost of overage equals the marginal cost of shortages. Therefore, the optimum is determined by the asymmetric cost structure and the shape of the demand distribution.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>crit_frac <span class="ot">&lt;-</span> (p <span class="sc">-</span> c) <span class="sc">/</span> (p <span class="sc">-</span> c <span class="sc">+</span> c)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>qty_bin <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(crit_frac, <span class="at">size =</span> <span class="dv">200</span>, <span class="at">prob =</span> <span class="fl">0.2</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>qty_pois <span class="ot">&lt;-</span> <span class="fu">qpois</span>(crit_frac, <span class="at">lambda =</span> <span class="dv">10</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>qty_bin_ecdf <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">rbinom</span>(n, <span class="dv">200</span>, <span class="fl">0.2</span>), <span class="at">probs =</span> crit_frac)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"binomial"</span> <span class="ot">=</span> qty_bin, </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"bin_ecdf"</span> <span class="ot">=</span> <span class="fu">unname</span>(qty_bin_ecdf), </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"poisson"</span> <span class="ot">=</span> qty_pois)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>binomial bin_ecdf  poisson 
+      39       39        9 </code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ecdf</span>(<span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="fl">0.2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(<span class="at">main =</span> <span class="st">"ECDF of Binom(200, 0.2)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Empirical cumulative density function</figcaption>
+</figure>
+</div>
+</div></div></div>
+<p>Check these results against what we obtained in our simulations. Take some time to modify the code by adding a salvage price <span class="math inline">\(s_v\)</span> and see how does it change the optimal values.</p>
+<p>It’s easiest to show how to arrive at the critical fractile in the case of discrete distribution of demand. The optimal point is at a place where the expected cost of ordering <span class="math inline">\(Q\)</span> units is very close to <span class="math inline">\(Q+1\)</span> units, i.e.&nbsp;the cost curve is flat – <span class="math inline">\(\mathcal{c}(Q) = \mathcal{c}(Q + 1)\)</span>.</p>
+<p><span class="math display">\[
+\mathcal{C}(Q) = c_o \sum_{D=0}^{Q-1} p(D) (Q - D) + c_u \sum_{D=Q}^{\infty} p(D)(D - Q)
+\]</span> By using the fact that <span class="math inline">\(D - Q = 0\)</span> when <span class="math inline">\(Q = D\)</span>, we can bring the above sums over the same range as for <span class="math inline">\(Q+1\)</span> units.</p>
+<p><span class="math display">\[\begin{align}
+&amp; c_o \sum_{D=0}^{Q} p(D) (Q - D) + c_u \sum_{D=Q + 1}^{\infty} p(D)(D - Q) \\
+&amp;= c_o \sum_{D=0}^{Q} p(D) (Q + 1 - D) + c_u \sum_{D=Q+1}^{\infty} p(D)(D - Q)
+\end{align}\]</span></p>
+<p>All of this mess, after grouping the appropriate terms, simplifies to the following relation. From it, you can compute the critical fractile, but also notice that we got the marginal costs for over and understocking.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;The optimal quantity <span class="math inline">\(Q^* = \inf \{Q | F(Q) \ge \tau \}\)</span> is the smallest qty for which the CDF is bigger or equal than the critical value</p></div></div><p><span class="math display">\[
+c_o \underbrace{\sum_{D = 0}^Q p(D)}_\text{F(Q)} - c_u \underbrace{\sum_{D = Q + 1}^\infty p(D)}_\text{1 - F(Q)} = 0
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x_grid <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">90</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mg_cost_over <span class="ot">&lt;-</span> c <span class="sc">*</span> <span class="fu">pbinom</span>(x_grid, <span class="at">size =</span> <span class="dv">200</span>, <span class="at">prob =</span> <span class="fl">0.2</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>mg_cost_under <span class="ot">&lt;-</span> (p <span class="sc">-</span> c) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(x_grid, <span class="at">size =</span> <span class="dv">200</span>, <span class="at">prob =</span> <span class="fl">0.2</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> x_grid, <span class="at">y =</span> mg_cost_over, </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"skyblue"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Quantity"</span>, <span class="at">ylab =</span> <span class="st">"Marginal cost"</span>, <span class="at">main =</span> <span class="st">""</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(mg_cost_under, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"coral"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x0 =</span> qty_bin, <span class="at">y0 =</span> mg_cost_over[qty_bin], </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x1 =</span> qty_bin, <span class="at">y1 =</span> <span class="dv">0</span>, </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="st">"dashed"</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="4L_newsvendor_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Overage marginal cost in blue and underage marginal cost in red</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>There is a growing literature on the cognitive and behavioral aspects of decision-making in the newsvendor problem. First, people tend to buy less than necessary, even when the product has a big margin and critical fractile. This might be due to the fact that excess inventory is easier to measure and that information is foregrounded for the planner. When the (profit) margins are low, people generally over-buy, perhaps by putting a weight on the goodwill costs, even when it’s not the case. As you have seen from these simulations, this problem is deceptively simple – thus any heuristic or mental “calculation” can backfire.</p>
+<section id="continuous-demand" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="continuous-demand">Continuous demand</h3>
+<p>At last, in order to derive the critical fractile for the continuous distribution, we’ll need to set the first derivative of the total cost function to zero. This works out, because the function is convex – we do have an unique minimum.</p>
+<p><span class="math display">\[
+\mathcal{C}(Q) = c_o \int_{D=0}^Q(Q - D) f(D) dD + c_u \int_{D = Q}^\infty (D - Q) f(D) dD
+\]</span></p>
+<p>The clearest, although tedious derivation is given by A. Hill in his 2017 <a href="https://web.archive.org/web/20170622080542/www.clamshellbeachpress.com/downloads/newsvendor_problem.pdf">paper</a> on Newsvendor problem. For a more elegant, but abstract approach, you can check out the chapter on Stochastic Inventory Control, pg. 118 from R. Rossi’s <a href="https://books.openbookpublishers.com/10.11647/obp.0252.pdf">“Inventory Analytics”</a>.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;In Inventory Analytics you will also find the proof that maximizing profits and minimizing costs are equivalent in the newsvendor problem.</p></div></div><p><span class="math display">\[\begin{align}
+\mathcal{C}(Q) &amp;= c_o Q \underbrace{\int_{D=0}^Q f(D) dD}_\text{F(Q)} - c_o \underbrace{\int_{D = 0}^Q Df(D)dD}_\text{partial expectation H(Q)} \\
+&amp;+ c_u \underbrace{\int_{D = Q}^\infty Df(D)dD}_\text{use partial expectation} - c_u Q \underbrace{\int_{D = Q}^\infty f(D)dD}_\text{1 - F(Q)} \\
+
+\mathcal{C}(Q) &amp;= c_o Q F(Q) - c_o H(Q)  \\
+&amp; + c_u (\mu - H(Q)) - c_u Q (1 - F(Q)) \\
+\end{align}\]</span></p>
+<p>In the first stage, we factor out the terms and recognize where we have just a CDF of demand <span class="math inline">\(F_D(Q)\)</span>. The second term has the same form as the expectation, but doesn’t go until infinity, but only to Q. The trick is to call it a partial expectation <span class="math inline">\(H(Q)\)</span>, where <span class="math inline">\(H_D(\infty) = \mathbb{E}[D] = \mu\)</span>. Thus, the third term is just <span class="math inline">\(\mu - H(Q)\)</span>. The following is just a re-arrangement of terms which will make taking the derivative easy.</p>
+<p><span class="math display">\[\begin{align}
+\mathcal{C}(Q) &amp;= c_o Q F(Q) + c_u QF(Q) \\
+&amp;- c_o H(Q) - c_u H(Q) \\
+&amp; + c_u \mu - c_u Q \\
+\mathcal{C}(Q) &amp; = (c_u + c_o)(QF(Q) - H(Q)) + c_u (\mu - Q)
+
+\end{align}\]</span></p>
+<p>Now we’re ready to take the derivative and set it to zero. The only thing you have to remember is that <span class="math inline">\(F'(Q) = f(Q)\)</span> and <span class="math inline">\(H'(Q) = Q f(Q)\)</span> by Leibniz’s rule.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;These details are completely optional and outside the scope of the course</p></div></div><p><span class="math display">\[\begin{align}
+\mathcal{C}'(Q) &amp;= (c_u + c_o)[QF'(Q) + F(Q) - H'(Q)] - c_u \\
+                &amp;= (c_u + c_o)[Qf(Q) + F(Q) - Qf(Q)] - c_u \\
+             0  &amp;= (c_u + c_o)F(Q) - c_u \\
+          F(Q)  &amp;= \frac{c_u}{c_u + c_o}
+
+\end{align}\]</span></p>
+<p>Finally, we’ve proven the relation for the critical fractile and can leverage the marginal overage and underage costs.</p>
+<p><span class="math display">\[
+\mathcal{C}'(Q) = c_oF(Q) - c_u [1- F(Q)]
+\]</span></p>
+</section>
+</section>
+<section id="homework" class="level2">
+<h2 class="anchored" data-anchor-id="homework">Homework</h2>
+<p>Modify the code in the course to take into account the salvage value <span class="math inline">\(s_v\)</span> and interpret how the results of the simulations change. Experiment on different situations where the profit margins are low (like in a grocery store) or quite high. Try out demand with high and low uncertainty, asymmetric and long-tailed distributions.</p>
+<ul>
+<li>Read the paper by A. Hill and note the other metrics that we can look at besides profits and costs (Appendix 3).</li>
+<li>Read the paper by M. Koschat, N. Kunz - <a href="https://www.researchgate.net/publication/239752587_Newsvendors_Tackle_the_Newsvendor_Problem">“Newsvendors tackle the newsvendor problem”</a>, 2003</li>
+</ul>
 
 
 </section>
