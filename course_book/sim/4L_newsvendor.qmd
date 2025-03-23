@@ -15,16 +15,36 @@ execute:
   cache: true
 ---
 
-In the previous lectures and labs you learned the most important tools and concepts to successfully apply simulation in practical applications. Now we can confidently go back to the newsvendor problem I outlined in the introduction.
+In the previous lectures and labs you learned the most important tools and concepts to successfully apply simulation in practical applications. Now we can confidently go back to the newsvendor problem I outlined in the [introduction](1_intro.qmd).
 
-Imagine you're in charge of a pastry shop and have to decide how much to produce ($q$) at unit cost $(c)$, which will be sold at price $(p)$. This is the simplest version of an [inventory management problem]{.underline}, in which we optimize for a single perishable product, a single order period, assume no lead time or carrying costs.^[Of course, the challenges in reality get much more complicated, but there are well-established tools to tackle those] We're also not concerned here with developing a model which generates reliable predictions and captures the uncertainty in the demand $(D)$ -- we take its (predictive) distribution as given.
+Imagine you're in charge of a pastry shop and have to decide how much to produce ($q$) at unit cost $(c)$, which will be sold at price $(p)$. Since the demand $D$ is uncertain, there is a chance we'll be left with unsold products -- which we'll try to sell at discount ($s_v$), also called salvage value.
+
+
+In this simplest version of stochastic [inventory management]{.underline}, we optimize for a single "perishable" or seasonal product, a single order period, assume no lead time or carrying costs.^[Of course, the challenges in reality get much more complicated, but there are well-established tools to tackle those] We're also not concerned with developing a model which generates reliable predictions and captures the uncertainty in the demand $(D)$ -- we take its (predictive) distribution as given. It could be either discrete or continuous, depending on the type of product sold. The objective is to choose an order quantity which maximizes profits ($\mathcal{P}$) or minimizes costs ($\mathcal{C}$).
 
 
 $$
-(\max_q) \; p \cdot  \mathbb{E}_D[\min(D, q)] - c \cdot q
+\mathcal{P}(q) = \; p \cdot  \mathbb{E}_D[\min(D, q)] + s_v \cdot \mathbb{E}[max(d - Q, 0)] - c \cdot q
 $$
 
-If we order too much, we'll have to throw away the unsold products, thus lose $c_o = c$ per unit. If we order too little, we lose the opportunity to make $(c_u = p - c)$ in sales.^[In reality, we might have substitute products and do clearance selling to attenuate both of these costs -- which has to be modeled differently] We don't have the opportunity to replenish inventory during the day, but in other applications it's the right approach to take -- order more when inventory falls bellow a threshold.
+If we order too much, we'll lose $(c_o = c - s_v + h)$ per unit, where $h$ is the holding cost, which we'll ignore. If we order too little, we lose the opportunity to make $(c_u = p - c + g)$ in profits, where $g$ is the goodwill cost -- a damage in customer satisfaction and brand reputation.^[In practice, both $g$ and $h$ are difficult, but not impossible to estimate] The first type of cost $c_o$ is called overage (overstocking), and $c_u$ is understocking cost.
+
+In the newsvendor problem, it can be shown that maximizing profits and minimizing costs yield the same optimal order quantity. We will simulate profits, however, analyzing the total costs is more insightful.
+
+$$
+\mathcal{C}(q) = c_u \cdot \mathbb{E}[max(d - Q, 0)] + c_o \cdot \mathbb{E} [max(Q - d, 0)]
+$$
+<!-- We don't have the opportunity to replenish inventory during the day, but in other applications it's the right approach to take -- order more when inventory falls bellow a threshold. -->
+
+This mathematical structure of uncertain demand, quantity as the decision variable, understocking and overstocking costs is shared in lots of practical applications. Seasonal products in fashion, like swimsuits, might have long lead times if manufactured overseas. Thus, we don't get an opportunity to replenish the inventory if we sell out. If we order too much, we might be forced to sell at a discount in outlets.^[Go back to the scary-looking formulas above and think for 5 minutes what each term means, by using the examples below.]
+
+- Stocks for special events, like concert-specific merchandise, sports finals, or a brand collaborating with a celebrity
+- Last buy decision for products at the end of their lifecycle, like in machinery parts / components
+- Setting the right capacity and workforce for a facility, e.g in preparation for a music festival
+- Airlines deciding how much overbooking to do on a particular flight. Very annoying for passengers, but common practice
+- Setting the safety stock for a product before we get the opportunity to order it again, thus ensuring a "service level"
+
+To keep the simulation as simple as possible, we'll ignore at first the salvage price ($s_v = 0$), assuming that we'll have to dispose of unsold products at no cost. Then, I will present the mathematical analysis, which justifies and interprets the results we obtained. 
 
 ## Decisions under uncertainty
 
@@ -48,7 +68,7 @@ lines(dem_dens, lwd = 2)
 rug(jitter(dem), col = "dodgerblue2") 
 ```
 
-Let's say that in our neighborhood there are 200 people walking by our shop on Mondays, and each has a 20% chance to buy, as they really love the pastries. As you can see below, the story is more complicated than just deciding to produce the average $\mathbb{E} = n \theta$.
+Let's say that in our neighborhood there are 200 people walking by our shop on Mondays, and each has a 20% chance to buy, as they really love the pastries. As you can see below, the story is more complicated than just deciding to produce the average $\mathbb{E}[D] = n \theta$.
 
 First, notice that we can reasonably expect to sell between 30 and 50 units based on the distribution of demand. However, we need to simulate how this uncertainty translates into the distribution of profits for each quantity we might decide to produce.
 
@@ -180,6 +200,23 @@ df_sim_norm <- sim_newsvendor(p, c, qty_grid, demand)
 visualize_profit(df_sim_norm) 
 ```
 
+Technically, the normal distribution isn't appropriate for modeling counts, since it is continuous and can take negative values. However, when used in the right context, with appropriate guardrails, it can be a good enough approximation in practice.
+
+
+::: {.callout-warning}
+## Stock-outs in historical data
+
+In practice, the sales data is not equivalent to demand. When building models for demand forecasting, we should be aware of the following nasty feedback loop:
+
+- If we don't correct for stock-outs, we'll underestimate demand
+- Which leads to lower quantities ordered and lower stocks
+- Which leads to more stock-outs
+- Resulting in a further underestimation of demand
+
+Most often, we can't know for sure how much we would sell if we had inventory. We can estimate it based on customer behavior and feedback, ignore some data points, order more than "optimal" to learn more about the demand, or build models to estimate this counterfactual.   
+
+:::
+
 ## A Poisson Detour
 
 I often hear the following statement, especially about probability theory: "I haven't used Poisson outside university". By now, you're either aware that it's important and wonder why it didn't come up in practice or believe it was a tedious academic exercise. 
@@ -198,6 +235,139 @@ Poisson distribution is often a building block in more complicated models (poiss
 - Number of asthma or kindey cancer related deaths
 
 Just before you get all excited about these applications, keep in mind that every distribution has a set of assumptions that have to be met. This is where knowing the theory makes a difference.
+
+## The mathematics of newsvendor
+
+There are more insights to be discovered than what we did in our simulation. For that, we'll have to investigate the cost function, marginal overstock and understock costs, under discrete and continuous demand.^[To simplify notation, $\mathbb{E}[max(x, 0)] = \mathbb{E}[x]^+$.] We also need to look at other performance measures, like fill rate, expected leftover inventory, and in-stock probability.
+
+\begin{align}
+
+\mathcal{C}(Q) &= c_u \cdot \underbrace{ \mathbb{E}[D - Q]^+}_\text{shortage}  + c_o \cdot \underbrace{ \mathbb{E}[Q - D]^+ }_\text{excess} \\
+
+ &= c_u \int_Q^\infty (D - Q) f(D) dD + c_o \int_0^Q(Q - D) f(D) dD 
+
+\end{align}
+
+
+The two terms represent total understock and overstock costs, which are convex functions of quantity. Their trade-off gives the shape of $\mathcal{C}(Q)$ and suggests a strategy for finding the optimum.^[There is a tedious and an easy, but abstract way to derive the relation for optimum] Before showing how to derive this result, let's first review this important quantity called **critical fractile** $\tau = c_u / (c_u + c_o)$.
+
+$$
+Q^* = F^{-1}_D \bigg( \frac{c_u}{c_u + c_o} \bigg)
+$$
+
+By plugging the critical fractile into the inverse CDF of demand, be it theoretical or empirical, we will get the optimal quantity, where the marginal cost of overage equals the marginal cost of shortages. Therefore, the optimum is determined by the asymmetric cost structure and the shape of the demand distribution.
+
+
+```{r}
+crit_frac <- (p - c) / (p - c + c)
+qty_bin <- qbinom(crit_frac, size = 200, prob = 0.2)
+qty_pois <- qpois(crit_frac, lambda = 10)
+qty_bin_ecdf <- quantile(rbinom(n, 200, 0.2), probs = crit_frac)
+c("binomial" = qty_bin, 
+  "bin_ecdf" = unname(qty_bin_ecdf), 
+  "poisson" = qty_pois)
+```
+```{r}
+#| column: margin
+#| fig-cap: Empirical cumulative density function
+
+ecdf(rbinom(100, 200, 0.2)) |> 
+    plot(main = "ECDF of Binom(200, 0.2)")
+```
+
+Check these results against what we obtained in our simulations. Take some time to modify the code by adding a salvage price $s_v$ and see how does it change the optimal values.
+
+It's easiest to show how to arrive at the critical fractile in the case of discrete distribution of demand. The optimal point is at a place where the expected cost of ordering $Q$ units is very close to $Q+1$ units, i.e. the cost curve is flat -- $\mathcal{c}(Q) = \mathcal{c}(Q + 1)$. 
+
+$$
+\mathcal{C}(Q) = c_o \sum_{D=0}^{Q-1} p(D) (Q - D) + c_u \sum_{D=Q}^{\infty} p(D)(D - Q)
+$$
+By using the fact that $D - Q = 0$ when $Q = D$, we can bring the above sums over the same range as for $Q+1$ units.
+
+\begin{align}
+& c_o \sum_{D=0}^{Q} p(D) (Q - D) + c_u \sum_{D=Q + 1}^{\infty} p(D)(D - Q) \\
+ &= c_o \sum_{D=0}^{Q} p(D) (Q + 1 - D) + c_u \sum_{D=Q+1}^{\infty} p(D)(D - Q)
+\end{align}
+
+All of this mess, after grouping the appropriate terms, simplifies to the following relation. From it, you can compute the critical fractile, but also notice that we got the marginal costs for over and understocking.^[The optimal quantity $Q^* = \inf \{Q | F(Q) \ge \tau \}$ is the smallest qty for which the CDF is bigger or equal than the critical value]
+
+$$
+c_o \underbrace{\sum_{D = 0}^Q p(D)}_\text{F(Q)} - c_u \underbrace{\sum_{D = Q + 1}^\infty p(D)}_\text{1 - F(Q)} = 0
+$$
+
+```{r}
+#| fig-cap: Overage marginal cost in blue and underage marginal cost in red
+
+x_grid <- 1:90
+mg_cost_over <- c * pbinom(x_grid, size = 200, prob = 0.2)
+mg_cost_under <- (p - c) * (1 - pbinom(x_grid, size = 200, prob = 0.2))
+
+plot(x = x_grid, y = mg_cost_over, 
+     type = "l", lwd = 2, col = "skyblue",
+     xlab = "Quantity", ylab = "Marginal cost", main = "")
+lines(mg_cost_under, lwd = 2, col = "coral")
+segments(
+    x0 = qty_bin, y0 = mg_cost_over[qty_bin], 
+    x1 = qty_bin, y1 = 0, 
+    lty = "dashed"
+)
+```
+There is a growing literature on the cognitive and behavioral aspects of decision-making in the newsvendor problem. First, people tend to buy less than necessary, even when the product has a big margin and critical fractile. This might be due to the fact that excess inventory is easier to measure and that information is foregrounded for the planner. When the (profit) margins are low, people generally over-buy, perhaps by putting a weight on the goodwill costs, even when it's not the case. As you have seen from these simulations, this problem is deceptively simple -- thus any heuristic or mental "calculation" can backfire.
+
+
+### Continuous demand
+
+At last, in order to derive the critical fractile for the continuous distribution, we'll need to set the first derivative of the total cost function to zero. This works out, because the function is convex -- we do have an unique minimum. 
+
+$$
+\mathcal{C}(Q) = c_o \int_{D=0}^Q(Q - D) f(D) dD + c_u \int_{D = Q}^\infty (D - Q) f(D) dD 
+$$
+
+The clearest, although tedious derivation is given by A. Hill in his 2017 [paper](https://web.archive.org/web/20170622080542/www.clamshellbeachpress.com/downloads/newsvendor_problem.pdf) on Newsvendor problem. For a more elegant, but abstract approach, you can check out the chapter on Stochastic Inventory Control, pg. 118 from R. Rossi's ["Inventory Analytics"](https://books.openbookpublishers.com/10.11647/obp.0252.pdf).^[In Inventory Analytics you will also find the proof that maximizing profits and minimizing costs are equivalent in the newsvendor problem.]
+
+\begin{align}
+\mathcal{C}(Q) &= c_o Q \underbrace{\int_{D=0}^Q f(D) dD}_\text{F(Q)} - c_o \underbrace{\int_{D = 0}^Q Df(D)dD}_\text{partial expectation H(Q)} \\
+&+ c_u \underbrace{\int_{D = Q}^\infty Df(D)dD}_\text{use partial expectation} - c_u Q \underbrace{\int_{D = Q}^\infty f(D)dD}_\text{1 - F(Q)} \\
+
+\mathcal{C}(Q) &= c_o Q F(Q) - c_o H(Q)  \\
+& + c_u (\mu - H(Q)) - c_u Q (1 - F(Q)) \\
+\end{align}
+
+In the first stage, we factor out the terms and recognize where we have just a CDF of demand $F_D(Q)$. The second term has the same form as the expectation, but doesn't go until infinity, but only to Q. The trick is to call it a partial expectation $H(Q)$, where $H_D(\infty) = \mathbb{E}[D] = \mu$. Thus, the third term is just $\mu - H(Q)$. The following is just a re-arrangement of terms which will make taking the derivative easy.
+
+
+
+\begin{align}
+\mathcal{C}(Q) &= c_o Q F(Q) + c_u QF(Q) \\
+&- c_o H(Q) - c_u H(Q) \\
+& + c_u \mu - c_u Q \\
+\mathcal{C}(Q) & = (c_u + c_o)(QF(Q) - H(Q)) + c_u (\mu - Q)
+
+\end{align}
+
+Now we're ready to take the derivative and set it to zero. The only thing you have to remember is that $F'(Q) = f(Q)$ and $H'(Q) = Q f(Q)$ by Leibniz's rule.^[These details are completely optional and outside the scope of the course]
+
+\begin{align}
+\mathcal{C}'(Q) &= (c_u + c_o)[QF'(Q) + F(Q) - H'(Q)] - c_u \\
+                &= (c_u + c_o)[Qf(Q) + F(Q) - Qf(Q)] - c_u \\
+             0  &= (c_u + c_o)F(Q) - c_u \\ 
+          F(Q)  &= \frac{c_u}{c_u + c_o}
+
+\end{align}
+
+Finally, we've proven the relation for the critical fractile and can leverage the marginal overage and underage costs.
+
+
+$$
+\mathcal{C}'(Q) = c_oF(Q) - c_u [1- F(Q)]
+$$
+
+## Homework
+
+Modify the code in the course to take into account the salvage value $s_v$ and interpret how the results of the simulations change. Experiment on different situations where the profit margins are low (like in a grocery store) or quite high. Try out demand with high and low uncertainty, asymmetric and long-tailed distributions.
+
+- Read the paper by A. Hill and note the other metrics that we can look at besides profits and costs (Appendix 3).
+- Read the paper by M. Koschat, N. Kunz - ["Newsvendors tackle the newsvendor problem"](https://www.researchgate.net/publication/239752587_Newsvendors_Tackle_the_Newsvendor_Problem), 2003
 
 
 
